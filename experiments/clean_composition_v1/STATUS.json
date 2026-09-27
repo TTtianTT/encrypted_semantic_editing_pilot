@@ -1,0 +1,55 @@
+{
+  "status": "blocked_before_freeze_and_inference",
+  "completed": [
+    "prior source/variant exclusion",
+    "three candidate pool audits",
+    "task-only unscored review CSVs",
+    "fixed diagnostic protocol",
+    "freeze and frozen-checkpoint inference entrypoints",
+    "syntax and fail-closed preflight checks"
+  ],
+  "not_completed": [
+    "human task review",
+    "new split approval",
+    "40+100 frozen dataset",
+    "GPU inference",
+    "human output review",
+    "paired diagnostic statistics"
+  ],
+  "candidate_pools": [
+    {
+      "pool": "完整官方三目标",
+      "train": 86,
+      "dev": 0,
+      "test": 0,
+      "total": 86
+    },
+    {
+      "pool": "允许真人补写目标",
+      "train": 134,
+      "dev": 3,
+      "test": 4,
+      "total": 141
+    },
+    {
+      "pool": "再加入未使用TFU来源",
+      "train": 158,
+      "dev": 3,
+      "test": 4,
+      "total": 165
+    }
+  ],
+  "new_gpu_jobs": [],
+  "GPU_hours": 0,
+  "training_updates": 0,
+  "blockers": [
+    "Insufficient unused official development/test sources",
+    "Real human task review unavailable in session",
+    "Need confirm previous 63 are subset of excluded prior B100 or provide IDs"
+  ],
+  "implementation_sha256": {
+    "scripts/prepare_clean_diagnostic.py": "3583bd7b69c9a53cfe43236e297a82fa10147b9f2cc978b19065e8353ecace79",
+    "scripts/freeze_clean_diagnostic.py": "53b93c42ad24b9a6437c071bf55c1cc31a4d1e78438c17ce19a29355aea2200d",
+    "scripts/run_clean_diagnostic.py": "a8247ce75108b0153a18d0aa21e8c3848070b27180cc8ff63549b58a42c1ff0e"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "status": "candidate_only_NOT_human_verified_NOT_frozen",
+  "candidate_counts": {
+    "train": 158,
+    "dev": 3,
+    "test": 4
+  },
+  "requested": {
+    "dev": 40,
+    "test": 100
+  },
+  "exclusions": {
+    "dev_previously_used_component": 629,
+    "dev_missing_targets": 8,
+    "dev_time_conflict_risk": 1,
+    "dev_no_simple_active_transitive": 4,
+    "test_previously_used_component": 626,
+    "test_missing_targets": 16,
+    "test_clause_or_coordination": 2,
+    "test_no_simple_active_transitive": 10,
+    "train_previously_used_component": 9483,
+    "train_missing_targets": 1745,
+    "train_no_simple_active_transitive": 1544,
+    "train_clause_or_coordination": 131,
+    "train_time_conflict_risk": 53,
+    "train_possession_or_lightverb_risk": 100,
+    "near_previous_source_or_target": 0
+  },
+  "all_prior_A_B_sources_and_targets_excluded_by_component": true,
+  "previous_B_100_groups_excluded": true,
+  "previous_63_ids": "not provided; prior B100 excluded in entirety, external sources require explicit list",
+  "includes_TFU_source_pool": true,
+  "includes_missing_target_candidates": true,
+  "parser_filter_is_not_human_review": true,
+  "seed": 42,
+  "files": {
+    "data/compositions/tense_voice_train.tsv": "094c38af569cd673de8e704dc4b778cb573b7e5ae841c12b53b40251d1f0f435",
+    "data/compositions/tense_voice_valid.tsv": "e78279ef95c88a4ca4b46c40064925ade27a027ad4c639b64b8729e52a0b64bf",
+    "data/compositions/tense_voice_test.tsv": "d92c148821a87795023d6f8b7da02b5b83e2e57822d040da1c7227a83e1293aa",
+    "data/fulldata.h16": "20a1bb4b81a63f89764ffdd8021eb8af7bc6dc4badb790a154b97ff6328c59b4",
+    "data/dev.jsonl": "73ae74d3681ec01d5c776e5e2f75a69fe4806a6ab5840891f1b6fbd33eacca65",
+    "data/test.jsonl": "edd8ecbb725de91302f4df68227fcb329e130913f9ee771c22f3199fe5437328",
+    "data/train.jsonl": "b749f2bcd35f0127e6a63c63a700927b6538d1318eab061add6003915201f508",
+    "data/b/dev_future.jsonl": "da637bdf8069dc4bd0f8b38a1b251a613743d482b5dd69b26e542bf49ecb26a9",
+    "data/b/dev_passive.jsonl": "971da196ff04c310910c5da671b4d1672814bfedf807b73d29130250076ff55c",
+    "data/b/dev_present.jsonl": "aba48edcdd3b6213c83315575da9005b420bf31abd2bf8df5dcb105e9199a6b2",
+    "data/b/dev_seen_combo.jsonl": "e6d024dacb32860cf778d59e9549c20e903731d964b401177f3a35c64d2950d4",
+    "data/b/test_heldout_combo.jsonl": "e5ddd85d0f07df34401748cd23e454914cb0158da736c55748be162f80ef4d9c",
+    "data/b/train_future.jsonl": "532c9092b2d4958a656083c8fd431e3d94d8a3d91d85ee12f33d458dfcf5c50c",
+    "data/b/train_passive.jsonl": "b1a3cc80a529fc879e83a63e27ffa6699437d7915bc0e6a98a634701c260044d",
+    "data/b/train_present.jsonl": "fd7dca389dd1062b9729a5415734dd4d6010732a940f6564a7bd2a5e725ef2c4",
+    "data/b/train_seen_combo.jsonl": "efae44099266e991fc4deb0f16fe75529a25784fa94398716a088935ffb17a2c"
+  }
+}
