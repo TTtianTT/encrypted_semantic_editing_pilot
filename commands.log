@@ -15,3 +15,8 @@ sbatch --partition=B300q scripts/gpu_task.slurm scripts/direct_rewrite.py #1616 
 sbatch --partition=B300q scripts/gpu_task.slurm scripts/b_pilot.py #1617
 .venv/bin/python scripts/b_aggregate.py
 sbatch --partition=B300q --dependency=afterok:1614 scripts/gpu_task.slurm scripts/he_decode.py #1618
+
+# Supplemental latent consistency and Shift convergence audit
+sbatch --partition=B300q experiments/latent_consistency_v1/run.slurm  # job 1619
+.venv/bin/python scripts/aggregate_consistency.py
+.venv/bin/python scripts/report_consistency.py

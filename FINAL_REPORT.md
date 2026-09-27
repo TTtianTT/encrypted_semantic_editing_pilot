@@ -43,7 +43,7 @@ E/G为相同 `facebook/bart-base` revision `aadd2ab0ae0c8268c7c9693540e9904811f3
 
 训练条件：全部AdamW1e-3、weight_decay0、batch≤16、相同监督CE、最多1000更新、每200步开发NLL选择。shift768参数；低秩r4=6,912、r16=25,344、r64=99,072，非线性r64也是99,072。seed42 rank最佳开发NLL为0.05650/0.05063/0.05038，依预登记选择64；shift为0.14885。三个seed均使用1000更新上限，最佳checkpoint步数及梯度写在complete.json。r64比shift参数更多且seed42有三次rank搜索机会；所有方法学习率机会一致，43/44不重选rank。
 
-收益与输入相关编辑相容，不能归因于不同数据、不同G或更多每配置更新；但**尚未隔离参数量、优化轨迹、rank搜索机会及shift在1000步后继续训练的潜力**。这不是输入相关性本身的严格因果证明。辅助exact-reference均值低秩89.19%、shift60.99%，支持对官方目标的拟合差异，目标存在语法错误，故不能据此宣称事实/流畅性优势。
+**本表只证明既定1000步训练预算下的差异；三个seed的Shift开发损失至1000步仍下降，不能称其已收敛。** 收益与输入相关编辑相容，不能归因于不同数据、不同G或更多每配置更新；但**尚未隔离参数量、优化轨迹、rank搜索机会及shift在1000步后继续训练的潜力**。这不是输入相关性本身的严格因果证明。辅助exact-reference均值低秩89.19%、shift60.99%，支持对官方目标的拟合差异，目标存在语法错误，故不能据此宣称事实/流畅性优势。
 
 
 ## 4. 评估失败、科学门槛与协议偏差
@@ -115,3 +115,10 @@ C只支持这一个已训练affine在给定参数/16短样本上数值执行与�
 ## 交付索引
 
 `README.md`给出环境、实际命令、job/log、恢复方式；`preregistered_pilot.md`保留登记和偏差；`data/manifest.json`、`data/b/manifest.json`、`data/provenance_audit.json`为划分/hash/官方blob核查；`models/manifest.json`为模型溯源；`checkpoints/`保留best与optimizer状态；`results/`包含逐样本JSONL、CSV/JSON、失败样本、2000次paired统计和事后审计；`review/`为匿名审查/独立映射；`he/trusted/`保存可信端数值、文本与成本，`he/public/`仅公共材料。未上传任何结果或私钥。
+
+
+## 后续补充：一致性约束与 Shift 收敛
+
+见 [补充实验报告](experiments/latent_consistency_v1/REPORT.md)。原表保留为1000步预算结果；补充的5000步Shift比较明确使用了不同训练预算。
+
+补充实测：独立操作的一致性约束使连续组合Joint_auto由2/100到9/100（+7pp，[2,13]），已有组合监督时由15/100到8/100（−7pp，[−14,−1]），未显示普遍收益。Shift三seed延长至5000步后，开发best的平均Joint_auto升至73.63%，低秩1000步为82.33%，差距缩至8.70pp；三个seed仍未达到预登记近平台标准。此比较是额外预算诊断，不能推断Shift已收敛。补充作业1619已完成，累计GPU预算0.34528小时。

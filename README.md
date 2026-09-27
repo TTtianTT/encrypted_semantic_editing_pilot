@@ -58,3 +58,15 @@ A job1611；未启动1612取消；C准备1613、CPU1614、解码1618；直接改
 - `scripts/he_server.py`：独立可执行，仅读取public目录，通过stdin/stdout接收/返回密文；`scripts/he_client.py`：生成密钥并驱动协议，`he_decode.py`：可信端使用同一个G解码。服务器不收到解密错误/接受拒绝反馈。
 
 HE使用TenSEAL0.3.18/SEAL，N8192、[60,40,40,60]、scale2^40、TC128参数有效性检查。公开有效token数及mask，仅加密有效token，每token一密文，可信端恢复固定96位置。该长度泄漏比长度隐藏协议弱，所有三条数值路径使用相同mask。API将编码+加密、解密+解码合并计时，未伪造内部独立耗时。函数分解实际执行两次明密文矩阵乘法，非噪声模拟、非完整LLM私密推理；不声称模型参数保密、恶意安全或安全审计。
+
+## 目标编码一致性与 Shift 收敛补充实验
+
+协议见 [PROTOCOL.md](experiments/latent_consistency_v1/PROTOCOL.md)，分析见 [REPORT.md](experiments/latent_consistency_v1/REPORT.md)。保留原模型、固定划分与评分规则。B 在相同 600 步预算下做 λ=0/0.1 配对消融；A 的 Shift 恢复 Adam 状态继续到 5,000 步，属于额外预算的收敛诊断。测试集已使用过，本补充不作为独立确认集。
+
+```bash
+sbatch --partition=<实际获准分区> experiments/latent_consistency_v1/run.slurm
+.venv/bin/python scripts/aggregate_consistency.py
+.venv/bin/python scripts/report_consistency.py
+```
+
+原服务器可用同一命令续跑；`experiments/latent_consistency_v1/checkpoints/*/latest.pt` 保存优化器与进度，留在本地、不纳入 Git。完整训练会跳过，缺失或未完成的输出文件会重新生成。异机首次复现 Shift 延长训练前，须按原 A 入口生成三个 seed 的原始 `latest.pt`（仅最佳权重不足以恢复 Adam）。固定配置更改应使用新实验目录，不复用旧结果。日志位于 `experiments/latent_consistency_v1/logs/`；本次作业 1619，单 GPU、4 CPU。

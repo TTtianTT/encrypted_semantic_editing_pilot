@@ -1,0 +1,82 @@
+{
+  "name": "independent_lambda0.1",
+  "context": "independent",
+  "lambda": 0.1,
+  "seed": 42,
+  "steps": 600,
+  "parameters": 297216,
+  "single_examples": 4800,
+  "seen_combo_examples": 0,
+  "target_encoder_batches": 600,
+  "initial_hash": "9dbe1aacf454c388b089db87b3b374d0b5239bb878cab703b70b93e96e5b78e9",
+  "schedule_hash": "f51e87de5c67d194ac2f8b41f78c2ff7286e5f384d6ea0609fc5766ec2a4fdf2",
+  "final_hash": "10d6bbbe307a70a31f21151ba956b72b7b4bae69a85818a372ccbf8660a60cd6",
+  "training_wall_s": 14.390097866300493,
+  "history": [
+    {
+      "step": 100,
+      "train_CE": 0.02264864556491375,
+      "train_consistency": 0.3155519962310791,
+      "total_loss": 0.05420384556055069,
+      "gradient_norm_before_clip": 0.19256430864334106
+    },
+    {
+      "step": 200,
+      "train_CE": 0.05258885398507118,
+      "train_consistency": 0.22842127084732056,
+      "total_loss": 0.0754309818148613,
+      "gradient_norm_before_clip": 0.36499831080436707
+    },
+    {
+      "step": 300,
+      "train_CE": 0.3580070734024048,
+      "train_consistency": 1.4210302829742432,
+      "total_loss": 0.5001100897789001,
+      "gradient_norm_before_clip": 1.3333442211151123
+    },
+    {
+      "step": 400,
+      "train_CE": 0.06074167415499687,
+      "train_consistency": 0.36955320835113525,
+      "total_loss": 0.09769699722528458,
+      "gradient_norm_before_clip": 0.5209172964096069
+    },
+    {
+      "step": 500,
+      "train_CE": 0.01873014122247696,
+      "train_consistency": 0.2562677264213562,
+      "total_loss": 0.04435691237449646,
+      "gradient_norm_before_clip": 0.2607455551624298
+    },
+    {
+      "step": 600,
+      "train_CE": 0.19678771495819092,
+      "train_consistency": 1.3830909729003906,
+      "total_loss": 0.3350968360900879,
+      "gradient_norm_before_clip": 1.516952395439148
+    }
+  ],
+  "dev": {
+    "future": {
+      "n": 96,
+      "CE": 0.11018484920102847,
+      "consistency": 0.3448064352075259
+    },
+    "present": {
+      "n": 70,
+      "CE": 0.14729790237073492,
+      "consistency": 0.2480062314442226
+    },
+    "passive": {
+      "n": 100,
+      "CE": 0.4505002175689274,
+      "consistency": 1.392297534942627
+    },
+    "seen_combo": {
+      "n": 55,
+      "CE": 0.7707415387269875,
+      "consistency": 1.5780387336557562
+    }
+  },
+  "config_hash": "34806b7c73257a5d18c86dcefebffcfd1fff72027ff6d5c5ffe17486dff94c46"
+}

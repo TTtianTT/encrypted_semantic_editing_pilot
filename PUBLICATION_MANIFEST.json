@@ -1,20 +1,20 @@
 {
-  "note": "Published file hashes, excluding this self-referential manifest. Full local experiment manifest is artifact_manifest.json.",
+  "note": "Local commit file hashes, excluding this self-referential manifest. Original full local experiment manifest is artifact_manifest.json; supplemental provenance and budget are in experiments/latent_consistency_v1/. No upload performed.",
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 187,
-      "sha256": "22badeb47202ca6d7782c97cee64d4faf1a9bf36b8374e1426a185a89a2e6b7b"
+      "bytes": 269,
+      "sha256": "125417adfc14e7223ce7a0e7b1ea9df023fafa2509c59b9e1ed56cd92636a4e7"
     },
     {
       "path": "FINAL_REPORT.md",
-      "bytes": 15478,
-      "sha256": "46aa0daff136004e1e5e4a3b1c032245df0b5bd047ed6168bff4b6913a1139fe"
+      "bytes": 16336,
+      "sha256": "781788f36f46aa862a9a9b321eb455accbd7ef08d76a58d77317a3120c7688ab"
     },
     {
       "path": "README.md",
-      "bytes": 7300,
-      "sha256": "172ec011fc02da5057baf30154bf988d1323b8d4e00f6800e2fd51f4ef44ce61"
+      "bytes": 8483,
+      "sha256": "7db2c935a499ffa06017a09be758b3d86dd3f289c92efab8e7988de61a10e180"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -28,8 +28,8 @@
     },
     {
       "path": "budget.json",
-      "bytes": 2272,
-      "sha256": "ff4a2c61eadc543e4fec818fa0950e099e21c49a4f9351bbd0a75b0de8c56050"
+      "bytes": 2554,
+      "sha256": "a584e9d94d7d8432cf17de314f659b17b0b83e8b4c209244318a91382e1b5533"
     },
     {
       "path": "checkpoints/b/composition_trained_lowrank/complete.json",
@@ -173,8 +173,8 @@
     },
     {
       "path": "commands.log",
-      "bytes": 1231,
-      "sha256": "9cc3a0b1938b88b74f5b2cada74f4efeffd6d5f7d2bab80a78c244358d22cb8a"
+      "bytes": 1472,
+      "sha256": "604a424d32dba4c39ce5ca736184a00a7d22bf67f73f39a0e8b576026ac01848"
     },
     {
       "path": "config.json",
@@ -320,6 +320,321 @@
       "path": "environment.json",
       "bytes": 1486,
       "sha256": "12d7448176db8eaa7442b8f3fd5e7305d476d5bc84ec10b37b73cb64c7068021"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/PROTOCOL.md",
+      "bytes": 4041,
+      "sha256": "82b452a95a6557caccb85c9c0dcf764012f2eb93feb9699e5e2c8bb28b527131"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/REPORT.md",
+      "bytes": 9072,
+      "sha256": "7ee72421d56bd6f7d07d1e3d086f67d7e7e4bfbc574555dd378da158209bde34"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/budget.json",
+      "bytes": 239,
+      "sha256": "3bc57a1631dc72b013a6412aeed843479ce8b4baec85e7170295dbd63aca66ec"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/independent_lambda0.1/complete.json",
+      "bytes": 2366,
+      "sha256": "d4592aa212c008bd8117704634b3e600410a42ad4af477fdca53ed2300fd527d"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/independent_lambda0.1/final.pt",
+      "bytes": 1192299,
+      "sha256": "f9ab41367afa328b85f749ce1861a5a887af38d189f2dc4fcc1e6198f4fec72b"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/independent_lambda0/complete.json",
+      "bytes": 2366,
+      "sha256": "0399265ed134c71e5424eaf75ed0af4812ce9130dc4f68c767ffa1b0cd0b6052"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/independent_lambda0/final.pt",
+      "bytes": 1192299,
+      "sha256": "0c43a5f7d4de8640719088f85234160940e8b0f3f17a8629bb11e062152628d2"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/seen_combo_lambda0.1/complete.json",
+      "bytes": 2360,
+      "sha256": "63353d479ae4863b2986e258dba05d5d8ac45fae422a994542818b33fa524e84"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/seen_combo_lambda0.1/final.pt",
+      "bytes": 1192299,
+      "sha256": "4055ae0079ee6925803fa6c9cd8940494c6af7fc3efce6e2188d97bd6ecbea68"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/seen_combo_lambda0/complete.json",
+      "bytes": 2359,
+      "sha256": "3a895b7955f2ca104512b3780f9a4a8a11690c8b0d84ee76928189346b72636d"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/seen_combo_lambda0/final.pt",
+      "bytes": 1192299,
+      "sha256": "84222e4479ffb7505b8b5c6c97d9ad2d6dc473ad2bc1d9c4bd2b20c50b77c961"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s42/best.pt",
+      "bytes": 4628,
+      "sha256": "5027a373a883bb7550a5d41f5562244db618c57fe9b6e7ac3ee35143a41784a9"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s42/complete.json",
+      "bytes": 6037,
+      "sha256": "d8a140384c955f6f46f1cdab4724c4327afc7a1fb7aeba27f06ae7ea1b742243"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s42/final.pt",
+      "bytes": 4635,
+      "sha256": "c4c8754573c7a6949cb44fb5093fd3deb16c44cc84d8b42be04d979786646fcc"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s43/best.pt",
+      "bytes": 4628,
+      "sha256": "a680e1353e1ddfc87dbe23e8199c79e2701460bc4547ef54e431649cafbac447"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s43/complete.json",
+      "bytes": 6027,
+      "sha256": "d6a522a28cc1bde444ae42994b18fcfdd7fe75ce9f1944bd38eb95acb32934f5"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s43/final.pt",
+      "bytes": 4635,
+      "sha256": "8619f23f68beabdd55037248cb983a199c96736aa8a2cb2f9058c9b36627286e"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s44/best.pt",
+      "bytes": 4628,
+      "sha256": "c03f3edb37281f32a3a2d339ca5b8c4a6244db8f751235976860d56e10f1884a"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s44/complete.json",
+      "bytes": 6036,
+      "sha256": "1da37e81a67a29086ba592aaee05cd19fa430613163f34bb2319d6fad6cf6f2e"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s44/final.pt",
+      "bytes": 4635,
+      "sha256": "29d363ef290409f0da677591603dedf9af9bb88b800dc1f9fb38a47b16ee19e6"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/config.json",
+      "bytes": 538,
+      "sha256": "8c98b179b29354a9c64ccae4a5f33da5a178c85966610c9ed84cd38bbdd3bc1c"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/human_review/blind.csv",
+      "bytes": 169656,
+      "sha256": "4e6a88602a35b4e8fd80a6172e98d1326b208c4afa56baf7f4dbcd275eb08956"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/human_review/mapping.json",
+      "bytes": 114003,
+      "sha256": "f8c400e3dcfebc75357ec9fa7522bd3361d914a018a8b2d06ee15da4692f5b20"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/logs/analysis.log",
+      "bytes": 21367,
+      "sha256": "ce156d941a4b3a5158b1df72247821e70a2a61327f6b45447fb2afedb0e38de8"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/logs/slurm-1619.out",
+      "bytes": 20685,
+      "sha256": "9739aef39baa59f7e1f43b6194d65f640443541f9f3de509062c12f1085931a2"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/logs/usage_1619.json",
+      "bytes": 71,
+      "sha256": "92c3f0ebd9c37f5cae130c38c76144b5fa28513da260f25dca507ee72fd01827"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/provenance.json",
+      "bytes": 2464,
+      "sha256": "aca8840541021ae009a7fd7f5176951a19def90317ba673cdd9fc2eec16d4e12"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_lowrank_1000_budget_s42.jsonl",
+      "bytes": 377060,
+      "sha256": "69a8433009dbea15fe3027e64b1cd488178dd66388680e1ebdc4407c967bdea7"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_lowrank_1000_budget_s43.jsonl",
+      "bytes": 377099,
+      "sha256": "ded7250d6b74d7a024104c07e79a297104964c5f0564bdeb59ba812ba9cd3406"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_lowrank_1000_budget_s44.jsonl",
+      "bytes": 377053,
+      "sha256": "22d53ff5a5e88bea19785acb711d76bb1c04f2913a41e4871d6279582ff157f5"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_paired_statistics.json",
+      "bytes": 3083,
+      "sha256": "68113dd6daca2b22c5b4aef8fa3a8a93780e0c687c402fe478d30f1cf8bb4d96"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_1000_s42.jsonl",
+      "bytes": 376205,
+      "sha256": "398296d0ca7ac701bf5f958279dc3b31ac7582f846a2f16734837e0964ebf1a4"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_1000_s43.jsonl",
+      "bytes": 376197,
+      "sha256": "ba71b031b296bb565334fdcbb76ffb69cd7ec1c01d06ef8f64c44573d9f65f17"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_1000_s44.jsonl",
+      "bytes": 376238,
+      "sha256": "122d239c7b7f488851a70c8aee7ec1d5dce5eb90a34088b671faa345e2fe55a0"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_extended_s42.jsonl",
+      "bytes": 376599,
+      "sha256": "9ec871b98c510d91b1d262f300aa1f7af439a66947fd1c717e7b69f403eb4a63"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_extended_s43.jsonl",
+      "bytes": 376633,
+      "sha256": "9f6ec0f48c713ae5796968395c2a77ed0c6d9528a40f3b74bfc5cbc566962c94"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_shift_extended_s44.jsonl",
+      "bytes": 376634,
+      "sha256": "c81147d302a37dfec1cfca78c967e13e70e0833fd5385b130ed3b1d4a6cf2658"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_summary.csv",
+      "bytes": 2022,
+      "sha256": "703ecad0b808d9a22b81cfb226255e3721a649d5e9320e707f7b718a6e3df998"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/A_summary.json",
+      "bytes": 4915,
+      "sha256": "2dff4e9e69fa39aabf599452a04d2f242ab1f85d98c797c55ee5f0dbebb74dee"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_frozen.json",
+      "bytes": 10928,
+      "sha256": "4ed675a464ef88ca32e3c945545988307f8082778084ea03bec55918aee2925b"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0.1_decode_reencode.jsonl",
+      "bytes": 142655,
+      "sha256": "f7258d44af148b52f04b2bc7f3b3aa360c35988b445c9bbc9b095f1773cfbf80"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0.1_latent_once.jsonl",
+      "bytes": 135947,
+      "sha256": "a43c87932babf2b0f377623d052c1ff6f883bc6c11a14cf6569bf10ade81c5a3"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0.1_single_passive.jsonl",
+      "bytes": 137344,
+      "sha256": "67f19fbbccc990b218218640f211bec27c47c29fda44cd61b37df2a302e9c4ac"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0_decode_reencode.jsonl",
+      "bytes": 142401,
+      "sha256": "413eca902f1e5f4f8a4859f81a7e968c8733aad4ba022855ac855a221436da78"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0_latent_once.jsonl",
+      "bytes": 136095,
+      "sha256": "f749451e04c332dc9ff1852887fab74b4edffaf2b3128d9d999300c0d53254c1"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_independent_lambda0_single_passive.jsonl",
+      "bytes": 137194,
+      "sha256": "d5e36d4bb420d1fb652657cf0f386e8e4d034122f1b7d2822710823390a0ff34"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_paired_statistics.json",
+      "bytes": 2814,
+      "sha256": "3fe2f82a91347e8f2083fb5322acc8aaf4a5fdb762ff10ef4c5068da56d88867"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0.1_decode_reencode.jsonl",
+      "bytes": 143004,
+      "sha256": "f1654301c6cd2e5da13d47d1533faf488050c3829f84d935bae8d01d545efdb2"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0.1_latent_once.jsonl",
+      "bytes": 137793,
+      "sha256": "eaa372345e123c481b0f8cd82fd0182ec980acab952c31ae7d5f2139bfa15125"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0.1_single_passive.jsonl",
+      "bytes": 137494,
+      "sha256": "1b515a1e4a1dce6f2049d227c064cb06a56fd9b3b904f51ab7f5f9e299f13d73"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0_decode_reencode.jsonl",
+      "bytes": 142185,
+      "sha256": "fe11f3dcb0343985507d437ae62f1da608808c0e8f33ff3214f557b2f660f105"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0_latent_once.jsonl",
+      "bytes": 136541,
+      "sha256": "9ec8438e70f2f1057a4bf631034c117d10c98c3e0a9669779657f6a8e8fa71b2"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_seen_combo_lambda0_single_passive.jsonl",
+      "bytes": 137203,
+      "sha256": "6ad12ebb4383ae4860ecd28c2b9f243af138d502cb68ed07de5ff837e4d03172"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_summary.csv",
+      "bytes": 2286,
+      "sha256": "4049e8a917038953b7b9c600833a0cac8a3e517cbd686cd82e5476de95d0e5dd"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/B_summary.json",
+      "bytes": 9026,
+      "sha256": "e3b1fd1c8e25210ac59746e2287353452dcd7bb2847dd7834e6dc76f744f2036"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/Shift_frozen.json",
+      "bytes": 20665,
+      "sha256": "f3f5a8686ae4a72eb56436b598a6b7a011573690c3604b648ff08ee0dbe00469"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/Shift_learning_curves.csv",
+      "bytes": 6922,
+      "sha256": "804a8dc7f9761a6edd23bf1225e6081a1b8d91ec7398d98a1104975db56eae5c"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/analysis_audit.json",
+      "bytes": 227,
+      "sha256": "7b30a3cffb529a06d69743bdca0d53ee48ab345b77c18f08a2b83e47ffea2017"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/changed_examples.json",
+      "bytes": 16643,
+      "sha256": "d1e4bd7d005a3c44a4d756eb73cabc4fd508ad67c35a64d5e706475c7aaa9318"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/complete.json",
+      "bytes": 158,
+      "sha256": "c3420201eab55359499e066aed4fd8a8af54b2be85f70b5f75b480f711384f3e"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/original_replay_audit.json",
+      "bytes": 700,
+      "sha256": "39b27a301d9e3cfe43e7ddf890f7e220f21dcb7fff2b31b9f772c6cccebcf3b6"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/results/smoke.json",
+      "bytes": 341,
+      "sha256": "b5d0cd6797b51ab739d022ed008067b9c5e0749aecc6277690717edf5cf07182"
+    },
+    {
+      "path": "experiments/latent_consistency_v1/run.slurm",
+      "bytes": 513,
+      "sha256": "2fefc4db65317fbfec4013df4be20465a3b49acff693fc05a54873bbc6c8f916"
     },
     {
       "path": "he/public/editor.npz",
@@ -867,6 +1182,11 @@
       "sha256": "e49277e88aca14fc6e0d9a36618e2d6f57ea0d85d292b9b56995edc49b09068c"
     },
     {
+      "path": "scripts/aggregate_consistency.py",
+      "bytes": 6395,
+      "sha256": "c3dbc804acba93566902a69d4c89934edaa74b047deb949b268276bf72407b1a"
+    },
+    {
       "path": "scripts/audit_results.py",
       "bytes": 2544,
       "sha256": "d803c5105ab7531c1c7ac18882f7affa5dd919485ebba2d26ba30bfd5209aa1c"
@@ -885,6 +1205,11 @@
       "path": "scripts/budget.py",
       "bytes": 1546,
       "sha256": "9490758bdc55b298e7a51956ff9c123dcc63a7b1501bbb2b9edea47e6bc2e53d"
+    },
+    {
+      "path": "scripts/consistency_probe.py",
+      "bytes": 14820,
+      "sha256": "f7e5426b811f2e64d7b0b65325ff9cce0c154696845c22400ff9b6d1b45fe938"
     },
     {
       "path": "scripts/cpu_he.slurm",
@@ -955,6 +1280,11 @@
       "path": "scripts/prepare_data.py",
       "bytes": 3650,
       "sha256": "d8ea58b3af6de1f2a7d703b3fd80ebe2973d3839e88b5f1f540367b85c768159"
+    },
+    {
+      "path": "scripts/report_consistency.py",
+      "bytes": 9504,
+      "sha256": "f67acbe7b57df6a83c933d2802280697b7478c29be77b0a30738efefc5cbbe93"
     },
     {
       "path": "scripts/run.slurm",
