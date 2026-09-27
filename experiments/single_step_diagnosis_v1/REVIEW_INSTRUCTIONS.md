@@ -1,0 +1,11 @@
+# 输出复核说明
+
+review_blind.csv含400条随机排序输出，隐藏编辑方法；method_map.json单独保存，不交审查者。identity路径的评价任务必须区分，evaluation_goal因此会提示保留原时态或未来时；这不是对路径用途完全盲化。三列time_status、meaning_status、readability_status独立填写pass/fail/uncertain，每输出给一句可核查理由。
+
+时态错误与语法错误不自动等同：重复will可以仍明确表达未来，但语法失败；distribute变distill可以时态和语法通过，却改变事件含义。否定、数字、单位、施受角色、非主要事件均核对。将来编辑不要求对非限定动词或普通if条件从句机械加will。按实际时态语义判断，勿以是否等于参考或含will判断成功。
+
+PTB大小写、缺句末标点、分词空格和可识别分数转义等采用PROTOCOL.md口径；明显残缺或缺失前文无法判断时保留uncertain。参考可能有错误，尤其任务validity为invalid/uncertain时不拿参考当真值。
+
+当前model_review.csv确为Codex逐来源阅读四路径后的模型复核；已知方法、已有案例暴露，不是真人/完全独立盲评。output_model_judgments.tsv是该次模型判断的紧凑原始记录，依次为源还原、目标还原、Shift、低秩，每组三位代表时态/意义/可读性（P/F/U），不是词表自动分类器输出。score_single_step_diagnosis.py只是展开这些判断并统计，不调用语义评估API或自动生成评分。
+
+真人字段和独立匿名表均为空。请用匿名表的副本另行评分；不要覆盖模型评分。完成后保存CSV哈希与审查者/时间再揭盲。不确定不删除：全pass才联合pass，有任一fail即联合fail，无fail但有uncertain为联合uncertain。主比较仅使用生成前已固定的75个模型判有效来源；同时保留所有100源、15个invalid与10个uncertain分层。模型判定适用性也需要真人校准。

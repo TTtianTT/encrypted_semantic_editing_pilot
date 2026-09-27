@@ -20,3 +20,12 @@ sbatch --partition=B300q --dependency=afterok:1614 scripts/gpu_task.slurm script
 sbatch --partition=B300q experiments/latent_consistency_v1/run.slurm  # job 1619
 .venv/bin/python scripts/aggregate_consistency.py
 .venv/bin/python scripts/report_consistency.py
+
+# single_step_diagnosis_v1: no training
+python3 scripts/prepare_single_step_diagnosis.py
+# Task-only model review manually recorded and frozen before generation
+sbatch --partition=B300q experiments/single_step_diagnosis_v1/run.slurm # 1621 COMPLETED
+python3 scripts/export_single_step_review.py
+# Substantive model review recorded in output_model_judgments.tsv
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 .venv/bin/python scripts/score_single_step_diagnosis.py
+python3 scripts/report_single_step_diagnosis.py

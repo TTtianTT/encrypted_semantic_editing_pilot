@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "input_field": "input",
+      "n": 3,
+      "direct_vs_wrapped_ids_equal": true,
+      "identity_memory_equal": true,
+      "padding_mask_correct": true,
+      "eos_present": true
+    },
+    {
+      "input_field": "reference",
+      "n": 3,
+      "direct_vs_wrapped_ids_equal": true,
+      "identity_memory_equal": true,
+      "padding_mask_correct": true,
+      "eos_present": true
+    }
+  ],
+  "EG_eval": true,
+  "EG_frozen": true,
+  "teacher_forcing_used": false,
+  "special_tokens": {
+    "bos_token_id": 0,
+    "eos_token_id": 2,
+    "pad_token_id": 1,
+    "decoder_start_token_id": 2
+  }
+}

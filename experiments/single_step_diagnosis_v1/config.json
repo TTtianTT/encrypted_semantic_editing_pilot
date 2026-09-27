@@ -1,0 +1,54 @@
+{
+  "selection_rule": "minimum common seed; extended Shift development-best vs selected-rank lowrank development-best; no test-based choice",
+  "common_seeds": [
+    42,
+    43,
+    44
+  ],
+  "seed": 42,
+  "checkpoints": {
+    "shift": {
+      "path": "experiments/latent_consistency_v1/checkpoints/shift_s42/best.pt",
+      "sha256": "5027a373a883bb7550a5d41f5562244db618c57fe9b6e7ac3ee35143a41784a9",
+      "seed": 42,
+      "checkpoint_step": 4800,
+      "training_step_limit": 5000,
+      "metadata_sha256": "d8a140384c955f6f46f1cdab4724c4327afc7a1fb7aeba27f06ae7ea1b742243"
+    },
+    "lowrank": {
+      "path": "checkpoints/lowrank_affine_r64_s42/best.pt",
+      "sha256": "4e95d1863d2d57b1f32285e5164b99124a8e5267e7bbb88b93a5b1734394862c",
+      "seed": 42,
+      "checkpoint_step": 600,
+      "training_step_limit": 1000,
+      "metadata_sha256": "775c134699533e812a1904aee68eb455312f5badc9ea69364f23052bc0b80050"
+    }
+  },
+  "model_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+  "model_files": {
+    "models/bart-base/README.md": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097",
+    "models/bart-base/config.json": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+    "models/bart-base/merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "models/bart-base/model.safetensors": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+    "models/bart-base/tokenizer.json": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+    "models/bart-base/vocab.json": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+  },
+  "paths": [
+    "identity_source",
+    "identity_target",
+    "shift",
+    "lowrank"
+  ],
+  "length": 96,
+  "max_new_tokens": 100,
+  "num_beams": 1,
+  "do_sample": false,
+  "forced_eos_token_id": null,
+  "precision": "float32",
+  "batch": 16,
+  "statistical_seed": 20260928,
+  "bootstrap_replicates": 2000,
+  "training": false,
+  "review_type": "Codex model semantic review, method information exposed, not independent human blind review",
+  "max_gpu_wall_s": 900
+}

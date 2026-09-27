@@ -74,3 +74,5 @@ sbatch --partition=<实际获准分区> experiments/latent_consistency_v1/run.sl
 直接组合人工审查包：[335对去重盲评表](experiments/latent_consistency_v1/human_review/direct_deduplicated/blind.csv)及[评分说明](experiments/latent_consistency_v1/human_review/direct_deduplicated/INSTRUCTIONS.md)。仅包含四组latent_once输出，覆盖原400条/100源；尚未人工评分。复现：`python3 scripts/prepare_deduplicated_review.py`。方法回填映射单独保存，不交给审查者。
 
 新一轮[干净任务组合诊断](experiments/clean_composition_v1/README.md)目前仅完成未使用来源审计、待审候选和冻结/推理入口。真人任务审核与新来源方案尚未完成；没有新增训练、没有生成新评估集上的模型输出。不能把候选规则筛选当作可信数据集已建立。
+
+[单步将来时故障定位](experiments/single_step_diagnosis_v1/DIAGNOSIS_REPORT.md)：在旧测试集固定抽取100源，对源还原、目标还原、Shift和低秩共400输出完成实际自由生成及模型语义复核。任务有效性先于生成冻结；没有真人评分、新训练或HE。抽样、评分记录、源句bootstrap和恢复命令均在该实验目录；与待审新候选流程独立。

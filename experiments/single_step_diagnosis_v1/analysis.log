@@ -1,0 +1,280 @@
+{
+  "audit": {
+    "n_sources": 100,
+    "n_outputs": 400,
+    "reviewed_rows": 400,
+    "validity_counts": {
+      "valid": 75,
+      "uncertain": 10,
+      "invalid": 15
+    },
+    "subset_n": 74,
+    "all_rows_retained": true,
+    "human_ratings": 0,
+    "new_clean_candidate_files_used": false
+  },
+  "fixed_valid": [
+    {
+      "stratum": "fixed_valid",
+      "path": "identity_source",
+      "n": 75,
+      "confirmed_n": 74,
+      "fail_n": 1,
+      "uncertain_n": 0,
+      "confirmed_rate": 0.9866666666666667,
+      "optimistic_rate": 0.9866666666666667,
+      "time_status_pass": 75,
+      "time_status_fail": 0,
+      "time_status_uncertain": 0,
+      "meaning_status_pass": 74,
+      "meaning_status_fail": 1,
+      "meaning_status_uncertain": 0,
+      "readability_status_pass": 74,
+      "readability_status_fail": 1,
+      "readability_status_uncertain": 0
+    },
+    {
+      "stratum": "fixed_valid",
+      "path": "identity_target",
+      "n": 75,
+      "confirmed_n": 74,
+      "fail_n": 1,
+      "uncertain_n": 0,
+      "confirmed_rate": 0.9866666666666667,
+      "optimistic_rate": 0.9866666666666667,
+      "time_status_pass": 75,
+      "time_status_fail": 0,
+      "time_status_uncertain": 0,
+      "meaning_status_pass": 74,
+      "meaning_status_fail": 1,
+      "meaning_status_uncertain": 0,
+      "readability_status_pass": 75,
+      "readability_status_fail": 0,
+      "readability_status_uncertain": 0
+    },
+    {
+      "stratum": "fixed_valid",
+      "path": "shift",
+      "n": 75,
+      "confirmed_n": 64,
+      "fail_n": 11,
+      "uncertain_n": 0,
+      "confirmed_rate": 0.8533333333333334,
+      "optimistic_rate": 0.8533333333333334,
+      "time_status_pass": 69,
+      "time_status_fail": 5,
+      "time_status_uncertain": 1,
+      "meaning_status_pass": 69,
+      "meaning_status_fail": 6,
+      "meaning_status_uncertain": 0,
+      "readability_status_pass": 69,
+      "readability_status_fail": 6,
+      "readability_status_uncertain": 0
+    },
+    {
+      "stratum": "fixed_valid",
+      "path": "lowrank",
+      "n": 75,
+      "confirmed_n": 70,
+      "fail_n": 5,
+      "uncertain_n": 0,
+      "confirmed_rate": 0.9333333333333333,
+      "optimistic_rate": 0.9333333333333333,
+      "time_status_pass": 74,
+      "time_status_fail": 1,
+      "time_status_uncertain": 0,
+      "meaning_status_pass": 72,
+      "meaning_status_fail": 2,
+      "meaning_status_uncertain": 1,
+      "readability_status_pass": 72,
+      "readability_status_fail": 3,
+      "readability_status_uncertain": 0
+    }
+  ],
+  "paired": {
+    "conservative": {
+      "n": 75,
+      "difference_pp": 8.0,
+      "CI95_pp": [
+        2.666666666666667,
+        14.666666666666666
+      ],
+      "bootstrap_replicates": 2000,
+      "statistical_seed": 20260928
+    },
+    "uncertain_both_pass": {
+      "n": 75,
+      "difference_pp": 8.0,
+      "CI95_pp": [
+        2.666666666666667,
+        14.666666666666666
+      ],
+      "bootstrap_replicates": 2000,
+      "statistical_seed": 20260928
+    },
+    "worst_for_lowrank": {
+      "n": 75,
+      "difference_pp": 8.0,
+      "CI95_pp": [
+        2.666666666666667,
+        14.666666666666666
+      ],
+      "bootstrap_replicates": 2000,
+      "statistical_seed": 20260928
+    },
+    "best_for_lowrank": {
+      "n": 75,
+      "difference_pp": 8.0,
+      "CI95_pp": [
+        2.666666666666667,
+        14.666666666666666
+      ],
+      "bootstrap_replicates": 2000,
+      "statistical_seed": 20260928
+    },
+    "case_ids": [
+      "S001",
+      "S002",
+      "S004",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S023",
+      "S024",
+      "S027",
+      "S028",
+      "S029",
+      "S031",
+      "S034",
+      "S036",
+      "S038",
+      "S039",
+      "S041",
+      "S042",
+      "S043",
+      "S044",
+      "S045",
+      "S046",
+      "S047",
+      "S048",
+      "S049",
+      "S050",
+      "S051",
+      "S054",
+      "S055",
+      "S056",
+      "S057",
+      "S058",
+      "S059",
+      "S060",
+      "S061",
+      "S062",
+      "S063",
+      "S064",
+      "S067",
+      "S068",
+      "S069",
+      "S070",
+      "S072",
+      "S073",
+      "S075",
+      "S076",
+      "S077",
+      "S079",
+      "S081",
+      "S083",
+      "S084",
+      "S085",
+      "S087",
+      "S088",
+      "S089",
+      "S090",
+      "S091",
+      "S092",
+      "S093",
+      "S095",
+      "S096",
+      "S098",
+      "S099",
+      "S100"
+    ]
+  },
+  "localization": {
+    "shift": {
+      "fixed_valid_failures": [
+        "S010",
+        "S021",
+        "S027",
+        "S029",
+        "S034",
+        "S036",
+        "S038",
+        "S061",
+        "S072",
+        "S088",
+        "S093"
+      ],
+      "failures_with_both_recon_pass": [
+        "S010",
+        "S021",
+        "S027",
+        "S029",
+        "S034",
+        "S036",
+        "S038",
+        "S061",
+        "S072",
+        "S093"
+      ],
+      "failures_with_reconstruction_not_pass": [
+        "S088"
+      ],
+      "categories": {
+        "grammar_error": 6,
+        "information_or_event_error": 6,
+        "temporal_event_relation_loss": 1,
+        "tense_error": 5,
+        "information_loss": 3,
+        "role_misassignment": 1,
+        "number_error": 1,
+        "information_addition": 1
+      }
+    },
+    "lowrank": {
+      "fixed_valid_failures": [
+        "S034",
+        "S036",
+        "S061",
+        "S072",
+        "S088"
+      ],
+      "failures_with_both_recon_pass": [
+        "S034",
+        "S036",
+        "S061",
+        "S072"
+      ],
+      "failures_with_reconstruction_not_pass": [
+        "S088"
+      ],
+      "categories": {
+        "grammar_error": 3,
+        "information_or_event_error": 2,
+        "event_substitution": 1,
+        "tense_error": 1,
+        "number_error": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "shift": {
+    "fixed_valid_failures": [
+      "S010",
+      "S021",
+      "S027",
+      "S029",
+      "S034",
+      "S036",
+      "S038",
+      "S061",
+      "S072",
+      "S088",
+      "S093"
+    ],
+    "failures_with_both_recon_pass": [
+      "S010",
+      "S021",
+      "S027",
+      "S029",
+      "S034",
+      "S036",
+      "S038",
+      "S061",
+      "S072",
+      "S093"
+    ],
+    "failures_with_reconstruction_not_pass": [
+      "S088"
+    ],
+    "categories": {
+      "grammar_error": 6,
+      "information_or_event_error": 6,
+      "temporal_event_relation_loss": 1,
+      "tense_error": 5,
+      "information_loss": 3,
+      "role_misassignment": 1,
+      "number_error": 1,
+      "information_addition": 1
+    }
+  },
+  "lowrank": {
+    "fixed_valid_failures": [
+      "S034",
+      "S036",
+      "S061",
+      "S072",
+      "S088"
+    ],
+    "failures_with_both_recon_pass": [
+      "S034",
+      "S036",
+      "S061",
+      "S072"
+    ],
+    "failures_with_reconstruction_not_pass": [
+      "S088"
+    ],
+    "categories": {
+      "grammar_error": 3,
+      "information_or_event_error": 2,
+      "event_substitution": 1,
+      "tense_error": 1,
+      "number_error": 1
+    }
+  }
+}
