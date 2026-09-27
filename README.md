@@ -70,3 +70,5 @@ sbatch --partition=<实际获准分区> experiments/latent_consistency_v1/run.sl
 ```
 
 原服务器可用同一命令续跑；`experiments/latent_consistency_v1/checkpoints/*/latest.pt` 保存优化器与进度，留在本地、不纳入 Git。完整训练会跳过，缺失或未完成的输出文件会重新生成。异机首次复现 Shift 延长训练前，须按原 A 入口生成三个 seed 的原始 `latest.pt`（仅最佳权重不足以恢复 Adam）。固定配置更改应使用新实验目录，不复用旧结果。日志位于 `experiments/latent_consistency_v1/logs/`；本次作业 1619，单 GPU、4 CPU。
+
+直接组合人工审查包：[335对去重盲评表](experiments/latent_consistency_v1/human_review/direct_deduplicated/blind.csv)及[评分说明](experiments/latent_consistency_v1/human_review/direct_deduplicated/INSTRUCTIONS.md)。仅包含四组latent_once输出，覆盖原400条/100源；尚未人工评分。复现：`python3 scripts/prepare_deduplicated_review.py`。方法回填映射单独保存，不交给审查者。
