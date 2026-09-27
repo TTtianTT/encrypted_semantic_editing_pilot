@@ -1,0 +1,45 @@
+{
+  "method": "nonlinear_bottleneck",
+  "rank": 64,
+  "seed": 44,
+  "steps": 1000,
+  "best_step": 800,
+  "best_dev_loss": 0.045206466025858975,
+  "elapsed_s": 14.599464002996683,
+  "parameters": 99072,
+  "history": [
+    {
+      "step": 200,
+      "dev_token_loss": 0.06975024924883828
+    },
+    {
+      "step": 400,
+      "dev_token_loss": 0.0572118179194346
+    },
+    {
+      "step": 600,
+      "dev_token_loss": 0.0534155520035236
+    },
+    {
+      "step": 800,
+      "dev_token_loss": 0.045206466025858975
+    },
+    {
+      "step": 1000,
+      "dev_token_loss": 0.04531584744713038
+    }
+  ],
+  "gradient_audit": {
+    "0": {
+      "b": 1.6026301383972168,
+      "v.weight": 0.0,
+      "u.weight": 0.17937809228897095
+    },
+    "1": {
+      "b": 1.8392959833145142,
+      "v.weight": 0.2276306301355362,
+      "u.weight": 0.23192982375621796
+    }
+  },
+  "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+}

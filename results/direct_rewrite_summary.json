@@ -1,0 +1,21 @@
+{
+  "n": 100,
+  "config": {
+    "model": "/dataset1/zailong/models/Qwen2.5-7B-Instruct",
+    "config_file_sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "prompt": "Rewrite the sentence in future tense. Preserve names, quantities, dates, negation and event participants. Output only the rewritten sentence.",
+    "max_new_tokens": 100,
+    "greedy": true,
+    "dtype": "bfloat16",
+    "subset": "first100 source_id sorted fixed test",
+    "seed": 42
+  },
+  "load_s": 4.990877357777208,
+  "process_s": 11.906056055799127,
+  "job": "1616",
+  "mean_generation_s": 0.06012077887542546,
+  "Joint_auto": 0.46,
+  "attribute_auto": 0.97,
+  "content_auto": 0.47,
+  "valid_auto": 1.0
+}

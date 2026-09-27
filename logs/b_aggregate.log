@@ -1,0 +1,41 @@
+{
+  "coverage": {
+    "n": 100,
+    "note": "posthoc held-out reference coverage diagnostic; no threshold/model changes permitted",
+    "Joint_auto": 0.51,
+    "content_auto": 0.52,
+    "future_auto": 0.98,
+    "passive_auto": 0.99,
+    "root_roles_preserved_auto": 0.66,
+    "lexical_bag_preserved_auto": 0.86
+  },
+  "paired": {
+    "('independent_lowrank', 'latent_once') minus ('vector_add', 'latent_once')": {
+      "difference_pp": 2.0,
+      "ci95_pp": [
+        0.0,
+        5.0
+      ],
+      "independent_source_groups": 100,
+      "exploratory_single_seed": true
+    },
+    "('composition_trained_lowrank', 'latent_once') minus ('independent_lowrank', 'latent_once')": {
+      "difference_pp": 13.0,
+      "ci95_pp": [
+        6.0,
+        21.0
+      ],
+      "independent_source_groups": 100,
+      "exploratory_single_seed": true
+    },
+    "('independent_lowrank', 'latent_once') minus ('independent_lowrank', 'decode_reencode')": {
+      "difference_pp": -24.0,
+      "ci95_pp": [
+        -32.0,
+        -16.0
+      ],
+      "independent_source_groups": 100,
+      "exploratory_single_seed": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tenseal": "0.3.18",
+  "poly_modulus_degree": 8192,
+  "coeff_mod_bit_sizes": [
+    60,
+    40,
+    40,
+    60
+  ],
+  "scale": 1099511627776,
+  "seal_tc128_parameters_set": true,
+  "tc128_max_coeff_modulus_bits": 218,
+  "keygen_s": 0.3276070556603372,
+  "public_context_bytes": 33893333,
+  "public_context_without_galois_bytes": 465083,
+  "galois_increment_bytes": 33428250,
+  "threads_per_active_process": 4,
+  "hostname": "Jupyter",
+  "cpu": "x86_64",
+  "secret_key_serialized": false,
+  "server_separate_process": true,
+  "server_has_secret_key": false,
+  "leakage": "public valid-token count/mask; only valid tokens encrypted; fixed96 memory at trusted endpoint; method public",
+  "security_limit": "SEAL tc128 parameter validation, not security audit; same Unix UID lacks access-control isolation",
+  "codec_timing": "TenSEAL API combines CKKS encoding+encryption and decryption+decoding; separately reporting these internals unavailable",
+  "packing": "one768-dimensional token per4096-slot ciphertext; factorized768x64 then64x768",
+  "initialization_s": 2.0326227857731283
+}

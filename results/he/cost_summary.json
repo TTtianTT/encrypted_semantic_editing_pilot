@@ -1,0 +1,27 @@
+{
+  "n": 16,
+  "successes": 16,
+  "max_abs_error": 1.1399367934039617e-06,
+  "mean_relative_l2": 2.746567816431352e-07,
+  "max_relative_l2": 3.417616186388001e-07,
+  "max_l2": 1.3275163376269896e-05,
+  "max_quant_float_error": 3.6677920434158295e-07,
+  "server_eval_mean_s": 67.29627905075904,
+  "server_eval_min_s": 45.27014674199745,
+  "server_eval_max_s": 96.20846169115975,
+  "request_total_mean_s": 67.5976142543368,
+  "mean_input_ciphertext_bytes": 4411942.5625,
+  "mean_output_ciphertext_bytes": 1746826.3125,
+  "plaintext_memory_bytes": 294912,
+  "processed_tokens": 213,
+  "source_derived_operation_counts_per_token": {
+    "ciphertext_plain_multiply": 832,
+    "rotation_API_calls_including_zero": 832,
+    "nonzero_logical_rotations": 830,
+    "ciphertext_ciphertext_multiply": 0,
+    "multiplicative_depth": 2,
+    "rescale": 2
+  },
+  "operation_count_basis": "TenSEAL v0.3.18 encrypted_vector.h diagonal loop over vector.size:768 then64. Dense learned matrices; source-level logical counts, not instrumented RNS/key-switch micro-operations.",
+  "library_source": "https://github.com/OpenMined/TenSEAL/blob/v0.3.18/tenseal/cpp/tensors/encrypted_vector.h"
+}

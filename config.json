@@ -1,0 +1,23 @@
+{
+  "model_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+  "length": 96,
+  "max_new_tokens": 100,
+  "lr": 0.001,
+  "batch": 16,
+  "max_steps": 1000,
+  "eval_interval": 200,
+  "patience": 3,
+  "min_delta": 0.0001,
+  "ranks": [
+    4,
+    16,
+    64
+  ],
+  "precision": "float32",
+  "task": "StylePTB_TFU",
+  "seeds": [
+    42,
+    43,
+    44
+  ]
+}

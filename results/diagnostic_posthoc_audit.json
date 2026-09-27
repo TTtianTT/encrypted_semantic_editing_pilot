@@ -1,0 +1,87 @@
+{
+  "posthoc": true,
+  "not_used_for_model_selection_or_gate": true,
+  "reason": "Original strict content rule retains lemma do when did is correctly removed in did not -> will not. Thus Joint_auto=0 on this template is a scorer failure, not evidence of universal semantic failure. Exact whole-template target match is a narrow correctness check, not general fact verification.",
+  "rows": [
+    {
+      "method": "identity",
+      "seed": 42,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 0,
+      "entities_numbers_dates_negation_preserved_n": 20
+    },
+    {
+      "method": "lowrank_affine",
+      "seed": 42,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 18,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "lowrank_affine",
+      "seed": 43,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "lowrank_affine",
+      "seed": 44,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "nonlinear_bottleneck",
+      "seed": 42,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "nonlinear_bottleneck",
+      "seed": 43,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "nonlinear_bottleneck",
+      "seed": 44,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 19,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "shift",
+      "seed": 42,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "shift",
+      "seed": 43,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    },
+    {
+      "method": "shift",
+      "seed": 44,
+      "n": 20,
+      "preregistered_joint_n": 0,
+      "posthoc_exact_template_target_n": 20,
+      "entities_numbers_dates_negation_preserved_n": 19
+    }
+  ]
+}

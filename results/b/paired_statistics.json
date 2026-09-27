@@ -1,0 +1,29 @@
+{
+  "('independent_lowrank', 'latent_once') minus ('vector_add', 'latent_once')": {
+    "difference_pp": 2.0,
+    "ci95_pp": [
+      0.0,
+      5.0
+    ],
+    "independent_source_groups": 100,
+    "exploratory_single_seed": true
+  },
+  "('composition_trained_lowrank', 'latent_once') minus ('independent_lowrank', 'latent_once')": {
+    "difference_pp": 13.0,
+    "ci95_pp": [
+      6.0,
+      21.0
+    ],
+    "independent_source_groups": 100,
+    "exploratory_single_seed": true
+  },
+  "('independent_lowrank', 'latent_once') minus ('independent_lowrank', 'decode_reencode')": {
+    "difference_pp": -24.0,
+    "ci95_pp": [
+      -32.0,
+      -16.0
+    ],
+    "independent_source_groups": 100,
+    "exploratory_single_seed": true
+  }
+}

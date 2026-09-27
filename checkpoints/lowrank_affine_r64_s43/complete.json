@@ -1,0 +1,45 @@
+{
+  "method": "lowrank_affine",
+  "rank": 64,
+  "seed": 43,
+  "steps": 1000,
+  "best_step": 800,
+  "best_dev_loss": 0.05133741565321981,
+  "elapsed_s": 14.591338253114372,
+  "parameters": 99072,
+  "history": [
+    {
+      "step": 200,
+      "dev_token_loss": 0.06748962404808964
+    },
+    {
+      "step": 400,
+      "dev_token_loss": 0.055646636056852695
+    },
+    {
+      "step": 600,
+      "dev_token_loss": 0.053210397376676245
+    },
+    {
+      "step": 800,
+      "dev_token_loss": 0.05133741565321981
+    },
+    {
+      "step": 1000,
+      "dev_token_loss": 0.05402002270312515
+    }
+  ],
+  "gradient_audit": {
+    "0": {
+      "b": 1.6777153015136719,
+      "v.weight": 0.0,
+      "u.weight": 0.38291117548942566
+    },
+    "1": {
+      "b": 1.8395413160324097,
+      "v.weight": 0.45020273327827454,
+      "u.weight": 0.3807433247566223
+    }
+  },
+  "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+}

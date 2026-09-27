@@ -1,0 +1,17 @@
+{
+  "joint_gain_ge_5pp": true,
+  "direction_at_least_2_of_3": true,
+  "content_drop_le_2pp": true,
+  "three_seeds": true,
+  "real_paired_task": true,
+  "evaluator_coverage_adequate": false,
+  "protocol_audit": "same frozen pretrained E/G, fixed split, same optimizer/loss/update cap; lowrank has 3 rank search chances, shift one fixed configuration",
+  "no_bypass_detected": true,
+  "numeric_user_gate_passed": true,
+  "advance_B_C": true,
+  "budget_check_required_before_launch": true,
+  "preliminary_advance_B_C": false,
+  "decision_note": "User-specified A gate takes precedence over agent-added gold-content-coverage veto. Extra coverage flag limits interpretation; post-A protocol deviation is explicitly documented.",
+  "semantic_conclusion_validated": false,
+  "semantic_limitation": "Strict content metric incorrectly rejects some allowed tense auxiliary changes; official targets include malformed grammar; blinded human validation absent. Numerical gate is not semantic proof."
+}

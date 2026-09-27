@@ -1,0 +1,17 @@
+# 实际关键命令（cwd=本项目；2026-09-27；下载细节在scripts/download_model.py和manifest）
+# 创建专用venv时系统ensurepip缺失，随后用基础环境pip --python安装专用venv依赖，并添加base_environment.pth。
+.venv/bin/python scripts/prepare_data.py
+sbatch --partition=RTXq scripts/run.slurm                         #1611
+.venv/bin/python scripts/aggregate.py
+.venv/bin/python scripts/audit_results.py
+scancel 1611 # 所有结果已保存，进程defunct，Slurm资源未释放
+sbatch --partition=RTXq scripts/gpu_task.slurm scripts/he_prepare.py #1612 pending
+scancel 1612 # node05 DRAIN: Kill task failed
+sbatch --partition=B300q scripts/gpu_task.slurm scripts/he_prepare.py #1613
+sbatch --partition=defq --dependency=afterok:1613 scripts/cpu_he.slurm #1614
+sbatch --partition=B300q scripts/gpu_task.slurm scripts/direct_rewrite.py #1615 failed cuDNN
+sbatch --partition=B300q scripts/gpu_task.slurm scripts/direct_rewrite.py #1616 backend fix
+.venv/bin/python scripts/prepare_b.py
+sbatch --partition=B300q scripts/gpu_task.slurm scripts/b_pilot.py #1617
+.venv/bin/python scripts/b_aggregate.py
+sbatch --partition=B300q --dependency=afterok:1614 scripts/gpu_task.slurm scripts/he_decode.py #1618

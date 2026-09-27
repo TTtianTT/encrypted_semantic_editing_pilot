@@ -1,0 +1,64 @@
+{
+  "grouping": "union all source/target variants, preserve official splits; test>dev>train; char3-5 near duplicate >=.92 group exclusion",
+  "heldout_code": "11 future+passive",
+  "seen_training_combination": "31 present+passive",
+  "operation_codes": {
+    "future": "10",
+    "present": "30",
+    "passive": "01"
+  },
+  "seed": 42,
+  "exclusions": {
+    "dev_cross_group_removed": 2,
+    "test_near_removed_rows": 0,
+    "dev_near_removed_rows": 0,
+    "train_near_removed_rows": 0
+  },
+  "files": {
+    "train_future": {
+      "n": 949,
+      "groups": 949,
+      "sha256": "532c9092b2d4958a656083c8fd431e3d94d8a3d91d85ee12f33d458dfcf5c50c"
+    },
+    "train_present": {
+      "n": 636,
+      "groups": 636,
+      "sha256": "fd7dca389dd1062b9729a5415734dd4d6010732a940f6564a7bd2a5e725ef2c4"
+    },
+    "train_passive": {
+      "n": 1000,
+      "groups": 1000,
+      "sha256": "b1a3cc80a529fc879e83a63e27ffa6699437d7915bc0e6a98a634701c260044d"
+    },
+    "train_seen_combo": {
+      "n": 534,
+      "groups": 534,
+      "sha256": "efae44099266e991fc4deb0f16fe75529a25784fa94398716a088935ffb17a2c"
+    },
+    "dev_future": {
+      "n": 96,
+      "groups": 96,
+      "sha256": "da637bdf8069dc4bd0f8b38a1b251a613743d482b5dd69b26e542bf49ecb26a9"
+    },
+    "dev_present": {
+      "n": 70,
+      "groups": 70,
+      "sha256": "aba48edcdd3b6213c83315575da9005b420bf31abd2bf8df5dcb105e9199a6b2"
+    },
+    "dev_passive": {
+      "n": 100,
+      "groups": 100,
+      "sha256": "971da196ff04c310910c5da671b4d1672814bfedf807b73d29130250076ff55c"
+    },
+    "dev_seen_combo": {
+      "n": 55,
+      "groups": 55,
+      "sha256": "e6d024dacb32860cf778d59e9549c20e903731d964b401177f3a35c64d2950d4"
+    },
+    "test_heldout_combo": {
+      "n": 100,
+      "groups": 100,
+      "sha256": "e5ddd85d0f07df34401748cd23e454914cb0158da736c55748be162f80ef4d9c"
+    }
+  }
+}

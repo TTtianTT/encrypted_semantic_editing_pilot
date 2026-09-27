@@ -1,0 +1,42 @@
+{
+  "python": "3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0]",
+  "base_environment": "/dataset1/zailong/envs/peft-sft-lab",
+  "project_environment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3",
+    "spacy": "3.8.16",
+    "en-core-web-sm": "3.8.0",
+    "sacrebleu": "2.6.0",
+    "scikit-learn": "1.9.1",
+    "tenseal": "0.3.18",
+    "pypdf": "6.19.0"
+  },
+  "login_node": "ccdsXAAI",
+  "login_RAM": "187GiB total /179GiB available at initial check",
+  "workspace_disk": "NFS50T /48T available at initial check",
+  "AGENTS_checked": [
+    "/AGENTS.md",
+    "/dataset1/AGENTS.md",
+    "/dataset1/zailong/AGENTS.md",
+    "/dataset1/zailong/workspace/AGENTS.md"
+  ],
+  "AGENTS_found": [],
+  "workspace_git": "not a git repository; independent directory created; existing project directories not modified",
+  "permissions": "Slurm submissions; no login GPU training; no uploads; no private keys serialized",
+  "A_GPU": "RTX PRO6000 Blackwell 97887MiB",
+  "B_C_GPU": "B300 via Slurm",
+  "HE_CPU": "Intel Xeon Platinum8168 @2.70GHz,4threads",
+  "CUDA_build": "12.8",
+  "model_revisions": {
+    "BART": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "Qwen": "local cached checkpoint; upstream commit unavailable; per-file hash recorded"
+  },
+  "budget_caps": {
+    "GPU_hours": 12,
+    "concurrent_GPUs": 2,
+    "CPU_HE_wall_hours": 4
+  }
+}

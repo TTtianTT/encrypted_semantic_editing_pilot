@@ -1,0 +1,123 @@
+{
+  "config": {
+    "seed": 42,
+    "rank": 64,
+    "steps": 600,
+    "batch": 8,
+    "lr": 0.001,
+    "heldout": "future+passive",
+    "train_combo": "present+passive",
+    "order": "passive then tense",
+    "constraint": "0.5 primitive CE +0.5 seen-combination CE; no commutativity loss",
+    "three_operations": [
+      "future",
+      "present",
+      "passive"
+    ]
+  },
+  "config_hash": "3f3ebbbbaf583e316987ac2860eef9a86c38b3f3f76398170bf37c3b9a92c5a8",
+  "fit": [
+    {
+      "scheme": "vector_add",
+      "parameters": 2304,
+      "steps": 600,
+      "single_examples": 4800,
+      "extra_seen_combo_examples": 0,
+      "elapsed_s": 24.55051969503984,
+      "history": [
+        {
+          "step": 100,
+          "loss": 0.4774479568004608
+        },
+        {
+          "step": 200,
+          "loss": 0.28823354840278625
+        },
+        {
+          "step": 300,
+          "loss": 1.4508835077285767
+        },
+        {
+          "step": 400,
+          "loss": 0.20242823660373688
+        },
+        {
+          "step": 500,
+          "loss": 0.18538925051689148
+        },
+        {
+          "step": 600,
+          "loss": 1.367667555809021
+        }
+      ]
+    },
+    {
+      "scheme": "independent_lowrank",
+      "parameters": 297216,
+      "steps": 600,
+      "single_examples": 4800,
+      "extra_seen_combo_examples": 0,
+      "elapsed_s": 10.194953410886228,
+      "history": [
+        {
+          "step": 100,
+          "loss": 0.02069232054054737
+        },
+        {
+          "step": 200,
+          "loss": 0.05063062533736229
+        },
+        {
+          "step": 300,
+          "loss": 0.39448943734169006
+        },
+        {
+          "step": 400,
+          "loss": 0.056169625371694565
+        },
+        {
+          "step": 500,
+          "loss": 0.04066548869013786
+        },
+        {
+          "step": 600,
+          "loss": 0.2060832381248474
+        }
+      ]
+    },
+    {
+      "scheme": "composition_trained_lowrank",
+      "parameters": 297216,
+      "steps": 600,
+      "single_examples": 4800,
+      "extra_seen_combo_examples": 4800,
+      "elapsed_s": 20.852323435712606,
+      "history": [
+        {
+          "step": 100,
+          "loss": 0.372818261384964
+        },
+        {
+          "step": 200,
+          "loss": 0.2373613715171814
+        },
+        {
+          "step": 300,
+          "loss": 0.19222936034202576
+        },
+        {
+          "step": 400,
+          "loss": 0.044768281280994415
+        },
+        {
+          "step": 500,
+          "loss": 0.03999638557434082
+        },
+        {
+          "step": 600,
+          "loss": 0.12665392458438873
+        }
+      ]
+    }
+  ]
+}

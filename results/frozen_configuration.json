@@ -1,0 +1,184 @@
+{
+  "chosen_rank": 64,
+  "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1",
+  "selection": "seed42 developer target token NLL; no test output accessed",
+  "fitted": [
+    {
+      "method": "shift",
+      "rank": 0,
+      "seed": 42,
+      "steps": 1000,
+      "best_step": 1000,
+      "best_dev_loss": 0.14884607070071934,
+      "elapsed_s": 14.924295478966087,
+      "parameters": 768,
+      "history": [
+        {
+          "step": 200,
+          "dev_token_loss": 0.2206587390035622
+        },
+        {
+          "step": 400,
+          "dev_token_loss": 0.18021997493299244
+        },
+        {
+          "step": 600,
+          "dev_token_loss": 0.16309233907716533
+        },
+        {
+          "step": 800,
+          "dev_token_loss": 0.15389647449693036
+        },
+        {
+          "step": 1000,
+          "dev_token_loss": 0.14884607070071934
+        }
+      ],
+      "gradient_audit": {
+        "0": {
+          "b": 1.752336025238037
+        },
+        "1": {
+          "b": 1.696628212928772
+        }
+      },
+      "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+    },
+    {
+      "method": "lowrank_affine",
+      "rank": 4,
+      "seed": 42,
+      "steps": 1000,
+      "best_step": 1000,
+      "best_dev_loss": 0.056502194988871816,
+      "elapsed_s": 14.498663753969595,
+      "parameters": 6912,
+      "history": [
+        {
+          "step": 200,
+          "dev_token_loss": 0.09040073309805809
+        },
+        {
+          "step": 400,
+          "dev_token_loss": 0.0743495093145802
+        },
+        {
+          "step": 600,
+          "dev_token_loss": 0.06459101352549766
+        },
+        {
+          "step": 800,
+          "dev_token_loss": 0.058079069421839165
+        },
+        {
+          "step": 1000,
+          "dev_token_loss": 0.056502194988871816
+        }
+      ],
+      "gradient_audit": {
+        "0": {
+          "b": 1.752336025238037,
+          "v.weight": 0.0,
+          "u.weight": 0.10127396881580353
+        },
+        "1": {
+          "b": 1.6944050788879395,
+          "v.weight": 0.0858355388045311,
+          "u.weight": 0.09603273123502731
+        }
+      },
+      "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+    },
+    {
+      "method": "lowrank_affine",
+      "rank": 16,
+      "seed": 42,
+      "steps": 1000,
+      "best_step": 1000,
+      "best_dev_loss": 0.05062565915349932,
+      "elapsed_s": 14.566083776997402,
+      "parameters": 25344,
+      "history": [
+        {
+          "step": 200,
+          "dev_token_loss": 0.07598861178327236
+        },
+        {
+          "step": 400,
+          "dev_token_loss": 0.06442203844594052
+        },
+        {
+          "step": 600,
+          "dev_token_loss": 0.057069001201660675
+        },
+        {
+          "step": 800,
+          "dev_token_loss": 0.0554007393623003
+        },
+        {
+          "step": 1000,
+          "dev_token_loss": 0.05062565915349932
+        }
+      ],
+      "gradient_audit": {
+        "0": {
+          "b": 1.752336025238037,
+          "v.weight": 0.0,
+          "u.weight": 0.2184937596321106
+        },
+        "1": {
+          "b": 1.6899616718292236,
+          "v.weight": 0.20968298614025116,
+          "u.weight": 0.18118034303188324
+        }
+      },
+      "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+    },
+    {
+      "method": "lowrank_affine",
+      "rank": 64,
+      "seed": 42,
+      "steps": 1000,
+      "best_step": 600,
+      "best_dev_loss": 0.05038040868940082,
+      "elapsed_s": 14.589692571898922,
+      "parameters": 99072,
+      "history": [
+        {
+          "step": 200,
+          "dev_token_loss": 0.07921282154109803
+        },
+        {
+          "step": 400,
+          "dev_token_loss": 0.05654385547481349
+        },
+        {
+          "step": 600,
+          "dev_token_loss": 0.05038040868940082
+        },
+        {
+          "step": 800,
+          "dev_token_loss": 0.05224421764372664
+        },
+        {
+          "step": 1000,
+          "dev_token_loss": 0.054842695665060996
+        }
+      ],
+      "gradient_audit": {
+        "0": {
+          "b": 1.752336025238037,
+          "v.weight": 0.0,
+          "u.weight": 0.48153170943260193
+        },
+        "1": {
+          "b": 1.6709905862808228,
+          "v.weight": 0.4433266520500183,
+          "u.weight": 0.42386117577552795
+        }
+      },
+      "config_hash": "8594541df753e12dd557118f0035db607e09dac5f05940d851e71d228c66c1d1"
+    }
+  ],
+  "frozen_utc": "2026-09-27T11:35:26.393818+00:00"
+}

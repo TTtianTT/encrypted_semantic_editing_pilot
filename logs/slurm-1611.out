@@ -1,0 +1,574 @@
+Sun Sep 27 19:33:41 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:01:00.0 Off |                    0 |
+| N/A   23C    P8             33W /  600W |       3MiB /  97887MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights:  64%|██████▍   | 166/259 [00:00<00:00, 1579.46it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 1652.57it/s]
+generate identity_pre_repair seed=42 16/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 32/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 48/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 64/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 80/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 96/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 112/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 128/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 144/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 160/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 176/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 192/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 208/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 224/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 240/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 256/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 272/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 288/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 304/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 320/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 336/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 352/363 -> dev_identity_initial.jsonl
+generate identity_pre_repair seed=42 363/363 -> dev_identity_initial.jsonl
+R initial {'n': 363, 'content_auto': 0.9944903581267218, 'invalid_auto': 0.0, 'exact_reconstruction': 0.9944903581267218, 'token_reconstruction_similarity': 0.9994613971886699}
+shift_r0_s42 step=50 train_loss=0.37612
+shift_r0_s42 step=100 train_loss=0.31494
+shift_r0_s42 step=150 train_loss=0.20804
+shift_r0_s42 step=200 train_loss=0.16298
+shift_r0_s42 validation step=200 loss=0.22066
+shift_r0_s42 step=250 train_loss=0.18594
+shift_r0_s42 step=300 train_loss=0.17256
+shift_r0_s42 step=350 train_loss=0.24246
+shift_r0_s42 step=400 train_loss=0.23991
+shift_r0_s42 validation step=400 loss=0.18022
+shift_r0_s42 step=450 train_loss=0.16104
+shift_r0_s42 step=500 train_loss=0.06708
+shift_r0_s42 step=550 train_loss=0.14496
+shift_r0_s42 step=600 train_loss=0.15871
+shift_r0_s42 validation step=600 loss=0.16309
+shift_r0_s42 step=650 train_loss=0.20944
+shift_r0_s42 step=700 train_loss=0.13044
+shift_r0_s42 step=750 train_loss=0.19128
+shift_r0_s42 step=800 train_loss=0.10181
+shift_r0_s42 validation step=800 loss=0.15390
+shift_r0_s42 step=850 train_loss=0.12008
+shift_r0_s42 step=900 train_loss=0.11079
+shift_r0_s42 step=950 train_loss=0.18244
+shift_r0_s42 step=1000 train_loss=0.23166
+shift_r0_s42 validation step=1000 loss=0.14885
+lowrank_affine_r4_s42 step=50 train_loss=0.07351
+lowrank_affine_r4_s42 step=100 train_loss=0.08370
+lowrank_affine_r4_s42 step=150 train_loss=0.07806
+lowrank_affine_r4_s42 step=200 train_loss=0.04007
+lowrank_affine_r4_s42 validation step=200 loss=0.09040
+lowrank_affine_r4_s42 step=250 train_loss=0.12238
+lowrank_affine_r4_s42 step=300 train_loss=0.04310
+lowrank_affine_r4_s42 step=350 train_loss=0.06561
+lowrank_affine_r4_s42 step=400 train_loss=0.10872
+lowrank_affine_r4_s42 validation step=400 loss=0.07435
+lowrank_affine_r4_s42 step=450 train_loss=0.01333
+lowrank_affine_r4_s42 step=500 train_loss=0.01155
+lowrank_affine_r4_s42 step=550 train_loss=0.04573
+lowrank_affine_r4_s42 step=600 train_loss=0.03392
+lowrank_affine_r4_s42 validation step=600 loss=0.06459
+lowrank_affine_r4_s42 step=650 train_loss=0.02838
+lowrank_affine_r4_s42 step=700 train_loss=0.02144
+lowrank_affine_r4_s42 step=750 train_loss=0.02281
+lowrank_affine_r4_s42 step=800 train_loss=0.00995
+lowrank_affine_r4_s42 validation step=800 loss=0.05808
+lowrank_affine_r4_s42 step=850 train_loss=0.03535
+lowrank_affine_r4_s42 step=900 train_loss=0.03043
+lowrank_affine_r4_s42 step=950 train_loss=0.05860
+lowrank_affine_r4_s42 step=1000 train_loss=0.11990
+lowrank_affine_r4_s42 validation step=1000 loss=0.05650
+lowrank_affine_r16_s42 step=50 train_loss=0.03967
+lowrank_affine_r16_s42 step=100 train_loss=0.06150
+lowrank_affine_r16_s42 step=150 train_loss=0.07658
+lowrank_affine_r16_s42 step=200 train_loss=0.02609
+lowrank_affine_r16_s42 validation step=200 loss=0.07599
+lowrank_affine_r16_s42 step=250 train_loss=0.10593
+lowrank_affine_r16_s42 step=300 train_loss=0.02983
+lowrank_affine_r16_s42 step=350 train_loss=0.04168
+lowrank_affine_r16_s42 step=400 train_loss=0.07037
+lowrank_affine_r16_s42 validation step=400 loss=0.06442
+lowrank_affine_r16_s42 step=450 train_loss=0.00678
+lowrank_affine_r16_s42 step=500 train_loss=0.01130
+lowrank_affine_r16_s42 step=550 train_loss=0.02467
+lowrank_affine_r16_s42 step=600 train_loss=0.02711
+lowrank_affine_r16_s42 validation step=600 loss=0.05707
+lowrank_affine_r16_s42 step=650 train_loss=0.02121
+lowrank_affine_r16_s42 step=700 train_loss=0.01551
+lowrank_affine_r16_s42 step=750 train_loss=0.01985
+lowrank_affine_r16_s42 step=800 train_loss=0.00611
+lowrank_affine_r16_s42 validation step=800 loss=0.05540
+lowrank_affine_r16_s42 step=850 train_loss=0.02607
+lowrank_affine_r16_s42 step=900 train_loss=0.04541
+lowrank_affine_r16_s42 step=950 train_loss=0.04023
+lowrank_affine_r16_s42 step=1000 train_loss=0.09945
+lowrank_affine_r16_s42 validation step=1000 loss=0.05063
+lowrank_affine_r64_s42 step=50 train_loss=0.03711
+lowrank_affine_r64_s42 step=100 train_loss=0.03259
+lowrank_affine_r64_s42 step=150 train_loss=0.08343
+lowrank_affine_r64_s42 step=200 train_loss=0.03023
+lowrank_affine_r64_s42 validation step=200 loss=0.07921
+lowrank_affine_r64_s42 step=250 train_loss=0.07095
+lowrank_affine_r64_s42 step=300 train_loss=0.01609
+lowrank_affine_r64_s42 step=350 train_loss=0.02493
+lowrank_affine_r64_s42 step=400 train_loss=0.03858
+lowrank_affine_r64_s42 validation step=400 loss=0.05654
+lowrank_affine_r64_s42 step=450 train_loss=0.00576
+lowrank_affine_r64_s42 step=500 train_loss=0.00579
+lowrank_affine_r64_s42 step=550 train_loss=0.00923
+lowrank_affine_r64_s42 step=600 train_loss=0.02536
+lowrank_affine_r64_s42 validation step=600 loss=0.05038
+lowrank_affine_r64_s42 step=650 train_loss=0.02335
+lowrank_affine_r64_s42 step=700 train_loss=0.00395
+lowrank_affine_r64_s42 step=750 train_loss=0.01638
+lowrank_affine_r64_s42 step=800 train_loss=0.01982
+lowrank_affine_r64_s42 validation step=800 loss=0.05224
+lowrank_affine_r64_s42 step=850 train_loss=0.02191
+lowrank_affine_r64_s42 step=900 train_loss=0.03962
+lowrank_affine_r64_s42 step=950 train_loss=0.03352
+lowrank_affine_r64_s42 step=1000 train_loss=0.06270
+lowrank_affine_r64_s42 validation step=1000 loss=0.05484
+nonlinear_bottleneck_r64_s42 step=50 train_loss=0.02998
+nonlinear_bottleneck_r64_s42 step=100 train_loss=0.04079
+nonlinear_bottleneck_r64_s42 step=150 train_loss=0.10823
+nonlinear_bottleneck_r64_s42 step=200 train_loss=0.02924
+nonlinear_bottleneck_r64_s42 validation step=200 loss=0.06760
+nonlinear_bottleneck_r64_s42 step=250 train_loss=0.07752
+nonlinear_bottleneck_r64_s42 step=300 train_loss=0.03402
+nonlinear_bottleneck_r64_s42 step=350 train_loss=0.02337
+nonlinear_bottleneck_r64_s42 step=400 train_loss=0.05210
+nonlinear_bottleneck_r64_s42 validation step=400 loss=0.05609
+nonlinear_bottleneck_r64_s42 step=450 train_loss=0.00786
+nonlinear_bottleneck_r64_s42 step=500 train_loss=0.00698
+nonlinear_bottleneck_r64_s42 step=550 train_loss=0.01460
+nonlinear_bottleneck_r64_s42 step=600 train_loss=0.01660
+nonlinear_bottleneck_r64_s42 validation step=600 loss=0.05020
+nonlinear_bottleneck_r64_s42 step=650 train_loss=0.02075
+nonlinear_bottleneck_r64_s42 step=700 train_loss=0.01182
+nonlinear_bottleneck_r64_s42 step=750 train_loss=0.01174
+nonlinear_bottleneck_r64_s42 step=800 train_loss=0.00697
+nonlinear_bottleneck_r64_s42 validation step=800 loss=0.04769
+nonlinear_bottleneck_r64_s42 step=850 train_loss=0.03217
+nonlinear_bottleneck_r64_s42 step=900 train_loss=0.03038
+nonlinear_bottleneck_r64_s42 step=950 train_loss=0.03068
+nonlinear_bottleneck_r64_s42 step=1000 train_loss=0.08178
+nonlinear_bottleneck_r64_s42 validation step=1000 loss=0.04441
+shift_r0_s43 step=50 train_loss=0.56012
+shift_r0_s43 step=100 train_loss=0.26026
+shift_r0_s43 step=150 train_loss=0.30361
+shift_r0_s43 step=200 train_loss=0.27231
+shift_r0_s43 validation step=200 loss=0.22131
+shift_r0_s43 step=250 train_loss=0.24756
+shift_r0_s43 step=300 train_loss=0.15693
+shift_r0_s43 step=350 train_loss=0.20472
+shift_r0_s43 step=400 train_loss=0.10274
+shift_r0_s43 validation step=400 loss=0.17934
+shift_r0_s43 step=450 train_loss=0.16219
+shift_r0_s43 step=500 train_loss=0.20268
+shift_r0_s43 step=550 train_loss=0.17672
+shift_r0_s43 step=600 train_loss=0.06401
+shift_r0_s43 validation step=600 loss=0.16291
+shift_r0_s43 step=650 train_loss=0.18558
+shift_r0_s43 step=700 train_loss=0.27332
+shift_r0_s43 step=750 train_loss=0.20439
+shift_r0_s43 step=800 train_loss=0.10891
+shift_r0_s43 validation step=800 loss=0.15455
+shift_r0_s43 step=850 train_loss=0.17341
+shift_r0_s43 step=900 train_loss=0.14699
+shift_r0_s43 step=950 train_loss=0.12417
+shift_r0_s43 step=1000 train_loss=0.17253
+shift_r0_s43 validation step=1000 loss=0.14920
+lowrank_affine_r64_s43 step=50 train_loss=0.09247
+lowrank_affine_r64_s43 step=100 train_loss=0.08025
+lowrank_affine_r64_s43 step=150 train_loss=0.13364
+lowrank_affine_r64_s43 step=200 train_loss=0.06466
+lowrank_affine_r64_s43 validation step=200 loss=0.06749
+lowrank_affine_r64_s43 step=250 train_loss=0.04269
+lowrank_affine_r64_s43 step=300 train_loss=0.02768
+lowrank_affine_r64_s43 step=350 train_loss=0.02875
+lowrank_affine_r64_s43 step=400 train_loss=0.00804
+lowrank_affine_r64_s43 validation step=400 loss=0.05565
+lowrank_affine_r64_s43 step=450 train_loss=0.03877
+lowrank_affine_r64_s43 step=500 train_loss=0.04196
+lowrank_affine_r64_s43 step=550 train_loss=0.02152
+lowrank_affine_r64_s43 step=600 train_loss=0.05729
+lowrank_affine_r64_s43 validation step=600 loss=0.05321
+lowrank_affine_r64_s43 step=650 train_loss=0.01422
+lowrank_affine_r64_s43 step=700 train_loss=0.04799
+lowrank_affine_r64_s43 step=750 train_loss=0.03221
+lowrank_affine_r64_s43 step=800 train_loss=0.00711
+lowrank_affine_r64_s43 validation step=800 loss=0.05134
+lowrank_affine_r64_s43 step=850 train_loss=0.05301
+lowrank_affine_r64_s43 step=900 train_loss=0.00447
+lowrank_affine_r64_s43 step=950 train_loss=0.00223
+lowrank_affine_r64_s43 step=1000 train_loss=0.00291
+lowrank_affine_r64_s43 validation step=1000 loss=0.05402
+nonlinear_bottleneck_r64_s43 step=50 train_loss=0.13008
+nonlinear_bottleneck_r64_s43 step=100 train_loss=0.07269
+nonlinear_bottleneck_r64_s43 step=150 train_loss=0.15021
+nonlinear_bottleneck_r64_s43 step=200 train_loss=0.07514
+nonlinear_bottleneck_r64_s43 validation step=200 loss=0.06910
+nonlinear_bottleneck_r64_s43 step=250 train_loss=0.04405
+nonlinear_bottleneck_r64_s43 step=300 train_loss=0.02654
+nonlinear_bottleneck_r64_s43 step=350 train_loss=0.01892
+nonlinear_bottleneck_r64_s43 step=400 train_loss=0.00605
+nonlinear_bottleneck_r64_s43 validation step=400 loss=0.05071
+nonlinear_bottleneck_r64_s43 step=450 train_loss=0.04317
+nonlinear_bottleneck_r64_s43 step=500 train_loss=0.03484
+nonlinear_bottleneck_r64_s43 step=550 train_loss=0.01555
+nonlinear_bottleneck_r64_s43 step=600 train_loss=0.05460
+nonlinear_bottleneck_r64_s43 validation step=600 loss=0.04387
+nonlinear_bottleneck_r64_s43 step=650 train_loss=0.01660
+nonlinear_bottleneck_r64_s43 step=700 train_loss=0.06275
+nonlinear_bottleneck_r64_s43 step=750 train_loss=0.03854
+nonlinear_bottleneck_r64_s43 step=800 train_loss=0.00811
+nonlinear_bottleneck_r64_s43 validation step=800 loss=0.04933
+nonlinear_bottleneck_r64_s43 step=850 train_loss=0.04674
+nonlinear_bottleneck_r64_s43 step=900 train_loss=0.00553
+nonlinear_bottleneck_r64_s43 step=950 train_loss=0.01062
+nonlinear_bottleneck_r64_s43 step=1000 train_loss=0.00667
+nonlinear_bottleneck_r64_s43 validation step=1000 loss=0.04861
+shift_r0_s44 step=50 train_loss=0.51272
+shift_r0_s44 step=100 train_loss=0.31996
+shift_r0_s44 step=150 train_loss=0.22888
+shift_r0_s44 step=200 train_loss=0.19185
+shift_r0_s44 validation step=200 loss=0.21986
+shift_r0_s44 step=250 train_loss=0.27558
+shift_r0_s44 step=300 train_loss=0.36127
+shift_r0_s44 step=350 train_loss=0.15383
+shift_r0_s44 step=400 train_loss=0.12378
+shift_r0_s44 validation step=400 loss=0.18022
+shift_r0_s44 step=450 train_loss=0.30488
+shift_r0_s44 step=500 train_loss=0.17307
+shift_r0_s44 step=550 train_loss=0.16999
+shift_r0_s44 step=600 train_loss=0.23789
+shift_r0_s44 validation step=600 loss=0.16290
+shift_r0_s44 step=650 train_loss=0.14251
+shift_r0_s44 step=700 train_loss=0.16214
+shift_r0_s44 step=750 train_loss=0.20621
+shift_r0_s44 step=800 train_loss=0.16287
+shift_r0_s44 validation step=800 loss=0.15461
+shift_r0_s44 step=850 train_loss=0.15474
+shift_r0_s44 step=900 train_loss=0.13493
+shift_r0_s44 step=950 train_loss=0.11291
+shift_r0_s44 step=1000 train_loss=0.11912
+shift_r0_s44 validation step=1000 loss=0.14818
+lowrank_affine_r64_s44 step=50 train_loss=0.09790
+lowrank_affine_r64_s44 step=100 train_loss=0.11362
+lowrank_affine_r64_s44 step=150 train_loss=0.04014
+lowrank_affine_r64_s44 step=200 train_loss=0.11237
+lowrank_affine_r64_s44 validation step=200 loss=0.06567
+lowrank_affine_r64_s44 step=250 train_loss=0.05128
+lowrank_affine_r64_s44 step=300 train_loss=0.06005
+lowrank_affine_r64_s44 step=350 train_loss=0.03239
+lowrank_affine_r64_s44 step=400 train_loss=0.00493
+lowrank_affine_r64_s44 validation step=400 loss=0.05280
+lowrank_affine_r64_s44 step=450 train_loss=0.08277
+lowrank_affine_r64_s44 step=500 train_loss=0.01628
+lowrank_affine_r64_s44 step=550 train_loss=0.00631
+lowrank_affine_r64_s44 step=600 train_loss=0.02334
+lowrank_affine_r64_s44 validation step=600 loss=0.05483
+lowrank_affine_r64_s44 step=650 train_loss=0.01870
+lowrank_affine_r64_s44 step=700 train_loss=0.00963
+lowrank_affine_r64_s44 step=750 train_loss=0.06430
+lowrank_affine_r64_s44 step=800 train_loss=0.01528
+lowrank_affine_r64_s44 validation step=800 loss=0.04545
+lowrank_affine_r64_s44 step=850 train_loss=0.04965
+lowrank_affine_r64_s44 step=900 train_loss=0.03170
+lowrank_affine_r64_s44 step=950 train_loss=0.00672
+lowrank_affine_r64_s44 step=1000 train_loss=0.00607
+lowrank_affine_r64_s44 validation step=1000 loss=0.04981
+nonlinear_bottleneck_r64_s44 step=50 train_loss=0.09508
+nonlinear_bottleneck_r64_s44 step=100 train_loss=0.12697
+nonlinear_bottleneck_r64_s44 step=150 train_loss=0.04185
+nonlinear_bottleneck_r64_s44 step=200 train_loss=0.12374
+nonlinear_bottleneck_r64_s44 validation step=200 loss=0.06975
+nonlinear_bottleneck_r64_s44 step=250 train_loss=0.04245
+nonlinear_bottleneck_r64_s44 step=300 train_loss=0.09468
+nonlinear_bottleneck_r64_s44 step=350 train_loss=0.03997
+nonlinear_bottleneck_r64_s44 step=400 train_loss=0.00571
+nonlinear_bottleneck_r64_s44 validation step=400 loss=0.05721
+nonlinear_bottleneck_r64_s44 step=450 train_loss=0.05502
+nonlinear_bottleneck_r64_s44 step=500 train_loss=0.01603
+nonlinear_bottleneck_r64_s44 step=550 train_loss=0.00763
+nonlinear_bottleneck_r64_s44 step=600 train_loss=0.01767
+nonlinear_bottleneck_r64_s44 validation step=600 loss=0.05342
+nonlinear_bottleneck_r64_s44 step=650 train_loss=0.01551
+nonlinear_bottleneck_r64_s44 step=700 train_loss=0.00777
+nonlinear_bottleneck_r64_s44 step=750 train_loss=0.05668
+nonlinear_bottleneck_r64_s44 step=800 train_loss=0.02063
+nonlinear_bottleneck_r64_s44 validation step=800 loss=0.04521
+nonlinear_bottleneck_r64_s44 step=850 train_loss=0.03025
+nonlinear_bottleneck_r64_s44 step=900 train_loss=0.02775
+nonlinear_bottleneck_r64_s44 step=950 train_loss=0.00429
+nonlinear_bottleneck_r64_s44 step=1000 train_loss=0.00271
+nonlinear_bottleneck_r64_s44 validation step=1000 loss=0.04532
+generate identity seed=42 16/364 -> test_identity.jsonl
+generate identity seed=42 32/364 -> test_identity.jsonl
+generate identity seed=42 48/364 -> test_identity.jsonl
+generate identity seed=42 64/364 -> test_identity.jsonl
+generate identity seed=42 80/364 -> test_identity.jsonl
+generate identity seed=42 96/364 -> test_identity.jsonl
+generate identity seed=42 112/364 -> test_identity.jsonl
+generate identity seed=42 128/364 -> test_identity.jsonl
+generate identity seed=42 144/364 -> test_identity.jsonl
+generate identity seed=42 160/364 -> test_identity.jsonl
+generate identity seed=42 176/364 -> test_identity.jsonl
+generate identity seed=42 192/364 -> test_identity.jsonl
+generate identity seed=42 208/364 -> test_identity.jsonl
+generate identity seed=42 224/364 -> test_identity.jsonl
+generate identity seed=42 240/364 -> test_identity.jsonl
+generate identity seed=42 256/364 -> test_identity.jsonl
+generate identity seed=42 272/364 -> test_identity.jsonl
+generate identity seed=42 288/364 -> test_identity.jsonl
+generate identity seed=42 304/364 -> test_identity.jsonl
+generate identity seed=42 320/364 -> test_identity.jsonl
+generate identity seed=42 336/364 -> test_identity.jsonl
+generate identity seed=42 352/364 -> test_identity.jsonl
+generate identity seed=42 364/364 -> test_identity.jsonl
+generate identity seed=42 16/20 -> diagnostic_identity.jsonl
+generate identity seed=42 20/20 -> diagnostic_identity.jsonl
+generate shift seed=42 16/364 -> test_shift_s42.jsonl
+generate shift seed=42 32/364 -> test_shift_s42.jsonl
+generate shift seed=42 48/364 -> test_shift_s42.jsonl
+generate shift seed=42 64/364 -> test_shift_s42.jsonl
+generate shift seed=42 80/364 -> test_shift_s42.jsonl
+generate shift seed=42 96/364 -> test_shift_s42.jsonl
+generate shift seed=42 112/364 -> test_shift_s42.jsonl
+generate shift seed=42 128/364 -> test_shift_s42.jsonl
+generate shift seed=42 144/364 -> test_shift_s42.jsonl
+generate shift seed=42 160/364 -> test_shift_s42.jsonl
+generate shift seed=42 176/364 -> test_shift_s42.jsonl
+generate shift seed=42 192/364 -> test_shift_s42.jsonl
+generate shift seed=42 208/364 -> test_shift_s42.jsonl
+generate shift seed=42 224/364 -> test_shift_s42.jsonl
+generate shift seed=42 240/364 -> test_shift_s42.jsonl
+generate shift seed=42 256/364 -> test_shift_s42.jsonl
+generate shift seed=42 272/364 -> test_shift_s42.jsonl
+generate shift seed=42 288/364 -> test_shift_s42.jsonl
+generate shift seed=42 304/364 -> test_shift_s42.jsonl
+generate shift seed=42 320/364 -> test_shift_s42.jsonl
+generate shift seed=42 336/364 -> test_shift_s42.jsonl
+generate shift seed=42 352/364 -> test_shift_s42.jsonl
+generate shift seed=42 364/364 -> test_shift_s42.jsonl
+generate shift seed=42 16/20 -> diagnostic_shift_s42.jsonl
+generate shift seed=42 20/20 -> diagnostic_shift_s42.jsonl
+generate lowrank_affine seed=42 16/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 32/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 48/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 64/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 80/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 96/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 112/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 128/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 144/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 160/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 176/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 192/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 208/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 224/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 240/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 256/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 272/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 288/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 304/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 320/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 336/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 352/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 364/364 -> test_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 16/20 -> diagnostic_lowrank_affine_s42.jsonl
+generate lowrank_affine seed=42 20/20 -> diagnostic_lowrank_affine_s42.jsonl
+generate nonlinear_bottleneck seed=42 16/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 32/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 48/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 64/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 80/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 96/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 112/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 128/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 144/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 160/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 176/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 192/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 208/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 224/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 240/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 256/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 272/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 288/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 304/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 320/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 336/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 352/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 364/364 -> test_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 16/20 -> diagnostic_nonlinear_bottleneck_s42.jsonl
+generate nonlinear_bottleneck seed=42 20/20 -> diagnostic_nonlinear_bottleneck_s42.jsonl
+generate shift seed=43 16/364 -> test_shift_s43.jsonl
+generate shift seed=43 32/364 -> test_shift_s43.jsonl
+generate shift seed=43 48/364 -> test_shift_s43.jsonl
+generate shift seed=43 64/364 -> test_shift_s43.jsonl
+generate shift seed=43 80/364 -> test_shift_s43.jsonl
+generate shift seed=43 96/364 -> test_shift_s43.jsonl
+generate shift seed=43 112/364 -> test_shift_s43.jsonl
+generate shift seed=43 128/364 -> test_shift_s43.jsonl
+generate shift seed=43 144/364 -> test_shift_s43.jsonl
+generate shift seed=43 160/364 -> test_shift_s43.jsonl
+generate shift seed=43 176/364 -> test_shift_s43.jsonl
+generate shift seed=43 192/364 -> test_shift_s43.jsonl
+generate shift seed=43 208/364 -> test_shift_s43.jsonl
+generate shift seed=43 224/364 -> test_shift_s43.jsonl
+generate shift seed=43 240/364 -> test_shift_s43.jsonl
+generate shift seed=43 256/364 -> test_shift_s43.jsonl
+generate shift seed=43 272/364 -> test_shift_s43.jsonl
+generate shift seed=43 288/364 -> test_shift_s43.jsonl
+generate shift seed=43 304/364 -> test_shift_s43.jsonl
+generate shift seed=43 320/364 -> test_shift_s43.jsonl
+generate shift seed=43 336/364 -> test_shift_s43.jsonl
+generate shift seed=43 352/364 -> test_shift_s43.jsonl
+generate shift seed=43 364/364 -> test_shift_s43.jsonl
+generate shift seed=43 16/20 -> diagnostic_shift_s43.jsonl
+generate shift seed=43 20/20 -> diagnostic_shift_s43.jsonl
+generate lowrank_affine seed=43 16/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 32/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 48/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 64/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 80/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 96/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 112/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 128/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 144/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 160/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 176/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 192/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 208/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 224/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 240/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 256/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 272/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 288/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 304/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 320/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 336/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 352/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 364/364 -> test_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 16/20 -> diagnostic_lowrank_affine_s43.jsonl
+generate lowrank_affine seed=43 20/20 -> diagnostic_lowrank_affine_s43.jsonl
+generate nonlinear_bottleneck seed=43 16/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 32/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 48/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 64/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 80/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 96/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 112/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 128/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 144/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 160/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 176/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 192/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 208/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 224/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 240/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 256/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 272/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 288/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 304/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 320/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 336/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 352/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 364/364 -> test_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 16/20 -> diagnostic_nonlinear_bottleneck_s43.jsonl
+generate nonlinear_bottleneck seed=43 20/20 -> diagnostic_nonlinear_bottleneck_s43.jsonl
+generate shift seed=44 16/364 -> test_shift_s44.jsonl
+generate shift seed=44 32/364 -> test_shift_s44.jsonl
+generate shift seed=44 48/364 -> test_shift_s44.jsonl
+generate shift seed=44 64/364 -> test_shift_s44.jsonl
+generate shift seed=44 80/364 -> test_shift_s44.jsonl
+generate shift seed=44 96/364 -> test_shift_s44.jsonl
+generate shift seed=44 112/364 -> test_shift_s44.jsonl
+generate shift seed=44 128/364 -> test_shift_s44.jsonl
+generate shift seed=44 144/364 -> test_shift_s44.jsonl
+generate shift seed=44 160/364 -> test_shift_s44.jsonl
+generate shift seed=44 176/364 -> test_shift_s44.jsonl
+generate shift seed=44 192/364 -> test_shift_s44.jsonl
+generate shift seed=44 208/364 -> test_shift_s44.jsonl
+generate shift seed=44 224/364 -> test_shift_s44.jsonl
+generate shift seed=44 240/364 -> test_shift_s44.jsonl
+generate shift seed=44 256/364 -> test_shift_s44.jsonl
+generate shift seed=44 272/364 -> test_shift_s44.jsonl
+generate shift seed=44 288/364 -> test_shift_s44.jsonl
+generate shift seed=44 304/364 -> test_shift_s44.jsonl
+generate shift seed=44 320/364 -> test_shift_s44.jsonl
+generate shift seed=44 336/364 -> test_shift_s44.jsonl
+generate shift seed=44 352/364 -> test_shift_s44.jsonl
+generate shift seed=44 364/364 -> test_shift_s44.jsonl
+generate shift seed=44 16/20 -> diagnostic_shift_s44.jsonl
+generate shift seed=44 20/20 -> diagnostic_shift_s44.jsonl
+generate lowrank_affine seed=44 16/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 32/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 48/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 64/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 80/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 96/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 112/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 128/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 144/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 160/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 176/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 192/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 208/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 224/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 240/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 256/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 272/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 288/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 304/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 320/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 336/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 352/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 364/364 -> test_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 16/20 -> diagnostic_lowrank_affine_s44.jsonl
+generate lowrank_affine seed=44 20/20 -> diagnostic_lowrank_affine_s44.jsonl
+generate nonlinear_bottleneck seed=44 16/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 32/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 48/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 64/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 80/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 96/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 112/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 128/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 144/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 160/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 176/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 192/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 208/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 224/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 240/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 256/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 272/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 288/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 304/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 320/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 336/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 352/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 364/364 -> test_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 16/20 -> diagnostic_nonlinear_bottleneck_s44.jsonl
+generate nonlinear_bottleneck seed=44 20/20 -> diagnostic_nonlinear_bottleneck_s44.jsonl
+STAGE_A_COMPLETE
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 1611 ON node05 CANCELLED AT 2026-09-27T19:41:07 ***
+slurmstepd: error: *** STEP 1611.0 ON node05 CANCELLED AT 2026-09-27T19:41:07 ***
