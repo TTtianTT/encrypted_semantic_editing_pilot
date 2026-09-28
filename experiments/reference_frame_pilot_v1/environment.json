@@ -1,0 +1,14 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0"
+  },
+  "model_local_only": true,
+  "precision": "float32",
+  "gpu_partition": "B300q",
+  "gpu_count": 1
+}

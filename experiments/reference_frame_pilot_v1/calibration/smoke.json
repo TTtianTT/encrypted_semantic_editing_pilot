@@ -1,0 +1,27 @@
+{
+  "operators": {
+    "Shift": {
+      "parameters": 768,
+      "gradients": {
+        "b": 0.0006025575567036867
+      },
+      "padding_unchanged": true,
+      "zero_initial_identity": true
+    },
+    "LowRank16": {
+      "parameters": 25344,
+      "gradients": {
+        "b": 0.0006025575567036867,
+        "v.weight": 0.0,
+        "u.weight": 9.422958828508854e-05
+      },
+      "padding_unchanged": true,
+      "zero_initial_identity": true
+    }
+  },
+  "bart_gradients_empty": true,
+  "model_eval": true,
+  "direct_encoder_outputs_equal": true,
+  "copy_is_exact_string": true,
+  "precision": "torch.float32"
+}

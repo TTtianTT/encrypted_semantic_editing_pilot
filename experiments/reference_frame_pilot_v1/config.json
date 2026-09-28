@@ -1,0 +1,42 @@
+{
+  "model_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+  "methods": [
+    "Shift",
+    "LowRank16"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "batch": 16,
+  "gradient_accumulation": 1,
+  "max_updates": 600,
+  "eval_interval": 100,
+  "gradient_clip": 1.0,
+  "precision": "float32",
+  "rank": 16,
+  "source_length": 96,
+  "max_gold_tokens": 52,
+  "max_new_tokens": 60,
+  "do_sample": false,
+  "num_beams": 1,
+  "forced_eos_token_id": null,
+  "selection": "dev target-token NLL only",
+  "schedule": "600 updates, round-robin six paths, batch 16, independent operator parameters; no LR decay",
+  "gpu_budget_seconds": 7200,
+  "e0_gate": {
+    "joint": 0.98,
+    "each_status": 0.95
+  },
+  "e1_gate": {
+    "joint": 0.85,
+    "time": 0.8,
+    "perspective": 0.8,
+    "plan_to_completed": 0.02
+  },
+  "test_locked": true,
+  "bootstrap_replicates": 2000
+}

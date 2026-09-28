@@ -1,0 +1,77 @@
+{
+  "limit_gpu_seconds": 7200,
+  "gpu_count": 1,
+  "jobs": [
+    {
+      "job_id": "1717",
+      "stage": "E0",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 61
+    },
+    {
+      "job_id": "1718",
+      "stage": "E1_Shift_s42",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 60
+    },
+    {
+      "job_id": "1719",
+      "stage": "E1_LowRank16_s42",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "dependency": "afterok:1718",
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 61
+    },
+    {
+      "job_id": "1720",
+      "stage": "E2_Shift_s43",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 61
+    },
+    {
+      "job_id": "1721",
+      "stage": "E2_LowRank16_s43",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 51
+    },
+    {
+      "job_id": "1722",
+      "stage": "E2_Shift_s44",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 56
+    },
+    {
+      "job_id": "1723",
+      "stage": "E2_LowRank16_s44",
+      "requested_wall_seconds": 900,
+      "gpu_count": 1,
+      "state": "COMPLETED",
+      "elapsed_raw_seconds": 48
+    },
+    {
+      "job_id": "1724",
+      "stage": "locked_test",
+      "requested_wall_seconds": 2700,
+      "gpu_count": 1,
+      "dependency": "afterok:1723",
+      "elapsed_raw_seconds": 326,
+      "state": "COMPLETED"
+    }
+  ],
+  "consumed_gpu_seconds": 724,
+  "accounting": "max(parent,steps) elapsed per single-GPU allocation; no resetting on retries",
+  "status": "completed",
+  "remaining_gpu_seconds": 6476,
+  "additional_resources_requested": false
+}

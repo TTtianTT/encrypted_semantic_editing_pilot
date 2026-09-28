@@ -1,0 +1,10 @@
+2026-09-29: prepare.py; configure.py; py_compile; sbatch --partition=B300q experiments/reference_frame_pilot_v1/run_e0.slurm -> 1717
+sacct -j 1717 --format=JobID,State,ElapsedRaw,AllocTRES -P -> COMPLETED 61 seconds
+sbatch --partition=B300q experiments/reference_frame_pilot_v1/run_train.slurm Shift 42 -> 1718
+sbatch --partition=B300q --dependency=afterok:1718 experiments/reference_frame_pilot_v1/run_train.slurm LowRank16 42 -> 1719
+summarize_dev.py -> E1 passed by LowRank16
+E2 sbatch run_train.slurm: Shift43 1720; LowRank1643 1721; Shift44 1722; LowRank1644 1723 (serial afterok dependencies)
+sbatch --partition=B300q --dependency=afterok:1723 experiments/reference_frame_pilot_v1/run_eval.slurm -> 1724
+test_generation job1724 -> COMPLETED; analyze.py -> 20680 rows + 2000 record bootstrap + blind review
+diagnose_support.py -> post-hoc temporal support strata, no score changes
+report.py -> REPORT.md; final_checks -> passed; budget 724/7200 GPU seconds

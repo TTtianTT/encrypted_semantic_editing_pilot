@@ -1,0 +1,56 @@
+{
+  "method": "Shift",
+  "seed": 43,
+  "steps": 600,
+  "beststep": 600,
+  "best_dev_token_nll": 0.037473270283459106,
+  "seen": {
+    "T_plus": 3200,
+    "T_minus": 3200,
+    "P_13": 1600,
+    "P_31": 1600
+  },
+  "updates": {
+    "T_plus": 200,
+    "T_minus": 200,
+    "P_13": 100,
+    "P_31": 100
+  },
+  "train_tokens": {
+    "T_plus": 282108,
+    "T_minus": 280284,
+    "P_13": 140410,
+    "P_31": 140374
+  },
+  "metrics": {
+    "all": {
+      "N": 480,
+      "joint_ok": 0.44583333333333336,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.04791666666666667
+    },
+    "time": {
+      "N": 320,
+      "joint_ok": 0.196875,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.06875
+    },
+    "perspective": {
+      "N": 160,
+      "joint_ok": 0.94375,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.00625
+    },
+    "plans": {
+      "N": 162,
+      "joint_ok": 0.43209876543209874,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.08641975308641975
+    }
+  },
+  "e1_eligible": false,
+  "editor_hash": "2fd0d20b3bf05bd0356fbeed235780271136fcfd4591b34905c4f880f40c46d6",
+  "parameters": 3072,
+  "wall_seconds": 29.34855232015252,
+  "peak_cuda_bytes": 1332640256
+}

@@ -1,0 +1,59 @@
+{
+  "replicates": 2000,
+  "unit": "dev record_id, all six paths together",
+  "training_randomness_covered": false,
+  "test_statistics": "not run",
+  "methods": {
+    "Copy": {
+      "mean": 0.0,
+      "record_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "LowRank16": {
+      "mean": 1.0,
+      "record_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "Shift": {
+      "mean": 0.48125,
+      "record_bootstrap_95": [
+        0.4291666666666667,
+        0.5354166666666667
+      ]
+    },
+    "Text-rule": {
+      "mean": 1.0,
+      "record_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "paired_differences": {
+    "LowRank16 - Shift": {
+      "mean": 0.51875,
+      "record_bootstrap_95": [
+        0.4645833333333334,
+        0.5708333333333334
+      ]
+    },
+    "Shift - Copy": {
+      "mean": 0.48125,
+      "record_bootstrap_95": [
+        0.4291666666666667,
+        0.5354166666666667
+      ]
+    },
+    "LowRank16 - Copy": {
+      "mean": 1.0,
+      "record_bootstrap_95": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

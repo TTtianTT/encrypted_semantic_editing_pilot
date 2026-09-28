@@ -1,0 +1,56 @@
+{
+  "method": "LowRank16",
+  "seed": 43,
+  "steps": 600,
+  "beststep": 600,
+  "best_dev_token_nll": 0.0002128631463481281,
+  "seen": {
+    "T_plus": 3200,
+    "T_minus": 3200,
+    "P_13": 1600,
+    "P_31": 1600
+  },
+  "updates": {
+    "T_plus": 200,
+    "T_minus": 200,
+    "P_13": 100,
+    "P_31": 100
+  },
+  "train_tokens": {
+    "T_plus": 282108,
+    "T_minus": 280284,
+    "P_13": 140410,
+    "P_31": 140374
+  },
+  "metrics": {
+    "all": {
+      "N": 480,
+      "joint_ok": 1.0,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.0
+    },
+    "time": {
+      "N": 320,
+      "joint_ok": 1.0,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.0
+    },
+    "perspective": {
+      "N": 160,
+      "joint_ok": 1.0,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.0
+    },
+    "plans": {
+      "N": 162,
+      "joint_ok": 1.0,
+      "plan_to_completed": 0.0,
+      "parse_unresolved": 0.0
+    }
+  },
+  "e1_eligible": true,
+  "editor_hash": "f4577876e43ba5870a322b7f59d2db40cb21d6eec05173d4bd0b02302dcdf7f1",
+  "parameters": 101376,
+  "wall_seconds": 28.1560660302639,
+  "peak_cuda_bytes": 1338636800
+}
