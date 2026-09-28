@@ -1,0 +1,67 @@
+{
+  "group": "G2",
+  "seed": 42,
+  "base_config": {
+    "model_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "methods": [
+      "G0",
+      "G1",
+      "G2_conditional"
+    ],
+    "seeds": [
+      42
+    ],
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "batch": 16,
+    "gradient_accumulation": 1,
+    "max_updates": 600,
+    "eval_interval": 100,
+    "gradient_clip": 1.0,
+    "precision": "float32",
+    "rank": 16,
+    "source_length": 96,
+    "max_gold_tokens": 52,
+    "max_new_tokens": 60,
+    "do_sample": false,
+    "num_beams": 1,
+    "forced_eos_token_id": null,
+    "selection": "dev target-token NLL only",
+    "schedule": "600 updates, round-robin six paths, batch 16, independent operator parameters; no LR decay",
+    "gpu_budget_seconds": 7200,
+    "e0_gate": {
+      "joint": 1.0
+    },
+    "e1_gate": {
+      "joint": 0.85,
+      "time": 0.8,
+      "perspective": 0.8,
+      "plan_to_completed": 0.02
+    },
+    "test_locked": true,
+    "bootstrap_replicates": 2000,
+    "data_seed": 2026092902,
+    "c_gate": {
+      "atomic_time": 0.95,
+      "each_two_step_reencode": 0.95,
+      "plus_plus_latent_below": 0.9
+    },
+    "g2_fraction_all_temporal_samples": 0.25
+  },
+  "temporal_source_range": [
+    -3,
+    3
+  ],
+  "legal_status_restrictions": "completed <=0; T_minus completed <=-1",
+  "perspective_source_range": [
+    -2,
+    2
+  ],
+  "group_initialization_hash": "0a4eebd002cf6a3ff4e7836cb44dc493f7521e14814239125f6270f69020822a",
+  "paired_schedule_sha256": "b24fd4da5e7ea5197ef22ae28ca95ecf796153f880cb11e943143cafd960da3d",
+  "training_pairs_sha256": "f1b00871783a7d84990182e26a7349d8dcba1ab956420abb519dfcb71360b76a",
+  "two_step_replaced_occurrences": 1600,
+  "optimizer_updates": 600,
+  "supervision": "endpoint CE only",
+  "checkpoint_selection": "common dev_atomic target-token-weighted NLL"
+}

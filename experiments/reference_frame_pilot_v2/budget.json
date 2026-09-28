@@ -1,0 +1,73 @@
+{
+  "limit_gpu_seconds": 7200,
+  "gpu_count": 1,
+  "jobs": [
+    {
+      "job_id": "1725",
+      "stage": "preflight",
+      "allocated_limit_seconds": 900,
+      "state": "COMPLETED",
+      "elapsed_seconds": 48,
+      "queue_wait_seconds": 0,
+      "start": "2026-09-29T02:56:18",
+      "end": "2026-09-29T02:57:06"
+    },
+    {
+      "job_id": "1726",
+      "stage": "diagnostic_a",
+      "allocated_limit_seconds": 900,
+      "state": "COMPLETED",
+      "elapsed_seconds": 24,
+      "queue_wait_seconds": 37,
+      "start": "2026-09-29T02:57:06",
+      "end": "2026-09-29T02:57:30"
+    },
+    {
+      "job_id": "1727",
+      "stage": "G0",
+      "allocated_limit_seconds": 900,
+      "state": "COMPLETED",
+      "elapsed_seconds": 59,
+      "queue_wait_seconds": 0,
+      "start": "2026-09-29T02:59:59",
+      "end": "2026-09-29T03:00:58"
+    },
+    {
+      "job_id": "1728",
+      "stage": "G1_and_C_gate",
+      "allocated_limit_seconds": 900,
+      "state": "COMPLETED",
+      "elapsed_seconds": 60,
+      "queue_wait_seconds": 46,
+      "start": "2026-09-29T03:00:58",
+      "end": "2026-09-29T03:01:58"
+    },
+    {
+      "job_id": "1729",
+      "stage": "G2",
+      "allocated_limit_seconds": 900,
+      "state": "COMPLETED",
+      "elapsed_seconds": 62,
+      "queue_wait_seconds": 0,
+      "start": "2026-09-29T03:02:56",
+      "end": "2026-09-29T03:03:58"
+    },
+    {
+      "job_id": "1730",
+      "stage": "locked_test",
+      "allocated_limit_seconds": 2700,
+      "state": "COMPLETED",
+      "elapsed_seconds": 317,
+      "queue_wait_seconds": 48,
+      "start": "2026-09-29T03:03:58",
+      "end": "2026-09-29T03:09:15"
+    }
+  ],
+  "consumed_gpu_seconds": 570,
+  "estimated_gpu_seconds": 1000,
+  "estimate_basis": "v1 six groups+full test 724s; v2 max3 groups but broader path matrix and calibration; plan ~1000s, submit bounded stages",
+  "queue_wait_separate": true,
+  "remaining_gpu_seconds": 6630,
+  "queue_wait_seconds_sum": 131,
+  "status": "completed"
+}

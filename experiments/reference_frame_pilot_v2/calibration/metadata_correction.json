@@ -1,0 +1,32 @@
+{
+  "text_frames_operations_identical": true,
+  "before_hashes": {
+    "test_iid_atomic.jsonl": "4f671399f92356ee42bb528f92d2461584836490727ccefb25dba6ff05434602",
+    "dev_extended.jsonl": "d45ba8231ccc0febfbbe84cf3d8b3778ac4655dfad1abd195aba656cb952e2d4",
+    "test_iid_chains.jsonl": "ee4780b8877aad6b5beaca042f98be9ee866f6fce47d3a2489ba35607c05c2fb",
+    "test_template_ood_extended.jsonl": "975653c4cc58b7eab0e83f588bb882137ba33466169dafaec9236dc91cf72728",
+    "calibration_views.jsonl": "08019a7185638d2ed906404a2d82f2049c9753801252483f3d04b74bafa0fe47",
+    "dev_atomic.jsonl": "2478a9d53d4ef8ecd23fa0179b72c960c2737613cc98aa5c18cd48466d010b8d",
+    "train_G1.jsonl": "f5c8e15bceff3b167ada31387bafed2269de3d34167e832524fc6bf8fbbfffb4",
+    "dev_chains.jsonl": "2d995aa7a5115903b3fc7370e3d9b7d7799f65af90dc68d0d82b32014b100d78",
+    "test_template_ood_atomic.jsonl": "2d4c21f882d3d05d15e9788c28e444ffcc08e6634660ee4e378057ac8c57f8b8",
+    "train_G0.jsonl": "772a984aa1b542da08b89b9c76f65d19b473c5bbd8aacc1437508c85c45f1c02",
+    "test_iid_extended.jsonl": "5cac6699ba4df28e3811a2bbc176738d1ce5a335e9f8a2000049cf56a657b36d",
+    "test_template_ood_chains.jsonl": "bfdeef69a3a4cddd962e4f2bc6c434f5a2fe2d7aa9bb3bce2435ab3c08ced768"
+  },
+  "after_hashes": {
+    "test_iid_atomic.jsonl": "4f671399f92356ee42bb528f92d2461584836490727ccefb25dba6ff05434602",
+    "dev_extended.jsonl": "d45ba8231ccc0febfbbe84cf3d8b3778ac4655dfad1abd195aba656cb952e2d4",
+    "test_iid_chains.jsonl": "ee4780b8877aad6b5beaca042f98be9ee866f6fce47d3a2489ba35607c05c2fb",
+    "test_template_ood_extended.jsonl": "975653c4cc58b7eab0e83f588bb882137ba33466169dafaec9236dc91cf72728",
+    "calibration_views.jsonl": "08019a7185638d2ed906404a2d82f2049c9753801252483f3d04b74bafa0fe47",
+    "dev_atomic.jsonl": "2478a9d53d4ef8ecd23fa0179b72c960c2737613cc98aa5c18cd48466d010b8d",
+    "train_G1.jsonl": "f5c8e15bceff3b167ada31387bafed2269de3d34167e832524fc6bf8fbbfffb4",
+    "dev_chains.jsonl": "2d995aa7a5115903b3fc7370e3d9b7d7799f65af90dc68d0d82b32014b100d78",
+    "test_template_ood_atomic.jsonl": "2d4c21f882d3d05d15e9788c28e444ffcc08e6634660ee4e378057ac8c57f8b8",
+    "train_G0.jsonl": "772a984aa1b542da08b89b9c76f65d19b473c5bbd8aacc1437508c85c45f1c02",
+    "test_iid_extended.jsonl": "5cac6699ba4df28e3811a2bbc176738d1ce5a335e9f8a2000049cf56a657b36d",
+    "test_template_ood_chains.jsonl": "bfdeef69a3a4cddd962e4f2bc6c434f5a2fe2d7aa9bb3bce2435ab3c08ced768"
+  },
+  "reason": "P13 after T_plus may receive -3 unseen as P13 source; do not mislabel it as covered by time expansion"
+}

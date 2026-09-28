@@ -1,0 +1,76 @@
+{
+  "atomic": {
+    "T_plus_first": [
+      "T_plus"
+    ],
+    "T_plus_third": [
+      "T_plus"
+    ],
+    "T_minus_first": [
+      "T_minus"
+    ],
+    "T_minus_third": [
+      "T_minus"
+    ],
+    "P_13_first": [
+      "P_13"
+    ],
+    "P_31_third": [
+      "P_31"
+    ]
+  },
+  "chains": {
+    "plus_plus": [
+      "T_plus",
+      "T_plus"
+    ],
+    "minus_minus": [
+      "T_minus",
+      "T_minus"
+    ],
+    "plus_minus": [
+      "T_plus",
+      "T_minus"
+    ],
+    "minus_plus": [
+      "T_minus",
+      "T_plus"
+    ],
+    "plus_person": [
+      "T_plus",
+      "P_13"
+    ],
+    "person_plus": [
+      "P_13",
+      "T_plus"
+    ],
+    "person_return": [
+      "P_13",
+      "P_31"
+    ],
+    "plus3": [
+      "T_plus",
+      "T_plus",
+      "T_plus"
+    ],
+    "minus3": [
+      "T_minus",
+      "T_minus",
+      "T_minus"
+    ]
+  },
+  "modes": [
+    "latent_chain",
+    "decode_reencode"
+  ],
+  "structural_inapplicability": "completed/minus3; positive offsets for completed; explicit fixed eligibility file",
+  "G2_supervised_chain": [
+    "T_plus",
+    "T_plus"
+  ],
+  "G2_gate": {
+    "atomic_time": 0.95,
+    "each_two_step_reencode": 0.95,
+    "plus_plus_latent_below": 0.9
+  }
+}

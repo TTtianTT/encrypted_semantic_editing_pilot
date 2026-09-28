@@ -1,0 +1,2714 @@
+{
+  "replicates": 2000,
+  "seed": 2026092902,
+  "unit": "world/record_id",
+  "stratification": [
+    "test_iid",
+    "test_template_ood"
+  ],
+  "scope": "seed42 record sampling only; all paths/views kept together",
+  "estimates": [
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.75,
+      "low": 0.6621875,
+      "high": 0.8375
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.8875,
+      "low": 0.8125,
+      "high": 0.95
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.7125,
+      "low": 0.6125,
+      "high": 0.8125
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.8125,
+      "low": 0.725,
+      "high": 0.8875
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.675,
+      "low": 0.575,
+      "high": 0.775
+    },
+    {
+      "group": "G0",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.7169811320754716,
+      "low": 0.5882352941176471,
+      "high": 0.8333333333333334
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5,
+      "low": 0.3875,
+      "high": 0.6125
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.8333333333333333,
+      "low": 0.7958333333333334,
+      "high": 0.8708333333333332
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.75,
+      "low": 0.69375,
+      "high": 0.80625
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5,
+      "low": 0.3875,
+      "high": 0.6125
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.05,
+      "low": 0.0125,
+      "high": 0.1
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.1625
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5,
+      "low": 0.3875,
+      "high": 0.6
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.4875,
+      "low": 0.375,
+      "high": 0.6
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.2375,
+      "low": 0.15,
+      "high": 0.3375
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.4375,
+      "low": 0.325,
+      "high": 0.55
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.6375,
+      "low": 0.525,
+      "high": 0.7375
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.8375,
+      "low": 0.7625,
+      "high": 0.9125
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.4875,
+      "low": 0.375,
+      "high": 0.5875
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.45,
+      "low": 0.35,
+      "high": 0.5625
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.3375,
+      "low": 0.2375,
+      "high": 0.4375
+    },
+    {
+      "group": "G2",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9833333333333332,
+      "low": 0.9666666666666666,
+      "high": 0.9958333333333333
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.95,
+      "high": 0.99375
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.95,
+      "low": 0.9,
+      "high": 0.9875
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9625,
+      "low": 0.9125,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.8875,
+      "low": 0.8125,
+      "high": 0.95
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.8875,
+      "low": 0.8125,
+      "high": 0.95
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.925,
+      "low": 0.8625,
+      "high": 0.975
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.7625,
+      "low": 0.6625,
+      "high": 0.85
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.85,
+      "low": 0.775,
+      "high": 0.925
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.775,
+      "low": 0.6871875000000001,
+      "high": 0.8625
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.8,
+      "low": 0.7,
+      "high": 0.875
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.6125,
+      "low": 0.5,
+      "high": 0.7125
+    },
+    {
+      "group": "G0",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.5094339622641509,
+      "low": 0.37254901960784315,
+      "high": 0.6481481481481481
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.95,
+      "low": 0.9,
+      "high": 0.9875
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9645833333333333,
+      "low": 0.9395833333333334,
+      "high": 0.9854166666666666
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.946875,
+      "low": 0.909375,
+      "high": 0.978125
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.8875,
+      "low": 0.8125,
+      "high": 0.95
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9625,
+      "low": 0.9125,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.925,
+      "low": 0.8625,
+      "high": 0.975
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9375,
+      "low": 0.875,
+      "high": 0.9875
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.95,
+      "low": 0.9,
+      "high": 0.9875
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.975,
+      "low": 0.9375,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.925,
+      "low": 0.8625,
+      "high": 0.975
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9625,
+      "low": 0.9125,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9,
+      "low": 0.825,
+      "high": 0.9625
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.9375,
+      "low": 0.875,
+      "high": 0.9875
+    },
+    {
+      "group": "G1",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.9245283018867925,
+      "low": 0.8518518518518519,
+      "high": 0.9824561403508771
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5,
+      "low": 0.3875,
+      "high": 0.6125
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.825,
+      "low": 0.7854166666666667,
+      "high": 0.8645833333333333
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.7375,
+      "low": 0.678125,
+      "high": 0.796875
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5,
+      "low": 0.3875,
+      "high": 0.6125
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9625,
+      "low": 0.9125,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9875,
+      "low": 0.9625,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9375,
+      "low": 0.875,
+      "high": 0.9875
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.1625
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0875,
+      "low": 0.0375,
+      "high": 0.15
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.5625,
+      "low": 0.45,
+      "high": 0.675
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.55,
+      "low": 0.4375,
+      "high": 0.65
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.925,
+      "low": 0.8625,
+      "high": 0.975
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.25,
+      "low": 0.1621875,
+      "high": 0.35
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.4625,
+      "low": 0.35,
+      "high": 0.575
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.95,
+      "low": 0.9,
+      "high": 0.9875
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.7,
+      "low": 0.6,
+      "high": 0.8
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.725,
+      "low": 0.625,
+      "high": 0.825
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.5625,
+      "low": 0.45,
+      "high": 0.675
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.55,
+      "low": 0.4375,
+      "high": 0.65
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.4,
+      "low": 0.3,
+      "high": 0.5125
+    },
+    {
+      "group": "G2",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.9245283018867925,
+      "low": 0.8518518518518519,
+      "high": 0.9824561403508771
+    }
+  ],
+  "paired_differences": [
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": -0.0375,
+      "high": 0.0375
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.0125,
+      "low": -0.0375,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.25,
+      "low": 0.1625,
+      "high": 0.3378124999999983
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.1125,
+      "low": 0.05,
+      "high": 0.1875
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.2625,
+      "low": 0.1625,
+      "high": 0.375
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.1625,
+      "low": 0.075,
+      "high": 0.2625
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.0125,
+      "low": -0.0375,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.0125,
+      "low": -0.0375,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.325,
+      "low": 0.225,
+      "high": 0.425
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.2830188679245283,
+      "low": 0.16666666666666666,
+      "high": 0.4117647058823529
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.5,
+      "low": -0.6125,
+      "high": -0.3875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.16666666666666669,
+      "low": -0.2041666666666667,
+      "high": -0.1291666666666667
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.25,
+      "low": -0.30625,
+      "high": -0.19375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.5,
+      "low": -0.6125,
+      "high": -0.3875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.05,
+      "low": 0.0125,
+      "high": 0.1
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.1625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.475,
+      "low": -0.5875,
+      "high": -0.375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.4875,
+      "low": -0.6,
+      "high": -0.375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.2375,
+      "low": 0.15,
+      "high": 0.3375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.5625,
+      "low": -0.675,
+      "high": -0.45
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.3375,
+      "low": -0.45,
+      "high": -0.2375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.1375,
+      "low": -0.2125,
+      "high": -0.0625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.5,
+      "low": -0.6125,
+      "high": -0.4
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.5375,
+      "low": -0.6375,
+      "high": -0.425
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.6625,
+      "low": -0.7625,
+      "high": -0.5625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_iid",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.0375,
+      "low": -0.0875,
+      "high": 0.0125
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.01875,
+      "low": -0.04375,
+      "high": 0.006250000000000001
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.028125,
+      "low": -0.065625,
+      "high": 0.009375
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.1125,
+      "low": -0.1875,
+      "high": -0.05
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0125,
+      "low": -0.0375,
+      "high": 0.0625
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.025,
+      "low": 0.0,
+      "high": 0.0625
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.1625
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.175
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.175,
+      "low": 0.0625,
+      "high": 0.2875
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.025,
+      "high": 0.1875
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.2,
+      "low": 0.1125,
+      "high": 0.3
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.125,
+      "low": 0.0375,
+      "high": 0.225
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.0375,
+      "low": -0.0875,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.075,
+      "low": -0.1375,
+      "high": -0.0125
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.325,
+      "low": 0.2,
+      "high": 0.45
+    },
+    {
+      "comparison": "G1-G0",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.41509433962264153,
+      "low": 0.26,
+      "high": 0.574468085106383
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "T_plus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.45,
+      "low": -0.5625,
+      "high": -0.35
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "atomic_all",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.13958333333333336,
+      "low": -0.17500000000000004,
+      "high": -0.10625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "atomic_time",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.209375,
+      "low": -0.2625,
+      "high": -0.159375
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "T_plus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.3875,
+      "low": -0.5,
+      "high": -0.2875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "T_minus_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "T_minus_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "P_13_first",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "atomic_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "P_31_third",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.9375,
+      "low": 0.875,
+      "high": 0.9875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.1,
+      "low": 0.0375,
+      "high": 0.1625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0875,
+      "low": 0.0375,
+      "high": 0.15
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.425,
+      "low": -0.5375,
+      "high": -0.3125
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": -0.4375,
+      "low": -0.5503125,
+      "high": -0.325
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "latent_chain",
+      "N_worlds": 80,
+      "mean": 0.25,
+      "low": 0.1621875,
+      "high": 0.35
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "latent_chain",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.475,
+      "low": -0.5875,
+      "high": -0.3625
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_minus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.275,
+      "low": -0.375,
+      "high": -0.1875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.2,
+      "low": -0.3,
+      "high": -0.0875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus_person",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.4,
+      "low": -0.5125,
+      "high": -0.2875
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "person_plus",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.35,
+      "low": -0.4625,
+      "high": -0.25
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "person_return",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "plus3",
+      "mode": "decode_reencode",
+      "N_worlds": 80,
+      "mean": -0.5375,
+      "low": -0.65,
+      "high": -0.425
+    },
+    {
+      "comparison": "G2-G1",
+      "split": "test_template_ood",
+      "path": "minus3",
+      "mode": "decode_reencode",
+      "N_worlds": 53,
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+prepare.py -> 13395 gold/rule checks, 920 calibration views
+sbatch --partition=B300q run.slurm preflight -> 1725
+sbatch --partition=B300q --dependency=afterok:1725 run.slurm diagnostic_a -> 1726
+preflight ->920/920 exact+semantic pass; diagnostic_a ->completed; budget72s
+metadata-only P source support correction before training; text/frame/op hashes unchanged
+sbatch --partition=B300q run.slurm train G0 ->1727
+sbatch --partition=B300q --dependency=afterok:1727 run.slurm train G1 ->1728
+G1 dev gate ->atomic_time1, reencode[1,1,1,.95], plus_plus latent0; G2 authorized
+sbatch --partition=B300q run.slurm train G2 ->1729
+sbatch --partition=B300q --dependency=afterok:1729 --time=00:45:00 --export=ALL,RF_WALL_SECONDS=2600 run.slurm test ->1730
+test.py -> all fixed groups/paths complete; checkpoints/locked.json frozen before test generation
+first CPU analyze attempt preceded visibility of test_complete.json and exited FileNotFoundError; rerun after completion succeeded; no GPU rerun
+analyze.py -> record bootstrap2000, 20-world anonymous review, full summaries
+audit.py -> passed: v1 unchanged, shared initialization, fixed denominators, P weights identical, G1/G2 T_minus identical
+model review ->27 convenience cases, no automatic score changes, no human labels
+report.py ->REPORT.md; final budget570/7200 GPU seconds

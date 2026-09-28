@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "v1_unchanged": true,
+  "frozen_data_unchanged": true,
+  "initialization_shared": true,
+  "P_training_inputs_targets_indices_equal": true,
+  "G1_G2_T_minus_weights_equal": true,
+  "operator_checkpoint_hashes": {
+    "P_13": {
+      "G0": "5f0a60ca4359823f5364690d5a1bbac61db01eb3de7604622fe90c4dad9ef447",
+      "G1": "5f0a60ca4359823f5364690d5a1bbac61db01eb3de7604622fe90c4dad9ef447",
+      "G2": "5f0a60ca4359823f5364690d5a1bbac61db01eb3de7604622fe90c4dad9ef447"
+    },
+    "P_31": {
+      "G0": "b6b6f62d8c7add447c106ee445a6ac649eb4746a58359c35ced3ac7597653544",
+      "G1": "b6b6f62d8c7add447c106ee445a6ac649eb4746a58359c35ced3ac7597653544",
+      "G2": "b6b6f62d8c7add447c106ee445a6ac649eb4746a58359c35ced3ac7597653544"
+    },
+    "T_minus": {
+      "G0": "70de4b2cbd820f8fc8bd4eda91ccac73cca246677ec506540cf6f9262255ea91",
+      "G1": "ce853be84bb305e9d0822b930f293ab3b270f6ad7bdb1a7ba1fdc2e79a11a52e",
+      "G2": "ce853be84bb305e9d0822b930f293ab3b270f6ad7bdb1a7ba1fdc2e79a11a52e"
+    }
+  },
+  "actual_samples": {
+    "P_13": 1600,
+    "P_31": 1600,
+    "T_minus": 3200,
+    "T_plus": 3200
+  },
+  "groups": [
+    "G0",
+    "G1",
+    "G2"
+  ],
+  "formal_neural_outputs": 11196,
+  "A_rows": 1440,
+  "path_world_counts": {
+    "dev": {
+      "plus_plus": 80,
+      "minus_minus": 80,
+      "plus_minus": 80,
+      "minus_plus": 80,
+      "plus_person": 80,
+      "person_plus": 80,
+      "person_return": 80,
+      "plus3": 80,
+      "minus3": 53
+    },
+    "test_iid": {
+      "plus_plus": 80,
+      "minus_minus": 80,
+      "plus_minus": 80,
+      "minus_plus": 80,
+      "plus_person": 80,
+      "person_plus": 80,
+      "person_return": 80,
+      "plus3": 80,
+      "minus3": 53
+    },
+    "test_template_ood": {
+      "plus_plus": 80,
+      "minus_minus": 80,
+      "plus_minus": 80,
+      "minus_plus": 80,
+      "plus_person": 80,
+      "person_plus": 80,
+      "person_return": 80,
+      "plus3": 80,
+      "minus3": 53
+    }
+  },
+  "normal_end_failures": 622,
+  "human_review": false
+}
