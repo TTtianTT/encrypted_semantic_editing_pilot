@@ -1,0 +1,43 @@
+{
+  "disjoint_world_splits": true,
+  "training_max_chain_length": 2,
+  "results": {
+    "G3": {
+      "stages": 1696,
+      "latents": 1696,
+      "unique_keys": 1696,
+      "recomputed_scores": true,
+      "shared_prefix_identical": true
+    },
+    "repair": {
+      "stages": 1696,
+      "latents": 1696,
+      "unique_keys": 1696,
+      "recomputed_scores": true,
+      "shared_prefix_identical": true
+    }
+  },
+  "artifact_sha256": {
+    "config.json": "b2afe7e0413ba3b269f79bea867f14a12084ba72b8ab088c45a352e5cc7981e0",
+    "run.py": "a0fd3b7a073381698444f8381d6e4d080a6ca07c8c83eb0653625ed31dbaa9da",
+    "calibrate_probe.py": "7e297e4ba33628e0bb2b2e1740fdb22866bff24fe24346ff62239be76536e283",
+    "mlp_probe.py": "e4a2e48ecef0ca32ca0402e817cfad899b35e69ec2c76da63a318815e8ec7d95",
+    "analyze.py": "8a033db88223def976b7f086d4331e5fc6ed6b1c18e76f734e0b640859f0ee0c",
+    "analyze_calibrated.py": "0cc6795a36ed26526991265805b7eb568108d862f6bf42b11b1cba283431448e",
+    "analyze_mlp.py": "94a49303926a9fb86baaa3b4cbf7cda11318724502133706ffce12030a6a89ee",
+    "analyze_dynamics.py": "4c0a827646a9a75b8aae482fa7b48e5e0adb3f3ea3b6be2181aec6dc32a5044e",
+    "repair.pt": "d5386750e921f1a8d8e9b3f931c3007fa101c413a0069e669c930e1afd697f36",
+    "mlp_probe.pt": "9dacbc7dd2429591e1380787f8d87033c47cad2408d4ae178b8e8915a3ea2ba9",
+    "calibrated_probe_weights.npz": "2edba5c4cf41222d0bcb5d42c1322430749667ef67b8288dd33df3365e9c5d3f",
+    "G3_latents.pt": "509627f03e1f5005824a2bfd94ee7abdcec901d76f407a553acf2a5cc6715b13",
+    "repair_latents.pt": "18ebef99011c65e1182fbb4a88bcd20f54c139936c16defb6d2735bf38ca2854",
+    "source_latents.pt": "c8ca0cda4bc5634712f9439c475a292503fd87e6494826034ce8a0cea969109c",
+    "G3_trajectories.jsonl": "19f2240d017ee696b2da0fac52817d6d046ff223f0d0bbb6c33c89b118301cee",
+    "repair_trajectories.jsonl": "79a9483f2844a99aa2801546c115852813e663043bad8f5c7d1615fcfc652d0f",
+    "length_generalization.csv": "d735bd96aaa298c0cd9771f318223dc8d52f4daf6a0da84144f39fb30e6f72ea",
+    "representation_distance.csv": "93847fbfceef7afa9ba846cddd520ae776f93b350d70fd5fc4d00f45d1e2561d",
+    "algebraic_consistency.csv": "6cca466f360404f0ba3fdc292cdaa7ccb2f181cc6725a81640d3700aba4841ab",
+    "failure_taxonomy.csv": "7c67070fd33ae1d761a159540b9c4a01e83f85a0d1466ee7d2b11240203964e9",
+    "mlp_failure_taxonomy.csv": "b9948083a60cd0021df34674bdf9a6c12cc108b6973c1c4f49e5c377a6361d14"
+  }
+}

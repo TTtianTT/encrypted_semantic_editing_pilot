@@ -1,0 +1,21 @@
+{
+  "format": "zstd-19 split into consecutive 90,000,000-byte parts",
+  "files": {
+    "G3_latents.pt": {
+      "sha256": "509627f03e1f5005824a2bfd94ee7abdcec901d76f407a553acf2a5cc6715b13",
+      "size": 252507881,
+      "parts": [
+        {"name": "G3_latents.pt.zst.part-00", "size": 90000000, "sha256": "6627518deec1b87d1d46debd49670ba34e0d056a733797703f66db52664b95ec"},
+        {"name": "G3_latents.pt.zst.part-01", "size": 66931870, "sha256": "880d2ee9dc2fab2b9f225198e9ff431bc002fffaf52665099f125e68f09ea38e"}
+      ]
+    },
+    "repair_latents.pt": {
+      "sha256": "18ebef99011c65e1182fbb4a88bcd20f54c139936c16defb6d2735bf38ca2854",
+      "size": 252521473,
+      "parts": [
+        {"name": "repair_latents.pt.zst.part-00", "size": 90000000, "sha256": "89297bb25e281b5052292c9c06598b00c1046eccb8cb453ebf6b8a6b581220e0"},
+        {"name": "repair_latents.pt.zst.part-01", "size": 66918326, "sha256": "78734415ac7b296cda067f71c60f57c1a5cca2b75bed2e3818983227f1119c0f"}
+      ]
+    }
+  }
+}

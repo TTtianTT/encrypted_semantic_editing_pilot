@@ -1,0 +1,206 @@
+[
+  {
+    "split": "test_iid",
+    "world_id": "v3_confirmation_test_iid_0009",
+    "trajectory": [
+      {
+        "step": 1,
+        "gold_offset": 0,
+        "probe_offset": 0,
+        "decoded_offset": 0,
+        "output": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 2,
+        "gold_offset": -1,
+        "probe_offset": -1,
+        "decoded_offset": -1,
+        "output": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 3,
+        "gold_offset": -2,
+        "probe_offset": -2,
+        "decoded_offset": null,
+        "output": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated yesterday, is described today. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated two days ago, is described in the record. This record does not establish that the event occurred.",
+        "category": "decoder_unresolved_with_correct_probe"
+      },
+      {
+        "step": 4,
+        "gold_offset": -3,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Three days ago, three days ago. These four days: four days ago four days. My plan today three days days ago three days three days four days days three three days old, is described three days. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated three days ago, is described in the record. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 5,
+        "gold_offset": -4,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Three days ago three days ago four days ago. My four days four days days four four days three days days ago, four days old four days. These four days' four days did not three days four three days three four days",
+        "gold": "Author: Grace. Record date: 2026-12-04. My plan to deliver eight sensors to David, with the event dated four days ago, is described in the record. This record does not establish that the event occurred.",
+        "category": "probe_floor_unidentifiable"
+      }
+    ]
+  },
+  {
+    "split": "test_iid",
+    "world_id": "v3_confirmation_test_iid_0017",
+    "trajectory": [
+      {
+        "step": 1,
+        "gold_offset": 0,
+        "probe_offset": 0,
+        "decoded_offset": 0,
+        "output": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of today. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of today. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 2,
+        "gold_offset": -1,
+        "probe_offset": -1,
+        "decoded_offset": -1,
+        "output": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of yesterday. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of yesterday. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 3,
+        "gold_offset": -2,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date ago. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of two days ago. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 4,
+        "gold_offset": -3,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Three days ago three days ago. Record date: four days ago four days. In the record, my cancelled plan to send two days ago has four days four days days. This record does not establish that the event occurred.",
+        "gold": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of three days ago. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 5,
+        "gold_offset": -4,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": " three days ago four days ago three days four days days four four days four three days days. These four days three days three four days. This four days' four days old four days.' three days' three daysFour days fourFour days three three days",
+        "gold": "Author: Grace. Record date: 2026-10-09. In the record, my cancelled plan to send two sensors to Frank has an event date of four days ago. This record does not establish that the event occurred.",
+        "category": "probe_floor_unidentifiable"
+      }
+    ]
+  },
+  {
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0000",
+    "trajectory": [
+      {
+        "step": 1,
+        "gold_offset": 0,
+        "probe_offset": 0,
+        "decoded_offset": 0,
+        "output": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 2,
+        "gold_offset": -1,
+        "probe_offset": -1,
+        "decoded_offset": -1,
+        "output": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 3,
+        "gold_offset": -2,
+        "probe_offset": -2,
+        "decoded_offset": null,
+        "output": "Author: Emma. Record date: 2026-10-02. What the record describes three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "category": "decoder_unresolved_with_correct_probe"
+      },
+      {
+        "step": 4,
+        "gold_offset": -3,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Three days ago three days ago is four days ago. These three days four days days three days days ago four days three three days three four days four three days. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 5,
+        "gold_offset": -4,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": " three days days ago four days days four days four four days ago three days four",
+        "gold": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "category": "probe_floor_unidentifiable"
+      }
+    ]
+  },
+  {
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0011",
+    "trajectory": [
+      {
+        "step": 1,
+        "gold_offset": 0,
+        "probe_offset": 0,
+        "decoded_offset": 0,
+        "output": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is today. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is today. This record does not establish that the event occurred.",
+        "category": "correct"
+      },
+      {
+        "step": 2,
+        "gold_offset": -1,
+        "probe_offset": -1,
+        "decoded_offset": 0,
+        "output": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is today. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is yesterday. This record does not establish that the event occurred.",
+        "category": "decoder_semantic_error_with_correct_probe"
+      },
+      {
+        "step": 3,
+        "gold_offset": -2,
+        "probe_offset": -4,
+        "decoded_offset": -3,
+        "output": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is three days ago. This record does not establish that the event occurred.",
+        "gold": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is two days ago. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 4,
+        "gold_offset": -3,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": "Three days ago three days ago four days ago. These event days four days days agoFour days ago today three days days three days. This record does not establish that the event occurred. This three days does not three days four four days",
+        "gold": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is three days ago. This record does not establish that the event occurred.",
+        "category": "overshoot_candidate"
+      },
+      {
+        "step": 5,
+        "gold_offset": -4,
+        "probe_offset": -4,
+        "decoded_offset": null,
+        "output": " three days ago four days ago three days four days days four four days four three days days days. These four days three days three four days. This four days does not four four four three four fours days fourFour days four",
+        "gold": "Author: Emma. Record date: 2026-10-18. The event date assigned in the record to my cancelled plan to bring two parcels to David is four days ago. This record does not establish that the event occurred.",
+        "category": "probe_floor_unidentifiable"
+      }
+    ]
+  }
+]

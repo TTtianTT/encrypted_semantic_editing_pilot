@@ -1,0 +1,398 @@
+{
+  "training_worlds": 480,
+  "dev_worlds": 80,
+  "training_cases": 23040,
+  "dev_cases": 3828,
+  "max_trained_steps": 2,
+  "source_offsets": [
+    -2,
+    0,
+    1,
+    3,
+    5
+  ],
+  "models": [
+    "G3",
+    "repair"
+  ],
+  "accuracy": [
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.8244514106583072
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.5219435736677116
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.6253918495297806
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.8244514106583072
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.33072100313479624
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "offset",
+      "n": 638,
+      "dev_accuracy": 0.9043887147335423
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "person",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9733542319749217
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9749216300940439
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9749216300940439
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9733542319749217
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9796238244514106
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "author",
+      "n": 638,
+      "dev_accuracy": 0.9780564263322884
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8526645768025078
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8557993730407524
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8510971786833855
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8526645768025078
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8605015673981191
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "recipient",
+      "n": 638,
+      "dev_accuracy": 0.8479623824451411
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "action",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "object",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.9498432601880877
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.95141065830721
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.9482758620689655
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.9498432601880877
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.9247648902821317
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "quantity",
+      "n": 638,
+      "dev_accuracy": 0.9153605015673981
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "record_status",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 0,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 1,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "G3",
+      "step": 2,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 0,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 1,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    },
+    {
+      "group": "repair",
+      "step": 2,
+      "attribute": "polarity",
+      "n": 638,
+      "dev_accuracy": 1.0
+    }
+  ]
+}

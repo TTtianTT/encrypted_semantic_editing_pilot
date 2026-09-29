@@ -1,0 +1,19 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 3225.25it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/algebraic_generalization_v1/run.py", line 326, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/algebraic_generalization_v1/run.py", line 315, in main
+    probes, _ = train_probes(eng)
+                ^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/algebraic_generalization_v1/run.py", line 94, in train_probes
+    xf = collect_features(eng, train); df = collect_features(eng, dev); tf = collect_features(eng, test)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/algebraic_generalization_v1/run.py", line 85, in collect_features
+    f[layer, pos].append(pooled(h.hidden_states[layer], x.attention_mask, pos).float().cpu().numpy())
+                                ~~~~~~~~~~~~~~~^^^^^^^
+IndexError: tuple index out of range
+srun: error: node02: task 0: Exited with exit code 1

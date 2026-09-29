@@ -1,0 +1,98 @@
+{
+  "count": {
+    "T_minus": 200,
+    "T_plus": 200
+  },
+  "history": [
+    {
+      "step": 148,
+      "op": "T_minus",
+      "op_updates": 50,
+      "loss": 0.30337485671043396,
+      "token_ce": 0.3033427298069,
+      "gold_latent": 0.00012153496936662123,
+      "inverse": 0.0001995736383832991,
+      "orthogonal": 2.1824196962234133e-16
+    },
+    {
+      "step": 150,
+      "op": "T_plus",
+      "op_updates": 50,
+      "loss": 0.2748839855194092,
+      "token_ce": 0.2748415470123291,
+      "gold_latent": 0.00019815891573671252,
+      "inverse": 0.00022625252313446254,
+      "orthogonal": 4.889032878695643e-16
+    },
+    {
+      "step": 298,
+      "op": "T_minus",
+      "op_updates": 100,
+      "loss": 0.2891068756580353,
+      "token_ce": 0.28903093934059143,
+      "gold_latent": 0.00024176934675779194,
+      "inverse": 0.0005176843842491508,
+      "orthogonal": 9.454335058906613e-16
+    },
+    {
+      "step": 300,
+      "op": "T_plus",
+      "op_updates": 100,
+      "loss": 0.21956926584243774,
+      "token_ce": 0.2194710373878479,
+      "gold_latent": 0.0003592272405512631,
+      "inverse": 0.0006229513674043119,
+      "orthogonal": 1.078080771254816e-15
+    },
+    {
+      "step": 448,
+      "op": "T_minus",
+      "op_updates": 150,
+      "loss": 0.20058856904506683,
+      "token_ce": 0.20044909417629242,
+      "gold_latent": 0.00040352664655074477,
+      "inverse": 0.0009912940440699458,
+      "orthogonal": 2.4516784205542118e-15
+    },
+    {
+      "step": 450,
+      "op": "T_plus",
+      "op_updates": 150,
+      "loss": 0.21011579036712646,
+      "token_ce": 0.20994265377521515,
+      "gold_latent": 0.0006718828226439655,
+      "inverse": 0.0010594745399430394,
+      "orthogonal": 1.633312985762378e-15
+    },
+    {
+      "step": 598,
+      "op": "T_minus",
+      "op_updates": 200,
+      "loss": 0.20840516686439514,
+      "token_ce": 0.2082442194223404,
+      "gold_latent": 0.0005094380467198789,
+      "inverse": 0.0010999877704307437,
+      "orthogonal": 3.099886477066563e-15
+    },
+    {
+      "step": 600,
+      "op": "T_plus",
+      "op_updates": 200,
+      "loss": 0.19133031368255615,
+      "token_ce": 0.1910647749900818,
+      "gold_latent": 0.0010108338901773095,
+      "inverse": 0.0016445075161755085,
+      "orthogonal": 2.5643498961650316e-15
+    }
+  ],
+  "seconds": 22.000712871551514,
+  "rank": 8,
+  "losses": {
+    "token_ce": 1.0,
+    "gold_latent": 0.1,
+    "inverse": 0.1,
+    "orthogonal_drift": 0.1
+  },
+  "no_three_step_training": true,
+  "source_checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_pilot_v3/checkpoints/G3/best.pt"
+}
