@@ -1,0 +1,11 @@
+split,step,n,learned_failures,mask_mismatch,token_ids_changed,fail_mask_mismatch,fail_mask_equal,fail_oracle_mask_rescued,fail_pre_reset_semantic_correct,mean_learned_to_oracle_l2
+test_iid,1,53,26,0,53,0,26,0,26,0.057189
+test_iid,2,53,53,26,53,26,27,0,26,0.205101
+test_iid,3,53,53,53,53,53,0,0,14,0.293281
+test_iid,4,53,53,52,53,52,1,0,0,0.353481
+test_iid,5,53,53,51,53,51,2,0,0,0.416765
+test_template_ood,1,53,26,0,53,0,26,0,26,0.065789
+test_template_ood,2,53,53,26,47,26,27,0,21,0.20586
+test_template_ood,3,53,53,46,48,46,7,0,8,0.289883
+test_template_ood,4,53,53,53,53,53,0,0,0,0.360959
+test_template_ood,5,53,53,53,53,53,0,0,0,0.426503

@@ -1,0 +1,443 @@
+[
+  {
+    "label": "learned_fails_dre_succeeds",
+    "split": "test_iid",
+    "world_id": "v3_confirmation_test_iid_0000",
+    "stages": [
+      {
+        "step": 1,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "post_l2": 0.04891039994892053,
+          "input_mask_length": 45,
+          "oracle_mask_length": 45
+        }
+      },
+      {
+        "step": 2,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+          "post_l2": 0.09024762647933517,
+          "input_mask_length": 45,
+          "oracle_mask_length": 45
+        }
+      },
+      {
+        "step": 3,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two sensors to the event. This record does not establish that the event occurred. The event does not indicate that the object was not mine.",
+          "success": false,
+          "pre_reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+          "post_l2": 0.13047718691741442,
+          "input_mask_length": 45,
+          "oracle_mask_length": 47
+        }
+      },
+      {
+        "step": 4,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Three days ago three days ago. These three days four days ago four days four four days days ago.' These three files three days days four ago four four-day days four three days three days old. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.838127367026904,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 47,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two sensors to the event. This record does not establish that the event occurred. The event is not dated. The events are not recorded.",
+          "success": false,
+          "pre_reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred. This is not establish any event.",
+          "post_l2": 0.16450338905769435,
+          "input_mask_length": 45,
+          "oracle_mask_length": 54
+        }
+      },
+      {
+        "step": 5,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": " four days ago four days days ago three days four days four four days three days ago. These four days says four days old three days days four three days three four days. These three days old four days' four days",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 1.1215241351447383,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 47,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensorsMy plan to use four sensors to Frank,. The eventDates: 2027-11. The dateDates to Frank: withThe eventD datedDates",
+          "success": false,
+          "pre_reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event is true. This is not establish whether the event occurs. The event does not",
+          "post_l2": 0.19574912489469226,
+          "input_mask_length": 45,
+          "oracle_mask_length": 61
+        }
+      }
+    ]
+  },
+  {
+    "label": "learned_fails_dre_succeeds",
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0000",
+    "stages": [
+      {
+        "step": 1,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "post_l2": 0.04765634302938066,
+          "input_mask_length": 46,
+          "oracle_mask_length": 46
+        }
+      },
+      {
+        "step": 2,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "post_l2": 0.09602439704406408,
+          "input_mask_length": 46,
+          "oracle_mask_length": 46
+        }
+      },
+      {
+        "step": 3,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.12643663324568136,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to the same address. This record does not establish that the event. This is not a record of the event that the record does.",
+          "success": false,
+          "pre_reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "post_l2": 0.1490829900581696,
+          "input_mask_length": 46,
+          "oracle_mask_length": 46
+        }
+      },
+      {
+        "step": 4,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Three days ago three days ago is four days ago. These three days four days days three days days ago four days three three days three four days four three days. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.8177675558808587,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 48,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels. This record does not send two parcels. The record does indicate that the plan to send two parcel to the future is not present. This",
+          "success": false,
+          "pre_reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event is true. This is not establish any event.",
+          "post_l2": 0.18529501959432038,
+          "input_mask_length": 46,
+          "oracle_mask_length": 54
+        }
+      },
+      {
+        "step": 5,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": " three days days ago four days days four days four four days ago three days four",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 1.2105548434987545,
+          "input_mask_length": 46,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 48,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to the same person. This is not a plan. This does.",
+          "success": false,
+          "pre_reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to the two-year-old. This record does not establish that the event is today. This is not establish whether the event. This",
+          "post_l2": 0.21687907903170112,
+          "input_mask_length": 46,
+          "oracle_mask_length": 61
+        }
+      }
+    ]
+  },
+  {
+    "label": "both_resets_fail",
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0009",
+    "stages": [
+      {
+        "step": 1,
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": null,
+          "post_l2": 0.0,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": true,
+          "pre_reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "post_l2": 0.08008484369396689,
+          "input_mask_length": 45,
+          "oracle_mask_length": 45
+        }
+      },
+      {
+        "step": 2,
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is yesterday. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.07194474860859307,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.07194474860859307,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred today. The record does establish that this event occurred. The date assigned to the record",
+          "success": false,
+          "pre_reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "post_l2": 0.10392206290446346,
+          "input_mask_length": 45,
+          "oracle_mask_length": 45
+        }
+      },
+      {
+        "step": 3,
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.02788005803456807,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.11091809544166788,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two years ago. The date assigned to Bob's plan to send two sensors is two. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event event is today or tomorrow. This track does not indicate that the actual event event. The",
+          "post_l2": 0.14333795990264744,
+          "input_mask_length": 45,
+          "oracle_mask_length": 61
+        }
+      },
+      {
+        "step": 4,
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": "Three days ago three days ago. Record date: four days ago four days. These event three days assigned in the three days four days days ago is three days. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.5741198560180698,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.11299997085863042,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two years ago. The date assigned to Bob was two years later. The time assigned to the date assigned is two. This does not indicate",
+          "success": false,
+          "pre_reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two days ago. This record does not establish that the event date is today. This does not indicate that the record does. The record does",
+          "post_l2": 0.17901337141138957,
+          "input_mask_length": 45,
+          "oracle_mask_length": 61
+        }
+      },
+      {
+        "step": 5,
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is four days ago. This record does not establish that the event occurred.",
+        "pure_latent": {
+          "text": " three days ago four days ago three days four days days four four days four three days days. These four days three days three four days. This four daysFour days fourFour days three three days",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 1.1319793710749488,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "decode_reencode": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+          "success": false,
+          "pre_reset_text": null,
+          "post_l2": 0.11115427687215157,
+          "input_mask_length": 45,
+          "oracle_mask_length": null
+        },
+        "learned_reset": {
+          "text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two years later. The date assigned to Bob was two years earlier. The record to Bob's plan to send two sensors is two. This",
+          "success": false,
+          "pre_reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not indicate that the event date is today, or that the record does indicate that this is the record. This does",
+          "post_l2": 0.20983903689188937,
+          "input_mask_length": 45,
+          "oracle_mask_length": 61
+        }
+      }
+    ]
+  }
+]
