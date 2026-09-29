@@ -1,0 +1,102 @@
+{
+  "group": "G3",
+  "seed": 42,
+  "steps": 600,
+  "beststep": 600,
+  "best_dev_token_nll": 0.0016435213140422013,
+  "initialization_hash": "0a4eebd002cf6a3ff4e7836cb44dc493f7521e14814239125f6270f69020822a",
+  "editor_hash": "dca3cb26c0d3c1e33e3215f86e911d4c19df7417160598dcfdba8fbcffd8654d",
+  "counts": {
+    "T_plus": {
+      "optimizer_updates": 200,
+      "samples": 3200,
+      "supervision_tokens": 214488,
+      "endpoint_weight_tokens": 143595,
+      "input_tokens": 142235,
+      "operator_sample_calls": 4800,
+      "decoder_batch_calls": 400,
+      "decoder_sample_calls": 4800,
+      "seconds": 8.176023431587964
+    },
+    "T_minus": {
+      "optimizer_updates": 200,
+      "samples": 3200,
+      "supervision_tokens": 141812,
+      "endpoint_weight_tokens": 141812,
+      "input_tokens": 142544,
+      "operator_sample_calls": 3200,
+      "decoder_batch_calls": 200,
+      "decoder_sample_calls": 3200,
+      "seconds": 5.2971813078038394
+    },
+    "P_13": {
+      "optimizer_updates": 100,
+      "samples": 1600,
+      "supervision_tokens": 71340,
+      "endpoint_weight_tokens": 71340,
+      "input_tokens": 69740,
+      "operator_sample_calls": 1600,
+      "decoder_batch_calls": 100,
+      "decoder_sample_calls": 1600,
+      "seconds": 3.014108489267528
+    },
+    "P_31": {
+      "optimizer_updates": 100,
+      "samples": 1600,
+      "supervision_tokens": 69705,
+      "endpoint_weight_tokens": 69705,
+      "input_tokens": 71305,
+      "operator_sample_calls": 1600,
+      "decoder_batch_calls": 100,
+      "decoder_sample_calls": 1600,
+      "seconds": 2.6955918078310788
+    }
+  },
+  "replaced_occurrences": 1600,
+  "history": [
+    {
+      "step": 100,
+      "dev_target_token_nll": 0.04985145579824976,
+      "T_plus_joint": 0.0,
+      "plus_plus_endpoint": 0.0625,
+      "plus_plus_trajectory": 0.0
+    },
+    {
+      "step": 200,
+      "dev_target_token_nll": 0.026086675148596607,
+      "T_plus_joint": 0.2875,
+      "plus_plus_endpoint": 0.425,
+      "plus_plus_trajectory": 0.1875
+    },
+    {
+      "step": 300,
+      "dev_target_token_nll": 0.012290222559293342,
+      "T_plus_joint": 0.60625,
+      "plus_plus_endpoint": 0.8625,
+      "plus_plus_trajectory": 0.525
+    },
+    {
+      "step": 400,
+      "dev_target_token_nll": 0.007063992970753914,
+      "T_plus_joint": 0.69375,
+      "plus_plus_endpoint": 0.9875,
+      "plus_plus_trajectory": 0.65
+    },
+    {
+      "step": 500,
+      "dev_target_token_nll": 0.006064598334045937,
+      "T_plus_joint": 0.59375,
+      "plus_plus_endpoint": 1.0,
+      "plus_plus_trajectory": 0.6
+    },
+    {
+      "step": 600,
+      "dev_target_token_nll": 0.0016435213140422013,
+      "T_plus_joint": 0.99375,
+      "plus_plus_endpoint": 1.0,
+      "plus_plus_trajectory": 1.0
+    }
+  ],
+  "wall_seconds": 40.65481544006616,
+  "peak_cuda_bytes": 1587900928
+}

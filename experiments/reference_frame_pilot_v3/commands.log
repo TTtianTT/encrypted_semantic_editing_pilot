@@ -1,0 +1,21 @@
+.venv/bin/python experiments/reference_frame_pilot_v3/prepare.py
+.venv/bin/python -m py_compile experiments/reference_frame_pilot_v3/*.py
+sbatch --partition=B300q experiments/reference_frame_pilot_v3/run.slurm train
+# job 1731 completed: 79 allocated GPU seconds
+.venv/bin/python experiments/reference_frame_pilot_v3/account.py 1731
+sbatch --partition=B300q --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/reference_frame_pilot_v3/run.slurm test
+# job 1735 failed at Slurm step launch before Python/model execution; 1 GPU allocation second charged
+.venv/bin/python experiments/reference_frame_pilot_v3/account.py 1731 1735
+# Identical evaluation retry, no configuration or checkpoint changes
+sbatch --partition=B300q --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/reference_frame_pilot_v3/run.slurm test
+# job 1736: same pre-Python step launch failure on node01; 2 seconds charged.
+.venv/bin/python experiments/reference_frame_pilot_v3/account.py 1731 1735 1736
+# Retry standard launcher, exclude failing node01; 900-second cap, single GPU.
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_pilot_v3/run.slurm test
+# job 1737 completed successfully: 362 GPU allocation seconds; total including failures = 444
+.venv/bin/python experiments/reference_frame_pilot_v3/account.py 1731 1735 1736 1737
+.venv/bin/python experiments/reference_frame_pilot_v3/audit.py
+.venv/bin/python experiments/reference_frame_pilot_v3/analyze.py
+.venv/bin/python experiments/reference_frame_pilot_v3/final_check.py
+.venv/bin/python experiments/reference_frame_pilot_v3/report.py
+# Publish only this experiment: local scoped commit, cherry-pick to existing clean public worktree, SSH push HEAD:main (no force).

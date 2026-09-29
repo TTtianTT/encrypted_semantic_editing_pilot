@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "mixed_batch_step": 5,
+  "chain_N": 10,
+  "ordinary_N": 6,
+  "results": [
+    {
+      "state": "experiments/reference_frame_pilot_v3/checkpoints/initial.pt",
+      "reference_loss": 0.4459879398345947,
+      "zero_one_loss": 0.4459879398345947,
+      "max_gradient_errors": {
+        "T_plus.b": 6.332993507385254e-08,
+        "T_plus.v.weight": 0.0,
+        "T_plus.u.weight": 1.0244548320770264e-08
+      },
+      "relative_gradient_errors": {
+        "T_plus.b": 8.436982739112864e-07,
+        "T_plus.v.weight": 0.0,
+        "T_plus.u.weight": 6.734992439305643e-07
+      },
+      "stage_gradient_norms": [
+        0.2462497502565384,
+        0.5844162702560425
+      ],
+      "formal_loss": 0.42997172474861145,
+      "stats": {
+        "endpoint_weight_tokens": 680,
+        "supervision_tokens": 1097,
+        "input_tokens": 672,
+        "decoder_batch_calls": 2,
+        "decoder_sample_calls": 26,
+        "operator_sample_calls": 26
+      }
+    },
+    {
+      "state": "experiments/reference_frame_pilot_v2/checkpoints/G2/best.pt",
+      "reference_loss": 0.0034893460106104612,
+      "zero_one_loss": 0.003489346709102392,
+      "max_gradient_errors": {
+        "T_plus.b": 1.2631062418222427e-08,
+        "T_plus.v.weight": 6.693881005048752e-09,
+        "T_plus.u.weight": 9.080395102500916e-09
+      },
+      "relative_gradient_errors": {
+        "T_plus.b": 8.607273230154533e-06,
+        "T_plus.v.weight": 5.220151251705829e-06,
+        "T_plus.u.weight": 4.669868758355733e-06
+      },
+      "stage_gradient_norms": [
+        0.10080389678478241,
+        0.014631005935370922
+      ],
+      "formal_loss": 0.010437291115522385,
+      "stats": {
+        "endpoint_weight_tokens": 680,
+        "supervision_tokens": 1097,
+        "input_tokens": 672,
+        "decoder_batch_calls": 2,
+        "decoder_sample_calls": 26,
+        "operator_sample_calls": 26
+      }
+    }
+  ],
+  "bart_gradient_none": true,
+  "deterministic_eval": true,
+  "padding_unchanged": true,
+  "restored_coefficients": [
+    0.5,
+    0.5
+  ]
+}
