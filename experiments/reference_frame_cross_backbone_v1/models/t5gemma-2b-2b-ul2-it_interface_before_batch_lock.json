@@ -1,0 +1,22 @@
+{
+  "source_length": 80,
+  "max_new_tokens": 65,
+  "max_gold_tokens": 57,
+  "dtype": "float32",
+  "attention": "eager",
+  "micro_batch": 4,
+  "num_beams": 1,
+  "do_sample": false,
+  "forced_eos_token_id": null,
+  "chat_template": "{% if messages[0]['role'] == 'system' %}{{ raise_exception('System role not supported') }}{% endif %}{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if (message['role'] == 'assistant') %}{% set role = 'model' %}{% else %}{% set role = message['role'] %}{% endif %}{{ '<start_of_turn>' + role + '\n' + message['content'] | trim + '<end_of_turn>\n' }}{% endfor %}{% if add_generation_prompt %}{{'<start_of_turn>model\n'}}{% endif %}\n",
+  "label_convention": "BART/T5 tokenizer native specials; Gemma body without BOS plus EOS, model shifts decoder BOS",
+  "model_class": "T5GemmaForConditionalGeneration",
+  "module_hash": "6066ffd4ee988f17543cb58747a0bbf9d773cd3fe7f2618c2218c55591151cef",
+  "revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+  "tokenizer_revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+  "encoder_output_dimension": 2304,
+  "parameters_per_operator": 76032,
+  "total_editor_parameters": 304128,
+  "edit_site": "encoder_outputs.last_hidden_state before decoder cross-attention projections",
+  "mask_policy": "all nonpadding tokens including wrapper and special tokens"
+}

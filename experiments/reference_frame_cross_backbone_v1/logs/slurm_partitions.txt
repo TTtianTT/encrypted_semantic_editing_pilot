@@ -1,0 +1,5 @@
+PARTITION|NODELIST|GRES
+B300q|node[01-03]|gpu:nvidia_b300_sxm6_ac:8(S:0-1)
+RTXq|node05|gpu:nvidia_rtx_pro_6000_blackwell:8(S:0-1)
+defq*|node[04,06-14]|(null)
+defq*|Jupyter|gpu:p100:2(S:0-1)

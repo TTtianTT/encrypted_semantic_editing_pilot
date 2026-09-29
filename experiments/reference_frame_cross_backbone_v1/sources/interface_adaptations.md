@@ -1,0 +1,11 @@
+# 加载适配记录（不改评分/包装/训练配方）
+
+T5Gemma2首次preflight在任何A/B重构输出前失败：from_pretrained(dtype=float32)仍按嵌套encoder/decoder配置加载了bfloat16参数，导致encoder输出与float32编辑器不匹配。保留attempt01_dtype_failure.json与作业1740日志（55分配秒）。修复为加载后显式model.float()，与既定float32协议一致；不是改为混合精度或搜索。FLAN参数原本float32；BART原实现同样显式float()。重试重新执行完整API/梯度/生成准入。
+
+T5Gemma IT的官方README实际使用tokenizer.apply_chat_template(..., tokenize=True)。本适配先保存官方模板渲染字符串，再以add_special_tokens=False分词，避免在模板外重复添加BOS；与官方tokenize=True路径逐项比对。非chat模型继续使用tokenizer原有特殊token。此适配在IT任何输出/训练前完成；不构造第三个包装。
+
+训练前确定异常处理：若实际中间输出重新包装后超出已冻结输入上限，不截断、不扩生成上限、不替换gold；该记录剩余阶段标execution_error/未正常完成，仍保留原分母和之前实际文本。其他记录继续，不用一个样本的输入长度异常中断整批评估。此工程路径不触发更换算子、纠错或挑选输出。
+
+IT首次官方模板一致性断言错误地把新版Transformers返回的BatchEncoding与token ID列表比较，未进入A/B重构。CPU检查确认两条路径实际token ID相同，修正为显式return_dict=True并读取input_ids。原失败attempt01_chat_return_type.json及1744作业59 GPU秒保留；没有改变实际输入、模型或评分。
+
+若最后模型通过准入，正式训练前允许一次固定的推理batch16吞吐/数值核验：与已选包装最前32条校准原输出（batch4）逐字及EOS比较，全部一致才将两组正式推理统一batch16；否则保留4，不搜索其他批大小。训练有效batch16/microbatch4不变，不改beam/精度/token上限。以实测吞吐重算预算和1.5倍评估预留，避免因保守小推理批量造成可避免的资源跳过。此检查在该模型确认集输出前，独立记录且不用于重选包装或模型。BART已完成输出保持其实际batch4，跨骨干不声称严格等计算成本。

@@ -1,0 +1,22 @@
+{
+  "source_length": 96,
+  "max_new_tokens": 60,
+  "max_gold_tokens": 52,
+  "dtype": "float32",
+  "attention": "sdpa",
+  "micro_batch": 4,
+  "num_beams": 1,
+  "do_sample": false,
+  "forced_eos_token_id": null,
+  "chat_template": null,
+  "label_convention": "BART/T5 tokenizer native specials; Gemma body without BOS plus EOS, model shifts decoder BOS",
+  "model_class": "BartForConditionalGeneration",
+  "module_hash": "2963e9b2f9cac792df0cb4e2ced51323fd74aaeb6a5b4583426e1da6f95fbdbe",
+  "revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+  "tokenizer_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+  "encoder_output_dimension": 768,
+  "parameters_per_operator": 25344,
+  "total_editor_parameters": 101376,
+  "edit_site": "encoder_outputs.last_hidden_state before decoder cross-attention projections",
+  "mask_policy": "all nonpadding tokens including wrapper and special tokens"
+}

@@ -1,0 +1,82 @@
+{
+  "model": "t5gemma-2b-2b-ul2-it",
+  "group": "G3",
+  "seed": 42,
+  "step": 600,
+  "beststep": 600,
+  "best_dev_nll": 1.751762474058929e-05,
+  "history": [
+    {
+      "step": 100,
+      "dev_target_token_nll": 0.004285445574672947
+    },
+    {
+      "step": 200,
+      "dev_target_token_nll": 0.0017340756275892658
+    },
+    {
+      "step": 300,
+      "dev_target_token_nll": 0.00019174185762187629
+    },
+    {
+      "step": 400,
+      "dev_target_token_nll": 0.00010305291246751375
+    },
+    {
+      "step": 500,
+      "dev_target_token_nll": 7.410205883119952e-05
+    },
+    {
+      "step": 600,
+      "dev_target_token_nll": 1.751762474058929e-05
+    }
+  ],
+  "counts": {
+    "T_plus": {
+      "updates": 200,
+      "samples": 3200,
+      "weight_tokens": 157995,
+      "supervision_tokens": 236061,
+      "operator_calls": 4800,
+      "decoder_sample_calls": 4800,
+      "decoder_forward_calls": 1550,
+      "seconds": 219.63822255958803
+    },
+    "T_minus": {
+      "updates": 200,
+      "samples": 3200,
+      "weight_tokens": 156212,
+      "supervision_tokens": 156212,
+      "operator_calls": 3200,
+      "decoder_sample_calls": 3200,
+      "decoder_forward_calls": 800,
+      "seconds": 148.56624487717636
+    },
+    "P_13": {
+      "updates": 100,
+      "samples": 1600,
+      "weight_tokens": 79340,
+      "supervision_tokens": 79340,
+      "operator_calls": 1600,
+      "decoder_sample_calls": 1600,
+      "decoder_forward_calls": 400,
+      "seconds": 82.2656497405842
+    },
+    "P_31": {
+      "updates": 100,
+      "samples": 1600,
+      "weight_tokens": 76105,
+      "supervision_tokens": 76105,
+      "operator_calls": 1600,
+      "decoder_sample_calls": 1600,
+      "decoder_forward_calls": 400,
+      "seconds": 74.46237426204607
+    }
+  },
+  "initialization_hash": "76a232b5d0d0ed47152ba7ee5db9a5086cd0b5df7d656de2a5a3edbfdffd409c",
+  "checkpoint_hash": "bfe1a3de3149d96b595c807b2357463d2d40257a5fa1840ee4ae19dc159df075",
+  "wall_seconds": 589.2803256339394,
+  "peak_cuda_bytes": 26754913792,
+  "micro_batch": 4,
+  "effective_batch": 16
+}

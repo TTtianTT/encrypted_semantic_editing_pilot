@@ -1,0 +1,8752 @@
+{
+  "replicates": 2000,
+  "unit": "world; shared indices across every model/path/view",
+  "training_randomness_included": false,
+  "exploratory": true,
+  "results": [
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.0375,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.0375,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.00625,
+      "ci95": [
+        -0.01875,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.00625,
+      "ci95": [
+        -0.01875,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": -0.002083333333333333,
+      "ci95": [
+        -0.006249999999999999,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": -0.002083333333333333,
+      "ci95": [
+        -0.006249999999999999,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.0375,
+      "ci95": [
+        -0.1,
+        0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.1625,
+        -0.025
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.0375,
+      "ci95": [
+        -0.1,
+        0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.1625,
+        -0.025
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.1375,
+      "ci95": [
+        0.0625,
+        0.225
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.8625,
+      "ci95": [
+        -0.9375,
+        -0.775
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.1375,
+      "ci95": [
+        0.0625,
+        0.225
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.8625,
+      "ci95": [
+        -0.9375,
+        -0.775
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.175,
+      "ci95": [
+        0.1,
+        0.2625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.825,
+      "ci95": [
+        -0.9,
+        -0.7375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.175,
+      "ci95": [
+        0.1,
+        0.2625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.825,
+      "ci95": [
+        -0.9,
+        -0.7375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.002083333333333333,
+      "ci95": [
+        0.0,
+        0.006249999999999999
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.002083333333333333,
+      "ci95": [
+        0.0,
+        0.006249999999999999
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.45,
+      "ci95": [
+        -0.575,
+        -0.325
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.2125,
+      "ci95": [
+        -0.3,
+        -0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.6625,
+      "ci95": [
+        -0.7625,
+        -0.5625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.25,
+        -0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.5625,
+      "ci95": [
+        -0.675,
+        -0.45
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.45,
+      "ci95": [
+        -0.575,
+        -0.325
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.2125,
+      "ci95": [
+        -0.3,
+        -0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.6625,
+      "ci95": [
+        -0.7625,
+        -0.5625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.25,
+        -0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.5625,
+      "ci95": [
+        -0.675,
+        -0.45
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.125,
+      "ci95": [
+        -0.2125,
+        -0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.125,
+      "ci95": [
+        -0.2125,
+        -0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.175,
+      "ci95": [
+        -0.2625,
+        -0.1
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.175,
+      "ci95": [
+        -0.2625,
+        -0.1
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.55,
+      "ci95": [
+        -0.6625,
+        -0.4375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.2375,
+        -0.075
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.7,
+      "ci95": [
+        -0.8,
+        -0.6
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.1375,
+      "ci95": [
+        -0.225,
+        -0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.7,
+      "ci95": [
+        -0.8,
+        -0.6
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.55,
+      "ci95": [
+        -0.6625,
+        -0.4375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.2375,
+        -0.075
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.7,
+      "ci95": [
+        -0.8,
+        -0.6
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.1375,
+      "ci95": [
+        -0.225,
+        -0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.7,
+      "ci95": [
+        -0.8,
+        -0.6
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_iid",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.1,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.1,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.05,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.05,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.1375,
+      "ci95": [
+        -0.2125,
+        -0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.2375,
+        -0.075
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.0375,
+      "ci95": [
+        -0.0875,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1125,
+        0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1125,
+        0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.1,
+      "ci95": [
+        -0.175,
+        -0.025
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.1125,
+      "ci95": [
+        -0.1875,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.04375,
+        0.04375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.04375,
+        0.04375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0625,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0625,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        -0.025,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        -0.025,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.014583333333333337,
+        0.014583333333333334
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        -0.014583333333333337,
+        0.014583333333333334
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -0.8679245283018868,
+      "ci95": [
+        -0.95,
+        -0.7726799242424245
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -0.8679245283018868,
+      "ci95": [
+        -0.95,
+        -0.7726799242424245
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -0.8679245283018868,
+      "ci95": [
+        -0.95,
+        -0.7726799242424245
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -0.8679245283018868,
+      "ci95": [
+        -0.95,
+        -0.7726799242424245
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.025,
+      "ci95": [
+        0.0,
+        0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.85,
+      "ci95": [
+        -0.925,
+        -0.7625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.8,
+      "ci95": [
+        -0.8875,
+        -0.7125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.025,
+      "ci95": [
+        0.0,
+        0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.85,
+      "ci95": [
+        -0.925,
+        -0.7625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.8,
+      "ci95": [
+        -0.8875,
+        -0.7125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.1625,
+      "ci95": [
+        -0.25,
+        -0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.1125,
+      "ci95": [
+        0.05,
+        0.1875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.125,
+        0.025
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.1625,
+      "ci95": [
+        -0.25,
+        -0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.1125,
+      "ci95": [
+        0.05,
+        0.1875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.125,
+        0.025
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.15,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.15,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.15,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": -0.0875,
+      "ci95": [
+        -0.15,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0625,
+      "ci95": [
+        0.0125,
+        0.1125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.925,
+      "ci95": [
+        -0.975,
+        -0.8625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.725,
+      "ci95": [
+        -0.825,
+        -0.625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.05,
+      "ci95": [
+        0.0125,
+        0.1
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.9125,
+      "ci95": [
+        -0.975,
+        -0.85
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.7125,
+      "ci95": [
+        -0.8125,
+        -0.6125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.05,
+      "ci95": [
+        0.0125,
+        0.1
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.9625,
+      "ci95": [
+        -1.0,
+        -0.9125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.8875,
+      "ci95": [
+        -0.95,
+        -0.8125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.05,
+      "ci95": [
+        0.0125,
+        0.1
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.9,
+      "ci95": [
+        -0.9625,
+        -0.825
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.8125,
+      "ci95": [
+        -0.8875,
+        -0.725
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.15,
+      "ci95": [
+        -0.2375,
+        -0.075
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.0625,
+      "ci95": [
+        -0.125,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.1125,
+      "ci95": [
+        -0.1875,
+        -0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.0625,
+      "ci95": [
+        -0.125,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.8375,
+      "ci95": [
+        0.75,
+        0.9125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.9125,
+      "ci95": [
+        -0.975,
+        -0.85
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.025,
+      "ci95": [
+        -0.075,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.7625,
+      "ci95": [
+        0.6625,
+        0.85
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.9125,
+      "ci95": [
+        -0.975,
+        -0.85
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "BART",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.0375,
+      "ci95": [
+        -0.125,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.1320754716981132,
+      "ci95": [
+        0.05,
+        0.22732007575757548
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.1320754716981132,
+      "ci95": [
+        0.05,
+        0.22732007575757548
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.1320754716981132,
+      "ci95": [
+        0.05,
+        0.22732007575757548
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.1320754716981132,
+      "ci95": [
+        0.05,
+        0.22732007575757548
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.15,
+      "ci95": [
+        0.075,
+        0.2375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.15,
+      "ci95": [
+        0.0625,
+        0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.15,
+      "ci95": [
+        0.075,
+        0.2375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.15,
+      "ci95": [
+        0.0625,
+        0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.125,
+      "ci95": [
+        0.05,
+        0.2
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.1,
+      "ci95": [
+        0.025,
+        0.1875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.125,
+      "ci95": [
+        0.05,
+        0.2
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.1,
+      "ci95": [
+        0.025,
+        0.1875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.2125,
+      "ci95": [
+        0.125,
+        0.3
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.025,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.2375,
+      "ci95": [
+        0.15,
+        0.3375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.05,
+      "ci95": [
+        0.0,
+        0.1125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.1,
+      "ci95": [
+        0.0375,
+        0.175
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.125,
+      "ci95": [
+        0.05,
+        0.2125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.025,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.175,
+      "ci95": [
+        0.0875,
+        0.275
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.0375,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.025,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "decode_reencode",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.1875,
+      "ci95": [
+        0.1,
+        0.2875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_13_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "P_31_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.00625,
+      "ci95": [
+        0.0,
+        0.01875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_minus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.11875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.075,
+      "ci95": [
+        0.025,
+        0.1375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.11875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.0625,
+      "ci95": [
+        0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "endpoint_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.0625,
+      "ci95": [
+        0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_first",
+      "metric": "trajectory_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.025,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "endpoint_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.025,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "T_plus_third",
+      "metric": "trajectory_joint",
+      "delta": 0.05,
+      "ci95": [
+        -0.0125,
+        0.125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": -0.008333333333333335,
+      "ci95": [
+        -0.020833333333333336,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.027083333333333338,
+      "ci95": [
+        0.008333333333333333,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "endpoint_joint",
+      "delta": 0.01875,
+      "ci95": [
+        -0.004166666666666668,
+        0.043750000000000004
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": -0.008333333333333335,
+      "ci95": [
+        -0.020833333333333336,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.027083333333333338,
+      "ci95": [
+        0.008333333333333333,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "atomic_all",
+      "metric": "trajectory_joint",
+      "delta": 0.01875,
+      "ci95": [
+        -0.004166666666666668,
+        0.043750000000000004
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 53
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.975,
+      "ci95": [
+        -1.0,
+        -0.9375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.975,
+      "ci95": [
+        -1.0,
+        -0.9375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "minus_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0625,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.2125,
+      "ci95": [
+        -0.35,
+        -0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.4375,
+      "ci95": [
+        -0.55,
+        -0.325
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.625,
+      "ci95": [
+        -0.725,
+        -0.5125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.425,
+      "ci95": [
+        -0.5375,
+        -0.3125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "endpoint_joint",
+      "delta": -0.475,
+      "ci95": [
+        -0.6125,
+        -0.3375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.2125,
+      "ci95": [
+        -0.35,
+        -0.0625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.4375,
+      "ci95": [
+        -0.55,
+        -0.325
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.625,
+      "ci95": [
+        -0.725,
+        -0.5125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.425,
+      "ci95": [
+        -0.5375,
+        -0.3125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_plus",
+      "metric": "trajectory_joint",
+      "delta": -0.475,
+      "ci95": [
+        -0.6125,
+        -0.3375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "endpoint_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "person_return",
+      "metric": "trajectory_joint",
+      "delta": 0.0875,
+      "ci95": [
+        0.0375,
+        0.15
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.9625,
+      "ci95": [
+        -1.0,
+        -0.9125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "endpoint_joint",
+      "delta": -0.025,
+      "ci95": [
+        -0.0875,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0375,
+      "ci95": [
+        0.0,
+        0.0875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.9625,
+      "ci95": [
+        -1.0,
+        -0.9125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus3",
+      "metric": "trajectory_joint",
+      "delta": -0.0125,
+      "ci95": [
+        -0.075,
+        0.05
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "endpoint_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.9875,
+      "ci95": [
+        -1.0,
+        -0.9625
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_minus",
+      "metric": "trajectory_joint",
+      "delta": -0.05,
+      "ci95": [
+        -0.1,
+        -0.0125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.325,
+      "ci95": [
+        -0.425,
+        -0.2125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.35,
+      "ci95": [
+        -0.4625,
+        -0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.675,
+      "ci95": [
+        -0.775,
+        -0.575
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.35,
+      "ci95": [
+        -0.4625,
+        -0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "endpoint_joint",
+      "delta": -0.525,
+      "ci95": [
+        -0.65,
+        -0.3875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.325,
+      "ci95": [
+        -0.425,
+        -0.2125
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.35,
+      "ci95": [
+        -0.4625,
+        -0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.675,
+      "ci95": [
+        -0.775,
+        -0.575
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.3125,
+      "ci95": [
+        -0.425,
+        -0.2
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_person",
+      "metric": "trajectory_joint",
+      "delta": -0.525,
+      "ci95": [
+        -0.65,
+        -0.3875
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0125,
+      "ci95": [
+        0.0,
+        0.0375
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "endpoint_joint",
+      "delta": 0.1625,
+      "ci95": [
+        0.0875,
+        0.25
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "G3-G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.9875,
+      "ci95": [
+        0.9625,
+        1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G1",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": -1.0,
+      "ci95": [
+        -1.0,
+        -1.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "latent-reencode",
+      "group": "G3",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G1",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "N": 80
+    },
+    {
+      "split": "test_template_ood",
+      "model": "t5gemma-2b-2b-ul2-it",
+      "comparison": "model-BART",
+      "group": "G3",
+      "mode": "latent_chain",
+      "path": "plus_plus",
+      "metric": "trajectory_joint",
+      "delta": 0.225,
+      "ci95": [
+        0.13718750000000002,
+        0.325
+      ],
+      "N": 80
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "unsupported",
+  "passed": false,
+  "reason": "AssertionError: ",
+  "traceback": "Traceback (most recent call last):\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py\", line 33, in main\n    be=Backend(name,'A');check=checks(be);dump(f'calibration/{name}/interface_check.json',check)\n                               ^^^^^^^^^^\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py\", line 9, in checks\n    direct_ids=be.tok.apply_chat_template([{'role':'user','content':texts[0]}],tokenize=True,add_generation_prompt=True);assert direct_ids==x.input_ids[0][x.attention_mask[0].bool()].tolist()\n                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "wall_seconds": 21.170923500088975
+}

@@ -1,0 +1,28 @@
+Loading weights:   0%|          | 0/911 [00:00<?, ?it/s]Loading weights:   9%|▊         | 78/911 [00:00<00:01, 779.34it/s]Loading weights:  18%|█▊        | 166/911 [00:00<00:00, 835.53it/s]Loading weights:  29%|██▉       | 264/911 [00:00<00:00, 897.39it/s]Loading weights:  39%|███▉      | 354/911 [00:00<00:00, 787.42it/s]Loading weights:  48%|████▊     | 435/911 [00:00<00:00, 696.20it/s]Loading weights:  56%|█████▌    | 507/911 [00:00<00:00, 690.54it/s]Loading weights:  63%|██████▎   | 578/911 [00:00<00:00, 629.93it/s]Loading weights:  71%|███████   | 643/911 [00:00<00:00, 606.16it/s]Loading weights:  77%|███████▋  | 705/911 [00:01<00:00, 579.49it/s]Loading weights:  84%|████████▍ | 764/911 [00:01<00:00, 547.08it/s]Loading weights:  90%|█████████ | 820/911 [00:01<00:00, 547.06it/s]Loading weights:  96%|█████████▌| 876/911 [00:01<00:00, 512.11it/s]Loading weights: 100%|██████████| 911/911 [00:01<00:00, 625.65it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py", line 31, in main
+    be=Backend(name,'A');check=checks(be);dump(f'calibration/{name}/interface_check.json',check)
+                               ^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py", line 8, in checks
+    eds=new_editors(be.d);initial=tensorhash(eds.state_dict());h1=eds['T_plus'](h,mask);assert torch.equal(h1,h);assert torch.equal(h1[mask==0],h[mask==0]);h1.retain_grad()
+                                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/backend.py", line 13, in forward
+    def forward(self,h,mask):return h+(self.b+self.u(self.v(h)))*mask.unsqueeze(-1).to(h.dtype)
+                                                     ^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: expected mat1 and mat2 to have the same dtype, but got: c10::BFloat16 != float
+

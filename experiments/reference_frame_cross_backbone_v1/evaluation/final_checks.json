@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "models": {
+    "BART/G1": {
+      "rows": 3732,
+      "stages": 7036,
+      "fixed_denominators": true,
+      "trajectory_recomputed": true,
+      "latent_original_mask": true
+    },
+    "BART/G3": {
+      "rows": 3732,
+      "stages": 7036,
+      "fixed_denominators": true,
+      "trajectory_recomputed": true,
+      "latent_original_mask": true
+    },
+    "t5gemma-2b-2b-ul2-it/G1": {
+      "rows": 3732,
+      "stages": 7036,
+      "fixed_denominators": true,
+      "trajectory_recomputed": true,
+      "latent_original_mask": true
+    },
+    "t5gemma-2b-2b-ul2-it/G3": {
+      "rows": 3732,
+      "stages": 7036,
+      "fixed_denominators": true,
+      "trajectory_recomputed": true,
+      "latent_original_mask": true
+    }
+  },
+  "controls_per_model": 11730,
+  "rule_paths": 2346,
+  "concurrent_gpus_observed": 2,
+  "gpu_seconds": 4951,
+  "preflight_gpu_seconds": 1662,
+  "blind_worlds": 20,
+  "human_labels": 0,
+  "training_code_unchanged": true
+}

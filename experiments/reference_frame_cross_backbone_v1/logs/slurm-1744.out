@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:   0%|          | 1/732 [00:01<21:20,  1.75s/it]Loading weights:  31%|███       | 227/732 [00:01<00:03, 165.47it/s]Loading weights:  44%|████▎     | 320/732 [00:02<00:02, 169.12it/s]Loading weights:  52%|█████▏    | 379/732 [00:02<00:02, 171.59it/s]Loading weights:  58%|█████▊    | 422/732 [00:03<00:01, 164.98it/s]Loading weights:  62%|██████▏   | 455/732 [00:05<00:04, 57.69it/s] Loading weights:  87%|████████▋ | 634/732 [00:05<00:00, 133.96it/s]Loading weights:  96%|█████████▋| 705/732 [00:05<00:00, 134.24it/s]Loading weights: 100%|██████████| 732/732 [00:06<00:00, 120.96it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py", line 33, in main
+    be=Backend(name,'A');check=checks(be);dump(f'calibration/{name}/interface_check.json',check)
+                               ^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_cross_backbone_v1/preflight.py", line 9, in checks
+    direct_ids=be.tok.apply_chat_template([{'role':'user','content':texts[0]}],tokenize=True,add_generation_prompt=True);assert direct_ids==x.input_ids[0][x.attention_mask[0].bool()].tolist()
+                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+

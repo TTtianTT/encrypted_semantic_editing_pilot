@@ -1,0 +1,45 @@
+# Independent branch experiment/reference-frame-cross-backbone-v1
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/assets.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/prepare.py
+# Actual model files: /dataset1/zailong/models/reference-frame-cross-backbone/
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm preflight flan-t5-base
+# 1739: completed admission, reconstruction failed, 124 GPU seconds
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm preflight t5gemma-2-270m-270m
+# 1740: dtype mismatch before reconstruction; 55 seconds, original failure preserved
+# user amendment: up to two concurrent GPUs, still sbatch+srun, unchanged total budget
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm preflight t5gemma-2-270m-270m
+# 1741: retried with model.float(), 447 GPU seconds
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm evaluate BART
+# 1742: archived G1/G3 reference, no BART training
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm preflight flan-t5-large
+# 1743
+# 1743: FLAN-large reconstruction gate failed, 209 GPU seconds
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/reference_frame_cross_backbone_v1/run.slurm preflight t5gemma-2b-2b-ul2-it
+# 1744: chat-template return-type assertion in check; no A/B output, 59 seconds
+# Fixed check to read BatchEncoding.input_ids, preserved original failure.
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/reference_frame_cross_backbone_v1/run.slurm preflight t5gemma-2b-2b-ul2-it
+# 1745: 704 seconds, selected B, source 920/920 and targets 5880/5880 joint
+sbatch --partition=B300q --exclude=node01 experiments/reference_frame_cross_backbone_v1/run.slurm plan_training t5gemma-2b-2b-ul2-it
+# 1746: no optimizer updates; measured compute budget and inference batching before training
+
+# Training: fixed initialization, schedule, code; both completed 600 updates
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/reference_frame_cross_backbone_v1/run.slurm train t5gemma-2b-2b-ul2-it G1 # job 1747
+sbatch --partition=B300q --exclude=node01 --time=01:10:00 --export=ALL,RF_WALL_SECONDS=4140 experiments/reference_frame_cross_backbone_v1/run.slurm train t5gemma-2b-2b-ul2-it G3 # job 1748
+
+# Confirmation evaluation after both groups/checkpoints were locked
+sbatch --partition=B300q --exclude=node01 --time=01:45:00 --export=ALL,RF_WALL_SECONDS=6240 experiments/reference_frame_cross_backbone_v1/run.slurm evaluate t5gemma-2b-2b-ul2-it # job 1749
+
+# Final accounting and CPU-only delivery analysis
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/account.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/length_audit.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/provenance.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/analyze.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/final_check.py
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/report.py
+
+# Publication: only the experiment addition, not remote main
+.venv/bin/python experiments/reference_frame_cross_backbone_v1/publication_manifest.py
+git add experiments/reference_frame_cross_backbone_v1
+# Check staged diff with core.whitespace=cr-at-eol (CSV keeps standard CRLF).
+# Commit locally, then cherry-pick the experiment-only commit onto public e1ec57b in the clean publication worktree.
+# Push HEAD only to refs/heads/experiment/reference-frame-cross-backbone-v1; never force-push main.

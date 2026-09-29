@@ -1,0 +1,104 @@
+{
+  "status": "reconstruction_failed",
+  "passed": false,
+  "selected_wrapper": "B",
+  "summaries": [
+    {
+      "wrapper": "A",
+      "rates": {
+        "source": 0.0,
+        "target": 0.0
+      },
+      "strata": {
+        "source/recorded_plan": {
+          "N": 360,
+          "joint": 0,
+          "rate": 0.0
+        },
+        "source/reported_completed": {
+          "N": 200,
+          "joint": 0,
+          "rate": 0.0
+        },
+        "source/reported_cancelled": {
+          "N": 360,
+          "joint": 0,
+          "rate": 0.0
+        },
+        "target/recorded_plan": {
+          "N": 2360,
+          "joint": 0,
+          "rate": 0.0
+        },
+        "target/reported_completed": {
+          "N": 1160,
+          "joint": 0,
+          "rate": 0.0
+        },
+        "target/reported_cancelled": {
+          "N": 2360,
+          "joint": 0,
+          "rate": 0.0
+        }
+      },
+      "N": 6800,
+      "joint": 0,
+      "exact": 0,
+      "normal_end": 6800,
+      "unresolved": 6800,
+      "date_error": 0,
+      "nondate_error": 0
+    },
+    {
+      "wrapper": "B",
+      "rates": {
+        "source": 0.9760869565217392,
+        "target": 0.9799319727891157
+      },
+      "strata": {
+        "source/recorded_plan": {
+          "N": 360,
+          "joint": 347,
+          "rate": 0.9638888888888889
+        },
+        "source/reported_completed": {
+          "N": 200,
+          "joint": 200,
+          "rate": 1.0
+        },
+        "source/reported_cancelled": {
+          "N": 360,
+          "joint": 351,
+          "rate": 0.975
+        },
+        "target/recorded_plan": {
+          "N": 2360,
+          "joint": 2277,
+          "rate": 0.9648305084745763
+        },
+        "target/reported_completed": {
+          "N": 1160,
+          "joint": 1160,
+          "rate": 1.0
+        },
+        "target/reported_cancelled": {
+          "N": 2360,
+          "joint": 2325,
+          "rate": 0.9851694915254238
+        }
+      },
+      "N": 6800,
+      "joint": 6660,
+      "exact": 6660,
+      "normal_end": 6800,
+      "unresolved": 140,
+      "date_error": 0,
+      "nondate_error": 0
+    }
+  ],
+  "interface_passed": true,
+  "wall_seconds": 176.01008555991575,
+  "peak_cuda_bytes": 4098152448,
+  "reason": "current frozen interface does not satisfy reconstruction prerequisite",
+  "interface_hash": "5824a256373c8fcd089ae993c886710235eacc690654eaa95b227b5c6d9cf1c5"
+}
