@@ -1,0 +1,112 @@
+{
+  "config": {
+    "experiment": "G8 Decoder Basin Anisotropy",
+    "seed": 42,
+    "random_seed": 20261008,
+    "backbones": [
+      "BART",
+      "T5Gemma"
+    ],
+    "frozen_editor_sources": {
+      "BART": "experiments/reference_frame_pilot_v3/checkpoints/G3/best.pt",
+      "T5Gemma": "experiments/t5gemma_composition_v1/editor_best.pt"
+    },
+    "worlds": {
+      "train_recorded_plan_first": 24,
+      "dev_recorded_plan_first": 12,
+      "test_iid": "all 53 G5 locked worlds",
+      "test_template_ood": "all 53 G5 locked worlds"
+    },
+    "prediction_unit": "current pure-latent step 1-4 with G7 current_success=true",
+    "reconstruction": "same 8-world encoder/editor batches as G7; candidate directions decoded in five-direction batches; batch sensitivity audited",
+    "candidate_batch_order": "T5Gemma direction slots rotated by fixed per-state hash; BART retains fixed order in FP32",
+    "directions": [
+      "editor_forward",
+      "editor_reverse",
+      "radial_orthogonal_random",
+      "toward_gold",
+      "editor_orthogonal_random"
+    ],
+    "direction_norm": "full masked token-by-hidden L2 of actual next editor residual",
+    "radius_event": "greedy output fails both current and next gold semantic states, including fact/format/end failures",
+    "coarse_alpha": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "refinement_rounds": 2,
+    "radius_cap": 2.0,
+    "bootstrap_replicates": 3000,
+    "bootstrap_seed": 20261009,
+    "gpus_per_job": 1,
+    "maximum_simultaneous_gpus": 2
+  },
+  "state_count": 606,
+  "scan_count": 22544,
+  "radii_count": 3030,
+  "radius_summary_rows": 280,
+  "curve_rows": 300,
+  "paired_rows": 48,
+  "warning_rows": 210,
+  "nonmonotonic_test_counts": {
+    "BART": {
+      "editor_forward": {
+        "semantic_corridor": 0,
+        "content_structure": 0
+      },
+      "editor_reverse": {
+        "semantic_corridor": 0,
+        "content_structure": 0
+      },
+      "radial_orthogonal_random": {
+        "semantic_corridor": 0,
+        "content_structure": 0
+      },
+      "toward_gold": {
+        "semantic_corridor": 61,
+        "content_structure": 0
+      },
+      "editor_orthogonal_random": {
+        "semantic_corridor": 0,
+        "content_structure": 0
+      }
+    },
+    "T5Gemma": {
+      "editor_forward": {
+        "semantic_corridor": 72,
+        "content_structure": 114
+      },
+      "editor_reverse": {
+        "semantic_corridor": 0,
+        "content_structure": 0
+      },
+      "radial_orthogonal_random": {
+        "semantic_corridor": 15,
+        "content_structure": 18
+      },
+      "toward_gold": {
+        "semantic_corridor": 128,
+        "content_structure": 0
+      },
+      "editor_orthogonal_random": {
+        "semantic_corridor": 8,
+        "content_structure": 14
+      }
+    }
+  },
+  "batch_agreement": {
+    "BART": {
+      "states": 338,
+      "alpha_one_text_exact": 338,
+      "alpha_one_semantic_same": 338
+    },
+    "T5Gemma": {
+      "states": 268,
+      "alpha_one_text_exact": 252,
+      "alpha_one_semantic_same": 263
+    }
+  }
+}

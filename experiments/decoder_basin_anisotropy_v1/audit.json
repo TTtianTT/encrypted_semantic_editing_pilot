@@ -1,0 +1,58 @@
+{
+  "ok": true,
+  "config_sha256": "2a23d02c0dcbb3540e5c1bda07b564424a69f2bccd9e5d12cae81fd02f10fb12",
+  "counts": {
+    "BART": {
+      "states": 338,
+      "scan": 12356,
+      "splits": {
+        "train": 65,
+        "dev": 31,
+        "test_iid": 139,
+        "test_template_ood": 103
+      },
+      "baseline_text_exact": 426,
+      "baseline_checks": 426,
+      "alpha_one_text_exact": 338,
+      "alpha_one_semantic_same": 338,
+      "candidate_slot_counts": {
+        "0": 338,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      }
+    },
+    "T5Gemma": {
+      "states": 268,
+      "scan": 10188,
+      "splits": {
+        "train": 46,
+        "dev": 23,
+        "test_iid": 94,
+        "test_template_ood": 105
+      },
+      "baseline_text_exact": 268,
+      "baseline_checks": 268,
+      "alpha_one_text_exact": 252,
+      "alpha_one_semantic_same": 263,
+      "candidate_slot_counts": {
+        "0": 52,
+        "1": 57,
+        "2": 56,
+        "3": 39,
+        "4": 64
+      }
+    }
+  },
+  "world_split_overlap": 0,
+  "same_world_ids_across_backbones": true,
+  "alpha_one_state_links_checked": 606,
+  "candidate_score_checks": 22544,
+  "candidate_norm_checks": 22544,
+  "alpha_grid_checks": 22544,
+  "radii_rows": 3030,
+  "radius_summary_rows": 280,
+  "paired_bootstrap_rows": 48,
+  "paired_means_checked": 48
+}
