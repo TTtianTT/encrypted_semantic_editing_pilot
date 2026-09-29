@@ -1,0 +1,141 @@
+{
+  "experiment": "G7 repeated intervention stability diagnosis",
+  "created_utc": "2026-09-29T17:39:18.920993+00:00",
+  "branch": "experiment/repeated-intervention-stability-v1",
+  "base_commit": "89d3108822d3f54540c8db79c7288df873cbbb77",
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "slurm": {
+    "bart_job": 1777,
+    "t5gemma_job": 1778,
+    "gpus_per_job": 1,
+    "max_concurrent_gpus": 2
+  },
+  "frozen_editor_sha256": {
+    "bart": "dca3cb26c0d3c1e33e3215f86e911d4c19df7417160598dcfdba8fbcffd8654d",
+    "t5gemma": "66cd1f5c454514c9129c4a8bac54b028fe09063656b451c23242cc427a8db506"
+  },
+  "frozen_base_reference": "G3/G5 provenance and t5gemma_composition_v1/base_model_manifest.json",
+  "world_source_sha256": {
+    "bart": {
+      "train": "ad399fc324d4866e262e9c5c265e6fb5f61737b58174d813e77580cad2f48683",
+      "dev": "aba83404d7995af4b224fab094962746a19171c4fd8f0d5b10134e5f7ee9cde7",
+      "test_iid": "272cffaf4216c74f916bd67aca77af06547e7a4c61b53ff831c766f8c76efe3e",
+      "test_template_ood": "3a738aa89f93d3334148dc17cc958d18af70891585f60dc2d7b92fddb0620f5e"
+    },
+    "t5gemma": {
+      "train": "ad399fc324d4866e262e9c5c265e6fb5f61737b58174d813e77580cad2f48683",
+      "dev": "aba83404d7995af4b224fab094962746a19171c4fd8f0d5b10134e5f7ee9cde7",
+      "test_iid": "272cffaf4216c74f916bd67aca77af06547e7a4c61b53ff831c766f8c76efe3e",
+      "test_template_ood": "3a738aa89f93d3334148dc17cc958d18af70891585f60dc2d7b92fddb0620f5e"
+    }
+  },
+  "files": {
+    "REPORT.md": {
+      "bytes": 11986,
+      "sha256": "07a87175233b41e97c5b9236090a70ba74d33e51e8ec992667c08d77916bf7bf"
+    },
+    "config.json": {
+      "bytes": 1418,
+      "sha256": "c0a4120e9c81b403912a4fbb11ea359966fd87edd0c00afea8d4b863b972df16"
+    },
+    "extract.py": {
+      "bytes": 10304,
+      "sha256": "b8b7be353c33c0bc245fa25d3bb489914006819550bdabd8e2617ef1437aa39d"
+    },
+    "extract_bart.slurm": {
+      "bytes": 536,
+      "sha256": "0a2d7b0740fc3e02dca51f37aba6cdec5c11e2eea7173542827cd9341593d160"
+    },
+    "extract_t5gemma.slurm": {
+      "bytes": 545,
+      "sha256": "dfdeff38aa501807ba487fda4a546b96b06dd8649fdc016ff80c7957f265feb9"
+    },
+    "analyze.py": {
+      "bytes": 12335,
+      "sha256": "4ef0d3ff9a5b9589b4c378982ee4bb3297421f17278b671c9dce0b22dcc09dc0"
+    },
+    "cases.py": {
+      "bytes": 1660,
+      "sha256": "cf00374de39072c26ff860d6dda5170dbbe6748fba2e4e659ba601fdfde09e94"
+    },
+    "audit.py": {
+      "bytes": 5029,
+      "sha256": "006f578bcc5a3721c79438deaee6ff33cc7456a1621fe7dbada5af747b81ea58"
+    },
+    "finalize.py": {
+      "bytes": 2201,
+      "sha256": "284fc8c082f04f3f5f3f259d4cda8c5f11fca46d8133887c0f7e65d5ad5be106"
+    },
+    "features_bart.jsonl": {
+      "bytes": 2259540,
+      "sha256": "f4d6e2a631c7ec9824e5fe1254bac657d665bbeddefb5f55d21ce59f2bd76af0"
+    },
+    "features_t5gemma.jsonl": {
+      "bytes": 2220288,
+      "sha256": "10788bc505425f3d2b2fbe286512d1da1fe8a4af39341a7b15a2ab554f5da1a9"
+    },
+    "agreement_bart.json": {
+      "bytes": 130,
+      "sha256": "c2619a21c95a0b3f6aa34f9b84258f9ba79c5083b5651f0807448ea9f5be4c1e"
+    },
+    "agreement_t5gemma.json": {
+      "bytes": 130,
+      "sha256": "c1e65449db1230169a709d6eca23a29bc613139cdd0ddaf118e56c2f3d32bd47"
+    },
+    "extraction_bart.json": {
+      "bytes": 11479,
+      "sha256": "df40937c3a341241993b6b9aa541553eca2706511b0fec5b7d1126badc370778"
+    },
+    "extraction_t5gemma.json": {
+      "bytes": 11483,
+      "sha256": "5624fd7b116c3b78fa0f967935e3988bdcf9536e3c6d70c457ad19bf703e4953"
+    },
+    "predictor_comparison.csv": {
+      "bytes": 34220,
+      "sha256": "0d0a35d99ee2a22c070d674e92666a7a7532291678de0855ea78ddfa3f8f8c5a"
+    },
+    "within_step_auroc.csv": {
+      "bytes": 33316,
+      "sha256": "826f09aecb20ee1a93ac3cbc617d58008636c76a4d249015fa6e203dfe6a7e02"
+    },
+    "test_predictions.csv": {
+      "bytes": 1196998,
+      "sha256": "94a2086e0b0a5e40a2ac93363684e93e17ad7ef31bd85d8036954bfbbbd50f5f"
+    },
+    "stability_curves.csv": {
+      "bytes": 12874,
+      "sha256": "03e10bc0a3f4d195f416d06539347ceec322d7aa9538c8fef65a9316954a8c03"
+    },
+    "stability_curve_bart.svg": {
+      "bytes": 4549,
+      "sha256": "9454dd4114314d54b73748fce6b44b2ae7bac4b8c2ed71e6592b8d7f2e2d5b8d"
+    },
+    "stability_curve_t5gemma.svg": {
+      "bytes": 4037,
+      "sha256": "c67fb6b9964565bc7bd016449f2ba95d17cc8588f3b43e2476ca352473709035"
+    },
+    "pre_failure_examples.json": {
+      "bytes": 9293,
+      "sha256": "e90a473c26c247c5f892ea490f8c51d4d4395e62c33234dc2150988f79fc1011"
+    },
+    "pre_failure_trajectories.json": {
+      "bytes": 22772,
+      "sha256": "e7699d30f598a781c8d4f932067950363b8800a2641ae5895dd846aaf8590f48"
+    },
+    "analysis_summary.json": {
+      "bytes": 2430,
+      "sha256": "2b4b7e109db0f0b94bb45785009db7dfc91f4216b0c4f45305ceb96cd044d18e"
+    },
+    "audit.json": {
+      "bytes": 769,
+      "sha256": "5c82188d1f70a0e0e20b1564701a2bbbc3f649ab39e7dee849e049f5c4e0d5be"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "config_sha256": "c0a4120e9c81b403912a4fbb11ea359966fd87edd0c00afea8d4b863b972df16",
+  "records_per_backbone": {
+    "BART": {
+      "train": 800,
+      "dev": 135,
+      "test_iid": 265,
+      "test_template_ood": 265
+    },
+    "T5Gemma": {
+      "train": 800,
+      "dev": 135,
+      "test_iid": 265,
+      "test_template_ood": 265
+    }
+  },
+  "train_test_overlap": 0,
+  "legacy_exact_text_matches": {
+    "BART": 530,
+    "T5Gemma": 530
+  },
+  "recomputed_scores": 2930,
+  "next_step_link_checks": 2344,
+  "finite_feature_checks": 38090,
+  "analysis_rows": 210,
+  "test_prediction_rows": 9261,
+  "test_prediction_label_checks": 9261,
+  "analytic_affine_jacobian_state_independent": true,
+  "max_spectral_recompute_error": 2.384185791015625e-07
+}

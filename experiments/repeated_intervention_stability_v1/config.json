@@ -1,0 +1,25 @@
+{
+  "experiment": "G7 repeated intervention stability diagnosis",
+  "seed": 42,
+  "backbones": ["BART", "T5Gemma"],
+  "editors": {
+    "BART": "frozen G3 T_plus best.pt",
+    "T5Gemma": "frozen t5gemma_composition_v1 editor_best.pt"
+  },
+  "source": "recorded_plan worlds at offset +1; same 53 IID and 53 OOD test IDs as G5/G7 predecessor",
+  "predictor_train": "160 recorded_plan train worlds",
+  "predictor_dev": "27 recorded_plan dev worlds; threshold/model selection only",
+  "predictor_test": "53 locked IID and 53 locked template OOD worlds",
+  "chain_steps": 5,
+  "prediction_unit": "a currently successful pure-latent state at step k=1..4; label is failure at k+1",
+  "geometry": "masked-mean pooled metrics, position-aligned shared-active-token metrics, and token cosine-Gram RMS",
+  "decoder_nll": "teacher-forced gold target sequence mean per-token negative log likelihood",
+  "decoder_entropy_margin": "free-running greedy decoder scores on generated tokens, through first EOS",
+  "jacobian": "exact affine editor J=I+UV on active tokens; global spectral norm by fixed 80-step power iteration, state-dependent JVP gain along edit residual",
+  "predictors": "single-feature AUROC and fixed-C class-balanced logistic models with train-only preprocessing; dev-selected threshold",
+  "logistic_C": 1.0,
+  "bootstrap_seed": 20261004,
+  "bootstrap_replicates": 2000,
+  "batch_size": 8,
+  "num_gpus_per_job": 1
+}
