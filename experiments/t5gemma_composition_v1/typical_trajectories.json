@@ -1,0 +1,336 @@
+[
+  {
+    "category": "t5_pure_fails_dre_recovers",
+    "split": "test_iid",
+    "world_id": "v3_confirmation_test_iid_0000",
+    "stages": [
+      {
+        "step": 1,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.45280446609195985,
+          "residual_norm": 1.9924246072769165
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.45280544778526455,
+          "residual_norm": 1.9924246072769165
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.528120020091641,
+          "residual_norm": 31.739158630371094
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.528120020091641,
+          "residual_norm": 31.739158630371094
+        }
+      },
+      {
+        "step": 2,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.8638901909633766,
+          "residual_norm": 1.476301908493042
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.44088812628258695,
+          "residual_norm": 2.0843520164489746
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 1.2154137588562515,
+          "residual_norm": 38.6760368347168
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5250411045183256,
+          "residual_norm": 31.768362045288086
+        }
+      },
+      {
+        "step": 3,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 1.2122444707680797,
+          "residual_norm": 1.2020862102508545
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.4445895320354689,
+          "residual_norm": 2.1922528743743896
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.\n",
+          "success": false,
+          "fact_preservation": true,
+          "edited_l2": 2.1056864878830734,
+          "residual_norm": 48.084259033203125
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5338717172828674,
+          "residual_norm": 32.22885513305664
+        }
+      },
+      {
+        "step": 4,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Three days ago three days ago. These three days four days ago four days four four days days ago.' These three files three days days four ago four four-day days four three days three days old. This record does not establish that the event occurred.",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 1.5067041491916755,
+          "residual_norm": 1.115955114364624
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.4375166897832423,
+          "residual_norm": 2.267920970916748
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi schwach. внеш nuôi",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 3.2355582123958695,
+          "residual_norm": 59.74981689453125
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5333197255201844,
+          "residual_norm": 33.092159271240234
+        }
+      },
+      {
+        "step": 5,
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": " four days ago four days days ago three days four days four four days three days ago. These four days says four days old three days days four three days three four days. These three days old four days' four days",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 1.7682628317455054,
+          "residual_norm": 1.083924651145935
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.44074350519815036,
+          "residual_norm": 2.3989126682281494
+        },
+        "T5Gemma/pure_latent": {
+          "text": "",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 4.660411071960292,
+          "residual_norm": 73.86779022216797
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.541177184423639,
+          "residual_norm": 33.4123649597168
+        }
+      }
+    ]
+  },
+  {
+    "category": "t5_pure_fails_dre_recovers",
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0000",
+    "stages": [
+      {
+        "step": 1,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.46787900850207936,
+          "residual_norm": 2.0637447834014893
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.46787997378748186,
+          "residual_norm": 2.0637447834014893
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.517516182806448,
+          "residual_norm": 31.422531127929688
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.517516182806448,
+          "residual_norm": 31.422531127929688
+        }
+      },
+      {
+        "step": 2,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.8843561277658727,
+          "residual_norm": 1.5361217260360718
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.464781166851202,
+          "residual_norm": 2.139134645462036
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 1.1969523207641426,
+          "residual_norm": 38.237979888916016
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5213590023474673,
+          "residual_norm": 31.32979393005371
+        }
+      },
+      {
+        "step": 3,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 1.2324071865328465,
+          "residual_norm": 1.248392939567566
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.46214269758277976,
+          "residual_norm": 2.2387890815734863
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author: Emma. Record date: 2026-10-02. What does the record describe for an event dated three days ago. This record does not establish that the event occurred.\n",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 2.0649569925229447,
+          "residual_norm": 47.45771026611328
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5257293079322811,
+          "residual_norm": 31.811555862426758
+        }
+      },
+      {
+        "step": 4,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": "Three days ago three days ago is four days ago. These three days four days days three days days ago four days three three days three four days four three days. This record does not establish that the event occurred.",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 1.5270239657839144,
+          "residual_norm": 1.1579928398132324
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.45817322156516416,
+          "residual_norm": 2.250699758529663
+        },
+        "T5Gemma/pure_latent": {
+          "text": "Author. внеш nuôi soltanto τονμεν. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న. внешνοи наต่อపлёрವುన్న.",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 3.1738377781139016,
+          "residual_norm": 58.89248275756836
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5259912695418599,
+          "residual_norm": 32.66714859008789
+        }
+      },
+      {
+        "step": 5,
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "BART/pure_latent": {
+          "text": " three days days ago four days days four days four four days ago three days four",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 1.792748701078899,
+          "residual_norm": 1.119628667831421
+        },
+        "BART/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.4644394955593916,
+          "residual_norm": 2.408846378326416
+        },
+        "T5Gemma/pure_latent": {
+          "text": "",
+          "success": false,
+          "fact_preservation": false,
+          "edited_l2": 4.56297148065753,
+          "residual_norm": 72.71633911132812
+        },
+        "T5Gemma/decode_reencode": {
+          "text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred. \n",
+          "success": true,
+          "fact_preservation": true,
+          "edited_l2": 0.5312160142432261,
+          "residual_norm": 32.952083587646484
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "model": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it",
+  "parameter_count": 5596853760,
+  "hidden_size": 2304,
+  "input_max_tokens": 52,
+  "identity_joint": 0,
+  "n": 16,
+  "examples": [
+    {
+      "source": "Author: Emma. Record date: 2026-11-05. The record describes my plan to not deliver six sensors to David, with the event dated tomorrow. This record does not establish that the event occurred.",
+      "output": " This record is for informational purposes only and does not constitute a legal agreement or commitment. \n",
+      "success": false
+    },
+    {
+      "source": "Author: David. Record date: 2026-12-02. The record describes my report of not sending four sensors to Emma, with the event dated yesterday.",
+      "output": "## Incident Report\n\n**Author:** David\n\n**Date:** 2026-12-02\n\n**Incident Type:** Failure to deliver\n\n**Incident Description:** I failed to deliver four sensors to Emma on the date of yesterday, [Date of yesterday]. This report documents the incident.\n\n**Possible Causes:**\n\n* [List potential causes, e.g., miscommunication,",
+      "success": false
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-09. The record describes my cancelled plan to not deliver nine books to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+      "output": "This record is a potential record of a cancelled plan. It does not confirm that the event described actually occurred. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Frank. Record date: 2026-11-28. For an event dated tomorrow, the record describes my plan to deliver three tickets to Bob. This record does not establish that the event occurred.",
+      "output": "This record is a plan, not an event. It does not establish that the event occurred. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Bob. Record date: 2026-11-21. For an event dated yesterday, the record describes my report of sending nine books to Grace.",
+      "output": "## Event Log\n\n**Event:** Sending nine books to Grace\n\n**Date:** 2026-11-20\n\n**Author:** Bob\n\n**Description:** I sent nine books to Grace. \n\n**Notes:** This event is recorded on 2026-11-21. \n",
+      "success": false
+    },
+    {
+      "source": "Author: David. Record date: 2026-10-25. For an event dated yesterday, the record describes my cancelled plan to send five tickets to Henry. This record does not establish that the event occurred.",
+      "output": "This record is a plan, not an event. It does not establish that the event occurred. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Henry. Record date: 2026-11-12. According to the record, my plan to not give five tickets to Grace concerns an event dated tomorrow. This record does not establish that the event occurred.",
+      "output": "## Analysis of Henry's Statement\n\nHenry's statement presents a situation where he plans to not give five tickets to Grace for an event that is scheduled for tomorrow. However, the record only states that this plan exists, not that the event actually happened. \n\nHere's a breakdown of the issues:\n\n* **Future Tense:** The statement uses the future tense (\"concerns an event dated",
+      "success": false
+    },
+    {
+      "source": "Author: Bob. Record date: 2026-11-13. According to the record, my report of not giving six tickets to David concerns an event dated yesterday.",
+      "output": "This is a very strange situation. It seems like you're trying to report a past event, but the record is saying it happened yesterday.  \n\nHere's what we can figure out:\n\n* **The record is wrong:** It seems likely that the record is incorrect. It's impossible for an event to happen yesterday and be reported today. \n* **You're trying",
+      "success": false
+    },
+    {
+      "source": "Author: Emma. Record date: 2026-11-01. According to the record, my cancelled plan to not give one parcel to Grace concerns an event dated yesterday. This record does not establish that the event occurred.",
+      "output": "## Analysis of Emma's Record\n\nThis record presents a potential conflict of interest. Emma claims to have cancelled a plan to not give a parcel to Grace, but the record only mentions the cancellation and doesn't confirm the event actually happened. \n\nHere's a breakdown of the issues:\n\n* **Lack of Evidence:** The record lacks any evidence to support the claim that Emma's",
+      "success": false
+    },
+    {
+      "source": "Author: Carol. Record date: 2026-10-23. My plan to deliver nine parcels to Grace, with the event dated tomorrow, is described in the record. This record does not establish that the event occurred.",
+      "output": "This record is a prediction of future events and does not constitute a guarantee of their occurrence. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-08. My report of giving seven sensors to Bob, with the event dated yesterday, is described in the record.",
+      "output": "The record you are referring to is not available to me. I am an AI and do not have access to past records or personal information. \n\nIt is possible that the record you are looking for is:\n\n* **Lost or deleted:** Records can be lost or deleted for various reasons.\n* **Not publicly accessible:** The record may be confidential or not intended for public viewing.\n*",
+      "success": false
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-10-14. My cancelled plan to give four sensors to Alice, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+      "output": "This record is a statement of Grace's intention to give four sensors to Alice, but it does not confirm that the event actually took place. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Emma. Record date: 2026-10-23. The record contains an account of my plan to not send five books to Bob, with the event dated tomorrow. This record does not establish that the event occurred.",
+      "output": " This record is a prediction of future events and does not constitute a guarantee of their occurrence. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Frank. Record date: 2026-12-11. The record contains an account of my report of not sending two parcels to David, with the event dated yesterday.",
+      "output": "## Incident Report - Parcel Delivery Failure\n\n**Author:** Frank\n\n**Date:** 2026-12-11\n\n**Incident Date:** 2026-12-10\n\n**Description:**\n\nThis report documents the failure to deliver two parcels to David on 2026-12-10. The parcels were intended for delivery to David",
+      "success": false
+    },
+    {
+      "source": "Author: Henry. Record date: 2026-10-16. The record contains an account of my cancelled plan to not bring three tickets to Alice, with the event dated yesterday. This record does not establish that the event occurred.",
+      "output": "This record is a potential account of Henry's cancelled plan to not bring three tickets to Alice. However, it is important to note that this record does not definitively prove that the event actually occurred. The record only states that Henry had a plan to not bring the tickets, and that plan was cancelled. Therefore, it is possible that the event never happened at all. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-26. In the record, my plan to bring nine books to David has an event date of tomorrow. This record does not establish that the event occurred.",
+      "output": "##  Incomplete Event: Bringing Books to David\n\n**Author:** Grace\n\n**Record Date:** 2026-11-26\n\n**Event:** Bringing nine books to David\n\n**Event Date:** Tomorrow (2026-11-27)\n\n**Status:** Planned\n\n**Note:** This record reflects a plan to bring nine books to David. However,",
+      "success": false
+    }
+  ]
+}

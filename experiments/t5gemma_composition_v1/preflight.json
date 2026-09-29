@@ -1,0 +1,93 @@
+{
+  "model": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it",
+  "prefix": "Return exactly one copy of the text below, with no introduction, ending, or extra text.\n\n",
+  "chat_template": true,
+  "parameter_count": 5596853760,
+  "hidden_size": 2304,
+  "input_max_tokens": 80,
+  "identity_joint": 14,
+  "identity_exact": 0,
+  "n": 16,
+  "examples": [
+    {
+      "source": "Author: Emma. Record date: 2026-11-05. The record describes my plan to not deliver six sensors to David, with the event dated tomorrow. This record does not establish that the event occurred.",
+      "output": "Author: Emma. Record date: 2026-11-05. The record describes my plan to not deliver six sensors to David, with the event dated tomorrow. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: David. Record date: 2026-12-02. The record describes my report of not sending four sensors to Emma, with the event dated yesterday.",
+      "output": "Author: David. Record date: 2026-12-02. The record describes my report of not sending four sensors to Emma, with the event dated yesterday. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-09. The record describes my cancelled plan to not deliver nine books to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+      "output": "Author: Grace. Record date: 2026-11-09. The record describes my cancelled plan to not deliver nine books to Emma, with the event dated yesterday. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Frank. Record date: 2026-11-28. For an event dated tomorrow, the record describes my plan to deliver three tickets to Bob. This record does not establish that the event occurred.",
+      "output": "Author: Frank. Record date: 2026-11-28. For an event dated tomorrow, the record describes my plan to deliver three tickets to Bob. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Bob. Record date: 2026-11-21. For an event dated yesterday, the record describes my report of sending nine books to Grace.",
+      "output": "Author: Bob. Record date: 2026-11-21. For an event dated yesterday, the record describes my report of sending nine books to Grace. \n",
+      "success": true
+    },
+    {
+      "source": "Author: David. Record date: 2026-10-25. For an event dated yesterday, the record describes my cancelled plan to send five tickets to Henry. This record does not establish that the event occurred.",
+      "output": "Author: David. Record date: 2026-10-25. For an event dated yesterday, the record describes my cancelled plan to send five tickets to Henry. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Henry. Record date: 2026-11-12. According to the record, my plan to not give five tickets to Grace concerns an event dated tomorrow. This record does not establish that the event occurred.",
+      "output": "Author: Henry. Record date: 2026-11-12. According to the record, my plan to not give five tickets to Grace concerns an event dated tomorrow. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Bob. Record date: 2026-11-13. According to the record, my report of not giving six tickets to David concerns an event dated yesterday.",
+      "output": "Author: Bob. Record date: 2026-11-13. According to the record, my report of not giving six tickets to David concerns an event dated yesterday. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Emma. Record date: 2026-11-01. According to the record, my cancelled plan to not give one parcel to Grace concerns an event dated yesterday. This record does not establish that the event occurred.",
+      "output": "Author: Emma. Record date: 2026-11-01. According to the record, my cancelled plan to not give one parcel to Grace concerns an event dated yesterday. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Carol. Record date: 2026-10-23. My plan to deliver nine parcels to Grace, with the event dated tomorrow, is described in the record. This record does not establish that the event occurred.",
+      "output": "Author: Carol. Record date: 2026-10-23. My plan to deliver nine parcels to Grace, with the event dated tomorrow, is described in the record. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-08. My report of giving seven sensors to Bob, with the event dated yesterday, is described in the record.",
+      "output": "Author: Grace. Record date: 2026-11-08. My report of giving seven sensors to Bob, with the event dated yesterday, is described in the record. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-10-14. My cancelled plan to give four sensors to Alice, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+      "output": "Author: Grace. Record date: 2026-10-14. My cancelled plan to give four sensors to Alice, with the event dated yesterday, is described in the record. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Emma. Record date: 2026-10-23. The record contains an account of my plan to not send five books to Bob, with the event dated tomorrow. This record does not establish that the event occurred.",
+      "output": "Author: Emma. Record date: 2026-10-23. The record contains an account of my plan to not send five books to Bob, with the event dated tomorrow. This record does not establish that the event occurred. \n",
+      "success": true
+    },
+    {
+      "source": "Author: Frank. Record date: 2026-12-11. The record contains an account of my report of not sending two parcels to David, with the event dated yesterday.",
+      "output": "Yesterday, I failed to send two parcels to David. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Henry. Record date: 2026-10-16. The record contains an account of my cancelled plan to not bring three tickets to Alice, with the event dated yesterday. This record does not establish that the event occurred.",
+      "output": "Henry. Record date: 2026-10-16. The record contains an account of my cancelled plan to not bring three tickets to Alice, with the event dated yesterday. This record does not establish that the event occurred. \n",
+      "success": false
+    },
+    {
+      "source": "Author: Grace. Record date: 2026-11-26. In the record, my plan to bring nine books to David has an event date of tomorrow. This record does not establish that the event occurred.",
+      "output": "Author: Grace. Record date: 2026-11-26. In the record, my plan to bring nine books to David has an event date of tomorrow. This record does not establish that the event occurred. \n",
+      "success": true
+    }
+  ]
+}
