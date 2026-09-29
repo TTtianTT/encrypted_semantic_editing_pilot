@@ -1,0 +1,45 @@
+{
+  "rank": 16,
+  "seed": 42,
+  "updates": 600,
+  "beststep": 600,
+  "best_dev_nll": 8.32015018706322e-06,
+  "history": [
+    {
+      "step": 100,
+      "dev_target_token_nll": 0.007661684139653219
+    },
+    {
+      "step": 200,
+      "dev_target_token_nll": 0.00012692243731528228
+    },
+    {
+      "step": 300,
+      "dev_target_token_nll": 2.8010103280866374e-05
+    },
+    {
+      "step": 400,
+      "dev_target_token_nll": 1.6708448778704872e-05
+    },
+    {
+      "step": 500,
+      "dev_target_token_nll": 1.1348136830147495e-05
+    },
+    {
+      "step": 600,
+      "dev_target_token_nll": 8.32015018706322e-06
+    }
+  ],
+  "parameters": 76032,
+  "supervision_tokens": 475600,
+  "supervised_samples": 9600,
+  "operator_sample_calls": 9600,
+  "decoder_forward_batches": 2400,
+  "train_seconds": 613.418899794342,
+  "wall_seconds": 652.1161782070994,
+  "peak_cuda_bytes": 24905242624,
+  "initial_tensor_hash": "4215eae35021f063368990f096d94731cb8b256bbc0da869577f9c91d3258f92",
+  "checkpoint_hash": "7eaa9cbbc2f582f8d16ae38b48dbf572d58622be170afcd36928c27dfa1088b9",
+  "effective_batch": 16,
+  "micro_batch": 4
+}

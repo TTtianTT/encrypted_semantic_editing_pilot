@@ -1,0 +1,36 @@
+{
+  "dimension": 2304,
+  "editors": {
+    "Joint16": {
+      "rank": 16,
+      "parameters": 76032,
+      "newly_trained": true
+    },
+    "Joint32": {
+      "rank": 32,
+      "parameters": 149760,
+      "newly_trained": true
+    },
+    "Sequential_T_then_P": {
+      "active_parameters": 152064,
+      "original_group_parameters": 304128,
+      "newly_trained": false
+    },
+    "Sequential_P_then_T": {
+      "active_parameters": 152064,
+      "original_group_parameters": 304128,
+      "newly_trained": false
+    },
+    "Folded_T_then_P": {
+      "rank": 32,
+      "parameters": 149760,
+      "newly_trained": false
+    },
+    "Folded_P_then_T": {
+      "rank": 32,
+      "parameters": 149760,
+      "newly_trained": false
+    }
+  },
+  "note": "The copied backbone interface JSON preserves historical rank16 editor metadata; this manifest records the current methods."
+}

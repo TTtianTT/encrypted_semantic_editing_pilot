@@ -1,0 +1,11 @@
+git switch -c experiment/joint-reference-editor-v1 bc50874
+.venv/bin/python experiments/joint_reference_editor_v1/prepare.py
+sbatch --partition=B300q --exclude=node01 experiments/joint_reference_editor_v1/run.slurm preflight # 1750
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/joint_reference_editor_v1/run.slurm train 16 # 1751
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/joint_reference_editor_v1/run.slurm train 32 # 1752
+sbatch --partition=B300q --exclude=node01 --time=00:30:00 --export=ALL,RF_WALL_SECONDS=1740 experiments/joint_reference_editor_v1/run.slurm evaluate # 1753
+sacct -j 1750,1751,1752,1753 --format=JobIDRaw,State,ElapsedRaw,AllocTRES,Submit,Start,End -n -P
+.venv/bin/python experiments/joint_reference_editor_v1/account.py 1753:evaluation:common_confirmation
+.venv/bin/python experiments/joint_reference_editor_v1/analyze.py
+.venv/bin/python experiments/joint_reference_editor_v1/check.py
+.venv/bin/python experiments/joint_reference_editor_v1/report.py

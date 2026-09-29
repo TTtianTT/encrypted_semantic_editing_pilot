@@ -1,0 +1,23 @@
+{
+  "baseline": "bc5087483b5c3d2476d615d8e9452b0f54bd289c",
+  "model": "t5gemma-2b-2b-ul2-it",
+  "model_revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+  "seed": 42,
+  "data_seed": 2026092905,
+  "ranks": [
+    16,
+    32
+  ],
+  "updates": 600,
+  "effective_batch": 16,
+  "micro_batch": 4,
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "gradient_clip": 1.0,
+  "eval_interval": 100,
+  "dtype": "float32",
+  "selection": "complete joint-dev target-token NLL; earliest tie",
+  "gpu_limit_seconds": 7200,
+  "max_concurrent_gpus": 2,
+  "bootstrap_replicates": 2000
+}

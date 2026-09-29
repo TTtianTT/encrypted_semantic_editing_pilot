@@ -1,0 +1,13 @@
+method,split,N,endpoint_joint,trajectory_joint,first_joint,endpoint_correct_intermediate_wrong,date_ok,person_ok,nondate_ok,confirmed_nondate_error,confirmed_date_error,unresolved,normal_end,plan_to_completed
+Joint16,test_iid,80,80,,80,,80,80,80,0,0,0,80,0
+Joint16,test_template_ood,80,80,,80,,80,80,80,0,0,0,80,0
+Joint32,test_iid,80,80,,80,,80,80,80,0,0,0,80,0
+Joint32,test_template_ood,80,80,,80,,80,80,80,0,0,0,80,0
+Sequential_T_then_P,test_iid,80,51,51,80,0,51,79,79,0,28,1,80,0
+Sequential_T_then_P,test_template_ood,80,40,40,80,0,40,80,80,0,40,0,80,0
+Folded_T_then_P,test_iid,80,51,,51,,51,79,79,0,28,1,80,0
+Folded_T_then_P,test_template_ood,80,40,,40,,40,80,80,0,40,0,80,0
+Sequential_P_then_T,test_iid,80,66,66,80,0,66,76,76,0,10,4,80,0
+Sequential_P_then_T,test_template_ood,80,40,40,80,0,40,70,70,0,30,10,80,0
+Folded_P_then_T,test_iid,80,66,,66,,66,76,76,0,10,4,80,0
+Folded_P_then_T,test_template_ood,80,40,,40,,40,70,70,0,30,10,80,0

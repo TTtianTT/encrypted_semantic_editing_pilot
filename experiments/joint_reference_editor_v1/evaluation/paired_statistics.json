@@ -1,0 +1,175 @@
+{
+  "replicates": 2000,
+  "unit": "world; same paired resamples for all methods",
+  "training_randomness_included": false,
+  "results": [
+    {
+      "split": "test_iid",
+      "method_a": "Joint16",
+      "method_b": "Sequential_T_then_P",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.3625,
+      "ci95": [
+        0.2625,
+        0.475
+      ],
+      "wins": 29,
+      "losses": 0
+    },
+    {
+      "split": "test_iid",
+      "method_a": "Joint16",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.175,
+      "ci95": [
+        0.1,
+        0.2625
+      ],
+      "wins": 14,
+      "losses": 0
+    },
+    {
+      "split": "test_iid",
+      "method_a": "Joint32",
+      "method_b": "Sequential_T_then_P",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.3625,
+      "ci95": [
+        0.2625,
+        0.475
+      ],
+      "wins": 29,
+      "losses": 0
+    },
+    {
+      "split": "test_iid",
+      "method_a": "Joint32",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.175,
+      "ci95": [
+        0.1,
+        0.2625
+      ],
+      "wins": 14,
+      "losses": 0
+    },
+    {
+      "split": "test_iid",
+      "method_a": "Joint32",
+      "method_b": "Joint16",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "split": "test_iid",
+      "method_a": "Sequential_T_then_P",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": -0.1875,
+      "ci95": [
+        -0.2875,
+        -0.0875
+      ],
+      "wins": 3,
+      "losses": 18
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Joint16",
+      "method_b": "Sequential_T_then_P",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.5,
+      "ci95": [
+        0.3875,
+        0.6125
+      ],
+      "wins": 40,
+      "losses": 0
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Joint16",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.5,
+      "ci95": [
+        0.3875,
+        0.6125
+      ],
+      "wins": 40,
+      "losses": 0
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Joint32",
+      "method_b": "Sequential_T_then_P",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.5,
+      "ci95": [
+        0.3875,
+        0.6125
+      ],
+      "wins": 40,
+      "losses": 0
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Joint32",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.5,
+      "ci95": [
+        0.3875,
+        0.6125
+      ],
+      "wins": 40,
+      "losses": 0
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Joint32",
+      "method_b": "Joint16",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "split": "test_template_ood",
+      "method_a": "Sequential_T_then_P",
+      "method_b": "Sequential_P_then_T",
+      "N": 80,
+      "metric": "endpoint_joint",
+      "difference": 0.0,
+      "ci95": [
+        -0.075,
+        0.075
+      ],
+      "wins": 5,
+      "losses": 5
+    }
+  ]
+}

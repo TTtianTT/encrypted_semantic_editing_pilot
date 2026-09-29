@@ -1,0 +1,222 @@
+{
+  "passed": true,
+  "deterministic": true,
+  "model": "t5gemma-2b-2b-ul2-it",
+  "ranks": [
+    {
+      "rank": 16,
+      "parameters": 76032,
+      "hidden_gradient_norm": 0.0388101264834404,
+      "editor_gradient_norms": {
+        "b": 0.12135057151317596,
+        "v.weight": 0.0,
+        "u.weight": 0.2777653932571411
+      },
+      "padding_check_nonzero_residual": true,
+      "zero_edit_identical": true,
+      "backbone_gradients_none": true,
+      "backbone_frozen": true,
+      "initial_hash": "cb3b2fa64b460f218cc083fc10a558778917c8ccd21b6349fe26be7f7dd80a5e",
+      "initial_tensor_hash": "4215eae35021f063368990f096d94731cb8b256bbc0da869577f9c91d3258f92",
+      "estimated_training_seconds": 953.8853102596477
+    },
+    {
+      "rank": 32,
+      "parameters": 149760,
+      "hidden_gradient_norm": 0.0388101264834404,
+      "editor_gradient_norms": {
+        "b": 0.12135057151317596,
+        "v.weight": 0.0,
+        "u.weight": 0.39460626244544983
+      },
+      "padding_check_nonzero_residual": true,
+      "zero_edit_identical": true,
+      "backbone_gradients_none": true,
+      "backbone_frozen": true,
+      "initial_hash": "f74c342a5bd0c73f718d1bb199f819f5f88547242c820a2976bdc958803e70ce",
+      "initial_tensor_hash": "e06e661452ccb07ec09d3316c468061bc23e793f152d77be180119d4ba982a49",
+      "estimated_training_seconds": 998.6403896240517
+    }
+  ],
+  "archive_matches": [
+    {
+      "row_id": "cross_v1_test_iid_0000/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0001/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0002/plus_person/-1/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0003/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0004/plus_person/-2/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0005/plus_person/-2/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0006/plus_person/2/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0007/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0008/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0009/plus_person/-2/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0010/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0011/plus_person/1/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0012/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0013/plus_person/-2/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0014/plus_person/-1/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0015/plus_person/0/first",
+      "order": "T_then_P",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0000/person_plus/1/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0001/person_plus/-2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0002/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0003/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0004/person_plus/0/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0005/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0006/person_plus/-2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0007/person_plus/-1/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0008/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0009/person_plus/0/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0010/person_plus/-2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0011/person_plus/-1/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0012/person_plus/-2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0013/person_plus/-1/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0014/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    },
+    {
+      "row_id": "cross_v1_test_iid_0015/person_plus/2/first",
+      "order": "P_then_T",
+      "exact": true
+    }
+  ],
+  "fold_checks": [
+    {
+      "order": "T_then_P",
+      "max_abs": 7.62939453125e-06,
+      "relative_l2": 9.605463446860085e-08
+    },
+    {
+      "order": "P_then_T",
+      "max_abs": 7.62939453125e-06,
+      "relative_l2": 9.437762571451458e-08
+    }
+  ],
+  "evaluation_reserve_seconds": 285.56874835921917,
+  "training_estimates": {
+    "16": 953.8853102596477,
+    "32": 998.6403896240517
+  },
+  "planned_remaining_estimate": 2238.0944482429186,
+  "optimizer_updates": 0
+}

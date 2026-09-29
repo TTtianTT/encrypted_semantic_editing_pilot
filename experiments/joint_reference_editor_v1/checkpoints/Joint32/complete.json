@@ -1,0 +1,45 @@
+{
+  "rank": 32,
+  "seed": 42,
+  "updates": 600,
+  "beststep": 600,
+  "best_dev_nll": 7.865667362737722e-06,
+  "history": [
+    {
+      "step": 100,
+      "dev_target_token_nll": 0.0074735971341029946
+    },
+    {
+      "step": 200,
+      "dev_target_token_nll": 0.02726538912141966
+    },
+    {
+      "step": 300,
+      "dev_target_token_nll": 0.061812618458903026
+    },
+    {
+      "step": 400,
+      "dev_target_token_nll": 0.0006339985757168254
+    },
+    {
+      "step": 500,
+      "dev_target_token_nll": 1.094961695833475e-05
+    },
+    {
+      "step": 600,
+      "dev_target_token_nll": 7.865667362737722e-06
+    }
+  ],
+  "parameters": 149760,
+  "supervision_tokens": 475600,
+  "supervised_samples": 9600,
+  "operator_sample_calls": 9600,
+  "decoder_forward_batches": 2400,
+  "train_seconds": 336.0566900782287,
+  "wall_seconds": 372.0666680820286,
+  "peak_cuda_bytes": 24906442752,
+  "initial_tensor_hash": "e06e661452ccb07ec09d3316c468061bc23e793f152d77be180119d4ba982a49",
+  "checkpoint_hash": "33134627b140813620ad826746c7b16443975f0208e531bba8c24a3ea8388d0e",
+  "effective_batch": 16,
+  "micro_batch": 4
+}

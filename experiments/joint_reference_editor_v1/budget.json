@@ -1,0 +1,56 @@
+{
+  "limit_gpu_seconds": 7200,
+  "max_concurrent_gpus": 2,
+  "jobs": [
+    {
+      "job_id": 1750,
+      "phase": "preflight",
+      "label": "shared",
+      "state": "COMPLETED",
+      "gpu_seconds": 69,
+      "allocation": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "submit": "2026-09-29T19:57:52",
+      "start": "2026-09-29T19:57:52",
+      "end": "2026-09-29T19:59:01",
+      "queue_seconds": 0.0
+    },
+    {
+      "job_id": 1751,
+      "phase": "training",
+      "label": "Joint16",
+      "state": "COMPLETED",
+      "gpu_seconds": 703,
+      "allocation": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "submit": "2026-09-29T19:59:29",
+      "start": "2026-09-29T19:59:29",
+      "end": "2026-09-29T20:11:12",
+      "queue_seconds": 0.0
+    },
+    {
+      "job_id": 1752,
+      "phase": "training",
+      "label": "Joint32",
+      "state": "COMPLETED",
+      "gpu_seconds": 418,
+      "allocation": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "submit": "2026-09-29T19:59:29",
+      "start": "2026-09-29T19:59:30",
+      "end": "2026-09-29T20:06:28",
+      "queue_seconds": 1.0
+    },
+    {
+      "job_id": 1753,
+      "phase": "evaluation",
+      "label": "common_confirmation",
+      "state": "COMPLETED",
+      "gpu_seconds": 196,
+      "allocation": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "submit": "2026-09-29T20:11:30",
+      "start": "2026-09-29T20:11:30",
+      "end": "2026-09-29T20:14:46",
+      "queue_seconds": 0.0
+    }
+  ],
+  "total_gpu_seconds": 1386,
+  "remaining_gpu_seconds": 5814
+}
