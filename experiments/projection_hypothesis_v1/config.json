@@ -1,0 +1,15 @@
+{
+  "experiment": "G5_projection_hypothesis",
+  "seed": 42,
+  "bootstrap_seed": 20261001,
+  "bootstrap_replicates": 5000,
+  "source_offset": 1,
+  "worlds_per_split": 53,
+  "steps": 5,
+  "paths": ["pure_latent_reused_from_G4", "decode_reencode"],
+  "probe": "G4 single-hidden-layer 64-wide MLP, epoch 5, trained only on train-world 0/1/2-step states",
+  "geometry": "mean over active BART encoder tokens; cosine distance and L2 divided by gold vector norm",
+  "decode": {"max_new_tokens": 60, "do_sample": false, "num_beams": 1, "forced_eos_token_id": null},
+  "editor_training": "none",
+  "new_projector_training": "none"
+}

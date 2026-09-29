@@ -1,0 +1,2262 @@
+[
+  {
+    "label": "recovered",
+    "split": "test_iid",
+    "world_id": "v3_confirmation_test_iid_0000",
+    "pure": [
+      {
+        "path": "pure_latent",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 1,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-11",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.09241414070129395,
+          "normalized_l2": 0.45280446609195985
+        },
+        "residual_norm": 1.9924246072769165,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 2,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-12",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.2588973045349121,
+          "normalized_l2": 0.8638901909633766
+        },
+        "residual_norm": 1.476301908493042,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 3,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-13",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -2,
+        "edited_distance": {
+          "cosine": 0.38792550563812256,
+          "normalized_l2": 1.2122444707680797
+        },
+        "residual_norm": 1.2020862102508545,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 47
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 4,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Three days ago three days ago. These three days four days ago four days four four days days ago.' These three files three days days four ago four four-day days four three days three days old. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-14",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.4744492769241333,
+          "normalized_l2": 1.5067041491916755
+        },
+        "residual_norm": 1.115955114364624,
+        "edited_mask_length": 45,
+        "reset_text": "Three days ago three days ago. These three days four days ago four days four four days days ago.' These three files three days days four ago four four-day days four three days three days old. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.24393713474273682,
+          "normalized_l2": 0.838127367026904
+        },
+        "reset_mask_length": 53
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 5,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": " four days ago four days days ago three days four days four four days three days ago. These four days says four days old three days days four three days three four days. These three days old four days' four days",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-15",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.5391663014888763,
+          "normalized_l2": 1.7682628317455054
+        },
+        "residual_norm": 1.083924651145935,
+        "edited_mask_length": 45,
+        "reset_text": " four days ago four days days ago three days four days four four days three days ago. These four days says four days old three days days four three days three four days. These three days old four days' four days",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.355000376701355,
+          "normalized_l2": 1.1215241351447383
+        },
+        "reset_mask_length": 46
+      }
+    ],
+    "decode_reencode": [
+      {
+        "path": "decode_reencode",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 1,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-11",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.09241253137588501,
+          "normalized_l2": 0.45280544778526455
+        },
+        "residual_norm": 1.9924246072769165,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 2,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated today. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-12",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.0886576771736145,
+          "normalized_l2": 0.44088812628258695
+        },
+        "residual_norm": 2.0843520164489746,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 3,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-13",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.08914178609848022,
+          "normalized_l2": 0.4445895320354689
+        },
+        "residual_norm": 2.1922528743743896,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 47
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 4,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated two days ago. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-14",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -3,
+        "edited_distance": {
+          "cosine": 0.08664208650588989,
+          "normalized_l2": 0.4375166897832423
+        },
+        "residual_norm": 2.267920970916748,
+        "edited_mask_length": 47,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 1.1920928955078125e-07,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 47
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_iid",
+        "world_id": "v3_confirmation_test_iid_0000",
+        "step": 5,
+        "source_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated three days ago. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "gold_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-15",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -3,
+        "edited_distance": {
+          "cosine": 0.0883973240852356,
+          "normalized_l2": 0.44074350519815036
+        },
+        "residual_norm": 2.3989126682281494,
+        "edited_mask_length": 47,
+        "reset_text": "Author: Carol. Record date: 2026-11-06. The record describes my plan to not give four sensors to Frank, with the event dated four days ago. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Carol",
+            "actor": "Carol",
+            "recipient": "Frank",
+            "action": "give",
+            "object": "sensor",
+            "quantity": 4,
+            "record_date": "2026-11-06",
+            "event_date": "2026-11-11",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Carol",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 1.1920928955078125e-07,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 47
+      }
+    ]
+  },
+  {
+    "label": "recovered",
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0000",
+    "pure": [
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 1,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-07",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.09874087572097778,
+          "normalized_l2": 0.46787900850207936
+        },
+        "residual_norm": 2.0637447834014893,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 46
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 2,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-08",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.2706174850463867,
+          "normalized_l2": 0.8843561277658727
+        },
+        "residual_norm": 1.5361217260360718,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 46
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 3,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-09",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -2,
+        "edited_distance": {
+          "cosine": 0.39989542961120605,
+          "normalized_l2": 1.2324071865328465
+        },
+        "residual_norm": 1.248392939567566,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 0.007993578910827637,
+          "normalized_l2": 0.12643663324568136
+        },
+        "reset_mask_length": 44
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 4,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Three days ago three days ago is four days ago. These three days four days days three days days ago four days three three days three four days four three days. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-10",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.48529624938964844,
+          "normalized_l2": 1.5270239657839144
+        },
+        "residual_norm": 1.1579928398132324,
+        "edited_mask_length": 46,
+        "reset_text": "Three days ago three days ago is four days ago. These three days four days days three days days ago four days three three days three four days four three days. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.23854583501815796,
+          "normalized_l2": 0.8177675558808587
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 5,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": " three days days ago four days days four days four four days ago three days four",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-11",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.5486902892589569,
+          "normalized_l2": 1.792748701078899
+        },
+        "residual_norm": 1.119628667831421,
+        "edited_mask_length": 46,
+        "reset_text": " three days days ago four days days four days four four days ago three days four",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.40407419204711914,
+          "normalized_l2": 1.2105548434987545
+        },
+        "reset_mask_length": 18
+      }
+    ],
+    "decode_reencode": [
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 1,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "input_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-07",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.09874367713928223,
+          "normalized_l2": 0.46787997378748186
+        },
+        "residual_norm": 2.0637447834014893,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 46
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 2,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "input_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated today is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-08",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.09799593687057495,
+          "normalized_l2": 0.464781166851202
+        },
+        "residual_norm": 2.139134645462036,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 46
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 3,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "input_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated yesterday is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-09",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.0963250994682312,
+          "normalized_l2": 0.46214269758277976
+        },
+        "residual_norm": 2.2387890815734863,
+        "edited_mask_length": 46,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 0.0,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 48
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 4,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "input_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated two days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-10",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -3,
+        "edited_distance": {
+          "cosine": 0.09473985433578491,
+          "normalized_l2": 0.45817322156516416
+        },
+        "residual_norm": 2.250699758529663,
+        "edited_mask_length": 48,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 48
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0000",
+        "step": 5,
+        "source_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated tomorrow is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "input_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated three days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-10-11",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_status": "recorded_plan",
+            "polarity": "negative"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -3,
+        "edited_distance": {
+          "cosine": 0.09732449054718018,
+          "normalized_l2": 0.4644394955593916
+        },
+        "residual_norm": 2.408846378326416,
+        "edited_mask_length": 48,
+        "reset_text": "Author: Emma. Record date: 2026-10-02. What the record describes for an event dated four days ago is my plan to not send three parcels to Henry. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Emma",
+            "actor": "Emma",
+            "recipient": "Henry",
+            "action": "send",
+            "object": "parcel",
+            "quantity": 3,
+            "record_date": "2026-10-02",
+            "event_date": "2026-10-07",
+            "record_status": "recorded_plan",
+            "polarity": "negative",
+            "attribution": "Emma",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 5.960464477539063e-08,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 48
+      }
+    ]
+  },
+  {
+    "label": "reencode_failed",
+    "split": "test_template_ood",
+    "world_id": "v3_confirmation_test_template_ood_0009",
+    "pure": [
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 1,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-15",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-15",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.10374051332473755,
+          "normalized_l2": 0.48147169056398503
+        },
+        "residual_norm": 2.014954090118408,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-15",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": -1.1920928955078125e-07,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 2,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is yesterday. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-16",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-16",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.2700943946838379,
+          "normalized_l2": 0.8808363700421921
+        },
+        "residual_norm": 1.4129080772399902,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-16",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0025856494903564453,
+          "normalized_l2": 0.07194474860859307
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 3,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-17",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-14",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -2,
+        "edited_distance": {
+          "cosine": 0.39759939908981323,
+          "normalized_l2": 1.214552365294327
+        },
+        "residual_norm": 1.1850906610488892,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-14",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": -2,
+        "reset_distance": {
+          "cosine": 0.0003885030746459961,
+          "normalized_l2": 0.02788005803456807
+        },
+        "reset_mask_length": 47
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 4,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Three days ago three days ago. Record date: four days ago four days. These event three days assigned in the three days four days days ago is three days. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-18",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.4835110306739807,
+          "normalized_l2": 1.4997807720687748
+        },
+        "residual_norm": 1.092479944229126,
+        "edited_mask_length": 45,
+        "reset_text": "Three days ago three days ago. Record date: four days ago four days. These event three days assigned in the three days four days days ago is three days. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.12966406345367432,
+          "normalized_l2": 0.5741198560180698
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "pure_latent",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 5,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": " three days ago four days ago three days four days days four four days four three days days. These four days three days three four days. This four daysFour days fourFour days three three days",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is four days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-19",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "edited_probe_offset": -4,
+        "edited_distance": {
+          "cosine": 0.5473547577857971,
+          "normalized_l2": 1.7545552612189679
+        },
+        "residual_norm": 1.0635007619857788,
+        "edited_mask_length": 45,
+        "reset_text": " three days ago four days ago three days four days days four four days four three days days. These four days three days three four days. This four daysFour days fourFour days three three days",
+        "reset": {
+          "success": false,
+          "fact_preservation": false,
+          "parse_unresolved": true,
+          "decoded_semantic_state": null,
+          "normal_end": true
+        },
+        "reset_probe_offset": -3,
+        "reset_distance": {
+          "cosine": 0.33691006898880005,
+          "normalized_l2": 1.1319793710749488
+        },
+        "reset_mask_length": 41
+      }
+    ],
+    "decode_reencode": [
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 1,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-15",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": 0,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-15",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": 0,
+        "edited_distance": {
+          "cosine": 0.10373914241790771,
+          "normalized_l2": 0.48146959596046623
+        },
+        "residual_norm": 2.014954090118408,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": true,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-15",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": -1.1920928955078125e-07,
+          "normalized_l2": 0.0
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 2,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is yesterday. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-16",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -1,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-16",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.09804999828338623,
+          "normalized_l2": 0.46186047414301795
+        },
+        "residual_norm": 1.9690561294555664,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-16",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.0025856494903564453,
+          "normalized_l2": 0.07194474860859307
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 3,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is two days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-17",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -2,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-17",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.10008317232131958,
+          "normalized_l2": 0.4660329302505441
+        },
+        "residual_norm": 1.9690561294555664,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-17",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.006169795989990234,
+          "normalized_l2": 0.11091809544166788
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 4,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is three days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-18",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -3,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-18",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.0991131067276001,
+          "normalized_l2": 0.4641885165409084
+        },
+        "residual_norm": 1.9690561294555664,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-18",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.00640493631362915,
+          "normalized_l2": 0.11299997085863042
+        },
+        "reset_mask_length": 45
+      },
+      {
+        "path": "decode_reencode",
+        "split": "test_template_ood",
+        "world_id": "v3_confirmation_test_template_ood_0009",
+        "step": 5,
+        "source_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is tomorrow. This record does not establish that the event occurred.",
+        "input_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "decoded_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "gold_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is four days ago. This record does not establish that the event occurred.",
+        "gold_frame": {
+          "view_date": "2026-11-19",
+          "perspective": "first"
+        },
+        "gold_semantic_state": {
+          "offset": -4,
+          "person": "first",
+          "content": {
+            "author": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_status": "recorded_plan",
+            "polarity": "positive"
+          }
+        },
+        "edited": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-19",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "edited_probe_offset": -1,
+        "edited_distance": {
+          "cosine": 0.09946632385253906,
+          "normalized_l2": 0.4647627530750829
+        },
+        "residual_norm": 1.9690561294555664,
+        "edited_mask_length": 45,
+        "reset_text": "Author: Grace. Record date: 2026-11-10. The event date assigned in the record to my plan to bring two sensors to Bob is today. This record does not establish that the event occurred.",
+        "reset": {
+          "success": false,
+          "fact_preservation": true,
+          "parse_unresolved": false,
+          "decoded_semantic_state": {
+            "author": "Grace",
+            "actor": "Grace",
+            "recipient": "Bob",
+            "action": "bring",
+            "object": "sensor",
+            "quantity": 2,
+            "record_date": "2026-11-10",
+            "event_date": "2026-11-19",
+            "record_status": "recorded_plan",
+            "polarity": "positive",
+            "attribution": "Grace",
+            "perspective": "first"
+          },
+          "normal_end": true
+        },
+        "reset_probe_offset": 0,
+        "reset_distance": {
+          "cosine": 0.006196558475494385,
+          "normalized_l2": 0.11115427687215157
+        },
+        "reset_mask_length": 45
+      }
+    ]
+  }
+]

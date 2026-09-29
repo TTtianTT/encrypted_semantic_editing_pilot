@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 5366.93it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/projection_hypothesis_v1/run.py", line 138, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/projection_hypothesis_v1/run.py", line 61, in main
+    probe=TimeProbe();assert all(not p.requires_grad for p in eng.model.parameters())
+          ^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/projection_hypothesis_v1/run.py", line 33, in __init__
+    self.net.load_state_dict(payload['state']);self.net.cuda().eval()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 2639, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for Sequential:
+	Missing key(s) in state_dict: "0.weight", "0.bias", "2.weight", "2.bias".
+	Unexpected key(s) in state_dict: "net.0.weight", "net.0.bias", "net.2.weight", "net.2.bias".
+srun: error: node02: task 0: Exited with exit code 1

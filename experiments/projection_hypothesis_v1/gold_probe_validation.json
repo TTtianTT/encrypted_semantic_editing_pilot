@@ -1,0 +1,136 @@
+{
+  "train_worlds": 480,
+  "dev_worlds": 80,
+  "test_worlds": 106,
+  "train_examples": 8000,
+  "dev_examples": 1330,
+  "test_examples": 2120,
+  "dev_accuracy": 0.9721804511278196,
+  "test_gold_accuracy": 0.9627358490566038,
+  "by_class": [
+    {
+      "split": "dev",
+      "offset": -4,
+      "n": 160,
+      "accuracy": 0.95
+    },
+    {
+      "split": "test_gold",
+      "offset": -4,
+      "n": 212,
+      "accuracy": 0.9339622641509434
+    },
+    {
+      "split": "dev",
+      "offset": -3,
+      "n": 160,
+      "accuracy": 0.96875
+    },
+    {
+      "split": "test_gold",
+      "offset": -3,
+      "n": 212,
+      "accuracy": 0.9622641509433962
+    },
+    {
+      "split": "dev",
+      "offset": -2,
+      "n": 160,
+      "accuracy": 0.9875
+    },
+    {
+      "split": "test_gold",
+      "offset": -2,
+      "n": 212,
+      "accuracy": 0.9952830188679245
+    },
+    {
+      "split": "dev",
+      "offset": -1,
+      "n": 160,
+      "accuracy": 1.0
+    },
+    {
+      "split": "test_gold",
+      "offset": -1,
+      "n": 212,
+      "accuracy": 1.0
+    },
+    {
+      "split": "dev",
+      "offset": 0,
+      "n": 160,
+      "accuracy": 1.0
+    },
+    {
+      "split": "test_gold",
+      "offset": 0,
+      "n": 212,
+      "accuracy": 1.0
+    },
+    {
+      "split": "dev",
+      "offset": 1,
+      "n": 106,
+      "accuracy": 1.0
+    },
+    {
+      "split": "test_gold",
+      "offset": 1,
+      "n": 212,
+      "accuracy": 1.0
+    },
+    {
+      "split": "dev",
+      "offset": 2,
+      "n": 106,
+      "accuracy": 1.0
+    },
+    {
+      "split": "test_gold",
+      "offset": 2,
+      "n": 212,
+      "accuracy": 0.9952830188679245
+    },
+    {
+      "split": "dev",
+      "offset": 3,
+      "n": 106,
+      "accuracy": 0.8867924528301887
+    },
+    {
+      "split": "test_gold",
+      "offset": 3,
+      "n": 212,
+      "accuracy": 0.9198113207547169
+    },
+    {
+      "split": "dev",
+      "offset": 4,
+      "n": 106,
+      "accuracy": 0.9056603773584906
+    },
+    {
+      "split": "test_gold",
+      "offset": 4,
+      "n": 212,
+      "accuracy": 0.8349056603773585
+    },
+    {
+      "split": "dev",
+      "offset": 5,
+      "n": 106,
+      "accuracy": 1.0
+    },
+    {
+      "split": "test_gold",
+      "offset": 5,
+      "n": 212,
+      "accuracy": 0.9858490566037735
+    }
+  ],
+  "alpha": 10.0,
+  "representation": "final encoder mean",
+  "training": "gold train worlds only",
+  "no_g5_chain_fit": true
+}
