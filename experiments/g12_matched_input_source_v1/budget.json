@@ -1,0 +1,98 @@
+{
+  "hard_limit_seconds": 14400,
+  "max_concurrent_gpus": 2,
+  "jobs": [
+    {
+      "job_id": "1926",
+      "phase": "preflight",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 60,
+      "start": "2026-09-30T19:41:34",
+      "end": "2026-09-30T19:42:34",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    },
+    {
+      "job_id": "1927_0",
+      "phase": "train",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 87,
+      "start": "2026-09-30T19:43:35",
+      "end": "2026-09-30T19:45:02",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    },
+    {
+      "job_id": "1927_1",
+      "phase": "train",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 76,
+      "start": "2026-09-30T19:43:35",
+      "end": "2026-09-30T19:44:51",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    },
+    {
+      "job_id": "1927_2",
+      "phase": "train",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 84,
+      "start": "2026-09-30T19:44:51",
+      "end": "2026-09-30T19:46:15",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    },
+    {
+      "job_id": "1932",
+      "phase": "current",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 151,
+      "start": "2026-09-30T19:46:52",
+      "end": "2026-09-30T19:49:23",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    },
+    {
+      "job_id": "1935",
+      "phase": "finish",
+      "state": "COMPLETED",
+      "gpu_count": 1,
+      "gpu_seconds": 404,
+      "start": "2026-09-30T19:49:52",
+      "end": "2026-09-30T19:56:36",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1"
+    }
+  ],
+  "gpu_seconds": 862,
+  "reservations": [
+    {
+      "job_id": "1926",
+      "phase": "preflight",
+      "count": 1,
+      "seconds": 1800,
+      "pending_reserved_seconds": 0
+    },
+    {
+      "job_id": "1927",
+      "phase": "train",
+      "count": 3,
+      "seconds": 5400,
+      "pending_reserved_seconds": 0
+    },
+    {
+      "job_id": "1932",
+      "phase": "current",
+      "count": 1,
+      "seconds": 1800,
+      "pending_reserved_seconds": 0
+    },
+    {
+      "job_id": "1935",
+      "phase": "finish",
+      "count": 1,
+      "seconds": 1800,
+      "pending_reserved_seconds": 0
+    }
+  ],
+  "reserved_seconds": 0
+}

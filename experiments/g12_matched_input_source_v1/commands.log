@@ -1,0 +1,11 @@
+.venv/bin/python experiments/g12_matched_input_source_v1/prepare.py
+# Freeze analysis/audit before first GPU job.
+sbatch --parsable --partition=B300q --exclude=node01 --export=ALL,G12_PHASE=preflight experiments/g12_matched_input_source_v1/job.slurm # job 1926
+sbatch --parsable --partition=B300q --exclude=node01 experiments/g12_matched_input_source_v1/train.slurm # job 1927
+sbatch --parsable --partition=B300q --exclude=node01 --export=ALL,G12_PHASE=current experiments/g12_matched_input_source_v1/job.slurm # job 1932
+sbatch --parsable --partition=B300q --exclude=node01 --export=ALL,G12_PHASE=finish experiments/g12_matched_input_source_v1/job.slurm # job 1935
+.venv/bin/python experiments/g12_matched_input_source_v1/analyze.py
+.venv/bin/python experiments/g12_matched_input_source_v1/audit.py
+.venv/bin/python experiments/g12_matched_input_source_v1/audit_supplement.py
+.venv/bin/python experiments/g12_matched_input_source_v1/components.py
+.venv/bin/python experiments/g12_matched_input_source_v1/report.py
