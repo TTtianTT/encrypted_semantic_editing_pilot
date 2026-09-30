@@ -1,0 +1,19 @@
+Baseline b07abb4244415fea501cdb064bd9137a4db04587
+.venv/bin/python -m py_compile experiments/g11_semantic_history_v1/*.py
+.venv/bin/python experiments/g11_semantic_history_v1/prepare.py
+1887: sbatch --export=ALL,G11_PHASE=current experiments/g11_semantic_history_v1/job.slurm
+
+.venv/bin/python experiments/g11_semantic_history_v1/account.py --job 1887 --phase current (154 allocated GPU seconds)
+1888: sbatch --export=ALL,G11_PHASE=next experiments/g11_semantic_history_v1/job.slurm
+.venv/bin/python experiments/g11_semantic_history_v1/account.py --job 1888 --phase next (128 allocated GPU seconds)
+.venv/bin/python experiments/g11_semantic_history_v1/provenance.py
+.venv/bin/python experiments/g11_semantic_history_v1/analyze.py
+.venv/bin/python experiments/g11_semantic_history_v1/audit.py
+.venv/bin/python experiments/g11_semantic_history_v1/report.py
+Both jobs completed without retry. GPU total282 seconds; queue waiting excluded, loading/inference included. Peak concurrency1.
+
+# Final CPU-only derived reporting and audit
+.venv/bin/python experiments/g11_semantic_history_v1/report.py
+.venv/bin/python experiments/g11_semantic_history_v1/provenance.py
+.venv/bin/python experiments/g11_semantic_history_v1/audit.py
+# Public artifact hashes exclude local activation tensors and Python caches.

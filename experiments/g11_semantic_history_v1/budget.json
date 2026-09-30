@@ -1,0 +1,27 @@
+{
+  "hard_limit_seconds": 7200,
+  "max_concurrent_gpus": 1,
+  "jobs": [
+    {
+      "job_id": "1887",
+      "phase": "current",
+      "state": "COMPLETED",
+      "allocated_gpu_seconds": 154,
+      "start": "2026-09-30T17:21:17",
+      "end": "2026-09-30T17:23:51",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "gpu_count": 1
+    },
+    {
+      "job_id": "1888",
+      "phase": "next",
+      "state": "COMPLETED",
+      "allocated_gpu_seconds": 128,
+      "start": "2026-09-30T17:27:13",
+      "end": "2026-09-30T17:29:21",
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "gpu_count": 1
+    }
+  ],
+  "gpu_seconds": 282
+}

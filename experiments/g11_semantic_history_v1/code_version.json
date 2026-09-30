@@ -1,0 +1,30 @@
+{
+  "baseline": "b07abb4244415fea501cdb064bd9137a4db04587",
+  "final_code_sha256": {
+    "analyze.py": "a53f40a6e046072b24a3592dcbd6ccb8bf485d1208666a84beeaeee7cf53c1da",
+    "report.py": "0981ba777933ecb2ddc7a9d86f152408a96718892eb04595b3116a3bc2896bfe",
+    "audit.py": "0a66b5af73ce6141463f8c8c0a86e455a44f99f315906fc2f007f5849bfb4a8a",
+    "account.py": "5b9e71a8da57490567f72085ba3e74d952dd8398c7151a9294734f0adc4d6e56",
+    "gpu.py": "2b17c51479cdeb858896232d7503f27a83f67e4081bae14933ecf4c5b1314ac3",
+    "provenance.py": "8226bfd491bc0b4671ec7ff929a8a3eca40c6e634d904ceed3d9eefcce9b6502",
+    "prepare.py": "1ea6a36b903cecc2ae542cd7571fbb76c45b782b912f8d6516627e05d561e819",
+    "g11.py": "8c4196c0043480e3bca8adf7e8fab90c55d44d1ade7bbc4e08bc4c225d752513"
+  },
+  "post_lock_changes": {
+    "analyze.py": {
+      "pre_output": "3c1dfe2d4d719703c72753902cf9e105095ffd9f634f2055ef3057796ac4c44c",
+      "final": "a53f40a6e046072b24a3592dcbd6ccb8bf485d1208666a84beeaeee7cf53c1da"
+    },
+    "report.py": {
+      "pre_output": "1294b0c22d6a5bb931094f08f59abe6567dcf0163e876dac87cd38891105165e",
+      "final": "0981ba777933ecb2ddc7a9d86f152408a96718892eb04595b3116a3bc2896bfe"
+    },
+    "audit.py": {
+      "pre_output": "52c157e283e9ce96e70fb150b761f5c5af75f26e337eaad3be714f4bd296abde",
+      "final": "0a66b5af73ce6141463f8c8c0a86e455a44f99f315906fc2f007f5849bfb4a8a"
+    }
+  },
+  "reason": "Added independent audit checks and derived reporting/opaque blind-review formatting after inference; no change to model paths, decoder settings, worlds, parser, renderer, cohort definition, or statistical comparisons.",
+  "gpu_inference_code_unchanged": true,
+  "scoring_dependencies_unchanged": true
+}
