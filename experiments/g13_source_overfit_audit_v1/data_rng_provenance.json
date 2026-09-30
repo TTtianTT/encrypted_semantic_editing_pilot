@@ -1,0 +1,112 @@
+{
+  "data_seed": 20260930,
+  "derivation": "first8 bytes SHA256(f\"{data_seed}/{name}\"), big-endian integer, Python random.Random at each leaf",
+  "actual_world_substreams": [
+    {
+      "split": "train",
+      "status": "recorded_plan",
+      "round": 0,
+      "name": "worlds/train/recorded_plan/0",
+      "seed": 11208437168063106081,
+      "candidates": 1536
+    },
+    {
+      "split": "train",
+      "status": "reported_completed",
+      "round": 0,
+      "name": "worlds/train/reported_completed/0",
+      "seed": 6143575625341538157,
+      "candidates": 1536
+    },
+    {
+      "split": "train",
+      "status": "reported_cancelled",
+      "round": 0,
+      "name": "worlds/train/reported_cancelled/0",
+      "seed": 7385246293123025708,
+      "candidates": 1536
+    },
+    {
+      "split": "dev",
+      "status": "recorded_plan",
+      "round": 0,
+      "name": "worlds/dev/recorded_plan/0",
+      "seed": 12516298135424125879,
+      "candidates": 384
+    },
+    {
+      "split": "dev",
+      "status": "reported_completed",
+      "round": 0,
+      "name": "worlds/dev/reported_completed/0",
+      "seed": 12382986231421171411,
+      "candidates": 384
+    },
+    {
+      "split": "dev",
+      "status": "reported_cancelled",
+      "round": 0,
+      "name": "worlds/dev/reported_cancelled/0",
+      "seed": 1788180052471822490,
+      "candidates": 384
+    },
+    {
+      "split": "iid",
+      "status": "recorded_plan",
+      "round": 0,
+      "name": "worlds/iid/recorded_plan/0",
+      "seed": 9618336488957988080,
+      "candidates": 480
+    },
+    {
+      "split": "iid",
+      "status": "reported_completed",
+      "round": 0,
+      "name": "worlds/iid/reported_completed/0",
+      "seed": 3489463086109464371,
+      "candidates": 480
+    },
+    {
+      "split": "iid",
+      "status": "reported_cancelled",
+      "round": 0,
+      "name": "worlds/iid/reported_cancelled/0",
+      "seed": 16885229003027473213,
+      "candidates": 480
+    },
+    {
+      "split": "template_ood",
+      "status": "recorded_plan",
+      "round": 0,
+      "name": "worlds/template_ood/recorded_plan/0",
+      "seed": 14774190585585554719,
+      "candidates": 480
+    },
+    {
+      "split": "template_ood",
+      "status": "reported_completed",
+      "round": 0,
+      "name": "worlds/template_ood/reported_completed/0",
+      "seed": 5507530329142540502,
+      "candidates": 480
+    },
+    {
+      "split": "template_ood",
+      "status": "reported_cancelled",
+      "round": 0,
+      "name": "worlds/template_ood/reported_cancelled/0",
+      "seed": 4173472988468700706,
+      "candidates": 480
+    }
+  ],
+  "schedule_seeds": {
+    "anchor": 8489024589734999440,
+    "narrow": 4023044461745521402,
+    "replay": 16349189554158551885
+  },
+  "diagnostic_and_old_audit": "sub_seed names in prepare.py; data/model seeds separate",
+  "locked_worlds_exactly_reproduced": true,
+  "worlds_sha256": "7b076b7872f654737a5f9d692ab556b0385a36fcb0395e034bef008608c2509c",
+  "scope_note": "Initial manifest split-level named_substreams values identify namespaces, not the actual status/round generator calls; this sidecar records actual leaf seeds without changing locked data.",
+  "verified_after_lock": true
+}

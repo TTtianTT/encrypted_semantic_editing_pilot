@@ -1,0 +1,29 @@
+{
+  "failed_array": "2045",
+  "affected_seeds": [
+    42,
+    43,
+    44
+  ],
+  "reason": "import name prepare shadowed by V3 module due shared sys.path; crashed before any G13 training",
+  "fix": "resolve ROOT/prepare.py explicitly via importlib",
+  "changed_hashes": {
+    "experiments/g13_source_overfit_audit_v1/run.py": {
+      "old": "b31088c04894e2cca4cb8a2bdfd9003bfa8309af01709247004e147160c527f1",
+      "new": "8fab4100776263a98feb2dbfeef42910cdeead2cf7cd129169fce7a27d92450f"
+    },
+    "experiments/g13_source_overfit_audit_v1/submit.py": {
+      "old": "8853e885756437c8b7bc3385294081077d12e927b171e121fcb39d351668f9fa",
+      "new": "88618cd62c433c8da239bee48f5c230ad57c510a40e14be8bc30537bc00070ab"
+    }
+  },
+  "previous_lock_sha256": "9f690d2d2675d6caf6cf2f5811167b7b8740d80bdfada19cfbf64be5e483be64",
+  "new_lock_sha256": "8b8ab5940da9b9c69dd9119292d520f7cb5eb1c72e44347189b8e615ce854290",
+  "scientific_config_changed": false,
+  "data_schedule_unchanged": true,
+  "learning_rate_changed": false,
+  "training_steps_changed": false,
+  "retry_wall_seconds_per_seed": 6000,
+  "all_requested_gpu_seconds_including_failed_array": 40800,
+  "all_requested_gpu_hours": 11.333333333333334
+}

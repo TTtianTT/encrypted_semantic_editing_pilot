@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "job_id": "2042",
+  "checks": [
+    {
+      "method": "F0",
+      "loss": 0.0741540864109993,
+      "gradient_norms": [
+        0.6818346977233887,
+        1.0198349952697754,
+        0.8814113140106201
+      ],
+      "R_updated": true,
+      "fresh_optimizer": true,
+      "cache_replay_equal": true,
+      "save_reload_equal": true,
+      "anchor_loss": 0.0741540864109993,
+      "background_loss": 0.0741540864109993,
+      "anchor_tokens": 766,
+      "background_tokens": 766,
+      "source_counts": {
+        "2": 16
+      }
+    },
+    {
+      "method": "F1",
+      "loss": 0.04257943853735924,
+      "gradient_norms": [
+        0.34595614671707153,
+        0.5223881006240845,
+        0.4473118782043457
+      ],
+      "R_updated": true,
+      "fresh_optimizer": true,
+      "cache_replay_equal": true,
+      "save_reload_equal": true,
+      "anchor_loss": 0.0741540864109993,
+      "background_loss": 0.011004791595041752,
+      "anchor_tokens": 766,
+      "background_tokens": 764,
+      "source_counts": {
+        "2": 16
+      }
+    },
+    {
+      "method": "F2",
+      "loss": 0.006037146784365177,
+      "gradient_norms": [
+        0.02721099555492401,
+        0.0305818859487772,
+        0.05289514735341072
+      ],
+      "R_updated": true,
+      "fresh_optimizer": true,
+      "cache_replay_equal": true,
+      "save_reload_equal": true,
+      "anchor_loss": 0.0010695020901039243,
+      "background_loss": 0.011004791595041752,
+      "anchor_tokens": 766,
+      "background_tokens": 764,
+      "source_counts": {
+        "0": 16
+      }
+    },
+    {
+      "method": "F3",
+      "loss": 0.02309485711157322,
+      "gradient_norms": [
+        0.13365332782268524,
+        0.1925472617149353,
+        0.16954748332500458
+      ],
+      "R_updated": true,
+      "fresh_optimizer": true,
+      "cache_replay_equal": true,
+      "save_reload_equal": true,
+      "anchor_loss": 0.03518492355942726,
+      "background_loss": 0.011004791595041752,
+      "anchor_tokens": 766,
+      "background_tokens": 764,
+      "source_counts": {
+        "0": 6,
+        "1": 5,
+        "2": 5
+      }
+    }
+  ],
+  "backbone_unchanged": true,
+  "G_unchanged": true,
+  "cache_unchanged": true,
+  "decoder_gradient_reaches_R": true,
+  "update_seconds": [
+    0.7311975669581443,
+    0.04694099607877433,
+    0.042172644985839725,
+    0.04203138896264136
+  ],
+  "decode_16_seconds": [
+    0.246406442951411,
+    0.2469758139923215,
+    0.24739708006381989,
+    0.2470193631015718
+  ],
+  "elapsed_seconds": 19.84623367805034,
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "peak_cuda_bytes": 1728759808,
+  "historical_reproduction_passed": true,
+  "train_only_smoke": true
+}

@@ -1,0 +1,3055 @@
+{
+  "seed": 42,
+  "tag": "smoke",
+  "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g13-worktree/experiments/g13_source_overfit_audit_v1/local/cache_s42_smoke.pt",
+  "file_sha256": "4c3436fe3f0b960a366f168ec81fdf845d75c8b7081a92a6af0188e79a7761a4",
+  "tensor_sha256": "7a2d693f7e7bd347219967372d65a0cddb27694398077b72602c70a265430396",
+  "frozen_G_hash": "66a55951273e73d5d3cb75b42efe52f013688c8481ec5b1910bcb37421ef7e36",
+  "gates": [
+    {
+      "record_id": "g13_train_recorded_plan_0000",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        45,
+        45,
+        45
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-12",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Frank",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 7,
+                "record_date": "2026-11-06",
+                "event_date": "2026-11-11",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-12",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Frank",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 7,
+                "record_date": "2026-11-06",
+                "event_date": "2026-11-11",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-11",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Frank",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 7,
+                "record_date": "2026-11-06",
+                "event_date": "2026-11-11",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-11-06. The record describes my plan to not deliver seven tickets to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-12",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Frank",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 7,
+                "record_date": "2026-11-06",
+                "event_date": "2026-11-11",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0001",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        44,
+        44,
+        44
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-11",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Grace",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-11-05",
+                "event_date": "2026-11-10",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-11",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Grace",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-11-05",
+                "event_date": "2026-11-10",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-05. For an event dated today, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: David. Record date: 2026-11-05. For an event dated today, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-10",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Grace",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-11-05",
+                "event_date": "2026-11-10",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: David. Record date: 2026-11-05. For an event dated yesterday, the record describes my plan to bring three tickets to Grace. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-11",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Grace",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-11-05",
+                "event_date": "2026-11-10",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0002",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        46,
+        46,
+        46
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-04",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Henry",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 8,
+                "record_date": "2026-10-29",
+                "event_date": "2026-11-03",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-04",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Henry",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 8,
+                "record_date": "2026-10-29",
+                "event_date": "2026-11-03",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-03",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Henry",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 8,
+                "record_date": "2026-10-29",
+                "event_date": "2026-11-03",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: Alice. Record date: 2026-10-29. According to the record, my plan to not give eight parcels to Henry concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-04",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Henry",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 8,
+                "record_date": "2026-10-29",
+                "event_date": "2026-11-03",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0003",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        47,
+        47,
+        47
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Henry",
+                "action": "bring",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-12-12",
+                "event_date": "2026-12-17",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Henry",
+                "action": "bring",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-12-12",
+                "event_date": "2026-12-17",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-17",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Henry",
+                "action": "bring",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-12-12",
+                "event_date": "2026-12-17",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Bob. Record date: 2026-12-12. My plan to bring six books to Henry, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Henry",
+                "action": "bring",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-12-12",
+                "event_date": "2026-12-17",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0004",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        48,
+        48,
+        48
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Frank",
+                "action": "bring",
+                "object": "parcel",
+                "quantity": 1,
+                "record_date": "2026-11-12",
+                "event_date": "2026-11-17",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Frank",
+                "action": "bring",
+                "object": "parcel",
+                "quantity": 1,
+                "record_date": "2026-11-12",
+                "event_date": "2026-11-17",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-17",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Frank",
+                "action": "bring",
+                "object": "parcel",
+                "quantity": 1,
+                "record_date": "2026-11-12",
+                "event_date": "2026-11-17",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-11-12. The record contains an account of my plan to not bring one parcel to Frank, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Frank",
+                "action": "bring",
+                "object": "parcel",
+                "quantity": 1,
+                "record_date": "2026-11-12",
+                "event_date": "2026-11-17",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0005",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        45,
+        45,
+        45
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Carol",
+                "action": "give",
+                "object": "ticket",
+                "quantity": 4,
+                "record_date": "2026-10-07",
+                "event_date": "2026-10-12",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Carol",
+                "action": "give",
+                "object": "ticket",
+                "quantity": 4,
+                "record_date": "2026-10-07",
+                "event_date": "2026-10-12",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-12",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Carol",
+                "action": "give",
+                "object": "ticket",
+                "quantity": 4,
+                "record_date": "2026-10-07",
+                "event_date": "2026-10-12",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Frank. Record date: 2026-10-07. In the record, my plan to give four tickets to Carol has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Carol",
+                "action": "give",
+                "object": "ticket",
+                "quantity": 4,
+                "record_date": "2026-10-07",
+                "event_date": "2026-10-12",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0006",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        48,
+        48,
+        48
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Emma",
+                "action": "deliver",
+                "object": "parcel",
+                "quantity": 3,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Emma",
+                "action": "deliver",
+                "object": "parcel",
+                "quantity": 3,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-29",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Emma",
+                "action": "deliver",
+                "object": "parcel",
+                "quantity": 3,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-10-24. The subject of the record is my plan to not deliver three parcels to Emma, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Emma",
+                "action": "deliver",
+                "object": "parcel",
+                "quantity": 3,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0007",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        44,
+        44,
+        44
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Emma",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 2,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Emma",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 2,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-10-24. The event is dated today in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-10-24. The event is dated today in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-29",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Emma",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 2,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-10-24. The event is dated yesterday in the record describing my plan to give two parcels to Emma. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-30",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Emma",
+                "action": "give",
+                "object": "parcel",
+                "quantity": 2,
+                "record_date": "2026-10-24",
+                "event_date": "2026-10-29",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0008",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        45,
+        45,
+        45
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-07",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Grace",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-10-01",
+                "event_date": "2026-10-06",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-07",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Grace",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-10-01",
+                "event_date": "2026-10-06",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-06",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Grace",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-10-01",
+                "event_date": "2026-10-06",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Bob. Record date: 2026-10-01. The record describes my plan to not deliver three tickets to Grace, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-07",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Bob",
+                "actor": "Bob",
+                "recipient": "Grace",
+                "action": "deliver",
+                "object": "ticket",
+                "quantity": 3,
+                "record_date": "2026-10-01",
+                "event_date": "2026-10-06",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Bob",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0009",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        44,
+        44,
+        44
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-20",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "David",
+                "action": "send",
+                "object": "book",
+                "quantity": 3,
+                "record_date": "2026-10-14",
+                "event_date": "2026-10-19",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-20",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "David",
+                "action": "send",
+                "object": "book",
+                "quantity": 3,
+                "record_date": "2026-10-14",
+                "event_date": "2026-10-19",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-10-14. For an event dated today, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Alice. Record date: 2026-10-14. For an event dated today, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-19",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "David",
+                "action": "send",
+                "object": "book",
+                "quantity": 3,
+                "record_date": "2026-10-14",
+                "event_date": "2026-10-19",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Alice. Record date: 2026-10-14. For an event dated yesterday, the record describes my plan to send three books to David. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-20",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "David",
+                "action": "send",
+                "object": "book",
+                "quantity": 3,
+                "record_date": "2026-10-14",
+                "event_date": "2026-10-19",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0010",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        46,
+        46,
+        46
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-02",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Bob",
+                "action": "send",
+                "object": "sensor",
+                "quantity": 9,
+                "record_date": "2026-11-26",
+                "event_date": "2026-12-01",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-02",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Bob",
+                "action": "send",
+                "object": "sensor",
+                "quantity": 9,
+                "record_date": "2026-11-26",
+                "event_date": "2026-12-01",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-01",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Bob",
+                "action": "send",
+                "object": "sensor",
+                "quantity": 9,
+                "record_date": "2026-11-26",
+                "event_date": "2026-12-01",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 47,
+            "gold": "Author: David. Record date: 2026-11-26. According to the record, my plan to not send nine sensors to Bob concerns an event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-02",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "David",
+                "actor": "David",
+                "recipient": "Bob",
+                "action": "send",
+                "object": "sensor",
+                "quantity": 9,
+                "record_date": "2026-11-26",
+                "event_date": "2026-12-01",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "David",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0011",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        47,
+        47,
+        47
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-19",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Emma",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 6,
+                "record_date": "2026-10-13",
+                "event_date": "2026-10-18",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-19",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Emma",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 6,
+                "record_date": "2026-10-13",
+                "event_date": "2026-10-18",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated today, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-18",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Emma",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 6,
+                "record_date": "2026-10-13",
+                "event_date": "2026-10-18",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 48,
+            "gold": "Author: Frank. Record date: 2026-10-13. My plan to bring six tickets to Emma, with the event dated yesterday, is described in the record. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-19",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Frank",
+                "actor": "Frank",
+                "recipient": "Emma",
+                "action": "bring",
+                "object": "ticket",
+                "quantity": 6,
+                "record_date": "2026-10-13",
+                "event_date": "2026-10-18",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Frank",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0012",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        48,
+        48,
+        48
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-08",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "David",
+                "action": "give",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-10-02",
+                "event_date": "2026-10-07",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-08",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "David",
+                "action": "give",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-10-02",
+                "event_date": "2026-10-07",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-07",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "David",
+                "action": "give",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-10-02",
+                "event_date": "2026-10-07",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Henry. Record date: 2026-10-02. The record contains an account of my plan to not give six books to David, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-10-08",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "David",
+                "action": "give",
+                "object": "book",
+                "quantity": 6,
+                "record_date": "2026-10-02",
+                "event_date": "2026-10-07",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0013",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        45,
+        45,
+        45
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-06",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "Alice",
+                "action": "give",
+                "object": "book",
+                "quantity": 8,
+                "record_date": "2026-10-31",
+                "event_date": "2026-11-05",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-06",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "Alice",
+                "action": "give",
+                "object": "book",
+                "quantity": 8,
+                "record_date": "2026-10-31",
+                "event_date": "2026-11-05",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-05",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "Alice",
+                "action": "give",
+                "object": "book",
+                "quantity": 8,
+                "record_date": "2026-10-31",
+                "event_date": "2026-11-05",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 46,
+            "gold": "Author: Henry. Record date: 2026-10-31. In the record, my plan to give eight books to Alice has an event date of yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-11-06",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Henry",
+                "actor": "Henry",
+                "recipient": "Alice",
+                "action": "give",
+                "object": "book",
+                "quantity": 8,
+                "record_date": "2026-10-31",
+                "event_date": "2026-11-05",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Henry",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0014",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        48,
+        48,
+        48
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Carol",
+                "action": "deliver",
+                "object": "book",
+                "quantity": 7,
+                "record_date": "2026-12-07",
+                "event_date": "2026-12-12",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Carol",
+                "action": "deliver",
+                "object": "book",
+                "quantity": 7,
+                "record_date": "2026-12-07",
+                "event_date": "2026-12-12",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated today. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated today. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-12",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Carol",
+                "action": "deliver",
+                "object": "book",
+                "quantity": 7,
+                "record_date": "2026-12-07",
+                "event_date": "2026-12-12",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 49,
+            "gold": "Author: Alice. Record date: 2026-12-07. The subject of the record is my plan to not deliver seven books to Carol, with the event dated yesterday. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-13",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Alice",
+                "actor": "Alice",
+                "recipient": "Carol",
+                "action": "deliver",
+                "object": "book",
+                "quantity": 7,
+                "record_date": "2026-12-07",
+                "event_date": "2026-12-12",
+                "record_status": "recorded_plan",
+                "polarity": "negative",
+                "attribution": "Alice",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "record_id": "g13_train_recorded_plan_0015",
+      "split": "train",
+      "seed": 42,
+      "matched": true,
+      "failures": [],
+      "equal_mask02": true,
+      "equal_mask_all": true,
+      "lengths": [
+        44,
+        44,
+        44
+      ],
+      "prefixes": [
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-03",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Alice",
+                "action": "bring",
+                "object": "sensor",
+                "quantity": 6,
+                "record_date": "2026-11-27",
+                "event_date": "2026-12-02",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-03",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Alice",
+                "action": "bring",
+                "object": "sensor",
+                "quantity": 6,
+                "record_date": "2026-11-27",
+                "event_date": "2026-12-02",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ],
+        [
+          {
+            "output": "Author: Grace. Record date: 2026-11-27. The event is dated today in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-11-27. The event is dated today in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-02",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Alice",
+                "action": "bring",
+                "object": "sensor",
+                "quantity": 6,
+                "record_date": "2026-11-27",
+                "event_date": "2026-12-02",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          },
+          {
+            "output": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "normal_end": true,
+            "generated_tokens": 45,
+            "gold": "Author: Grace. Record date: 2026-11-27. The event is dated yesterday in the record describing my plan to bring six sensors to Alice. This record does not establish that the event occurred.",
+            "frame": {
+              "view_date": "2026-12-03",
+              "perspective": "first"
+            },
+            "exact": true,
+            "score": {
+              "frame_ok": true,
+              "content_ok": true,
+              "readable": true,
+              "joint_ok": true,
+              "collateral_error": false,
+              "plan_to_completed": false,
+              "parse_unresolved": false,
+              "uncertain_reason": null,
+              "parsed": {
+                "author": "Grace",
+                "actor": "Grace",
+                "recipient": "Alice",
+                "action": "bring",
+                "object": "sensor",
+                "quantity": 6,
+                "record_date": "2026-11-27",
+                "event_date": "2026-12-02",
+                "record_status": "recorded_plan",
+                "polarity": "positive",
+                "attribution": "Grace",
+                "perspective": "first"
+              },
+              "hit_length_limit": false,
+              "date_ok": true,
+              "perspective_ok": true,
+              "nondate_facts_ok": true,
+              "normal_end": true,
+              "parsed_nondate_error": false,
+              "parsed_date_error": false
+            }
+          }
+        ]
+      ]
+    }
+  ],
+  "locked_before_R_training": true,
+  "cache_seconds": 3.011091555003077,
+  "decode_seconds": 1.7598222640808672,
+  "job_id": "2042",
+  "extra_conditions": "none; independent b+UV editor receives full memory and mask only"
+}

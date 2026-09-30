@@ -1,0 +1,29 @@
+{
+  "suite": "tests.py",
+  "tests": 5,
+  "passed": true,
+  "captured_runner_output": "Ran 5 tests in 3.881s; OK",
+  "after_import_fix": true,
+  "initial_premature_run_errors": "data preparation asynchronous and not yet locked; three FileNotFoundErrors, no scientific outputs existed",
+  "GPU_tests": "smoke_test.json and per-seed immutable-state checks",
+  "analysis_suite": {
+    "file": "tests_analysis.py",
+    "tests": 5,
+    "passed": true,
+    "captured_output": "Ran 5 tests in 0.078s; OK",
+    "initial_import_collision": "CPU-only helper resolved by explicit file path; no GPU science code changed"
+  },
+  "total_cpu_unit_tests": 12,
+  "rollout_suite": {
+    "file": "tests_rollout.py",
+    "tests": 2,
+    "passed": true,
+    "CPU_only": true,
+    "checks": [
+      "actual latent state is passed to R without encoder reset or frozen G",
+      "reencoding consumes only own free outputs; future-gold sentinel is never encoded",
+      "later successful endpoints cannot repair an already failed trajectory"
+    ],
+    "captured_runner_output": "Ran 2 tests in 0.013s; OK"
+  }
+}

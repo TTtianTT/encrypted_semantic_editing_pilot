@@ -1,0 +1,3 @@
+sbatch --parsable --partition=B300q --exclude=node01 --time=00:20:00 --export=ALL,G13_PHASE=smoke,G13_WALL_SECONDS=1110 experiments/g13_source_overfit_audit_v1/scripts/run_seed.sbatch # JobID 2042
+sbatch --parsable --partition=B300q --exclude=node01 --time=02:00:00 --export=ALL,G13_PHASE=main,G13_WALL_SECONDS=7110 --array=0-2%2 experiments/g13_source_overfit_audit_v1/scripts/run_seed.sbatch # JobID 2045
+sbatch --parsable --partition=B300q --exclude=node01 --time=01:40:00 --export=ALL,G13_PHASE=main_retry1,G13_WALL_SECONDS=5910 --array=0-2%2 experiments/g13_source_overfit_audit_v1/scripts/run_seed.sbatch # JobID 2050

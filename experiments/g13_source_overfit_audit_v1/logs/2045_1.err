@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 3856.45it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g13-worktree/experiments/g13_source_overfit_audit_v1/run.py", line 346, in <module>
+    else: train_seed(eng,json.loads((ROOT/'runs_manifest.json').read_text())['array_mapping'][args.seed_index]['seed'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g13-worktree/experiments/g13_source_overfit_audit_v1/run.py", line 261, in train_seed
+    reproduce(e,s); old_diagnostic(e,s,[w for w in allws if w['split']=='iid'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g13-worktree/experiments/g13_source_overfit_audit_v1/run.py", line 185, in old_diagnostic
+    from prepare import stratified
+ImportError: cannot import name 'stratified' from 'prepare' (/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g13-worktree/experiments/reference_frame_pilot_v3/prepare.py)
+srun: error: node02: task 0: Exited with exit code 1

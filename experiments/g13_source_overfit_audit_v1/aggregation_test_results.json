@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "isolated_directory": "/tmp/g13-full-aggregation-fixture",
+  "fixture": "one seed; four identical method copies solely to test paired inference, not experimental results",
+  "checks": [
+    "complete aggregation and report run without errors",
+    "all 2000-resample paired contrast intervals equal zero for identical models",
+    "Wilson intervals remain nonzero for 0/160 and160/160",
+    "production results and cohorts untouched"
+  ],
+  "production_preview_rows_validated": 59360,
+  "fixture_rows_validated": 84800,
+  "analyze_sha256_at_execution": "9b2cf17ddce7ca4411bb21825c4efb2aef21f41281cad04db0c6aa33059fcf08",
+  "analyze_sha256_final_validation": "3783c904237e8ac87645157fdd4dac22b9202298af53f7d4e6a41e2793ca8203",
+  "count_and_frozen_metadata_assertions_passed": true,
+  "compressed_archive_missing_dataset_fallback_passed": true,
+  "first_failure_type_counts_match_world_denominators": true,
+  "production_final_validation": {
+    "analyze_sha256": "01f297ee76a1547d43676d1721f43414061d111b50917f4b509602bc416adacf",
+    "audit": {
+      "completed_seeds": [
+        42,
+        43,
+        44
+      ],
+      "missing_seeds": [],
+      "all_output_scores_recomputed": true,
+      "rows": 457920,
+      "data_lock_valid": true,
+      "small_cases": 24,
+      "all_counts_6400": true,
+      "replay_tokens_equal": true,
+      "anchor_tokens_equal": true,
+      "frozen_checks_all": true,
+      "no_test_checkpoint_selection": true
+    },
+    "execution_completed": true,
+    "fixture_remains_test_only": true
+  }
+}
