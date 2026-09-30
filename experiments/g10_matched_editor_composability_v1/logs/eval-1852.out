@@ -1,0 +1,45 @@
+
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 259/259 [00:00<00:00, 4556.67it/s]
+/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/cuda/__init__.py:371: UserWarning: Found GPU0 Tesla P100-PCIE-16GB which is of compute capability (CC) 6.0.
+The following list shows the CCs this version of PyTorch was built for and the hardware CCs it supports:
+- 7.5 which supports hardware CC >=7.5,<8.0
+- 8.0 which supports hardware CC >=8.0,<9.0 except {8.7}
+- 8.6 which supports hardware CC >=8.6,<9.0 except {8.7}
+- 9.0 which supports hardware CC >=9.0,<10.0
+- 10.0 which supports hardware CC >=10.0,<11.0 except {10.1}
+- 12.0 which supports hardware CC >=12.0,<13.0
+Please follow the instructions at https://pytorch.org/get-started/locally/ to install a PyTorch release that supports one of these CUDA versions: 12.6
+  _warn_unsupported_code(d, device_cc, code_ccs)
+/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/cuda/__init__.py:489: UserWarning:
+Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  queued_call()
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/evaluate.py", line 43, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/evaluate.py", line 17, in main
+    base=Backbone('BART');all_rows=read('data/composition_iid.jsonl')+read('data/composition_template_ood.jsonl');worlds={s:{w['record_id']:w for w in read(f'data/{s}_worlds.jsonl')} for s in ['composition_iid','composition_template_ood']}
+         ^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/repeated_intervention_stability_v1/extract.py", line 40, in __init__
+    self.spectral=self.jacobian_spectral()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/repeated_intervention_stability_v1/extract.py", line 49, in jacobian_spectral
+    gen=torch.Generator(device='cuda').manual_seed(CFG['seed']);z=torch.randn(self.U.shape[0],device='cuda',generator=gen);z=F.normalize(z,dim=0)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device
+Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+srun: error: Jupyter: task 0: Exited with exit code 1

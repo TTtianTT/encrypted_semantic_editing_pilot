@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 4189.05it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/evaluate.py", line 43, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/evaluate.py", line 33, in main
+    cos=None if prev_res is None else float(F.cosine_similarity(mean[None],prev_res[j][None]).item())
+                                                                           ~~~~~~~~~~~^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+srun: error: node02: task 0: Exited with exit code 1

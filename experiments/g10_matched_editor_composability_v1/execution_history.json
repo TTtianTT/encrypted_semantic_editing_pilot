@@ -1,0 +1,149 @@
+{
+  "attempts": [
+    {
+      "job": "1826",
+      "phase": "preflight",
+      "state": "FAILED",
+      "gpu_seconds": 1,
+      "reason": "srun task launch failed before Python started"
+    },
+    {
+      "job": "1827",
+      "phase": "preflight",
+      "state": "FAILED",
+      "gpu_seconds": 50,
+      "reason": "module resolution selected G3 train.py; no optimizer update or model output"
+    },
+    {
+      "job": "1829",
+      "phase": "preflight",
+      "state": "FAILED",
+      "gpu_seconds": 43,
+      "reason": "T_plus path selector returned no batches; no optimizer update or model output"
+    },
+    {
+      "job": "1830",
+      "phase": "preflight",
+      "state": "COMPLETED",
+      "gpu_seconds": 47,
+      "reason": "interface, gradients, mask, deterministic identity passed"
+    },
+    {
+      "job": "1846",
+      "phase": "training_array",
+      "state": "COMPLETED",
+      "gpu_seconds": 221,
+      "reason": "three rank jobs; nine editors trained 200 updates each"
+    },
+    {
+      "job": "1849",
+      "phase": "matching_screen",
+      "state": "FAILED",
+      "gpu_seconds": 44,
+      "reason": "relative paths lacked experiment root; no matching outputs written"
+    },
+    {
+      "job": "1850",
+      "phase": "matching_screen",
+      "state": "COMPLETED",
+      "gpu_seconds": 65,
+      "reason": "gate locked; eight of nine passed IID/OOD single-step threshold"
+    },
+    {
+      "job": "1851",
+      "phase": "confirmation_eval",
+      "state": "FAILED",
+      "gpu_seconds": 44,
+      "reason": "residual cosine sentinel bug before outputs"
+    },
+    {
+      "job": "1852",
+      "phase": "confirmation_eval",
+      "state": "FAILED",
+      "gpu_seconds": 48,
+      "reason": "default partition scheduled unsupported P100; before outputs"
+    },
+    {
+      "job": "1853",
+      "phase": "confirmation_eval",
+      "state": "COMPLETED",
+      "gpu_seconds": 198,
+      "reason": "all nine one-step and eight retained five-step trajectories"
+    },
+    {
+      "job": "1854_0",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 478
+    },
+    {
+      "job": "1854_1",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 27,
+      "reason": "rank8_seed43 excluded by locked dev gate"
+    },
+    {
+      "job": "1854_2",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 477
+    },
+    {
+      "job": "1854_3",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 511
+    },
+    {
+      "job": "1854_4",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 411
+    },
+    {
+      "job": "1854_5",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 418
+    },
+    {
+      "job": "1854_6",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 440
+    },
+    {
+      "job": "1854_7",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 419
+    },
+    {
+      "job": "1854_8",
+      "phase": "G8_basin",
+      "state": "COMPLETED",
+      "gpu_seconds": 457
+    }
+  ],
+  "retry_policy": "All implementation errors were corrected; two failed inference attempts occurred before test outputs. Failed allocation time is included, array parent/steps counted once.",
+  "retries": [
+    {
+      "job_id": "1851",
+      "state": "failed_before_outputs",
+      "reason": "diagnostic residual cosine sentinel bug"
+    },
+    {
+      "job_id": "1852",
+      "state": "failed_before_outputs",
+      "reason": "scheduler used unsupported P100; constrain to B300q"
+    }
+  ],
+  "analysis_fixes": [
+    "Removed unused attempt to JSON-read matching_gate.csv; CSV is consumed by report.py. No test/model outputs or data changed."
+  ],
+  "total_gpu_seconds": 4399,
+  "total_gpu_hours": 1.2219444444444445,
+  "max_concurrent_gpus": 2,
+  "terminal": true
+}

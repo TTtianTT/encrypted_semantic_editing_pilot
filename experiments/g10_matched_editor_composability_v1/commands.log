@@ -1,0 +1,20 @@
+.venv/bin/python experiments/g10_matched_editor_composability_v1/prepare.py
+sbatch --partition=B300q experiments/g10_matched_editor_composability_v1/preflight.slurm # 1826: srun node startup failed before task launch
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/preflight.slurm # 1827: import collision, no optimizer update
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/preflight.slurm # 1829: incorrect G3 schedule path selector, no optimizer update
+.venv/bin/python experiments/g10_matched_editor_composability_v1/prepare.py --relock-before-model-outputs # corrected implementation before any training or confirmation output
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/preflight.slurm # 1830 passed
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/train_array.slurm # array 1846; rank 8/16/32, seeds 42/43/44
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/screen.slurm # 1849 failed relative path; 1850 passed and froze gate
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/evaluate.slurm # 1851 failed before outputs, retried as 1853; confirmation test inference
+sbatch --partition=B300q --exclude=node01 experiments/g10_matched_editor_composability_v1/basin_array.slurm # 1854 depends on successful 1853
+.venv/bin/python experiments/g10_matched_editor_composability_v1/analyze.py
+.venv/bin/python experiments/g10_matched_editor_composability_v1/audit.py
+.venv/bin/python experiments/g10_matched_editor_composability_v1/report.py
+
+1851 failed before outputs: residual cosine None sentinel bug; 1852 failed before outputs: P100 lacks required CUDA kernel; reroute to B300q
+
+1853: sbatch experiments/g10_matched_editor_composability_v1/evaluate.slurm (COMPLETED)
+1854: sbatch --dependency=afterok:1853 experiments/g10_matched_editor_composability_v1/basin_array.slurm (all 9 tasks terminal; 8 scans + 1 gate skip)
+Analysis: .venv/bin/python experiments/g10_matched_editor_composability_v1/analyze.py; .venv/bin/python experiments/g10_matched_editor_composability_v1/audit.py; .venv/bin/python experiments/g10_matched_editor_composability_v1/report.py
+Total GPU allocations including failed attempts: 4399 seconds = 1.222 GPU-hours; peak concurrency 2.

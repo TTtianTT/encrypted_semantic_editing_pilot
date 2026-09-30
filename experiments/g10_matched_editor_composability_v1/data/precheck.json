@@ -1,0 +1,79 @@
+{
+  "prior_world_files_checked": 2500,
+  "new_full_fact_keys": 320,
+  "fact_overlap": 0,
+  "strata": {
+    "match_iid": {
+      "N": 80,
+      "status_counts": {
+        "recorded_plan": 80
+      },
+      "template_counts": {
+        "0": 10,
+        "1": 10,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10,
+        "6": 10,
+        "7": 10
+      }
+    },
+    "match_template_ood": {
+      "N": 80,
+      "status_counts": {
+        "recorded_plan": 80
+      },
+      "template_counts": {
+        "8": 20,
+        "9": 20,
+        "10": 20,
+        "11": 20
+      }
+    },
+    "composition_iid": {
+      "N": 80,
+      "status_counts": {
+        "recorded_plan": 80
+      },
+      "template_counts": {
+        "0": 10,
+        "1": 10,
+        "2": 10,
+        "3": 10,
+        "4": 10,
+        "5": 10,
+        "6": 10,
+        "7": 10
+      }
+    },
+    "composition_template_ood": {
+      "N": 80,
+      "status_counts": {
+        "recorded_plan": 80
+      },
+      "template_counts": {
+        "8": 20,
+        "9": 20,
+        "10": 20,
+        "11": 20
+      }
+    }
+  },
+  "source_offset": 1,
+  "five_step_offsets": [
+    1,
+    0,
+    -1,
+    -2,
+    -3,
+    -4
+  ],
+  "all_paths_legal": true,
+  "gold_scoring": 1600,
+  "max_token_length": 52,
+  "input_limit": 96,
+  "source_only_rule_steps": 1280,
+  "dev_rows": 160,
+  "max_source_or_gold_chars": 212
+}

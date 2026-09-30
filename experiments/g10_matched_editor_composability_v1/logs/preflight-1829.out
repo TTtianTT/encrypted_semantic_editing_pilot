@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 3848.03it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/preflight.py", line 29, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/g10_matched_editor_composability_v1/preflight.py", line 13, in main
+    b=next(x for x in schedule if any(x['g2_replace']));rows=read(V3/'data/train_G1.jsonl');batch=[rows[k] for k in b['pair_indices']]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+srun: error: node02: task 0: Exited with exit code 1

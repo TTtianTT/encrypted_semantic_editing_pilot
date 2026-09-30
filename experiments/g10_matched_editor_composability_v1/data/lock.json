@@ -1,0 +1,56 @@
+{
+  "worlds": 320,
+  "fact_key_overlap_with_prior": 0,
+  "independent_dev_worlds": 80,
+  "match_worlds_per_stratum": 80,
+  "composition_worlds_per_stratum": 80,
+  "files": {
+    "match_iid.jsonl": "1695c84c92bc6e244cc8928693e36bb87736482637660b4cb58abaa8a2295e91",
+    "match_template_ood_worlds.jsonl": "c3d2750766764050d20622aa8c5526845df5a8136a1f404692722ca4b84ae4da",
+    "composition_iid_worlds.jsonl": "8dbfeed0462ee23b75819654dc14aa75c5ec882d766a985aa1fee62756aab2fc",
+    "composition_template_ood_worlds.jsonl": "a50e394af79883de66569cb84389fb89768191050b8da26f618f50f16ee6b9d3",
+    "precheck.json": "0ab8dda89f63595f3bae0b4aa327ed56423efcbf7ab445736797c10063eb22e1",
+    "match_template_ood.jsonl": "8e54101d6fa64d1fb3402db642f2777b727e01ce669dbaea640bc3ff8bdc96e1",
+    "match_iid_worlds.jsonl": "656d535349e14fc9875c95586cae79acb7dbfd8c5e1efb53455d19366dcc7723",
+    "dev_match.jsonl": "5bbd306a317e9585cb9b6459b3baf8635401994146bb8758d9ab14089ab4b2ae",
+    "composition_iid.jsonl": "78a63ec601c5f8010f41bb36e8e29a0fb883bee93090f20b7e45772c8744b654",
+    "composition_template_ood.jsonl": "34fa1c292a8a33e0cf4008bd17e6c724b4a3967c0210c2cfc723a0c1efe54da8"
+  },
+  "source_artifacts": {
+    "experiments/reference_frame_pilot_v3/data/train_G1.jsonl": "f1b00871783a7d84990182e26a7349d8dcba1ab956420abb519dfcb71360b76a",
+    "experiments/reference_frame_pilot_v3/data/sample_schedule.jsonl": "b24fd4da5e7ea5197ef22ae28ca95ecf796153f880cb11e943143cafd960da3d",
+    "experiments/reference_frame_pilot_v3/data/train_worlds.jsonl": "ad399fc324d4866e262e9c5c265e6fb5f61737b58174d813e77580cad2f48683",
+    "experiments/reference_frame_pilot_v3/data/dev_atomic.jsonl": "13200bd08eca341ae2a10b86997b7cfdb0f1c1b4313ee97a837319cfb89c139f",
+    "experiments/reference_frame_pilot_v3/checkpoints/G3/best.pt": "dca3cb26c0d3c1e33e3215f86e911d4c19df7417160598dcfdba8fbcffd8654d"
+  },
+  "code": {
+    "experiments/g10_matched_editor_composability_v1/PROTOCOL.md": "4c4a34d6c998502bd293c799029cdd9887ee2d4d1967f50d591079717b706672",
+    "experiments/g10_matched_editor_composability_v1/config.json": "a785d69bb57d750862dcf26f57845b0fb4ba7b06eddc873de5b529aa25bf3fed",
+    "experiments/g10_matched_editor_composability_v1/README.md": "5f3c9490b8850d7d2fde6dfa2a8cc02b8bdab18237c23273d8ac7af40b75100c",
+    "experiments/g10_matched_editor_composability_v1/g10_common.py": "0d4b29d367637280eaf3724951de13fb9ad523d76717dcc8f374b79215488100",
+    "experiments/g10_matched_editor_composability_v1/prepare.py": "6aa994bce185880a5383f3c3af158a5a118f33e4279317b549054cf950b2a260",
+    "experiments/g10_matched_editor_composability_v1/preflight.py": "f9653ca9c93cd423a150ce5f76f5bb933de80562cf491d07536946b6e86b17cc",
+    "experiments/g10_matched_editor_composability_v1/train.py": "549366144e82afdf6392c0ccc718654a048fee3736abda5a1ccf338b7c4bff09",
+    "experiments/g10_matched_editor_composability_v1/screen.py": "e30299803fa2817eb4c1c9dc08658fbb1cecfc273e1a800d78181fcb6f7ce109",
+    "experiments/g10_matched_editor_composability_v1/evaluate.py": "9aecd76d45f2008b13452572bbd4f076036380e975984e9e2d1da4897598c9f2",
+    "experiments/g10_matched_editor_composability_v1/basin.py": "02cc8aea8295c145f536f312fee57c291c34035fe40a3ba5f86f26c9d1a9e447",
+    "experiments/g10_matched_editor_composability_v1/analyze.py": "ca2721410e85233e35f98631cb4e4209894ab143abbb18c7eadb6dd900008a6f",
+    "experiments/g10_matched_editor_composability_v1/audit.py": "ac1616579addba9e79cde03aec0e9d7d413c3398b1b373d5a40a0c98bffc5566",
+    "experiments/g10_matched_editor_composability_v1/report.py": "0b0d5ff011cd149d2bb773a3359cabda2a082311dca61e02fc6c5b00870c8031",
+    "experiments/g10_matched_editor_composability_v1/run.slurm": "62905d8b4646ef7c1bfad2a64b4c2a63ef5eb8573dd5c1d1ba83e97d012d4603",
+    "experiments/g10_matched_editor_composability_v1/train_array.slurm": "6ec6f1b276f26926e5ff9d29cabcfab3e506454de3b822b74ce73c58f4302b5e",
+    "experiments/g10_matched_editor_composability_v1/preflight.slurm": "7cfbaf07375c8219eec85790dfc0a28b2e8fb00e8e53f375ee085e3791696e83",
+    "experiments/g10_matched_editor_composability_v1/screen.slurm": "ff6cecf9ef29b3b5a596fa12b4521d2211125b5a4645fd09e868d0045cc8fd91",
+    "experiments/g10_matched_editor_composability_v1/evaluate.slurm": "156b4036d957ad4ab942d722722cf5439e355214d9267e06bf7d8be29455eb5a",
+    "experiments/g10_matched_editor_composability_v1/basin_array.slurm": "4210ca21858221736ca063b88cceb223237e36ca43bb2ec01e5556ce4a5e897c"
+  },
+  "config_sha256": "a785d69bb57d750862dcf26f57845b0fb4ba7b06eddc873de5b529aa25bf3fed",
+  "protocol_sha256": "4c4a34d6c998502bd293c799029cdd9887ee2d4d1967f50d591079717b706672",
+  "seed": {
+    "match": 2026093011,
+    "test": 2026093012
+  },
+  "outputs_seen": false,
+  "max_token_length": 52,
+  "bart_input_limit": 96
+}
