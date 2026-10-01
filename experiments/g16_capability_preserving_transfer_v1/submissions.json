@@ -1,0 +1,45 @@
+[
+  {
+    "phase": "smoke",
+    "job_id": "2520",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:15:00",
+      "--export=ALL,G16_WALL_SECONDS=840",
+      "experiments/g16_capability_preserving_transfer_v1/scripts/smoke.sbatch"
+    ],
+    "count": 1,
+    "wall_seconds": 900,
+    "requested_gpu_seconds": 900
+  },
+  {
+    "phase": "train",
+    "job_id": "2521",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:41:00",
+      "--export=ALL,G16_WALL_SECONDS=2400",
+      "experiments/g16_capability_preserving_transfer_v1/scripts/train.sbatch"
+    ],
+    "count": 3,
+    "wall_seconds": 2460,
+    "requested_gpu_seconds": 7380
+  },
+  {
+    "phase": "confirm",
+    "job_id": "2524",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:22:00",
+      "--export=ALL,G16_WALL_SECONDS=1260",
+      "--dependency=afterok:2521",
+      "experiments/g16_capability_preserving_transfer_v1/scripts/confirm.sbatch"
+    ],
+    "count": 3,
+    "wall_seconds": 1320,
+    "requested_gpu_seconds": 3960
+  }
+]

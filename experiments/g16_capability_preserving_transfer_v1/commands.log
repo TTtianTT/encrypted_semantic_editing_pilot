@@ -1,0 +1,3 @@
+sbatch --parsable --time=00:15:00 --export=ALL,G16_WALL_SECONDS=840 experiments/g16_capability_preserving_transfer_v1/scripts/smoke.sbatch -> 2520
+sbatch --parsable --time=00:41:00 --export=ALL,G16_WALL_SECONDS=2400 experiments/g16_capability_preserving_transfer_v1/scripts/train.sbatch -> 2521
+sbatch --parsable --time=00:22:00 --export=ALL,G16_WALL_SECONDS=1260 --dependency=afterok:2521 experiments/g16_capability_preserving_transfer_v1/scripts/confirm.sbatch -> 2524

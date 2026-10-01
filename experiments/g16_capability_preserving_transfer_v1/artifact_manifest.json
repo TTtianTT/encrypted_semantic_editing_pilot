@@ -1,0 +1,800 @@
+{
+  "editor_checkpoints": [
+    {
+      "seed": 42,
+      "version": "N-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s42_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s42_final.pt",
+      "sha256": "53ecbcd1337bebde3a027467830d6945662ecd5609b059a72c65b6b6f9ea3939",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 42,
+      "version": "F-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s42_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s42_final.pt",
+      "sha256": "628198b808e662cb82f305aa40fc1004eb5b28902fc9adf32176d890106b8be4",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 42,
+      "version": "F-guard",
+      "actual_updates": 50,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s42_guard.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s42_guard.pt",
+      "sha256": "1d25ee183b4011e1a93cd5228aa98fc5a821e3d4c747f5c89ddf02d5847d53a5",
+      "bytes": 103502,
+      "uploaded": true,
+      "same_as_final": false
+    },
+    {
+      "seed": 43,
+      "version": "N-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s43_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s43_final.pt",
+      "sha256": "5a650e3251ec966c7ad323c4df1bfbbe33b44a02845a482206f07cf2f11ccb26",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 43,
+      "version": "F-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s43_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s43_final.pt",
+      "sha256": "c3db93da344a855ff145951140e6836d56d3e816fe8077be11a0110b96f2138b",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 43,
+      "version": "F-guard",
+      "actual_updates": 25,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s43_guard.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s43_guard.pt",
+      "sha256": "971e97f3aee7eb8db3bd68320e9849e56e271da60843bad473b2e9edb459196d",
+      "bytes": 103502,
+      "uploaded": true,
+      "same_as_final": false
+    },
+    {
+      "seed": 44,
+      "version": "N-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s44_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/N_s44_final.pt",
+      "sha256": "6bf3807cca82b84ac225c34f686da6a051b873d48bf14533e2b6fe94f7384ea5",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 44,
+      "version": "F-final",
+      "actual_updates": 200,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s44_final.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s44_final.pt",
+      "sha256": "4e4333fedf991626c42000c9bf914966270d0b1f7fb946b980f6d78c0994db7f",
+      "bytes": 103575,
+      "uploaded": true
+    },
+    {
+      "seed": 44,
+      "version": "F-guard",
+      "actual_updates": 25,
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s44_guard.pt",
+      "repo_path": "experiments/g16_capability_preserving_transfer_v1/checkpoints/F_s44_guard.pt",
+      "sha256": "4c4010955842f1e5ecd47d0c74469fbf19c85133e99dc4b60ae1c0f0426e7ffe",
+      "bytes": 103502,
+      "uploaded": true,
+      "same_as_final": false
+    }
+  ],
+  "existing_model_references": [
+    {
+      "seed": "42",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F3_s42_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F3_s42_final.pt",
+      "sha256": "e357950c082a0e50c8724880939c78444314d771cb493883f97579bcd0535cb3",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "42",
+      "role": "G",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed42.pt",
+      "repo_path": "experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed42.pt",
+      "sha256": "00706fc2c904455bc8c5f6e490d24a4b1772e2bb1ece433ff8e1ecf455b9f160",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": "original",
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "42",
+      "role": "U",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F2_s42_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F2_s42_final.pt",
+      "sha256": "803fccddd7c67db4bc895488908f248f3cddc375f27df52009cef53a64d86fd2",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "final confirmation only",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "43",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F3_s43_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F3_s43_final.pt",
+      "sha256": "28e02955f9828d3ba33fc2b313c21a8eef8c76f8abc31ad79470595b7bf7fe3a",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "43",
+      "role": "G",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed43.pt",
+      "repo_path": "experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed43.pt",
+      "sha256": "6b02ce643055786bdb46ddf395d952593ae44116f07c8521735e24997e8eb215",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": "original",
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "43",
+      "role": "U",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F2_s43_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F2_s43_final.pt",
+      "sha256": "0afbc3428aa15f07cad7571c6bb3ec93cef9332e1f5c23503ce071bdc1eb0210",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "final confirmation only",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "44",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F3_s44_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F3_s44_final.pt",
+      "sha256": "d12859f4bbd20daccd1d70131549ffd4a5446557f2f4273ecc269cee7c3b5da0",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "44",
+      "role": "G",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed44.pt",
+      "repo_path": "experiments/g10_matched_editor_composability_v1/checkpoints/rank16/rank16_seed44.pt",
+      "sha256": "cc6ac6aae2a7f233cb201e3e38d366c540ce829c28e736e62e67a742ea50b4a4",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": "original",
+      "usage": "frozen training producer/initialization",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    },
+    {
+      "seed": "44",
+      "role": "U",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g13_source_overfit_audit_v1/checkpoints/F2_s44_final.pt",
+      "repo_path": "experiments/g13_source_overfit_audit_v1/checkpoints/F2_s44_final.pt",
+      "sha256": "9ccca9d7a1c61777ecd5da1c345d383829f20279241bd795b190e93f04373e03",
+      "G15_mapping_sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff",
+      "step": 200,
+      "usage": "final confirmation only",
+      "uploaded": false,
+      "reason": "existing checkpoint, read-only reference"
+    }
+  ],
+  "local_only_artifacts": [
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_train_s42.pt",
+      "sha256": "0ff174b3f2caf4d015b533766f8415969e97b6cf8aeeafc1c837c111a25bb1c4",
+      "bytes": 912774149,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_dev_s42.pt",
+      "sha256": "3db490167a9b6ec04e7d3a4476d58a61314f3153f28fb17881514c55bfe7c8ac",
+      "bytes": 228198613,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_iid_s42.pt",
+      "sha256": "227cff7d46118bf0b2dbce9fb37d3d8a31ca1f5ed208635c0d44a620928394ed",
+      "bytes": 380326475,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_template_ood_s42.pt",
+      "sha256": "b4f3153f49fdb3060e9e01b4d70a052551e554a5a695740ae4d80f18af25c137",
+      "bytes": 380337369,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_train_s43.pt",
+      "sha256": "3cd26b8b7d2d3454c1f83ddbecd8cd87007a75d1800f87c84760925f1e94836e",
+      "bytes": 912774149,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_dev_s43.pt",
+      "sha256": "bf649b56d6a5bde49174088642b6deaac565c0016d6734d2933fb8e98a0f6d9d",
+      "bytes": 228198613,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_iid_s43.pt",
+      "sha256": "50e2fd870dd412eba62296fcd61e32be1c9352e0dc65b4a60ccb301efca6d805",
+      "bytes": 380326475,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_template_ood_s43.pt",
+      "sha256": "de0b15c161f201d5acb36d1d09e4495bd75e12d338dfb566ee9663c02cdd84e7",
+      "bytes": 380338009,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_train_s44.pt",
+      "sha256": "3ccd56875562c4b3c4a5cd2c7a45c9b9414e0f9b57743f3fe19b54be426a0c00",
+      "bytes": 912774149,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/repair_dev_s44.pt",
+      "sha256": "a02ef92bd8dcb4257d9dd5fb094997a9c1bc7d64d366f6db9f76b9573cd79bd1",
+      "bytes": 228198613,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_iid_s44.pt",
+      "sha256": "e93acb6186094f2d6bd9b3ce05b51b3f159d252ebbba062299c7398e7b514862",
+      "bytes": 380326475,
+      "uploaded": false
+    },
+    {
+      "kind": "full_FP32_latent_cache",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/confirm_template_ood_s44.pt",
+      "sha256": "345c34cbf64a352d868da06cf2ac7e3d57b82fffab5851b80a1db05553fb8bc0",
+      "bytes": 380337433,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step0.pt",
+      "sha256": "b63ba38e4e0f8953bd5875067491b0d815f71dfecdaf673c7b464a1784e59577",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step100.pt",
+      "sha256": "ae5e4098227b097bea3483faa8eae65474093aa962c9473add80d481dbefa267",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step125.pt",
+      "sha256": "0aaca457e98c0abf3fdf3dc65c65767483a1e16df706c878352fb6f6f9500a84",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step150.pt",
+      "sha256": "c29e5d7ee8470569e3bed33f02fa9f45427121e402b09b8c2b4a105eb33fbcaa",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step175.pt",
+      "sha256": "3e353bdb2db4cf9cfebc2dad07a3956bee1be3b0cb08abc5d1242d703018778e",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step200.pt",
+      "sha256": "628198b808e662cb82f305aa40fc1004eb5b28902fc9adf32176d890106b8be4",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step25.pt",
+      "sha256": "b49bc3202d220a06bae6deee25643c0a27df647f951f72c1c2b9ec09db4b48f1",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step50.pt",
+      "sha256": "1d25ee183b4011e1a93cd5228aa98fc5a821e3d4c747f5c89ddf02d5847d53a5",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s42_step75.pt",
+      "sha256": "07c762cb9775eec95fd70ce4972289a5cc056f594ebf2ebfb965634543e05258",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step0.pt",
+      "sha256": "2aca8d621974af78d3f9402b6beb26705f6d9f618f8d8ae32ca8cffefdae727f",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step100.pt",
+      "sha256": "67075ec46f1dca0f00eb349c409fe0914bb8358c392e438fd393aaaf1fa0e30a",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step125.pt",
+      "sha256": "8c44d3f34bcf8c836585d615edd230e262c9bfd28d3dca53dbd1271011c8ffea",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step150.pt",
+      "sha256": "137468727e5283f04a86398e99c7f8a2fd0b1292fec42afffa3b69ba3e77f095",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step175.pt",
+      "sha256": "a60ca05e80500fad5f402a492c8fee2aaac3291ee0dc0791490bd5622e880b10",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step200.pt",
+      "sha256": "c3db93da344a855ff145951140e6836d56d3e816fe8077be11a0110b96f2138b",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step25.pt",
+      "sha256": "971e97f3aee7eb8db3bd68320e9849e56e271da60843bad473b2e9edb459196d",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step50.pt",
+      "sha256": "60a16d0f2c0474cc0a47853fc497433f39424bdb0b22099bbd5c0903e3dff4fe",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s43_step75.pt",
+      "sha256": "ee3af90b7db9ae790f2638f6fa536485349fa1a02d3347d08097754451e59023",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step0.pt",
+      "sha256": "46d4a8b0f95b18a1fd8e12d77c40cf93fe8140f0530f6835e4ed11fbb0b88f90",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step100.pt",
+      "sha256": "c93c086e5c231e422c58721c8ade11bb86d14b7a014d458acb43c666fa05cabf",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step125.pt",
+      "sha256": "0b188232888d3033d5ac76a5f943153dcbdb6b5e63dac1662c2fd2330564ebdd",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step150.pt",
+      "sha256": "79c968f10353c2566041a4e82ecc8c7d0772494996aee9e398c5424c75426141",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step175.pt",
+      "sha256": "2e486e3f13d26ec559f1acd0ea8770d6f51ad0d9019bfb0daa4b0a7bcaf2569c",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step200.pt",
+      "sha256": "4e4333fedf991626c42000c9bf914966270d0b1f7fb946b980f6d78c0994db7f",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step25.pt",
+      "sha256": "4c4010955842f1e5ecd47d0c74469fbf19c85133e99dc4b60ae1c0f0426e7ffe",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step50.pt",
+      "sha256": "0f511ac37e9eb8ddf4728e03c4301a5003bdb85794d8b141789cc9071aec5025",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/F_s44_step75.pt",
+      "sha256": "ad671151937e04e289fe5e920084b41077a27a48dbb77a09e98550552af69b80",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step0.pt",
+      "sha256": "53a213c3c291b5bb3b3bc5ef11d58082a8211859f0ac300cf2235f6e794aa298",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step100.pt",
+      "sha256": "68b69a414f152c6caf75730b02e9ed523c26ed14b8ac21eb621743308783ba0b",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step125.pt",
+      "sha256": "0489f7f528fb131a123132497f78c3308b0e964a396d88f83aaf24c2ec7e3ffc",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step150.pt",
+      "sha256": "b195e3f637a99ff564381c8101fae8c64363a7d99b4f0d66dc33c2c91c64b00c",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step175.pt",
+      "sha256": "f0a30fb52120521c7789d642ac833b0ff80ceb7d76e6a5c3d38fa7c50c1d92f4",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step200.pt",
+      "sha256": "53ecbcd1337bebde3a027467830d6945662ecd5609b059a72c65b6b6f9ea3939",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step25.pt",
+      "sha256": "c6c6f1edc3d086fe5e3d8d6f9cacaa0c0f60cda2e8e498f4844009668ae915f9",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step50.pt",
+      "sha256": "41e98cdce45f404792a461fd177b3d58b2c6d16208583eb94b705abc46a9ebf4",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s42_step75.pt",
+      "sha256": "0cf2e8466cb1a3fae8425c921defcc25a5038fce61f49fb4ecb6effb693778b3",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step0.pt",
+      "sha256": "cdede5580a79f2c5f3d5d41b7302a28a37d858fc198e128a0589cfb547da1f00",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step100.pt",
+      "sha256": "eae215e5b480fc171f8eaa665a540f878b17c7e21fd2ab9a8493a81d6c6234af",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step125.pt",
+      "sha256": "d02c69ff1b2146ad7f1bfff603d03d75b876191fdba89cfdc6303ea26f0e3444",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step150.pt",
+      "sha256": "a9f263ac8987e37bcdc2981204eb8dc93b59aefdd7bb572650dda44b719928e6",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step175.pt",
+      "sha256": "587a22c989fcb0b68f747dafc24ef625565cca7ab9186ab6e0d698659aaa20a1",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step200.pt",
+      "sha256": "5a650e3251ec966c7ad323c4df1bfbbe33b44a02845a482206f07cf2f11ccb26",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step25.pt",
+      "sha256": "af0ad417ca6ba8de7ec25dd9ed66e4061d6cd3dc8ad34647a5baa6c194780d37",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step50.pt",
+      "sha256": "295609df2fb451ce58a250d1b65646b39bf7a42294faee65be6b0334dd1386a0",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s43_step75.pt",
+      "sha256": "95aebea944f4a180232be6b9a1e3be1afe115f1b83f47e89236eb647d3a75ab8",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step0.pt",
+      "sha256": "0b333a0c43a4359fc8e0843296cc197da3913840302f280fdf405ef4ce8f2a93",
+      "bytes": 103493,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step100.pt",
+      "sha256": "62af6f0a5af8dfc79efae1938e7bff231e385403a1d8294018d16c7c9de45aac",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step125.pt",
+      "sha256": "cf348b861ad524f7c3422976a60044274003105205e8f7b2b4adc2e088879f0c",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step150.pt",
+      "sha256": "ce65b519863254be0b36db0cdd673cc88f1350546dce3f8575f8094818507045",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step175.pt",
+      "sha256": "17c32bdab906efef4b40661980fbcf2f7773aeb85d90d0cc44f04e85e931f56d",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step200.pt",
+      "sha256": "6bf3807cca82b84ac225c34f686da6a051b873d48bf14533e2b6fe94f7384ea5",
+      "bytes": 103575,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step25.pt",
+      "sha256": "a54f8e141700a796ff9ab3d76872159f78b9af1855f2e0d560144f701ea4cbe8",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step50.pt",
+      "sha256": "0a08395abe58279d4dba0998f28e99f6313bb038399be8a67653993f5365766c",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/N_s44_step75.pt",
+      "sha256": "2fc7cc7c368c7e70114dde1cfb437fa77652b2fd70ec3fa6a98c2367bd7f1ba1",
+      "bytes": 103502,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_F_s42.pt",
+      "sha256": "eeae0d246e7ad8d7c46560d55323db0c9d38496b342831f6a2e69378331fb23d",
+      "bytes": 1784605,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_F_s43.pt",
+      "sha256": "0c2a1fdeda6300e4be1d154f1cd0d4aa29201589f0bffc52d7613f6e88da4b2b",
+      "bytes": 1784541,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_F_s44.pt",
+      "sha256": "dada2805fab394397e600c8eefb9f8ed8d471594785dcfa2a47abb202632c820",
+      "bytes": 1784541,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_N_s42.pt",
+      "sha256": "5255bb1e78691d446134bd2631f7ab505151fc5a4e75e2c80530b8d869e59f47",
+      "bytes": 1784605,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_N_s43.pt",
+      "sha256": "7b9a428149f4cfa025f05ecefdf8bb7bb84ed9eaf79c5329e8b86ea193912e59",
+      "bytes": 1784541,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/resume_N_s44.pt",
+      "sha256": "c94145c64827779a5e054ec2075849f1d5a94aa4b5876692923db38f595ba449",
+      "bytes": 1784605,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/smoke_dev_s42.pt",
+      "sha256": "649a20b1079bf2845b538ef17974d255f5ec75c17eee66b89de5bfc7e2006e90",
+      "bytes": 228198589,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/smoke_resume_F.pt",
+      "sha256": "95bdcfcfe62e96bab20e8f56649103cfb35195321546bbc99449d098cea28910",
+      "bytes": 318661,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/smoke_resume_N.pt",
+      "sha256": "d2d10caae11174bbb720247b8ec6b2d226eb6ebc2c296a837d2a797b8a7317f1",
+      "bytes": 318661,
+      "uploaded": false
+    },
+    {
+      "kind": "candidate_optimizer_or_smoke_local_only",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g16-worktree/experiments/g16_capability_preserving_transfer_v1/local/smoke_train_s42.pt",
+      "sha256": "457e7f555f565bfb9800cd9d1b0d6efe373a36e385c2d029c036b1f06bf3c89c",
+      "bytes": 28530733,
+      "uploaded": false
+    }
+  ],
+  "complete_text_archives": [
+    {
+      "path": "boundary_cases.jsonl.gz",
+      "sha256": "e16e80c54f3649ff172b0006e705c07a85873bfff7ffeca8abceb416bd853d3b",
+      "bytes": 12690
+    },
+    {
+      "path": "cases.jsonl.gz",
+      "sha256": "4d528c80903e0851278ecc80ddde7242a4a447f438f82df77abb61973806d61e",
+      "bytes": 195051
+    },
+    {
+      "path": "learning_per_example_s42.jsonl.gz",
+      "sha256": "4c10876cb1a255bcd9b2c4b11b4305e9d85a18328a5b03ee7d75d9d60c9f9c12",
+      "bytes": 20871617
+    },
+    {
+      "path": "learning_per_example_s43.jsonl.gz",
+      "sha256": "bc96d0c3d83631fe6bc7c7fa417a9af2297b63444c094e658c036cff90eeec1f",
+      "bytes": 20865483
+    },
+    {
+      "path": "learning_per_example_s44.jsonl.gz",
+      "sha256": "9aa1d554e1c6c4af5d0a48bbfc2d2e4964098763eec97c396500dce632cf3a80",
+      "bytes": 20867432
+    },
+    {
+      "path": "per_example_s42.jsonl.gz",
+      "sha256": "dc141994123dae9aa67ea51a5ea8323a4af0666f870f040d0b0bf99b43bac556",
+      "bytes": 13631378
+    },
+    {
+      "path": "per_example_s43.jsonl.gz",
+      "sha256": "13f3b595fad234be564c9a756c6ca3a623c957dc9accc4ecdec420b6eb6bf265",
+      "bytes": 13627103
+    },
+    {
+      "path": "per_example_s44.jsonl.gz",
+      "sha256": "a3bfe696b1cee6e83b56c9f57a79399d3bc6fd4a028364a70fbc43888dde7d6f",
+      "bytes": 13629085
+    },
+    {
+      "path": "smoke_dev.jsonl.gz",
+      "sha256": "c700c29c301e6c1c53e8cc3061edeb213c13ef26a980618d366450a61c1a4314",
+      "bytes": 1073166
+    },
+    {
+      "path": "smoke_final_flow.jsonl.gz",
+      "sha256": "29ee6533ae496ca859930887dffb219ebe0fc138192e15021d94301353acc080",
+      "bytes": 161760
+    },
+    {
+      "path": "training_current.jsonl.gz",
+      "sha256": "d35b4a7f07803b5e714717a9558b1d87cdd03dc70c6c63bdcbd9a3055e54ab10",
+      "bytes": 705198
+    }
+  ],
+  "base_model_manifest": "checkpoints_manifest.json",
+  "no_base_model_or_large_latent_uploaded": true
+}

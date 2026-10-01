@@ -1,0 +1,3376 @@
+{
+  "curves": [
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 0,
+      "split": "train",
+      "checkpoint_sha256": "53a213c3c291b5bb3b3bc5ef11d58082a8211859f0ac300cf2235f6e794aa298",
+      "checkpoint_state_hash": "a79e5a191b3460e11b1e36ad00bfb273697918d33b944c424447197719ec3766",
+      "full_dev": false,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 32,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00012236422490366524,
+        "old": 5.1673735716287105e-05,
+        "seen_A": 0.00019756023969653153,
+        "seen_D": 9.873147031167456e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 0,
+      "split": "dev",
+      "checkpoint_sha256": "53a213c3c291b5bb3b3bc5ef11d58082a8211859f0ac300cf2235f6e794aa298",
+      "checkpoint_state_hash": "a79e5a191b3460e11b1e36ad00bfb273697918d33b944c424447197719ec3766",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.000125281548632459,
+        "old": 5.407741537768097e-05,
+        "seen_A": 0.00020960237807403915,
+        "seen_D": 9.606757071357708e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 25,
+      "split": "dev",
+      "checkpoint_sha256": "c6c6f1edc3d086fe5e3d8d6f9cacaa0c0f60cda2e8e498f4844009668ae915f9",
+      "checkpoint_state_hash": "82c6f9643536345c18ea7ce5466743b6c6f0252d041c9d5dacfa4baed3ac4743",
+      "full_dev": true,
+      "atomic_macro": 0.9986328125,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 0.9921875,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 0.9921875,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 0.984375,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 0.984375,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 0.9921875,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.0005480019555556538,
+        "old": 7.022420505762467e-05,
+        "seen_A": 0.00018081489621275563,
+        "seen_D": 3.958858268231418e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 50,
+      "split": "train",
+      "checkpoint_sha256": "41e98cdce45f404792a461fd177b3d58b2c6d16208583eb94b705abc46a9ebf4",
+      "checkpoint_state_hash": "b953b0410176dbc7810c9ca1ec65dfcbdfa1cf64da5f74b3a5c0f502a916f884",
+      "full_dev": false,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 32,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.0009186867023288445,
+        "old": 0.00019406099292062785,
+        "seen_A": 7.714185252774097e-05,
+        "seen_D": 0.00018001721982677477
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 50,
+      "split": "dev",
+      "checkpoint_sha256": "41e98cdce45f404792a461fd177b3d58b2c6d16208583eb94b705abc46a9ebf4",
+      "checkpoint_state_hash": "b953b0410176dbc7810c9ca1ec65dfcbdfa1cf64da5f74b3a5c0f502a916f884",
+      "full_dev": true,
+      "atomic_macro": 0.9998046875,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 0.9921875,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.0009468541411977657,
+        "old": 0.00017527456011355054,
+        "seen_A": 7.784340134679089e-05,
+        "seen_D": 0.00015576518200526943
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 75,
+      "split": "dev",
+      "checkpoint_sha256": "0cf2e8466cb1a3fae8425c921defcc25a5038fce61f49fb4ecb6effb693778b3",
+      "checkpoint_state_hash": "4f134b42f9bf621fe4a863d7931d2caf430967f6efe39e77dc4c4c69bb9d9cdb",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00028698765389664944,
+        "old": 7.771749881860533e-05,
+        "seen_A": 4.237155640446733e-05,
+        "seen_D": 6.113285618315245e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 100,
+      "split": "train",
+      "checkpoint_sha256": "68b69a414f152c6caf75730b02e9ed523c26ed14b8ac21eb621743308783ba0b",
+      "checkpoint_state_hash": "5a11c2cb462a1732a64c81d65bc78083a9a3e546ff573ebb62a6cde1f32de0e9",
+      "full_dev": false,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 32,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.0001885836516769521,
+        "old": 6.61777560941229e-05,
+        "seen_A": 2.8912030099604714e-05,
+        "seen_D": 3.0944186899007786e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 100,
+      "split": "dev",
+      "checkpoint_sha256": "68b69a414f152c6caf75730b02e9ed523c26ed14b8ac21eb621743308783ba0b",
+      "checkpoint_state_hash": "5a11c2cb462a1732a64c81d65bc78083a9a3e546ff573ebb62a6cde1f32de0e9",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00019815794755813584,
+        "old": 6.904102892732837e-05,
+        "seen_A": 3.209246260022658e-05,
+        "seen_D": 3.1313394920437975e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 125,
+      "split": "dev",
+      "checkpoint_sha256": "0489f7f528fb131a123132497f78c3308b0e964a396d88f83aaf24c2ec7e3ffc",
+      "checkpoint_state_hash": "83236bd557a8ebd0c639ddc7b1759d624ff7187483d288d0d695528927b7c0f8",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00015865963023493654,
+        "old": 5.9816756930266686e-05,
+        "seen_A": 2.4795277260750792e-05,
+        "seen_D": 2.736845746831791e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 150,
+      "split": "train",
+      "checkpoint_sha256": "b195e3f637a99ff564381c8101fae8c64363a7d99b4f0d66dc33c2c91c64b00c",
+      "checkpoint_state_hash": "9a44fa370ba4a3ff011f9bcfcd223c2f95b265e22bbebbd4e74432779bccacb2",
+      "full_dev": false,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 32,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00012657063216574442,
+        "old": 5.086477432533944e-05,
+        "seen_A": 1.9517754429517508e-05,
+        "seen_D": 2.4270066570197105e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 150,
+      "split": "dev",
+      "checkpoint_sha256": "b195e3f637a99ff564381c8101fae8c64363a7d99b4f0d66dc33c2c91c64b00c",
+      "checkpoint_state_hash": "9a44fa370ba4a3ff011f9bcfcd223c2f95b265e22bbebbd4e74432779bccacb2",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.0001325670136377871,
+        "old": 5.37342969780047e-05,
+        "seen_A": 2.1338521047163506e-05,
+        "seen_D": 2.4809663028396637e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 175,
+      "split": "dev",
+      "checkpoint_sha256": "f0a30fb52120521c7789d642ac833b0ff80ceb7d76e6a5c3d38fa7c50c1d92f4",
+      "checkpoint_state_hash": "8a1f24bcdcc3960d9b3afc0310ce702f18a4599c78a327b235d658cd080607ba",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00011510626878822317,
+        "old": 4.936727290132425e-05,
+        "seen_A": 1.8956856742232902e-05,
+        "seen_D": 2.18771937192143e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 200,
+      "split": "train",
+      "checkpoint_sha256": "53ecbcd1337bebde3a027467830d6945662ecd5609b059a72c65b6b6f9ea3939",
+      "checkpoint_state_hash": "5b5a08a563277fb1d32d49c1ceeb32f27a6f4a3627147af63c9e98ebf3eda7ec",
+      "full_dev": false,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 32,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 9.610060164319818e-05,
+        "old": 4.300433152731029e-05,
+        "seen_A": 1.651292899140796e-05,
+        "seen_D": 1.8535005527277527e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    },
+    {
+      "seed": 42,
+      "method": "N",
+      "step": 200,
+      "split": "dev",
+      "checkpoint_sha256": "53ecbcd1337bebde3a027467830d6945662ecd5609b059a72c65b6b6f9ea3939",
+      "checkpoint_state_hash": "5b5a08a563277fb1d32d49c1ceeb32f27a6f4a3627147af63c9e98ebf3eda7ec",
+      "full_dev": true,
+      "atomic_macro": 1.0,
+      "atomic_cells": {
+        "('recorded_plan', -3, 'first')": 1.0,
+        "('recorded_plan', -3, 'third')": 1.0,
+        "('recorded_plan', -2, 'first')": 1.0,
+        "('recorded_plan', -2, 'third')": 1.0,
+        "('recorded_plan', -1, 'first')": 1.0,
+        "('recorded_plan', -1, 'third')": 1.0,
+        "('recorded_plan', 0, 'first')": 1.0,
+        "('recorded_plan', 0, 'third')": 1.0,
+        "('recorded_plan', 1, 'first')": 1.0,
+        "('recorded_plan', 1, 'third')": 1.0,
+        "('recorded_plan', 2, 'first')": 1.0,
+        "('recorded_plan', 2, 'third')": 1.0,
+        "('recorded_plan', 3, 'first')": 1.0,
+        "('recorded_plan', 3, 'third')": 1.0,
+        "('recorded_plan', 4, 'first')": 1.0,
+        "('recorded_plan', 4, 'third')": 1.0,
+        "('reported_cancelled', -3, 'first')": 1.0,
+        "('reported_cancelled', -3, 'third')": 1.0,
+        "('reported_cancelled', -2, 'first')": 1.0,
+        "('reported_cancelled', -2, 'third')": 1.0,
+        "('reported_cancelled', -1, 'first')": 1.0,
+        "('reported_cancelled', -1, 'third')": 1.0,
+        "('reported_cancelled', 0, 'first')": 1.0,
+        "('reported_cancelled', 0, 'third')": 1.0,
+        "('reported_cancelled', 1, 'first')": 1.0,
+        "('reported_cancelled', 1, 'third')": 1.0,
+        "('reported_cancelled', 2, 'first')": 1.0,
+        "('reported_cancelled', 2, 'third')": 1.0,
+        "('reported_cancelled', 3, 'first')": 1.0,
+        "('reported_cancelled', 3, 'third')": 1.0,
+        "('reported_cancelled', 4, 'first')": 1.0,
+        "('reported_cancelled', 4, 'third')": 1.0,
+        "('reported_completed', -3, 'first')": 1.0,
+        "('reported_completed', -3, 'third')": 1.0,
+        "('reported_completed', -2, 'first')": 1.0,
+        "('reported_completed', -2, 'third')": 1.0,
+        "('reported_completed', -1, 'first')": 1.0,
+        "('reported_completed', -1, 'third')": 1.0,
+        "('reported_completed', 0, 'first')": 1.0,
+        "('reported_completed', 0, 'third')": 1.0
+      },
+      "old_all3": 1.0,
+      "old_n": 128,
+      "old_sources": {
+        "H0": 1.0,
+        "H1": 1.0,
+        "H2": 1.0
+      },
+      "seen_A": 1.0,
+      "seen_D": 1.0,
+      "seen_D_full": 1.0,
+      "seen_D_current_wrong": 0,
+      "nll": {
+        "atomic": 0.00010192847910291343,
+        "old": 4.563348066222123e-05,
+        "seen_A": 1.8042579238294757e-05,
+        "seen_D": 1.926403816142126e-05
+      },
+      "U_used": false,
+      "G_today_used": false
+    }
+  ],
+  "candidates": [
+    {
+      "seed": 42,
+      "step": 25,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 127,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 127,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 126,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 126,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 127,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "c6c6f1edc3d086fe5e3d8d6f9cacaa0c0f60cda2e8e498f4844009668ae915f9",
+      "checkpoint_state_hash": "82c6f9643536345c18ea7ce5466743b6c6f0252d041c9d5dacfa4baed3ac4743",
+      "checkpoint_path": "local/N_s42_step25.pt"
+    },
+    {
+      "seed": 42,
+      "step": 50,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 127,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "41e98cdce45f404792a461fd177b3d58b2c6d16208583eb94b705abc46a9ebf4",
+      "checkpoint_state_hash": "b953b0410176dbc7810c9ca1ec65dfcbdfa1cf64da5f74b3a5c0f502a916f884",
+      "checkpoint_path": "local/N_s42_step50.pt"
+    },
+    {
+      "seed": 42,
+      "step": 75,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "0cf2e8466cb1a3fae8425c921defcc25a5038fce61f49fb4ecb6effb693778b3",
+      "checkpoint_state_hash": "4f134b42f9bf621fe4a863d7931d2caf430967f6efe39e77dc4c4c69bb9d9cdb",
+      "checkpoint_path": "local/N_s42_step75.pt"
+    },
+    {
+      "seed": 42,
+      "step": 100,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "68b69a414f152c6caf75730b02e9ed523c26ed14b8ac21eb621743308783ba0b",
+      "checkpoint_state_hash": "5a11c2cb462a1732a64c81d65bc78083a9a3e546ff573ebb62a6cde1f32de0e9",
+      "checkpoint_path": "local/N_s42_step100.pt"
+    },
+    {
+      "seed": 42,
+      "step": 125,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "0489f7f528fb131a123132497f78c3308b0e964a396d88f83aaf24c2ec7e3ffc",
+      "checkpoint_state_hash": "83236bd557a8ebd0c639ddc7b1759d624ff7187483d288d0d695528927b7c0f8",
+      "checkpoint_path": "local/N_s42_step125.pt"
+    },
+    {
+      "seed": 42,
+      "step": 150,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "b195e3f637a99ff564381c8101fae8c64363a7d99b4f0d66dc33c2c91c64b00c",
+      "checkpoint_state_hash": "9a44fa370ba4a3ff011f9bcfcd223c2f95b265e22bbebbd4e74432779bccacb2",
+      "checkpoint_path": "local/N_s42_step150.pt"
+    },
+    {
+      "seed": 42,
+      "step": 175,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "f0a30fb52120521c7789d642ac833b0ff80ceb7d76e6a5c3d38fa7c50c1d92f4",
+      "checkpoint_state_hash": "8a1f24bcdcc3960d9b3afc0310ce702f18a4599c78a327b235d658cd080607ba",
+      "checkpoint_path": "local/N_s42_step175.pt"
+    },
+    {
+      "seed": 42,
+      "step": 200,
+      "split": "dev",
+      "method": "N",
+      "atomic_cells": [
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "recorded_plan",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_cancelled",
+          "offset": 4,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -3,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -2,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": -1,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "first",
+          "k": 128,
+          "n": 128
+        },
+        {
+          "status": "reported_completed",
+          "offset": 0,
+          "perspective": "third",
+          "k": 128,
+          "n": 128
+        }
+      ],
+      "old_k": 128,
+      "old_n": 128,
+      "A_k": 128,
+      "A_n": 128,
+      "D_k": 128,
+      "D_n": 128,
+      "checkpoint_sha256": "53ecbcd1337bebde3a027467830d6945662ecd5609b059a72c65b6b6f9ea3939",
+      "checkpoint_state_hash": "5b5a08a563277fb1d32d49c1ceeb32f27a6f4a3627147af63c9e98ebf3eda7ec",
+      "checkpoint_path": "local/N_s42_step200.pt"
+    }
+  ]
+}
