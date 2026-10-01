@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "tests": 11,
+  "suite": "tests.py",
+  "CPU_only": true,
+  "captured_output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.168s\n\nOK\n",
+  "tested_actual_state_flow": true,
+  "guards": [
+    "no second-step latent reencoding",
+    "correct recipient dispatch",
+    "actual free text, never gold in reset",
+    "gate independent of next output",
+    "mask routing and immutable state",
+    "empty bootstrap/cohort NA",
+    "extreme Wilson intervals",
+    "zero optimizer/backward"
+  ],
+  "exit_code": 0,
+  "rerun_reason": "daemon restart interrupted delivery of test tool output; verify before GPU submission"
+}

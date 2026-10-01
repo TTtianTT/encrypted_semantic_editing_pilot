@@ -1,0 +1,15 @@
+{
+  "baseline_commit":"c124e8c91a5b379725e17ef89937f4cf9da82301",
+  "branch":"experiment/g14-matched-state-handoff-v1",
+  "seeds":[42,43,44],"R_methods":["F3","F2"],"primary":"F3",
+  "data_seed":20261001,"world_counts":{"iid":160,"template_ood":160},
+  "status":"recorded_plan","perspective":"first","rank":16,
+  "batch_size":16,"source_length":96,"dtype":"float32","tf32":false,
+  "max_new_tokens":60,"do_sample":false,"num_beams":1,"forced_eos_token_id":null,
+  "offsets":[1,0,-1],"max_semantic_edits":2,"new_training_steps":0,
+  "checkpoint_choice":"final step200 only; T0 from G13 audited mapping",
+  "bootstrap_seed":20261001,"bootstrap_replicates":2000,
+  "cases_per_F3_seed_split":2,"case_order":"SHA256(20261001/case/seed/split/record_id), no error-category selection",
+  "smoke_seconds":900,"gpu_budget_seconds":14400,"max_concurrent_gpus":2,
+  "partition":"B300q","exclude":"node01","cpus":4,"host_memory":"64G"
+}

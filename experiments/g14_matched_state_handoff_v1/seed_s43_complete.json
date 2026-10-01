@@ -1,0 +1,193 @@
+{
+  "passed": true,
+  "denominators": [
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 160
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 4
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 160
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 60
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 120
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 120
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 7
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 160,
+      "raw_N": 160,
+      "matched_k": 0
+    }
+  ],
+  "seed": 43,
+  "phase": "confirm",
+  "zero_training": true,
+  "optimizer_created": false,
+  "backward_executed": false,
+  "frozen_before": {
+    "backbone": "68ce26d8f8ac07826b9504696987593f5fc19a6aaa556c7b0868ac11776ca04b",
+    "editors": {
+      "G": "30f824dafd99298831fbc5916ba284d1fc12efb9bb208b7ef62b00e51f8f1f16",
+      "F3": "4393a7ecbb82579a7a64b7408a5426952d030b4f00c83a6d9051f17befeb4243",
+      "F2": "12139ad8a538705cb0ebe08fa369465246874b9f03c44fd34c1cff08cc6970c6"
+    }
+  },
+  "frozen_after": {
+    "backbone": "68ce26d8f8ac07826b9504696987593f5fc19a6aaa556c7b0868ac11776ca04b",
+    "editors": {
+      "G": "30f824dafd99298831fbc5916ba284d1fc12efb9bb208b7ef62b00e51f8f1f16",
+      "F3": "4393a7ecbb82579a7a64b7408a5426952d030b4f00c83a6d9051f17befeb4243",
+      "F2": "12139ad8a538705cb0ebe08fa369465246874b9f03c44fd34c1cff08cc6970c6"
+    }
+  },
+  "caches_unchanged": true,
+  "cache_save_load_equal": true,
+  "current_gate_independent_of_next": true,
+  "input_state_hashes_verified": true,
+  "matched_reset_equals_natural": true,
+  "rows": 6400,
+  "timing": {
+    "cache_seconds": 23.422284621046856,
+    "current_decode_seconds": 18.008737648604438,
+    "receiver_evaluation_seconds": 106.35364665300585
+  },
+  "elapsed_seconds": 143.10704493895173,
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "gpu_total_memory": 287421038592,
+  "peak_cuda_bytes": 717548032,
+  "job_id": "2451",
+  "array_job_id": "2449",
+  "array_task_id": "1",
+  "start_epoch": 1790843191.9225488,
+  "end_epoch": 1790843336.174531,
+  "historical_worlds": 32,
+  "new_worlds": 320,
+  "cache_replay_equal": "smoke passed before array"
+}

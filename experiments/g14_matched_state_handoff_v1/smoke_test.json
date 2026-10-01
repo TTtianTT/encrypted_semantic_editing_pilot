@@ -1,0 +1,193 @@
+{
+  "passed": true,
+  "denominators": [
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 16
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 7
+    },
+    {
+      "split": "iid",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 16
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 8
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 5
+    },
+    {
+      "split": "iid",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 10
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 1
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F3",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 10
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "G",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 5
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "G",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 2
+    },
+    {
+      "split": "template_ood",
+      "R_method": "F2",
+      "producer": "R",
+      "receiver": "R",
+      "matched_n": 16,
+      "raw_N": 16,
+      "matched_k": 0
+    }
+  ],
+  "seed": 42,
+  "phase": "smoke",
+  "zero_training": true,
+  "optimizer_created": false,
+  "backward_executed": false,
+  "frozen_before": {
+    "backbone": "68ce26d8f8ac07826b9504696987593f5fc19a6aaa556c7b0868ac11776ca04b",
+    "editors": {
+      "G": "66a55951273e73d5d3cb75b42efe52f013688c8481ec5b1910bcb37421ef7e36",
+      "F3": "a79e5a191b3460e11b1e36ad00bfb273697918d33b944c424447197719ec3766",
+      "F2": "513ac5493418981b6a1cad4396d8d7b338437ac28bd5d9b7590739f83f69a88a"
+    }
+  },
+  "frozen_after": {
+    "backbone": "68ce26d8f8ac07826b9504696987593f5fc19a6aaa556c7b0868ac11776ca04b",
+    "editors": {
+      "G": "66a55951273e73d5d3cb75b42efe52f013688c8481ec5b1910bcb37421ef7e36",
+      "F3": "a79e5a191b3460e11b1e36ad00bfb273697918d33b944c424447197719ec3766",
+      "F2": "513ac5493418981b6a1cad4396d8d7b338437ac28bd5d9b7590739f83f69a88a"
+    }
+  },
+  "caches_unchanged": true,
+  "cache_save_load_equal": true,
+  "current_gate_independent_of_next": true,
+  "input_state_hashes_verified": true,
+  "matched_reset_equals_natural": true,
+  "rows": 640,
+  "timing": {
+    "cache_seconds": 2.748936749063432,
+    "current_decode_seconds": 1.8189558824524283,
+    "receiver_evaluation_seconds": 10.890620436985046
+  },
+  "elapsed_seconds": 29.478883056901395,
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "gpu_total_memory": 287421038592,
+  "peak_cuda_bytes": 717548032,
+  "job_id": "2447",
+  "array_job_id": null,
+  "array_task_id": null,
+  "start_epoch": 1790842802.4819958,
+  "end_epoch": 1790842832.672631,
+  "historical_worlds": 32,
+  "new_worlds": 0,
+  "cache_replay_equal": true
+}
