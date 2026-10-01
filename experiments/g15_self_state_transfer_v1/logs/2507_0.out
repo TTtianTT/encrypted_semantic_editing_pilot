@@ -1,0 +1,28 @@
+cached 42 repair_train P 512 old 512
+cached 42 repair_dev P 128 old 128
+diagnostic 42 N 0 1.0 1.0 1.0
+diagnostic 42 N 50 1.0 1.0 1.0
+diagnostic 42 N 100 1.0 1.0 1.0
+diagnostic 42 N 150 1.0 1.0 1.0
+diagnostic 42 N 200 1.0 1.0 1.0
+diagnostic 42 F 0 1.0 1.0 0.0
+diagnostic 42 F 50 0.996875 1.0 1.0
+diagnostic 42 F 100 1.0 1.0 1.0
+diagnostic 42 F 150 0.996875 1.0 1.0
+diagnostic 42 F 200 0.9984375 1.0 1.0
+diagnostic 42 O 0 1.0 1.0 0.0
+diagnostic 42 O 50 1.0 1.0 1.0
+diagnostic 42 O 100 0.99375 1.0 1.0
+diagnostic 42 O 150 1.0 1.0 1.0
+diagnostic 42 O 200 1.0 1.0 1.0
+cached 42 confirm_iid P 160 old 160
+cached 42 confirm_template_ood P 160 old 113
+confirmation 42 P iid 8480
+confirmation 42 P template_ood 8480
+confirmation 42 N iid 8480
+confirmation 42 N template_ood 8480
+confirmation 42 F iid 8480
+confirmation 42 F template_ood 8480
+confirmation 42 O iid 8480
+confirmation 42 O template_ood 8480
+G15 SEED COMPLETE 42

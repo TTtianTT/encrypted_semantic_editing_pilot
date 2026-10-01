@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "complete_models": 9,
+  "completed_steps": 1800,
+  "total_supervised_instances": 57600,
+  "primary_final_step": 200,
+  "all_locked_science_hashes_unchanged": true,
+  "frozen_ED_P_G_U_verified": true,
+  "confirmation_rows": 203520,
+  "learning_rows": 72000,
+  "training_current_rows": 14400,
+  "all_prior_retry_artifacts_unchanged": true,
+  "allocation_count": 5,
+  "budget": {
+    "limit_gpu_hours": 4,
+    "actual_gpu_hours": 1.1822222222222223,
+    "requested_gpu_hours": 2.1,
+    "max_concurrent_gpus": 2,
+    "allocation_only": true,
+    "steps_not_double_counted": true,
+    "within_limits": true
+  },
+  "post_lock_operational_files": [
+    "tests_aggregation.py",
+    "resume_evaluation.py",
+    "scripts/resume_evaluation.sbatch",
+    "annotate_report.py",
+    "finalize.py"
+  ],
+  "post_result_interpretation": "INTERPRETATION.md",
+  "old_experiments_modified": false
+}

@@ -1,0 +1,31 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 4268.55it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py", line 360, in <module>
+    else:main_seed(engine,json.loads((ROOT/'runs_manifest.json').read_text())['array_mapping'][args.seed_index]['seed'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py", line 349, in main_seed
+    finalaudit=final_confirmation(e,P,G,worlds,seed)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py", line 282, in final_confirmation
+    rows=final_model(e,Q,caches[split],plans[split],[w for w in worlds if w['split']==split],seed,method,split)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py", line 239, in final_model
+    rows,_=atom_eval(e,Q,atomic_worlds,seed,method,split,200)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py", line 141, in atom_eval
+    e.check(90);st=encode(e,[render(w,frame(w,d,p)) for w in bw]);out=edit(Q,st);obs,_=observe(e,out,bw,d-1,p)
+    ^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/reference_frame_pilot_v3/engine.py", line 30, in check
+    if time.monotonic()-self.start>self.limit-reserve:raise TimeoutError('Allocation budget stop; outputs/checkpoint preserved')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: Allocation budget stop; outputs/checkpoint preserved
+srun: error: node02: task 0: Exited with exit code 1

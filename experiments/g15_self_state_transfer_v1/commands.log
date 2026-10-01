@@ -1,0 +1,3 @@
+sbatch --parsable --time=00:15:00 --export=ALL,G15_WALL_SECONDS=840 experiments/g15_self_state_transfer_v1/scripts/smoke.sbatch -> 2505
+sbatch --parsable --time=00:32:00 --export=ALL,G15_WALL_SECONDS=1860 experiments/g15_self_state_transfer_v1/scripts/main.sbatch -> 2507
+sbatch --parsable --time=00:15:00 --export=ALL,G15_WALL_SECONDS=840,G15_RETRY_INDEX=1 experiments/g15_self_state_transfer_v1/scripts/resume_evaluation.sbatch -> 2510

@@ -1,0 +1,4 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 5527.58it/s]
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g15_self_state_transfer_v1/run.py:324: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  checks.append(dict(method=method,initial_hash=initial,independent_optimizer=True,loss=float(loss),grad_norms=norms,first_gradient_retained=True,second_detached=True,decoder_gradient_reaches_T=True,save_optimizer_RNG_resume_equal=True,T_updated=True,actual_first_outputs=z['current']))

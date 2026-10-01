@@ -1,0 +1,45 @@
+[
+  {
+    "phase": "smoke",
+    "job_id": "2505",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:15:00",
+      "--export=ALL,G15_WALL_SECONDS=840",
+      "experiments/g15_self_state_transfer_v1/scripts/smoke.sbatch"
+    ],
+    "count": 1,
+    "wall_seconds": 900,
+    "requested_gpu_seconds": 900
+  },
+  {
+    "phase": "main",
+    "job_id": "2507",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:32:00",
+      "--export=ALL,G15_WALL_SECONDS=1860",
+      "experiments/g15_self_state_transfer_v1/scripts/main.sbatch"
+    ],
+    "count": 3,
+    "wall_seconds": 1920,
+    "requested_gpu_seconds": 5760
+  },
+  {
+    "phase": "engineering-final-eval-resume",
+    "job_id": "2510",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--time=00:15:00",
+      "--export=ALL,G15_WALL_SECONDS=840,G15_RETRY_INDEX=1",
+      "experiments/g15_self_state_transfer_v1/scripts/resume_evaluation.sbatch"
+    ],
+    "count": 1,
+    "seed": 43,
+    "wall_seconds": 900,
+    "requested_gpu_seconds": 900
+  }
+]
