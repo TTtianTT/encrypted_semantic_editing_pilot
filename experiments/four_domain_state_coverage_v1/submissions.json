@@ -92,7 +92,8 @@
     "project_dependencies": [],
     "one_gpu_per_task": true,
     "max_array_tasks": 2,
-    "job_id": "2568"
+    "job_id": "2568",
+    "pending_walltime_resource_amendment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/pending_walltime_amendment.json"
   },
   {
     "phase": "symbol",
@@ -125,7 +126,8 @@
     "one_gpu_per_task": true,
     "max_array_tasks": 2,
     "job_id": "2571",
-    "recovery_dependency": "afterany:2568:2620"
+    "recovery_dependency": "afterany:2568:2620",
+    "pending_walltime_resource_amendment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/pending_walltime_amendment.json"
   },
   {
     "phase": "space_confirmation",
@@ -152,7 +154,8 @@
     "max_array_tasks": 2,
     "protocol_sha": "b4200fec6c2470f3e8c10b5a0ccf0940b4ca64259533de0f589127a5cb59a8ac",
     "job_id": "2582",
-    "recovery_dependency": "afterany:2568:2571:2620"
+    "recovery_dependency": "afterany:2568:2571:2620",
+    "pending_walltime_resource_amendment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/pending_walltime_amendment.json"
   },
   {
     "phase": "identity_probe",
@@ -229,7 +232,8 @@
     "one_gpu_per_task": true,
     "max_array_tasks": 2,
     "job_id": "2587",
-    "recovery_dependency": "afterany:2568:2571:2582:2585:2620"
+    "recovery_dependency": "afterany:2568:2571:2582:2585:2620",
+    "pending_walltime_resource_amendment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/pending_walltime_amendment.json"
   },
   {
     "phase": "finalize",

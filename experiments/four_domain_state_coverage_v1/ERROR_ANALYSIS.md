@@ -28,18 +28,19 @@
 |bart|time|current_correct_next_target_wrong|7437|
 |bart|time|controlled_grammar_invalid|3993|
 |bart|time|non_target_changed|571|
-|t5gemma|space|unresolved_parse|1467|
-|t5gemma|space|controlled_grammar_invalid|1364|
-|t5gemma|space|non_target_changed|513|
-|t5gemma|space|current_correct_next_target_wrong|9|
-|t5gemma|space|target_wrong|1|
-|t5gemma|time|current_correct_next_target_wrong|13232|
-|t5gemma|time|unresolved_parse|7348|
-|t5gemma|time|current_text_already_wrong|6640|
-|t5gemma|time|controlled_grammar_invalid|6558|
-|t5gemma|time|target_wrong|5801|
-|t5gemma|time|historical_quote_scope|4421|
-|t5gemma|time|non_target_changed|1719|
+|t5gemma|space|unresolved_parse|3986|
+|t5gemma|space|controlled_grammar_invalid|3032|
+|t5gemma|space|current_text_already_wrong|2304|
+|t5gemma|space|non_target_changed|1291|
+|t5gemma|space|target_wrong|61|
+|t5gemma|space|current_correct_next_target_wrong|18|
+|t5gemma|time|current_correct_next_target_wrong|16530|
+|t5gemma|time|unresolved_parse|9524|
+|t5gemma|time|current_text_already_wrong|7692|
+|t5gemma|time|controlled_grammar_invalid|7223|
+|t5gemma|time|target_wrong|6905|
+|t5gemma|time|historical_quote_scope|4805|
+|t5gemma|time|non_target_changed|1739|
 
 
 

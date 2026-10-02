@@ -32,6 +32,7 @@ def main():
     ls=readcsv(ROOT,'language_structure_gates.csv');lt=[]
     for r in ls:lt.append(dict(模型=r['model'],领域=r['domain'],seed=r['seed'],结构=r['template'],状态=r['status'],重构=pct(r.get('reconstruction_rate')),原子=pct(r.get('atomic_rate')),gold续步=pct(r.get('gold_next_rate'))))
     appendix+=['',table(['模型','领域','seed','结构','状态','重构','原子','gold续步'],lt),'', '逐例控制及轨迹在ADDITIONAL_PREDICTION_ARCHIVES；逐seed/结构/条件/路径/步骤的计数在language_structure_by_seed.csv。未解析、语法与终止失败不自动等同于已证实语义错误。']
+    appendix+=['','semantic_components_by_seed单独给身份/对象绑定、绝对日期/方向、固定观察者、非目标评价和引语锚点/原话的约束。原冻结评分的scope=target∧preserved，是联合任务结果，不能单凭它判定锚点选择错误。新增scope_constraints_satisfied排除目标状态/说话语境端点正确性；语法破碎、未解析和未结束输出标为未知，另报覆盖、已解析条件率及全候选严格率。解析的身份/引语等槽位失败才作为对应语义错误案例；这项事后分析不影响准入或选择。']
     appendix+=['','## 续步输出审阅和身份probe','', '主phenomenon表的完整任务失败包含未解析输出；current_correct_next_failure.csv另给可解析语义不匹配、未解析、仅语法和仅终止计数。固定首个test世界×三个seed×三种轨迹的18个BART时间/人称案例由Codex助手逐一审阅：当前和gold-reencode下一步均正确，latent下一步输出重复/破碎或丢失必要关系，不是合理释义。仅据此证明这些案例的失败存在；不把全部未解析输出标成语义错误，不作独立人工标注或因果机制结论。见CONTINUATION_AGENT_REVIEW及continuation_review_set。']
     ip=readcsv(ROOT,'identity_probe_metrics.csv');ipgroups=defaultdict(list)
     for r in ip:
@@ -42,6 +43,7 @@ def main():
     appendix+=['','## 位置与同措辞锚点补充诊断','', 'POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结。没有训练、重新选checkpoint或根据test调参。同世界的两种顺序共享gold转换；emotion额外把同主体的非目标对象放在前面，空间固定观察者在前，人称历史引语在前，时间引语和外部表达使用相同事件/相对日期句式。时间历史日期E−3与固定引语一致。原引语只作为原话记录，未假定为事实，原结果仍保留。']
     pg=[dict(模型=r['model'],领域=r['domain'],seed=r['seed'],顺序=r['variant'],状态=r['status'],重构=pct(r.get('reconstruction_rate')),原子=pct(r.get('atomic_rate')),gold续步=pct(r.get('gold_next_rate'))) for r in readcsv(ROOT,'position_foils_gates.csv')]
     appendix+=['',table(['模型','领域','seed','顺序','状态','重构','原子','gold续步'],pg),'', '全部可用角色的test原子预测，即使诊断未准入，仍在position_foils_by_seed与压缩逐例工件中；连续路径仅在同一P的该顺序dev门槛通过时执行。position_order_pairs以同世界/状态/操作配对给顺序差异；两个顺序同时正确才证明这些具体夹具的范围保持。仅靠原目标位于首句的挑战分数不能排除位置捷径。']
+    appendix+=['','## 语言学解释限制','', '见LINGUISTIC_LIMITATIONS.md。core三人循环使用显式姓名，无人称信息丢失；第三代词挑战使用人工姓名/代词约定，没有独立性别属性测试。反身附加事件规定A保留A自己的key；主对象也是key时需要不同实例解释，原文本未命名实例，不能据此声称验证了唯一物体实例所有权。固定launch日期由E−2导出；C是叙述锚点，事件状态独立给定。更复杂图结构、复数/集合、平移、间接引语及随机子空间干预未执行，保留为限制。']
     report+='\n\n'+'\n\n'.join(appendix)+'\n';(ROOT/'RESULTS.md').write_text(report)
     errors=(ROOT/'ERROR_ANALYSIS.md').read_text();errors+='\n\n连续生成未解析与已解析的语义错误分开。固定18例的助手审阅记录是存在性案例证据，不是对全部未解析预测的独立标注。原空间朝向状态划分有解释限制；关系确认独立运行，旧结果不被改写。语言结构重构/原子准入失败先归入该结构基本能力限制，不进入组合失败平均。\n';(ROOT/'ERROR_ANALYSIS.md').write_text(errors)
     (confirmation/'RESULTS.md').write_text('# 空间关系状态确认结果\n\n'+header+'\n\n'+'\n\n'.join(appendix[:9])+'\n\n完整综合报告位于../four_domain_state_coverage_v1/RESULTS.md，逐seed原始CSV/预测/checkpoint在本目录。\n')

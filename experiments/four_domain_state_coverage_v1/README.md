@@ -59,3 +59,18 @@ CPU positive/negative checks and code are frozen in position_lock.json. Complete
 outputs are archived by extra_archives.py; raw scoring adapter transformations
 never enter decode–reencode inputs. Use submission ledger/status files to inspect
 active recovery rather than submit an independent quick GPU test.
+
+`progress.py` creates a CPU-only task/checkpoint/shard snapshot in PROGRESS.md/json.
+Run account.py first for fresh GPU-hours. Components and exposure definitions are
+in semantic_component_audit.json and TRANSFER_DEFINITIONS.json: primary scope is a
+joint target/preservation outcome; individual anchor/binding constraints are
+reported separately with unknown coverage. Seen source and seen state factors do
+not imply their joint was trained. N has no edited-source exposure. Every legal
+natural conversion is trained; there is no fully-untrained natural conversion
+condition in this study.
+
+SOURCE_LINEAGE_RESOLVED.json audits actual steps, dev selection and exact P
+initialization. Q is the same atomic optimization run's step300 snapshot; the
+legacy raw Q.parent field identifies its associated selected P and is not a
+claim that Q was initialized from that later selected checkpoint. U is independent
+seed+10000; every N/S/M200 shares exact selected P. Raw metadata is retained.

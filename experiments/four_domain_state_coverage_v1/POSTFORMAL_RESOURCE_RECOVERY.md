@@ -20,3 +20,12 @@ and one assigned GPU; the global cap is two and initial total budget is48GPUh.
 The account script counts allocation attempts, not nested steps, and asserts the
 observed historical peak is at most two. Every future technical retry must retain
 all completed shards, immutable sources and hashes, and record its resources.
+
+Pending tasks in the original formal, symbol, confirmation and structural phases
+receive a resource-only six-hour limit before starting, documented per child in
+pending_walltime_amendment.json. Running children retain their original limit and
+resume through2620 if needed. The scheduler's array concurrency and dependencies
+are unchanged. No additional training updates are authorized by the walltime
+change. This applies uniformly to remaining tasks, without consulting test scores.
+Slurm records actual walltime requests in the allocation ledger. The official
+command semantics are documented at https://slurm.schedmd.com/scontrol.html.
