@@ -74,3 +74,14 @@ initialization. Q is the same atomic optimization run's step300 snapshot; the
 legacy raw Q.parent field identifies its associated selected P and is not a
 claim that Q was initialized from that later selected checkpoint. U is independent
 seed+10000; every N/S/M200 shares exact selected P. Raw metadata is retained.
+
+REMAINING_ATOMIC_PREFLIGHT.md discloses the initial per-combination interleaving
+of admission/supplement/behavior. To correct the remaining order, original
+children16–23 are held while atomic-preflight2650 computes their originally
+budgeted P600 and full dev gates, with no test/U/supplement work. CPU2651 releases
+those eight children after the preflight array ends; they reuse P/dev artifacts.
+The inserted GPU array waits for current children14/15, uses %2 and one GPU/task,
+and does not overlap downstream phases waiting on the original formal parent.
+It adds model-loading overhead but no P training updates. If CPU2651 fails, inspect
+its log and the held-child record, then rerun the zero-GPU release script under
+Slurm; do not release children while any preflight GPU task is still active.
