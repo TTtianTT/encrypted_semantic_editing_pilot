@@ -8,7 +8,8 @@ from scientific_answers import research_answers,readcsv
 def main():
     confirmation=ROOT.parent/'space_relation_confirmation_v1'
     main_status=readcsv(ROOT,'completion_status.csv');space_status=readcsv(confirmation,'completion_status.csv');identity=readcsv(ROOT,'identity_probe_status.csv');language=readcsv(ROOT,'language_structure_status.csv')
-    done=len(main_status)==32 and len(space_status)==6 and len(identity)==30 and len(language)==8 and all(r['status'] not in ('running_or_not_started','technical_failure') for r in main_status+space_status+identity+language)
+    position=readcsv(ROOT,'position_foils_status.csv')
+    done=len(main_status)==32 and len(space_status)==6 and len(identity)==30 and len(language)==8 and len(position)==8 and all(r['status'] not in ('running_or_not_started','technical_failure') for r in main_status+space_status+identity+language+position)
     report=(ROOT/'RESULTS.md').read_text()
     if not done:report=report.replace('全部计划任务已结束。','原主数组已结束；补充确认/结构/probe仍未全部完成。')
     header=('全部预定计算和工件核验已结束；准入失败与未执行结构单列。' if done else '仍在运行或存在缺失任务；本文件是当前工件快照，不能当作全部完成。')
@@ -37,6 +38,10 @@ def main():
         if r['test_source']=='U':ipgroups[(r['study'],r['model'],r['domain'],r['variable'])].append(float(r['accuracy']))
     pt=[dict(实验=st,模型=m,领域=d,变量=v,seed数=len(x),留出U均值=pct(statistics.mean(x)),范围=f'[{pct(min(x))},{pct(max(x))}]') for (st,m,d,v),x in sorted(ipgroups.items())]
     appendix+=['',table(['实验','模型','领域','变量','seed数','留出U均值','范围'],pt),'','命名身份probe只从冻结P train表示拟合，跨P/Q/U test读取；current-correct-next-failed子集准确率另见identity_probe_on_failures。时间core锚点归属是常量，未拟合归属分类器；没有quote/external-anchor对照probe或子空间干预。可读出不等于编辑器使用。']
+    appendix+=['','T5_CONTINUATION_AGENT_REVIEW另保存固定首个test世界的12例：时间三个seed、原朝向空间seed42，各三种轨迹。Codex逐一阅读当前、latent下一步与gold重编码对照，确认日期/关系错误、固定事实损失或破碎重复。空间例不是更正关系确认版的证据；保存这些例时部分正式评估尚未结束。此记录同样不是独立人工总体标注。']
+    appendix+=['','## 位置与同措辞锚点补充诊断','', 'POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结。没有训练、重新选checkpoint或根据test调参。同世界的两种顺序共享gold转换；emotion额外把同主体的非目标对象放在前面，空间固定观察者在前，人称历史引语在前，时间引语和外部表达使用相同事件/相对日期句式。时间历史日期E−3与固定引语一致。原引语只作为原话记录，未假定为事实，原结果仍保留。']
+    pg=[dict(模型=r['model'],领域=r['domain'],seed=r['seed'],顺序=r['variant'],状态=r['status'],重构=pct(r.get('reconstruction_rate')),原子=pct(r.get('atomic_rate')),gold续步=pct(r.get('gold_next_rate'))) for r in readcsv(ROOT,'position_foils_gates.csv')]
+    appendix+=['',table(['模型','领域','seed','顺序','状态','重构','原子','gold续步'],pg),'', '全部可用角色的test原子预测，即使诊断未准入，仍在position_foils_by_seed与压缩逐例工件中；连续路径仅在同一P的该顺序dev门槛通过时执行。position_order_pairs以同世界/状态/操作配对给顺序差异；两个顺序同时正确才证明这些具体夹具的范围保持。仅靠原目标位于首句的挑战分数不能排除位置捷径。']
     report+='\n\n'+'\n\n'.join(appendix)+'\n';(ROOT/'RESULTS.md').write_text(report)
     errors=(ROOT/'ERROR_ANALYSIS.md').read_text();errors+='\n\n连续生成未解析与已解析的语义错误分开。固定18例的助手审阅记录是存在性案例证据，不是对全部未解析预测的独立标注。原空间朝向状态划分有解释限制；关系确认独立运行，旧结果不被改写。语言结构重构/原子准入失败先归入该结构基本能力限制，不进入组合失败平均。\n';(ROOT/'ERROR_ANALYSIS.md').write_text(errors)
     (confirmation/'RESULTS.md').write_text('# 空间关系状态确认结果\n\n'+header+'\n\n'+'\n\n'.join(appendix[:9])+'\n\n完整综合报告位于../four_domain_state_coverage_v1/RESULTS.md，逐seed原始CSV/预测/checkpoint在本目录。\n')

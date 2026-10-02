@@ -1,0 +1,97 @@
+{
+  "P": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+    "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+    "seed": 44
+  },
+  "Q": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/step300.pt",
+    "sha256": "1bfcb126d56c38abbdf0f784b753514296b214c87ceb205009f1c7c3f1742926",
+    "parent": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
+  },
+  "U": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/U/best.pt",
+    "sha256": "2015306a5ecf43fce0886ea230334c59650d66071929898379046687bb6c9e79",
+    "parent": "independent identity initialization, seed+10000"
+  },
+  "N_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/N_h0/final.pt",
+    "sha256": "d16738fb6cfd890157173cd3015b24e0505279f7fdbca45b2e7596f8c1176e6b",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": 2,
+    "edited_focus_states": [
+      -1,
+      0,
+      1
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/S_h0/final.pt",
+    "sha256": "697a0d5a55b9e0d691388ebe3d32de23a388129fad0bf50085c09d6c1024a1f4",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": 2,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/M_h0/final.pt",
+    "sha256": "7078956f683fef0e1a02f9884636359c220855f777a5bb74e0030e059a27345a",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": 2,
+    "edited_focus_states": [
+      -1,
+      0,
+      1
+    ],
+    "condition": "M",
+    "updates": 200
+  },
+  "N_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/N_h1/final.pt",
+    "sha256": "fb9d6651159f96fb9b686cbbe0cd14523f3a431af6d525d84d187a53f9fbfe79",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": -2,
+    "edited_focus_states": [
+      -1,
+      0,
+      1
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/S_h1/final.pt",
+    "sha256": "66518f9ccf54f849bb1389dfc05c961aa34344158ad03a30bfc66dcd2549ff75",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": -2,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/M_h1/final.pt",
+    "sha256": "94d04a85b2ccbfb2911240c327b3df167954e4d308d32585412df3d124ce58d8",
+    "parent_P_sha": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+    "heldout": -2,
+    "edited_focus_states": [
+      -1,
+      0,
+      1
+    ],
+    "condition": "M",
+    "updates": 200
+  }
+}

@@ -54,6 +54,11 @@ def research_answers():
             x=by['结构挑战'];scope.append(f'{m}/{d} P挑战{x[0]}/{x[1]}')
     a3='三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：'+('；'.join(transfer) if transfer else '尚待结果')+'。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。'
     a4='锚点/范围挑战的完整语义成功：'+('；'.join(scope) if scope else '尚待结果')+'。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。'
+    foils=[]
+    for r in readcsv(ROOT,'position_order_pairs.csv'):
+        if '/P/test_atomic.jsonl' in r['artifact']:
+            foils.append(f"{r['model']}/{r['domain']}/{r['artifact'].split('/')[-3]}原顺序{r['original_order_success']}/{r['pairs']}、反顺序{r['reversed_order_success']}/{r['pairs']}、两者均对{r['both_success']}/{r['pairs']}")
+    a4+=' 后正式位置诊断：'+('；'.join(foils) if foils else '尚待结果')+'。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。'
     reg=[f'{m}/{d}/{c}自然core原成功损失{k}、原失败修复{repair}' for (m,d,c),(k,repair) in sorted(losses.items()) if k]
     a5='旧自然能力出现损失的设置：'+('；'.join(reg) if reg else '已完成core对照暂无损失；来源/表达损失仍需单列检查')+'。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。'
     both=[d for d in DOMAINS if 'bart/'+d in completed and 't5gemma/'+d in completed]

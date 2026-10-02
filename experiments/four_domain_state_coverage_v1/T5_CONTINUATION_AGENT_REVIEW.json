@@ -1,0 +1,116 @@
+{
+  "selection": "Lexically first test world, P/core, step1→2 for forward/reverse/inverse. All available time seeds42/43/44 and original-facing space seed42. Fixed world/trajectory selection without ranking outcomes. Space cases are not corrected relation-confirmation evidence.",
+  "cases": [
+    {
+      "case_id": "t5gemma/time/s42/time_0120/forward",
+      "domain": "time",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected tomorrow; output says two days ago and drops status, color and quantity.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s42/time_0120/reverse",
+      "domain": "time",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected yesterday; keeps two days ago and changes quantity3 to2.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s42/time_0120/inverse",
+      "domain": "time",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected today with completed status and fixed facts; repeats incompatible dated/status fragments and does not end.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s43/time_0120/forward",
+      "domain": "time",
+      "seed": 43,
+      "clear_failure": true,
+      "reason": "Expected tomorrow; says two days ago with a comma and omits required facts.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s43/time_0120/reverse",
+      "domain": "time",
+      "seed": 43,
+      "clear_failure": true,
+      "reason": "Expected yesterday; output remains two days ago while fixed facts survive.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s43/time_0120/inverse",
+      "domain": "time",
+      "seed": 43,
+      "clear_failure": true,
+      "reason": "Expected today and completed status; leaves yesterday and invents incompatible status clauses.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s44/time_0120/forward",
+      "domain": "time",
+      "seed": 44,
+      "clear_failure": true,
+      "reason": "Expected tomorrow; switches to two days ago while fixed facts survive.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s44/time_0120/reverse",
+      "domain": "time",
+      "seed": 44,
+      "clear_failure": true,
+      "reason": "Expected yesterday; remains two days ago while fixed facts survive.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/time/s44/time_0120/inverse",
+      "domain": "time",
+      "seed": 44,
+      "clear_failure": true,
+      "reason": "Expected today; remains yesterday while fixed facts survive.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/space/s42/space_0120/forward",
+      "domain": "space",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected right; remains behind and emits an incomplete extra fragment, omitting color/quantity.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/space/s42/space_0120/reverse",
+      "domain": "space",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected right with observer David; output calls the parcel the observer and omits the relation/facts.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    },
+    {
+      "case_id": "t5gemma/space/s42/space_0120/inverse",
+      "domain": "space",
+      "seed": 42,
+      "clear_failure": true,
+      "reason": "Expected left; repeats front and omits fixed facts without ending.",
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false
+    }
+  ],
+  "reviewed_after_actual_predictions": true,
+  "case_set_sha256": "a2526ece8d38fc7cc0694611e1f2cd1537fd11725f7508ca2a534a3ad9c726a4",
+  "limitation": "Existence examples, not population annotation or causal mechanism; not proof all unresolved outputs are wrong. Formal evaluations for time42/44 and space42 still incomplete at this review."
+}

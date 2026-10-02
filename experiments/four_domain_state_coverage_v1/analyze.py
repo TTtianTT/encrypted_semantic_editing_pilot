@@ -8,7 +8,7 @@ def writecsv(path,records):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     fields=list(dict.fromkeys(k for r in records for k in r))
     with path.open('w',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(records)
+        writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(records)
 
 def summary(rows):
     n=len(rows);out=dict(n=n,worlds=len({r['world_id'] for r in rows}))

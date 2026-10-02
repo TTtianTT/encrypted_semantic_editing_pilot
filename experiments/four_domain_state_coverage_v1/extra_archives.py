@@ -6,7 +6,7 @@ def main():
     archives=[];logs=[]
     for study in ('four_domain_state_coverage_v1','space_relation_confirmation_v1'):
         base=ROOT.parent/study
-        for directory in sorted((base/'language_controls').glob('*'))+sorted((base/'runs/formal').glob('*/identity_probe')):
+        for directory in sorted((base/'language_controls').glob('*'))+sorted((base/'position_foils').glob('*'))+sorted((base/'runs/formal').glob('*/identity_probe')):
             if not (directory/'complete.json').exists():continue
             members=sorted(directory.rglob('*.jsonl'))
             if not members:continue

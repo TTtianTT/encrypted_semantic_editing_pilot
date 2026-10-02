@@ -1,5 +1,5 @@
 {
-  "actual_gpu_hours": 4.902222222222223,
+  "actual_gpu_hours": 7.892500000000001,
   "consumption_cap_gpu_hours": 48.0,
   "max_concurrent_gpus": 2,
   "allocations": [
@@ -342,12 +342,12 @@
     {
       "raw_id": "2584",
       "job_id": "2568_12",
-      "state": "RUNNING",
-      "elapsed_seconds": 4715,
+      "state": "TIMEOUT",
+      "elapsed_seconds": 7205,
       "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
       "exit_code": "0:0",
       "start": "2026-10-02T21:32:02",
-      "end": "Unknown",
+      "end": "2026-10-02T23:32:07",
       "nodes": "node01",
       "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
       "max_rss": "",
@@ -356,11 +356,39 @@
     {
       "raw_id": "2586",
       "job_id": "2568_13",
-      "state": "RUNNING",
-      "elapsed_seconds": 4323,
+      "state": "COMPLETED",
+      "elapsed_seconds": 7060,
       "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
       "exit_code": "0:0",
       "start": "2026-10-02T21:38:34",
+      "end": "2026-10-02T23:36:14",
+      "nodes": "node01",
+      "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "max_rss": "",
+      "gpu_count": 1
+    },
+    {
+      "raw_id": "2617",
+      "job_id": "2568_14",
+      "state": "RUNNING",
+      "elapsed_seconds": 2891,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "exit_code": "0:0",
+      "start": "2026-10-02T23:32:10",
+      "end": "Unknown",
+      "nodes": "node01",
+      "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "max_rss": "",
+      "gpu_count": 1
+    },
+    {
+      "raw_id": "2619",
+      "job_id": "2568_15",
+      "state": "RUNNING",
+      "elapsed_seconds": 2647,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "exit_code": "0:0",
+      "start": "2026-10-02T23:36:14",
       "end": "Unknown",
       "nodes": "node01",
       "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
@@ -392,6 +420,8 @@
     "2582",
     "2585",
     "2587",
-    "2590"
+    "2590",
+    "2620",
+    "2621"
   ]
 }

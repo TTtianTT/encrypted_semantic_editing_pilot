@@ -41,3 +41,21 @@ The authoritative postprocessors in this directory accept `analyze.py --study sp
 The secondary structure gate was added after some original test observations and is explicitly labelled a post-core protocol extension. It cannot change editor training/checkpoint selection. The finite parser's unresolved outputs are separated from parsed semantic mismatch, grammar-only and termination-only failures. A fixed18-case assistant review verifies clear continuation corruption for BART time/person, without claiming independent human labels or relabelling all unresolved predictions.
 
 On another machine, configure ORIGINAL/model directories and the verified Slurm partition; reuse pinned revisions and package versions. Fresh CPU data preparation is `prepare.py` followed by `revise_data.py`, then tests.py and audit.py. Reproduction must use a fresh experiment namespace rather than overwrite this locked delivery.
+
+The original 2568_12 timed out after all its training finished, during evaluation.
+Its controller record had already been purged when requeue was attempted; no
+successful requeue or extra allocation occurred. Recovery array2620 has two
+one-GPU workers, waits for the entire2568 parent, and claims only missing original
+TIMEOUT/NODE_FAIL tasks. It retains every completed shard/checkpoint/source and
+uses a six-hour evaluation recovery allocation in B300q. All downstream GPU
+phases and CPU2590 gained this dependency. See retry_wave_intent and
+POSTFORMAL_RESOURCE_RECOVERY.md; the 48GPUh project cap remains unchanged.
+
+Position diagnostics2621 follow all other GPU phases, and CPU2590 now waits for
+2621 too. They use frozen P/N/S/M, same-world clause-order pairs, and identical
+event-relative phrases inside/outside the time quotation. This is a documented
+post-formal diagnostic extension, not a training amendment. Its plan, fixtures,
+CPU positive/negative checks and code are frozen in position_lock.json. Completed
+outputs are archived by extra_archives.py; raw scoring adapter transformations
+never enter decode–reencode inputs. Use submission ledger/status files to inspect
+active recovery rather than submit an independent quick GPU test.

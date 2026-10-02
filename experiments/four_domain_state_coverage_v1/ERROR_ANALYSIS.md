@@ -28,13 +28,18 @@
 |bart|time|current_correct_next_target_wrong|7437|
 |bart|time|controlled_grammar_invalid|3993|
 |bart|time|non_target_changed|571|
-|t5gemma|time|current_correct_next_target_wrong|6159|
-|t5gemma|time|unresolved_parse|4182|
-|t5gemma|time|controlled_grammar_invalid|3511|
-|t5gemma|time|current_text_already_wrong|3320|
-|t5gemma|time|target_wrong|2359|
-|t5gemma|time|historical_quote_scope|1532|
-|t5gemma|time|non_target_changed|786|
+|t5gemma|space|unresolved_parse|1467|
+|t5gemma|space|controlled_grammar_invalid|1364|
+|t5gemma|space|non_target_changed|513|
+|t5gemma|space|current_correct_next_target_wrong|9|
+|t5gemma|space|target_wrong|1|
+|t5gemma|time|current_correct_next_target_wrong|13232|
+|t5gemma|time|unresolved_parse|7348|
+|t5gemma|time|current_text_already_wrong|6640|
+|t5gemma|time|controlled_grammar_invalid|6558|
+|t5gemma|time|target_wrong|5801|
+|t5gemma|time|historical_quote_scope|4421|
+|t5gemma|time|non_target_changed|1719|
 
 
 
