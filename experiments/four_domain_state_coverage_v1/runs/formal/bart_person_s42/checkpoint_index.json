@@ -1,0 +1,93 @@
+{
+  "P": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/P/best.pt",
+    "sha256": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+    "seed": 42
+  },
+  "Q": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/P/step300.pt",
+    "sha256": "f4e0e47527911c5290300494c5028b8ad1265534ea5076e452560bcf15155233",
+    "parent": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/P/best.pt",
+      "sha256": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42
+    }
+  },
+  "U": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/U/best.pt",
+    "sha256": "3b62b0cb47f3bb8b9451a6e60d71dbc5b6934121a6ff283d7c816beb5a2ab50c",
+    "parent": "independent identity initialization, seed+10000"
+  },
+  "N_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/N_h0/final.pt",
+    "sha256": "5f2225f275d3831227a02995a64e6027ed6d8a940e912b886c8cbe75aea09b6e",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 1,
+    "edited_focus_states": [
+      0,
+      2
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/S_h0/final.pt",
+    "sha256": "b952521a40f6551884a0c1d709baa6f61314d9200679cfe6d91fd4de526967c7",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 1,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/M_h0/final.pt",
+    "sha256": "6da7c29457dd9f2b2d9e234d0a0279b7e1e7461e54ec24ae1dc365d28584b84c",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 1,
+    "edited_focus_states": [
+      0,
+      2
+    ],
+    "condition": "M",
+    "updates": 200
+  },
+  "N_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/N_h1/final.pt",
+    "sha256": "106ced252e2c15ad3813063e991e7bec8b20750c5c54087b0ffd3e0f69427de1",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 2,
+    "edited_focus_states": [
+      0,
+      1
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/S_h1/final.pt",
+    "sha256": "eddf797bb70921e696ff66c9970b2a886a47d56936d1f95014ed05baf5f8ced5",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 2,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_person_s42/M_h1/final.pt",
+    "sha256": "f11225a4ed858729214eb8eec7aa37a25fb011214091a6e385ac4abdb500f346",
+    "parent_P_sha": "b773233d481b01ca40e682f682a680a8761afd5bd8e72645ee66b52b017952f3",
+    "heldout": 2,
+    "edited_focus_states": [
+      0,
+      1
+    ],
+    "condition": "M",
+    "updates": 200
+  }
+}

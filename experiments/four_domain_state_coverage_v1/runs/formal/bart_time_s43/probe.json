@@ -1,0 +1,116 @@
+{
+  "results": [
+    {
+      "training_source": "natural",
+      "test_source": "P",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 0.2232142984867096,
+      "current_correct_accuracy": 0.2232142984867096
+    },
+    {
+      "training_source": "natural",
+      "test_source": "Q",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 0.2455357313156128,
+      "current_correct_accuracy": 0.2455357313156128
+    },
+    {
+      "training_source": "natural",
+      "test_source": "U",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 0.0892857164144516,
+      "current_correct_accuracy": 0.0892857164144516
+    },
+    {
+      "training_source": "natural",
+      "variable": "target_binding",
+      "status": "constant label; non-informative; not fitted"
+    },
+    {
+      "training_source": "natural",
+      "test_source": "P",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.9776785969734192,
+      "current_correct_accuracy": 0.9776785969734192
+    },
+    {
+      "training_source": "natural",
+      "test_source": "Q",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.9687500596046448,
+      "current_correct_accuracy": 0.9687500596046448
+    },
+    {
+      "training_source": "natural",
+      "test_source": "U",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.7187500596046448,
+      "current_correct_accuracy": 0.7187500596046448
+    },
+    {
+      "training_source": "P",
+      "test_source": "P",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 1.0,
+      "current_correct_accuracy": 1.0
+    },
+    {
+      "training_source": "P",
+      "test_source": "Q",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 1.0,
+      "current_correct_accuracy": 1.0
+    },
+    {
+      "training_source": "P",
+      "test_source": "U",
+      "variable": "current_state",
+      "n": 224,
+      "accuracy": 0.5714285969734192,
+      "current_correct_accuracy": 0.5714285969734192
+    },
+    {
+      "training_source": "P",
+      "variable": "target_binding",
+      "status": "constant label; non-informative; not fitted"
+    },
+    {
+      "training_source": "P",
+      "test_source": "P",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.9866071939468384,
+      "current_correct_accuracy": 0.9866071939468384
+    },
+    {
+      "training_source": "P",
+      "test_source": "Q",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.9821429252624512,
+      "current_correct_accuracy": 0.9821429252624512
+    },
+    {
+      "training_source": "P",
+      "test_source": "U",
+      "variable": "target_object",
+      "n": 224,
+      "accuracy": 0.9062500596046448,
+      "current_correct_accuracy": 0.9062500596046448
+    }
+  ],
+  "limitations": [
+    "masked mean linear probes are not evidence of editor use",
+    "time anchor is derived from E and relative state; no independent anchor-ownership label in core",
+    "scope/object and arbitrary participant names not fully probed",
+    "no intervention performed"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "rank": 16,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "engineering_steps": 160,
+  "atomic_steps": 600,
+  "repair_steps": 200,
+  "source_seed_offset": 10000,
+  "batch": 8,
+  "microbatch": 2,
+  "lr": 0.001,
+  "clip": 1.0,
+  "source_cap": {
+    "bart": 192,
+    "t5gemma": 256
+  },
+  "max_new_tokens": 160,
+  "gpu_hour_cap": 48.0,
+  "repair_train_world_cap": 32,
+  "gate": {
+    "reconstruction": 0.95,
+    "atomic": 0.85,
+    "min_cell": 0.75
+  },
+  "holdouts": {
+    "time": [
+      2,
+      -2
+    ],
+    "space": [
+      1,
+      3
+    ],
+    "emotion": [
+      1,
+      3
+    ],
+    "person": [
+      1,
+      2
+    ]
+  },
+  "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+  "scientific_plan_sha": "c1d63d9e43d5197ca9508c60dc3a255652d769782c7486d7aa0c8f6a83c6c1be",
+  "data_spec_sha": "4d513d0453eaa5ce739efeeb006df037b2b1b6f9f796b5e1cf8021fed38740a5",
+  "copy_instruction": "Copy the following text exactly. Output only the copied text.\n\n",
+  "pre_formal_amendment_sha": "13a15cda67b383af3ea30153160f29d8573d8f2f73863daa1127fde26157bb1e",
+  "data_manifest_sha": "876d75ccf7ffd27b52643285405459b0ff6165c74d8f5861700c7b07bc48f16a"
+}

@@ -1,0 +1,7 @@
+# Spatial relation-state data
+
+The contents and rules are inherited from ../four_domain_state_coverage_v1/DATA_SPEC.md, with a corrected current-state index: front0/right1/back2/left3. State never means an unexpressed absolute facing in core natural language. Clockwise plus decreases this relative index and increases physical heading; symbol inputs explicitly print physical heading, not the relative state index.
+
+The object lies on one cardinal ray from a fixed observer at integer coordinates. x points east, y points north. Facing vector(fx,fy) defines forward=dx*fx+dy*fy and right=dx*fy-dy*fx. These dot products independently determine front/right/back/left. A second observer has the same explicit position but separately fixed facing; adding different positions is outside this task. Challenge3 preserves absolute cardinal direction,4 preserves the fixed observer's relation,5 preserves the object's north-of-marker relation. All colors, copy counts, names and positions remain fixed.
+
+No natural surface text pair is added or deleted. Split membership is inherited for the entire content world and its full history. data/manifest.json lists per-file hashes and counts. state_correction_checks.json verifies exact natural pair-set preservation, the known north/east geometry table, signed direction and cycle recovery; tests.py/check_data.py check the independent parser and dataset. audit.jsonl gives fixed readable fixtures, not independent human labels.

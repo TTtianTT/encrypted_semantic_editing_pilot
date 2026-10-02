@@ -1,5 +1,5 @@
 """Archive finished shards and selected editor parameters on CPU only."""
-import gzip,torch
+import gzip,torch,argparse,io
 from common import *
 
 def main():
@@ -20,7 +20,7 @@ def main():
                 index=read(ip)
                 for role,info in index.items():
                     original=Path(info['path']);assert digest(original)==info['sha256']
-                    ck=torch.load(original,map_location='cpu',weights_only=False);target=ROOT/'checkpoints'/run.name/(role+'.pt');target.parent.mkdir(parents=True,exist_ok=True)
+                    ck=torch.load(original,map_location='cpu',weights_only=False);target=ROOT/'checkpoints'/phase/run.name/(role+'.pt');target.parent.mkdir(parents=True,exist_ok=True)
                     torch.save(dict(editor=ck['editor'],step=ck['step'],raw_checkpoint_sha=info['sha256'],lineage=info),target)
                     cpindex.append(dict(phase=phase,run=run.name,role=role,**info,published_editor=str(target.relative_to(ROOT)),published_sha=digest(target),step=ck['step']))
             local=ROOT/'local'/phase/run.name
@@ -39,4 +39,7 @@ def main():
     lineage=read(ROOT/'SOURCE_LINEAGE.json');lineage['run_checkpoints']=cpindex;lineage['source_cache_manifest_sha']=digest(ROOT/'source_cache_manifests.json');dump(ROOT/'SOURCE_LINEAGE_COMPLETE.json',lineage)
     print('Published',len(cpindex),'editor checkpoints,',len(archives),'complete prediction archives')
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--study',choices=['four_domain_state_coverage_v1','space_relation_confirmation_v1'],default='four_domain_state_coverage_v1');args=parser.parse_args()
+    ROOT=ROOT.parent/args.study
+    main()

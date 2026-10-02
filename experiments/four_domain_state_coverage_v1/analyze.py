@@ -1,5 +1,5 @@
 """CPU analysis of immutable predictions. Does not generate or choose models."""
-import csv,json,statistics,hashlib
+import csv,json,statistics,hashlib,argparse
 from collections import defaultdict,Counter
 from common import *
 from evaluator import score,parse
@@ -19,6 +19,8 @@ def summary(rows):
     if any('current_score' in r for r in rows):
         previous=[r for r in rows if r['current_score']['success']];matched=[r for r in rows if r['common_match']]
         out.update(current_correct_n=len(previous),current_coverage=len(previous)/n,conditional_n=len(previous),conditional_k=sum(r['score']['success'] for r in previous),conditional_rate=sum(r['score']['success'] for r in previous)/len(previous) if previous else None,matched_n=len(matched),matched_k=sum(r['score']['success'] for r in matched),matched_rate=sum(r['score']['success'] for r in matched)/len(matched) if matched else None)
+    if any('exact' in r for r in rows):
+        out.update(exact_k=sum(r.get('exact',False) for r in rows),exact_rate=sum(r.get('exact',False) for r in rows)/n)
     return out
 
 def error_type(r,world):
@@ -51,13 +53,17 @@ def main():
                 for kind in ('reconstruction','atomic','gold_next'):gates.append(dict(**meta,kind=kind,passed=gate['passed'],**{k:gate[kind][k] for k in ('n','success','rate','min_cell')}))
             dirs=list((run/'outputs').glob('*')) if (run/'outputs').exists() else [run]
             for output in dirs:
-                role=output.name if output!=run else 'P';payloads[(model,d,seed,role)]={}
+                role=output.name if output!=run else 'P'
+                # Symbol seed42 has the same model/domain/role keys, but is an
+                # independent task. Never replace natural P in paired contrasts.
+                role_payload={}
+                if phase=='formal':payloads[(model,d,seed,role)]=role_payload
                 for p in sorted(output.glob('*.jsonl')):
                     if p.name.startswith('cohort'):
                         cr=rows(p);h=int(p.stem.split('_')[1][1:]);t=int(p.stem.split('_')[2][1:]);reject=Counter(reason for r in cr for reason in r['reasons'])
                         cohorts.append(dict(**meta,condition=role,holdout_split=h,template=t,candidates=len(cr),matched=sum(r['common_match'] for r in cr),**dict(reject)));continue
                     if not (p.name.startswith(('atomic','trajectory','matrix','test_atomic','test_reconstruction'))):continue
-                    rr=rows(p);payloads[(model,d,seed,role)][p.stem]=rr;cells=defaultdict(list)
+                    rr=rows(p);role_payload[p.stem]=rr;cells=defaultdict(list)
                     for r in rr:
                         if r.get('gold') is not None:
                             # Raw scores retained. Final scoring is independently
@@ -66,7 +72,7 @@ def main():
                             assert rescored==r['score'],f'Frozen score mismatch: {p} {r["world_id"]}'
                         allrows+=1
                         if p.name.startswith('matrix'):
-                            h=int(p.stem.split('_')[1][1:]);cell=dict(kind='source_matrix',holdout_split=h,template=r['template'],state=r['state'],operation=r['operation'],source=r['source'],state_heldout=r['state_heldout'])
+                            h=int(p.stem.split('_')[1][1:]);cell=dict(kind='source_matrix',holdout_split=h,template=r['template'],state=r['state'],operation=r['operation'],source=r['source'],source_seen=r['source_seen'],state_seen=r['state_seen'],state_heldout=r['state_heldout'])
                         elif p.name.startswith('trajectory'):
                             cell=dict(kind='trajectory',template=r['template'],mode=r['mode'],trajectory=r['trajectory'],step=r['step'])
                         else:cell=dict(kind=r['kind'],template=r['template'],state=r['state'],operation=r['operation'])
@@ -79,7 +85,7 @@ def main():
                     for cell,values in cells.items():grouped.append(dict(**meta,condition=role,**json.loads(cell),**summary(values)))
             # Join cross-source probe predictions with next failures; no re-fit.
             probe_path=run/'probe_per_world.jsonl'
-            if probe_path.exists():
+            if phase=='formal' and probe_path.exists():
                 lookup={(r['world_id'],r['state'],r['test_source'],r['variable'],r['training_source']):r for r in rows(probe_path)}
                 for (m,domain,s,role),shards in list(payloads.items()):
                     if (m,domain,s)!=(model,d,seed):continue
@@ -92,6 +98,11 @@ def main():
                                     q=lookup.get((r['world_id'],r['state'],r['source'],variable,'natural'))
                                     if q:subset.append(q['correct'])
                             if subset:probe_failure.append(dict(**meta,condition=role,shard=name,variable=variable,current_correct_next_failed_n=len(subset),probe_correct_k=sum(subset),probe_accuracy=sum(subset)/len(subset)))
+    present={(r['phase'],r['model'],r['domain'],r['seed']) for r in status}
+    for task in read(ROOT/'tasks.json'):
+        key=(task['phase'],task['model'],task['domain'],task['seed'])
+        if task['phase'] in ('formal','symbol') and key not in present:
+            status.append(dict(phase=key[0],model=key[1],domain=key[2],seed=key[3],status='running_or_not_started'))
     writecsv(ROOT/'summary_by_seed.csv',grouped);writecsv(ROOT/'admission.csv',gates);writecsv(ROOT/'completion_status.csv',status);writecsv(ROOT/'paired_cohort_coverage.csv',cohorts);writecsv(ROOT/'probe_on_next_failures.csv',probe_failure)
     writecsv(ROOT/'error_counts.csv',[dict(model=m,domain=d,seed=s,condition=c,error=e,n=n) for (m,d,s,c,e),n in sorted(errors.items())])
     selected=[]
@@ -121,8 +132,9 @@ def main():
                 if r['mode']=='latent' and r['step']>=2:
                     control=controls.get((r['world_id'],r['trajectory'],r['step']))
                     eligible=r['previous_correct'] and control is not None and control['score']['success']
-                    groups[(r['template'],r['trajectory'],r['step'])].append((eligible,eligible and not r['score']['success']))
-            for (t,tr,k),pairs in groups.items():phenomena.append(dict(model=model,domain=d,seed=seed,condition=role,template=t,trajectory=tr,step=k,rows=len(pairs),current_correct_and_gold_next_correct_n=sum(a for a,b in pairs),latent_next_failed_k=sum(b for a,b in pairs)))
+                    sc=r['score']
+                    groups[(r['template'],r['trajectory'],r['step'])].append(dict(eligible=eligible,failed=eligible and not sc['success'],semantic_mismatch=eligible and sc['parseable'] and not sc['scope'],unresolved=eligible and not sc['parseable'],grammar_only=eligible and sc['scope'] and not sc['grammar'],termination_only=eligible and sc['scope'] and sc['grammar'] and not sc['ended']))
+            for (t,tr,k),pairs in groups.items():phenomena.append(dict(model=model,domain=d,seed=seed,condition=role,template=t,trajectory=tr,step=k,rows=len(pairs),current_correct_and_gold_next_correct_n=sum(r['eligible'] for r in pairs),latent_next_failed_k=sum(r['failed'] for r in pairs),latent_next_semantic_mismatch_k=sum(r['semantic_mismatch'] for r in pairs),latent_next_unresolved_k=sum(r['unresolved'] for r in pairs),latent_next_grammar_only_k=sum(r['grammar_only'] for r in pairs),latent_next_termination_only_k=sum(r['termination_only'] for r in pairs)))
     for model in MODELS:
         for d in DOMAINS:
             for seed in (42,43,44):
@@ -148,4 +160,7 @@ def main():
     dump(ROOT/'analysis_audit.json',dict(predictions_independently_rescored=allrows,case_selection='first6 per model/domain/error by fixed world/condition/artifact hash, not best seed',bootstrap='not used; per-seed counts plus mean/min/max',complete_formal_runs=sum(r['phase']=='formal' and r['status']=='completed' for r in status),status_rows=len(status)))
     print('Analyzed',allrows,'predictions;',len(contrasts),'paired contrasts')
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--study',choices=['four_domain_state_coverage_v1','space_relation_confirmation_v1'],default='four_domain_state_coverage_v1');args=parser.parse_args()
+    ROOT=ROOT.parent/args.study
+    main()

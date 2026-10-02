@@ -1,0 +1,12 @@
+{
+  "base_model_manifest_sha": "fe56c72a8f02c1fcdf489eda928ea7fc401002d03f5f2c9aa479319760e22dca",
+  "historical_editor_weights_used": false,
+  "original_study_editor_weights_used": false,
+  "P": "fresh rank16 atomic editor from identity,600steps,dev NLL selection",
+  "Q": "its frozen step300 checkpoint",
+  "U": "fresh independent seed+10000 producer",
+  "N_S_M": "identical selected P initialization,200updates each, two relative-relation holdout partitions",
+  "differences": "space current-state stratification only; same content-world splits and exact natural source/target text pair sets; no model, parser, loss, decoding or budget change",
+  "config_sha": "00cb19df15844604cbb953c75c78dacd590a8dfb09c1218aa42658af07475771",
+  "data_manifest_sha": "0c443ed642032c9ae4093b16eee86f3cc82ce23846d0f6bb86a2aeea734ade09"
+}

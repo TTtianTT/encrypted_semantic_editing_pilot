@@ -1,0 +1,25 @@
+{
+  "phase": "linguistic_controls",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--job-name=fdsc-linguistic_controls-v1",
+    "--array=0,1,2,3,4,5,6,7%2",
+    "--dependency=afterany:2568:2571:2582:2585",
+    "experiments/four_domain_state_coverage_v1/linguistic_controls.slurm"
+  ],
+  "pre_squeue": "2568_[14-23%2]|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2585_[0-29%2]|fdsc-identity-probe-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2582_[0-5%2]|fdsc-space-confirm-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2571_[0-7%2]|fdsc-v1-symbol|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_13|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_12|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n",
+  "one_gpu_per_task": true,
+  "max_array_tasks": 2
+}

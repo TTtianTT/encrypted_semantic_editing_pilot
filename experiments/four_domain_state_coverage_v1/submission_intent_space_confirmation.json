@@ -1,0 +1,25 @@
+{
+  "phase": "space_confirmation",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--job-name=fdsc-space-confirm-v1",
+    "--array=0-5%2",
+    "--dependency=afterany:2568:2571",
+    "experiments/space_relation_confirmation_v1/job.slurm",
+    "formal"
+  ],
+  "pre_squeue": "2568_[11-23%2]|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2571_[0-7%2]|fdsc-v1-symbol|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_10|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_9|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n",
+  "one_gpu_per_task": true,
+  "max_array_tasks": 2,
+  "protocol_sha": "b4200fec6c2470f3e8c10b5a0ccf0940b4ca64259533de0f589127a5cb59a8ac"
+}

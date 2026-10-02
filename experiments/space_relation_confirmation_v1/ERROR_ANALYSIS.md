@@ -1,0 +1,3 @@
+# 空间关系状态错误分析
+
+见本目录failure_cases.jsonl、error_counts.csv、capability_regressions.csv及综合ERROR_ANALYSIS。原朝向划分未作为关系状态留出证据；确认版未准入组合不归入组合失败平均。

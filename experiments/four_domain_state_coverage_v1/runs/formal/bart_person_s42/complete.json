@@ -1,0 +1,193 @@
+{
+  "task": {
+    "phase": "formal",
+    "model": "bart",
+    "domain": "person",
+    "seed": 42,
+    "index": 9
+  },
+  "status": "completed",
+  "admission": {
+    "passed": true,
+    "reconstruction": {
+      "n": 288,
+      "success": 288,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 288,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "gold_next": {
+      "n": 288,
+      "success": 288,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    }
+  },
+  "conditions": {
+    "h0": {
+      "status": "trained",
+      "heldout": 1
+    },
+    "h1": {
+      "status": "trained",
+      "heldout": 2
+    }
+  },
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 695047680,
+    "wall_seconds": 1028.755054875277,
+    "job_id": "2579",
+    "step_id": "0"
+  },
+  "supplement_executed": true
+}

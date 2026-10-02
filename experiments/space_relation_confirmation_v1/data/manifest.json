@@ -1,0 +1,86 @@
+{
+  "data_seed": 2026100201,
+  "worlds_per_domain": {
+    "train": 96,
+    "dev": 24,
+    "test": 32
+  },
+  "counts": {
+    "space/train/core": 1536,
+    "space/train/symbol": 768,
+    "space/dev/core": 384,
+    "space/dev/expression": 192,
+    "space/dev/challenge": 576,
+    "space/dev/symbol": 192,
+    "space/test/core": 512,
+    "space/test/expression": 256,
+    "space/test/challenge": 768,
+    "space/test/symbol": 256
+  },
+  "files": [
+    {
+      "path": "data/space/audit.jsonl",
+      "sha256": "d78296b4aa469696d5b0eff9f4bcc8d1a675029b076bee1184be2053385093ca",
+      "bytes": 162096
+    },
+    {
+      "path": "data/space/dev_challenge.jsonl",
+      "sha256": "eb205301e277195641cd0e472010dbd650f2c6ae57a1014de23f0fa0f31573c1",
+      "bytes": 436712
+    },
+    {
+      "path": "data/space/dev_core.jsonl",
+      "sha256": "39461dcd257ef029cd992a59d7d9611cda1f3f431e1de15983a1a65fc1bd190f",
+      "bytes": 252336
+    },
+    {
+      "path": "data/space/dev_expression.jsonl",
+      "sha256": "36ef86439bea7e48e41262d1d86978be0b866f32aacba5849329df46d31a536c",
+      "bytes": 123768
+    },
+    {
+      "path": "data/space/dev_symbol.jsonl",
+      "sha256": "09deefd52df47fd90fec05255c04a1db7aaebdd62d819841732181557efd03fa",
+      "bytes": 159672
+    },
+    {
+      "path": "data/space/test_challenge.jsonl",
+      "sha256": "dc7f7d22626c51b0e1aeedcb076037e7db19da4f03b8222459ad4edd95862cf3",
+      "bytes": 584232
+    },
+    {
+      "path": "data/space/test_core.jsonl",
+      "sha256": "ce47747a257400f44ee9f77a547e1e4a4a2af49a25834fd6de61686cf37a55d4",
+      "bytes": 337776
+    },
+    {
+      "path": "data/space/test_expression.jsonl",
+      "sha256": "5a3f09beb74f8d4d9033eaa0c493a0dd6be8fdfa649960abbaf30f180e15520f",
+      "bytes": 165688
+    },
+    {
+      "path": "data/space/test_symbol.jsonl",
+      "sha256": "def18b81c26768f5871c9af9346f6ee45f12d36fda8580e5be9efd97119a6743",
+      "bytes": 213304
+    },
+    {
+      "path": "data/space/train_core.jsonl",
+      "sha256": "d6415dfcf828a192377d7bca12d2902b5530ddc283bbceaa90394853734fb982",
+      "bytes": 1013760
+    },
+    {
+      "path": "data/space/train_symbol.jsonl",
+      "sha256": "aa355cd881a49be4a3704fc10a9b29cccddba4e1deec04e8cd31447b63048c97",
+      "bytes": 640848
+    },
+    {
+      "path": "data/space/worlds.jsonl",
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "bytes": 54167
+    }
+  ],
+  "parent_manifest_sha": "876d75ccf7ffd27b52643285405459b0ff6165c74d8f5861700c7b07bc48f16a",
+  "natural_text_pairs_identical": true,
+  "worlds_identical": true,
+  "current_state": "relative bearing, not physical heading"
+}
