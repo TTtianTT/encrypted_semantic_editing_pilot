@@ -1,0 +1,129 @@
+[
+  {
+    "phase": "engineering",
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--partition=B300q",
+      "--array=0,1,2,3,4,5,6,7%2",
+      "experiments/four_domain_state_coverage_v1/job.slurm",
+      "engineering"
+    ],
+    "pre_squeue": "",
+    "project_dependencies": [],
+    "one_gpu_per_task": true,
+    "max_array_tasks": 2,
+    "job_id": "2555"
+  },
+  {
+    "phase": "interface",
+    "indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--partition=B300q",
+      "--array=0,1,2,3%2",
+      "--dependency=afterany:2555",
+      "experiments/four_domain_state_coverage_v1/job.slurm",
+      "interface"
+    ],
+    "pre_squeue": "2555_7|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2555_6|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n",
+    "project_dependencies": [
+      "2555_7|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree",
+      "2555_6|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree"
+    ],
+    "one_gpu_per_task": true,
+    "max_array_tasks": 2,
+    "job_id": "2564"
+  },
+  {
+    "phase": "formal",
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--partition=B300q",
+      "--job-name=fdsc-v1-formal",
+      "--array=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23%2",
+      "experiments/four_domain_state_coverage_v1/job.slurm",
+      "formal"
+    ],
+    "pre_squeue": "",
+    "project_dependencies": [],
+    "one_gpu_per_task": true,
+    "max_array_tasks": 2,
+    "job_id": "2568"
+  },
+  {
+    "phase": "symbol",
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--partition=B300q",
+      "--job-name=fdsc-v1-symbol",
+      "--array=0,1,2,3,4,5,6,7%2",
+      "--dependency=afterany:2568",
+      "experiments/four_domain_state_coverage_v1/job.slurm",
+      "symbol"
+    ],
+    "pre_squeue": "2568_[2-23%2]|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_0|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2568_1|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n",
+    "project_dependencies": [
+      "2568_[2-23%2]|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree",
+      "2568_0|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree",
+      "2568_1|fdsc-v1-formal|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree"
+    ],
+    "one_gpu_per_task": true,
+    "max_array_tasks": 2,
+    "job_id": "2571"
+  }
+]

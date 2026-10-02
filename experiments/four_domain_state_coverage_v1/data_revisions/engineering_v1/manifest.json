@@ -1,0 +1,308 @@
+{
+  "data_seed": 2026100201,
+  "worlds_per_domain": {
+    "train": 96,
+    "dev": 24,
+    "test": 32
+  },
+  "counts": {
+    "time/train/core": 2304,
+    "time/train/symbol": 1152,
+    "time/dev/core": 576,
+    "time/dev/expression": 288,
+    "time/dev/challenge": 864,
+    "time/dev/symbol": 288,
+    "time/test/core": 768,
+    "time/test/expression": 384,
+    "time/test/challenge": 1152,
+    "time/test/symbol": 384,
+    "space/train/core": 1536,
+    "space/train/symbol": 768,
+    "space/dev/core": 384,
+    "space/dev/expression": 192,
+    "space/dev/challenge": 576,
+    "space/dev/symbol": 192,
+    "space/test/core": 512,
+    "space/test/expression": 256,
+    "space/test/challenge": 768,
+    "space/test/symbol": 256,
+    "emotion/train/core": 1536,
+    "emotion/train/symbol": 768,
+    "emotion/dev/core": 384,
+    "emotion/dev/expression": 192,
+    "emotion/dev/challenge": 576,
+    "emotion/dev/symbol": 192,
+    "emotion/test/core": 512,
+    "emotion/test/expression": 256,
+    "emotion/test/challenge": 768,
+    "emotion/test/symbol": 256,
+    "person/train/core": 1152,
+    "person/train/symbol": 576,
+    "person/dev/core": 288,
+    "person/dev/expression": 144,
+    "person/dev/challenge": 432,
+    "person/dev/symbol": 144,
+    "person/test/core": 384,
+    "person/test/expression": 192,
+    "person/test/challenge": 576,
+    "person/test/symbol": 192
+  },
+  "files": [
+    {
+      "path": "data/time/train_core.jsonl",
+      "sha256": "328071915f6a60816c0ddb8b4150fe49f199dd6e261ba42d63acb50f66045f91",
+      "bytes": 1378584
+    },
+    {
+      "path": "data/time/train_symbol.jsonl",
+      "sha256": "66592750cf76a0dddafea3d13a795b15ec4ac177f29d726529ca99f787bd41f2",
+      "bytes": 661428
+    },
+    {
+      "path": "data/time/dev_core.jsonl",
+      "sha256": "5a146b0cd0185da67ddad9debd89b7caafa7fccb3c3ded0789ae3d2fb1250e46",
+      "bytes": 344472
+    },
+    {
+      "path": "data/time/dev_expression.jsonl",
+      "sha256": "19c888812fa6f406361bbd722482d03237f99d9231f1a80fc902caf1e5ae1b62",
+      "bytes": 177804
+    },
+    {
+      "path": "data/time/dev_challenge.jsonl",
+      "sha256": "d377cd92882542b661673b1aae5ef8e53f8052533add9a809b73b6b2fd910329",
+      "bytes": 626868
+    },
+    {
+      "path": "data/time/dev_symbol.jsonl",
+      "sha256": "010fa371b09d1647fa22bccd5b1f02926c922cefb1c7380a5529de0fc4df33ca",
+      "bytes": 165060
+    },
+    {
+      "path": "data/time/test_core.jsonl",
+      "sha256": "44088dfd1bba4c51749accb02b64cb9c956ce5ee208235df50317e7a72f5909a",
+      "bytes": 459432
+    },
+    {
+      "path": "data/time/test_expression.jsonl",
+      "sha256": "8b169f4fc45ef4b19fc3bee5b37ab2c4cbacedf0854072c7a5067bb2ebc1d70a",
+      "bytes": 237140
+    },
+    {
+      "path": "data/time/test_challenge.jsonl",
+      "sha256": "58b07b1832a232335c80dbb030f39b4b67c1cc99189ed4dd6d87601ebc219107",
+      "bytes": 836100
+    },
+    {
+      "path": "data/time/test_symbol.jsonl",
+      "sha256": "eff462218df40b5aad06c65111a5c176ab9091c29a3c3840308df1f98573b547",
+      "bytes": 220412
+    },
+    {
+      "path": "data/space/train_core.jsonl",
+      "sha256": "c617809cbcb0e875559ac6b50aea876b969f13613291de1b978fb1fe1e894d7a",
+      "bytes": 929152
+    },
+    {
+      "path": "data/space/train_symbol.jsonl",
+      "sha256": "37892604135aa2e4824d5fb060d2a40b21142bde90a54e7f63abe36ebd350559",
+      "bytes": 499936
+    },
+    {
+      "path": "data/space/dev_core.jsonl",
+      "sha256": "b08c877a6597cb30797eaad2dcf551cad8ccc8da46ebf794530a6d139b3c6d5b",
+      "bytes": 231264
+    },
+    {
+      "path": "data/space/dev_expression.jsonl",
+      "sha256": "1bfe0690d99ad40cc3917fbc0c5ebfc5ee941310f518abbb8fec7864cfe64430",
+      "bytes": 113232
+    },
+    {
+      "path": "data/space/dev_challenge.jsonl",
+      "sha256": "af0d63ea5f6b35fb2fcee8ee2ef1d89ca5006a8f36d8e6f20b97155d4865ffe3",
+      "bytes": 405104
+    },
+    {
+      "path": "data/space/dev_symbol.jsonl",
+      "sha256": "51086753be4582ba51eda7901871c5b7482876136dcbec22f3785624ac22768b",
+      "bytes": 124592
+    },
+    {
+      "path": "data/space/test_core.jsonl",
+      "sha256": "f4cb96f930078b2accb0a49991133558ca8b79d610e06264bb23948193e20661",
+      "bytes": 309440
+    },
+    {
+      "path": "data/space/test_expression.jsonl",
+      "sha256": "2baf9aad923e95055d588afecabed61c29a2bc60af3538f3691ad6fbb378a579",
+      "bytes": 151520
+    },
+    {
+      "path": "data/space/test_challenge.jsonl",
+      "sha256": "923a53243e7f4414b48d66a52b7465621d167902303268a917cd8de7903d1f2a",
+      "bytes": 541728
+    },
+    {
+      "path": "data/space/test_symbol.jsonl",
+      "sha256": "cc05828b8f156a29cb5513bffd797571a9dd58ad640101589c3241a6fc79ff61",
+      "bytes": 166352
+    },
+    {
+      "path": "data/emotion/train_core.jsonl",
+      "sha256": "cc018ce526044431090a5a96fe388c9d6db3ac634ba2ee2f3f3d5a299c88e600",
+      "bytes": 1082752
+    },
+    {
+      "path": "data/emotion/train_symbol.jsonl",
+      "sha256": "698a4d5027ae6b47f5eebc752531021c65915c1c6362c36619ceaa08cd881e0d",
+      "bytes": 438400
+    },
+    {
+      "path": "data/emotion/dev_core.jsonl",
+      "sha256": "6843699f6e7e765f3c9cb0bb2cb951c9514ad28ac4bfa79a72e77387339b77d5",
+      "bytes": 265776
+    },
+    {
+      "path": "data/emotion/dev_expression.jsonl",
+      "sha256": "34aa1de7db21ee8af56a95964ef4af72cec37e42c866dff169420fb05b86e40d",
+      "bytes": 136136
+    },
+    {
+      "path": "data/emotion/dev_challenge.jsonl",
+      "sha256": "e7a6a2f2ab100671d27ebcf6f475a8f88af9351778a354051b116e788021346d",
+      "bytes": 416040
+    },
+    {
+      "path": "data/emotion/dev_symbol.jsonl",
+      "sha256": "585d26e5e8940f7f19086e5541ad19f12bd1f7d7cbc5464dcd4e41ba8f09371f",
+      "bytes": 108504
+    },
+    {
+      "path": "data/emotion/test_core.jsonl",
+      "sha256": "dc2bcc2cde523a852948ba7ec721a653c872d1d1a3057dc5ef72458c23cddbdb",
+      "bytes": 359440
+    },
+    {
+      "path": "data/emotion/test_expression.jsonl",
+      "sha256": "0d67f23f19b62b0a9f73c714fe2ff909e9660d8c776b65fa99c6b1eeda56707b",
+      "bytes": 180616
+    },
+    {
+      "path": "data/emotion/test_challenge.jsonl",
+      "sha256": "dc73e1e4b5da5f600a37396b14cdd4dd82949bd1b5bd74434b1602749ee6a4e3",
+      "bytes": 562728
+    },
+    {
+      "path": "data/emotion/test_symbol.jsonl",
+      "sha256": "23e3056c632b1d90199902c501b5e180ad7279913f2cd9f18302b59f1a226129",
+      "bytes": 145944
+    },
+    {
+      "path": "data/person/train_core.jsonl",
+      "sha256": "e182f66c58092dee46a3a611fe602570f4829e9bd8d05321b7a51da59852920c",
+      "bytes": 752016
+    },
+    {
+      "path": "data/person/train_symbol.jsonl",
+      "sha256": "e4ab6895cdc6acda2c45f290260b1e3379791022cf2523a60d715e9c571d2174",
+      "bytes": 369984
+    },
+    {
+      "path": "data/person/dev_core.jsonl",
+      "sha256": "0421ea49b1ed834d0c1854f686176784a0ade5a0690567e0e9ecd2a2b244b36f",
+      "bytes": 187204
+    },
+    {
+      "path": "data/person/dev_expression.jsonl",
+      "sha256": "144410b2310df92acd05c33388fa728549b5ceafcabeeec7fa7f4fc9a55fdfe0",
+      "bytes": 94754
+    },
+    {
+      "path": "data/person/dev_challenge.jsonl",
+      "sha256": "6b919fe43f10619fc0a7b5744df97e7d2aba179db36a1295de70199b1a2bb287",
+      "bytes": 306558
+    },
+    {
+      "path": "data/person/dev_symbol.jsonl",
+      "sha256": "a87c73eddf0c7f44eac73d5eac74716bcb47bc996fda06a92ae74fa6f1da2d2c",
+      "bytes": 92154
+    },
+    {
+      "path": "data/person/test_core.jsonl",
+      "sha256": "ab5c17dd4e021a4371db6cd335b66e52a4b5784626c9465525b78ca57ad1bc9e",
+      "bytes": 250240
+    },
+    {
+      "path": "data/person/test_expression.jsonl",
+      "sha256": "8a19880f1dd4a93c0d459ef22aa3d06f614f61f2d2f99747bb26cc80860eaeb1",
+      "bytes": 126656
+    },
+    {
+      "path": "data/person/test_challenge.jsonl",
+      "sha256": "b32a3cb47d55b1dad62a3ae0a6c71e0d7c185df7e5da67078ae1d0ebe61847cd",
+      "bytes": 409660
+    },
+    {
+      "path": "data/person/test_symbol.jsonl",
+      "sha256": "33b251bb256e416916b13bf7dabf3f9a191781ae6f7947d9939515aef4d3d03f",
+      "bytes": 123096
+    },
+    {
+      "path": "data/emotion/worlds.jsonl",
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "bytes": 54702
+    },
+    {
+      "path": "data/time/worlds.jsonl",
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "bytes": 53790
+    },
+    {
+      "path": "data/person/worlds.jsonl",
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "bytes": 54438
+    },
+    {
+      "path": "data/space/worlds.jsonl",
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "bytes": 54167
+    },
+    {
+      "path": "data/emotion/audit.jsonl",
+      "sha256": "aae1754c77efee5e12079ca659040831e1116aacadae17f6014058a547d64536",
+      "bytes": 156584
+    },
+    {
+      "path": "data/time/audit.jsonl",
+      "sha256": "613c0156a90f6a003f73b1cef8fc74db361a4db347737d73257d9480d9050025",
+      "bytes": 219944
+    },
+    {
+      "path": "data/person/audit.jsonl",
+      "sha256": "6f99692491225d9493b53c4d8a0bd59b3dbeee929b098fa9f1e559cba867c0c5",
+      "bytes": 113558
+    },
+    {
+      "path": "data/space/audit.jsonl",
+      "sha256": "137eecde519805f45b4f44fcb56605eeefb90244ec0f015e5e6298ce9d5fd0fd",
+      "bytes": 145760
+    }
+  ],
+  "split_rule": "immutable core-content deduplication before world split; all states, histories and paraphrases inherit world split",
+  "templates": {
+    "train": [
+      0,
+      1
+    ],
+    "expression": [
+      2
+    ],
+    "challenge": [
+      3,
+      4,
+      5
+    ]
+  },
+  "leakage": "core text exact collision checked globally; shared template skeletons 0/1 intentional IID; templates2-5 excluded from training"
+}

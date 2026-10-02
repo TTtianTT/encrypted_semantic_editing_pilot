@@ -1,0 +1,200 @@
+{
+  "passed": false,
+  "reconstruction": {
+    "n": 384,
+    "success": 320,
+    "rate": 0.8333333333333334,
+    "cells": [
+      {
+        "state": 0,
+        "operation": "minus",
+        "n": 48,
+        "success": 38,
+        "rate": 0.7916666666666666
+      },
+      {
+        "state": 0,
+        "operation": "plus",
+        "n": 48,
+        "success": 38,
+        "rate": 0.7916666666666666
+      },
+      {
+        "state": 1,
+        "operation": "minus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      },
+      {
+        "state": 1,
+        "operation": "plus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      },
+      {
+        "state": 2,
+        "operation": "minus",
+        "n": 48,
+        "success": 36,
+        "rate": 0.75
+      },
+      {
+        "state": 2,
+        "operation": "plus",
+        "n": 48,
+        "success": 36,
+        "rate": 0.75
+      },
+      {
+        "state": 3,
+        "operation": "minus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      },
+      {
+        "state": 3,
+        "operation": "plus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      }
+    ],
+    "min_cell": 0.75
+  },
+  "atomic": {
+    "n": 384,
+    "success": 341,
+    "rate": 0.8880208333333334,
+    "cells": [
+      {
+        "state": 0,
+        "operation": "minus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 0,
+        "operation": "plus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 1,
+        "operation": "minus",
+        "n": 48,
+        "success": 39,
+        "rate": 0.8125
+      },
+      {
+        "state": 1,
+        "operation": "plus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      },
+      {
+        "state": 2,
+        "operation": "minus",
+        "n": 48,
+        "success": 46,
+        "rate": 0.9583333333333334
+      },
+      {
+        "state": 2,
+        "operation": "plus",
+        "n": 48,
+        "success": 42,
+        "rate": 0.875
+      },
+      {
+        "state": 3,
+        "operation": "minus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 3,
+        "operation": "plus",
+        "n": 48,
+        "success": 39,
+        "rate": 0.8125
+      }
+    ],
+    "min_cell": 0.8125
+  },
+  "gold_next": {
+    "n": 384,
+    "success": 341,
+    "rate": 0.8880208333333334,
+    "cells": [
+      {
+        "state": 0,
+        "operation": "minus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 0,
+        "operation": "plus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 1,
+        "operation": "minus",
+        "n": 48,
+        "success": 39,
+        "rate": 0.8125
+      },
+      {
+        "state": 1,
+        "operation": "plus",
+        "n": 48,
+        "success": 43,
+        "rate": 0.8958333333333334
+      },
+      {
+        "state": 2,
+        "operation": "minus",
+        "n": 48,
+        "success": 46,
+        "rate": 0.9583333333333334
+      },
+      {
+        "state": 2,
+        "operation": "plus",
+        "n": 48,
+        "success": 42,
+        "rate": 0.875
+      },
+      {
+        "state": 3,
+        "operation": "minus",
+        "n": 48,
+        "success": 44,
+        "rate": 0.9166666666666666
+      },
+      {
+        "state": 3,
+        "operation": "plus",
+        "n": 48,
+        "success": 39,
+        "rate": 0.8125
+      }
+    ],
+    "min_cell": 0.8125
+  },
+  "thresholds": {
+    "reconstruction": 0.95,
+    "atomic": 0.85,
+    "min_cell": 0.75
+  }
+}

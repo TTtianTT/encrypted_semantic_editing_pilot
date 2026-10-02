@@ -1,0 +1,42 @@
+{
+  "phase": "formal",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--job-name=fdsc-v1-formal",
+    "--array=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23%2",
+    "experiments/four_domain_state_coverage_v1/job.slurm",
+    "formal"
+  ],
+  "pre_squeue": "",
+  "project_dependencies": [],
+  "one_gpu_per_task": true,
+  "max_array_tasks": 2
+}

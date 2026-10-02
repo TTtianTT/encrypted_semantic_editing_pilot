@@ -1,0 +1,108 @@
+{
+  "base_commit": "9ef92dbd0cf44f7bb41ba7756a36a01ebd7ee56b",
+  "original_status": "## experiment/g12-matched-input-source-v1\n?? .four-domain-worktree/\n?? .g13-worktree/\n?? .g14-worktree/\n?? .g15-worktree/\n?? .g16-worktree/\n?? .g17-worktree/\n?? experiments/decoder_basin_anisotropy_v1/g8-1787.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1788.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1790.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1791.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1792.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1793.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1794.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1795.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1796.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1797.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1798.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1799.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1800.out\n?? experiments/decoder_basin_anisotropy_v1/pilot_extraction_bart.json\n?? experiments/decoder_basin_anisotropy_v1/pilot_extraction_t5gemma.json\n?? experiments/decoder_basin_anisotropy_v1/pilot_scan_bart.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_scan_t5gemma.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_states_bart.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_states_t5gemma.jsonl\n?? experiments/latent_reset_v1/slurm-1766.out\n?? experiments/repeated_intervention_stability_v1/bart-1773.out\n?? experiments/repeated_intervention_stability_v1/bart-1775.out\n?? experiments/repeated_intervention_stability_v1/bart-1777.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1774.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1776.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1778.out\n?? experiments/semantically_matched_editors_v1/\n?? experiments/t5gemma_composition_v1/editor_latest.pt\n?? experiments/t5gemma_composition_v1/evaluate-1771.out\n?? experiments/t5gemma_composition_v1/evaluate-1772.out\n?? experiments/t5gemma_composition_v1/preflight-1767.out\n?? experiments/t5gemma_composition_v1/preflight-1768.out\n?? experiments/t5gemma_composition_v1/preflight-1769.out\n?? experiments/t5gemma_composition_v1/train-1770.out\n?? models/t5gemma-s-s-ul2/\n",
+  "branches": "origin/experiment/g17-state-source-transfer-v1 9ef92dbd0cf44f7bb41ba7756a36a01ebd7ee56b 2026-10-02 12:23:07 +0800\norigin/experiment/g16-capability-preserving-transfer-v1 92fe27beca7053d82074e16c2a0d7f4c87594d0e 2026-10-02 02:11:28 +0800\norigin/experiment/g15-self-state-transfer-v1 155cd8793d2f83d21c0f567e45073d845753ad6f 2026-10-01 19:21:47 +0800\norigin/experiment/g14-matched-state-handoff-v1 c82b5bfeea166edf0516f24e6e01abd3068b0912 2026-10-01 17:01:38 +0800\norigin/experiment/g13-source-overfit-audit-v1 c124e8c91a5b379725e17ef89937f4cf9da82301 2026-10-01 01:50:27 +0800\norigin/experiment/g12-matched-input-source-v1 389bb85160df6311cc866fc573f73a24b3d87a09 2026-09-30 20:09:56 +0800\norigin/experiment/g11-semantic-history-v1 0d9da457d8e8362064200ea1d53ecde5793134b9 2026-09-30 17:54:40 +0800\norigin/experiment/g10-matched-editor-composability-v1 b07abb4244415fea501cdb064bd9137a4db04587 2026-09-30 16:24:26 +0800\norigin/experiment/decoder-basin-anisotropy-v1 6aa1c05eae33d37fa413e906d28fe72e5796e71d 2026-09-30 03:01:35 +0800\norigin/experiment/repeated-intervention-stability-v1 4dbe8485a09db9c4a04e4f8344e4cac7adc61cb2 2026-09-30 01:40:06 +0800\norigin/experiment/t5gemma-composition-v1 89d3108822d3f54540c8db79c7288df873cbbb77 2026-09-30 01:02:32 +0800\norigin/experiment/latent-reset-v1 83482e3a9014cfd09e1f44ec2a636eb500f54811 2026-09-30 00:23:33 +0800\norigin/experiment/projection-hypothesis-v1 489fc71de4b5e03cc806d1390ad71355fd197311 2026-09-30 00:09:15 +0800\norigin/experiment/algebraic-generalization-v1 ce0ef36599beb76f06824ef50783ea99c49d9910 2026-09-29 23:50:01 +0800\norigin/experiment/joint-reference-editor-v1 529fb6b671ecd185323dbac6b9012862368c080f 2026-09-29 20:16:22 +0800\norigin/experiment/reference-frame-cross-backbone-v1 bc5087483b5c3d2476d615d8e9452b0f54bd289c 2026-09-29 19:19:00 +0800\norigin/main e1ec57b01a6aa8d3ddb2235b1e85c140b1911583 2026-09-29 15:46:16 +0800\n",
+  "instructions_found": [],
+  "sinfo": "PARTITION AVAIL TIMELIMIT NODES GRES\nB300q up infinite 3 gpu:nvidia_b300_sxm6_ac:8(S:0-1)\nRTXq up infinite 1 gpu:nvidia_rtx_pro_6000_blackwell:8(S:0-1)\ndefq* up infinite 10 (null)\ndefq* up infinite 1 gpu:p100:2(S:0-1)\n",
+  "squeue": "JOBID NAME STATE PARTITION TRES_PER_NODE WORK_DIR\n",
+  "partition": "PartitionName=B300q\n   AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL\n   AllocNodes=ALL Default=NO QoS=N/A\n   DefaultTime=UNLIMITED DisableRootJobs=NO ExclusiveUser=NO ExclusiveTopo=NO GraceTime=0 Hidden=NO\n   MaxNodes=UNLIMITED MaxTime=UNLIMITED MinNodes=1 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED\n   Nodes=node[01-03]\n   PriorityJobFactor=1 PriorityTier=1 RootOnly=NO ReqResv=NO OverSubscribe=NO\n   OverTimeLimit=NONE PreemptMode=OFF\n   State=UP TotalCPUs=768 TotalNodes=3 SelectTypeParameters=NONE\n   JobDefaults=(null)\n   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED\n   TRES=cpu=768,mem=5572611M,node=3,billing=768,gres/gpu=24\n\n",
+  "historical_files": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/REPORT.md",
+      "sha256": "146e820f06a9cec8d559566b91b2a80f70e2d4c309289979bc6b9efc2e4f5b4f"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/INTERPRETATION.md",
+      "sha256": "91dc5927f68bb15becca5a5228760c9faf6d9224a79e5ac1147a6efb19a3da2b"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/checkpoints_manifest.json",
+      "sha256": "1de83e21184159a7827370ef0f42607508a1e894035ab75a907f15e19611ba46"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/runs_manifest.json",
+      "sha256": "3acc27e0478e69442ae67c7654ecc92805d5ea9d2962d463876b31708ff8bf88"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/budget.json",
+      "sha256": "94681fadc0a27056e3c73c533bc420f2990bf5958da103bc658209c3ff50cf60"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/REPORT.md",
+      "sha256": "335a3834b12bf1aae5fdee56eddcfc38b3cbf3b0c59975dcd6142a74c2a7078a"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/INTERPRETATION.md",
+      "sha256": "3f7058cbcca63f3f528bd023e5911c7c71e75483aa744365edb8e5d923d15733"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/checkpoints_manifest.json",
+      "sha256": "28eb2c9ebc5c47e52fac89e99d2fb23e5201145e5e96f249220749270c6555ff"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/runs_manifest.json",
+      "sha256": "180c6b1212bb601fae9c1190b22fade4fba5986d83f7779b182d656bfa75a489"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/budget.json",
+      "sha256": "cf70523dd113870ad4aaaf98dae95068ef1daa7b9429975b1971705c3031d2c7"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/delivery_audit.json",
+      "sha256": "0717d3f8ab2f2f9d79c90a3241d57f090508f64a1c8e486d1b4f4b79b21087dd"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/REPORT.md",
+      "sha256": "6423e81544b0c51f6a1e77b196055e6c831fbffbead43c7bb7bf9f0cf7038983"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/INTERPRETATION.md",
+      "sha256": "c5af756805baa26ed8d3ac9ad34160cd726247b1c54efad3258ad7a63e5a5cd6"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/checkpoints_manifest.json",
+      "sha256": "5d917b202d665ca42fce9272e81f216d2f10ee8414a16ed2195a34f54e47ca49"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/runs_manifest.json",
+      "sha256": "15239cfd2b9516e76d56589eb9ca71f407d279ff140e4ded807f92961c328d1a"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/budget.json",
+      "sha256": "847c90994b48c7d96bc9efb06a262d68294d74ac91fb3aadfcdd71432f172c12"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/delivery_audit.json",
+      "sha256": "015f877e18050c7e4ed9959875d68c1540ad95a8332571a87bb98f6b1bb2966b"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/REPORT.md",
+      "sha256": "5fce2e2e6cf5bdd340580150d8b8f98dc84d230782f900bf9b712398b6babbe7"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/INTERPRETATION.md",
+      "sha256": "fb9beaab2dd5042949df00a14d92c578d6fae49da9997d13cb9c10d9be105332"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/checkpoints_manifest.json",
+      "sha256": "23cf43807c3a4cbb29ce307602573114b9db9d0eb521f70692f84f8de21a7167"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/runs_manifest.json",
+      "sha256": "ef770bda1b83bb1e5b4dc16424f076e4afff524bcde75f4947c5c53378ca10e9"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/budget.json",
+      "sha256": "695a2ce258bb8b8f2d97606acdbd5a83ba34eeb843070518dfcca15bd0b4d016"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/delivery_audit.json",
+      "sha256": "71668367cbe52f9cd79ae96ad45f75afbabbd66872d973ec9ba2c15548092637"
+    }
+  ],
+  "limitations": [
+    "Historical reports read and hashed; no new inference replicating every G14–G17 result",
+    "No admitted 270M IT artifact found; pretrained270M is not IT",
+    "Existing old worktrees and untracked files preserved"
+  ]
+}

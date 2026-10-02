@@ -1,0 +1,25 @@
+{
+  "phase": "interface",
+  "indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--array=0,1,2,3%2",
+    "--dependency=afterany:2555",
+    "experiments/four_domain_state_coverage_v1/job.slurm",
+    "interface"
+  ],
+  "pre_squeue": "2555_7|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n2555_6|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree\n",
+  "project_dependencies": [
+    "2555_7|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree",
+    "2555_6|fdsc-v1|gres/gpu:1|/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree"
+  ],
+  "one_gpu_per_task": true,
+  "max_array_tasks": 2
+}

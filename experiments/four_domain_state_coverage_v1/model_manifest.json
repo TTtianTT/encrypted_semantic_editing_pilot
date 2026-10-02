@@ -1,0 +1,348 @@
+{
+  "t5gemma": {
+    "model_id": "google/t5gemma-2b-2b-ul2-it",
+    "revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+    "tokenizer_revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+    "status": "downloaded",
+    "directory": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it",
+    "download_seconds": 79.64173451298848,
+    "files": {
+      "generation_config.json": {
+        "sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625",
+        "bytes": 156
+      },
+      "tokenizer.model": {
+        "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+        "bytes": 4241003
+      },
+      "chat_template.jinja": {
+        "sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6",
+        "bytes": 577
+      },
+      "README.md": {
+        "sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016",
+        "bytes": 18716
+      },
+      "tokenizer_config.json": {
+        "sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f",
+        "bytes": 46437
+      },
+      "model-00002-of-00003.safetensors": {
+        "sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac",
+        "bytes": 4988162344
+      },
+      "special_tokens_map.json": {
+        "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+        "bytes": 636
+      },
+      "model-00001-of-00003.safetensors": {
+        "sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1",
+        "bytes": 4988042296
+      },
+      "model.safetensors.index.json": {
+        "sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609",
+        "bytes": 68078
+      },
+      "tokenizer.json": {
+        "sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd",
+        "bytes": 34362429
+      },
+      "model-00003-of-00003.safetensors": {
+        "sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860",
+        "bytes": 1217595120
+      },
+      "config.json": {
+        "sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306",
+        "bytes": 3257
+      }
+    },
+    "local_files_verified": true,
+    "license": "gemma",
+    "historical_admission": {
+      "status": "passed",
+      "passed": true,
+      "selected_wrapper": "B",
+      "summaries": [
+        {
+          "wrapper": "A",
+          "rates": {
+            "source": 0.0,
+            "target": 0.0
+          },
+          "strata": {
+            "source/recorded_plan": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_completed": {
+              "N": 200,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_cancelled": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/recorded_plan": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_completed": {
+              "N": 1160,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_cancelled": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            }
+          },
+          "N": 6800,
+          "joint": 0,
+          "exact": 0,
+          "normal_end": 77,
+          "unresolved": 6800,
+          "date_error": 0,
+          "nondate_error": 0
+        },
+        {
+          "wrapper": "B",
+          "rates": {
+            "source": 1.0,
+            "target": 1.0
+          },
+          "strata": {
+            "source/recorded_plan": {
+              "N": 360,
+              "joint": 360,
+              "rate": 1.0
+            },
+            "source/reported_completed": {
+              "N": 200,
+              "joint": 200,
+              "rate": 1.0
+            },
+            "source/reported_cancelled": {
+              "N": 360,
+              "joint": 360,
+              "rate": 1.0
+            },
+            "target/recorded_plan": {
+              "N": 2360,
+              "joint": 2360,
+              "rate": 1.0
+            },
+            "target/reported_completed": {
+              "N": 1160,
+              "joint": 1160,
+              "rate": 1.0
+            },
+            "target/reported_cancelled": {
+              "N": 2360,
+              "joint": 2360,
+              "rate": 1.0
+            }
+          },
+          "N": 6800,
+          "joint": 6800,
+          "exact": 0,
+          "normal_end": 6800,
+          "unresolved": 0,
+          "date_error": 0,
+          "nondate_error": 0
+        }
+      ],
+      "interface_passed": true,
+      "wall_seconds": 666.9972026699688,
+      "peak_cuda_bytes": 27552330240,
+      "reason": null,
+      "interface_hash": "17d1c444732f05b3b6b5fc1a8f235b4ca8cc2c14fb2378e3a62b3c650ba1b753"
+    }
+  },
+  "failed_270m": {
+    "model_id": "google/t5gemma-2-270m-270m",
+    "revision": "7c38f16641f455ef0685b18431faf1b17722d5a1",
+    "tokenizer_revision": "7c38f16641f455ef0685b18431faf1b17722d5a1",
+    "status": "downloaded",
+    "directory": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2-270m-270m",
+    "download_seconds": 13.055583288893104,
+    "files": {
+      "generation_config.json": {
+        "sha256": "d574a9296f8ab6b9741f111c81b39049f0d151d294e7594bec2aabf1510259dd",
+        "bytes": 195
+      },
+      "processor_config.json": {
+        "sha256": "1a24967f8d45996619281a9fe3739b1cc51266591f6cdf6cf15599a593179238",
+        "bytes": 718
+      },
+      "README.md": {
+        "sha256": "b730f2d42ac1d13c20e680c9c89f136df221edf5b09975b6ce89f91a962b0d55",
+        "bytes": 20816
+      },
+      "tokenizer_config.json": {
+        "sha256": "a378e7507ea7190045d0a80e139e4bda802738f678d3e4df05d7550786af1382",
+        "bytes": 830
+      },
+      "special_tokens_map.json": {
+        "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+        "bytes": 662
+      },
+      "tokenizer.json": {
+        "sha256": "4c76318660cc87c3029535cc1596717df67132d231ce4ecf088ba2a8ec07c098",
+        "bytes": 33384388
+      },
+      "config.json": {
+        "sha256": "dc0abad09fc94797f7bd091b63b8d33ff6a70daf803683287acba57d8844d01c",
+        "bytes": 6027
+      },
+      "model.safetensors": {
+        "sha256": "623a67dd770cefacce6bd77e63b5c127d843fb7749fbf67e919d7a5c3f866deb",
+        "bytes": 1572182264
+      }
+    },
+    "local_files_verified": true,
+    "license": "gemma",
+    "historical_admission": {
+      "status": "reconstruction_failed",
+      "passed": false,
+      "selected_wrapper": "A",
+      "summaries": [
+        {
+          "wrapper": "A",
+          "rates": {
+            "source": 0.0,
+            "target": 0.0
+          },
+          "strata": {
+            "source/recorded_plan": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_completed": {
+              "N": 200,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_cancelled": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/recorded_plan": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_completed": {
+              "N": 1160,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_cancelled": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            }
+          },
+          "N": 6800,
+          "joint": 0,
+          "exact": 0,
+          "normal_end": 16,
+          "unresolved": 6800,
+          "date_error": 0,
+          "nondate_error": 0
+        },
+        {
+          "wrapper": "B",
+          "rates": {
+            "source": 0.0,
+            "target": 0.0
+          },
+          "strata": {
+            "source/recorded_plan": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_completed": {
+              "N": 200,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "source/reported_cancelled": {
+              "N": 360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/recorded_plan": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_completed": {
+              "N": 1160,
+              "joint": 0,
+              "rate": 0.0
+            },
+            "target/reported_cancelled": {
+              "N": 2360,
+              "joint": 0,
+              "rate": 0.0
+            }
+          },
+          "N": 6800,
+          "joint": 0,
+          "exact": 0,
+          "normal_end": 0,
+          "unresolved": 6800,
+          "date_error": 0,
+          "nondate_error": 0
+        }
+      ],
+      "interface_passed": true,
+      "wall_seconds": 410.54443782311864,
+      "peak_cuda_bytes": 5207442944,
+      "reason": "current frozen interface does not satisfy reconstruction prerequisite",
+      "interface_hash": "03c3d6d5973168c8528f59118445531dfd511c519addf7f55306950f29a4862d"
+    }
+  },
+  "bart": {
+    "model_id": "facebook/bart-base",
+    "revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "tokenizer_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "directory": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base",
+    "license": "apache-2.0",
+    "files": {
+      "vocab.json": {
+        "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+        "bytes": 898823
+      },
+      "README.md": {
+        "sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097",
+        "bytes": 2593
+      },
+      "tokenizer.json": {
+        "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+        "bytes": 1355863
+      },
+      "merges.txt": {
+        "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "bytes": 456318
+      },
+      "model.safetensors": {
+        "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+        "bytes": 557709915
+      },
+      "config.json": {
+        "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+        "bytes": 1716
+      }
+    },
+    "local_files_verified": true
+  }
+}

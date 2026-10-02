@@ -1,0 +1,25 @@
+{
+  "phase": "engineering",
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--array=0,1,2,3,4,5,6,7%2",
+    "experiments/four_domain_state_coverage_v1/job.slurm",
+    "engineering"
+  ],
+  "pre_squeue": "",
+  "project_dependencies": [],
+  "one_gpu_per_task": true,
+  "max_array_tasks": 2
+}
