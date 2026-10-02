@@ -1,0 +1,201 @@
+{
+  "positive_checks": 1344,
+  "adversarial_wrong_A_checks": 56,
+  "legacy_false_positive_examples": 56,
+  "examples": [
+    {
+      "world_id": "space_0096",
+      "text": "Observer: Alice. The key is blue. There are 4 copies. Its world direction is east. From Carol's viewpoint, it is on the front side. From Alice's viewpoint, the key is on the left side.",
+      "gold": {
+        "domain": "space",
+        "state": 0,
+        "people": [
+          "Alice",
+          "Carol",
+          "Emma"
+        ],
+        "object": "key",
+        "color": "blue",
+        "quantity": 4,
+        "structure": 4,
+        "symbolic": false,
+        "relation": "front",
+        "heading": 1,
+        "object_xy": [
+          3,
+          -3
+        ],
+        "observer_xy": [
+          2,
+          -3
+        ],
+        "secondary_observer_xy": [
+          2,
+          -3
+        ],
+        "marker_xy": [
+          3,
+          -4
+        ],
+        "fixed_heading": 1,
+        "fixed_relation": "front"
+      },
+      "legacy_score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      },
+      "independent_guard_passed": false
+    },
+    {
+      "world_id": "space_0097",
+      "text": "Observer: Frank. The ticket is white. There is 1 copy. Its world direction is south. From Carol's viewpoint, it is on the back side. From Frank's viewpoint, the ticket is on the left side.",
+      "gold": {
+        "domain": "space",
+        "state": 2,
+        "people": [
+          "Frank",
+          "Carol",
+          "Grace"
+        ],
+        "object": "ticket",
+        "color": "white",
+        "quantity": 1,
+        "structure": 4,
+        "symbolic": false,
+        "relation": "back",
+        "heading": 0,
+        "object_xy": [
+          -1,
+          -3
+        ],
+        "observer_xy": [
+          -1,
+          0
+        ],
+        "secondary_observer_xy": [
+          -1,
+          0
+        ],
+        "marker_xy": [
+          -1,
+          -4
+        ],
+        "fixed_heading": 0,
+        "fixed_relation": "back"
+      },
+      "legacy_score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      },
+      "independent_guard_passed": false
+    },
+    {
+      "world_id": "space_0098",
+      "text": "Observer: Emma. The lamp is white. There are 6 copies. Its world direction is west. From Henry's viewpoint, it is on the left side. From Emma's viewpoint, the lamp is on the right side.",
+      "gold": {
+        "domain": "space",
+        "state": 3,
+        "people": [
+          "Emma",
+          "Henry",
+          "Bob"
+        ],
+        "object": "lamp",
+        "color": "white",
+        "quantity": 6,
+        "structure": 4,
+        "symbolic": false,
+        "relation": "left",
+        "heading": 0,
+        "object_xy": [
+          -6,
+          0
+        ],
+        "observer_xy": [
+          -3,
+          0
+        ],
+        "secondary_observer_xy": [
+          -3,
+          0
+        ],
+        "marker_xy": [
+          -6,
+          -1
+        ],
+        "fixed_heading": 0,
+        "fixed_relation": "left"
+      },
+      "legacy_score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      },
+      "independent_guard_passed": false
+    },
+    {
+      "world_id": "space_0099",
+      "text": "Observer: Frank. The book is green. There are 6 copies. Its world direction is north. From Grace's viewpoint, it is on the right side. From Frank's viewpoint, the book is on the left side.",
+      "gold": {
+        "domain": "space",
+        "state": 1,
+        "people": [
+          "Frank",
+          "Grace",
+          "Emma"
+        ],
+        "object": "book",
+        "color": "green",
+        "quantity": 6,
+        "structure": 4,
+        "symbolic": false,
+        "relation": "right",
+        "heading": 3,
+        "object_xy": [
+          2,
+          6
+        ],
+        "observer_xy": [
+          2,
+          3
+        ],
+        "secondary_observer_xy": [
+          2,
+          3
+        ],
+        "marker_xy": [
+          2,
+          5
+        ],
+        "fixed_heading": 3,
+        "fixed_relation": "right"
+      },
+      "legacy_score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      },
+      "independent_guard_passed": false
+    }
+  ],
+  "no_gpu": true,
+  "reason": "Frozen parser falls back to first named viewpoint when first-person relation absent; first B must not substitute for target A."
+}

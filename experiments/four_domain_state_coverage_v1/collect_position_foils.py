@@ -30,7 +30,10 @@ def main():
                 groups[json.dumps(cell,sort_keys=True)].append(r)
             for cell,rr in groups.items():summaries.append(dict(**meta,**json.loads(cell),**summary(rr)))
             if paired:
-                rr=[v for v in paired.values() if set(v)=={0,1}];left=sum(v[0]['score']['success'] for v in rr);right=sum(v[1]['score']['success'] for v in rr);pairs.append(dict(**meta,artifact=str(path.relative_to(base)),pairs=len(rr),original_order_success=left,reversed_order_success=right,both_success=sum(v[0]['score']['success'] and v[1]['score']['success'] for v in rr),original_only=sum(v[0]['score']['success'] and not v[1]['score']['success'] for v in rr),reversed_only=sum(not v[0]['score']['success'] and v[1]['score']['success'] for v in rr),delta_percentage_points=100*(right-left)/len(rr) if rr else None))
+                for lhs,rhs in ([(0,1),(2,3)] if t['domain']=='emotion' else [(0,1)]):
+                    rr=[v for v in paired.values() if lhs in v and rhs in v]
+                    if not rr:continue
+                    left=sum(v[lhs]['score']['success'] for v in rr);right=sum(v[rhs]['score']['success'] for v in rr);pairs.append(dict(**meta,artifact=str(path.relative_to(base)),pair_family='narrator_quote_order' if lhs==2 else 'clause_order',left_variant=lhs,right_variant=rhs,pairs=len(rr),original_order_success=left,reversed_order_success=right,both_success=sum(v[lhs]['score']['success'] and v[rhs]['score']['success'] for v in rr),original_only=sum(v[lhs]['score']['success'] and not v[rhs]['score']['success'] for v in rr),reversed_only=sum(not v[lhs]['score']['success'] and v[rhs]['score']['success'] for v in rr),delta_percentage_points=100*(right-left)/len(rr)))
     writecsv(ROOT/'position_foils_by_seed.csv',summaries);writecsv(ROOT/'position_foils_gates.csv',gates);writecsv(ROOT/'position_foils_status.csv',statuses);writecsv(ROOT/'position_order_pairs.csv',pairs);dump(ROOT/'position_foils_audit.json',dict(predictions_independently_rescored=count,statuses=len(statuses),post_formal_extension=True,no_training=True));print('Position diagnostics rescored',count,'predictions')
 
 if __name__=='__main__':main()

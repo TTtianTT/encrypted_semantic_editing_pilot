@@ -60,6 +60,18 @@ outputs are archived by extra_archives.py; raw scoring adapter transformations
 never enter decode–reencode inputs. Use submission ledger/status files to inspect
 active recovery rather than submit an independent quick GPU test.
 
+Before any position-diagnostic GPU output, independent spatial binding negatives
+exposed three permissive legacy parser checks (target viewpoint, the fixed
+observer's object, and the marker's object). SPACE_SCOPE_GUARD_CHECK distinguishes
+168 constructed false positives from actual model outputs. Original scores stay
+intact, and spatial_scoring_adjudication reports their conservative correction.
+The secondary position scorer includes these guards. A further pre-GPU amendment
+adds emotion variants2/3 for explicit narrator I versus someone else's quoted I;
+7504 CPU fixture checks passed. They form a separate narrator_quote_order pair,
+while original emotion0/1 retain multi-object clause_order. No training or
+checkpoint selection changed. See POSITION_NARRATOR_AMENDMENT, POSITION_*REVISION
+and archived prior code/data/locks under protocol_revisions.
+
 `progress.py` creates a CPU-only task/checkpoint/shard snapshot in PROGRESS.md/json.
 Run account.py first for fresh GPU-hours. Components and exposure definitions are
 in semantic_component_audit.json and TRANSFER_DEFINITIONS.json: primary scope is a
@@ -85,3 +97,7 @@ and does not overlap downstream phases waiting on the original formal parent.
 It adds model-loading overhead but no P training updates. If CPU2651 fails, inspect
 its log and the held-child record, then rerun the zero-GPU release script under
 Slurm; do not release children while any preflight GPU task is still active.
+Because preflight2650 depends specifically on original children14/15, requeue of
+those children is disabled by recover_timeout.py; their registered recovery2620
+is the safe continuation path. A child-specific dependent GPU phase must not be
+allowed to overlap a requeued producer after its old dependency event was satisfied.

@@ -1,8 +1,8 @@
 # 当前进度（工件快照，非最终结果）
 
-UTC 2026-10-02T16:54:04.477221+00:00。所有GPU计算经Slurm；历史峰值2卡，最近账本累计8.889 GPU小时。
+UTC 2026-10-02T19:01:00.992822+00:00。所有GPU计算经Slurm；历史峰值2卡，最近账本累计12.747 GPU小时。
 
-- formal: {"completed": 7, "not_admitted": 6, "in_progress": 3, "not_started": 14}
+- formal: {"completed": 7, "not_admitted": 6, "in_progress": 11, "not_started": 6}
 - identity_probe: {"not_started": 30}
 - linguistic_controls: {"not_started": 8}
 - position_foils: {"not_started": 8}

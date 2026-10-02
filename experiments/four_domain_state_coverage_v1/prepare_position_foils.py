@@ -18,11 +18,14 @@ def main():
         for w in worlds:
             if w['split']!=split:continue
             for s in states(args.domain):
-                for variant in (0,1):
+                for variant in (range(4) if args.domain=='emotion' else range(2)):
                     text=render(w,s,variant);g=gold(w,s,variant);assert score(text,g,w)['success'],(args.domain,variant,text,score(text,g,w));checks+=1
                     wrong=text.replace(' is '+w['color']+'.',' is '+('red' if w['color']!='red' else 'blue')+'.');assert not score(wrong,g,w)['success'];checks+=1
-                    if args.domain in ('time','person'):
+                    if args.domain in ('time','person') or (args.domain=='emotion' and variant>=2):
                         altered=re.sub(r'"[^"]*"','"The wrong person speaks."',text);assert not score(altered,g,w)['scope'];checks+=1
+                    if args.domain=='emotion' and variant>=2:
+                        altered=text.replace(f"Narrator: {w['focus']}.",f"Narrator: {w['people'][2]}.");assert not score(altered,g,w)['scope'];checks+=1
+                        malformed=text.replace('I am neutral about','I is neutral about').replace('I strongly dislike the','I strongly dislikes the').replace('I dislike the','I dislikes the').replace('I strongly like the','I strongly likes the').replace('I like the','I likes the');assert not score(malformed,g,w)['success'];checks+=1
                     for op in ('plus','minus'):
                         try:nxt=advance(args.domain,s,op)
                         except ValueError:continue

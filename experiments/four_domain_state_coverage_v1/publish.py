@@ -11,7 +11,7 @@ def main():
             archive=run/'predictions.jsonl.gz';members=[]
             for p in sorted(run.rglob('*.jsonl')):
                 if 'outputs' in p.parts or p.parent==run or p.parent.name=='dev':members.append(p)
-            with gzip.open(archive,'wt',encoding='utf-8') as out:
+            with archive.open('wb') as raw, gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0) as gz, io.TextIOWrapper(gz,encoding='utf-8',newline='\n') as out:
                 for p in members:
                     for r in rows(p):out.write(json.dumps(dict(artifact=str(p.relative_to(ROOT)),row=r),ensure_ascii=False)+'\n')
             archives.append(dict(run=str(run.relative_to(ROOT)),archive=str(archive.relative_to(ROOT)),sha256=digest(archive),members=[dict(path=str(p.relative_to(ROOT)),sha256=digest(p),rows=len(rows(p))) for p in members]))
@@ -29,7 +29,7 @@ def main():
             # Correct and rejected training-source decoded states are retained.
             if (local/'sources').exists():
                 target=run/'source_decodes.jsonl.gz'
-                with gzip.open(target,'wt',encoding='utf-8') as out:
+                with target.open('wb') as raw, gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0) as gz, io.TextIOWrapper(gz,encoding='utf-8',newline='\n') as out:
                     for p in sorted((local/'sources').glob('*.jsonl')):
                         for r in rows(p):out.write(json.dumps(dict(source_artifact=str(p),row=r),ensure_ascii=False)+'\n')
             # Training budgets/schedules are small; expose all semantic-unit draws.

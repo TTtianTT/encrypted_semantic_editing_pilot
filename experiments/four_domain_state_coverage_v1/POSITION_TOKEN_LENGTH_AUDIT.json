@@ -1,0 +1,94 @@
+{
+  "no_gpu": true,
+  "position_lock_sha": "035c98559ea41e3454092789bdb6695793e2d4190a0dbc018cc4f102f8ea5783",
+  "checks": [
+    {
+      "index": 0,
+      "model": "bart",
+      "domain": "time",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 1344,
+      "maximum_source_tokens": 62,
+      "maximum_target_tokens_with_margin": 63,
+      "source_cap": 192,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 1,
+      "model": "bart",
+      "domain": "space",
+      "study": "space_relation_confirmation_v1",
+      "examples": 896,
+      "maximum_source_tokens": 43,
+      "maximum_target_tokens_with_margin": 44,
+      "source_cap": 192,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 2,
+      "model": "bart",
+      "domain": "emotion",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 1792,
+      "maximum_source_tokens": 50,
+      "maximum_target_tokens_with_margin": 51,
+      "source_cap": 192,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 3,
+      "model": "bart",
+      "domain": "person",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 672,
+      "maximum_source_tokens": 41,
+      "maximum_target_tokens_with_margin": 42,
+      "source_cap": 192,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 4,
+      "model": "t5gemma",
+      "domain": "time",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 1344,
+      "maximum_source_tokens": 92,
+      "maximum_target_tokens_with_margin": 72,
+      "source_cap": 256,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 5,
+      "model": "t5gemma",
+      "domain": "space",
+      "study": "space_relation_confirmation_v1",
+      "examples": 896,
+      "maximum_source_tokens": 63,
+      "maximum_target_tokens_with_margin": 43,
+      "source_cap": 256,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 6,
+      "model": "t5gemma",
+      "domain": "emotion",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 1792,
+      "maximum_source_tokens": 70,
+      "maximum_target_tokens_with_margin": 50,
+      "source_cap": 256,
+      "max_new_tokens": 160
+    },
+    {
+      "index": 7,
+      "model": "t5gemma",
+      "domain": "person",
+      "study": "four_domain_state_coverage_v1",
+      "examples": 672,
+      "maximum_source_tokens": 60,
+      "maximum_target_tokens_with_margin": 40,
+      "source_cap": 256,
+      "max_new_tokens": 160
+    }
+  ]
+}

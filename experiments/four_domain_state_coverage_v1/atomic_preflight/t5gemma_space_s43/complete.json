@@ -1,0 +1,233 @@
+{
+  "task": {
+    "phase": "formal",
+    "model": "t5gemma",
+    "domain": "space",
+    "seed": 43,
+    "index": 16
+  },
+  "status": "atomic_admitted",
+  "checkpoint": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_space_s43/P/best.pt",
+    "sha256": "c6b9e68aece6a4e474e2b6148f1a310125d2f725834421d5038cdd1bc2be1248",
+    "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+    "seed": 43
+  },
+  "admission": {
+    "passed": true,
+    "reconstruction": {
+      "n": 384,
+      "success": 384,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 384,
+      "success": 384,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "gold_next": {
+      "n": 384,
+      "success": 384,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    }
+  },
+  "resources": {
+    "model": "t5gemma",
+    "dimension": 2304,
+    "backbone_parameters": 5596853760,
+    "parameters_per_operator": 76032,
+    "total_editor_parameters": 152064,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 11733758976,
+    "wall_seconds": 496.81317246425897,
+    "job_id": "2652",
+    "step_id": "0"
+  },
+  "no_test_access": true,
+  "no_extra_training_updates": true,
+  "original_formal_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/runs/formal/t5gemma_space_s43"
+}

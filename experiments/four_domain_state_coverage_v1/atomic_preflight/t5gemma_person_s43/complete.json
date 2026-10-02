@@ -1,0 +1,191 @@
+{
+  "task": {
+    "phase": "formal",
+    "model": "t5gemma",
+    "domain": "person",
+    "seed": 43,
+    "index": 22
+  },
+  "status": "atomic_admitted",
+  "checkpoint": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s43/P/best.pt",
+    "sha256": "44a40233053bc13c4912c7cc5de70a700b2c7f3327c65b200be7c04eb3f027b4",
+    "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+    "seed": 43
+  },
+  "admission": {
+    "passed": true,
+    "reconstruction": {
+      "n": 288,
+      "success": 286,
+      "rate": 0.9930555555555556,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 47,
+          "rate": 0.9791666666666666
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 47,
+          "rate": 0.9791666666666666
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.9791666666666666
+    },
+    "atomic": {
+      "n": 288,
+      "success": 288,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "gold_next": {
+      "n": 288,
+      "success": 288,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 48,
+          "success": 48,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    }
+  },
+  "resources": {
+    "model": "t5gemma",
+    "dimension": 2304,
+    "backbone_parameters": 5596853760,
+    "parameters_per_operator": 76032,
+    "total_editor_parameters": 152064,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 11832419840,
+    "wall_seconds": 365.3699135836214,
+    "job_id": "2659",
+    "step_id": "0"
+  },
+  "no_test_access": true,
+  "no_extra_training_updates": true,
+  "original_formal_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/runs/formal/t5gemma_person_s43"
+}

@@ -27,11 +27,12 @@ def components(r,w):
         if t==4:values['fixed_event_relation_preserved']=p.get('fixed_launch',False)
         if t==5:values['quotation_anchor_and_words_preserved']=p.get('quote')==(w['quote_date'],b,c,g.get('foil_quote','The event is tomorrow.').lower())
     elif d=='space':
-        values.update(target_value_correct=p.get('relation')==g['relation'],target_identity_correct=p.get('observer')==a and p.get('relation_object')==g['object'])
+        from space_scope_guard import valid_target_relation,valid_non_target_relations
+        values.update(target_value_correct=valid_target_relation(r['prediction'],g,w),target_identity_correct=p.get('observer')==a and p.get('relation_object')==g['object'])
         if t>=3:
             x,y=w['object_xy'];ox,oy=w['observer_xy'];direction='east' if x>ox else 'west' if x<ox else 'north' if y>oy else 'south';values['absolute_position_preserved']=p.get('absolute')==direction
-        if t==4:values['fixed_observer_preserved']=p.get('views',{}).get(b)==g['fixed_relation']
-        if t==5:values['object_relation_preserved']=p.get('marker_north',False)
+        if t==4:values['fixed_observer_preserved']=valid_non_target_relations(r['prediction'],g,w)
+        if t==5:values['object_relation_preserved']=valid_non_target_relations(r['prediction'],g,w)
     elif d=='emotion':
         focus=w['focus'].lower();other=b if focus==a else a;target=(focus,g['object']);ev=p.get('evaluations',{});expected={target,(other,g['object'])}
         if t==4:expected.add((focus,w['other_object']))

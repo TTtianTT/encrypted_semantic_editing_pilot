@@ -24,7 +24,12 @@ def summary(rows):
     return out
 
 def error_type(r,world):
-    if r.get('current_score') and not r['current_score']['success']:return 'current_text_already_wrong'
+    if r.get('current_score') and not r['current_score']['success']:
+        current=r['current_score']
+        if not current['parseable']:return 'current_text_unresolved'
+        if not current['grammar']:return 'current_text_controlled_grammar_invalid'
+        if not current['scope']:return 'current_text_semantic_mismatch'
+        return 'current_text_unterminated'
     sc=r['score']
     if sc['success']:return 'success'
     if not sc['parseable']:return 'unresolved_parse'
@@ -35,6 +40,7 @@ def error_type(r,world):
     if g['domain']=='time' and g['structure']==5 and p.get('quote')!=(world['quote_date'],world['people'][1].lower(),world['people'][2].lower(),'the event is tomorrow.'):return 'historical_quote_scope'
     if not sc['preserved']:return 'non_target_changed'
     if not sc['target']:return 'current_correct_next_target_wrong' if r.get('current_score',{}).get('success') else 'target_wrong'
+    if not sc['ended']:return 'unterminated_output'
     return 'other_failure'
 
 def keyrow(r):return (r['world_id'],r['state'],r['operation'],r.get('template'),r.get('source'))

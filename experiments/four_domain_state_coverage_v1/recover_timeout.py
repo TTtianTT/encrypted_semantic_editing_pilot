@@ -6,6 +6,8 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('job_id');args=parser.parse_args();parent=args.job_id.split('_')[0];assert '_' in args.job_id
     with (ROOT/'submit.lock').open('a+') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX);ledger=read(ROOT/'submissions.json');submission=next(r for r in ledger if r['job_id']==parent);assert submission['one_gpu_per_task']
+        direct_dependents=[r['job_id'] for r in ledger if r.get('one_gpu_per_task') and any(args.job_id in c.split('=',1)[1].split(':')[1:] for c in r.get('command',[]) if c.startswith('--dependency='))]
+        assert not direct_dependents,('A GPU phase depends on this specific child; requeue could invalidate the phase barrier. Use registered dependent recovery.',direct_dependents)
         queue=subprocess.check_output(['squeue','--array','-h','-u','zailong','-o','%i|%j|%T|%b|%Z'],text=True)
         active=[];other_running=[]
         for line in queue.splitlines():

@@ -1,5 +1,5 @@
 """Archive identity/structure raw predictions and index all Slurm logs on CPU."""
-import gzip
+import gzip,io
 from common import *
 
 def main():
@@ -11,7 +11,7 @@ def main():
             members=sorted(directory.rglob('*.jsonl'))
             if not members:continue
             dest=directory/'predictions.jsonl.gz'
-            with gzip.open(dest,'wt',encoding='utf-8') as f:
+            with dest.open('wb') as raw, gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=0) as gz, io.TextIOWrapper(gz,encoding='utf-8',newline='\n') as f:
                 for p in members:
                     for r in rows(p):f.write(json.dumps(dict(artifact=str(p.relative_to(base)),row=r),ensure_ascii=False)+'\n')
             archives.append(dict(study=study,archive=str(dest.relative_to(base)),sha256=digest(dest),members=[dict(path=str(p.relative_to(base)),sha256=digest(p),rows=len(rows(p))) for p in members]))

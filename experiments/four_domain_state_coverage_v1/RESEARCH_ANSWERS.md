@@ -2,7 +2,7 @@
 
 1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/emotion只说明此配置基础能力不足。仍待完成：bart/space、t5gemma/time、t5gemma/space、t5gemma/emotion、t5gemma/person。
 
-2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/time/H0：1seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：1seed均值+0.00pp，范围[+0.00,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。
+2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/time/H0：2seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：1seed均值+0.00pp，范围[+0.00,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。
 
 3. 三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：bart/time P自然IID2304/2304，留出表达322/1152；bart/person P自然IID1152/1152，留出表达122/576；t5gemma/time P自然IID2304/2304，留出表达663/1152。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。
 

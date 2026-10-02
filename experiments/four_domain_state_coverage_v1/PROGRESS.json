@@ -1,11 +1,11 @@
 {
-  "at_utc": "2026-10-02T16:54:04.477221+00:00",
+  "at_utc": "2026-10-02T19:01:00.992822+00:00",
   "stages": {
     "formal": {
       "completed": 7,
       "not_admitted": 6,
-      "in_progress": 3,
-      "not_started": 14
+      "in_progress": 11,
+      "not_started": 6
     },
     "identity_probe": {
       "not_started": 30
@@ -286,7 +286,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 22
+      "completed_prediction_shards": 39
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -307,7 +307,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 32
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -315,10 +315,20 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 43,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 6
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -326,10 +336,20 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 44,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 4
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -337,9 +357,11 @@
       "model": "t5gemma",
       "domain": "emotion",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -348,9 +370,11 @@
       "model": "t5gemma",
       "domain": "emotion",
       "seed": 43,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -359,9 +383,11 @@
       "model": "t5gemma",
       "domain": "emotion",
       "seed": 44,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -370,9 +396,11 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -381,9 +409,11 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 43,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -392,9 +422,11 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 44,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -950,7 +982,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 8.889166666666668,
+  "gpu_hours_at_last_account": 12.746666666666666,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {
@@ -992,6 +1024,14 @@
     {
       "phase": "position_foils",
       "job_id": "2621"
+    },
+    {
+      "phase": "atomic_preflight_remaining",
+      "job_id": "2650"
+    },
+    {
+      "phase": "atomic_preflight_release",
+      "job_id": "2651"
     }
   ]
 }

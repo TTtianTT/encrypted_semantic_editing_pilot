@@ -44,7 +44,7 @@ def main():
             if not ap.exists():evaluate.atomic(eng,ed,dev,ws,ap)
             if not np.exists():evaluate.gold_next(eng,ed,dev,ws,np)
             aa=rows(ap);nn=rows(np)
-            for variant in (0,1):
+            for variant in sorted({r['template'] for r in dev}):
                 ri=evaluate.rates([r for r in rec if r['template']==variant]);ar=evaluate.rates([r for r in aa if r['template']==variant]);nr=evaluate.rates([r for r in nn if r['template']==variant]);g=eng.cfg['gate'];passed=ri['rate']>=g['reconstruction'] and ar['rate']>=g['atomic'] and nr['rate']>=g['atomic'] and min(ar['min_cell'],nr['min_cell'])>=g['min_cell']
                 gates.append(dict(seed=seed,variant=variant,status='admitted' if passed else 'not_admitted',reconstruction=ri,atomic=ar,gold_next=nr,thresholds=g));dump(dest/'gates.json',gates)
         for gate in [r for r in gates if r['seed']==seed and r.get('status')=='admitted']:

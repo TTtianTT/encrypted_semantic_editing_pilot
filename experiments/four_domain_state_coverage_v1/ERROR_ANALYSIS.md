@@ -14,7 +14,8 @@
 |bart|person|unresolved_parse|41973|
 |bart|person|participant_or_owner_binding|15199|
 |bart|person|controlled_grammar_invalid|9816|
-|bart|person|current_text_already_wrong|8608|
+|bart|person|current_text_unresolved|4736|
+|bart|person|current_text_semantic_mismatch|3872|
 |bart|person|non_target_changed|3208|
 |bart|person|current_correct_next_target_wrong|7|
 |bart|person|target_wrong|3|
@@ -23,24 +24,27 @@
 |bart|space|controlled_grammar_invalid|67|
 |bart|time|unresolved_parse|35373|
 |bart|time|target_wrong|22779|
-|bart|time|current_text_already_wrong|19128|
+|bart|time|current_text_semantic_mismatch|17152|
 |bart|time|historical_quote_scope|7830|
 |bart|time|current_correct_next_target_wrong|7437|
 |bart|time|controlled_grammar_invalid|3993|
+|bart|time|current_text_controlled_grammar_invalid|1960|
 |bart|time|non_target_changed|571|
-|t5gemma|space|unresolved_parse|3986|
-|t5gemma|space|controlled_grammar_invalid|3032|
-|t5gemma|space|current_text_already_wrong|2304|
-|t5gemma|space|non_target_changed|1291|
-|t5gemma|space|target_wrong|61|
-|t5gemma|space|current_correct_next_target_wrong|18|
-|t5gemma|time|current_correct_next_target_wrong|16530|
-|t5gemma|time|unresolved_parse|9524|
-|t5gemma|time|current_text_already_wrong|7692|
-|t5gemma|time|controlled_grammar_invalid|7223|
-|t5gemma|time|target_wrong|6905|
-|t5gemma|time|historical_quote_scope|4805|
-|t5gemma|time|non_target_changed|1739|
+|bart|time|current_text_unresolved|16|
+|t5gemma|space|controlled_grammar_invalid|10077|
+|t5gemma|space|unresolved_parse|6984|
+|t5gemma|space|current_text_controlled_grammar_invalid|6144|
+|t5gemma|space|non_target_changed|4192|
+|t5gemma|space|target_wrong|548|
+|t5gemma|space|current_correct_next_target_wrong|331|
+|t5gemma|time|current_correct_next_target_wrong|18984|
+|t5gemma|time|unresolved_parse|10419|
+|t5gemma|time|target_wrong|8479|
+|t5gemma|time|controlled_grammar_invalid|7711|
+|t5gemma|time|current_text_semantic_mismatch|5728|
+|t5gemma|time|historical_quote_scope|5539|
+|t5gemma|time|current_text_controlled_grammar_invalid|3016|
+|t5gemma|time|non_target_changed|1936|
 
 
 
