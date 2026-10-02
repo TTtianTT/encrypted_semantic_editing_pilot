@@ -1,10 +1,10 @@
 {
-  "at_utc": "2026-10-02T22:05:49.136740+00:00",
+  "at_utc": "2026-10-02T23:29:31.830599+00:00",
   "stages": {
     "formal": {
-      "completed": 10,
+      "completed": 11,
       "not_admitted": 6,
-      "in_progress": 8,
+      "in_progress": 7,
       "not_started": 6
     },
     "identity_probe": {
@@ -378,14 +378,20 @@
       "model": "t5gemma",
       "domain": "emotion",
       "seed": 43,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
         "P",
         "Q",
-        "U"
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
       ],
-      "completed_prediction_shards": 0
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -398,9 +404,15 @@
       "checkpoints": [
         "P",
         "Q",
-        "U"
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
       ],
-      "completed_prediction_shards": 0
+      "completed_prediction_shards": 35
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -411,7 +423,9 @@
       "status": "in_progress",
       "gate_passed": true,
       "checkpoints": [
-        "P"
+        "P",
+        "Q",
+        "U"
       ],
       "completed_prediction_shards": 0
     },
@@ -994,7 +1008,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 18.952777777777786,
+  "gpu_hours_at_last_account": 21.720555555555563,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

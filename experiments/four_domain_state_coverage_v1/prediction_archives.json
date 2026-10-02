@@ -2985,6 +2985,373 @@
     ]
   },
   {
+    "run": "runs/formal/t5gemma_emotion_s43",
+    "archive": "runs/formal/t5gemma_emotion_s43/predictions.jsonl.gz",
+    "sha256": "8031639e7fe19c8d9f46515598043f9e0f1ae1340ae62695fbfd540ac35d56d6",
+    "members": [
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/dev/atomic.jsonl",
+        "sha256": "2f2ad9f9108241dd0919c18b033a4ee08e7680f593d2c4f7f2abfe38cbf42332",
+        "rows": 384
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/dev/gold_next.jsonl",
+        "sha256": "153789938bfb16ea658f7506906eb4cc5b7c9ee7d02d19e9d94a765342a28688",
+        "rows": 288
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/dev/reconstruction.jsonl",
+        "sha256": "25181d7d6b9fbe95e9135a445598dfafda1083f090de00a355bc1615517a2a25",
+        "rows": 384
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/atomic_challenge.jsonl",
+        "sha256": "717ee4c93cf93f0125f8b7bc93ea11881712bc6c91ad7d514e5c450096e9d1ae",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/atomic_expression.jsonl",
+        "sha256": "117accabf7bbe372ad082d2749a350a58058a8a70245823303c88ff7bbda9309",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/cohort_h0_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/cohort_h0_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/matrix_h0_t0.jsonl",
+        "sha256": "143951d516ec671566bb967b80de0c8d34f907f91a184e5665ba85b3352fee9c",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/matrix_h0_t2.jsonl",
+        "sha256": "aa21828b149d858406ead8a4624a4e57cf426c22ec07476d8fd3b9dfd88c3a89",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/trajectory_t0.jsonl",
+        "sha256": "17742906985e9c7ff64e85d5261283a43f28e230af6146ef8f7724e73f30443e",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h0/trajectory_t2.jsonl",
+        "sha256": "585835abf340dfb647c9ec9f60cd61054f7c73694392614eacf61e6e20d31c4f",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/atomic_challenge.jsonl",
+        "sha256": "0bbffc93de3cd299f138c25ba61c86511d9e944862df55fb5650105f116189ac",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/atomic_expression.jsonl",
+        "sha256": "e78b34a7c63f07891d054c999bba8030b3cd4361e375077219ad9468eeaeb136",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/cohort_h1_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/cohort_h1_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/matrix_h1_t0.jsonl",
+        "sha256": "893580f81c7099acf1c9f4a808c53a8c9877e219cdfb05b921c4cdf37dfe2eb0",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/matrix_h1_t2.jsonl",
+        "sha256": "c081d8fd793c65aa767ff865a2c8235ea9aeacbad479411f90bfeff243d4945a",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/trajectory_t0.jsonl",
+        "sha256": "6e891e4a70393adfab44244954964c903981a981de223a6de5b25ea859c34ff7",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/M_h1/trajectory_t2.jsonl",
+        "sha256": "6a73d90fc1daa22619cd6b05b03943aeaf818ca677a4f43d37257062c3d574ec",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/atomic_challenge.jsonl",
+        "sha256": "beb3ddb3abea1c1acc4820fa218afb1d74a778fe8db62cf521c26f52221790a7",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/atomic_expression.jsonl",
+        "sha256": "5fe9631698063e1f0c549c136e7318430298707ba39991407f9b1195a4359353",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/cohort_h0_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/cohort_h0_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/matrix_h0_t0.jsonl",
+        "sha256": "df1ec6789bb249900ec802a30bd1d4e78c206b4dc56d5e44a8ba834c000b4abd",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/matrix_h0_t2.jsonl",
+        "sha256": "bd46807ee265ce819e8ee6e246668da44e919d4f15a30ffdc7b74753bc32d04f",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/trajectory_t0.jsonl",
+        "sha256": "a1975379a1c665b7cbac8d422d19c9e711c7dfe8856e25bb30cbc75816c10422",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h0/trajectory_t2.jsonl",
+        "sha256": "494a3fe92ab4cfea7989c9c46bda835035ea161d689e850bf862e5e597e00b62",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/atomic_challenge.jsonl",
+        "sha256": "ef63d05d4533cf05dce5c6bbe62adcba0b4972a4f3e88aad8edb236c9de8edab",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/atomic_expression.jsonl",
+        "sha256": "ba1b58c4918d76dbbbc844f11d8d0fa325c06a2ed0949f744b8592c5a3f0f2f5",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/cohort_h1_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/cohort_h1_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/matrix_h1_t0.jsonl",
+        "sha256": "832a0e3e4dd35395ab96aebab4bba0d238d3dcc1c3815464afcaea2d129533b1",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/matrix_h1_t2.jsonl",
+        "sha256": "e1ea3ec447af8dfae3f2846a5ca9563e9b6fc481b82130218bf6a2955dcfddf7",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/trajectory_t0.jsonl",
+        "sha256": "8d8aa66cc0bfc7d575acdabe926de684ff672190b34a57ff69e1d7db8782b05b",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/N_h1/trajectory_t2.jsonl",
+        "sha256": "c65ce35e896012fba14b7d329b31de391e01290a6f10972984b61f0fbafd5ea7",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/atomic_challenge.jsonl",
+        "sha256": "89df50908ff91633852763e66174271f45740af7b4a0fedcb3dd1efe0c0b4050",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/atomic_expression.jsonl",
+        "sha256": "ea790829c9f5af629205b425b8d648c950fdb46f5cef7c757386b36209797eda",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/cohort_h0_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/cohort_h0_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/cohort_h1_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/cohort_h1_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/matrix_h0_t0.jsonl",
+        "sha256": "d768ca1b5c88fc78c9237f35055abceecfc8ac7f3b3ff207402f0e18d8245722",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/matrix_h0_t2.jsonl",
+        "sha256": "8b5223ed7f5b3e76be87e7ac7cc41aa6e4f53e45fe256b60d6d49317fe2257ff",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/matrix_h1_t0.jsonl",
+        "sha256": "1470c1686aabfcd5c9ff39bb953aeab604a679fa2c2901496c96f81cff228169",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/matrix_h1_t2.jsonl",
+        "sha256": "ffaf694d75d706889169595bea17a4cd0d268176684560a648f7831b469e59b2",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/trajectory_t0.jsonl",
+        "sha256": "162de43adbfac583f567f6a0a51357c3b7a3865ce910ec2debd97db48b272105",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/P/trajectory_t2.jsonl",
+        "sha256": "df1cb8dc5f750812aa4fc6868a2dbec1f04e34f3d508ebafa93595526c45151c",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/atomic_challenge.jsonl",
+        "sha256": "1cce51a11fabe0923be3957ecf14d6213162ff188d3403cdda08b26d35d75e2f",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/atomic_expression.jsonl",
+        "sha256": "fd460478296121911d8d4b314f0afa22c6e267851e315c4c7c39d841ce003420",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/cohort_h0_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/cohort_h0_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/matrix_h0_t0.jsonl",
+        "sha256": "a187915676607cdff0a0255970a1d76c1919c14cd25cdc2a8cf46fd45a135e1f",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/matrix_h0_t2.jsonl",
+        "sha256": "57364def1378cce31db667aec58c5d989c39cfd3efab27109ca4a1f1d7ab10f8",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/trajectory_t0.jsonl",
+        "sha256": "dbabfc76d58c5d2418d9a458e46c092df6c3408cf263d3ac7afcd98a7839c671",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h0/trajectory_t2.jsonl",
+        "sha256": "7fb60113203dab99a224d2ab53c7e85b03d3d80d1e9ef6d8c5b421b85f0be54e",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/atomic_challenge.jsonl",
+        "sha256": "2ac7793163f11d41b0cafa8b67a86f98456985d034779af897e2a1acbae79239",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/atomic_core.jsonl",
+        "sha256": "cd2f9d689bee233f457de0913dcf20ff7407f8165c8a1e00b17614c881534d87",
+        "rows": 512
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/atomic_expression.jsonl",
+        "sha256": "d464bf5a4c96d5b0c2da9c5a21007d1671efa6c40fa13da3c3000d9f132007b1",
+        "rows": 256
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/cohort_h1_t0.jsonl",
+        "sha256": "fdce4357dc7d464901d26d92a5f3c21cd86c94b30c4e4e93ac33325a27416d52",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/cohort_h1_t2.jsonl",
+        "sha256": "f4e971ce514a03594727b98f6654f376336cf102cd1f445d31724b737d64dde0",
+        "rows": 160
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/matrix_h1_t0.jsonl",
+        "sha256": "2e06ea67f916ce4716b4889622a87e5046186f236514083326629e9dda5129aa",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/matrix_h1_t2.jsonl",
+        "sha256": "68fe8bcc8b1c2032e7b25db914c1a05cc2bb437ed242d6b2038ec6e2b0b1928b",
+        "rows": 768
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/trajectory_t0.jsonl",
+        "sha256": "56150ddeb4945d13da2b68eaf26b7961b859098ccab4f5beff738b3d75f2b181",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/outputs/S_h1/trajectory_t2.jsonl",
+        "sha256": "87ac900fc5e2f4d98e234ab1d4ac50269227a7214509feffec6f76b8c15c9a0c",
+        "rows": 1248
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/probe_per_world.jsonl",
+        "sha256": "ba2a8c950eddc6ac1927bfe70b67d9b492ee4866cbe6e1925540360a40dfb0b4",
+        "rows": 2880
+      },
+      {
+        "path": "runs/formal/t5gemma_emotion_s43/test_reconstruction.jsonl",
+        "sha256": "490dcbbc082491a5de62cfcb676e291010c7731076b4da60256b4e8bb8778afa",
+        "rows": 512
+      }
+    ]
+  },
+  {
     "run": "runs/formal/t5gemma_space_s43",
     "archive": "runs/formal/t5gemma_space_s43/predictions.jsonl.gz",
     "sha256": "bc71b8e6cb7d83ae3c7d4b96cf71b39c503e9368b648f6df0a90c3d753709454",
