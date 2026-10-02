@@ -128,7 +128,7 @@ def main():
             if vals:means.append(dict(**json.loads(key),metric=metric,seeds=','.join(str(r['seed']) for r in rr if r.get(metric) is not None),seed_count=len(vals),mean=statistics.mean(vals),minimum=min(vals),maximum=max(vals)))
     writecsv(ROOT/'mean_and_range.csv',means)
     # Paired S/M and capability gains/losses on original fixed worlds/inputs.
-    contrasts=[];regressions=[];phenomena=[]
+    contrasts=[];direction_contrasts=[];regressions=[];phenomena=[]
     for (model,d,seed,role),shards in payloads.items():
         for name,rr in shards.items():
             if not name.startswith('trajectory'):continue
@@ -153,7 +153,16 @@ def main():
                             matched=[(r,ml[keyrow(r)]) for r in S if keyrow(r) in ml and r['source']==source and r['state_heldout'] and r['common_match']]
                             raw=[(r,ml[keyrow(r)]) for r in S if keyrow(r) in ml and r['source']==source and r['state_heldout']]
                             for cohort,paired in [('fixed_fulltext_mask',matched),('all_candidates',raw)]:
-                                if paired:contrasts.append(dict(model=model,domain=d,seed=seed,holdout_split=h,template=template,source=source,cohort=cohort,n=len(paired),worlds=len({a['world_id'] for a,b in paired}),S_k=sum(a['score']['success'] for a,b in paired),M_k=sum(b['score']['success'] for a,b in paired),M_minus_S=(sum(b['score']['success']-a['score']['success'] for a,b in paired))/len(paired)))
+                                if paired:
+                                    meta=dict(model=model,domain=d,seed=seed,holdout_split=h,template=template,source=source,cohort=cohort)
+                                    contrasts.append(dict(**meta,n=len(paired),worlds=len({a['world_id'] for a,b in paired}),S_k=sum(a['score']['success'] for a,b in paired),M_k=sum(b['score']['success'] for a,b in paired),M_minus_S=(sum(b['score']['success']-a['score']['success'] for a,b in paired))/len(paired)))
+                                    by_operation=defaultdict(list)
+                                    for a,b in paired:
+                                        assert a['operation']==b['operation']
+                                        by_operation[a['operation']].append((a,b))
+                                    assert sum(len(v) for v in by_operation.values())==len(paired)
+                                    for operation,values in sorted(by_operation.items()):
+                                        direction_contrasts.append(dict(**meta,operation=operation,n=len(values),worlds=len({a['world_id'] for a,b in values}),S_k=sum(a['score']['success'] for a,b in values),M_k=sum(b['score']['success'] for a,b in values),M_minus_S=sum(b['score']['success']-a['score']['success'] for a,b in values)/len(values)))
                     for role in ('N','S','M'):
                         shards=payloads.get((model,d,seed,f'{role}_h{h}'),{})
                         for name,rr in shards.items():
@@ -161,7 +170,7 @@ def main():
                             previous={keyrow(r):r for r in base[name]};paired=[(previous[keyrow(r)],r) for r in rr if keyrow(r) in previous]
                             if name.startswith('matrix'):paired=[(a,b) for a,b in paired if a['current_score']['success']]
                             if paired:regressions.append(dict(model=model,domain=d,seed=seed,condition=role,holdout_split=h,shard=name,n=len(paired),P_success_k=sum(a['score']['success'] for a,b in paired),condition_success_k=sum(b['score']['success'] for a,b in paired),old_success_lost=sum(a['score']['success'] and not b['score']['success'] for a,b in paired),old_failure_repaired=sum(not a['score']['success'] and b['score']['success'] for a,b in paired)))
-    writecsv(ROOT/'M_vs_S.csv',contrasts);writecsv(ROOT/'capability_regressions.csv',regressions)
+    writecsv(ROOT/'M_vs_S.csv',contrasts);writecsv(ROOT/'M_vs_S_by_operation.csv',direction_contrasts);writecsv(ROOT/'capability_regressions.csv',regressions)
     writecsv(ROOT/'current_correct_next_failure.csv',phenomena)
     dump(ROOT/'analysis_audit.json',dict(predictions_independently_rescored=allrows,case_selection='first6 per model/domain/error by fixed world/condition/artifact hash, not best seed',bootstrap='not used; per-seed counts plus mean/min/max',complete_formal_runs=sum(r['phase']=='formal' and r['status']=='completed' for r in status),status_rows=len(status)))
     print('Analyzed',allrows,'predictions;',len(contrasts),'paired contrasts')

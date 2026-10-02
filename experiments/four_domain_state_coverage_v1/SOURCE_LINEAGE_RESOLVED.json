@@ -1232,7 +1232,7 @@
         "selected_dev_step": 600,
         "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1249,7 +1249,7 @@
         "selected_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
         "relationship": "same optimization trajectory; Qstep300 is not a child initialized from selected P. Legacy raw parent field identifies the associated P run only."
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1265,7 +1265,7 @@
         "selected_dev_step": 600,
         "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1289,7 +1289,7 @@
         ],
         "optimization_seed": 20042
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1311,7 +1311,7 @@
         "natural_control_states": [],
         "optimization_seed": 20042
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1335,7 +1335,7 @@
         "natural_control_states": [],
         "optimization_seed": 20042
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1359,7 +1359,7 @@
         ],
         "optimization_seed": 20043
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1381,7 +1381,7 @@
         "natural_control_states": [],
         "optimization_seed": 20043
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1405,7 +1405,7 @@
         "natural_control_states": [],
         "optimization_seed": 20043
       },
-      "formal_task_complete": false
+      "formal_task_complete": true
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1417,6 +1417,39 @@
       "resolved_lineage": {
         "initialization": "new identity editor",
         "optimization_seed": 43,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "run": "t5gemma_emotion_s43",
+      "role": "Q",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/P/step300.pt",
+      "raw_sha256": "acf1a49cc843a1baad173e84f248ce0e53e97768b4126c3809ac98c01ca5032e",
+      "step": 300,
+      "resolved_lineage": {
+        "atomic_optimization_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/P",
+        "optimization_seed": 43,
+        "trajectory_snapshot_step": 300,
+        "selected_P_step": 600,
+        "selected_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "relationship": "same optimization trajectory; Qstep300 is not a child initialized from selected P. Legacy raw parent field identifies the associated P run only."
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "run": "t5gemma_emotion_s43",
+      "role": "U",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/U/best.pt",
+      "raw_sha256": "69bf100da694b1208d846b3eb54acef6baeaa75369152940efca5d92856f42c7",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 10043,
         "atomic_updates_executed": 600,
         "selected_dev_step": 600,
         "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
@@ -2610,7 +2643,7 @@
       "formal_task_complete": false
     }
   ],
-  "raw_checkpoints_verified": 128,
+  "raw_checkpoints_verified": 130,
   "legacy_metadata_preserved": true,
   "historical_editor_weights_used": false,
   "no_cuda_initialized": true

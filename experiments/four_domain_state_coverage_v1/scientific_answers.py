@@ -41,6 +41,15 @@ def research_answers():
     for (m,d,h),vv in sorted(deltas.items()):
         values=[x for s,x in sorted(vv)];contrasts.append(f'{m}/{d}/H{h}：{len(values)}seed均值{statistics.mean(values)*100:+.2f}pp，范围[{min(values)*100:+.2f},{max(values)*100:+.2f}]pp')
     a2='留出状态×留出U、固定同全文/mask集合的M−S：'+('；'.join(contrasts) if contrasts else '尚无完成的对照')+'。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。'
+    directional=defaultdict(list)
+    for r in readcsv(ROOT,'M_vs_S_by_operation.csv'):
+        if r['domain']=='emotion' and r['source']=='U' and r['template']=='0' and r['cohort']=='fixed_fulltext_mask':
+            directional[(r['model'],int(r['holdout_split']),r['operation'])].append(r)
+    direction_notes=[]
+    for (m,h,op),rr in sorted(directional.items()):
+        values=[float(r['M_minus_S']) for r in rr];s=[int(r['S_k'])/int(r['n']) for r in rr];v=[int(r['M_k'])/int(r['n']) for r in rr]
+        direction_notes.append(f"{m}/emotion/H{h}/{'提高' if op=='plus' else '降低'}：{len(rr)}seed，S均值{statistics.mean(s)*100:.2f}%、M均值{statistics.mean(v)*100:.2f}%，M−S均值{statistics.mean(values)*100:+.2f}pp[{min(values)*100:+.2f},{max(values)*100:+.2f}]")
+    a2+=' 操作方向分项保存在M_vs_S_by_operation.csv，使用同一固定候选集按plus/minus分组，未改变评分或选集。'+('情感方向结果：'+'；'.join(direction_notes)+'；方向间不能相互代替。' if direction_notes else '')
     transfer=[];scope=[];source_state=[]
     for (m,d),base in primary().items():
         rr=readcsv(base,'summary_by_seed.csv')
