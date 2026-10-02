@@ -1,0 +1,35 @@
+{
+  "review": "assistant review, not independent human annotation; first content world for every seed and every eligible step2 trajectory; no worst-case or best-seed selection",
+  "cases": 9,
+  "counts": [
+    {
+      "seed": 42,
+      "eligible": 96,
+      "strict_success": 1,
+      "strict_failed": 95,
+      "parsed_slot_mismatch": 64,
+      "unresolved": 31,
+      "selection_world": "emotion_0120"
+    },
+    {
+      "seed": 43,
+      "eligible": 96,
+      "strict_success": 0,
+      "strict_failed": 96,
+      "parsed_slot_mismatch": 37,
+      "unresolved": 59,
+      "selection_world": "emotion_0120"
+    },
+    {
+      "seed": 44,
+      "eligible": 96,
+      "strict_success": 2,
+      "strict_failed": 94,
+      "parsed_slot_mismatch": 21,
+      "unresolved": 73,
+      "selection_world": "emotion_0120"
+    }
+  ],
+  "all_eligible_success_counterexamples_saved": 3,
+  "formal_NS_M_completion": "seeds43/44 still evaluating at review time"
+}
