@@ -1,0 +1,207 @@
+{
+  "reviewer": "Codex assistant; not independent human annotation",
+  "selection": "first dev reconstruction failure per domain/seed/three score categories; all seeds42/43/44 retained",
+  "cases": [
+    {
+      "domain": "space",
+      "seed": 42,
+      "category": "unresolved",
+      "world_id": "space_0104",
+      "state": 1,
+      "template": 0,
+      "outcome": "confirmed_incomplete_fact",
+      "note": "The white lacks the object/color predication present in the source.",
+      "prediction_sha": "b64716ef973f15b2df4dd6a17021cb87ee3b2f7c62476190eadadc2075ba84f0"
+    },
+    {
+      "domain": "space",
+      "seed": 42,
+      "category": "grammar_unresolved",
+      "world_id": "space_0106",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_new_fact_and_referent_change",
+      "note": "Adds coffee/color information and changes the singular cup predication.",
+      "prediction_sha": "3ef16a242b9a67d377737ae94e5fd4146a29386f0ad9c47548d90a0c8d16cd71"
+    },
+    {
+      "domain": "space",
+      "seed": 42,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "space_0096",
+      "state": 3,
+      "template": 0,
+      "outcome": "confirmed_fact_object_change",
+      "note": "Replaces the color-bearing key with light while retaining the relative key clause.",
+      "prediction_sha": "07551e70a4cdd7232c86bb489ab3b363e4132f8bf354a3d22858bf0eba785e42"
+    },
+    {
+      "domain": "space",
+      "seed": 43,
+      "category": "unresolved",
+      "world_id": "space_0104",
+      "state": 1,
+      "template": 0,
+      "outcome": "confirmed_incomplete_fact",
+      "note": "The white lacks the object/color predication present in the source.",
+      "prediction_sha": "b64716ef973f15b2df4dd6a17021cb87ee3b2f7c62476190eadadc2075ba84f0"
+    },
+    {
+      "domain": "space",
+      "seed": 43,
+      "category": "grammar_unresolved",
+      "world_id": "space_0106",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_new_fact_and_referent_change",
+      "note": "Adds coffee/color information and changes the singular cup predication.",
+      "prediction_sha": "3ef16a242b9a67d377737ae94e5fd4146a29386f0ad9c47548d90a0c8d16cd71"
+    },
+    {
+      "domain": "space",
+      "seed": 43,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "space_0096",
+      "state": 3,
+      "template": 0,
+      "outcome": "confirmed_fact_object_change",
+      "note": "Replaces the color-bearing key with light while retaining the relative key clause.",
+      "prediction_sha": "07551e70a4cdd7232c86bb489ab3b363e4132f8bf354a3d22858bf0eba785e42"
+    },
+    {
+      "domain": "space",
+      "seed": 44,
+      "category": "unresolved",
+      "world_id": "space_0104",
+      "state": 1,
+      "template": 0,
+      "outcome": "confirmed_incomplete_fact",
+      "note": "The white lacks the object/color predication present in the source.",
+      "prediction_sha": "b64716ef973f15b2df4dd6a17021cb87ee3b2f7c62476190eadadc2075ba84f0"
+    },
+    {
+      "domain": "space",
+      "seed": 44,
+      "category": "grammar_unresolved",
+      "world_id": "space_0106",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_new_fact_and_referent_change",
+      "note": "Adds coffee/color information and changes the singular cup predication.",
+      "prediction_sha": "3ef16a242b9a67d377737ae94e5fd4146a29386f0ad9c47548d90a0c8d16cd71"
+    },
+    {
+      "domain": "space",
+      "seed": 44,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "space_0096",
+      "state": 3,
+      "template": 0,
+      "outcome": "confirmed_fact_object_change",
+      "note": "Replaces the color-bearing key with light while retaining the relative key clause.",
+      "prediction_sha": "07551e70a4cdd7232c86bb489ab3b363e4132f8bf354a3d22858bf0eba785e42"
+    },
+    {
+      "domain": "emotion",
+      "seed": 42,
+      "category": "unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 1,
+      "outcome": "confirmed_corrupt_expression",
+      "note": "Broken As For clause and dislits are not a reasonable complete paraphrase.",
+      "prediction_sha": "b8cff8d749df0ece6497de07d98d89da7c4b4b784dcd62dc5cdd8e95ad3d0652"
+    },
+    {
+      "domain": "emotion",
+      "seed": 42,
+      "category": "grammar_unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_corrupt_extra_clause",
+      "note": "The extra Alice dislits clause contains a corrupted stance word despite recognized evaluation slots.",
+      "prediction_sha": "e82435f57f7f85af3ac95875ff26bc1b0dd125b08851d02753afdb28cb48a7f4"
+    },
+    {
+      "domain": "emotion",
+      "seed": 42,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "emotion_0109",
+      "state": 3,
+      "template": 0,
+      "outcome": "unadjudicated_referent_number_change",
+      "note": "Ticket to tickets may be a reasonable type/copy paraphrase, or a different plural referent; the finite singular-object scorer rejects it. Do not label this case confirmed semantic error.",
+      "prediction_sha": "f048666469c167774461a60ff0dbe98eae4aee393674413a171370971599874b"
+    },
+    {
+      "domain": "emotion",
+      "seed": 43,
+      "category": "unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 1,
+      "outcome": "confirmed_corrupt_expression",
+      "note": "Broken As For clause and dislits are not a reasonable complete paraphrase.",
+      "prediction_sha": "b8cff8d749df0ece6497de07d98d89da7c4b4b784dcd62dc5cdd8e95ad3d0652"
+    },
+    {
+      "domain": "emotion",
+      "seed": 43,
+      "category": "grammar_unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_corrupt_extra_clause",
+      "note": "The extra Alice dislits clause contains a corrupted stance word despite recognized evaluation slots.",
+      "prediction_sha": "e82435f57f7f85af3ac95875ff26bc1b0dd125b08851d02753afdb28cb48a7f4"
+    },
+    {
+      "domain": "emotion",
+      "seed": 43,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "emotion_0109",
+      "state": 3,
+      "template": 0,
+      "outcome": "unadjudicated_referent_number_change",
+      "note": "Ticket to tickets may be a reasonable type/copy paraphrase, or a different plural referent; the finite singular-object scorer rejects it. Do not label this case confirmed semantic error.",
+      "prediction_sha": "f048666469c167774461a60ff0dbe98eae4aee393674413a171370971599874b"
+    },
+    {
+      "domain": "emotion",
+      "seed": 44,
+      "category": "unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 1,
+      "outcome": "confirmed_corrupt_expression",
+      "note": "Broken As For clause and dislits are not a reasonable complete paraphrase.",
+      "prediction_sha": "b8cff8d749df0ece6497de07d98d89da7c4b4b784dcd62dc5cdd8e95ad3d0652"
+    },
+    {
+      "domain": "emotion",
+      "seed": 44,
+      "category": "grammar_unresolved",
+      "world_id": "emotion_0096",
+      "state": 0,
+      "template": 0,
+      "outcome": "confirmed_corrupt_extra_clause",
+      "note": "The extra Alice dislits clause contains a corrupted stance word despite recognized evaluation slots.",
+      "prediction_sha": "e82435f57f7f85af3ac95875ff26bc1b0dd125b08851d02753afdb28cb48a7f4"
+    },
+    {
+      "domain": "emotion",
+      "seed": 44,
+      "category": "parsed_semantic_mismatch",
+      "world_id": "emotion_0109",
+      "state": 3,
+      "template": 0,
+      "outcome": "unadjudicated_referent_number_change",
+      "note": "Ticket to tickets may be a reasonable type/copy paraphrase, or a different plural referent; the finite singular-object scorer rejects it. Do not label this case confirmed semantic error.",
+      "prediction_sha": "f048666469c167774461a60ff0dbe98eae4aee393674413a171370971599874b"
+    }
+  ],
+  "unique_predictions": 6,
+  "conclusion": "Clear reconstruction corruption exists before composition. Three examples involve unadjudicated plural referents; no semantic-error claim for them. Admission remains the frozen strict task gate, not unrestricted semantic equivalence.",
+  "unadjudicated_cases": 3
+}

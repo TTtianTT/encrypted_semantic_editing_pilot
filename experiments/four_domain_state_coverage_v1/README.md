@@ -71,6 +71,13 @@ adds emotion variants2/3 for explicit narrator I versus someone else's quoted I;
 while original emotion0/1 retain multi-object clause_order. No training or
 checkpoint selection changed. See POSITION_NARRATOR_AMENDMENT, POSITION_*REVISION
 and archived prior code/data/locks under protocol_revisions.
+The first guard also falsely rejected twelve correct relative-clause paraphrases
+in later original-space predictions. These provisional rejection claims were
+retracted; the original model scores were correct. POSITION_PARAPHRASE_GUARD_REVISION
+retains the old guard, lock and candidate audit, adds224 positive paraphrase checks,
+and freezes the correction before diagnostic GPU work. Guard results are now
+consistent/contradictory/unknown; an unrecognized phrase is not a confirmed model
+false positive. Additional diagnostics mark unsupported guard wording unresolved.
 
 `progress.py` creates a CPU-only task/checkpoint/shard snapshot in PROGRESS.md/json.
 Run account.py first for fresh GPU-hours. Components and exposure definitions are

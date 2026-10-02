@@ -1,4 +1,7 @@
-"""Independent named-observer consistency check; no gold renderer imports."""
+"""Independent named-observer check: True, explicit contradiction False, else None.
+
+No gold renderer imports. Unrecognized wording is not a confirmed contradiction.
+"""
 import re
 
 def valid_target_relation(text,g,w):
@@ -10,18 +13,23 @@ def valid_target_relation(text,g,w):
             if not header or header[1]!=a:return False
             if (m[1] or m[2])!=obj:return False
             target.append(relation)
+    paraphrases=[('front','in front of me'),('back','behind me'),('right','to my right'),('left','to my left')]
+    for relation,phrase in paraphrases:
+        for m in re.finditer(r'i see the ([a-z]+)(?: that is)? '+phrase+r'\.',t):
+            if not header or header[1]!=a or m[1]!=obj:return False
+            target.append(relation)
     for m in re.finditer(r"from ([a-z]+)'s viewpoint, (?:the ([a-z]+)|(it)) is on the (front|right|back|left) side\.",t):
         if m[1]!=a:continue
         if m[2] is not None and m[2]!=obj:return False
         target.append(m[4])
-    return bool(target) and all(relation==g['relation'] for relation in target)
+    return all(relation==g['relation'] for relation in target) if target else None
 
 def valid_non_target_relations(text,g,w):
     t=re.sub(r'\s+',' ',text.strip().replace('\u2019',"'")).lower();obj=g['object']
     if g['structure']==4:
         b=w['people'][1].lower();clauses=[m for m in re.finditer(r"from ([a-z]+)'s viewpoint, (?:the ([a-z]+)|(it)) is on the (front|right|back|left) side\.",t) if m[1]==b]
-        return bool(clauses) and all((m[2] is None or m[2]==obj) and m[4]==g['fixed_relation'] for m in clauses)
+        return all((m[2] is None or m[2]==obj) and m[4]==g['fixed_relation'] for m in clauses) if clauses else None
     if g['structure']==5:
         names=re.findall(r'the ([a-z]+) is north of the marker\.',t)
-        return bool(names) and all(name==obj for name in names)
+        return all(name==obj for name in names) if names else None
     return True

@@ -54,8 +54,10 @@ def make_functions(base_gold,base_render,base_score):
             result=base_score(text,g,w,ended)
             if g['domain']=='space':
                 from space_scope_guard import valid_target_relation,valid_non_target_relations
-                if not valid_target_relation(text,g,w):result=dict(result,success=False,target=False,scope=False)
-                if not valid_non_target_relations(text,g,w):result=dict(result,success=False,preserved=False,scope=False)
+                target_check=valid_target_relation(text,g,w);other_check=valid_non_target_relations(text,g,w)
+                if target_check is not True:result=dict(result,success=False,target=False,scope=False)
+                if other_check is not True:result=dict(result,success=False,preserved=False,scope=False)
+                if target_check is None or other_check is None:result=dict(result,parseable=False)
             return result
         quotes=list(re.finditer(r'"([^"]*)"',text));valid=len(quotes)==1 and re.sub(r'\s+',' ',quotes[0][1].strip()).lower()==g['foil_quote'].lower()
         if len(quotes)==1:

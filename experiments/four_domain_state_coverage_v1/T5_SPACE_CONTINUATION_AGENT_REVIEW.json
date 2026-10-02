@@ -1,0 +1,71 @@
+{
+  "reviewer": "Codex assistant; not independent human annotation",
+  "selection": "first fixed test world space_0120, seeds42/43/44, forward/reverse/inverse, step1 and step2 plus gold-reencode control",
+  "study": "Original absolute-facing protocol; not the corrected relative-state holdout",
+  "cases": [
+    {
+      "seed": 42,
+      "trajectory": "forward",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Keeps behind instead of right, drops color/copies and appends an incomplete back phrase."
+    },
+    {
+      "seed": 42,
+      "trajectory": "reverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Replaces observer David with the parcel and omits the relation and fixed facts."
+    },
+    {
+      "seed": 42,
+      "trajectory": "inverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Repeats front instead of restoring left, omits fixed facts and does not terminate."
+    },
+    {
+      "seed": 43,
+      "trajectory": "forward",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Corrupt mixed-script fragments do not express observer, object relation or fixed facts."
+    },
+    {
+      "seed": 43,
+      "trajectory": "reverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Repeated behind/seat phrases do not express the right relation and lose the observer/object/facts."
+    },
+    {
+      "seed": 43,
+      "trajectory": "inverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Repeated observer/event/view fragments omit the required left relation and facts."
+    },
+    {
+      "seed": 44,
+      "trajectory": "forward",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Repeated back/ally phrases omit the required right relation and fixed facts."
+    },
+    {
+      "seed": 44,
+      "trajectory": "reverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Only Observer remains, omitting identity, relation, object and facts."
+    },
+    {
+      "seed": 44,
+      "trajectory": "inverse",
+      "world_id": "space_0120",
+      "outcome": "confirmed_incomplete_or_semantically_wrong_continuation",
+      "note": "Repeated front/back phrases fail to restore left and omit fixed facts."
+    }
+  ],
+  "limitations": "Existence evidence in these nine cases, not population labelling. One world repeated across seeds/paths is not nine independent worlds. Some full formal evaluation was still running when reviewed."
+}

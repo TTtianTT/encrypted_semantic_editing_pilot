@@ -1,10 +1,10 @@
 {
-  "at_utc": "2026-10-02T19:01:00.992822+00:00",
+  "at_utc": "2026-10-02T20:20:41.347481+00:00",
   "stages": {
     "formal": {
-      "completed": 7,
+      "completed": 8,
       "not_admitted": 6,
-      "in_progress": 11,
+      "in_progress": 10,
       "not_started": 6
     },
     "identity_probe": {
@@ -315,7 +315,7 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 43,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
         "P",
@@ -328,7 +328,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 6
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -349,7 +349,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 4
+      "completed_prediction_shards": 26
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -982,7 +982,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 12.746666666666666,
+  "gpu_hours_at_last_account": 15.502777777777776,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

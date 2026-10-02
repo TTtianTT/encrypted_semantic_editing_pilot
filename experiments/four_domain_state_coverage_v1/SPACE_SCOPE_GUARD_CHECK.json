@@ -1,5 +1,7 @@
 {
   "positive_checks": 1344,
+  "relative_clause_paraphrase_checks": 224,
+  "unrecognized_guard_is_unknown": true,
   "adversarial_binding_checks": 168,
   "legacy_false_positive_examples": 168,
   "examples": [
@@ -197,5 +199,5 @@
     }
   ],
   "no_gpu": true,
-  "reason": "First B must not substitute for target A; fixed B and marker relations must concern the gold object, not another named object."
+  "reason": "First B must not substitute for target A; fixed B and marker relations must concern the gold object. Correct relative clauses accepted; unrecognized wording is not a confirmed contradiction."
 }

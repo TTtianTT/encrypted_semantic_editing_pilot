@@ -1,0 +1,55 @@
+{
+  "reviewer": "Codex assistant; not independent human annotation",
+  "selection": "all six existing algorithmic same-checkpoint witnesses, first lexicographic fixed rows",
+  "cases": [
+    {
+      "run": "bart_person_s42",
+      "condition": "M_h0",
+      "checkpoint_sha": "6da7c29457dd9f2b2d9e234d0a0279b7e1e7461e54ec24ae1dc365d28584b84c",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Natural output loses listener Carol and the transfer event; its repaired source endpoint is complete and correctly bound."
+    },
+    {
+      "run": "bart_person_s42",
+      "condition": "S_h1",
+      "checkpoint_sha": "eddf797bb70921e696ff66c9970b2a886a47d56936d1f95014ed05baf5f8ced5",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Speaker/listener stay Frank/Emma, but I give you Carols changes agent, patient and owner from Carol/Frank/Emma to Frank/Emma/Carol."
+    },
+    {
+      "run": "bart_person_s42",
+      "condition": "M_h1",
+      "checkpoint_sha": "f11225a4ed858729214eb8eec7aa37a25fb011214091a6e385ac4abdb500f346",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Speaker/listener stay David/Alice, but I give you Franks changes agent/patient/owner Frank/David/Alice to David/Alice/Frank."
+    },
+    {
+      "run": "bart_person_s43",
+      "condition": "M_h1",
+      "checkpoint_sha": "97d84d6c282549e87b51ad3d87c2a5ed363ba7a45b0697799f9a90d31ae20c84",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Speaker/listener stay Emma/Alice, but My cup Henry gives me changes owner, agent and patient from Henry/Emma/Alice to Emma/Henry/Emma."
+    },
+    {
+      "run": "bart_person_s44",
+      "condition": "S_h1",
+      "checkpoint_sha": "40d8f359fa3f25275ddadf06e07dd4e8ef5ac192e9e16d5e3aaf677f654d396a",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Replacing you with I changes agent Carol to speaker Alice while other slots stay fixed."
+    },
+    {
+      "run": "bart_person_s44",
+      "condition": "M_h1",
+      "checkpoint_sha": "c6aa3a25bd471529c16704d158e5f4d4f8681e5949c49106a2be0cbdc7131664",
+      "source_repair": "confirmed complete correctly bound after prior corrupt/incomplete output",
+      "natural_regression": "confirmed event binding change or event loss",
+      "note": "Replacing patient Carol with Emma changes the transfer recipient."
+    }
+  ],
+  "limitations": "Case existence evidence; full seed/condition counts are in repair_regression_joint_counts and capability_regressions. Later witnesses may be unreviewed and must not inherit these labels."
+}

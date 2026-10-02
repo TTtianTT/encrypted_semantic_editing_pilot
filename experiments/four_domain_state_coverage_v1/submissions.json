@@ -329,6 +329,19 @@
       "no_diagnostic_model_predictions": true,
       "no_training_or_selection_change": true,
       "data_manifest_sha": "8032ef80c8c883987c420e48a04a162f42964767a2c637f08febce36513aafdc"
+    },
+    "pre_gpu_paraphrase_guard_revision": {
+      "at_utc": "2026-10-02T20:23:50.867126+00:00",
+      "old_specification_sha": "035c98559ea41e3454092789bdb6695793e2d4190a0dbc018cc4f102f8ea5783",
+      "new_specification_sha": "5f6fe60dd49934413691be65f72664a44fee279da80c1912f4b53ac1abd3abb6",
+      "no_diagnostic_model_predictions": true,
+      "no_training_or_selection_change": true,
+      "legacy_model_scores_unchanged": true,
+      "retracted_guard_false_positive_candidates": 12,
+      "reason": "The twelve alleged mismatches were correct same-object relative-clause paraphrases. The revised independent guard accepts them; unfamiliar wording is unknown, never a confirmed contradiction.",
+      "positive_checks": 1344,
+      "relative_clause_checks": 224,
+      "wrong_binding_checks": 168
     }
   },
   {

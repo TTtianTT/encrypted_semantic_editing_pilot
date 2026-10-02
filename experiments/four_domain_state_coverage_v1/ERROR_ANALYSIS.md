@@ -31,12 +31,13 @@
 |bart|time|current_text_controlled_grammar_invalid|1960|
 |bart|time|non_target_changed|571|
 |bart|time|current_text_unresolved|16|
-|t5gemma|space|controlled_grammar_invalid|10077|
-|t5gemma|space|unresolved_parse|6984|
-|t5gemma|space|current_text_controlled_grammar_invalid|6144|
-|t5gemma|space|non_target_changed|4192|
-|t5gemma|space|target_wrong|548|
-|t5gemma|space|current_correct_next_target_wrong|331|
+|t5gemma|space|controlled_grammar_invalid|21920|
+|t5gemma|space|unresolved_parse|17559|
+|t5gemma|space|current_text_controlled_grammar_invalid|14128|
+|t5gemma|space|non_target_changed|7125|
+|t5gemma|space|target_wrong|1523|
+|t5gemma|space|current_correct_next_target_wrong|674|
+|t5gemma|space|current_text_semantic_mismatch|64|
 |t5gemma|time|current_correct_next_target_wrong|18984|
 |t5gemma|time|unresolved_parse|10419|
 |t5gemma|time|target_wrong|8479|
@@ -64,3 +65,7 @@ core单步准入、未训练expression/structure单步、固定来源续步和�
 
 
 连续生成未解析与已解析的语义错误分开。固定18例的助手审阅记录是存在性案例证据，不是对全部未解析预测的独立标注。原空间朝向状态划分有解释限制；关系确认独立运行，旧结果不被改写。语言结构重构/原子准入失败先归入该结构基本能力限制，不进入组合失败平均。
+
+repair_regression_witnesses.jsonl按同一冻结receiver checkpoint联合保存固定来源修复和旧自然原子损失。来源表示/当前全文、操作及gold在前后相同；选择每个合格checkpoint的字典序首例，保留全部seed和条件。repair_regression_joint_counts给完整数量，行为未完成的快照标为partial。未解析损失仍是受控任务失败，不自动作无限释义语义错误。
+
+REPAIR_REGRESSION_AGENT_REVIEW逐一审阅初次生成的六个BART人称联合案例（涵盖三个seed）。固定来源修复后正确，旧自然输出出现施事/受事/所有者绑定替换或事件缺失；这些不是合理释义。它们均对应同一receiver checkpoint，证明在这些具体设置里修复和旧语义能力退化可以同时出现。后续新增自动案例不继承人工助手标签。
