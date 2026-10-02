@@ -1,0 +1,9 @@
+# Current cluster verification
+
+Before G17 submission: squeue user zailong empty; no G17 branch/directory/remote ref. B300q UP, nodes01–03, gres/gpu24; AllowAccounts/QOS=ALL, no partition maximum walltime, default association query returned no rows. scontrol and completed G16 allocation2520 verified account blank/default and QOS normal. Exclude node01 as existing verified environment;1GPU,4CPUs,64G per allocation. NVIDIA B300 SXM6 AC actual device recorded in each smoke/seed artifact. Original .venv and local BART model reused, no environment/library changes.
+
+Official syntax checked before implementation: https://slurm.schedmd.com/job_array.html , https://slurm.schedmd.com/sbatch.html , https://slurm.schedmd.com/srun.html . Main single array0–2%2; explicit index mapping42/43/44, unrelated jobs not cancelled. Every GPU entry enforces SLURM_JOB_ID and SLURM_STEP_ID; no CUDA_VISIBLE_DEVICES assignment or login-node forward. sbatch+srun logs retained.
+
+Initial smoke2533 failed solely historical metadata source-index lookup (old self records source Q). No new confirmation accessed.45actual seconds and600requested seconds retained; diagnosed retry2534 passed576 archived comparisons and fullcache replay/frozen/reset checks. Scientific config/data/model/targets unchanged. resource_plan.json derives single-seed9minute mainwall from measured full interfaces with safety1.5, includes reserve600s; submissions.json accounts every failed/success allocation request.
+
+sacct -X allocation rows separately retain array display ID and JobIDRaw. Steps/batch/extern excluded from GPU hour sums. Resource peak concurrency computed from allocation start/end events; perstep GPUmemory usage collected only as memory telemetry, never double billed. CPU preparation/statistics/publication run without model forward in login environment.

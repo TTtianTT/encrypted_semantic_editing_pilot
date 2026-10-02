@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 4892.36it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/run.py", line 149, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/run.py", line 145, in main
+    else:main_eval(e,eds,mapping,seed)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/run.py", line 131, in main_eval
+    payload,meta=make_cache(e,eds,ws,seed,sp,a,'confirm');rows,m=evaluate(e,eds,mapping,payload,ws,seed,sp,a)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g17_state_source_transfer_v1/run.py", line 62, in evaluate
+    e.check(60);bw=[ws[i] for i in ix];st={n:{k:v[ix].cuda() for k,v in s.items()} for n,s in states.items()};before={n:statehash(s) for n,s in st.items()}
+    ^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/reference_frame_pilot_v3/engine.py", line 30, in check
+    if time.monotonic()-self.start>self.limit-reserve:raise TimeoutError('Allocation budget stop; outputs/checkpoint preserved')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: Allocation budget stop; outputs/checkpoint preserved
+srun: error: node02: task 0: Exited with exit code 1

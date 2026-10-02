@@ -1,0 +1,8 @@
+sbatch --partition=B300q --time=10:00 --export=ALL,RF_WALL_SECONDS=570 experiments/g17_state_source_transfer_v1/scripts/smoke.sbatch
+Submitted batch job 2533
+sbatch --partition=B300q --time=10:00 --export=ALL,RF_WALL_SECONDS=570 experiments/g17_state_source_transfer_v1/scripts/smoke.sbatch
+Submitted batch job 2534
+sbatch --partition=B300q --time=09:00 --export=ALL,RF_WALL_SECONDS=510 experiments/g17_state_source_transfer_v1/scripts/main.sbatch
+Submitted batch job 2535
+sbatch --partition=B300q --time=10:00 --dependency=afterany:2535 --array=1-1%1 --job-name=g17-resume43 --export=ALL,RF_WALL_SECONDS=570 experiments/g17_state_source_transfer_v1/scripts/main.sbatch
+Submitted batch job 2538

@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "zero_training": true,
+  "seed": 44,
+  "output_sha256": {
+    "outputs/s44_iid_a2.jsonl.gz": "f99e7cd7d7004f7b72ad0514e34587e245c7b28477e189e3d433a9ebfca0a2a1",
+    "outputs/s44_iid_a0.jsonl.gz": "837cace4adc5047fe2ea36b24041b50d5415683c5339dfde0db68533bc83cb92",
+    "outputs/s44_iid_a-1.jsonl.gz": "62e1d5100e4e86d24e9429039d9b6758b89c5255258160fda3ba15fac4c1bd1a",
+    "outputs/s44_iid_a-2.jsonl.gz": "50138dd9b3ce80e7c60f592f46d43e7fcfcd20fcc83d68a9ac3b2517fbd4baae",
+    "outputs/s44_template_ood_a2.jsonl.gz": "4166a399c5fb9429c418d45880ab45140b3eba3603e020659f774a952128644e",
+    "outputs/s44_template_ood_a0.jsonl.gz": "fd02fbd25955c9aa458fb6352529695fe7f6ac4acef3ff1e864530ea833d0239",
+    "outputs/s44_template_ood_a-1.jsonl.gz": "67886da05ef73ca56dfef043a4db69e437329bf3dac9086843158356ff89c8f8",
+    "outputs/s44_template_ood_a-2.jsonl.gz": "af1c04b37ba0df7b67e887ed9a659d6deaa66768b789106bdd00e3af29121fab"
+  },
+  "metrics": [
+    {
+      "split": "iid",
+      "anchor": 2,
+      "total_seconds": 31.73495363513939,
+      "phase_seconds": {
+        "natural": 5.535703137051314,
+        "handoff": 12.871144759235904,
+        "reset": 5.6227045299019665,
+        "self": 7.2902744095772505
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "iid",
+      "anchor": 0,
+      "total_seconds": 25.78997176582925,
+      "phase_seconds": {
+        "natural": 5.540033560246229,
+        "handoff": 12.72161555942148,
+        "reset": 0.008037524530664086,
+        "self": 7.10638233856298
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "iid",
+      "anchor": -1,
+      "total_seconds": 26.40862247115001,
+      "phase_seconds": {
+        "natural": 5.7870392019394785,
+        "handoff": 12.930507934419438,
+        "reset": 0.010282549308612943,
+        "self": 7.242485212627798
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "iid",
+      "anchor": -2,
+      "total_seconds": 26.504475622903556,
+      "phase_seconds": {
+        "natural": 5.75552619039081,
+        "handoff": 12.954178880667314,
+        "reset": 0.008240278577432036,
+        "self": 7.37044354272075
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "template_ood",
+      "anchor": 2,
+      "total_seconds": 33.5585710669402,
+      "phase_seconds": {
+        "natural": 5.522740839747712,
+        "handoff": 12.887091161683202,
+        "reset": 7.422639716882259,
+        "self": 7.278096304042265
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "template_ood",
+      "anchor": 0,
+      "total_seconds": 25.439402513904497,
+      "phase_seconds": {
+        "natural": 5.477661699755117,
+        "handoff": 12.533809162909165,
+        "reset": 0.009597750147804618,
+        "self": 7.0041544595733285
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "template_ood",
+      "anchor": -1,
+      "total_seconds": 30.728709693066776,
+      "phase_seconds": {
+        "natural": 5.749449807219207,
+        "handoff": 12.87034479342401,
+        "reset": 4.484554909635335,
+        "self": 7.20078987441957
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    },
+    {
+      "split": "template_ood",
+      "anchor": -2,
+      "total_seconds": 33.19951290101744,
+      "phase_seconds": {
+        "natural": 5.751750473631546,
+        "handoff": 12.97233606618829,
+        "reset": 6.716154620284215,
+        "self": 7.321596808498725
+      },
+      "all_cached_inputs_unchanged": true,
+      "reset_on_C_identical_to_natural": true
+    }
+  ],
+  "job_id": "2535",
+  "array_job_id": "2535",
+  "array_task_id": "2",
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "peak_cuda_bytes": 715568128,
+  "elapsed_seconds": 305.0056131440215
+}

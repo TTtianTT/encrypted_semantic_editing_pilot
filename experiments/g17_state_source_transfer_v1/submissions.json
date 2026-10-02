@@ -1,0 +1,69 @@
+[
+  {
+    "phase": "smoke",
+    "job_id": "2533",
+    "command": [
+      "sbatch",
+      "--partition=B300q",
+      "--time=10:00",
+      "--export=ALL,RF_WALL_SECONDS=570",
+      "experiments/g17_state_source_transfer_v1/scripts/smoke.sbatch"
+    ],
+    "wall_seconds": 600,
+    "allocations": 1,
+    "gpus_per_allocation": 1,
+    "requested_gpu_seconds": 600
+  },
+  {
+    "phase": "smoke",
+    "job_id": "2534",
+    "command": [
+      "sbatch",
+      "--partition=B300q",
+      "--time=10:00",
+      "--export=ALL,RF_WALL_SECONDS=570",
+      "experiments/g17_state_source_transfer_v1/scripts/smoke.sbatch"
+    ],
+    "wall_seconds": 600,
+    "allocations": 1,
+    "gpus_per_allocation": 1,
+    "requested_gpu_seconds": 600
+  },
+  {
+    "phase": "main",
+    "job_id": "2535",
+    "command": [
+      "sbatch",
+      "--partition=B300q",
+      "--time=09:00",
+      "--export=ALL,RF_WALL_SECONDS=510",
+      "experiments/g17_state_source_transfer_v1/scripts/main.sbatch"
+    ],
+    "wall_seconds": 540,
+    "allocations": 3,
+    "gpus_per_allocation": 1,
+    "requested_gpu_seconds": 1620
+  },
+  {
+    "phase": "resume_seed43",
+    "job_id": "2538",
+    "command": [
+      "sbatch",
+      "--partition=B300q",
+      "--time=10:00",
+      "--dependency=afterany:2535",
+      "--array=1-1%1",
+      "--job-name=g17-resume43",
+      "--export=ALL,RF_WALL_SECONDS=570",
+      "experiments/g17_state_source_transfer_v1/scripts/main.sbatch"
+    ],
+    "wall_seconds": 600,
+    "allocations": 1,
+    "gpus_per_allocation": 1,
+    "requested_gpu_seconds": 600,
+    "dependency_all_main_ended": true,
+    "seed_index": 1,
+    "seed": 43,
+    "scientific_lock_sha256": "f0ddd1f32119b62725e983699d7b357a9389b1607cb87190dfbb0176a70765c0"
+  }
+]

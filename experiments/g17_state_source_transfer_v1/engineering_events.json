@@ -1,0 +1,41 @@
+[
+  {
+    "phase": "CPU pre-smoke",
+    "error": "tests imported ancestor module run because reused helpers prepend historical module paths",
+    "fix": "explicit local module path for test runtime",
+    "scientific_runtime_config_data_unchanged": true,
+    "GPU_jobs_started": 0,
+    "previous_lock_path": "experiments/g17_state_source_transfer_v1/pre_smoke_lock_revision_0.json",
+    "original_test_sha256": "572746508902d620d7632a4ee5e019429cbd047dfea5f56dbf4820f15782f088",
+    "new_test_sha256": "ba19398ad4c1147a1df64992a4e16efb88b85d20517ad566f93d7b56d3b3859e"
+  },
+  {
+    "phase": "historical smoke",
+    "job_id": 2533,
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed_seconds": 45,
+    "requested_gpu_seconds": 600,
+    "error": "history self records have source Q; comparison lookup incorrectly used None",
+    "fix": "use exact legacy metadata Q, new cache namespace smoke_v2; no scientific output/settings changes",
+    "confirmation_worlds_accessed": false,
+    "retry_reason": "diagnosed engineering comparison-index bug"
+  },
+  {
+    "phase": "CPU after smoke before new confirmation",
+    "fix": "normalize NumPy paired-count integer scalars for JSON export; test actual bootstrap empty draws",
+    "GPU_runtime_configuration_data_estimator_unchanged": true,
+    "new_confirmation_worlds_accessed": false,
+    "GPU_retry_required": false
+  },
+  {
+    "phase": "main seed43",
+    "job_id": "2535_1",
+    "engineering_failure": "safe time budget stop in final OOD -2 shard",
+    "fix": "reuse8immutable caches/7existing output SHAs; complete missing last shard using same code/config/models",
+    "science_unchanged": true,
+    "requested_gpu_seconds": 600,
+    "reserve_consumed": true,
+    "dependency": "2535"
+  }
+]

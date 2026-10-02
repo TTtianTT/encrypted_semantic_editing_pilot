@@ -1,0 +1,1131 @@
+{
+  "data_seed": 20261002,
+  "namespace": "g17",
+  "named_leaf_seeds": {
+    "worlds/iid/round0": 5010273937661712042,
+    "worlds/template_ood/round0": 13023364378441382095,
+    "analysis/shared_world": 4078189770413838213,
+    "analysis/shared_world/iid": 3398781921149558304,
+    "analysis/shared_world/template_ood": 8344398681078937658
+  },
+  "counts": {
+    "iid": 160,
+    "template_ood": 160
+  },
+  "total_worlds": 320,
+  "anchors_are_related_not_independent_worlds": true,
+  "full_identity_fields": [
+    "author",
+    "actor",
+    "recipient",
+    "action",
+    "object",
+    "quantity",
+    "record_date",
+    "event_date",
+    "record_status",
+    "polarity",
+    "attribution"
+  ],
+  "historical_sources": [
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "artifact_manifest.json",
+      "git_blob": "7bf2bd6118d3d410cc6faf03f8a734adb07cc747",
+      "sha256": "90ec433d43f68ae3ce1625ef94e8f7a9caee4e87bf257ef625a80c40956c9146",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/dev_future.jsonl",
+      "git_blob": "b64e684c3d3e3b31bdd15d0f66726da88f5e49ad",
+      "sha256": "da637bdf8069dc4bd0f8b38a1b251a613743d482b5dd69b26e542bf49ecb26a9",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/dev_passive.jsonl",
+      "git_blob": "f702e207874017744f30a126e5d6fef27d87a802",
+      "sha256": "971da196ff04c310910c5da671b4d1672814bfedf807b73d29130250076ff55c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/dev_present.jsonl",
+      "git_blob": "cf8a9059ff9019998672222153d168a18c9b32e9",
+      "sha256": "aba48edcdd3b6213c83315575da9005b420bf31abd2bf8df5dcb105e9199a6b2",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/dev_seen_combo.jsonl",
+      "git_blob": "168b1b87dc474fe139fbee1cae98d8cea8c2ed59",
+      "sha256": "e6d024dacb32860cf778d59e9549c20e903731d964b401177f3a35c64d2950d4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/manifest.json",
+      "git_blob": "e68bbd79bb252527678230d53ac2285aef8500b4",
+      "sha256": "63591cc9f0d634dd8c175b867b18e6022fe37f94560a9e19d775d0d2ded6f269",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/test_heldout_combo.jsonl",
+      "git_blob": "83c0c2aad8c13ceed79df623a1d6231dfbe4f16b",
+      "sha256": "e5ddd85d0f07df34401748cd23e454914cb0158da736c55748be162f80ef4d9c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/train_future.jsonl",
+      "git_blob": "fd36dffddd97c69a0ba355e2f8748a8d530225bf",
+      "sha256": "532c9092b2d4958a656083c8fd431e3d94d8a3d91d85ee12f33d458dfcf5c50c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/train_passive.jsonl",
+      "git_blob": "33f9bf3ad956fd4946a12b19fd42aba75a156d8c",
+      "sha256": "b1a3cc80a529fc879e83a63e27ffa6699437d7915bc0e6a98a634701c260044d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/train_present.jsonl",
+      "git_blob": "56460f8e74e38276761921303a0b4af0402795f7",
+      "sha256": "fd7dca389dd1062b9729a5415734dd4d6010732a940f6564a7bd2a5e725ef2c4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/b/train_seen_combo.jsonl",
+      "git_blob": "003a21e0bd831f14d23c8c83e0aa7e53cdb5a6c1",
+      "sha256": "efae44099266e991fc4deb0f16fe75529a25784fa94398716a088935ffb17a2c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/dev.jsonl",
+      "git_blob": "e6674358a02704d12670f0db7ff2703ca572cab2",
+      "sha256": "73ae74d3681ec01d5c776e5e2f75a69fe4806a6ab5840891f1b6fbd33eacca65",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/diagnostic.jsonl",
+      "git_blob": "fc4026c91d64b3e3c95d3cf7f8c8e60f3850038b",
+      "sha256": "0ac41691db45e3c14ff34188cc52ddf0877494176dfff66971fbbc3814f2f09b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/manifest.json",
+      "git_blob": "d709f32dd62e40341aaf3a54b3f7e7306ca01733",
+      "sha256": "24d16bd7ae8468d3abd3c1e824edeaf6f3d23c0adb9ef1fa1fc4b88f3f8a9e50",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/near_duplicates.jsonl",
+      "git_blob": "6040d3d97c22b8d8d8a52762d5c6786e73bd40f6",
+      "sha256": "0a613e57bacd62dbf9a94a44b5f8182c9b1970c0c28f5dbc079cb9c9ac620295",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/test.jsonl",
+      "git_blob": "885f679bb7ac96da287a5190283881a23c791173",
+      "sha256": "edd8ecbb725de91302f4df68227fcb329e130913f9ee771c22f3199fe5437328",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "data/train.jsonl",
+      "git_blob": "064478e18a10e6d58ac88df74dec814f5b04dc35",
+      "sha256": "b749f2bcd35f0127e6a63c63a700927b6538d1318eab061add6003915201f508",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/latent_consistency_v1/human_review/direct_deduplicated/manifest.json",
+      "git_blob": "dc132d95a887c9f8972f590e02c3ad18b106f631",
+      "sha256": "f9a661f6d65fd576903c66b598bd1c873682efba58499f6a3882f513a5bb569c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/artifact_manifest.json",
+      "git_blob": "619ad74245735642c6681979944e5e62f17885ea",
+      "sha256": "67fd494b32e11229764ce1a5e9c51031d8d449bcfad84d8524ce1a5c85b91ee7",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/calibration_pairs.jsonl",
+      "git_blob": "234267a74afc56836cb08a680ed45551e7f97e8f",
+      "sha256": "26b31e6215c07a140492998584c5a2a0693ff0f855ecf7c90dbe7f756edda2b4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/calibration_views.jsonl",
+      "git_blob": "f02e7304fa5c7520b2ef68e2b4ac684485b3b322",
+      "sha256": "b7a2be013d58c27dc070e24b4f91fdba5825f0099f81bf4afc79614a162bb052",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/calibration_worlds.jsonl",
+      "git_blob": "790cfab645abe87d46b8aad4b13a6342895453ce",
+      "sha256": "fc0e1e7ac4003d9bc3c97391f648633f94d892cd96057b62c447a55920c2da5b",
+      "world_occurrences": 60
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/dev_pairs.jsonl",
+      "git_blob": "eaac9f12147b7d602179c0d8dd9218a91a47f914",
+      "sha256": "99fadc83d2083b78ef2d878bb239ce12a545e73aa5389790608757de64c685ed",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/dev_worlds.jsonl",
+      "git_blob": "f0fb23eed41ff76b48bfadadab5e44645ec8427e",
+      "sha256": "910cba4137f92a4e3fa9048461c01e17ac1aabb09985e81b7360e6b8f224ba12",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/split_manifest.json",
+      "git_blob": "806a1f698946cd3106a78577439e105dfce6b0a1",
+      "sha256": "6de8e3f2d7ac0bb59d341a2c5a5aff0f5ee1beec5ecb8e7d48b923e281c07f84",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/test_iid_pairs.jsonl",
+      "git_blob": "71c1d37214998ea6f7623c96629ca22de695eaea",
+      "sha256": "128c50bbdbdbe9f267c917344d7021a67ebcc0d8c42583a71c801c0e6a2eadbc",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/test_iid_worlds.jsonl",
+      "git_blob": "e28e395bfd1dbaddbca5ed7aa96b5929a991573d",
+      "sha256": "4cc281a19c6af18f874de5328ce7eeb3f9d361b8105028dbd70959e028482dd5",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/test_template_ood_pairs.jsonl",
+      "git_blob": "21a28fdf50697cbcc421a1ec0dd0e00421c6389b",
+      "sha256": "a942cd24e0014809c57d657a50148b13b075b95897f05b2c1ccc54e457a8059b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/test_template_ood_worlds.jsonl",
+      "git_blob": "4a349f204f26598f3138e19534e145b6939b3123",
+      "sha256": "0d4653616c371b2d34d6a443b888e4576ddbae4e4e125da40bf32c3a71828abb",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/test_worlds.jsonl",
+      "git_blob": "951d74585d706453c9f3c817b510402dff23f8b0",
+      "sha256": "f708af1e5693228b0039a2011f070fcd2ecab2da8cd3b72b1cc092de0372abe1",
+      "world_occurrences": 160
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/train_pairs.jsonl",
+      "git_blob": "e22b9773613c3aca9bed89ec2ddc284105832a43",
+      "sha256": "258dfd684c1a6efe572e0f3937ca30b8bed6b73cd25cd34443ae43e166e5aa85",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/data/train_worlds.jsonl",
+      "git_blob": "77260c78b314e6835e27cb1872a29a6c291eea38",
+      "sha256": "cbe7c0c1e3b6207a879f139b191feda83c3a0039324b2ecc963dc2d46c91a688",
+      "world_occurrences": 480
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/calibration/pre_generation_draft/frozen_manifest.json",
+      "git_blob": "470dc9dc7efa2061a16173281f5650592454c75d",
+      "sha256": "308acb2616075971f54e36d28ef9cffc3d10d615e4f6a193a5e42da4adf4079d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/calibration_pairs.jsonl",
+      "git_blob": "0b715241c0ad2dff30b40b7c9e44dcf28a28d835",
+      "sha256": "cdd28abf4427430b5046ce0b103a5af9254b0800f484c3975ed4b8395398653d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/calibration_views.jsonl",
+      "git_blob": "141cdbdd189059a0282ef48a9b4beb3c30722465",
+      "sha256": "a408ea213a4b02f5ac63b62fe6fce7341fcf588d62970e77618a9650cf0bb46b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/calibration_worlds.jsonl",
+      "git_blob": "8b7d4b754b38f70fc1e9fdf6d7d7760da5bd581d",
+      "sha256": "c0c69d2ae743d7175a5528791baaa87ca90811026d5a98ee41809f0a07948a0e",
+      "world_occurrences": 60
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/dev_pairs.jsonl",
+      "git_blob": "753b7fcb89937e8a9c1b167c1ca63711e8617686",
+      "sha256": "f08d5a1b3496f692781eeecdb4591636d1f0ad59fc2529a2786406ce9026e9f1",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/split_manifest.json",
+      "git_blob": "c94c795aaabe984fae179a2ff7363a0ac95ca317",
+      "sha256": "7c40ae6519b3d36497bd3c53d2637c7e6d6ca78a7190189afd78082feefc2eda",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/test_iid_pairs.jsonl",
+      "git_blob": "bebffb5d966502bcb7932d32edd6a95e3031f66d",
+      "sha256": "be8bc6f00da99f81e74c7ea3b46f5219988c282ab63337bbce7aedf9d919aff4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/test_template_ood_pairs.jsonl",
+      "git_blob": "0ecb10a422386755a0313520fbb37d431a7664cf",
+      "sha256": "695f30d4aa5dc1108016619267752a1058639080af12f9a10785c824e0f41c58",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/data/train_pairs.jsonl",
+      "git_blob": "ad6fac7dcfe2e5e785324fbb202af5db36cc656b",
+      "sha256": "54e8378919e67a43f0f3f1f9fe871f8e61358b6f2b47c54723c886f32a3faacb",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/evaluation/code_manifest.json",
+      "git_blob": "91157abfd206fadf3648ab04d572769607d9f311",
+      "sha256": "ae35ee13d54294ff10ddfb3e0287b2587da23172c5d43d1efbcb425f711ec340",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/frozen_manifest.json",
+      "git_blob": "d18844efc3053745ea4790b2b478b30785151ca3",
+      "sha256": "0814123a8d784e8f39515a11506b086712b9c346f0ab19efc91a7ef71d821625",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/review/dev_sample_manifest.json",
+      "git_blob": "321eb622f8a57ea69bea62169243d2224dace106",
+      "sha256": "c2a5b034a46c0ae407a4b9783f4c1d565520988464402eec237b1cd20daf364a",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/review/sample_manifest.json",
+      "git_blob": "2701a7efa85e701eaca8bba72714820837b3b696",
+      "sha256": "861826d11fc23139cd3ea486f1f103c52cc61b87ebbe7febe38aa23b43a012c0",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/source_model_manifest.json",
+      "git_blob": "a57d64dea8ca326f9f2caf60898fc5291a8b105e",
+      "sha256": "ea1cac106ff6df30a5aafce0a18ee1c21e6db13490bf3db2e836e38ed460e51a",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v1/training_code_manifest.json",
+      "git_blob": "2bff7384435ede6514f06a619b124bac3fe23f1c",
+      "sha256": "7a0d3fc95e939c2007463f3b2d9e1ad6fb006dd77b47c288768a42804666ed7e",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/artifact_manifest.json",
+      "git_blob": "a47643460678cf7bfb7622fbeca05f7878cda99d",
+      "sha256": "0a027bed0541ee210b7b7bf4148f7a41791113fb78971cbaf2c419ebfc483f7f",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/calibration/metadata_lock_history/precheck_manifest.json",
+      "git_blob": "f40a037d3ac5ffd5af8591b1bdb7cb47a4773078",
+      "sha256": "d061a4549a84173523ea575635d48792d0cf79890a01a3db8498a1fd24e6202b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/calibration_views.jsonl",
+      "git_blob": "39e4ae98baf8fc8153814375aa7bf534a85b5162",
+      "sha256": "6f72d9d3d131a002712724e252ff94e854e9cb9eacca764c44fc8372f8787cf9",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/calibration_worlds.jsonl",
+      "git_blob": "6e7345694d164b4bf3dcd563e4f6e0619436ab71",
+      "sha256": "dedbd9f0477437e1386e7bc667801df2eeb0c29983ba39a42405924ad51c287a",
+      "world_occurrences": 60
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/dev_atomic.jsonl",
+      "git_blob": "cae6d125f148e0db9e1fb4e4a38dc91807b8c19d",
+      "sha256": "13200bd08eca341ae2a10b86997b7cfdb0f1c1b4313ee97a837319cfb89c139f",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/dev_chains.jsonl",
+      "git_blob": "2a43f497357d200358c702865da88b33336ddc3c",
+      "sha256": "5ee7333d83f8f11d294cfc61359f10f390deca056584ce0d8b4e5d92024adfdb",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/dev_extended.jsonl",
+      "git_blob": "9c756fc6afb3ef34105c08516ba6f30f8efe3989",
+      "sha256": "f75f3e44b7600b99e507d56fdd8df24407839efb0e2620b8d2114df3fe58d366",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/dev_worlds.jsonl",
+      "git_blob": "4c0aabac3bfea688ec82073a57fe56186dd2acc2",
+      "sha256": "aba83404d7995af4b224fab094962746a19171c4fd8f0d5b10134e5f7ee9cde7",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/g2_replacement_manifest.json",
+      "git_blob": "84b55a428156ec3580ed1623a72ae682bcb6b0fd",
+      "sha256": "a31c90178973c3444a1d1951b69288f6866cb91eee7e857dd1e0655f7f22cf55",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/precheck_manifest.json",
+      "git_blob": "356060b6a2076c5bc4cf97f933a4292e375d0b06",
+      "sha256": "a02420aa9eb650c7ddca92b760e1a8585ec4f71b1dd938f6934ec0a4864246da",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/sample_schedule.jsonl",
+      "git_blob": "b676d3b1e37b2af60c37d09f8b805dea3cb2e217",
+      "sha256": "b24fd4da5e7ea5197ef22ae28ca95ecf796153f880cb11e943143cafd960da3d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_iid_atomic.jsonl",
+      "git_blob": "357f4b2660913de76693b7af6617a17149ae9778",
+      "sha256": "81a0254d6f194ec172c45a2b356b97569d3ce1444d7a35d050a643fda21a25e4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_iid_chains.jsonl",
+      "git_blob": "9db0d450580ae25e07f91b910b162cdfbcd46d50",
+      "sha256": "47873771aae55571545e9e78824037c4e09dc6bfae9c8be1b2a7f086592e4214",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_iid_extended.jsonl",
+      "git_blob": "c781c0766a243164f3280a33e8d26c0fcca30799",
+      "sha256": "ff3af04cb78c123afcfc9f02fee831d4920638cf5f42568034821bf97f2e3d9f",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_iid_worlds.jsonl",
+      "git_blob": "a07769d195289f5b4f358f2d10ead6358caf5f80",
+      "sha256": "2180a78c47b0ce8c37be03af8b8f988ad40c8f1279ee8c17972c26b4118e3568",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_template_ood_atomic.jsonl",
+      "git_blob": "ebb35ab635ccbfe3ce8f73f66b334d7f71e95447",
+      "sha256": "d46183628fe9837edaa814908f78aac5478e9da60b20454122d78de536193adc",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_template_ood_chains.jsonl",
+      "git_blob": "b2ba0cef6b2bc459873b96132f2fede17c5df20b",
+      "sha256": "7fa2a4bf333f889d30c3a353b8f3c0b349260b064a7838710616c733e8056cc4",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_template_ood_extended.jsonl",
+      "git_blob": "f776bef77edc79548f8cf11a631931d20a7ae3aa",
+      "sha256": "d975faed87b4b059578267599a56f3c5c9dec8983ae306132a044887363272e6",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/test_template_ood_worlds.jsonl",
+      "git_blob": "11b0351f2071c51b6857db2f694d802537952d42",
+      "sha256": "64b9c50ee6126e54969b1705e8f94515e6af8eeb3d591dd43ec737bc11e7ed9c",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/train_G0.jsonl",
+      "git_blob": "b8301e4a9b25619356b64327f71baef18f7238b4",
+      "sha256": "8b23ebefbca84b6878643a415f07cf20fda479d548ac532f8cfc5a47283cc6d2",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/train_G1.jsonl",
+      "git_blob": "c3fd9d755d386a7d0a811afd04eee98ca18c48b0",
+      "sha256": "f1b00871783a7d84990182e26a7349d8dcba1ab956420abb519dfcb71360b76a",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/data/train_worlds.jsonl",
+      "git_blob": "d68f5d07fb397358ae1bf9bec36bae7ee5a9dbac",
+      "sha256": "ad399fc324d4866e262e9c5c265e6fb5f61737b58174d813e77580cad2f48683",
+      "world_occurrences": 480
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/review/preselected_worlds.json",
+      "git_blob": "b0a33c40b8c4689d0ec8232f9a34cf7a833b259b",
+      "sha256": "ebd2e8c7b13eb3ef2b68894bd424db3407d48b190de52c2ce2329265056969f0",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/training_code_manifest.json",
+      "git_blob": "4cdd27f7d8f55715f617e22659c737963006d07f",
+      "sha256": "f12bb6819419ebe19b8f89cf1c7ba5ff11468454528e40a50bc73f0c829b7863",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v2/v1_readonly_manifest.json",
+      "git_blob": "3f738d029662d83d08ea7fda2b5f099c5cdbe93c",
+      "sha256": "68150b1568c00401281ef92bdf5ac1a3072c9a77e824c17fa2aa7292ba315824",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/artifact_manifest.json",
+      "git_blob": "653aa7f0c3718dec367f08934493f7fe20f7addc",
+      "sha256": "96da9af30620d011fa53f51d906da218142f26507fce65f75937f9fbe10a9220",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_iid_atomic.jsonl",
+      "git_blob": "0ecbe5341f5ae5dbe476e70ae2da75f8267f9fb3",
+      "sha256": "475c64d8fb40ad0ccf595fe146b06dff0b6060a4eb9eea6531fc6e8dd70ea0e2",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_iid_chains.jsonl",
+      "git_blob": "1cf66198df246d1844d6f4f27573263b4067cfc7",
+      "sha256": "81315d8b638fa7e87c70a1609181f7c4c715b1cfbc3852b1ec26fa69baa7859c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_iid_worlds.jsonl",
+      "git_blob": "e66da7887d36f924554145b7b9bc9bc0eea1293e",
+      "sha256": "272cffaf4216c74f916bd67aca77af06547e7a4c61b53ff831c766f8c76efe3e",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_template_ood_atomic.jsonl",
+      "git_blob": "4d528e967bb4432367316fa6b9982828cbdaa068",
+      "sha256": "925dd515e09a125c9c917e04a193e4394efed75511951ad6f4691aed53e9af83",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_template_ood_chains.jsonl",
+      "git_blob": "9af39033e0d1561169a15accfaf7df04d6d3418b",
+      "sha256": "f3ad19b09d797d8cdc86cf93eba8589afc7d138377a6cd549c6ddcf9ba45e922",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/data/test_template_ood_worlds.jsonl",
+      "git_blob": "a836d20e0840b8c7f9d83b5334bf908b579de3d3",
+      "sha256": "3a738aa89f93d3334148dc17cc958d18af70891585f60dc2d7b92fddb0620f5e",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/review/selected_worlds.json",
+      "git_blob": "b4cba7da669b9c613420c9cb24b0ad803b039f55",
+      "sha256": "c0f9eef97f783ef7425e7513247026e95900f21bb871a878c14e206126795983",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/training_code_manifest.json",
+      "git_blob": "cdec4a784129b9600e26b9ccc21dc512fa857bc0",
+      "sha256": "d20c17419531ae1f0ccb205d8e90c6369a2245818318bd6a5c1b2bffa26e84cb",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/reference_frame_pilot_v3/v1_v2_readonly_manifest.json",
+      "git_blob": "49c03cd3a9ef103207ffd42a320059baf46c272d",
+      "sha256": "47411404554cac067117a30cf08f59a10efae929ee7e394ad47584507f6b7b72",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/algebraic-generalization-v1",
+      "path": "experiments/single_step_diagnosis_v1/sample_manifest.json",
+      "git_blob": "1ade86edd61a1b9ace849713b2ce4e14d3504ebe",
+      "sha256": "b703cfb2f815a1210b43ccb12dced2734f7e625e5b2a0fa55dae2cda1081e1e5",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/decoder-basin-anisotropy-v1",
+      "path": "experiments/latent_reset_v1/train_manifest.jsonl",
+      "git_blob": "f78e2b3b59c72307febb2b165ce96cf11c63d69b",
+      "sha256": "f96c181a7c973bd2e09ecefefe3525c14ba6ffb707046697ed655c7ab9656827",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/decoder-basin-anisotropy-v1",
+      "path": "experiments/t5gemma_composition_v1/base_model_manifest.json",
+      "git_blob": "93d75c7096118dd89af81aabc36082055003ee15",
+      "sha256": "02400fb666da82eb8fcf49e0cb04e833ea8dc4edc2c8710e4320207cc25740fd",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/artifact_manifest.json",
+      "git_blob": "cc474016e933e7225238fce21d21c71f01bca2f5",
+      "sha256": "156c5dcaf7f7387b9e22b91f555e46fd8a12a79681755d1c953b71b1db54d8c8",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/composition_iid.jsonl",
+      "git_blob": "5cefc91f9e9ee887c1dd960337f6541b1cf424d9",
+      "sha256": "78a63ec601c5f8010f41bb36e8e29a0fb883bee93090f20b7e45772c8744b654",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/composition_iid_worlds.jsonl",
+      "git_blob": "4dd4772d5a04661ffcd7af3d5b3d96eca806bfac",
+      "sha256": "8dbfeed0462ee23b75819654dc14aa75c5ec882d766a985aa1fee62756aab2fc",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/composition_template_ood.jsonl",
+      "git_blob": "88aea900de2c464cce2ba9191af8a20d7e638e23",
+      "sha256": "34fa1c292a8a33e0cf4008bd17e6c724b4a3967c0210c2cfc723a0c1efe54da8",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/composition_template_ood_worlds.jsonl",
+      "git_blob": "fdf60c5ed128531e4bca54230019dad926d94d05",
+      "sha256": "a50e394af79883de66569cb84389fb89768191050b8da26f618f50f16ee6b9d3",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/dev_match.jsonl",
+      "git_blob": "cf5f50e03faf579404ac9d47fe2878ba83c271cf",
+      "sha256": "5bbd306a317e9585cb9b6459b3baf8635401994146bb8758d9ab14089ab4b2ae",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/match_iid.jsonl",
+      "git_blob": "3ca9306309c30a82036879821a4097b57661dcb2",
+      "sha256": "1695c84c92bc6e244cc8928693e36bb87736482637660b4cb58abaa8a2295e91",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/match_iid_worlds.jsonl",
+      "git_blob": "c0e8783ecbcab32b69e4fe0aafbc2a7a87f794b7",
+      "sha256": "656d535349e14fc9875c95586cae79acb7dbfd8c5e1efb53455d19366dcc7723",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/match_template_ood.jsonl",
+      "git_blob": "0c58252a39333f2f2e8b5635b77b2b2916322d2d",
+      "sha256": "8e54101d6fa64d1fb3402db642f2777b727e01ce669dbaea640bc3ff8bdc96e1",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/data/match_template_ood_worlds.jsonl",
+      "git_blob": "75fb2e3f064718aa9a0602e24cfa694f2fec2521",
+      "sha256": "c3d2750766764050d20622aa8c5526845df5a8136a1f404692722ca4b84ae4da",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/evaluation/analysis_manifest.json",
+      "git_blob": "3a881bee40c4b607001ee275e278e04339ea345b",
+      "sha256": "fc77e723e29c90b0f4f49874910916d1f45cdaf37c33ce99234f338a97c468d1",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/evaluation/association_world_bootstrap.json",
+      "git_blob": "b49a59e4acfe643e019771f44bd2bca0d86f01ba",
+      "sha256": "2da90ae139f90b606628b2af1720453db4cc1c25966c5ad270e1f4bec0638d3b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g10-matched-editor-composability-v1",
+      "path": "experiments/g10_matched_editor_composability_v1/evaluation/trajectory_manifest.json",
+      "git_blob": "824ea90188da2e86a710c5a67382143761980859",
+      "sha256": "d59cc6c180e53dd51bc0e52fb5f204913118fb38306a72f5d993464f85e6dc31",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g11-semantic-history-v1",
+      "path": "experiments/g11_semantic_history_v1/artifact_manifest.json",
+      "git_blob": "6817d76a53914affc610f90ad01d2df823574355",
+      "sha256": "2f763408db5e70b450a6959b817e3000e8c45cc4d3c6084f1eaee308812d2015",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g11-semantic-history-v1",
+      "path": "experiments/g11_semantic_history_v1/data/manifest.json",
+      "git_blob": "e35fe03b04488953feca174e3f7e558dd06edb14",
+      "sha256": "e4c811ee6f36e41daaa39855ee5281239a607fc277399ecdea49e9f60bedc737",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g11-semantic-history-v1",
+      "path": "experiments/g11_semantic_history_v1/data/paths.jsonl",
+      "git_blob": "561f82b49524eb429d0b3afc97c1206f57fca95e",
+      "sha256": "c0326f319cf27b86309f3e32f04544001b502dffc87fe7ef71f24527b5881354",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g11-semantic-history-v1",
+      "path": "experiments/g11_semantic_history_v1/data/worlds.jsonl",
+      "git_blob": "d1c3f4946725246a75cef2202f10a6c350b2fc22",
+      "sha256": "d52e42c5080a85549a8c76a93e49a9e9d932e1e1fa38cd48aaf55eefb5c62785",
+      "world_occurrences": 160
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/artifact_manifest.json",
+      "git_blob": "10a209d3941b25a3164b4b01653416bbe1428573",
+      "sha256": "644dc9306c813266e8b32f95bfe2e2cf85d9ba4d5fd0ea032d60628662c071ee",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/data/dev_paths.jsonl",
+      "git_blob": "5a9e43ce41b94c60cc52169ce256e6bc794cd847",
+      "sha256": "1ac75d5cec5dfbab7654a3c2056f3fe0e96e986da11c9d2f7586202cf1055231",
+      "world_occurrences": 27
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/data/sample_schedule.jsonl",
+      "git_blob": "b6068829cf5886c6525884e6f59036632d9c9f8b",
+      "sha256": "3a2d62f38d26cc3790b03a323de5894394fb619a1dcf771ccbdc8d28f1f3579b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/data/test_paths.jsonl",
+      "git_blob": "e80249fa720dd50ebfb6d90c6b0926592ccd8f3e",
+      "sha256": "05d489de759393b7b63035ecfeb2a1a53c0af5928a3ec0e3e282e9258f69e101",
+      "world_occurrences": 160
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/data/train_paths.jsonl",
+      "git_blob": "e4dbb96108122e2d5b1a24a2aed0a754e7841d91",
+      "sha256": "3bcdc3c1fab2be78113bbcef273d77f62ed86d6079466d0abd23257ff07d9be8",
+      "world_occurrences": 160
+    },
+    {
+      "ref": "refs/heads/experiment/g12-matched-input-source-v1",
+      "path": "experiments/g12_matched_input_source_v1/data/worlds.jsonl",
+      "git_blob": "274a4c4eba0bc6c5f872904554f1bac5e24c76fd",
+      "sha256": "6a60108868500bd69dfb446d7c8d04ae292e022df24c219a701b8ba73e7d3f8c",
+      "world_occurrences": 160
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/artifact_manifest.json",
+      "git_blob": "7c6de7c3cd74a104c418f45a886be81d6c75ce52",
+      "sha256": "b5bf8ab68f24469a0bc4274d09a4f6e254f54e705edf5c97d2fa88c7206b643d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/dev_worlds.jsonl",
+      "git_blob": "d2199e21d409868e1b48d8cb196fcb3597e64022",
+      "sha256": "b5ebc6c82d0b214b867a370d3d75dee0256e82dce595a11148efd29c7ceb8b57",
+      "world_occurrences": 384
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/iid_worlds.jsonl",
+      "git_blob": "083558c20790a94c8439014d56023f5d6849bbf3",
+      "sha256": "4f4896476249abc6557a0ddd9ad5d44cfcb60bd8719ee72b7ab45b27e4eda86a",
+      "world_occurrences": 480
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/manifest.json",
+      "git_blob": "028688db3c4b6de2aa202d535395b53f6323d8ca",
+      "sha256": "06912550f44d084ed8b3910155cdda4b0935f1f485f0066f20ed24b46f4615e1",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/sample_schedule.jsonl",
+      "git_blob": "f26f29f377b9686e6a5c77f513335cd72d8cabd0",
+      "sha256": "e48835abc47d8d89c0a9f17522e65f8ddad47ba2133b08927c03e7523aa825e9",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/schedule_s42.jsonl",
+      "git_blob": "61dc03d7130fe9dd1d93ec3d8174f92de39cfd2c",
+      "sha256": "699eac09456f9207b1ed4258c08866271d959a940077b09159ded795d323c5c2",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/template_ood_worlds.jsonl",
+      "git_blob": "8dc1f2f9d12592716398618a163556bec5b4b9d5",
+      "sha256": "b976052bbc0cfb8f49681bded6237fac415c7fdacfaf51a855a8875615305614",
+      "world_occurrences": 480
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/train_worlds.jsonl",
+      "git_blob": "c6f3b2747aff8b972bc2ec9801349f6a51ffa352",
+      "sha256": "0dd173edfa40dd9eb15d54413fb6311482f6f54227972a9cc8d21ab407fa8752",
+      "world_occurrences": 1536
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/data/worlds.jsonl",
+      "git_blob": "fdef891dff3cca4a34804549a498c46533e97f50",
+      "sha256": "7b076b7872f654737a5f9d692ab556b0385a36fcb0395e034bef008608c2509c",
+      "world_occurrences": 2880
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/per_example_manifest.json",
+      "git_blob": "2812808008107f21684d712cab0525d698932b92",
+      "sha256": "74ad3877579ca80df304a4642cd754fb395ed7ee7ad107ea96aa7ae296258cf5",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/g13-source-overfit-audit-v1",
+      "path": "experiments/g13_source_overfit_audit_v1/runs_manifest.json",
+      "git_blob": "68290adb36d8ea4dcbdb6cf28139277bbf7cfe5a",
+      "sha256": "df41f4e5467216d8c2d2de2488b551a1e57eca925ee582bea98898e26da250a7",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/artifact_manifest.json",
+      "git_blob": "a7084d78cc1edfebb8aafcdb893e6ab7855b502b",
+      "sha256": "53d57343c4daecd1de3ad692c199986a33b2dac3f488ea82bfe502e0c9337678",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/calibration_joint.jsonl",
+      "git_blob": "e62addfb340a0b5a7b76b038b8964196a8aaea67",
+      "sha256": "e0eec3d45ae53fe86ff2da42bedecf268e1f90f125d14b433b0f54cf9276a656",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/dev_joint.jsonl",
+      "git_blob": "63339e1510730a30a38328058c912370d3a399ce",
+      "sha256": "07d51ae68e656f4374d10c5cdc4e2106ab43112695443d7a5de0636c521d932c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/manifest.json",
+      "git_blob": "71c431b0108ba9cdb27b18d9c798c3af962472b1",
+      "sha256": "bf46574da733bb522535e62a3342e9be0bbe0a842849bc3230346fdb9b9350df",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/sample_schedule.jsonl",
+      "git_blob": "5566d5eaf6fa9ffab2734ae45c4df9b426bbf738",
+      "sha256": "4714869a5e1802b64ef9d54b047f689c0606a40ba72932d2df578363c44cdc67",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/test_iid_joint.jsonl",
+      "git_blob": "d39ff971a6b4e03634158858413f3023fd234556",
+      "sha256": "d282fa6447a6284c2f719fbedc4ba0a03af0d54adcf2af1c4792409267992d2d",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/test_iid_worlds.jsonl",
+      "git_blob": "296fc749585c4b0626bf0d590d0354bb9f68178e",
+      "sha256": "9871e44eeb9c6ab82b3bb9236c009f581880266ace0fd225109470a62eb8f990",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/test_template_ood_joint.jsonl",
+      "git_blob": "4178e831c83b002799e27716d2179dd31b95ee3d",
+      "sha256": "90efdd10db96180f2d3ea0540473ad133602a6edce9644834cf7ee4ae699f451",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/test_template_ood_worlds.jsonl",
+      "git_blob": "0ce69bffdcfb3ab8b7858e4b8bfd5c164ed79469",
+      "sha256": "3b50abd3a58d363b9df49d22feec2e2ed710e78e252cdbd9e74fdf3e5d134b99",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/data/train_G1.jsonl",
+      "git_blob": "6561f068440e2b9c2f2535f642611e389ebfdc7b",
+      "sha256": "b5bfd43d43c9e1332f4353047d49edbb3a79603a0c566f6274144f6cfd7222f3",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/editor_manifest.json",
+      "git_blob": "784009052591d347d963604e8929c5b4ebe2172f",
+      "sha256": "3ca1d752216a19c79133352d2817303eeda1ad9168cc46c842749f5886df1a66",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/evaluation_code_manifest.json",
+      "git_blob": "2174269058bb049ff23714084cf24ea4b6413b9c",
+      "sha256": "c46a9cc751bb17386143a5cf4112935fe4f998e4817fc9442be6c43f50f32fe5",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/old_readonly_manifest.json",
+      "git_blob": "497902e13a117dbc217f633d942fc75f076b9d46",
+      "sha256": "b4aae4e9711b5cd4d4c057f7f95b6078eabd7778de5457fd817402c97d4094f2",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/review/selected_worlds.json",
+      "git_blob": "3bf11915d5741b57eddd25d525c5661281fe0aa6",
+      "sha256": "49ff3395dd786f93f0ecb15230073567db8abb4c78794ed92f1ec092a481b3fa",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/joint_reference_editor_v1/training_code_manifest.json",
+      "git_blob": "aee5962ed885f93c8e3a8d2006f92298a36b3c73",
+      "sha256": "16b5ae1610e66c16e4d4ae2f75a32ae644d1e25ec1c44f9314139306158eef69",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/calibration_targets.jsonl",
+      "git_blob": "448a088fddc22b6efc6fed20e46b5d0de85dba8b",
+      "sha256": "4eb57679066ad4d708b2bdd33a5aa6849a3ab8fd2bed0a7bf0d4c05522283dbe",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/manifest.json",
+      "git_blob": "d799253a1f1974f78c50ab67d0892058bc34e9b5",
+      "sha256": "eff1f40ad2328d08c1a29384c31a4471f27c7502d82f3af06abc4ebd1c58c731",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_iid_atomic.jsonl",
+      "git_blob": "f69f32118bb11c3dc87bd6fe7dfc9724d514c41d",
+      "sha256": "53e6a3f12b72f24750f872b05733aea68a28521573c136df9fa9839a1d70bd2b",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_iid_chains.jsonl",
+      "git_blob": "3ef3d7dcd886bbcfd2a43f6964b6a685ffd1e1e3",
+      "sha256": "1c7a0f32c4c92d3d098341e9e5c71cea249071a9018deb91f7ff9268fee38d0c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_iid_worlds.jsonl",
+      "git_blob": "0b998437b913add4edb144342c4b71b1ff3e9ebe",
+      "sha256": "943dbe471ec9dbcb2504c23888a2ba528bbdfd4b8dc32164a4010ff0e10dabc4",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_template_ood_atomic.jsonl",
+      "git_blob": "8899d13dae72859f6f1c22f8d7fe83391b128086",
+      "sha256": "7179683ab77351c15b430a7b1d9ae92b469b0ab6fe42c49157f59be27eea4f01",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_template_ood_chains.jsonl",
+      "git_blob": "43d2bffdd0b0de7f556c66ab4a69c1460164e883",
+      "sha256": "bdcbeb0c5ff891e93d1a38e3738487588220ec5c7e20c37d8b2a3c402111f73c",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/data/test_template_ood_worlds.jsonl",
+      "git_blob": "7f419867198fa72216af6990f58d9627b93b91f8",
+      "sha256": "9ccc21c315cd1b666c182844234985e0b4b1ad633e8f027dd4433a995494effe",
+      "world_occurrences": 80
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/old_readonly_manifest.json",
+      "git_blob": "d6103b36900bdd60b4cb96a9e26e06ec20b0c1f5",
+      "sha256": "4e577047807f9d9ae78efb54f44f971ca7aae203fb6c55e1c8fc9d4f0d0a5a78",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/review/selected_worlds.json",
+      "git_blob": "e8fb39781182b24af7e95d70bd0adec936ee2d31",
+      "sha256": "39cbd494230ccd69bce5468a80c28dc416035add046f9eb70ff80b9ce9751c6a",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/joint-reference-editor-v1",
+      "path": "experiments/reference_frame_cross_backbone_v1/training_code_manifest.json",
+      "git_blob": "b5f8589aa792036bdb602b7f9647891d241cd2ac",
+      "sha256": "ca04d24b15dd54d335b753712a7d8b7e51f767e7058437f24a55db505a00af57",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/reference-frame-cross-backbone-v1",
+      "path": "experiments/label_quality_control_v1/frozen_data_manifest.json",
+      "git_blob": "309bb7af4d5f6337a22cc4b1aa70c07643cf50fb",
+      "sha256": "39d7d5d75ab376554a8a8d6b1ffcbc60b7ebd90364fca05641ab252fb58792d9",
+      "world_occurrences": 0
+    },
+    {
+      "ref": "refs/heads/experiment/reference-frame-cross-backbone-v1",
+      "path": "experiments/label_quality_control_v1/sample_manifest.json",
+      "git_blob": "dfeb5ae05546a4c12e0bdcdcbd04635e5e5c60bf",
+      "sha256": "1ca125241c37603346805829f6d83a4bf39532dc74a873fd78021f6ef7d78db1",
+      "world_occurrences": 0
+    },
+    {
+      "path": "experiments/g13_source_overfit_audit_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g13_source_overfit_audit_v1/data/worlds.jsonl",
+      "sha256": "7b076b7872f654737a5f9d692ab556b0385a36fcb0395e034bef008608c2509c",
+      "world_occurrences": 2880,
+      "supplement": "G13/G14 explicit worlds"
+    },
+    {
+      "path": "experiments/g14_matched_state_handoff_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g15-worktree/experiments/g14_matched_state_handoff_v1/data/worlds.jsonl",
+      "sha256": "d640072379c45277ee94d3f059d286dcd1133ce2dba89fe0747a005861c87b2e",
+      "world_occurrences": 320,
+      "supplement": "G13/G14 explicit worlds"
+    },
+    {
+      "path": "experiments/g13_source_overfit_audit_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g13_source_overfit_audit_v1/data/worlds.jsonl",
+      "sha256": "7b076b7872f654737a5f9d692ab556b0385a36fcb0395e034bef008608c2509c",
+      "world_occurrences": 2880,
+      "supplement": "G13/G14/G15 explicit worlds"
+    },
+    {
+      "path": "experiments/g14_matched_state_handoff_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g14_matched_state_handoff_v1/data/worlds.jsonl",
+      "sha256": "d640072379c45277ee94d3f059d286dcd1133ce2dba89fe0747a005861c87b2e",
+      "world_occurrences": 320,
+      "supplement": "G13/G14/G15 explicit worlds"
+    },
+    {
+      "path": "experiments/g15_self_state_transfer_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g15_self_state_transfer_v1/data/worlds.jsonl",
+      "sha256": "c0954ebc5a6241585f3934eb2bfd471c24fa49826a2d5e5550d983aff4430826",
+      "world_occurrences": 2880,
+      "supplement": "G13/G14/G15 explicit worlds"
+    },
+    {
+      "path": "experiments/g16_capability_preserving_transfer_v1/data/worlds.jsonl",
+      "absolute_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.g17-worktree/experiments/g16_capability_preserving_transfer_v1/data/worlds.jsonl",
+      "sha256": "09e8047f9b94f2964eef6cd6e890a808af111f2294eff097bff448bdae818f2c",
+      "world_occurrences": 2880,
+      "supplement": "G16 all train/dev/IID/OOD facts"
+    }
+  ],
+  "unavailable": [],
+  "old_unique_facts": 11639,
+  "old_normalized_texts": 182356,
+  "fact_overlap": 0,
+  "render_overlap": 0,
+  "scope": "inherited accessible G16/G15 audited list plus all G16 worlds; no inaccessible/all-history claim",
+  "all_frames_legal": true,
+  "max_tokens": 50,
+  "templates": {
+    "iid": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "template_ood": [
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "template_polarity_joint_support": "same generator parity coupling",
+  "shared_vocab": true
+}
