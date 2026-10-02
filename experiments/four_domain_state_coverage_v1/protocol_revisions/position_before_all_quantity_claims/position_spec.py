@@ -1,7 +1,6 @@
 """Position diagnostics; primary scientific modules are left unchanged."""
 import re
 from datetime import date,timedelta
-from quantity_guard import consistent_quantity
 
 def prepare_world(w):
     w=dict(w)
@@ -9,11 +8,6 @@ def prepare_world(w):
     return w
 
 def make_functions(base_gold,base_render,base_score):
-    def checked_counts(result,text,g):
-        check=consistent_quantity(text,g)
-        if check is not True:result=dict(result,success=False,preserved=False,scope=False)
-        if check is None:result=dict(result,parseable=False)
-        return result
     def gold(w,state,variant=0,symbolic=False):
         assert variant in (range(4) if w['domain']=='emotion' else range(2)) and not symbolic
         structure=5 if w['domain']=='time' or (w['domain']=='emotion' and variant>=2) else 4
@@ -55,7 +49,7 @@ def make_functions(base_gold,base_render,base_score):
     def score(text,g,w,ended=True):
         if g.get('foil_narrator'):
             from narrator_scope_score import score_narrator
-            return checked_counts(score_narrator(text,g,w,ended,base_score),text,g)
+            return score_narrator(text,g,w,ended,base_score)
         if g['domain']!='time':
             result=base_score(text,g,w,ended)
             if g['domain']=='space':
@@ -64,7 +58,7 @@ def make_functions(base_gold,base_render,base_score):
                 if target_check is not True:result=dict(result,success=False,target=False,scope=False)
                 if other_check is not True:result=dict(result,success=False,preserved=False,scope=False)
                 if target_check is None or other_check is None:result=dict(result,parseable=False)
-            return checked_counts(result,text,g)
+            return result
         quotes=list(re.finditer(r'"([^"]*)"',text));valid=len(quotes)==1 and re.sub(r'\s+',' ',quotes[0][1].strip()).lower()==g['foil_quote'].lower()
         if len(quotes)==1:
             q=quotes[0];adapted=text[:q.start(1)]+'The event is tomorrow.'+text[q.end(1):]
@@ -72,5 +66,5 @@ def make_functions(base_gold,base_render,base_score):
         result=base_score(adapted,g,w,ended)
         if not valid:
             result=dict(result,success=False,scope=False,preserved=False)
-        return checked_counts(result,text,g)
+        return result
     return gold,render,score

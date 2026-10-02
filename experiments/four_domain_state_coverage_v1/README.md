@@ -78,6 +78,12 @@ retains the old guard, lock and candidate audit, adds224 positive paraphrase che
 and freezes the correction before diagnostic GPU work. Guard results are now
 consistent/contradictory/unknown; an unrecognized phrase is not a confirmed model
 false positive. Additional diagnostics mark unsupported guard wording unresolved.
+An additional CPU audit exposed the first-count shortcut:56 constructed emotion
+texts passed despite a second contradictory copy count. Factual correctness is not inferred from the first successful regex match: actual output
+and qualified-current count conflicts are indexed separately in QUANTITY_SCORING_AUDIT
+and quantity_scoring_adjudication. The pending position scorer checks all unquoted
+exact counts; repeated consistent counts remain valid. See POSITION_QUANTITY_AMENDMENT
+and its pre-GPU revision. Main raw scores/gates/data/weights are retained.
 
 `progress.py` creates a CPU-only task/checkpoint/shard snapshot in PROGRESS.md/json.
 Run account.py first for fresh GPU-hours. Components and exposure definitions are

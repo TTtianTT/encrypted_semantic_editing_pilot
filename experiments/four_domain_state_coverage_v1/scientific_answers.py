@@ -34,8 +34,9 @@ def research_answers():
     reviewed=read(ROOT/'CONTINUATION_AGENT_REVIEW.json') if (ROOT/'CONTINUATION_AGENT_REVIEW.json').exists() else {'cases':[]}
     reviewed_domains=sorted({r['domain'] for r in reviewed['cases']})
     review_note=('固定案例审阅已确认BART的'+ '、'.join(reviewed_domains)+'三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。') if reviewed_domains else ''
-    a1=review_note+'另有可解析的下一步语义不匹配的模型/领域为'+('、'.join(affected) if affected else '暂无已完成证据')+'。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合'+('、'.join(failed) if failed else '暂无')+'只说明此配置基础能力不足。'+('仍待完成：'+ '、'.join(pending)+'。' if pending else '')
+    a1=review_note+'另有可解析的下一步语义不匹配的模型/领域为'+('、'.join(affected) if affected else '暂无已完成证据')+'。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合'+('、'.join(failed) if failed else '暂无')+'未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。'+('仍待完成：'+ '、'.join(pending)+'。' if pending else '')
     if (ROOT/'T5_SPACE_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。'
+    if (ROOT/'T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 情感seed42首批证据为96条合格续步中95条严格失败、1条成功，64条为已解析槽位不匹配；固定案例确认评价越级或必要内容缺失。此单seed记录保留成功反例，其余seed另报，不冒充三seed结论。'
     contrasts=[]
     for (m,d,h),vv in sorted(deltas.items()):
         values=[x for s,x in sorted(vv)];contrasts.append(f'{m}/{d}/H{h}：{len(values)}seed均值{statistics.mean(values)*100:+.2f}pp，范围[{min(values)*100:+.2f},{max(values)*100:+.2f}]pp')

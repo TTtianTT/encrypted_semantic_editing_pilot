@@ -1,0 +1,26 @@
+{
+  "reviewer": "Codex assistant, not independent human annotation",
+  "selection": "fixed first world emotion_0120, seed42, all three trajectories, current/next/gold control",
+  "cases": [
+    {
+      "trajectory": "forward",
+      "outcome": "confirmed_wrong_target_or_missing_content",
+      "note": "Keeps negative instead of neutral and omits non-target evaluation and objective facts."
+    },
+    {
+      "trajectory": "reverse",
+      "outcome": "confirmed_wrong_target_or_missing_content",
+      "note": "Overshoots positive to negative instead of neutral; non-target evaluation/facts remain correct."
+    },
+    {
+      "trajectory": "inverse",
+      "outcome": "confirmed_wrong_target_or_missing_content",
+      "note": "After positive, inverse gives negative instead of restoring neutral; non-target content remains correct."
+    }
+  ],
+  "eligible_second_steps": 96,
+  "strict_second_step_failures": 95,
+  "parsed_semantic_mismatches": 64,
+  "successful_counterexamples": 1,
+  "limitation": "One seed only; remaining seeds pending. Three paths share one world. All successful eligible second steps are retained."
+}
