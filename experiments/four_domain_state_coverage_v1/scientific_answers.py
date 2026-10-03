@@ -100,6 +100,7 @@ def research_answers():
     a4+=' 后正式位置诊断：'+('；'.join(foils) if foils else '尚待结果')+'。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。'
     if (ROOT/'POSITION_BART_FIXED_REVIEW.md').exists():a4+=' BART固定首世界seed42/plus案例直接显示历史日期词被编辑而外部today未改、非目标box评价改变及引语观点改变；这些结构未通过基本准入，属于原子范围/生成失败。parcel/package和斜线日期可能是合理同义/格式，不作已证实身份错误。一个额外Jane评价的预期槽分项仍为True但综合success为False，说明分项scope不等于完整范围证明。详见POSITION_BART_FIXED_REVIEW。'
     if (ROOT/'POSITION_T5_TIME_SPACE_REVIEW.md').exists():a4+=' T5Gemma时间/空间两个新顺序重构均100%，但三seed均未通过原子范围准入。首世界三seed目标在前时正确编辑外部日期/目标左关系，同时改动历史原话或固定Emma方向；顺序反转后还出现历史日期/绝对事件日期/世界方位改变或正文丢失。POSITION_T5_TIME_SPACE_REVIEW核查12个固定输出，不是独立世界或总体人工标注；位置敏感性不独立识别唯一位置机制。'
+    if (ROOT/'PERSON_QUOTE_ATTRIBUTION_AMENDMENT.md').exists():a4+=' 人称原计数也受保守姓名字面比较影响：当前Speaker Carol时，引语外I said to Henry可以保持历史Carol身份。按实际输出的唯一Speaker/Listener统一解析引语外I/me/you，保留引语内部原话；独立1,008正例/6,048负例复核后T5Gemma P历史引语test的42/43/44由35/192、35/192、50/192修正为78/192、38/192、94/192。原分数及准入保留，结构仍不足基本能力；core/source主比较不变。POSITION_T5_PERSON_REVIEW区分合法外部代词、错误历史受话者/原话和新语境/主事件丢失。'
     symbol=defaultdict(lambda:[0,0])
     for r in readcsv(ROOT,'summary_by_seed.csv'):
         if r['phase']=='symbol' and r['kind']=='atomic':
