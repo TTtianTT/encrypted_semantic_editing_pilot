@@ -32,6 +32,9 @@ def main():
     mm=[dict(模型=r['model'],seed=r['seed'],划分=r['holdout_split'],世界=r['worlds'],S=f"{r['S_k']}/{r['n']}",M=f"{r['M_k']}/{r['n']}",M减S=f"{float(r['M_minus_S'])*100:+.2f}pp") for r in readcsv(confirmation,'M_vs_S.csv') if r['source']=='U' and r['template']=='0' and r['cohort']=='fixed_fulltext_mask']
     appendix+=['',table(['模型','seed','划分','世界','S','M','M减S'],mm),'', '完整逐seed/group CSV与mean_and_range保存在space_relation_confirmation_v1。来源/状态/表达交叉保存在主目录transfer_quad.csv；字面全文与标准化全文匹配分别保存在literal_fulltext*及same_text_source_disagreement.csv。cross_backbone_fixed_worlds给共同内容世界/当前全文集合以及各backbone自己的覆盖；跨backbone token mask不能相同，限制另存JSON。']
     appendix+=['','冻结cohort原始筛除名one_or_more_current_semantically_incorrect实际表示完整受控准入失败，包含未解析、语法和终止问题；不能把该标签直接解释为已证实语义错误。current_correct/source coverage同样按冻结联合标准定义。原始原因保留，具体失败类型和未知覆盖另列。不同当前状态之间的前驱文本/方向及mask长度不一定匹配，见source_mask_length；来源匹配只在同一当前语义/世界/锚点内执行，不把状态差异单独认定为因果机制。', '', 'T5_EMOTION_S42_M_BENEFIT_AGENT_REVIEW另保存情感seed42/H0首批64个固定U留出状态候选中M成功/S失败的首个字典序案例：Carol的negative→strongly negative正确完成，Alice及对象事实保持。该助手审阅仅确认一个示例，不是独立人工标注，最终多seed比较仍以完整CSV为准。']
+    if (confirmation/'CONTINUATION_AGENT_REVIEW.json').exists():
+        cr=read(confirmation/'CONTINUATION_AGENT_REVIEW.json');seeds=sorted({r['seed'] for r in cr['cases']})
+        appendix+=['',f"关系确认版CONTINUATION_AGENT_REVIEW已审阅P的seed{','.join(map(str,seeds))}、首个固定世界的三种轨迹，共{len(cr['cases'])}例。seed42/inverse应恢复front却输出right，人物/事实保持；reverse只丢失必需空间关系，剩余正文语法正常。受控grammar标签同时包含句式完整性，不能把所有grammar=false当作独立语法错误。逐例原始current/next/gold与mask长度另存continuation_review_set；gold重编码mask43与latent44不同，它是能力控制，不是单独的同mask来源因果比较。只有已列case ID的案例获得助手审阅标签，不继承给未审阅预测；该记录本身不代表正式N/S/M全部完成。"]
     symbol_counts=defaultdict(lambda:[0,0])
     for r in readcsv(ROOT,'summary_by_seed.csv'):
         if r['phase']=='symbol':

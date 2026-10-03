@@ -1,0 +1,95 @@
+{
+  "reviewed_at_utc": "2026-10-03T04:42:40.670984+00:00",
+  "cases": [
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s42/space_0120/forward",
+      "seed": 42,
+      "trajectory": "forward",
+      "artifact": "runs/formal/t5gemma_space_s42/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "902d19d735fb1c3a1f7de2e2f3a7193d20d4e85d31380a902eed7415838c4533",
+      "reason": "Expected back. Output explicitly remains left and replaces David with an unrelated observer/path clause; color and quantity remain.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s42/space_0120/reverse",
+      "seed": 42,
+      "trajectory": "reverse",
+      "artifact": "runs/formal/t5gemma_space_s42/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "902d19d735fb1c3a1f7de2e2f3a7193d20d4e85d31380a902eed7415838c4533",
+      "reason": "Required parcel/observer spatial relation is missing. David, parcel, black and six copies remain. The remaining declarative body is grammatical; raw grammar=false is a controlled task-completeness proxy, not an independent grammar error.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s42/space_0120/inverse",
+      "seed": 42,
+      "trajectory": "inverse",
+      "artifact": "runs/formal/t5gemma_space_s42/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "902d19d735fb1c3a1f7de2e2f3a7193d20d4e85d31380a902eed7415838c4533",
+      "reason": "Expected restored front. Output explicitly says right; David, parcel, black and six copies remain. Clear target-relation mismatch.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s43/space_0120/forward",
+      "seed": 43,
+      "trajectory": "forward",
+      "artifact": "runs/formal/t5gemma_space_s43/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "3124d9dc3bc32e196f855815220f51350e210b765f96ab71edcd81cec51fa66c",
+      "reason": "Expected back. Output repeats left, omits black/six-copies facts and does not terminate.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s43/space_0120/reverse",
+      "seed": 43,
+      "trajectory": "reverse",
+      "artifact": "runs/formal/t5gemma_space_s43/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "3124d9dc3bc32e196f855815220f51350e210b765f96ab71edcd81cec51fa66c",
+      "reason": "A behind-me fragment occurs, but the named observer, parcel identity and quantity relation are missing in the damaged memberId/and-I fragment. Do not classify this as a clear wrong direction solely from its relation word.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s43/space_0120/inverse",
+      "seed": 43,
+      "trajectory": "inverse",
+      "artifact": "runs/formal/t5gemma_space_s43/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "3124d9dc3bc32e196f855815220f51350e210b765f96ab71edcd81cec51fa66c",
+      "reason": "Expected restored front. Output repeats right, corrupts the observer identity and omits facts without termination.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    }
+  ],
+  "selection": "First test world space_0120, all predefined forward/reverse/inverse core paths at steps1/2, all available formal seeds. No next-outcome selection.",
+  "not_reviewed_seeds": [
+    44
+  ],
+  "status": "partial: P core shards for seeds42/43 only; formal N/S/M still running",
+  "limitations": [
+    "Existence examples, not population labeling or causal mechanism",
+    "Same world across paths/seeds is not six independent worlds",
+    "Gold-reencode current mask43 differs from latent mask44; capability control, not a matched provenance intervention",
+    "Raw grammar tags conflate controlled completeness and grammar; missing relation in seed42/reverse is not ungrammatical prose",
+    "Newly appended cases do not inherit assistant labels"
+  ]
+}

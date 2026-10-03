@@ -483,7 +483,7 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 
 ## 七个研究问题：以已完成证据回答
 
-1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。仍待完成：t5gemma/space。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
+1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。仍待完成：t5gemma/space。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 关系确认版P另已由助手审阅seed42,43的6个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
 
 2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/emotion/H0：3seed均值+9.38pp，范围[+0.00,+28.12]pp；t5gemma/emotion/H1：3seed均值+6.77pp，范围[-1.56,+21.88]pp；t5gemma/person/H0：3seed均值+15.10pp，范围[+0.00,+32.81]pp；t5gemma/person/H1：3seed均值-5.21pp，范围[-48.44,+40.62]pp；t5gemma/time/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：3seed均值-11.46pp，范围[-34.38,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。 操作方向分项保存在M_vs_S_by_operation.csv，使用同一固定候选集按plus/minus分组，未改变评分或选集。情感方向结果：t5gemma/emotion/H0/降低：3seed，S均值0.00%、M均值18.75%，M−S均值+18.75pp[+0.00,+56.25]；t5gemma/emotion/H0/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；t5gemma/emotion/H1/降低：3seed，S均值19.79%、M均值33.33%，M−S均值+13.54pp[-3.12,+43.75]；t5gemma/emotion/H1/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；方向间不能相互代替。
 
@@ -536,6 +536,10 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 
 
 T5_EMOTION_S42_M_BENEFIT_AGENT_REVIEW另保存情感seed42/H0首批64个固定U留出状态候选中M成功/S失败的首个字典序案例：Carol的negative→strongly negative正确完成，Alice及对象事实保持。该助手审阅仅确认一个示例，不是独立人工标注，最终多seed比较仍以完整CSV为准。
+
+
+
+关系确认版CONTINUATION_AGENT_REVIEW已审阅P的seed42,43、首个固定世界的三种轨迹，共6例。seed42/inverse应恢复front却输出right，人物/事实保持；reverse只丢失必需空间关系，剩余正文语法正常。受控grammar标签同时包含句式完整性，不能把所有grammar=false当作独立语法错误。逐例原始current/next/gold与mask长度另存continuation_review_set；gold重编码mask43与latent44不同，它是能力控制，不是单独的同mask来源因果比较。只有已列case ID的案例获得助手审阅标签，不继承给未审阅预测；该记录本身不代表正式N/S/M全部完成。
 
 
 

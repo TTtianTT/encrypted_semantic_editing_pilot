@@ -36,6 +36,10 @@ def research_answers():
     review_note=('固定案例审阅已确认BART的'+ '、'.join(reviewed_domains)+'三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。') if reviewed_domains else ''
     a1=review_note+'另有可解析的下一步语义不匹配的模型/领域为'+('、'.join(affected) if affected else '暂无已完成证据')+'。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合'+('、'.join(failed) if failed else '暂无')+'未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。'+('仍待完成：'+ '、'.join(pending)+'。' if pending else '')
     if (ROOT/'T5_SPACE_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。'
+    confirmation_review=ROOT.parent/'space_relation_confirmation_v1'/'CONTINUATION_AGENT_REVIEW.json'
+    if confirmation_review.exists():
+        reviewed_space=read(confirmation_review)['cases'];reviewed_seeds=sorted({r['seed'] for r in reviewed_space})
+        a1+=f" 关系确认版P另已由助手审阅seed{','.join(map(str,reviewed_seeds))}的{len(reviewed_space)}个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。"
     if (ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json').exists():
         review=read(ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
         a1+=' 情感P三个seed的step2各有96条合格续步，严格成功分别为'+','.join(str(r['strict_success']) for r in review['counts'])+'；严格失败分别为'+','.join(str(r['strict_failed']) for r in review['counts'])+'，已解析槽位不匹配分别为'+','.join(str(r['parsed_slot_mismatch']) for r in review['counts'])+'。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。'
