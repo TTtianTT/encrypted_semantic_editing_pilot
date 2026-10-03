@@ -40,7 +40,11 @@ def research_answers():
         review=read(ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
         a1+=' 情感P三个seed的step2各有96条合格续步，严格成功分别为'+','.join(str(r['strict_success']) for r in review['counts'])+'；严格失败分别为'+','.join(str(r['strict_failed']) for r in review['counts'])+'，已解析槽位不匹配分别为'+','.join(str(r['parsed_slot_mismatch']) for r in review['counts'])+'。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。'
     elif (ROOT/'T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 情感seed42首批证据为96条合格续步中95条严格失败、1条成功，64条为已解析槽位不匹配；固定案例确认评价越级或必要内容缺失。此单seed记录保留成功反例，其余seed另报，不冒充三seed结论。'
-    if (ROOT/'T5_PERSON_S42_CONTINUATION_AGENT_REVIEW.md').exists():a1+=' T5Gemma人称另有seed42首个固定世界的三例助手审阅：gold续步正确，latent未切换/切错Speaker语境，或事件缺失。该记录仅涉及seed42；事件身份保持而语境错误的案例不标成人物绑定错误。'
+    if (ROOT/'T5_PERSON_THREE_SEED_CONTINUATION_AGENT_REVIEW.json').exists():
+        review=read(ROOT/'T5_PERSON_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
+        a1+=' T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。'
+        presence[('t5gemma','person')].update(r['seed'] for r in review['counts'] if r['strict_failed']>0)
+    elif (ROOT/'T5_PERSON_S42_CONTINUATION_AGENT_REVIEW.md').exists():a1+=' T5Gemma人称另有seed42首个固定世界的三例助手审阅：gold续步正确，latent未切换/切错Speaker语境，或事件缺失。该记录仅涉及seed42；事件身份保持而语境错误的案例不标成人物绑定错误。'
     contrasts=[]
     for (m,d,h),vv in sorted(deltas.items()):
         values=[x for s,x in sorted(vv)];contrasts.append(f'{m}/{d}/H{h}：{len(values)}seed均值{statistics.mean(values)*100:+.2f}pp，范围[{min(values)*100:+.2f},{max(values)*100:+.2f}]pp')

@@ -1,0 +1,34 @@
+{
+  "review": "assistant inspection, not independent human annotation; first eligible content world, all3 paths, all3 seeds; no best-seed/worst-case selection",
+  "cases": 9,
+  "counts": [
+    {
+      "seed": 42,
+      "eligible": 96,
+      "strict_success": 0,
+      "strict_failed": 96,
+      "parsed_slot_mismatch": 43,
+      "unresolved": 53,
+      "selection_world": "person_0120"
+    },
+    {
+      "seed": 43,
+      "eligible": 96,
+      "strict_success": 0,
+      "strict_failed": 96,
+      "parsed_slot_mismatch": 63,
+      "unresolved": 33,
+      "selection_world": "person_0120"
+    },
+    {
+      "seed": 44,
+      "eligible": 96,
+      "strict_success": 0,
+      "strict_failed": 96,
+      "parsed_slot_mismatch": 32,
+      "unresolved": 64,
+      "selection_world": "person_0120"
+    }
+  ],
+  "formal_NS_M_status": "seed42 complete; seeds43/44 still evaluating at review time"
+}
