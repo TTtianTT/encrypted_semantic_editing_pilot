@@ -1,5 +1,9 @@
 # Four-domain controlled state-coverage experiment
 
+Final delivery, 2026-10-03: all submitted phases have ended. Main natural experiments completed N/S/M for18/24 model-domain-seed combinations;6/24 failed admission. The separate spatial-relation confirmation completed3/6, with the three BART combinations not admitted. Both holdout splits and seeds42/43/44 are retained. CPU finalization2590 completed with exit0; no task remains running. Allocation accounting totals44.0692 GPUh, historical maximum2 GPUs, within the frozen48 GPUh cap. Three initial timeouts were recovered using the same checkpoints and missing evaluation shards.
+
+Start with RESULTS.md, RESEARCH_ANSWERS.md, ERROR_ANALYSIS.md and FINALIZATION_STATUS.json. Parameter exports and hashes are indexed in checkpoints_index.json; additional raw prediction archives in ADDITIONAL_PREDICTION_ARCHIVES.json; full shared-storage logs and hashes in LOG_INDEX.json. The equivalent spatial-confirmation indexes are in the sibling directory. Original optimizer/RNG/source tensors remain on shared storage for recovery; the Git branch includes206 editor parameter exports and compressed per-example prediction archives, not backbone weights. Raw and post hoc paraphrase/quote-attribution scores are distinguished, with unchanged formal admission and checkpoint selection.
+
 Read EXPERIMENT_PLAN.md, DATA_SPEC.md, AMENDMENTS.md and the immutable formal_lock.json. New branch starts from audited G17; no old parameter checkpoint initializes this experiment. Existing `.venv`, BART and admitted T5Gemma2B-2B UL2-IT artifacts are read-only reused. No admitted270M IT model was found; the old pretrained270M failure is retained in AUDIT/model_manifest.
 
 From original repository working directory:
@@ -8,6 +12,8 @@ From original repository working directory:
 .venv/bin/python .four-domain-worktree/experiments/four_domain_state_coverage_v1/account.py
 .venv/bin/python .four-domain-worktree/experiments/four_domain_state_coverage_v1/analyze.py
 ```
+
+After a CPU finalization job exits, refresh accounting with the command above, then run progress.py and `extra_archives.py --logs-only` to include its final stdout/stderr hashes without rebuilding prediction archives. Rebuild the combined report with final_report.py; analyze.py alone reports the original study rather than the full amended confirmation evidence.
 
 GPU submission/recovery always uses the single locked scheduler. Existing submitted phases are returned, never duplicated. Resume is permitted only after all previous phase allocations terminate, and submits only tasks lacking immutable complete markers:
 

@@ -1,6 +1,6 @@
 # 四领域连续表示编辑：结果
 
-本轮整体状态：**仍在运行或存在缺失任务；本文件是当前工件快照，不能当作全部完成。**
+本轮整体状态：**全部预定计算和工件核验已结束；准入失败与未执行结构单列。**
 
 空间原协议按绝对朝向分层，不能据此声称留出了相对关系状态；它的行为/退化工件全部保留。主状态泛化问题使用独立预注册的关系确认版，语义与更正时间见POSTFORMAL_SEMANTIC_AUDIT.md。确认版重新初始化原子编辑器，训练文本集合相同但抽样行序改变，原版与确认版的差异不能只归因于补训覆盖。
 
@@ -8,7 +8,7 @@
 
 
 
-**状态：原主数组已结束；补充确认/结构/probe仍未全部完成。**
+**状态：全部计划任务已结束。**
 
 正式完成N/S/M组合18/24；未通过准入6/24；来源训练不可行0；符号对照完成8/8。独立重评分预测822,656条。每领域96/24/32个train/dev/test内容世界，各改写/轨迹共享世界划分。
 
@@ -483,23 +483,23 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 
 ## 七个研究问题：以已完成证据回答
 
-1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/space、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 关系确认版P另已由助手审阅seed42,43,44的9个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
+1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/space、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 关系确认版P另已由助手审阅seed42,43,44的9个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅只涉及P固定案例；正式N/S/M完成状态由任务清单另行核验，新增未审阅案例不继承标签。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。这些计数来自P轨迹，正式N/S/M完成状态及比较由独立清单和CSV核验。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
 
 2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/emotion/H0：3seed均值+9.38pp，范围[+0.00,+28.12]pp；t5gemma/emotion/H1：3seed均值+6.77pp，范围[-1.56,+21.88]pp；t5gemma/person/H0：3seed均值+15.10pp，范围[+0.00,+32.81]pp；t5gemma/person/H1：3seed均值-5.21pp，范围[-48.44,+40.62]pp；t5gemma/space/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/space/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：3seed均值-11.46pp，范围[-34.38,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。 操作方向分项保存在M_vs_S_by_operation.csv，使用同一固定候选集按plus/minus分组，未改变评分或选集。情感方向结果：t5gemma/emotion/H0/降低：3seed，S均值0.00%、M均值18.75%，M−S均值+18.75pp[+0.00,+56.25]；t5gemma/emotion/H0/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；t5gemma/emotion/H1/降低：3seed，S均值19.79%、M均值33.33%，M−S均值+13.54pp[-3.12,+43.75]；t5gemma/emotion/H1/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；方向间不能相互代替。
 
 3. 三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：bart/time P自然IID2304/2304，留出表达322/1152；bart/person P自然IID1152/1152，留出表达122/576；t5gemma/time P自然IID2304/2304，留出表达663/1152；t5gemma/space P自然IID1536/1536，留出表达2/768；t5gemma/emotion P自然IID1536/1536，留出表达481/768；t5gemma/person P自然IID1152/1152，留出表达257/576。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。 空间留出表达上述数字是原有限解析器分数，不能解释为语义成功数：统一事后释义评分的P/seed42,43,44分别为201/256,187/256,223/256；原分数保留，评分修订不改变模型输入或正式cohort。 释义修订后另建仅按当前输出选取的事后来源配对集，留出关系上的S/M为seed42/H0 0/42与0/42，21世界；seed42/H1 2/64与0/64，32世界；seed43/H0 0/2与0/2，1世界；seed43/H1 0/36与12/36，18世界；seed44/H0 0/50与0/50，25世界；seed44/H1 0/54与0/54，27世界。它与原固定集分开，不能用成功筛选后的覆盖变化代替预注册比较；没有按下一步结果筛选。 完成三seed的固定配对集来源/状态对照：bart/time S/H0在留出U的已补训状态均值67.71%[25.00,100.00]，留出状态35.94%[0.00,84.38]；bart/person S/H0在留出U的已补训状态均值76.56%[57.81,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/time S/H0在留出U的已补训状态均值98.96%[96.88,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/space S/H0在留出U的已补训状态均值99.48%[98.44,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/emotion S/H0在留出U的已补训状态均值81.77%[68.75,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/person S/H0在留出U的已补训状态均值62.50%[28.12,95.31]，留出状态0.00%[0.00,0.00]；方括号是训练seed范围，不能作为置信区间。
 
-4. 锚点/范围挑战的完整语义成功：bart/time P挑战2189/3456；bart/person P挑战4/2304；t5gemma/time P挑战1640/3456；t5gemma/space P挑战575/2304；t5gemma/emotion P挑战1818/2304；t5gemma/person P挑战543/2304。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。 后正式位置诊断：尚待结果。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。 独立符号对照仅seed42的test原子结果：bart/emotion 251/256；bart/person 77/192；bart/space 0/256；bart/time 0/384；t5gemma/emotion 256/256；t5gemma/person 192/192；t5gemma/space 256/256；t5gemma/time 384/384。其中BART情感的符号输入表现与自然语言准入失败分开报告，说明这套输入接口会影响基本能力；没有符号连续轨迹或N/S/M，不能替代自然语言结果。
+4. 锚点/范围挑战的完整语义成功：bart/time P挑战2189/3456；bart/person P挑战4/2304；t5gemma/time P挑战1640/3456；t5gemma/space P挑战575/2304；t5gemma/emotion P挑战1818/2304；t5gemma/person P挑战543/2304。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。 独立语言结构准入中，T5Gemma情感多对象和历史引语均通过三seed门槛；P的第一步各96/96、纯latent第二步各0/96，而decode–reencode和gold-reencode第二步各96/96。固定六例区分正文缺失、重复、等级错误及非目标box评价改变/评价方向反转；引语第四步重编码仍有92/96、95/96、93/96的反例。见EMOTION_LANGUAGE_CONTINUATION_REVIEW，不是独立人工总体标注。 后正式位置诊断：bart/time/s42/clause_order原顺序0/384、反顺序0/384、两者均对0/384；bart/time/s43/clause_order原顺序0/384、反顺序0/384、两者均对0/384；bart/time/s44/clause_order原顺序0/384、反顺序0/384、两者均对0/384；bart/space/s42/clause_order原顺序0/256、反顺序10/256、两者均对0/256；bart/space/s43/clause_order原顺序0/256、反顺序0/256、两者均对0/256；bart/space/s44/clause_order原顺序1/256、反顺序7/256、两者均对0/256；bart/emotion/s42/clause_order原顺序44/256、反顺序0/256、两者均对0/256；bart/emotion/s42/narrator_quote_order原顺序0/256、反顺序0/256、两者均对0/256；bart/emotion/s43/clause_order原顺序16/256、反顺序0/256、两者均对0/256；bart/emotion/s43/narrator_quote_order原顺序3/256、反顺序0/256、两者均对0/256；bart/emotion/s44/clause_order原顺序37/256、反顺序0/256、两者均对0/256；bart/emotion/s44/narrator_quote_order原顺序2/256、反顺序0/256、两者均对0/256；bart/person/s42/clause_order原顺序0/192、反顺序0/192、两者均对0/192；bart/person/s43/clause_order原顺序0/192、反顺序0/192、两者均对0/192；bart/person/s44/clause_order原顺序0/192、反顺序0/192、两者均对0/192；t5gemma/time/s42/clause_order原顺序0/384、反顺序0/384、两者均对0/384；t5gemma/time/s43/clause_order原顺序13/384、反顺序0/384、两者均对0/384；t5gemma/time/s44/clause_order原顺序1/384、反顺序0/384、两者均对0/384；t5gemma/space/s42/clause_order原顺序0/256、反顺序0/256、两者均对0/256；t5gemma/space/s43/clause_order原顺序1/256、反顺序0/256、两者均对0/256；t5gemma/space/s44/clause_order原顺序0/256、反顺序0/256、两者均对0/256；t5gemma/emotion/s42/clause_order原顺序256/256、反顺序19/256、两者均对19/256；t5gemma/emotion/s42/narrator_quote_order原顺序2/256、反顺序0/256、两者均对0/256；t5gemma/emotion/s43/clause_order原顺序256/256、反顺序7/256、两者均对7/256；t5gemma/emotion/s43/narrator_quote_order原顺序0/256、反顺序0/256、两者均对0/256；t5gemma/emotion/s44/clause_order原顺序256/256、反顺序5/256、两者均对5/256；t5gemma/emotion/s44/narrator_quote_order原顺序67/256、反顺序3/256、两者均对2/256；t5gemma/person/s42/clause_order原顺序35/192、反顺序0/192、两者均对0/192；t5gemma/person/s43/clause_order原顺序35/192、反顺序0/192、两者均对0/192；t5gemma/person/s44/clause_order原顺序50/192、反顺序0/192、两者均对0/192。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。 BART固定首世界seed42/plus案例直接显示历史日期词被编辑而外部today未改、非目标box评价改变及引语观点改变；这些结构未通过基本准入，属于原子范围/生成失败。parcel/package和斜线日期可能是合理同义/格式，不作已证实身份错误。一个额外Jane评价的预期槽分项仍为True但综合success为False，说明分项scope不等于完整范围证明。详见POSITION_BART_FIXED_REVIEW。 T5Gemma时间/空间两个新顺序重构均100%，但三seed均未通过原子范围准入。首世界三seed目标在前时正确编辑外部日期/目标左关系，同时改动历史原话或固定Emma方向；顺序反转后还出现历史日期/绝对事件日期/世界方位改变或正文丢失。POSITION_T5_TIME_SPACE_REVIEW核查12个固定输出，不是独立世界或总体人工标注；位置敏感性不独立识别唯一位置机制。 人称原计数也受保守姓名字面比较影响：当前Speaker Carol时，引语外I said to Henry可以保持历史Carol身份。按实际输出的唯一Speaker/Listener统一解析引语外I/me/you，保留引语内部原话；独立1,008正例/6,048负例复核后T5Gemma P历史引语test的42/43/44由35/192、35/192、50/192修正为78/192、38/192、94/192。原分数及准入保留，结构仍不足基本能力；core/source主比较不变。POSITION_T5_PERSON_REVIEW区分合法外部代词、错误历史受话者/原话和新语境/主事件丢失。 T5Gemma情感四个顺序/人称结构都能100%重构；多对象原顺序三seed均准入，反顺序和Narrator/引语结构均未准入。首世界三seed反顺序一致改动非目标box、保持目标parcel neutral；原顺序正确。第一人称案例丢失Narrator或历史引语并未提高目标，未知绑定与明确的内容缺失分开。POSITION_T5_EMOTION_REVIEW及全集配对保留这些位置条件；这不能单独证明唯一位置捷径机制。 独立符号对照仅seed42的test原子结果：bart/emotion 251/256；bart/person 77/192；bart/space 0/256；bart/time 0/384；t5gemma/emotion 256/256；t5gemma/person 192/192；t5gemma/space 256/256；t5gemma/time 384/384。其中BART情感的符号输入表现与自然语言准入失败分开报告，说明这套输入接口会影响基本能力；没有符号连续轨迹或N/S/M，不能替代自然语言结果。
 
-5. 旧自然能力出现损失的设置：bart/person/M自然core原成功损失13、原失败修复0；bart/person/S自然core原成功损失8、原失败修复0；t5gemma/emotion/N自然core原成功损失11、原失败修复0；t5gemma/person/M自然core原成功损失10、原失败修复0；t5gemma/person/N自然core原成功损失14、原失败修复0；t5gemma/person/S自然core原成功损失16、原失败修复0；t5gemma/space/N自然core原成功损失17、原失败修复0。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。 T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。 T5_REPAIR_REGRESSION_AGENT_REVIEW逐例核查同一checkpoint的修复与损失：人称seed42/M_h1、seed43/S_h0和M_h1、seed44/S_h0，以及情感seed44/N_h1。损失分别涉及语境、参与者绑定、评价等级或必要Listener信息；Listener缺失例的事件身份/事实仍正确，不能扩大为事件语义错误。
+5. 旧自然能力出现损失的设置：bart/person/M自然core原成功损失13、原失败修复0；bart/person/S自然core原成功损失8、原失败修复0；t5gemma/emotion/N自然core原成功损失11、原失败修复0；t5gemma/person/M自然core原成功损失10、原失败修复0；t5gemma/person/N自然core原成功损失14、原失败修复0；t5gemma/person/S自然core原成功损失16、原失败修复0；t5gemma/space/N自然core原成功损失17、原失败修复0。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。 T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。 空间确认版seed44/H1的N另有17条自然core退化，全部是template0的right态逆时针转换：应为back却输出front，主体、物体、事实和语法保持；同划分S/M均512/512。相同转换的另一已训练句式未损失，显示该退化有表达条件，不能归因于编辑态训练或直接认定锚点换人。 T5_REPAIR_REGRESSION_AGENT_REVIEW逐例核查同一checkpoint的修复与损失：人称seed42/M_h1、seed43/S_h0和M_h1、seed44/S_h0，以及情感seed44/N_h1。损失分别涉及语境、参与者绑定、评价等级或必要Listener信息；Listener缺失例的事件身份/事实仍正确，不能扩大为事件语义错误。
 
 6. P的“当前正确、gold续步正确、latent下一步失败”在两模型均有三seed支持的领域为time、person。两模型全部三seed的正式N/S/M均完成并准入的领域为time、person；补训跨模型比较据此区分完整与部分结果。单模型准入失败与另一模型组合失败不能合并平均，T5Gemma实际是已核验2B IT而非270M IT，rank相同但编辑器参数量不同。
 
-7. 最有证据的下一步是围绕已确认的“同当前文本、同mask/深度、下一步分歧”做受控兼容性和能力保护研究；分别验证来源、当前关系/角色状态和表达结构的覆盖。M覆盖更多状态但每状态监督减少；若稳定劣于S，需用匹配每状态监督及总监督的补充对照区分预算摊薄、状态梯度干扰和旧路径保护。这些是待检验解释，不是已发现机制。未准入领域优先解决固定接口的重构/原子能力。当前probe只支持可读性，不支持编辑器使用或因果机制；没有进行子空间干预。
+7. 最有证据的下一步是围绕已确认的“同当前文本、同mask/深度、下一步分歧”做受控兼容性和能力保护研究；分别验证来源、当前关系/角色状态和表达结构的覆盖。M覆盖更多状态但每状态监督减少；若稳定劣于S，需用匹配每状态监督及总监督的补充对照区分预算摊薄、状态梯度干扰和旧路径保护。这些是待检验解释，不是已发现机制。未准入领域优先解决固定接口的重构/原子能力。当前probe只支持可读性，不支持编辑器使用或因果机制；没有进行子空间干预。 实际draws审计还表明，当前状态覆盖同时改变每个操作头的下一步监督标签支持；后续应同时核对输入/输出覆盖、每状态监督、历史操作和mask，而不把M/S差异仅归因于当前状态覆盖。
 
 ## 执行与工件
 
-累计实际GPU小时：36.58194444444446；allocation账本峰值：2张。job IDs：['2555', '2564', '2568', '2571', '2582', '2585', '2587', '2590', '2620', '2621', '2650', '2651']。始终一任务一卡、一个项目全局最多两卡；符号数组依赖正式数组afterany，工程失败/重试也计入账本。
+累计实际GPU小时：44.06916666666667；allocation账本峰值：2张。job IDs：['2555', '2564', '2568', '2571', '2582', '2585', '2587', '2590', '2620', '2621', '2650', '2651']。始终一任务一卡、一个项目全局最多两卡；符号数组依赖正式数组afterany，工程失败/重试也计入账本。
 
 
 
@@ -597,6 +597,12 @@ LINGUISTIC_CONTROLS_PLAN在此阶段拟合/解码前冻结，但在部分原始B
 |bart|time|42|5|not_admitted_structure|0.00%|0.00%|0.00%|
 |bart|time|43|2|not_admitted_structure|100.00%|33.33%|20.00%|
 |bart|time|43|3|admitted_structure|100.00%|99.31%|99.17%|
+|bart|time|43|4|admitted_structure|100.00%|98.61%|98.33%|
+|bart|time|43|5|not_admitted_structure|0.00%|0.00%|0.00%|
+|bart|time|44|2|not_admitted_structure|100.00%|32.64%|19.17%|
+|bart|time|44|3|admitted_structure|100.00%|100.00%|100.00%|
+|bart|time|44|4|not_admitted_structure|100.00%|91.67%|90.00%|
+|bart|time|44|5|not_admitted_structure|0.00%|0.00%|0.00%|
 |bart|space|42||not_executed_core_not_admitted_or_incomplete|NA|NA|NA|
 |bart|space|43||not_executed_core_not_admitted_or_incomplete|NA|NA|NA|
 |bart|space|44||not_executed_core_not_admitted_or_incomplete|NA|NA|NA|
@@ -618,6 +624,57 @@ LINGUISTIC_CONTROLS_PLAN在此阶段拟合/解码前冻结，但在部分原始B
 |bart|person|44|4|not_admitted_structure|100.00%|0.00%|0.00%|
 |bart|person|44|5|not_admitted_structure|100.00%|0.00%|0.00%|
 |bart|person|44|6|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|time|42|2|not_admitted_structure|100.00%|58.68%|50.42%|
+|t5gemma|time|42|3|not_admitted_structure|100.00%|75.35%|71.25%|
+|t5gemma|time|42|4|not_admitted_structure|100.00%|53.47%|48.75%|
+|t5gemma|time|42|5|not_admitted_structure|100.00%|1.39%|1.67%|
+|t5gemma|time|43|2|not_admitted_structure|100.00%|54.51%|45.42%|
+|t5gemma|time|43|3|not_admitted_structure|100.00%|66.67%|60.00%|
+|t5gemma|time|43|4|not_admitted_structure|100.00%|64.58%|58.33%|
+|t5gemma|time|43|5|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|time|44|2|not_admitted_structure|100.00%|59.72%|51.67%|
+|t5gemma|time|44|3|not_admitted_structure|100.00%|84.38%|81.25%|
+|t5gemma|time|44|4|not_admitted_structure|100.00%|80.21%|76.67%|
+|t5gemma|time|44|5|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|space|42|2|not_admitted_structure|100.00%|79.69%|79.69%|
+|t5gemma|space|42|3|not_admitted_structure|100.00%|58.85%|58.85%|
+|t5gemma|space|42|4|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|space|42|5|not_admitted_structure|100.00%|10.94%|10.94%|
+|t5gemma|space|43|2|not_admitted_structure|100.00%|72.92%|72.92%|
+|t5gemma|space|43|3|not_admitted_structure|100.00%|61.46%|61.46%|
+|t5gemma|space|43|4|not_admitted_structure|100.00%|1.56%|1.56%|
+|t5gemma|space|43|5|not_admitted_structure|100.00%|21.35%|21.35%|
+|t5gemma|space|44|2|not_admitted_structure|100.00%|86.98%|86.98%|
+|t5gemma|space|44|3|not_admitted_structure|100.00%|45.31%|45.31%|
+|t5gemma|space|44|4|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|space|44|5|not_admitted_structure|100.00%|1.04%|1.04%|
+|t5gemma|emotion|42|2|not_admitted_structure|100.00%|67.19%|58.33%|
+|t5gemma|emotion|42|3|not_admitted_structure|100.00%|31.77%|22.92%|
+|t5gemma|emotion|42|4|admitted_structure|100.00%|98.96%|98.61%|
+|t5gemma|emotion|42|5|admitted_structure|100.00%|99.48%|99.31%|
+|t5gemma|emotion|43|2|not_admitted_structure|100.00%|64.58%|56.25%|
+|t5gemma|emotion|43|3|not_admitted_structure|100.00%|39.58%|21.53%|
+|t5gemma|emotion|43|4|admitted_structure|100.00%|100.00%|100.00%|
+|t5gemma|emotion|43|5|admitted_structure|100.00%|98.96%|98.61%|
+|t5gemma|emotion|44|2|not_admitted_structure|100.00%|54.69%|58.33%|
+|t5gemma|emotion|44|3|not_admitted_structure|100.00%|36.98%|32.64%|
+|t5gemma|emotion|44|4|admitted_structure|100.00%|100.00%|100.00%|
+|t5gemma|emotion|44|5|admitted_structure|100.00%|100.00%|100.00%|
+|t5gemma|person|42|2|not_admitted_structure|100.00%|41.67%|41.67%|
+|t5gemma|person|42|3|not_admitted_structure|95.83%|50.00%|50.00%|
+|t5gemma|person|42|4|not_admitted_structure|55.56%|15.28%|15.28%|
+|t5gemma|person|42|5|not_admitted_structure|87.50%|27.78%|27.78%|
+|t5gemma|person|42|6|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|person|43|2|not_admitted_structure|100.00%|47.92%|47.92%|
+|t5gemma|person|43|3|not_admitted_structure|95.83%|41.67%|41.67%|
+|t5gemma|person|43|4|not_admitted_structure|55.56%|21.53%|21.53%|
+|t5gemma|person|43|5|not_admitted_structure|87.50%|27.08%|27.08%|
+|t5gemma|person|43|6|not_admitted_structure|100.00%|0.00%|0.00%|
+|t5gemma|person|44|2|not_admitted_structure|100.00%|31.94%|31.94%|
+|t5gemma|person|44|3|not_admitted_structure|95.83%|34.03%|34.03%|
+|t5gemma|person|44|4|not_admitted_structure|55.56%|31.25%|31.25%|
+|t5gemma|person|44|5|not_admitted_structure|87.50%|17.36%|17.36%|
+|t5gemma|person|44|6|not_admitted_structure|100.00%|1.39%|1.39%|
 
 
 
@@ -777,10 +834,74 @@ POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结
 
 |模型|领域|seed|顺序|状态|重构|原子|gold续步|
 |---|---|---|---|---|---|---|---|
+|bart|time|42|0|not_admitted|0.00%|0.00%|0.00%|
+|bart|time|42|1|not_admitted|0.00%|0.00%|0.00%|
+|bart|time|43|0|not_admitted|0.00%|0.00%|0.00%|
+|bart|time|43|1|not_admitted|0.00%|0.00%|0.00%|
+|bart|time|44|0|not_admitted|0.00%|0.00%|0.00%|
+|bart|time|44|1|not_admitted|0.00%|0.00%|0.00%|
+|bart|space|42|0|not_admitted|51.04%|0.00%|0.00%|
+|bart|space|42|1|not_admitted|100.00%|4.17%|4.17%|
+|bart|space|43|0|not_admitted|51.04%|0.00%|0.00%|
+|bart|space|43|1|not_admitted|100.00%|0.00%|0.00%|
+|bart|space|44|0|not_admitted|51.04%|1.56%|1.56%|
+|bart|space|44|1|not_admitted|100.00%|2.60%|2.60%|
+|bart|emotion|42|0|not_admitted|3.12%|15.10%|18.06%|
+|bart|emotion|42|1|not_admitted|6.77%|0.00%|0.00%|
+|bart|emotion|42|2|not_admitted|15.10%|0.00%|0.00%|
+|bart|emotion|42|3|not_admitted|29.69%|0.00%|0.00%|
+|bart|emotion|43|0|not_admitted|3.12%|6.25%|6.25%|
+|bart|emotion|43|1|not_admitted|6.77%|0.00%|0.00%|
+|bart|emotion|43|2|not_admitted|15.10%|0.52%|0.00%|
+|bart|emotion|43|3|not_admitted|29.69%|0.00%|0.00%|
+|bart|emotion|44|0|not_admitted|3.12%|8.85%|10.42%|
+|bart|emotion|44|1|not_admitted|6.77%|0.00%|0.00%|
+|bart|emotion|44|2|not_admitted|15.10%|0.52%|0.00%|
+|bart|emotion|44|3|not_admitted|29.69%|0.00%|0.00%|
+|bart|person|42|0|not_admitted|100.00%|0.00%|0.00%|
+|bart|person|42|1|not_admitted|100.00%|0.00%|0.00%|
+|bart|person|43|0|not_admitted|100.00%|0.00%|0.00%|
+|bart|person|43|1|not_admitted|100.00%|0.00%|0.00%|
+|bart|person|44|0|not_admitted|100.00%|0.00%|0.00%|
+|bart|person|44|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|time|42|0|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|time|42|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|time|43|0|not_admitted|100.00%|3.82%|4.58%|
+|t5gemma|time|43|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|time|44|0|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|time|44|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|space|42|0|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|space|42|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|space|43|0|not_admitted|100.00%|1.56%|1.56%|
+|t5gemma|space|43|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|space|44|0|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|space|44|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|42|0|admitted|100.00%|98.96%|98.61%|
+|t5gemma|emotion|42|1|not_admitted|100.00%|10.42%|3.47%|
+|t5gemma|emotion|42|2|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|42|3|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|43|0|admitted|100.00%|100.00%|100.00%|
+|t5gemma|emotion|43|1|not_admitted|100.00%|1.56%|0.00%|
+|t5gemma|emotion|43|2|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|43|3|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|44|0|admitted|100.00%|100.00%|100.00%|
+|t5gemma|emotion|44|1|not_admitted|100.00%|0.00%|0.00%|
+|t5gemma|emotion|44|2|not_admitted|100.00%|26.04%|25.00%|
+|t5gemma|emotion|44|3|not_admitted|100.00%|0.52%|0.69%|
+|t5gemma|person|42|0|not_admitted|55.56%|15.28%|15.28%|
+|t5gemma|person|42|1|not_admitted|34.72%|0.00%|0.00%|
+|t5gemma|person|43|0|not_admitted|55.56%|21.53%|21.53%|
+|t5gemma|person|43|1|not_admitted|34.72%|0.00%|0.00%|
+|t5gemma|person|44|0|not_admitted|55.56%|31.25%|31.25%|
+|t5gemma|person|44|1|not_admitted|34.72%|0.00%|0.00%|
 
 
 
 全部可用角色的test原子预测，即使诊断未准入，仍在position_foils_by_seed与压缩逐例工件中；连续路径仅在同一P的该顺序dev门槛通过时执行。position_order_pairs以同世界/状态/操作配对给顺序差异；两个顺序同时正确才证明这些具体夹具的范围保持。仅靠原目标位于首句的挑战分数不能排除位置捷径。
+
+
+
+POSITION_EXACT_REUSE记录情感顺序0与已完成多对象结构4的相同推理复用：256组source/target、全部dev/test世界与当前状态render、每个checkpoint和Slurm源输出哈希核对；实际预测和mask不变，位置诊断的冻结评分与轨迹标志重新在CPU计算。所有seed/角色无结果过滤，其他顺序及第一人称/引语对照继续实际GPU运行。这只节约相同输入的重复计算，没有改变监督、准入或评分规则。
 
 
 
@@ -789,6 +910,45 @@ POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结
 
 
 见LINGUISTIC_LIMITATIONS.md。core三人循环使用显式姓名，无人称信息丢失；第三代词挑战使用人工姓名/代词约定，没有独立性别属性测试。反身附加事件规定A保留A自己的key；主对象也是key时需要不同实例解释，原文本未命名实例，不能据此声称验证了唯一物体实例所有权。固定launch日期由E−2导出；C是叙述锚点，事件状态独立给定。更复杂图结构、复数/集合、平移、间接引语及随机子空间干预未执行，保留为限制。
+
+
+
+EMOTION_LANGUAGE_CONTINUATION_REVIEW核对三seed、两种已通过结构准入的P固定首世界forward案例；LANGUAGE_FIXED_CONTINUATION_CASES保留全部实际执行P结构的首世界、三个方向、前两步及三条方法路径。六个情感案例当前正确、gold续步正确但latent第二步失败；错误分别为正文缺失/重复、等级错误，以及seed44多对象案例的评价方向反转和非目标box评价改变。两条重编码路径第二步正确；引语第四步仍有失败反例。自动新增案例不继承这六例的助手审阅。
+
+
+
+POSITION_BART_FIXED_REVIEW审阅固定首世界seed42/plus的五对顺序/锚点案例，区分错误历史原话范围、非目标对象评价、必要内容缺失和未知表述；结构未准入，不能作为latent组合失败平均。parcel/package及斜线日期不被独立标为身份错误。额外Jane评价案例综合success为False，虽然预期槽target/preserved/scope仍为True；分项只是其可识别字段的保持，不保证不存在未知附加内容。完整受控句式拒绝与一般语法错误另行区分，原分数/准入保持。
+
+
+
+POSITION_T5_TIME_SPACE_REVIEW审阅三seed、时间/空间首世界plus的两个顺序共12个原子输出。两个结构均能100%重构，但均未通过范围原子门槛；目标在前时目标修改正确，历史原话/固定观察者方向被错误改动，部分seed还改动绝对日期/位置。目标在后产生其他锚点改动或正文丢失。与已通过core准入的纯latent失败区分，不将未知输出全部视为绑定错误或据此断言唯一位置机制。
+
+
+
+POSITION_T5_EMOTION_REVIEW审阅三seed的12个固定原子输出：多对象原顺序正确，反顺序均改动非目标box评价而保持目标parcel neutral；Narrator/引语变体丢失锚点或历史内容并未提高目标。这四种结构都100%重构，只有多对象原顺序三seed通过原子门槛；其他结构属于基本范围/表达失败，不混入latent组合平均。顺序0正确反例和seed44第一人称部分成功保留，位置敏感性不等于唯一机制已证实。
+
+
+
+## 人称引语外代词归属的事后评分复核
+
+
+
+PERSON_QUOTE_ATTRIBUTION_AMENDMENT和POSITION_T5_PERSON_REVIEW记录原姓名字面比较的假阴性：当实际Speaker Carol，I said to Henry仍可保持历史Carol身份。适配器只从实际输出唯一Speaker/Listener读取，引语外主格I/you、宾格me/you按该语境绑定；引语内部原话不改，错误标签/历史受话者/格不修复。1,008正例/6,048负例和保护例通过，所有模型/seed/条件/阶段均用同规则复核。dev/test与原子/gold续步按split和evaluation_artifact分开。原分数、准入、cohort、checkpoint和回灌文本保持，core/source主比较没有历史归属句，结果不变。
+
+
+
+|模型|seed|原计数|归属复核|
+|---|---|---|---|
+|bart|42|0/192|0/192|
+|bart|43|0/192|0/192|
+|bart|44|0/192|1/192|
+|t5gemma|42|35/192|78/192|
+|t5gemma|43|35/192|38/192|
+|t5gemma|44|50/192|94/192|
+
+
+
+固定seed42/顺序0的I said to Henry输出是正确反例；seed43/44则改变历史受话者及引语词，反顺序三seed缺失主事件/事实且新语境错误。不能把引语外合法代词一概称为历史身份错误。数据与所有变化/固定首例在person_quote_attribution_by_seed、changes、REVIEW_CASES和AUDIT。
 
 
 
@@ -801,3 +961,7 @@ POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结
 
 
 工程阶段检查了全部八个模型/领域，但最初正式数组把每个组合的600步准入与其补训/行为串在一起，未先完成全组合的最终原子准入。每个组合的早期probe在该组合行为结束后运行，当时其他组合尚未完成；后续命名身份probe统一排在行为阶段之后。这些顺序偏差保留，不冒充最初的全局阶段顺序。剩余未启动孩子16–23改为先运行原预算P600/dev准入的2650，再由零GPU2651释放其原补训任务，复用同一P/dev工件，不新增训练更新。固定科学代码/数据/选择规则与阈值未改。见REMAINING_ATOMIC_PREFLIGHT与submission ledger。
+
+
+
+补训覆盖另见SUPPLEMENT_OUTPUT_COVERAGE_LIMIT与supplement_supervision_coverage：按实际draws列自然/P编辑/Q编辑输入、signed head、当前及下一步标签。每checkpoint仍为800/400/400共1600有效单位、200更新。增加当前状态覆盖也改变每个head的下一步损失标签支持；这些合法操作在每个head下是单射，留出当前续步同时留出其对应编辑态有监督端点转换，自然原子及自然保护已有该转换。不能把行为差异单独归因为当前状态覆盖，或混称为完全未训练的原子转换。边界可用方向不同也使名义多状态覆盖不等于各状态相同监督量。没有改变训练或选择。

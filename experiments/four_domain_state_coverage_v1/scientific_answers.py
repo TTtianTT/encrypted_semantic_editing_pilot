@@ -39,10 +39,10 @@ def research_answers():
     confirmation_review=ROOT.parent/'space_relation_confirmation_v1'/'CONTINUATION_AGENT_REVIEW.json'
     if confirmation_review.exists():
         reviewed_space=read(confirmation_review)['cases'];reviewed_seeds=sorted({r['seed'] for r in reviewed_space})
-        a1+=f" 关系确认版P另已由助手审阅seed{','.join(map(str,reviewed_seeds))}的{len(reviewed_space)}个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。"
+        a1+=f" 关系确认版P另已由助手审阅seed{','.join(map(str,reviewed_seeds))}的{len(reviewed_space)}个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅只涉及P固定案例；正式N/S/M完成状态由任务清单另行核验，新增未审阅案例不继承标签。"
     if (ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json').exists():
         review=read(ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
-        a1+=' 情感P三个seed的step2各有96条合格续步，严格成功分别为'+','.join(str(r['strict_success']) for r in review['counts'])+'；严格失败分别为'+','.join(str(r['strict_failed']) for r in review['counts'])+'，已解析槽位不匹配分别为'+','.join(str(r['parsed_slot_mismatch']) for r in review['counts'])+'。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。'
+        a1+=' 情感P三个seed的step2各有96条合格续步，严格成功分别为'+','.join(str(r['strict_success']) for r in review['counts'])+'；严格失败分别为'+','.join(str(r['strict_failed']) for r in review['counts'])+'，已解析槽位不匹配分别为'+','.join(str(r['parsed_slot_mismatch']) for r in review['counts'])+'。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。这些计数来自P轨迹，正式N/S/M完成状态及比较由独立清单和CSV核验。'
     elif (ROOT/'T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 情感seed42首批证据为96条合格续步中95条严格失败、1条成功，64条为已解析槽位不匹配；固定案例确认评价越级或必要内容缺失。此单seed记录保留成功反例，其余seed另报，不冒充三seed结论。'
     if (ROOT/'T5_PERSON_THREE_SEED_CONTINUATION_AGENT_REVIEW.json').exists():
         review=read(ROOT/'T5_PERSON_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
