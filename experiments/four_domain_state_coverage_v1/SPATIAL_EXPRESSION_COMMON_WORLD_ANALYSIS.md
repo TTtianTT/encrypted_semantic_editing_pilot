@@ -1,0 +1,9 @@
+# Spatial expression comparison on common content worlds
+
+This is a post hoc descriptive analysis, added after the formal predictions and first two spatial confirmation seeds were available. The observed expression-source difference motivated this comparison; it is not an initial preregistration or a new confirmatory test. No fitting, checkpoint selection, model decoding, scoring change or additional GPU work is involved.
+
+For every available seed, receiver, holdout and P/Q/U source, intersect the core-template0 and held-out-expression-template2 current-qualified source cohorts from the uniform spatial paraphrase adjudication. Qualification uses only current outputs and the previously frozen full-text/mask/depth checks within each expression. Never filter by either receiver's continuation success. Then pair the exact world, current structural semantics/anchor, signed operation, source checkpoint and edited depth, and report both continuation endpoints, discordant outcomes and coverage.
+
+Current wording and precursor wording differ across expressions. Cross-expression token mask/length are not required to match; equal-length counts are reported, and some strata do have equal lengths. This comparison cannot isolate a causal wording effect. Full text is matched across P/Q/U sources within each expression, not across expressions. The common-world subset is also selected for correct current expression coverage, so the all-candidate and per-source current coverage remain separately reported.
+
+`spatial_expression_common_worlds.csv` retains all available seeds and receiver conditions, with state strata and the number of independent content worlds. No average treats operations or multiple versions of a world as independent worlds. The original registered core source/state comparisons and the post hoc expression cohorts remain separately named.

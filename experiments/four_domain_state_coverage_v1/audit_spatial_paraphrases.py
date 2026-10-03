@@ -7,7 +7,7 @@ from analyze import writecsv,keyrow
 from spatial_paraphrase_score import score_spatial_paraphrases,normalize_spatial_paraphrases
 
 def main():
-    groups=defaultdict(lambda:dict(n=0,raw_k=0,adjudicated_k=0,rescued_k=0,rejected_k=0,raw_parseable_k=0,adjudicated_parseable_k=0,aliases_k=0));changes=[];examples=[];contrasts=[];coverage=[];total=0
+    groups=defaultdict(lambda:dict(n=0,raw_k=0,adjudicated_k=0,rescued_k=0,rejected_k=0,raw_parseable_k=0,adjudicated_parseable_k=0,aliases_k=0));changes=[];examples=[];contrasts=[];coverage=[];expression_pairs=[];total=0
     for study in ('four_domain_state_coverage_v1','space_relation_confirmation_v1'):
         base=ROOT.parent/study;ws={w['world_id']:w for w in rows(base/'data/space/worlds.jsonl')}
         spec=importlib.util.spec_from_file_location('audit_'+study,base/'semantics.py');sem=importlib.util.module_from_spec(spec);spec.loader.exec_module(sem)
@@ -42,6 +42,26 @@ def main():
                         if new and len({x[0]['current_prediction'] for x in gg.values()})==1:literal.add(key)
                     coverage.append(dict(**meta,condition=role,shard=path.stem,candidate_world_state_operations=len(by),raw_triple_k=sum(all(x[0]['common_match'] for x in gg.values()) for gg in by.values()),posthoc_triple_k=len(qualified),posthoc_literal_triple_k=len(literal),current_own_raw_k=sum(x[0]['current_score']['success'] for x in mm.values()),current_own_adjudicated_k=sum(x[2]['success'] for x in mm.values()),current_candidates=len(mm)))
                     matrices[(role,path.stem)]=(mm,qualified,literal)
+            # Compare expressions on the same current-qualified worlds, not
+            # on different successful-source coverage. Both cohorts are fixed
+            # only by current text and the original mask/depth checks. Wording
+            # and token masks across expressions remain different by design.
+            for role in sorted({k[0] for k in matrices}):
+                for h in range(2):
+                    k0=(role,f'matrix_h{h}_t0');k2=(role,f'matrix_h{h}_t2')
+                    if k0 not in matrices or k2 not in matrices:continue
+                    m0,q0,l0=matrices[k0];m2,q2,l2=matrices[k2];paired=defaultdict(list)
+                    for key,(r,a,c) in m0.items():
+                        tkey=(key[0],key[1],key[2],2,key[4])
+                        if tkey not in m2 or key[:3] not in q0.intersection(q2):continue
+                        r2,a2,c2=m2[tkey]
+                        # Structures0/2 share all world/anchor/target content.
+                        assert {k:v for k,v in r['gold'].items() if k!='structure'}=={k:v for k,v in r2['gold'].items() if k!='structure'}
+                        assert c['success'] and c2['success'] and r['source_depth']==r2['source_depth']
+                        state_bin='heldout_edited_state' if r['state_heldout'] else 'receiver_covered_edited_state' if r['state_seen'] else 'other_state'
+                        paired[(r['source'],state_bin)].append(((r,a),(r2,a2)))
+                    for (source,state_bin),pp in sorted(paired.items()):
+                        n=len(pp);expression_pairs.append(dict(**meta,condition=role,holdout_split=h,source=source,state_bin=state_bin,cohort='posthoc_both_expressions_current_qualified',n=n,worlds=len({x[0]['world_id'] for x,y in pp}),core_k=sum(x[1]['success'] for x,y in pp),expression_k=sum(y[1]['success'] for x,y in pp),expression_minus_core=sum(y[1]['success']-x[1]['success'] for x,y in pp)/n,both_k=sum(x[1]['success'] and y[1]['success'] for x,y in pp),core_only_k=sum(x[1]['success'] and not y[1]['success'] for x,y in pp),expression_only_k=sum(not x[1]['success'] and y[1]['success'] for x,y in pp),equal_mask_length_n=sum(x[0]['mask_length']==y[0]['mask_length'] for x,y in pp),equal_current_literal_text_n=sum(x[0]['current_prediction']==y[0]['current_prediction'] for x,y in pp),matched_variables='world,current_gold_semantics,anchor,operation,source_checkpoint,edited_depth',unmatched_variables='current_wording,precursor_wording,token_mask_and_length'))
             for h in range(2):
                 for t in (0,2):
                     name=f'matrix_h{h}_t{t}';sk=(f'S_h{h}',name);mk=(f'M_h{h}',name)
@@ -61,6 +81,7 @@ def main():
                             contrasts.append(dict(**meta,holdout_split=h,template=t,source=source,cohort=label,n=n,worlds=len({a[0]['world_id'] for a,b in pairs}),raw_S_k=sum(a[0]['score']['success'] for a,b in pairs),raw_M_k=sum(b[0]['score']['success'] for a,b in pairs),adjudicated_S_k=sum(a[1]['success'] for a,b in pairs),adjudicated_M_k=sum(b[1]['success'] for a,b in pairs),adjudicated_M_minus_S=sum(b[1]['success']-a[1]['success'] for a,b in pairs)/n if n else None))
     table=[dict(**json.loads(k),**v,raw_rate=v['raw_k']/v['n'],adjudicated_rate=v['adjudicated_k']/v['n']) for k,v in sorted(groups.items())]
     writecsv(ROOT/'spatial_paraphrase_by_seed.csv',table);writecsv(ROOT/'spatial_paraphrase_changes.csv',changes);jsonl(ROOT/'spatial_paraphrase_review_cases.jsonl',examples);writecsv(ROOT/'spatial_paraphrase_M_vs_S.csv',contrasts);writecsv(ROOT/'spatial_paraphrase_source_coverage.csv',coverage)
+    writecsv(ROOT/'spatial_expression_common_worlds.csv',expression_pairs)
     dump(ROOT/'SPATIAL_PARAPHRASE_AUDIT.json',dict(predictions_rescored=total,raw_scores_preserved=True,posthoc=True,groups=len(table),raw_k=sum(v['raw_k'] for v in groups.values()),adjudicated_k=sum(v['adjudicated_k'] for v in groups.values()),rescued_k=sum(v['rescued_k'] for v in groups.values()),rejected_k=sum(v['rejected_k'] for v in groups.values()),scorer_sha=digest(ROOT/'spatial_paraphrase_score.py'),fixture_sha=digest(ROOT/'SPATIAL_PARAPHRASE_CHECK.json'),current_cohorts_never_use_continuation_outcomes=True))
     print('Uniform spatial post hoc adjudication:',total,'predictions;',len(changes),'changed success flags')
 
