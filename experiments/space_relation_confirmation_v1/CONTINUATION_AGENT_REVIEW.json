@@ -1,5 +1,5 @@
 {
-  "reviewed_at_utc": "2026-10-03T04:42:40.670984+00:00",
+  "reviewed_at_utc": "2026-10-03T06:35:37.793648+00:00",
   "cases": [
     {
       "case_id": "space_relation_confirmation_v1/t5gemma/s42/space_0120/forward",
@@ -78,16 +78,53 @@
       "independent_human_label": false,
       "latent_mask_length": 44,
       "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s44/space_0120/forward",
+      "seed": 44,
+      "trajectory": "forward",
+      "artifact": "runs/formal/t5gemma_space_s44/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "0af42e3822736ca65c0df8efb83747cc93eb20166e1fbee5a859a70eb20ebcf8",
+      "reason": "Expected back. Repeated right clauses replace the required relation; named observer and black/six-copies facts are lost, and output does not terminate.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s44/space_0120/reverse",
+      "seed": 44,
+      "trajectory": "reverse",
+      "artifact": "runs/formal/t5gemma_space_s44/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "0af42e3822736ca65c0df8efb83747cc93eb20166e1fbee5a859a70eb20ebcf8",
+      "reason": "Damaged multilingual/repeated behind-me and right-behind-me fragments do not express the required David/parcel relation or black/six-copies facts. Do not infer a wrong direction solely from the fragments.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
+    },
+    {
+      "case_id": "space_relation_confirmation_v1/t5gemma/s44/space_0120/inverse",
+      "seed": 44,
+      "trajectory": "inverse",
+      "artifact": "runs/formal/t5gemma_space_s44/outputs/P/trajectory_t0.jsonl",
+      "artifact_sha256": "0af42e3822736ca65c0df8efb83747cc93eb20166e1fbee5a859a70eb20ebcf8",
+      "reason": "Expected restored front. Repeated of-me/I-know fragments omit the named observer, parcel relation and facts; output does not terminate.",
+      "clear_controlled_semantic_failure": true,
+      "reviewer": "supervising Codex assistant",
+      "independent_human_label": false,
+      "latent_mask_length": 44,
+      "gold_reencode_mask_length": 43
     }
   ],
   "selection": "First test world space_0120, all predefined forward/reverse/inverse core paths at steps1/2, all available formal seeds. No next-outcome selection.",
-  "not_reviewed_seeds": [
-    44
-  ],
-  "status": "partial: P core shards for seeds42/43 only; formal N/S/M still running",
+  "not_reviewed_seeds": [],
+  "status": "Three-seed P core fixed cases reviewed; formal N/S/M completion tracked separately.",
   "limitations": [
     "Existence examples, not population labeling or causal mechanism",
-    "Same world across paths/seeds is not six independent worlds",
+    "Same world across paths/seeds is not nine independent worlds",
     "Gold-reencode current mask43 differs from latent mask44; capability control, not a matched provenance intervention",
     "Raw grammar tags conflate controlled completeness and grammar; missing relation in seed42/reverse is not ungrammatical prose",
     "Newly appended cases do not inherit assistant labels"

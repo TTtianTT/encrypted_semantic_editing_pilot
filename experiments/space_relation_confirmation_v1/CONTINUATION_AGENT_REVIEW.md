@@ -1,17 +1,23 @@
-# 空间关系确认：当前正确而续步失败的固定案例
+# 固定空间确认续步案例：助手审阅
 
-目前只审阅P的seed42/43、首个固定test世界space_0120、三种预定轨迹的第二步，共六例。第三seed和正式N/S/M尚未完成，不能写成全轮结论。每例当前与gold重编码续步正确；latent续步存在错误关系或必要信息缺失。
+固定首个test世界space_0120，三个seed与forward/reverse/inverse路径，共九例；没有按下一步结果筛选。全部当前与gold-reencode续步正确，latent续步失败。
 
-- seed42 / forward: Expected back. Output explicitly remains left and replaces David with an unrelated observer/path clause; color and quantity remain.
+- space_relation_confirmation_v1/t5gemma/s42/space_0120/forward: Expected back. Output explicitly remains left and replaces David with an unrelated observer/path clause; color and quantity remain.
 
-- seed42 / reverse: Required parcel/observer spatial relation is missing. David, parcel, black and six copies remain. The remaining declarative body is grammatical; raw grammar=false is a controlled task-completeness proxy, not an independent grammar error.
+- space_relation_confirmation_v1/t5gemma/s42/space_0120/reverse: Required parcel/observer spatial relation is missing. David, parcel, black and six copies remain. The remaining declarative body is grammatical; raw grammar=false is a controlled task-completeness proxy, not an independent grammar error.
 
-- seed42 / inverse: Expected restored front. Output explicitly says right; David, parcel, black and six copies remain. Clear target-relation mismatch.
+- space_relation_confirmation_v1/t5gemma/s42/space_0120/inverse: Expected restored front. Output explicitly says right; David, parcel, black and six copies remain. Clear target-relation mismatch.
 
-- seed43 / forward: Expected back. Output repeats left, omits black/six-copies facts and does not terminate.
+- space_relation_confirmation_v1/t5gemma/s43/space_0120/forward: Expected back. Output repeats left, omits black/six-copies facts and does not terminate.
 
-- seed43 / reverse: A behind-me fragment occurs, but the named observer, parcel identity and quantity relation are missing in the damaged memberId/and-I fragment. Do not classify this as a clear wrong direction solely from its relation word.
+- space_relation_confirmation_v1/t5gemma/s43/space_0120/reverse: A behind-me fragment occurs, but the named observer, parcel identity and quantity relation are missing in the damaged memberId/and-I fragment. Do not classify this as a clear wrong direction solely from its relation word.
 
-- seed43 / inverse: Expected restored front. Output repeats right, corrupts the observer identity and omits facts without termination.
+- space_relation_confirmation_v1/t5gemma/s43/space_0120/inverse: Expected restored front. Output repeats right, corrupts the observer identity and omits facts without termination.
 
-seed42的inverse是仅目标关系错而身份/事实保持的清楚反例。reverse的剩余正文语法正常，只丢失任务所需空间关系；原grammar=false不是独立通用语法裁定。gold重编码mask为43，latent为44，所以此对照证明具体续步失败与自然原子能力并存，不能单独证明纯来源因果效应。同mask/depth来源比较另用预先固定P/Q/U矩阵。六例是同一世界的重复轨迹/seed，由Codex助手审阅，不是独立人工标注；其余未解析输出仍单列未知。
+- space_relation_confirmation_v1/t5gemma/s44/space_0120/forward: Expected back. Repeated right clauses replace the required relation; named observer and black/six-copies facts are lost, and output does not terminate.
+
+- space_relation_confirmation_v1/t5gemma/s44/space_0120/reverse: Damaged multilingual/repeated behind-me and right-behind-me fragments do not express the required David/parcel relation or black/six-copies facts. Do not infer a wrong direction solely from the fragments.
+
+- space_relation_confirmation_v1/t5gemma/s44/space_0120/inverse: Expected restored front. Repeated of-me/I-know fragments omit the named observer, parcel relation and facts; output does not terminate.
+
+这是存在性案例检查，不是独立人工标注或九个独立世界。解析的grammar标签还包括受控信息完整性；seed42/reverse仅缺关系，不是正文不合语法。latent/gold重编码mask长度44/43不同，不能作为同mask干预。正式N/S/M状态单独报告。

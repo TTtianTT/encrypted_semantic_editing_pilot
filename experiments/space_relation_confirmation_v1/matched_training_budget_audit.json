@@ -1,4 +1,125 @@
 {
-  "verified": [],
+  "verified": [
+    {
+      "run": "t5gemma_space_s42",
+      "holdout_split": 0,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37911,
+      "M_target_tokens": 37911,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    },
+    {
+      "run": "t5gemma_space_s42",
+      "holdout_split": 1,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37994,
+      "M_target_tokens": 37994,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    },
+    {
+      "run": "t5gemma_space_s43",
+      "holdout_split": 0,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37994,
+      "M_target_tokens": 37994,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    },
+    {
+      "run": "t5gemma_space_s43",
+      "holdout_split": 1,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37989,
+      "M_target_tokens": 37989,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    },
+    {
+      "run": "t5gemma_space_s44",
+      "holdout_split": 0,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37989,
+      "M_target_tokens": 37989,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    },
+    {
+      "run": "t5gemma_space_s44",
+      "holdout_split": 1,
+      "updates": 200,
+      "natural_units": 800,
+      "focus_units": 400,
+      "old_source_units": 400,
+      "S_target_tokens": 37966,
+      "M_target_tokens": 37966,
+      "S_focus_states": [
+        0
+      ],
+      "M_focus_states": [
+        0,
+        2
+      ],
+      "general_and_old_draws_byte_matched": true,
+      "equal_target_tokens": false,
+      "equal_semantic_units": true
+    }
+  ],
   "interpretation": "Per-example token-mean CE fixes equal endpoint supervision units, not equal target tokens or FLOPs"
 }

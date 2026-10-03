@@ -3509,9 +3509,564 @@
         "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
       },
       "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "P",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/P/best.pt",
+      "raw_sha256": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 42,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "Q",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/P/step300.pt",
+      "raw_sha256": "63a4583b3a742f0692875fa21b749581ec217c66fc59b958284260734b7b5163",
+      "step": 300,
+      "resolved_lineage": {
+        "atomic_optimization_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/P",
+        "optimization_seed": 42,
+        "trajectory_snapshot_step": 300,
+        "selected_P_step": 600,
+        "selected_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "relationship": "same optimization trajectory; Qstep300 is not a child initialized from selected P. Legacy raw parent field identifies the associated P run only."
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "U",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/U/best.pt",
+      "raw_sha256": "da800a311b8dfe6f377efc22e963e307c709fd912f7d5dbe6b8d5d0555f9266f",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 10042,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "N_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/N_h0/final.pt",
+      "raw_sha256": "4658ed0b60f695327ca0cef8f35f62565c536b245053fe8b3bab154a55886c36",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 1,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20042
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "S_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/S_h0/final.pt",
+      "raw_sha256": "22e276c4bfa064b5289c0187d56c1d2762863e70c99a7fb03360685435bde470",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20042
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "M_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/M_h0/final.pt",
+      "raw_sha256": "6c9efc33396c66d00cf9a1333b7dba092f20c1a3fa1e7110c487d3c1fd1b62f9",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20042
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "N_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/N_h1/final.pt",
+      "raw_sha256": "062f80caf4f021c9631d9b238458cbc20ff02ec83846b4d1520cc9d7e523ead0",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 3,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "S_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/S_h1/final.pt",
+      "raw_sha256": "0f9268ff87e3b2bce4315f7db2b13982bd04144d53d0e62a79a47a8945c8d8ae",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s42",
+      "role": "M_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s42/M_h1/final.pt",
+      "raw_sha256": "c496cc46f97251abdb55a4048ab19373e033aba598a61f91a2f24b5f7c03750a",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "f1fa5e7a30d93220a3beef73f9b0505d2f11b7ab37a380ad75cd3619a5379158",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "P",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/P/best.pt",
+      "raw_sha256": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 43,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "Q",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/P/step300.pt",
+      "raw_sha256": "49b44a1b6776bf040055cf6727f59f9397ba435eaf0342fed6ea9c50bd730a03",
+      "step": 300,
+      "resolved_lineage": {
+        "atomic_optimization_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/P",
+        "optimization_seed": 43,
+        "trajectory_snapshot_step": 300,
+        "selected_P_step": 600,
+        "selected_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "relationship": "same optimization trajectory; Qstep300 is not a child initialized from selected P. Legacy raw parent field identifies the associated P run only."
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "U",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/U/best.pt",
+      "raw_sha256": "e72959bcb39eeb44bed7658f51ddf1caf71ee0a933b1101351e5b2954d1a9192",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 10043,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "N_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/N_h0/final.pt",
+      "raw_sha256": "dd0da9800d270ca9bfc1864f66660bb6b724879103ceb9006a32c726131ac9ac",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 1,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "S_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/S_h0/final.pt",
+      "raw_sha256": "7a0071eb2c026fa8a18ef3f25595fa267733bad1211dae728539ff3fc09d020a",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "M_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/M_h0/final.pt",
+      "raw_sha256": "acc810a377e15274635787141d96ab70ed9a54e92d40931033b38f691480d26d",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20043
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "N_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/N_h1/final.pt",
+      "raw_sha256": "dab3c73f0cdfb5a5e61ed291edba2f79bb1f913427403e92a799101dbfb49684",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 3,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "S_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/S_h1/final.pt",
+      "raw_sha256": "b5544c12d35a1e1fc4f444ad89627437367d134e3546af8a559463071a4027ba",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s43",
+      "role": "M_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s43/M_h1/final.pt",
+      "raw_sha256": "13bd7fe07bba6c15f27d4c324fe3234cc66808eee6a1da28a804ee494de666ae",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "c738a33cb6c7eb69ec35eea95fb5baa8490b76f43a699e19c63d5deff2742a67",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": true
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "P",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/P/best.pt",
+      "raw_sha256": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 44,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "Q",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/P/step300.pt",
+      "raw_sha256": "d7fd76b04a7d818ca81e21fbbdac0d3e3f4b6341934a75c9fe30d3d2094c8e94",
+      "step": 300,
+      "resolved_lineage": {
+        "atomic_optimization_run": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/P",
+        "optimization_seed": 44,
+        "trajectory_snapshot_step": 300,
+        "selected_P_step": 600,
+        "selected_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "relationship": "same optimization trajectory; Qstep300 is not a child initialized from selected P. Legacy raw parent field identifies the associated P run only."
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "U",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/U/best.pt",
+      "raw_sha256": "3b159a0d3bf701f055b2dee7252d5b3a078e33820cd2f51290170ac0fb86e042",
+      "step": 600,
+      "resolved_lineage": {
+        "initialization": "new identity editor",
+        "optimization_seed": 10044,
+        "atomic_updates_executed": 600,
+        "selected_dev_step": 600,
+        "selection": "earliest minimum full-core-dev token-mean NLL over100/200/300/400/500/600"
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "N_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/N_h0/final.pt",
+      "raw_sha256": "1b659cd5112b9796ed78f08ed7da01bb14eb4607af54ce7eadb022493196bb85",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 1,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "S_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/S_h0/final.pt",
+      "raw_sha256": "433f685db9f5edbe0f34e3698e6c39ffb1b4317fe8bc58e4dbd418530a4dd74a",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "M_h0",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/M_h0/final.pt",
+      "raw_sha256": "367c759ca2303d7e4995f7820b1c014a4cfac034fc7e8b7b9f9b001dca4ce06d",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 1,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20044
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "N_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/N_h1/final.pt",
+      "raw_sha256": "7b4b60b7df12e224c1e8cfa75ea94c96a2087f10b7dca499ff8f16d60fe94480",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "N",
+        "heldout_current_state": 3,
+        "edited_focus_states": [],
+        "natural_control_states": [
+          0,
+          2
+        ],
+        "optimization_seed": 20045
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "S_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/S_h1/final.pt",
+      "raw_sha256": "2e39aa3c579b192949f402351c2f77df5ff1c0375b0af72a81ba856f4b7ff4ee",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "S",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20045
+      },
+      "formal_task_complete": false
+    },
+    {
+      "study": "space_relation_confirmation_v1",
+      "run": "t5gemma_space_s44",
+      "role": "M_h1",
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/M_h1/final.pt",
+      "raw_sha256": "fa10d24082af93aa6a7322690ed0e5536eff84749952fd841fffe397d9adcf2c",
+      "step": 200,
+      "resolved_lineage": {
+        "initialization_exact_P_sha": "b6d317c4da464a436469de1c9fa7cffdb8b0f5367e06db60f2b0e087af49eda5",
+        "initialization_P_step": 600,
+        "supplement_updates": 200,
+        "selection": "final200, no test selection",
+        "condition": "M",
+        "heldout_current_state": 3,
+        "edited_focus_states": [
+          0,
+          2
+        ],
+        "natural_control_states": [],
+        "optimization_seed": 20045
+      },
+      "formal_task_complete": false
     }
   ],
-  "raw_checkpoints_verified": 171,
+  "raw_checkpoints_verified": 198,
   "legacy_metadata_preserved": true,
   "historical_editor_weights_used": false,
   "no_cuda_initialized": true

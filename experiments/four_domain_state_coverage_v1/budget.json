@@ -1,5 +1,5 @@
 {
-  "actual_gpu_hours": 30.25138888888889,
+  "actual_gpu_hours": 35.17194444444444,
   "consumption_cap_gpu_hours": 48.0,
   "max_concurrent_gpus": 2,
   "allocations": [
@@ -711,12 +711,12 @@
     {
       "raw_id": "2640",
       "job_id": "2582_3",
-      "state": "RUNNING",
-      "elapsed_seconds": 780,
+      "state": "COMPLETED",
+      "elapsed_seconds": 9600,
       "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
       "exit_code": "0:0",
       "start": "2026-10-03T11:54:24",
-      "end": "Unknown",
+      "end": "2026-10-03T14:34:24",
       "nodes": "node01",
       "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
       "max_rss": "",
@@ -726,12 +726,12 @@
     {
       "raw_id": "2641",
       "job_id": "2582_4",
-      "state": "RUNNING",
-      "elapsed_seconds": 723,
+      "state": "COMPLETED",
+      "elapsed_seconds": 7441,
       "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
       "exit_code": "0:0",
       "start": "2026-10-03T11:55:21",
-      "end": "Unknown",
+      "end": "2026-10-03T13:59:22",
       "nodes": "node01",
       "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
       "max_rss": "",
@@ -741,17 +741,17 @@
     {
       "raw_id": "2582",
       "job_id": "2582_5",
-      "state": "PENDING",
-      "elapsed_seconds": 0,
-      "alloc_tres": "",
+      "state": "RUNNING",
+      "elapsed_seconds": 2176,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
       "exit_code": "0:0",
-      "start": "Unknown",
+      "start": "2026-10-03T13:59:22",
       "end": "Unknown",
-      "nodes": "None assigned",
+      "nodes": "node01",
       "requested_tres": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
       "max_rss": "",
       "walltime_minutes": "360",
-      "gpu_count": 0
+      "gpu_count": 1
     },
     {
       "raw_id": "2630",

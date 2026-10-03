@@ -483,13 +483,13 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 
 ## 七个研究问题：以已完成证据回答
 
-1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。仍待完成：t5gemma/space。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 关系确认版P另已由助手审阅seed42,43的6个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
+1. 固定案例审阅已确认BART的person、time三个seed发生当前正确、gold续步正确而latent续步表达破碎/不完整；这证明这些案例失败存在，不把全部未解析输出判成语义错误。另有可解析的下一步语义不匹配的模型/领域为t5gemma/emotion、t5gemma/person、t5gemma/space、t5gemma/time。未解析、仅语法或终止失败另列，逐seed计数见表。未准入组合bart/space、bart/emotion未达到冻结的受控任务门槛；不能据此判定其全部合理释义能力。仍待完成：t5gemma/space。 原朝向空间另有三个T5Gemma seed的九个固定案例：当前与gold续步正确，latent下一步错误/缺失。该行为证据不依赖其旧留出解释，但旧朝向划分不能证明相对关系状态迁移，须与确认版分列。 关系确认版P另已由助手审阅seed42,43,44的9个固定案例，确认当前正确而下一步关系错误或必要关系/信息缺失。seed42/inverse仅front→right目标关系错误，身份和事实保持；seed42/reverse剩余正文语法正常，只丢失关系，原grammar=false不能当作独立语法裁定。此审阅不声明正式N/S/M已完成，新增未审阅案例不继承标签。 情感P三个seed的step2各有96条合格续步，严格成功分别为1,0,2；严格失败分别为95,96,94，已解析槽位不匹配分别为64,37,21。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。 T5Gemma人称三个seed的step2各96条合格续步、严格成功均0；首个固定世界的九例助手审阅确认未切换/切错Speaker语境、事件缺失，或新增改变参与者的事件。事件身份保持而语境错误的案例不标成人物绑定错误。
 
-2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/emotion/H0：3seed均值+9.38pp，范围[+0.00,+28.12]pp；t5gemma/emotion/H1：3seed均值+6.77pp，范围[-1.56,+21.88]pp；t5gemma/person/H0：3seed均值+15.10pp，范围[+0.00,+32.81]pp；t5gemma/person/H1：3seed均值-5.21pp，范围[-48.44,+40.62]pp；t5gemma/time/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：3seed均值-11.46pp，范围[-34.38,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。 操作方向分项保存在M_vs_S_by_operation.csv，使用同一固定候选集按plus/minus分组，未改变评分或选集。情感方向结果：t5gemma/emotion/H0/降低：3seed，S均值0.00%、M均值18.75%，M−S均值+18.75pp[+0.00,+56.25]；t5gemma/emotion/H0/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；t5gemma/emotion/H1/降低：3seed，S均值19.79%、M均值33.33%，M−S均值+13.54pp[-3.12,+43.75]；t5gemma/emotion/H1/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；方向间不能相互代替。
+2. 留出状态×留出U、固定同全文/mask集合的M−S：bart/person/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/person/H1：3seed均值+0.00pp，范围[+0.00,+0.00]pp；bart/time/H0：3seed均值-35.94pp，范围[-84.38,+0.00]pp；bart/time/H1：3seed均值-7.81pp，范围[-23.44,+0.00]pp；t5gemma/emotion/H0：3seed均值+9.38pp，范围[+0.00,+28.12]pp；t5gemma/emotion/H1：3seed均值+6.77pp，范围[-1.56,+21.88]pp；t5gemma/person/H0：3seed均值+15.10pp，范围[+0.00,+32.81]pp；t5gemma/person/H1：3seed均值-5.21pp，范围[-48.44,+40.62]pp；t5gemma/space/H0：2seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/space/H1：2seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H0：3seed均值+0.00pp，范围[+0.00,+0.00]pp；t5gemma/time/H1：3seed均值-11.46pp，范围[-34.38,+0.00]pp。正负方向和零效果均保留；只有同一领域两个划分和全部seed支持时才称稳定优势。空间主问题使用更正后的关系状态划分，原绝对朝向结果不作为未见关系状态证据。 操作方向分项保存在M_vs_S_by_operation.csv，使用同一固定候选集按plus/minus分组，未改变评分或选集。情感方向结果：t5gemma/emotion/H0/降低：3seed，S均值0.00%、M均值18.75%，M−S均值+18.75pp[+0.00,+56.25]；t5gemma/emotion/H0/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；t5gemma/emotion/H1/降低：3seed，S均值19.79%、M均值33.33%，M−S均值+13.54pp[-3.12,+43.75]；t5gemma/emotion/H1/提高：3seed，S均值0.00%、M均值0.00%，M−S均值+0.00pp[+0.00,+0.00]；方向间不能相互代替。
 
-3. 三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：bart/time P自然IID2304/2304，留出表达322/1152；bart/person P自然IID1152/1152，留出表达122/576；t5gemma/time P自然IID2304/2304，留出表达663/1152；t5gemma/emotion P自然IID1536/1536，留出表达481/768；t5gemma/person P自然IID1152/1152，留出表达257/576。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。 完成三seed的固定配对集来源/状态对照：bart/time S/H0在留出U的已补训状态均值67.71%[25.00,100.00]，留出状态35.94%[0.00,84.38]；bart/person S/H0在留出U的已补训状态均值76.56%[57.81,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/time S/H0在留出U的已补训状态均值98.96%[96.88,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/emotion S/H0在留出U的已补训状态均值81.77%[68.75,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/person S/H0在留出U的已补训状态均值62.50%[28.12,95.31]，留出状态0.00%[0.00,0.00]；方括号是训练seed范围，不能作为置信区间。
+3. 三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：bart/time P自然IID2304/2304，留出表达322/1152；bart/person P自然IID1152/1152，留出表达122/576；t5gemma/time P自然IID2304/2304，留出表达663/1152；t5gemma/space P自然IID1536/1536，留出表达2/768；t5gemma/emotion P自然IID1536/1536，留出表达481/768；t5gemma/person P自然IID1152/1152，留出表达257/576。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。 空间留出表达上述数字是原有限解析器分数，不能解释为语义成功数：统一事后释义评分的P/seed42,43,44分别为201/256,187/256,223/256；原分数保留，评分修订不改变模型输入或正式cohort。 释义修订后另建仅按当前输出选取的事后来源配对集，留出关系上的S/M为seed42/H0 0/42与0/42，21世界；seed42/H1 2/64与0/64，32世界；seed43/H0 0/2与0/2，1世界；seed43/H1 0/36与12/36，18世界。它与原固定集分开，不能用成功筛选后的覆盖变化代替预注册比较；没有按下一步结果筛选。 完成三seed的固定配对集来源/状态对照：bart/time S/H0在留出U的已补训状态均值67.71%[25.00,100.00]，留出状态35.94%[0.00,84.38]；bart/person S/H0在留出U的已补训状态均值76.56%[57.81,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/time S/H0在留出U的已补训状态均值98.96%[96.88,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/emotion S/H0在留出U的已补训状态均值81.77%[68.75,100.00]，留出状态0.00%[0.00,0.00]；t5gemma/person S/H0在留出U的已补训状态均值62.50%[28.12,95.31]，留出状态0.00%[0.00,0.00]；方括号是训练seed范围，不能作为置信区间。
 
-4. 锚点/范围挑战的完整语义成功：bart/time P挑战2189/3456；bart/person P挑战4/2304；t5gemma/time P挑战1640/3456；t5gemma/emotion P挑战1818/2304；t5gemma/person P挑战543/2304。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。 后正式位置诊断：尚待结果。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。 独立符号对照仅seed42的test原子结果：bart/emotion 251/256；bart/person 77/192；bart/space 0/256；bart/time 0/384；t5gemma/emotion 256/256；t5gemma/person 192/192；t5gemma/space 256/256；t5gemma/time 384/384。其中BART情感的符号输入表现与自然语言准入失败分开报告，说明这套输入接口会影响基本能力；没有符号连续轨迹或N/S/M，不能替代自然语言结果。
+4. 锚点/范围挑战的完整语义成功：bart/time P挑战2189/3456；bart/person P挑战4/2304；t5gemma/time P挑战1640/3456；t5gemma/space P挑战575/2304；t5gemma/emotion P挑战1818/2304；t5gemma/person P挑战543/2304。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。 后正式位置诊断：尚待结果。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。 独立符号对照仅seed42的test原子结果：bart/emotion 251/256；bart/person 77/192；bart/space 0/256；bart/time 0/384；t5gemma/emotion 256/256；t5gemma/person 192/192；t5gemma/space 256/256；t5gemma/time 384/384。其中BART情感的符号输入表现与自然语言准入失败分开报告，说明这套输入接口会影响基本能力；没有符号连续轨迹或N/S/M，不能替代自然语言结果。
 
 5. 旧自然能力出现损失的设置：bart/person/M自然core原成功损失13、原失败修复0；bart/person/S自然core原成功损失8、原失败修复0；t5gemma/emotion/N自然core原成功损失11、原失败修复0；t5gemma/person/M自然core原成功损失10、原失败修复0；t5gemma/person/N自然core原成功损失14、原失败修复0；t5gemma/person/S自然core原成功损失16、原失败修复0。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。 T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。 T5_REPAIR_REGRESSION_AGENT_REVIEW逐例核查同一checkpoint的修复与损失：人称seed42/M_h1、seed43/S_h0和M_h1、seed44/S_h0，以及情感seed44/N_h1。损失分别涉及语境、参与者绑定、评价等级或必要Listener信息；Listener缺失例的事件身份/事实仍正确，不能扩大为事件语义错误。
 
@@ -499,7 +499,7 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 
 ## 执行与工件
 
-累计实际GPU小时：30.25138888888889；allocation账本峰值：2张。job IDs：['2555', '2564', '2568', '2571', '2582', '2585', '2587', '2590', '2620', '2621', '2650', '2651']。始终一任务一卡、一个项目全局最多两卡；符号数组依赖正式数组afterany，工程失败/重试也计入账本。
+累计实际GPU小时：35.17194444444444；allocation账本峰值：2张。job IDs：['2555', '2564', '2568', '2571', '2582', '2585', '2587', '2590', '2620', '2621', '2650', '2651']。始终一任务一卡、一个项目全局最多两卡；符号数组依赖正式数组afterany，工程失败/重试也计入账本。
 
 
 
@@ -519,11 +519,18 @@ CSV逐步列endpoint、条件续步、完整轨迹、保持/范围/可解析/受
 |bart|42|78.65%|56.77%|56.77%|False|
 |bart|43|78.65%|54.69%|54.69%|False|
 |bart|44|78.65%|54.43%|54.43%|False|
+|t5gemma|42|100.00%|100.00%|100.00%|True|
+|t5gemma|43|100.00%|100.00%|100.00%|True|
+|t5gemma|44|100.00%|100.00%|100.00%|True|
 
 
 
 |模型|seed|划分|世界|S|M|M减S|
 |---|---|---|---|---|---|---|
+|t5gemma|42|0|32|0/64|0/64|+0.00pp|
+|t5gemma|42|1|32|0/64|0/64|+0.00pp|
+|t5gemma|43|0|32|0/64|0/64|+0.00pp|
+|t5gemma|43|1|32|0/64|0/64|+0.00pp|
 
 
 
@@ -539,7 +546,7 @@ T5_EMOTION_S42_M_BENEFIT_AGENT_REVIEW另保存情感seed42/H0首批64个固定U�
 
 
 
-关系确认版CONTINUATION_AGENT_REVIEW已审阅P的seed42,43、首个固定世界的三种轨迹，共6例。seed42/inverse应恢复front却输出right，人物/事实保持；reverse只丢失必需空间关系，剩余正文语法正常。受控grammar标签同时包含句式完整性，不能把所有grammar=false当作独立语法错误。逐例原始current/next/gold与mask长度另存continuation_review_set；gold重编码mask43与latent44不同，它是能力控制，不是单独的同mask来源因果比较。只有已列case ID的案例获得助手审阅标签，不继承给未审阅预测；该记录本身不代表正式N/S/M全部完成。
+关系确认版CONTINUATION_AGENT_REVIEW已审阅P的seed42,43,44、首个固定世界的三种轨迹，共9例。seed42/inverse应恢复front却输出right，人物/事实保持；reverse只丢失必需空间关系，剩余正文语法正常。受控grammar标签同时包含句式完整性，不能把所有grammar=false当作独立语法错误。逐例原始current/next/gold与mask长度另存continuation_review_set；gold重编码mask43与latent44不同，它是能力控制，不是单独的同mask来源因果比较。只有已列case ID的案例获得助手审阅标签，不继承给未审阅预测；该记录本身不代表正式N/S/M全部完成。
 
 
 
@@ -598,6 +605,29 @@ semantic_components_by_seed单独给身份/对象绑定、绝对日期/方向、
 
 
 独立校验的初版也曾把12条正确的I see the ticket that is to my left等同物体关系从句列为假阳性候选；逐例复核撤销了这项错误标记，原模型评分在这些样本上正确。POSITION_PARAPHRASE_GUARD_REVISION保存旧候选审计与旧锁，另通过224条关系从句正例。新校验将陌生表达标为unknown，只将已识别的明确矛盾列为确认假阳性；independent_guard_unresolved_k另报覆盖，不能把未知当作语义错误。诊断GPU评估尚未开始时已冻结修订，正式原始评分不变。
+
+
+
+## 空间合理释义：保留原分数的统一评分修订
+
+
+
+旧解析器将I see the parcel to my left、behind me、in front of me等合理表达拒绝，留出表达原分数不能被当成语义成功率。spatial_paraphrase_by_seed对所有现存空间正式输出统一事后重评，不改变原输出、准入、训练、checkpoint、来源或原cohort。适配器仅从实际输出读取唯一Observer头和未引述独立I see句，保留实际主体/物体/方向及其他内容，并进行独立身份、非目标关系和数量检查；未知或on my front/back不作成功修复。
+
+
+
+|实验|模型|seed|原评分|事后释义评分|补回|
+|---|---|---|---|---|---|
+|four_domain_state_coverage_v1|t5gemma|42|0/256|172/256|172|
+|space_relation_confirmation_v1|t5gemma|42|0/256|201/256|201|
+|four_domain_state_coverage_v1|t5gemma|43|13/256|171/256|158|
+|space_relation_confirmation_v1|t5gemma|43|0/256|187/256|187|
+|four_domain_state_coverage_v1|t5gemma|44|0/256|211/256|211|
+|space_relation_confirmation_v1|t5gemma|44|2/256|223/256|221|
+
+
+
+spatial_paraphrase_M_vs_S同时列原固定cohort、新的事后当前表达合格cohort及其字面全文子集、全候选；新选集只依据当前输出及原先冻结的全文/mask/深度检查，绝不依据续步结果。覆盖和世界数单列spatial_paraphrase_source_coverage。core固定同全文U主比较未被这次释义修订改变；新增表达cohort不能冒充原先预注册结果。待运行的语言结构与位置诊断在其GPU评估之前冻结同一评分规则，重构/原子/gold续步/全部轨迹均等使用，实际回灌文本不变。SPATIAL_PARAPHRASE_AMENDMENT/REVISION、旧锁和7,600正例/15,812负例/3,648保护检查可复核。
 
 
 

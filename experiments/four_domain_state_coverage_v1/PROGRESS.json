@@ -1,11 +1,10 @@
 {
-  "at_utc": "2026-10-03T04:05:39.256263+00:00",
+  "at_utc": "2026-10-03T06:46:28.225315+00:00",
   "stages": {
     "formal": {
-      "completed": 18,
+      "completed": 20,
       "not_admitted": 9,
-      "in_progress": 2,
-      "not_started": 1
+      "in_progress": 1
     },
     "identity_probe": {
       "not_started": 30
@@ -626,10 +625,20 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 42,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
     },
     {
       "study": "space_relation_confirmation_v1",
@@ -637,10 +646,20 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 43,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
     },
     {
       "study": "space_relation_confirmation_v1",
@@ -648,10 +667,20 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 44,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
+      "status": "in_progress",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 12
     },
     {
       "index": 0,
@@ -1052,7 +1081,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 29.884166666666673,
+  "gpu_hours_at_last_account": 35.17194444444444,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {
