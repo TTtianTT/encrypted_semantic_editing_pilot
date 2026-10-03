@@ -19,11 +19,11 @@
 |bart|person|non_target_changed|3208|
 |bart|person|current_correct_next_target_wrong|7|
 |bart|person|target_wrong|3|
-|bart|space|non_target_changed|837|
-|bart|space|unresolved_parse|97|
+|bart|space|non_target_changed|911|
+|bart|space|unresolved_parse|535|
 |bart|space|controlled_grammar_invalid|67|
-|bart|time|unresolved_parse|35373|
-|bart|time|target_wrong|22779|
+|bart|time|unresolved_parse|35453|
+|bart|time|target_wrong|23467|
 |bart|time|current_text_semantic_mismatch|17152|
 |bart|time|historical_quote_scope|7830|
 |bart|time|current_correct_next_target_wrong|7437|
@@ -54,14 +54,14 @@
 |t5gemma|space|target_wrong|2728|
 |t5gemma|space|current_correct_next_target_wrong|745|
 |t5gemma|space|current_text_semantic_mismatch|64|
-|t5gemma|time|current_correct_next_target_wrong|19379|
-|t5gemma|time|unresolved_parse|10419|
-|t5gemma|time|target_wrong|8479|
-|t5gemma|time|controlled_grammar_invalid|7794|
-|t5gemma|time|current_text_semantic_mismatch|6060|
-|t5gemma|time|historical_quote_scope|5539|
-|t5gemma|time|current_text_controlled_grammar_invalid|3210|
-|t5gemma|time|non_target_changed|1936|
+|t5gemma|time|current_correct_next_target_wrong|28158|
+|t5gemma|time|unresolved_parse|14302|
+|t5gemma|time|target_wrong|12865|
+|t5gemma|time|controlled_grammar_invalid|10518|
+|t5gemma|time|current_text_semantic_mismatch|8400|
+|t5gemma|time|historical_quote_scope|7744|
+|t5gemma|time|current_text_controlled_grammar_invalid|4560|
+|t5gemma|time|non_target_changed|2462|
 
 
 

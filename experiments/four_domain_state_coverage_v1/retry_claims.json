@@ -7,10 +7,12 @@
       "seed": 42,
       "index": 12
     },
-    "status": "running",
+    "status": "completed",
     "job_id": "2620",
     "step_id": "0",
-    "at_utc": "2026-10-03T02:08:14.577102+00:00"
+    "at_utc": "2026-10-03T02:08:14.577102+00:00",
+    "returncode": 0,
+    "original_state": "TIMEOUT"
   },
   "14": {
     "task": {
@@ -20,9 +22,26 @@
       "seed": 44,
       "index": 14
     },
-    "status": "running",
+    "status": "completed",
     "job_id": "2671",
     "step_id": "0",
-    "at_utc": "2026-10-03T02:08:14.593340+00:00"
+    "at_utc": "2026-10-03T02:08:14.593340+00:00",
+    "returncode": 0,
+    "original_state": "TIMEOUT"
+  },
+  "15": {
+    "task": {
+      "phase": "formal",
+      "model": "t5gemma",
+      "domain": "space",
+      "seed": 42,
+      "index": 15
+    },
+    "status": "completed",
+    "job_id": "2671",
+    "step_id": "0",
+    "at_utc": "2026-10-03T02:44:23.522045+00:00",
+    "returncode": 0,
+    "original_state": "TIMEOUT"
   }
 }

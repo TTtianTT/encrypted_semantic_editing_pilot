@@ -1,10 +1,9 @@
 {
-  "at_utc": "2026-10-03T02:18:07.252151+00:00",
+  "at_utc": "2026-10-03T03:34:13.631251+00:00",
   "stages": {
     "formal": {
-      "completed": 15,
+      "completed": 18,
       "not_admitted": 6,
-      "in_progress": 3,
       "not_started": 6
     },
     "identity_probe": {
@@ -17,7 +16,9 @@
       "not_started": 8
     },
     "symbol": {
-      "not_started": 8
+      "symbol_diagnostic": 4,
+      "in_progress": 2,
+      "not_started": 2
     }
   },
   "tasks": [
@@ -231,314 +232,322 @@
       "model": "t5gemma",
       "domain": "time",
       "seed": 42,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "time",
+      "seed": 43,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "time",
+      "seed": 44,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "space",
+      "seed": 42,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "space",
+      "seed": 43,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "space",
+      "seed": 44,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "emotion",
+      "seed": 42,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "emotion",
+      "seed": 43,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "emotion",
+      "seed": 44,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "person",
+      "seed": 42,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "person",
+      "seed": 43,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "formal",
+      "model": "t5gemma",
+      "domain": "person",
+      "seed": 44,
+      "status": "completed",
+      "gate_passed": true,
+      "checkpoints": [
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
+      ],
+      "completed_prediction_shards": 67
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "symbol",
+      "model": "bart",
+      "domain": "time",
+      "seed": 42,
+      "status": "symbol_diagnostic",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
+      "completed_prediction_shards": 0
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "symbol",
+      "model": "bart",
+      "domain": "space",
+      "seed": 42,
+      "status": "symbol_diagnostic",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
+      "completed_prediction_shards": 0
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "symbol",
+      "model": "bart",
+      "domain": "emotion",
+      "seed": 42,
+      "status": "symbol_diagnostic",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
+      "completed_prediction_shards": 0
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "symbol",
+      "model": "bart",
+      "domain": "person",
+      "seed": 42,
+      "status": "symbol_diagnostic",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
+      "completed_prediction_shards": 0
+    },
+    {
+      "study": "four_domain_state_coverage_v1",
+      "stage": "symbol",
+      "model": "t5gemma",
+      "domain": "time",
+      "seed": 42,
       "status": "in_progress",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 35
+      "gate_passed": null,
+      "checkpoints": [],
+      "completed_prediction_shards": 0
     },
     {
       "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "time",
-      "seed": 43,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "time",
-      "seed": 44,
-      "status": "in_progress",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 46
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
+      "stage": "symbol",
       "model": "t5gemma",
       "domain": "space",
       "seed": 42,
       "status": "in_progress",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "space",
-      "seed": 43,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "space",
-      "seed": 44,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "emotion",
-      "seed": 42,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "emotion",
-      "seed": 43,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "emotion",
-      "seed": 44,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "person",
-      "seed": 42,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "person",
-      "seed": 43,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "formal",
-      "model": "t5gemma",
-      "domain": "person",
-      "seed": 44,
-      "status": "completed",
-      "gate_passed": true,
-      "checkpoints": [
-        "P",
-        "Q",
-        "U",
-        "N_h0",
-        "S_h0",
-        "M_h0",
-        "N_h1",
-        "S_h1",
-        "M_h1"
-      ],
-      "completed_prediction_shards": 67
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "bart",
-      "domain": "time",
-      "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "bart",
-      "domain": "space",
-      "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "bart",
-      "domain": "emotion",
-      "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "bart",
-      "domain": "person",
-      "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "t5gemma",
-      "domain": "time",
-      "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
-      "completed_prediction_shards": 0
-    },
-    {
-      "study": "four_domain_state_coverage_v1",
-      "stage": "symbol",
-      "model": "t5gemma",
-      "domain": "space",
-      "seed": 42,
-      "status": "not_started",
       "gate_passed": null,
       "checkpoints": [],
       "completed_prediction_shards": 0
@@ -1030,7 +1039,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 27.09166666666668,
+  "gpu_hours_at_last_account": 28.959166666666672,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

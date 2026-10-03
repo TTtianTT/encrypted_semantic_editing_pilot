@@ -1,12 +1,12 @@
 # 当前进度（工件快照，非最终结果）
 
-UTC 2026-10-03T02:18:07.252151+00:00。所有GPU计算经Slurm；历史峰值2卡，最近账本累计27.092 GPU小时。
+UTC 2026-10-03T03:34:13.631251+00:00。所有GPU计算经Slurm；历史峰值2卡，最近账本累计28.959 GPU小时。
 
-- formal: {"completed": 15, "not_admitted": 6, "in_progress": 3, "not_started": 6}
+- formal: {"completed": 18, "not_admitted": 6, "not_started": 6}
 - identity_probe: {"not_started": 30}
 - linguistic_controls: {"not_started": 8}
 - position_foils: {"not_started": 8}
-- symbol: {"not_started": 8}
+- symbol: {"symbol_diagnostic": 4, "in_progress": 2, "not_started": 2}
 
 任务/准入/checkpoint/已写预测分片见PROGRESS.json。作业和依赖见submissions.json；分配、时限和退出状态见budget.json。
 
