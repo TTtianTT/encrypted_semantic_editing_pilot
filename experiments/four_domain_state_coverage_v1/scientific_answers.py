@@ -40,6 +40,7 @@ def research_answers():
         review=read(ROOT/'T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW.json')
         a1+=' 情感P三个seed的step2各有96条合格续步，严格成功分别为'+','.join(str(r['strict_success']) for r in review['counts'])+'；严格失败分别为'+','.join(str(r['strict_failed']) for r in review['counts'])+'，已解析槽位不匹配分别为'+','.join(str(r['parsed_slot_mismatch']) for r in review['counts'])+'。首个固定世界的九例确认越级/评价错误或必要内容缺失，包括目标正确但非目标丢失的案例；全部3条成功反例保留。此证据只需已完成的P轨迹，不把未完成的N/S/M当成完成。'
     elif (ROOT/'T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW.json').exists():a1+=' 情感seed42首批证据为96条合格续步中95条严格失败、1条成功，64条为已解析槽位不匹配；固定案例确认评价越级或必要内容缺失。此单seed记录保留成功反例，其余seed另报，不冒充三seed结论。'
+    if (ROOT/'T5_PERSON_S42_CONTINUATION_AGENT_REVIEW.md').exists():a1+=' T5Gemma人称另有seed42首个固定世界的三例助手审阅：gold续步正确，latent未切换/切错Speaker语境，或事件缺失。该记录仅涉及seed42；事件身份保持而语境错误的案例不标成人物绑定错误。'
     contrasts=[]
     for (m,d,h),vv in sorted(deltas.items()):
         values=[x for s,x in sorted(vv)];contrasts.append(f'{m}/{d}/H{h}：{len(values)}seed均值{statistics.mean(values)*100:+.2f}pp，范围[{min(values)*100:+.2f},{max(values)*100:+.2f}]pp')
@@ -84,6 +85,7 @@ def research_answers():
     a4+=' 后正式位置诊断：'+('；'.join(foils) if foils else '尚待结果')+'。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。'
     reg=[f'{m}/{d}/{c}自然core原成功损失{k}、原失败修复{repair}' for (m,d,c),(k,repair) in sorted(losses.items()) if k]
     a5='旧自然能力出现损失的设置：'+('；'.join(reg) if reg else '已完成core对照暂无损失；来源/表达损失仍需单列检查')+'。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。'
+    if (ROOT/'T5_EMOTION_NATURAL_CONTROL_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。'
     both=[d for d in DOMAINS if 'bart/'+d in completed and 't5gemma/'+d in completed]
     shared=[d for d in DOMAINS if all(presence[(m,d)]=={42,43,44} and (m+'/'+d in affected or m=='bart' and d in reviewed_domains) for m in MODELS)]
     a6='P的“当前正确、gold续步正确、latent下一步失败”在两模型均有三seed支持的领域为'+('、'.join(shared) if shared else '尚待三seed共同证据')+'。两模型全部三seed的正式N/S/M均完成并准入的领域为'+('、'.join(both) if both else '尚无全部完成的领域')+'；补训跨模型比较据此区分完整与部分结果。单模型准入失败与另一模型组合失败不能合并平均，T5Gemma实际是已核验2B IT而非270M IT，rank相同但编辑器参数量不同。'

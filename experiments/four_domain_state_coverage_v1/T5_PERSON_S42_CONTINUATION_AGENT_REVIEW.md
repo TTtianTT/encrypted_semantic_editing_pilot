@@ -1,0 +1,11 @@
+# Person seed42 continuation: assistant review
+
+Only seed42's P behavior is used here; its N/S/M are still evaluating and seeds43/44 have not yet generated their P trajectories at review time. Assistant review, not independent human annotation. At core step2,96 rows from32 worlds×3 paths have both actually correct previous latent text and a correct gold-reencode next output. Strict next successes0; parsed slot mismatches43; unresolved53. The categories do not constitute independent semantic adjudication of all96 rows.
+
+Three cases are saved for the first lexicographic eligible content world person_0120, including all3 paths rather than selecting worst examples. The event always has Grace as agent, Carol as recipient, and Henry as owner of the white parcel,4 copies.
+
+* Forward: current Speaker Carol/Listener Henry, “Grace gives me your parcel”, correctly expresses the event. The next output repeats this entire text/context, whereas plus requires Speaker Henry/Listener Grace and “you give Carol my parcel”. Event identities/facts are preserved, but the requested context change is absent.
+* Reverse: current Speaker Henry/Listener Grace, “you give Carol my parcel”, is correct. The next output retains that context and only “you”, losing the event/facts. Minus requires Speaker Carol/Listener Henry and “Grace gives me your parcel”.
+* Inverse: current Speaker Carol/Listener Henry is correct. The next output says Speaker Henry/Listener Carol and “Grace gives you my parcel”. Those pronouns still refer to the original recipient Carol and owner Henry, so event identities/facts remain correct; however, the intended restored context is Speaker Grace/Listener Carol and “I give you Henry's parcel”. This is an incorrect context anchor, not independently confirmed corruption of event participant binding.
+
+All gold-reencode controls produce the required new context, unchanged event roles and facts. These cases therefore establish first-seed current-correct/next-failure and distinguish context-change failure from event loss. They do not yet establish three-seed or cross-backbone consistency. The latent mask length48 and gold-reencode length46 differ in these illustrations: this is an interface comparison, not a mask-matched provenance mechanism proof.
