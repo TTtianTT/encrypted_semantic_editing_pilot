@@ -57,10 +57,13 @@ def make_functions(base_gold,base_render,base_score):
             from narrator_scope_score import score_narrator
             return checked_counts(score_narrator(text,g,w,ended,base_score),text,g)
         if g['domain']!='time':
-            if g['domain']=='space':
-                from spatial_paraphrase_score import score_spatial_paraphrases
-                return score_spatial_paraphrases(text,g,w,ended,base_score)
             result=base_score(text,g,w,ended)
+            if g['domain']=='space':
+                from space_scope_guard import valid_target_relation,valid_non_target_relations
+                target_check=valid_target_relation(text,g,w);other_check=valid_non_target_relations(text,g,w)
+                if target_check is not True:result=dict(result,success=False,target=False,scope=False)
+                if other_check is not True:result=dict(result,success=False,preserved=False,scope=False)
+                if target_check is None or other_check is None:result=dict(result,parseable=False)
             return checked_counts(result,text,g)
         quotes=list(re.finditer(r'"([^"]*)"',text));valid=len(quotes)==1 and re.sub(r'\s+',' ',quotes[0][1].strip()).lower()==g['foil_quote'].lower()
         if len(quotes)==1:

@@ -11,15 +11,6 @@ from evaluate import atomic,gold_next,rates
 from behavioral import rollout
 from semantics import gold
 from evaluator import score
-if args.domain=='space':
-    # Prospective diagnostic scorer only; immutable formal evaluator unchanged.
-    from spatial_paraphrase_score import score_spatial_paraphrases
-    import evaluate as evaluate_module
-    import behavioral as behavioral_module
-    original_score=score
-    def score(text,g,w,ended=True):return score_spatial_paraphrases(text,g,w,ended,original_score)
-    evaluate_module.score=score
-    behavioral_module.score=score
 import torch
 
 @torch.no_grad()
@@ -56,6 +47,6 @@ def main():
                 if not path.exists():rollout(eng,ed,[w for w in ws.values() if w['split']=='test'],template,path)
                 checkpoint_info.append(dict(seed=seed,role=role,template=template,checkpoint=info,output=str(path.relative_to(ROOT)),output_sha=digest(path)))
     dump(dest/'gates.json',gates);dump(dest/'checkpoint_index.json',checkpoint_info)
-    dump(dest/'complete.json',dict(status='completed',study=args.study,model=args.model,domain=args.domain,resources=eng.resources(),config_sha=digest(ROOT/'config.json'),data_manifest_sha=digest(ROOT/'data/manifest.json'),extension_plan_sha=digest(PARENT/'four_domain_state_coverage_v1/LINGUISTIC_CONTROLS_PLAN.md'),scoring_revision_sha=digest(PARENT/'four_domain_state_coverage_v1/spatial_paraphrase_score.py') if args.domain=='space' else None,no_training_performed=True))
+    dump(dest/'complete.json',dict(status='completed',study=args.study,model=args.model,domain=args.domain,resources=eng.resources(),config_sha=digest(ROOT/'config.json'),data_manifest_sha=digest(ROOT/'data/manifest.json'),extension_plan_sha=digest(PARENT/'four_domain_state_coverage_v1/LINGUISTIC_CONTROLS_PLAN.md'),no_training_performed=True))
 
 if __name__=='__main__':main()

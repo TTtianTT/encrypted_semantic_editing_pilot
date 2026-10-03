@@ -84,6 +84,12 @@ def research_answers():
             a,b=[list(factors[k].values()) for k in ('seen_edited_state','heldout_edited_state')]
             source_state.append(f'{m}/{d} S/H0在留出U的已补训状态均值{statistics.mean(a)*100:.2f}%[{min(a)*100:.2f},{max(a)*100:.2f}]，留出状态{statistics.mean(b)*100:.2f}%[{min(b)*100:.2f},{max(b)*100:.2f}]')
     a3='三类迁移使用独立轴和固定来源，不能互相替代。已完成的P原子能力：'+('；'.join(transfer) if transfer else '尚待结果')+'。来源/状态交叉按各seed及状态分别报告，不能用全候选覆盖变化冒充固定配对集改善；汇总计数不把多改写视为独立世界。'
+    spatial_aliases=[r for r in readcsv(ROOT,'spatial_paraphrase_by_seed.csv') if r['study']=='space_relation_confirmation_v1' and r['model']=='t5gemma' and r['condition']=='P' and r['kind']=='atomic' and r['template']=='2']
+    if spatial_aliases:
+        a3+=' 空间留出表达上述数字是原有限解析器分数，不能解释为语义成功数：统一事后释义评分的P/seed'+','.join(r['seed'] for r in spatial_aliases)+'分别为'+','.join(r['adjudicated_k']+'/'+r['n'] for r in spatial_aliases)+'；原分数保留，评分修订不改变模型输入或正式cohort。'
+    spatial_posthoc=[r for r in readcsv(ROOT,'spatial_paraphrase_M_vs_S.csv') if r['study']=='space_relation_confirmation_v1' and r['model']=='t5gemma' and r['template']=='2' and r['source']=='U' and r['cohort']=='posthoc_current_adjudicated_cohort' and int(r['n'])>0]
+    if spatial_posthoc:
+        a3+=' 释义修订后另建仅按当前输出选取的事后来源配对集，留出关系上的S/M为'+ '；'.join(f"seed{r['seed']}/H{r['holdout_split']} {r['adjudicated_S_k']}/{r['n']}与{r['adjudicated_M_k']}/{r['n']}，{r['worlds']}世界" for r in spatial_posthoc)+'。它与原固定集分开，不能用成功筛选后的覆盖变化代替预注册比较；没有按下一步结果筛选。'
     a3+=' 完成三seed的固定配对集来源/状态对照：'+('；'.join(source_state) if source_state else '尚待结果')+'；方括号是训练seed范围，不能作为置信区间。'
     a4='锚点/范围挑战的完整语义成功：'+('；'.join(scope) if scope else '尚待结果')+'。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。'
     foils=[]

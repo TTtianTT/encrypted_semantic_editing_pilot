@@ -2,7 +2,6 @@
 from collections import defaultdict
 from common import *
 from evaluator import score
-from spatial_paraphrase_score import score_spatial_paraphrases
 from analyze import writecsv,summary
 
 def main():
@@ -19,7 +18,7 @@ def main():
         for path in sorted(out.rglob('*.jsonl')):
             groups=defaultdict(list)
             for r in rows(path):
-                if r.get('gold') is not None:assert score_spatial_paraphrases(r['prediction'],r['gold'],ws[r['world_id']],r['score']['ended'],score)==r['score']
+                if r.get('gold') is not None:assert score(r['prediction'],r['gold'],ws[r['world_id']],r['score']['ended'])==r['score']
                 count+=1
                 if 'trajectory' in r:cell=dict(seed=int(path.parent.parent.name[1:]),condition=path.parent.name,template=r['template'],kind='trajectory',mode=r['mode'],trajectory=r['trajectory'],step=r['step'])
                 else:cell=dict(seed=int(path.parent.name[1:]) if path.parent.name.startswith('s') else 'shared_backbone',condition='P' if path.name.startswith('dev_') and path.parent.name.startswith('s') else 'identity',template=r['template'],kind=path.stem)
