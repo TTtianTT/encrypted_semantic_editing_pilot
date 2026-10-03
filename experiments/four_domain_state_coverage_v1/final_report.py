@@ -2,10 +2,13 @@
 import csv,statistics
 from collections import defaultdict
 from common import *
-from report import table,pct
+from report import table,pct,main as write_base_report
 from scientific_answers import research_answers,readcsv
 
 def main():
+    # Rebuild the base first, so standalone reruns cannot duplicate prefixes,
+    # appendices or error-review prose from a previous combined report.
+    write_base_report()
     confirmation=ROOT.parent/'space_relation_confirmation_v1'
     main_status=readcsv(ROOT,'completion_status.csv');space_status=readcsv(confirmation,'completion_status.csv');identity=readcsv(ROOT,'identity_probe_status.csv');language=readcsv(ROOT,'language_structure_status.csv')
     position=readcsv(ROOT,'position_foils_status.csv')
@@ -47,6 +50,7 @@ def main():
     appendix+=['','T5_CONTINUATION_AGENT_REVIEW另保存固定首个test世界的12例：时间三个seed、原朝向空间seed42，各三种轨迹。Codex逐一阅读当前、latent下一步与gold重编码对照，确认日期/关系错误、固定事实损失或破碎重复。空间例不是更正关系确认版的证据；保存这些例时部分正式评估尚未结束。此记录同样不是独立人工总体标注。']
     appendix+=['','T5_SPACE_CONTINUATION_AGENT_REVIEW将同一固定空间世界space_0120的审阅覆盖到42/43/44三个seed、三种轨迹，共九例，包含前述seed42三例。全部当前与gold重编码下一步正确，latent下一步缺失身份/关系/事实、错误方向或损坏重复。它支持原空间任务的行为存在性，不能作为关系状态留出的确认版结果。一个世界的多种轨迹和训练seed不能当作九个独立世界。']
     appendix+=['','T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW记录首次情感结果：96条当前正确且gold续步正确的第二步，95条严格失败、1条成功，64条已解析槽位不匹配。固定emotion_0120三条路径中，正向保留negative且丢失其他内容，反向/逆操作从positive到negative而非neutral；后两例非目标评价和事实保持，明确是目标评价越级。首次单seed证据独立保存，不能冒充全部训练随机性；唯一成功反例保存在emotion_s42_continuation_counterexamples。后续分项三seed表仍是主要结果。']
+    appendix+=['','T5_EMOTION_THREE_SEED_CONTINUATION_AGENT_REVIEW随后核查三个seed的九个固定案例，并保存和审阅全部三条成功第二步反例。T5_PERSON_THREE_SEED_CONTINUATION_AGENT_REVIEW核查人称三个seed的九个固定案例：区分未切换/切错语境、必要事件丢失和新增参与者改变的事件，保持事件身份而语境错误的例子不标成人物绑定错误。原单seed审阅保留为历史记录，不重复当作独立内容世界证据。']
     appendix+=['','ADMISSION_AGENT_REVIEW按领域×三个seed×固定三类评分失败取18个dev未编辑重构案例。其空间输出丢失颜色谓词、引入coffee事实或把key改成light；情感输出有损坏的dislits及重复破碎分句。单复数ticket/tickets案例未裁定为语义错误，保留为有限单数对象解析器的拒绝及指称不确定性。冻结准入是完整受控任务门槛，不是无限释义的语义等价判定；自动错误类别/槽位不等于独立人工证实的语义错误。三个seed的冻结encoder重构重复不能视为三次独立生成证据。']
     appendix+=['','## 位置与同措辞锚点补充诊断','', 'POSITION_FOILS_PLAN在部分正式test结果之后、这批GPU评估之前冻结。没有训练、重新选checkpoint或根据test调参。同世界的两种顺序共享gold转换；emotion额外把同主体的非目标对象放在前面，空间固定观察者在前，人称历史引语在前，时间引语和外部表达使用相同事件/相对日期句式。时间历史日期E−3与固定引语一致。原引语只作为原话记录，未假定为事实，原结果仍保留。']
     appendix+=['','情感补充variants2/3显式记录Narrator=Focus，外部第一人称I与参与者C历史引语中的I可以使用相同评价措辞；仅外部目标评价改变。引语分别在末尾/开头。该语法未训练，抽象等级转换已有自然原子训练；2/3单独配对，不与多对象0/1当作相同完整世界状态混合。独立评分适配器只绑定语法合法的未引述I，不修改回灌文本，也不修正I likes等语法错误。新增夹具在该诊断GPU评估之前冻结，7504项情感CPU正负例检查通过；详见POSITION_NARRATOR_AMENDMENT及修订哈希。']
@@ -60,6 +64,7 @@ def main():
     (confirmation/'ERROR_ANALYSIS.md').write_text('# 空间关系状态错误分析\n\n见本目录failure_cases.jsonl、error_counts.csv、capability_regressions.csv及综合ERROR_ANALYSIS。原朝向划分未作为关系状态留出证据；确认版未准入组合不归入组合失败平均。\n')
     with (ROOT/'ERROR_ANALYSIS.md').open('a') as f:f.write('\nrepair_regression_witnesses.jsonl按同一冻结receiver checkpoint联合保存固定来源修复和旧自然原子损失。来源表示/当前全文、操作及gold在前后相同；选择每个合格checkpoint的字典序首例，保留全部seed和条件。repair_regression_joint_counts给完整数量，行为未完成的快照标为partial。未解析损失仍是受控任务失败，不自动作无限释义语义错误。\n')
     with (ROOT/'ERROR_ANALYSIS.md').open('a') as f:f.write('\nREPAIR_REGRESSION_AGENT_REVIEW逐一审阅初次生成的六个BART人称联合案例（涵盖三个seed）。固定来源修复后正确，旧自然输出出现施事/受事/所有者绑定替换或事件缺失；这些不是合理释义。它们均对应同一receiver checkpoint，证明在这些具体设置里修复和旧语义能力退化可以同时出现。后续新增自动案例不继承人工助手标签。\n')
+    with (ROOT/'ERROR_ANALYSIS.md').open('a') as f:f.write('\nT5_REPAIR_REGRESSION_AGENT_REVIEW核查五个T5Gemma同checkpoint联合案例：人称seed42/M_h1、seed43/S_h0及M_h1、seed44/S_h0，以及情感seed44/N_h1。人称损失区分Listener锚点错误、参与者绑定改变和必要Listener信息丢失；最后一例事件身份/事实仍正确，不被标为独立证实的事件语义错误。情感N例是自然补训控制的评价等级错误，不归因为编辑态补训。新增自动案例不继承这五例的助手标签。\n')
     print('Combined report written; every phase terminal=',done)
 
 if __name__=='__main__':main()

@@ -14,7 +14,7 @@ def main():
     call('collect_identity_probes.py');call('collect_language_controls.py');call('collect_position_foils.py');call('audit_spatial_scoring.py');call('audit_quantity_scoring.py');call('artifact_audit.py');call('lineage_audit.py')
     call('publish.py');call('publish.py','--study','space_relation_confirmation_v1')
     call('publication_audit.py');call('publication_audit.py','--study','space_relation_confirmation_v1');call('extra_archives.py')
-    call('scientific_answers.py');call('report.py');call('final_report.py')
+    call('scientific_answers.py');call('final_report.py')
     pending=[]
     for base,name in [(ROOT,'main'),(confirmation,'spatial_confirmation')]:
         for task in read(base/'tasks.json'):

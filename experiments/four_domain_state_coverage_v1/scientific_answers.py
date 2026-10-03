@@ -90,6 +90,7 @@ def research_answers():
     reg=[f'{m}/{d}/{c}自然core原成功损失{k}、原失败修复{repair}' for (m,d,c),(k,repair) in sorted(losses.items()) if k]
     a5='旧自然能力出现损失的设置：'+('；'.join(reg) if reg else '已完成core对照暂无损失；来源/表达损失仍需单列检查')+'。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。'
     if (ROOT/'T5_EMOTION_NATURAL_CONTROL_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。'
+    if (ROOT/'T5_REPAIR_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5_REPAIR_REGRESSION_AGENT_REVIEW逐例核查同一checkpoint的修复与损失：人称seed42/M_h1、seed43/S_h0和M_h1、seed44/S_h0，以及情感seed44/N_h1。损失分别涉及语境、参与者绑定、评价等级或必要Listener信息；Listener缺失例的事件身份/事实仍正确，不能扩大为事件语义错误。'
     both=[d for d in DOMAINS if 'bart/'+d in completed and 't5gemma/'+d in completed]
     shared=[d for d in DOMAINS if all(presence[(m,d)]=={42,43,44} and (m+'/'+d in affected or m=='bart' and d in reviewed_domains) for m in MODELS)]
     a6='P的“当前正确、gold续步正确、latent下一步失败”在两模型均有三seed支持的领域为'+('、'.join(shared) if shared else '尚待三seed共同证据')+'。两模型全部三seed的正式N/S/M均完成并准入的领域为'+('、'.join(both) if both else '尚无全部完成的领域')+'；补训跨模型比较据此区分完整与部分结果。单模型准入失败与另一模型组合失败不能合并平均，T5Gemma实际是已核验2B IT而非270M IT，rank相同但编辑器参数量不同。'

@@ -39,14 +39,14 @@
 |t5gemma|emotion|current_text_controlled_grammar_invalid|296|
 |t5gemma|emotion|non_target_changed|216|
 |t5gemma|emotion|evaluator_or_object_binding|1|
-|t5gemma|person|unresolved_parse|7703|
-|t5gemma|person|participant_or_owner_binding|3890|
-|t5gemma|person|current_correct_next_target_wrong|2447|
-|t5gemma|person|non_target_changed|2043|
-|t5gemma|person|controlled_grammar_invalid|1154|
-|t5gemma|person|current_text_unresolved|1064|
-|t5gemma|person|current_text_semantic_mismatch|518|
-|t5gemma|person|target_wrong|389|
+|t5gemma|person|unresolved_parse|23310|
+|t5gemma|person|participant_or_owner_binding|12738|
+|t5gemma|person|non_target_changed|7244|
+|t5gemma|person|current_correct_next_target_wrong|5373|
+|t5gemma|person|controlled_grammar_invalid|4430|
+|t5gemma|person|current_text_unresolved|4032|
+|t5gemma|person|current_text_semantic_mismatch|3760|
+|t5gemma|person|target_wrong|1246|
 |t5gemma|space|controlled_grammar_invalid|27917|
 |t5gemma|space|unresolved_parse|20462|
 |t5gemma|space|current_text_controlled_grammar_invalid|17968|
@@ -54,13 +54,13 @@
 |t5gemma|space|target_wrong|2728|
 |t5gemma|space|current_correct_next_target_wrong|745|
 |t5gemma|space|current_text_semantic_mismatch|64|
-|t5gemma|time|current_correct_next_target_wrong|18984|
+|t5gemma|time|current_correct_next_target_wrong|19379|
 |t5gemma|time|unresolved_parse|10419|
 |t5gemma|time|target_wrong|8479|
-|t5gemma|time|controlled_grammar_invalid|7711|
-|t5gemma|time|current_text_semantic_mismatch|5728|
+|t5gemma|time|controlled_grammar_invalid|7794|
+|t5gemma|time|current_text_semantic_mismatch|6060|
 |t5gemma|time|historical_quote_scope|5539|
-|t5gemma|time|current_text_controlled_grammar_invalid|3016|
+|t5gemma|time|current_text_controlled_grammar_invalid|3210|
 |t5gemma|time|non_target_changed|1936|
 
 
@@ -85,3 +85,5 @@ core单步准入、未训练expression/structure单步、固定来源续步和�
 repair_regression_witnesses.jsonl按同一冻结receiver checkpoint联合保存固定来源修复和旧自然原子损失。来源表示/当前全文、操作及gold在前后相同；选择每个合格checkpoint的字典序首例，保留全部seed和条件。repair_regression_joint_counts给完整数量，行为未完成的快照标为partial。未解析损失仍是受控任务失败，不自动作无限释义语义错误。
 
 REPAIR_REGRESSION_AGENT_REVIEW逐一审阅初次生成的六个BART人称联合案例（涵盖三个seed）。固定来源修复后正确，旧自然输出出现施事/受事/所有者绑定替换或事件缺失；这些不是合理释义。它们均对应同一receiver checkpoint，证明在这些具体设置里修复和旧语义能力退化可以同时出现。后续新增自动案例不继承人工助手标签。
+
+T5_REPAIR_REGRESSION_AGENT_REVIEW核查五个T5Gemma同checkpoint联合案例：人称seed42/M_h1、seed43/S_h0及M_h1、seed44/S_h0，以及情感seed44/N_h1。人称损失区分Listener锚点错误、参与者绑定改变和必要Listener信息丢失；最后一例事件身份/事实仍正确，不被标为独立证实的事件语义错误。情感N例是自然补训控制的评价等级错误，不归因为编辑态补训。新增自动案例不继承这五例的助手标签。

@@ -1,0 +1,15 @@
+# Same-checkpoint repair and regression: T5Gemma inspection
+
+Five T5Gemma checkpoint witnesses are available at this snapshot, alongside the six separately reviewed BART witnesses. Every qualifying checkpoint is retained; the example pair is the first lexicographic repaired fixed-source row and first lexicographic lost natural row. These are illustrations, not independent content-world prevalence estimates or a best-seed selection. The exact input/current text, gold, checkpoint hashes and before/after outputs are saved in the JSONL. Assistant inspection, not independent human annotation.
+
+| Checkpoint | Fixed-source repair | Previously passing natural-row loss |
+|---|---|---|
+|emotion44/N_h1|Grace's positive view of the green box becomes neutral, and Carol's view/color/5 copies are restored after P omitted them.|Bob's negative view of the key becomes strongly negative instead of neutral; Grace/key/red/9 remain. N receives natural counterparts only.|
+|person42/M_h1|Under new Henry/Grace context, “you give Carol my parcel” correctly preserves Grace→Carol, Henry ownership and facts.|Required Henry/David becomes Henry/Bob. “Your lamp is what I give David” still resolves owner to Bob, agent Henry, recipient David; facts remain. This is a wrong listener anchor, not corruption of event identities.|
+|person43/S_h0|Same Grace→Carol/Henry-owned parcel repair under Henry/Grace context.|Context Carol/Bob is correct, but “Your key is what Emma gives me” resolves owner Bob, agent Emma and recipient Carol, replacing required owner Carol, agent Bob and recipient Emma. All three event bindings change.|
+|person43/M_h1|Same correctly grounded parcel repair.|Context Emma/Carol is correct, but “Frank's ticket is what you give me” resolves owner Frank and recipient Emma, instead of owner Emma and recipient Frank. Agent Carol and facts remain.|
+|person44/S_h0|Repairs the context/participant corruption of the fixed parcel source to Henry/Grace with the original event roles/facts.|Listener David disappears from the required Henry/David context. The remaining “Bob's lamp is what I give David” still expresses the original event roles/facts. Classify necessary context-information loss/unresolved listener, not an independently confirmed wrong event or ungrammatical event sentence.|
+
+The repaired outputs in all five examples are semantically correct in the controlled task. The losses differ: evaluation-level error, context-anchor error, participant-binding corruption and missing context. The last case would preserve the event if the task ignored listener identity; our task explicitly includes and updates listener identity, so it fails complete world/context recovery. This qualification prevents an overly broad claim about semantic degradation.
+
+Each repair and loss occurs under one identical frozen receiver checkpoint, on different fixed examples. This demonstrates coexistence, not a causal link between repairing one particular row and losing another. Full per-seed/split/source/expression gain/loss CSVs remain the quantitative evidence. Further confirmation-study witnesses do not inherit these five manual labels.

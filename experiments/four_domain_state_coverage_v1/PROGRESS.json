@@ -1,10 +1,10 @@
 {
-  "at_utc": "2026-10-03T00:41:53.473716+00:00",
+  "at_utc": "2026-10-03T02:18:07.252151+00:00",
   "stages": {
     "formal": {
-      "completed": 12,
+      "completed": 15,
       "not_admitted": 6,
-      "in_progress": 6,
+      "in_progress": 3,
       "not_started": 6
     },
     "identity_probe": {
@@ -244,7 +244,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 34
+      "completed_prediction_shards": 35
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -286,7 +286,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 39
+      "completed_prediction_shards": 46
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -420,7 +420,7 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 42,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
         "P",
@@ -433,7 +433,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 62
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -441,12 +441,20 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 43,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
-        "P"
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
       ],
-      "completed_prediction_shards": 0
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -454,12 +462,20 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 44,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
-        "P"
+        "P",
+        "Q",
+        "U",
+        "N_h0",
+        "S_h0",
+        "M_h0",
+        "N_h1",
+        "S_h1",
+        "M_h1"
       ],
-      "completed_prediction_shards": 0
+      "completed_prediction_shards": 67
     },
     {
       "study": "four_domain_state_coverage_v1",
@@ -1014,7 +1030,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 24.11611111111112,
+  "gpu_hours_at_last_account": 27.09166666666668,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

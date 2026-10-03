@@ -4,5 +4,90 @@
     "sha256": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
     "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
     "seed": 44
+  },
+  "Q": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/P/step300.pt",
+    "sha256": "7b047095c8a0be47f43fb394d52a7d4b65018d3ca3fb31457115f488d7495277",
+    "parent": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/P/best.pt",
+      "sha256": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
+  },
+  "U": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/U/best.pt",
+    "sha256": "7d79041a0b525b33fe6fd1ac7b2d8becb5a26ea0cbeb3a1d8874532395eac8c7",
+    "parent": "independent identity initialization, seed+10000"
+  },
+  "N_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/N_h0/final.pt",
+    "sha256": "494fe2e05e74e1d126e59a09999e80a92ad4f8ec673514a3a5c28bce7ec0097a",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 1,
+    "edited_focus_states": [
+      0,
+      2
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/S_h0/final.pt",
+    "sha256": "b25baa169be3a14445fee060139f31959ca4c8fae1e727a5b9eb04131578adfb",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 1,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h0": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/M_h0/final.pt",
+    "sha256": "8db5b72d747af050db647fd0011b8ee5adf21903cf47c18158000729a9b0768a",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 1,
+    "edited_focus_states": [
+      0,
+      2
+    ],
+    "condition": "M",
+    "updates": 200
+  },
+  "N_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/N_h1/final.pt",
+    "sha256": "84b7057ba329caab936d00dee0e4febd5015351b9f19e5801bde498ba5aff9f8",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 2,
+    "edited_focus_states": [
+      0,
+      1
+    ],
+    "condition": "N",
+    "updates": 200
+  },
+  "S_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/S_h1/final.pt",
+    "sha256": "110d93a9881d2438e97a77b109f4d4d16a51d7c8528d457615308fc42ea112ec",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 2,
+    "edited_focus_states": [
+      0
+    ],
+    "condition": "S",
+    "updates": 200
+  },
+  "M_h1": {
+    "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_person_s44/M_h1/final.pt",
+    "sha256": "a18959c97a6244e552623a6b1154c365efc4aba9e0ba45a55011ff83b2e7a11f",
+    "parent_P_sha": "784c3ba2804084b4bafc9932c650f4bbbc160f73e0a56a80849348848315b368",
+    "heldout": 2,
+    "edited_focus_states": [
+      0,
+      1
+    ],
+    "condition": "M",
+    "updates": 200
   }
 }
