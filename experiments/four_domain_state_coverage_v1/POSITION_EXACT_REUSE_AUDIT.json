@@ -1,0 +1,380 @@
+{
+  "reused_shards": 14,
+  "files": [
+    {
+      "seed": 42,
+      "condition": "P",
+      "source": "language_controls/t5gemma_emotion/s42/P/trajectory_t4.jsonl",
+      "source_sha256": "a2815c7dd4c4b72a125fc44795c42536592064145499981674c14959826fdec6",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/P/trajectory_v0.jsonl",
+      "target_sha256": "4f5a76f22d98259466c22ddc5b21f35e7c83c1201c2f9155479b3b8cc59fdde8",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/P/best.pt",
+        "sha256": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 42
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "N_h0",
+      "source": "language_controls/t5gemma_emotion/s42/N_h0/trajectory_t4.jsonl",
+      "source_sha256": "fe15327e1c79f524358b55fc8f8c086f6f83ddf40b7344c4a4905e1f7db73628",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/N_h0/trajectory_v0.jsonl",
+      "target_sha256": "f2ca68d809a4595d5dd4ec93248e12c63a9092be29a771d911e2da6820dd06ca",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h0/final.pt",
+        "sha256": "457121ffadd92231e76e1cb19f20f9a85be7de7612d6cd931bdcb9045f6007e4",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 1,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "N",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "S_h0",
+      "source": "language_controls/t5gemma_emotion/s42/S_h0/trajectory_t4.jsonl",
+      "source_sha256": "49daf49a70641da14346233d522fa81fa9e7e8d2c261fc830bbfd3051108e172",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/S_h0/trajectory_v0.jsonl",
+      "target_sha256": "bcff58fa82c32ccbd729ef141ff886f030b94927fdb3e1ef04b99b9a5c94bf7d",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h0/final.pt",
+        "sha256": "822ee913f2a7f2be71544a428269fd38052b2cc0b5d5871b3d9689635bb7de4a",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 1,
+        "edited_focus_states": [
+          2
+        ],
+        "condition": "S",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "M_h0",
+      "source": "language_controls/t5gemma_emotion/s42/M_h0/trajectory_t4.jsonl",
+      "source_sha256": "2e7ddf66aaef51742ae9c3758b8190a91c2735869e219a6162f92e95a81cb6e6",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/M_h0/trajectory_v0.jsonl",
+      "target_sha256": "99caee78c2bfda289c5c429510ad780da6c4d9684160ca3c1430d7d642e93056",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h0/final.pt",
+        "sha256": "ef860dbc0ba658882a38703980e37306ef3a09dfa163368d504ca283e4852dcc",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 1,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "M",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "N_h1",
+      "source": "language_controls/t5gemma_emotion/s42/N_h1/trajectory_t4.jsonl",
+      "source_sha256": "f83d38d818a41067796e188dc8ff7450e22cc8e4c68830fe69091f6892a0f2e8",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/N_h1/trajectory_v0.jsonl",
+      "target_sha256": "3075661625d0e26be1f4651be077294d65fe2246b7c2767400ff77752aa157a9",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h1/final.pt",
+        "sha256": "00923ff6cb3d4d5373b39c6965b8f18e31f1a9dac8efd870c5f6310a955b61fc",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 3,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "N",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "S_h1",
+      "source": "language_controls/t5gemma_emotion/s42/S_h1/trajectory_t4.jsonl",
+      "source_sha256": "6da781d6a9cc9a96a2871875ff5adb35c8eb424f7176aa6ea46375b1a1870d1c",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/S_h1/trajectory_v0.jsonl",
+      "target_sha256": "b66bf08eebfc0b0b95c97d85e208133409ae783d3058c9ff0a18522bdb68bde5",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h1/final.pt",
+        "sha256": "cc79de9c123dc3f6b0d59e22123e3ecc218f737e78c6019d1dd3abeb866d44ea",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 3,
+        "edited_focus_states": [
+          2
+        ],
+        "condition": "S",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 42,
+      "condition": "M_h1",
+      "source": "language_controls/t5gemma_emotion/s42/M_h1/trajectory_t4.jsonl",
+      "source_sha256": "643bc9125a03c1d540205c299662a7ef6d2bb1b7194ceb3981c6774032c71375",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s42/M_h1/trajectory_v0.jsonl",
+      "target_sha256": "931af80ea4f38e4cf7fd4770a4a4aa14aa43fd1935b8c1ebcff44d702c262b74",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h1/final.pt",
+        "sha256": "5448e6506841b5609353f7e28c254b7e2a7ec48dd1d59f2c30ff4fbcf9db172a",
+        "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+        "heldout": 3,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "M",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "P",
+      "source": "language_controls/t5gemma_emotion/s43/P/trajectory_t4.jsonl",
+      "source_sha256": "9c7cb39916504d94b11d93f94c80939149d6e3c8f132486bd5748eebb7fd2122",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/P/trajectory_v0.jsonl",
+      "target_sha256": "99dcc72619ee6edc0e537b0cafbb98ebe168cff3da4dcf32e9c5e59b683e82cd",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/P/best.pt",
+        "sha256": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 43
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "N_h0",
+      "source": "language_controls/t5gemma_emotion/s43/N_h0/trajectory_t4.jsonl",
+      "source_sha256": "3ff1d49bf89a8f3a69e7461b124385869b02425e55993d96cedf9859c4e24c83",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/N_h0/trajectory_v0.jsonl",
+      "target_sha256": "813fb1413762121b169c1ad320a5e97aea7a6edec8f50b8e2c5bd51d265ffcd9",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h0/final.pt",
+        "sha256": "b23fd57f138940f59f6d98b9ba464dc093aedce549cd7eac8aaf00e04b396586",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 1,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "N",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "S_h0",
+      "source": "language_controls/t5gemma_emotion/s43/S_h0/trajectory_t4.jsonl",
+      "source_sha256": "727171917c09d0ae4bffa39064a5c7e41c79952da3c7135a8474bec84aba4d37",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/S_h0/trajectory_v0.jsonl",
+      "target_sha256": "5b578f0d93ccab062a414eb5b912376ccd0cb2d1d7b9305b34fd9fa839a15e41",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h0/final.pt",
+        "sha256": "5d14f9403b554501fa6098171be62ae0653253e2a6717c31e11e5766722993cb",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 1,
+        "edited_focus_states": [
+          2
+        ],
+        "condition": "S",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "M_h0",
+      "source": "language_controls/t5gemma_emotion/s43/M_h0/trajectory_t4.jsonl",
+      "source_sha256": "2e67242d06d4271ecd9e431d23bb0949bde32cfcf346d4f19ddb9c053e5135b0",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/M_h0/trajectory_v0.jsonl",
+      "target_sha256": "235bc5894a5db2df20f0959d37af66549e46052a78e93bb35e2d732942af5d6c",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h0/final.pt",
+        "sha256": "19918b67a54cedbb85d1b9cedb4c59b64e6de73a52aea5d9caf87579a29160f4",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 1,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "M",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "N_h1",
+      "source": "language_controls/t5gemma_emotion/s43/N_h1/trajectory_t4.jsonl",
+      "source_sha256": "136239aaf5ab9353d087e2fa73a7f252b09a5fe74dc970a57e908bbbfaebb93c",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/N_h1/trajectory_v0.jsonl",
+      "target_sha256": "ad193d03bc5c74973a10e7414803d06f55b8f060d462440a801d6c63338ab4d1",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h1/final.pt",
+        "sha256": "b7af2df0639b64ba0e524c2a1a3b00db21017f0fc4c1fa2347d6ea436b0733af",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 3,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "N",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "S_h1",
+      "source": "language_controls/t5gemma_emotion/s43/S_h1/trajectory_t4.jsonl",
+      "source_sha256": "b410c6a711a97a62a4d5d5b31330a7e2eb2222602610c79043cbe86cde633b48",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/S_h1/trajectory_v0.jsonl",
+      "target_sha256": "d9bea69cdf1f04474b20ed044a807d8edac840268b3ba367ab79ff8e4d8d8afb",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h1/final.pt",
+        "sha256": "df9251a1d85d0dc38403b74e4eab940a2fb3ec22e22c76ca591578827f001791",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 3,
+        "edited_focus_states": [
+          2
+        ],
+        "condition": "S",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    },
+    {
+      "seed": 43,
+      "condition": "M_h1",
+      "source": "language_controls/t5gemma_emotion/s43/M_h1/trajectory_t4.jsonl",
+      "source_sha256": "146ea56af68b3c663ce10fd9378797ca2282cf4a365f2f47275e65ab56410414",
+      "source_slurm_array_task": "2587_6",
+      "target": "position_foils/t5gemma_emotion/s43/M_h1/trajectory_v0.jsonl",
+      "target_sha256": "f40f5e7bb09bd3e081d864b768f30143cba37a29d1eb2da5968c072d67873b68",
+      "rows": 1248,
+      "checkpoint": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h1/final.pt",
+        "sha256": "1470fdf82f3bc8a8b60c791065f2bfb5e6b03e64bfe6919a26ff3706650c7f4f",
+        "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+        "heldout": 3,
+        "edited_focus_states": [
+          0,
+          2,
+          4
+        ],
+        "condition": "M",
+        "updates": 200
+      },
+      "model_inputs_and_signed_operations_identical": true,
+      "all_current_states_render_identically": true,
+      "raw_predictions_and_masks_unchanged": true,
+      "new_scores_and_history_flags_recomputed_on_cpu": true,
+      "position_specification_sha256": "6256587796003611aff1c34ca56941bace51b14cf91309447b10f0379c31a990"
+    }
+  ],
+  "atomic_input_target_pairs_checked": 256,
+  "all_content_worlds_and_states_checked": true,
+  "selection_independent_of_scores": true,
+  "new_gpu_inference": false,
+  "original_gpu_inference_via_slurm": true
+}
