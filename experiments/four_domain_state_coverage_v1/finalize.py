@@ -9,7 +9,7 @@ def main():
     call('account.py')
     confirmation=ROOT.parent/'space_relation_confirmation_v1'
     call('analyze.py');call('analyze.py','--study','space_relation_confirmation_v1')
-    call('check_training_budget.py');call('check_training_budget.py',base=confirmation)
+    call('check_training_budget.py');call('check_training_budget.py',base=confirmation);call('supplement_coverage_audit.py')
     call('source_pair_audit.py');call('transfer_audit.py');call('cross_backbone_audit.py');call('source_geometry_audit.py');call('component_audit.py');call('repair_regression_witnesses.py')
     call('collect_identity_probes.py');call('collect_language_controls.py');call('collect_position_foils.py');call('audit_spatial_scoring.py');call('audit_spatial_paraphrases.py');call('audit_quantity_scoring.py');call('audit_surface_grammar.py');call('artifact_audit.py');call('lineage_audit.py')
     call('publish.py');call('publish.py','--study','space_relation_confirmation_v1')

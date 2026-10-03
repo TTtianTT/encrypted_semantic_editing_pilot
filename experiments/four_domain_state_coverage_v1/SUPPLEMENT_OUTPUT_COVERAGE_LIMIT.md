@@ -1,0 +1,11 @@
+# Current-state coverage and next-state supervision
+
+Post hoc protocol interpretation audit using the actual published training draws. No training, evaluation, selection or cohorts are changed.
+
+The four controlled operations are injective on their legal states for each signed head. Excluding edited continuation at a current state therefore also excludes edited loss for that head's corresponding next-state endpoint from that transition. Natural atomic training and natural protection already include the legal transition; this is not a completely untrained atomic conversion. These two exposure types must remain distinct.
+
+Increasing M's current-state coverage also changes the next-state labels supervised for each head. For example, in relative-space confirmation S sees front and M sees front/back; edited plus/minus endpoints are left/right, while continuing held-out right/left requires front/back endpoints. In emotion, edited focus0/2/4 and protected Q-current2 supervise endpoints1/3; held-out-current1/3 may require neutral2 or an extreme endpoint. Person and time have their own signed next-label coverage. This does not invalidate the registered N/S/M behavioral comparisons; it limits an interpretation that attributes a difference solely to current-state coverage rather than the input/output support of the edited transition.
+
+`supplement_supervision_coverage.csv` counts actual natural/P-edited/Q-edited units by source stream, operation, current and next label for every seed/condition/holdout. Observable relative relations are recorded separately from the original study's absolute-heading labels. Every checkpoint still has the registered800 natural/400 focus/400 old units and200 updates. Legal-boundary states can receive unequal counts when signed heads have different eligible states; nominal coverage is not equal per-state supervision.
+
+Natural and edited input exposure, edited endpoint loss coverage, incoming history and mask length should therefore be reported together. These observations do not identify a failure mechanism. Additional matched per-state budgets or objectives that constrain compatibility/loop behavior would be new experiments, not repairs to these test results.
