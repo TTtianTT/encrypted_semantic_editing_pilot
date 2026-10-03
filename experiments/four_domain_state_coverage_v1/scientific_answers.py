@@ -98,6 +98,7 @@ def research_answers():
         if '/P/test_atomic.jsonl' in r['artifact']:
             foils.append(f"{r['model']}/{r['domain']}/{r['artifact'].split('/')[-3]}/{r.get('pair_family','clause_order')}原顺序{r['original_order_success']}/{r['pairs']}、反顺序{r['reversed_order_success']}/{r['pairs']}、两者均对{r['both_success']}/{r['pairs']}")
     a4+=' 后正式位置诊断：'+('；'.join(foils) if foils else '尚待结果')+'。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。'
+    if (ROOT/'POSITION_BART_FIXED_REVIEW.md').exists():a4+=' BART固定首世界seed42/plus案例直接显示历史日期词被编辑而外部today未改、非目标box评价改变及引语观点改变；这些结构未通过基本准入，属于原子范围/生成失败。parcel/package和斜线日期可能是合理同义/格式，不作已证实身份错误。一个额外Jane评价的预期槽分项仍为True但综合success为False，说明分项scope不等于完整范围证明。详见POSITION_BART_FIXED_REVIEW。'
     symbol=defaultdict(lambda:[0,0])
     for r in readcsv(ROOT,'summary_by_seed.csv'):
         if r['phase']=='symbol' and r['kind']=='atomic':

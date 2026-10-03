@@ -10,6 +10,7 @@ def main():
     worlds={w['world_id']:w for w in rows(ROOT/f'position_foils/data/{domain}/worlds.jsonl')}
     original={w['world_id']:w for w in rows(ROOT/f'data/{domain}/worlds.jsonl')}
     assert worlds=={key:original[key] for key in worlds}
+    assert [key for key,w in worlds.items() if w['split']=='test']==[key for key,w in original.items() if w['split']=='test']
     source_rows=rows(ROOT/f'data/{domain}/test_challenge.jsonl')
     target_rows=rows(ROOT/f'position_foils/data/{domain}/test.jsonl')
     source_pairs={(r['world_id'],r['state'],r['operation']):(r['source'],r['target']) for r in source_rows if r['template']==template}
@@ -47,7 +48,7 @@ def main():
             if target.exists():assert rows(target)==converted
             else:target.parent.mkdir(parents=True,exist_ok=True);jsonl(target,converted)
             manifest.append(dict(seed=seed,condition=role,source=str(source.relative_to(ROOT)),source_sha256=digest(source),source_slurm_array_task='2587_6',target=str(target.relative_to(ROOT)),target_sha256=digest(target),rows=len(converted),checkpoint=cp,model_inputs_and_signed_operations_identical=True,all_current_states_render_identically=True,raw_predictions_and_masks_unchanged=True,new_scores_and_history_flags_recomputed_on_cpu=True,position_specification_sha256=digest(ROOT/'position_lock.json')))
-    dump(ROOT/'POSITION_EXACT_REUSE_AUDIT.json',dict(reused_shards=len(manifest),files=manifest,atomic_input_target_pairs_checked=256,all_content_worlds_and_states_checked=True,selection_independent_of_scores=True,new_gpu_inference=False,original_gpu_inference_via_slurm=True))
+    dump(ROOT/'POSITION_EXACT_REUSE_AUDIT.json',dict(reused_shards=len(manifest),files=manifest,atomic_input_target_pairs_checked=256,all_content_worlds_and_states_checked=True,test_world_batch_order_identical=True,selection_independent_of_scores=True,new_gpu_inference=False,original_gpu_inference_via_slurm=True))
     print('Exactly equivalent position trajectory shards:',len(manifest))
 
 if __name__=='__main__':main()
