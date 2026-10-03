@@ -42,11 +42,16 @@ def main():
     qa=read(ROOT/'QUANTITY_SCORING_AUDIT.json') if (ROOT/'QUANTITY_SCORING_AUDIT.json').exists() else {}
     appendix+=['',f"另一独立负例审计确认：情感原评分只读第一个copies数量，56条正确数量后追加不同数量的构造负例会被接受；未知主体评价/新物体颜色的112条对照已被原实现拒绝。实际预测的数量冲突成功数为{qa.get('actual_output_false_positives','尚待审计')}，已判当前正确但数量冲突的来源数为{qa.get('current_qualification_false_positives','尚待审计')}，详见quantity_scoring_adjudication。原分数不改写；尚未运行的位置诊断在GPU前增加所有未引述明确数量的一致性检查，允许同数重复、正常空白及引语作用范围。见POSITION_QUANTITY_AMENDMENT/REVISION。构造反例不是模型实际错误数。"]
     appendix+=['','## 续步输出审阅和身份probe','', '主phenomenon表的完整任务失败包含未解析输出；current_correct_next_failure.csv另给可解析语义不匹配、未解析、仅语法和仅终止计数。固定首个test世界×三个seed×三种轨迹的18个BART时间/人称案例由Codex助手逐一审阅：当前和gold-reencode下一步均正确，latent下一步输出重复/破碎或丢失必要关系，不是合理释义。仅据此证明这些案例的失败存在；不把全部未解析输出标成语义错误，不作独立人工标注或因果机制结论。见CONTINUATION_AGENT_REVIEW及continuation_review_set。']
-    ip=readcsv(ROOT,'identity_probe_metrics.csv');ipgroups=defaultdict(list)
+    ip=readcsv(ROOT,'identity_probe_metrics.csv');ipgroups=defaultdict(list);ipbaselines=defaultdict(list)
+    for r in readcsv(ROOT,'identity_probe_frequency_baselines.csv'):
+        if r['test_source']=='U' and r['subset']=='all':ipbaselines[(r['study'],r['model'],r['domain'],r['variable'])].append(r)
     for r in ip:
         if r['test_source']=='U':ipgroups[(r['study'],r['model'],r['domain'],r['variable'])].append(float(r['accuracy']))
-    pt=[dict(实验=st,模型=m,领域=d,变量=v,seed数=len(x),留出U均值=pct(statistics.mean(x)),范围=f'[{pct(min(x))},{pct(max(x))}]') for (st,m,d,v),x in sorted(ipgroups.items())]
-    appendix+=['',table(['实验','模型','领域','变量','seed数','留出U均值','范围'],pt),'','命名身份probe只从冻结P train表示拟合，跨P/Q/U test读取；current-correct-next-failed子集准确率另见identity_probe_on_failures。时间core锚点归属是常量，未拟合归属分类器；没有quote/external-anchor对照probe或子空间干预。可读出不等于编辑器使用。']
+    pt=[]
+    for (st,m,d,v),x in sorted(ipgroups.items()):
+        bb=ipbaselines[(st,m,d,v)]
+        pt.append(dict(实验=st,模型=m,领域=d,变量=v,seed数=len(x),留出U均值=pct(statistics.mean(x)),范围=f'[{pct(min(x))},{pct(max(x))}]',训练多数类=pct(statistics.mean(float(r['train_majority_accuracy']) for r in bb)) if bb else '待核验',超过多数类=f"{statistics.mean(float(r['probe_minus_train_majority']) for r in bb)*100:+.2f}pp" if bb else '待核验',训练类别覆盖=f"{min(int(r['train_class_count']) for r in bb)}–{max(int(r['train_class_count']) for r in bb)}/{bb[0]['classes']}" if bb else '待核验'))
+    appendix+=['',table(['实验','模型','领域','变量','seed数','留出U均值','范围','训练多数类','超过多数类','训练类别覆盖'],pt),'','命名身份probe只从冻结P train表示拟合，跨P/Q/U test读取；current-correct-next-failed子集准确率另见identity_probe_on_failures。identity_probe_frequency_baselines与identity_probe_class_frequency保留每seed训练/测试标签分布、固定全部类别的均匀基线、训练多数类预测及按训练频率随机预测的期望准确率，并单列未见测试类别。多数类并列时取固定最小类别编号；不按test频率选择预测类别。续步失败表同时给按操作行及去重表示的结果，不把重复操作当作独立拟合样本。没有改变probe拟合、表示或选择规则；低于基线或训练未覆盖身份不能被解释成变量已从表示消失。时间core锚点归属是常量，未拟合归属分类器；没有quote/external-anchor对照probe或子空间干预。可读出不等于编辑器使用。']
     appendix+=['','T5_CONTINUATION_AGENT_REVIEW另保存固定首个test世界的12例：时间三个seed、原朝向空间seed42，各三种轨迹。Codex逐一阅读当前、latent下一步与gold重编码对照，确认日期/关系错误、固定事实损失或破碎重复。空间例不是更正关系确认版的证据；保存这些例时部分正式评估尚未结束。此记录同样不是独立人工总体标注。']
     appendix+=['','T5_SPACE_CONTINUATION_AGENT_REVIEW将同一固定空间世界space_0120的审阅覆盖到42/43/44三个seed、三种轨迹，共九例，包含前述seed42三例。全部当前与gold重编码下一步正确，latent下一步缺失身份/关系/事实、错误方向或损坏重复。它支持原空间任务的行为存在性，不能作为关系状态留出的确认版结果。一个世界的多种轨迹和训练seed不能当作九个独立世界。']
     appendix+=['','T5_EMOTION_S42_CONTINUATION_AGENT_REVIEW记录首次情感结果：96条当前正确且gold续步正确的第二步，95条严格失败、1条成功，64条已解析槽位不匹配。固定emotion_0120三条路径中，正向保留negative且丢失其他内容，反向/逆操作从positive到negative而非neutral；后两例非目标评价和事实保持，明确是目标评价越级。首次单seed证据独立保存，不能冒充全部训练随机性；唯一成功反例保存在emotion_s42_continuation_counterexamples。后续分项三seed表仍是主要结果。']
