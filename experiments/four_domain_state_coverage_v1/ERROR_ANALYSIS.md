@@ -9,10 +9,11 @@
 |模型|领域|类型|计数|
 |---|---|---|---|
 |bart|emotion|controlled_grammar_invalid|1627|
-|bart|emotion|unresolved_parse|679|
+|bart|emotion|unresolved_parse|681|
 |bart|emotion|non_target_changed|116|
-|bart|person|unresolved_parse|41973|
-|bart|person|participant_or_owner_binding|15199|
+|bart|emotion|evaluator_or_object_binding|3|
+|bart|person|unresolved_parse|42005|
+|bart|person|participant_or_owner_binding|15426|
 |bart|person|controlled_grammar_invalid|9816|
 |bart|person|current_text_unresolved|4736|
 |bart|person|current_text_semantic_mismatch|3872|

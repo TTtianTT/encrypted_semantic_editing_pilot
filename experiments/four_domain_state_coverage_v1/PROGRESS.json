@@ -1,10 +1,11 @@
 {
-  "at_utc": "2026-10-03T03:34:13.631251+00:00",
+  "at_utc": "2026-10-03T04:05:39.256263+00:00",
   "stages": {
     "formal": {
       "completed": 18,
-      "not_admitted": 6,
-      "not_started": 6
+      "not_admitted": 9,
+      "in_progress": 2,
+      "not_started": 1
     },
     "identity_probe": {
       "not_started": 30
@@ -16,9 +17,7 @@
       "not_started": 8
     },
     "symbol": {
-      "symbol_diagnostic": 4,
-      "in_progress": 2,
-      "not_started": 2
+      "symbol_diagnostic": 8
     }
   },
   "tasks": [
@@ -536,9 +535,11 @@
       "model": "t5gemma",
       "domain": "time",
       "seed": 42,
-      "status": "in_progress",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "symbol_diagnostic",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -547,9 +548,11 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 42,
-      "status": "in_progress",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "symbol_diagnostic",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -558,9 +561,11 @@
       "model": "t5gemma",
       "domain": "emotion",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "symbol_diagnostic",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -569,9 +574,11 @@
       "model": "t5gemma",
       "domain": "person",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "symbol_diagnostic",
+      "gate_passed": true,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -580,9 +587,11 @@
       "model": "bart",
       "domain": "space",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "not_admitted",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -591,9 +600,11 @@
       "model": "bart",
       "domain": "space",
       "seed": 43,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "not_admitted",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -602,9 +613,11 @@
       "model": "bart",
       "domain": "space",
       "seed": 44,
-      "status": "not_started",
-      "gate_passed": null,
-      "checkpoints": [],
+      "status": "not_admitted",
+      "gate_passed": false,
+      "checkpoints": [
+        "P"
+      ],
       "completed_prediction_shards": 0
     },
     {
@@ -613,8 +626,8 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 42,
-      "status": "not_started",
-      "gate_passed": null,
+      "status": "in_progress",
+      "gate_passed": true,
       "checkpoints": [],
       "completed_prediction_shards": 0
     },
@@ -624,8 +637,8 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 43,
-      "status": "not_started",
-      "gate_passed": null,
+      "status": "in_progress",
+      "gate_passed": true,
       "checkpoints": [],
       "completed_prediction_shards": 0
     },
@@ -1039,7 +1052,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 28.959166666666672,
+  "gpu_hours_at_last_account": 29.884166666666673,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

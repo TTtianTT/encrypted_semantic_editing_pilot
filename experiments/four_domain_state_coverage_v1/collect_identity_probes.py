@@ -31,6 +31,7 @@ def main():
         if complete['status']!='completed':continue
         raw_metrics=read(out/'metrics.json');metrics.extend(dict(**meta,**r) for r in raw_metrics);pr=rows(out/'predictions.jsonl');lookup={(r['world_id'],r['state'],r['test_source'],r['variable']):r for r in pr};variables=sorted({r['variable'] for r in pr})
         assert len(lookup)==len(pr),'Repeated probe prediction keys'
+        assert all(r['correct']==(r['prediction']==r['label']) for r in pr),'Probe correctness must match independently checked labels'
         worlds={w['world_id']:w for w in rows(base/f"data/{task['domain']}/worlds.jsonl")}
         trainpath=base/'local/formal'/run.name/'probe/P_train.jsonl';train=rows(trainpath);manifest=read(trainpath.with_suffix('.json'))
         expected={(w,s) for w in manifest['world_ids'] for s in manifest['states']}

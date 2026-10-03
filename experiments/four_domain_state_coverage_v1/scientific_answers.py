@@ -87,6 +87,12 @@ def research_answers():
         if '/P/test_atomic.jsonl' in r['artifact']:
             foils.append(f"{r['model']}/{r['domain']}/{r['artifact'].split('/')[-3]}/{r.get('pair_family','clause_order')}原顺序{r['original_order_success']}/{r['pairs']}、反顺序{r['reversed_order_success']}/{r['pairs']}、两者均对{r['both_success']}/{r['pairs']}")
     a4+=' 后正式位置诊断：'+('；'.join(foils) if foils else '尚待结果')+'。此扩展单独标记，不冒充最初预注册；目标首句的原挑战不能排除位置捷径。'
+    symbol=defaultdict(lambda:[0,0])
+    for r in readcsv(ROOT,'summary_by_seed.csv'):
+        if r['phase']=='symbol' and r['kind']=='atomic':
+            value=symbol[(r['model'],r['domain'])];value[0]+=int(r['success_k']);value[1]+=int(r['n'])
+    if symbol:
+        a4+=' 独立符号对照仅seed42的test原子结果：'+'；'.join(f'{m}/{d} {k}/{n}' for (m,d),(k,n) in sorted(symbol.items()))+'。其中BART情感的符号输入表现与自然语言准入失败分开报告，说明这套输入接口会影响基本能力；没有符号连续轨迹或N/S/M，不能替代自然语言结果。'
     reg=[f'{m}/{d}/{c}自然core原成功损失{k}、原失败修复{repair}' for (m,d,c),(k,repair) in sorted(losses.items()) if k]
     a5='旧自然能力出现损失的设置：'+('；'.join(reg) if reg else '已完成core对照暂无损失；来源/表达损失仍需单列检查')+'。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。'
     if (ROOT/'T5_EMOTION_NATURAL_CONTROL_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。'

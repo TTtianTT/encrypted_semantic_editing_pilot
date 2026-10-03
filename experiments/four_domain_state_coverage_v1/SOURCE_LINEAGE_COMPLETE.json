@@ -2773,6 +2773,54 @@
       "published_editor": "checkpoints/symbol/bart_time_s42/P.pt",
       "published_sha": "cd442119f84165c20847f7882da1c7e379759e56da1eff9ef5aced139e76cc04",
       "step": 600
+    },
+    {
+      "phase": "symbol",
+      "run": "t5gemma_emotion_s42",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/symbol/t5gemma_emotion_s42/P/best.pt",
+      "sha256": "9c84fe8db7435b85f017c9ef7d2de06ff151ebe4d996fdf9e42bd1d80b738e5d",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42,
+      "published_editor": "checkpoints/symbol/t5gemma_emotion_s42/P.pt",
+      "published_sha": "71de88149b6b88b7d41b822485f9bdd95a59bebadb6de0883138fe36cf55e51b",
+      "step": 600
+    },
+    {
+      "phase": "symbol",
+      "run": "t5gemma_person_s42",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/symbol/t5gemma_person_s42/P/best.pt",
+      "sha256": "70cf11ffaf2076c9fa76910886c81866fb639b491bf900afe261da51570fbd20",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42,
+      "published_editor": "checkpoints/symbol/t5gemma_person_s42/P.pt",
+      "published_sha": "8abd5f43ba0972c1cec7dedc595c9272a3d50c68ac3fb66fbcff6b97f0903aed",
+      "step": 600
+    },
+    {
+      "phase": "symbol",
+      "run": "t5gemma_space_s42",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/symbol/t5gemma_space_s42/P/best.pt",
+      "sha256": "bed677279e5c934caef7f99c44be4934c84d5be42697493e1a9e1a57de9d8ef6",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42,
+      "published_editor": "checkpoints/symbol/t5gemma_space_s42/P.pt",
+      "published_sha": "a53533f46c83a1f130fcc17b5fa2212f8cba43343137feabe29b45175f712022",
+      "step": 600
+    },
+    {
+      "phase": "symbol",
+      "run": "t5gemma_time_s42",
+      "role": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/symbol/t5gemma_time_s42/P/best.pt",
+      "sha256": "f0b0986234e43a4f03639c6484b746014bbd9eadce1a54779ec34fc7dca21572",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42,
+      "published_editor": "checkpoints/symbol/t5gemma_time_s42/P.pt",
+      "published_sha": "5742e427c6f4925c24f9a2383e40664c6facc8418e5e042c72f1c2eaea1edf8c",
+      "step": 400
     }
   ],
   "source_cache_manifest_sha": "72739bef4d654e4d8ccd2c1876b1ac1744346a36343798d65bf051268df40e2b"
