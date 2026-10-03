@@ -1,16 +1,18 @@
 {
-  "at_utc": "2026-10-03T06:46:28.225315+00:00",
+  "at_utc": "2026-10-03T08:06:00.021120+00:00",
   "stages": {
     "formal": {
-      "completed": 20,
-      "not_admitted": 9,
-      "in_progress": 1
+      "completed": 21,
+      "not_admitted": 9
     },
     "identity_probe": {
-      "not_started": 30
+      "completed": 21,
+      "not_executed_not_admitted_or_behavior_incomplete": 9
     },
     "linguistic_controls": {
-      "not_started": 8
+      "in_progress": 2,
+      "completed": 3,
+      "not_started": 3
     },
     "position_foils": {
       "not_started": 8
@@ -667,7 +669,7 @@
       "model": "t5gemma",
       "domain": "space",
       "seed": 44,
-      "status": "in_progress",
+      "status": "completed",
       "gate_passed": true,
       "checkpoints": [
         "P",
@@ -680,7 +682,7 @@
         "S_h1",
         "M_h1"
       ],
-      "completed_prediction_shards": 12
+      "completed_prediction_shards": 67
     },
     {
       "index": 0,
@@ -689,7 +691,7 @@
       "domain": "time",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 1,
@@ -698,7 +700,7 @@
       "domain": "time",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 2,
@@ -707,7 +709,7 @@
       "domain": "time",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 3,
@@ -716,7 +718,7 @@
       "domain": "space",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 4,
@@ -725,7 +727,7 @@
       "domain": "space",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 5,
@@ -734,7 +736,7 @@
       "domain": "space",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 6,
@@ -743,7 +745,7 @@
       "domain": "emotion",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 7,
@@ -752,7 +754,7 @@
       "domain": "emotion",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 8,
@@ -761,7 +763,7 @@
       "domain": "emotion",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 9,
@@ -770,7 +772,7 @@
       "domain": "person",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 10,
@@ -779,7 +781,7 @@
       "domain": "person",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 11,
@@ -788,7 +790,7 @@
       "domain": "person",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 12,
@@ -797,7 +799,7 @@
       "domain": "time",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 13,
@@ -806,7 +808,7 @@
       "domain": "time",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 14,
@@ -815,7 +817,7 @@
       "domain": "time",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 15,
@@ -824,7 +826,7 @@
       "domain": "space",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 16,
@@ -833,7 +835,7 @@
       "domain": "space",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 17,
@@ -842,7 +844,7 @@
       "domain": "space",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 18,
@@ -851,7 +853,7 @@
       "domain": "emotion",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 19,
@@ -860,7 +862,7 @@
       "domain": "emotion",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 20,
@@ -869,7 +871,7 @@
       "domain": "emotion",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 21,
@@ -878,7 +880,7 @@
       "domain": "person",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 22,
@@ -887,7 +889,7 @@
       "domain": "person",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 23,
@@ -896,7 +898,7 @@
       "domain": "person",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 24,
@@ -905,7 +907,7 @@
       "domain": "space",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 25,
@@ -914,7 +916,7 @@
       "domain": "space",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 26,
@@ -923,7 +925,7 @@
       "domain": "space",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "not_executed_not_admitted_or_behavior_incomplete"
     },
     {
       "index": 27,
@@ -932,7 +934,7 @@
       "domain": "space",
       "seed": 42,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 28,
@@ -941,7 +943,7 @@
       "domain": "space",
       "seed": 43,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 29,
@@ -950,7 +952,7 @@
       "domain": "space",
       "seed": 44,
       "stage": "identity_probe",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 0,
@@ -958,7 +960,7 @@
       "domain": "time",
       "study": "four_domain_state_coverage_v1",
       "stage": "linguistic_controls",
-      "status": "not_started"
+      "status": "in_progress"
     },
     {
       "index": 1,
@@ -966,7 +968,7 @@
       "domain": "space",
       "study": "space_relation_confirmation_v1",
       "stage": "linguistic_controls",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 2,
@@ -974,7 +976,7 @@
       "domain": "emotion",
       "study": "four_domain_state_coverage_v1",
       "stage": "linguistic_controls",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 3,
@@ -982,7 +984,7 @@
       "domain": "person",
       "study": "four_domain_state_coverage_v1",
       "stage": "linguistic_controls",
-      "status": "not_started"
+      "status": "completed"
     },
     {
       "index": 4,
@@ -990,7 +992,7 @@
       "domain": "time",
       "study": "four_domain_state_coverage_v1",
       "stage": "linguistic_controls",
-      "status": "not_started"
+      "status": "in_progress"
     },
     {
       "index": 5,
@@ -1081,7 +1083,7 @@
       "status": "not_started"
     }
   ],
-  "gpu_hours_at_last_account": 35.17194444444444,
+  "gpu_hours_at_last_account": 36.58194444444446,
   "historical_max_concurrent_gpus": 2,
   "job_ids": [
     {

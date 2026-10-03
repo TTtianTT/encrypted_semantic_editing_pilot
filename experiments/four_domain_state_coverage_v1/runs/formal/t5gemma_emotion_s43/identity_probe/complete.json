@@ -1,0 +1,39 @@
+{
+  "task": {
+    "index": 19,
+    "study": "four_domain_state_coverage_v1",
+    "model": "t5gemma",
+    "domain": "emotion",
+    "seed": 43
+  },
+  "status": "completed",
+  "job_id": "2708",
+  "step_id": "0",
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "visible_devices": "0",
+  "plan_sha": "83aae0062af9ce75cee36358cbe32df88cefcf9736629784f5aa50a8762bb6a5",
+  "cache_files": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/probe/P_train.pt",
+      "sha256": "088711d76c50522589967cab9e01f3166d45daaea69e9800e1a753890a47d35f"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/sources/P_test_t0.pt",
+      "sha256": "4fe85db872ce22a630805494e6c1f0bc3ed94803be2e91ba82543766594dd544"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/sources/Q_test_t0.pt",
+      "sha256": "c73dd38c43c34b6f8b78fd7cc52cc26d1304f13fe2d37280620fd734168131b6"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/sources/U_test_t0.pt",
+      "sha256": "142fe8df72bc75826587a5299bddaae3c668f474d2d5b47f0bf936a2faed31ea"
+    }
+  ],
+  "limitations": [
+    "linear readout does not establish editor use",
+    "time core anchor-owner label is constant and not fitted",
+    "no quote-versus-external-anchor probe labels available",
+    "fit/test representations are edited sources; no new natural encoding performed"
+  ]
+}

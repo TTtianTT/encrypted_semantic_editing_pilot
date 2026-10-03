@@ -1,0 +1,518 @@
+[
+  {
+    "seed": 42,
+    "role": "P",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "sha256": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42
+    },
+    "output": "language_controls/bart_time/s42/P/trajectory_t3.jsonl",
+    "output_sha": "ffaca7e6a41e93038f2fd8c9b5826f922345788b4939407de044cbe100897996"
+  },
+  {
+    "seed": 42,
+    "role": "N_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/N_h0/final.pt",
+      "sha256": "316efa9c693191121ac9fd209e84e4249ad2d85ad905af3fab6090c9da18ad0f",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/N_h0/trajectory_t3.jsonl",
+    "output_sha": "d3035129f0aaaeb8b928e723f801caee8c1d10b69da9cc56dd1b4b306e11a633"
+  },
+  {
+    "seed": 42,
+    "role": "S_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/S_h0/final.pt",
+      "sha256": "5390c60b27423f1d374edf98a55b533ea39f94beb2eb55239f7bb37810a98c05",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": 2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/S_h0/trajectory_t3.jsonl",
+    "output_sha": "347225f1185ea0e5ea723a374de14dc6fa372a1f057204beda125a417056eb44"
+  },
+  {
+    "seed": 42,
+    "role": "M_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/M_h0/final.pt",
+      "sha256": "f15ebe5e68a43fa7e2cd3c5e2e7469c1f99463dc709ccf59d112470a95b06a71",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/M_h0/trajectory_t3.jsonl",
+    "output_sha": "4e494323e07a76eb6c0874e869547840b497bc9c17596d49f37c409bf89b11b5"
+  },
+  {
+    "seed": 42,
+    "role": "N_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/N_h1/final.pt",
+      "sha256": "475155f1b422262ee11a0effe5c5cde28edf1d225f7e8763b71714f1e36d8aa9",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/N_h1/trajectory_t3.jsonl",
+    "output_sha": "7de1d9a32bdd209f776642ad56b31418c4b5443c53f838ca07ce0c1f9dab54f0"
+  },
+  {
+    "seed": 42,
+    "role": "S_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/S_h1/final.pt",
+      "sha256": "877c8bc0b839ac450617dbf198148cfbeb405ef169bdc1762502e22e246569cf",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": -2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/S_h1/trajectory_t3.jsonl",
+    "output_sha": "620c1cbf421773d79288cddc78eb87822f843206718bb8391eaea6569c6bf865"
+  },
+  {
+    "seed": 42,
+    "role": "M_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/M_h1/final.pt",
+      "sha256": "500420dfb347dd662c989f20bc5ccbd6c80321becc946fc31f214702caebc1a1",
+      "parent_P_sha": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s42/M_h1/trajectory_t3.jsonl",
+    "output_sha": "3a9b1e33a048f3cc6aad48b59cc00b25cf516dd5b3ff551413bc2f175624fb0c"
+  },
+  {
+    "seed": 43,
+    "role": "P",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+      "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    },
+    "output": "language_controls/bart_time/s43/P/trajectory_t3.jsonl",
+    "output_sha": "bdd1c820a913097101541e4dc568b492409a258cbf89867142d32daf5e9534bd"
+  },
+  {
+    "seed": 43,
+    "role": "N_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/N_h0/final.pt",
+      "sha256": "ad348aca8500b88281daf9050231b42f70eca9c0a79ce361883e7827f9545a72",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/N_h0/trajectory_t3.jsonl",
+    "output_sha": "7e49e70be8292cdd806b9b1eb5f24cd1f76a91f7c8074a8f46a7956e6bda5ff8"
+  },
+  {
+    "seed": 43,
+    "role": "S_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/S_h0/final.pt",
+      "sha256": "b4100c4f3d88fc07433faa35e02ae6baf3c3f22edb95899dc4566b8213c55e6b",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/S_h0/trajectory_t3.jsonl",
+    "output_sha": "40416cf0171b1bb224b45e0cccb4b65caf1098e3e495fb39949660ce0c7a721d"
+  },
+  {
+    "seed": 43,
+    "role": "M_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/M_h0/final.pt",
+      "sha256": "dc3890582a2405bc10750920ae5cde0f42fe9f58db980e0b0d60013b693f7fa7",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/M_h0/trajectory_t3.jsonl",
+    "output_sha": "703e5469db122516ee0c36c20ad1b7c99acf9600815dd9efe73fa66bd50363b9"
+  },
+  {
+    "seed": 43,
+    "role": "N_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/N_h1/final.pt",
+      "sha256": "d7da592c1bcb7dbd0f87ddb5df76a364f4dacb30b1d153422e8a382575d9f09b",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/N_h1/trajectory_t3.jsonl",
+    "output_sha": "f3086f17c8e8c9c2b3c16b9015e6b2ca2941015f37f94aaf412ff1b852fe7a61"
+  },
+  {
+    "seed": 43,
+    "role": "S_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/S_h1/final.pt",
+      "sha256": "52ceac93d9dc96278126e2b2dcad0acb357e4e7dd17568122613c702bc628c11",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/S_h1/trajectory_t3.jsonl",
+    "output_sha": "9f31e2d325408b671c5d73cfa72852a9c57245ac11aaa5e3a90242ba9679afb6"
+  },
+  {
+    "seed": 43,
+    "role": "M_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/M_h1/final.pt",
+      "sha256": "01f94175447429c88cf1dd708eee8471610a6c2d1111e9ea5ab8548a61174549",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/M_h1/trajectory_t3.jsonl",
+    "output_sha": "e5bff00f96aac65ee3433e15ae118d49e302d07fe36b38316f5a26c4e7d1bf21"
+  },
+  {
+    "seed": 43,
+    "role": "P",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+      "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    },
+    "output": "language_controls/bart_time/s43/P/trajectory_t4.jsonl",
+    "output_sha": "0500dcf2f848b558d06e747f3e9e7082e01f7c110b255f219356ae224538b1cb"
+  },
+  {
+    "seed": 43,
+    "role": "N_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/N_h0/final.pt",
+      "sha256": "ad348aca8500b88281daf9050231b42f70eca9c0a79ce361883e7827f9545a72",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/N_h0/trajectory_t4.jsonl",
+    "output_sha": "815582cb46a0dff841c18e9e30bee8b7c13f606605774e0bdffac1dd28786f4c"
+  },
+  {
+    "seed": 43,
+    "role": "S_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/S_h0/final.pt",
+      "sha256": "b4100c4f3d88fc07433faa35e02ae6baf3c3f22edb95899dc4566b8213c55e6b",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/S_h0/trajectory_t4.jsonl",
+    "output_sha": "7bc04b36595e5545950295e7b6db2c866fcdbbadce6ae25da101a21997b3b670"
+  },
+  {
+    "seed": 43,
+    "role": "M_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/M_h0/final.pt",
+      "sha256": "dc3890582a2405bc10750920ae5cde0f42fe9f58db980e0b0d60013b693f7fa7",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/M_h0/trajectory_t4.jsonl",
+    "output_sha": "8ccd110bc6ce9ac961ef1a8aae96932b8e7a6d728cd7c2f72846523bb9a830f5"
+  },
+  {
+    "seed": 43,
+    "role": "N_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/N_h1/final.pt",
+      "sha256": "d7da592c1bcb7dbd0f87ddb5df76a364f4dacb30b1d153422e8a382575d9f09b",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/N_h1/trajectory_t4.jsonl",
+    "output_sha": "6b7c4adad6d31b34f52927c72064aaee3a3656a401b073681e025f15fed5d43c"
+  },
+  {
+    "seed": 43,
+    "role": "S_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/S_h1/final.pt",
+      "sha256": "52ceac93d9dc96278126e2b2dcad0acb357e4e7dd17568122613c702bc628c11",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/S_h1/trajectory_t4.jsonl",
+    "output_sha": "4fc858e2fc847b743b0b9c9e54768a5602f508ddb141b0d0ebe36b28381c2c2b"
+  },
+  {
+    "seed": 43,
+    "role": "M_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/M_h1/final.pt",
+      "sha256": "01f94175447429c88cf1dd708eee8471610a6c2d1111e9ea5ab8548a61174549",
+      "parent_P_sha": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s43/M_h1/trajectory_t4.jsonl",
+    "output_sha": "2c20c5b6f011cc1079c7fdee6a1d2811730b36cae571996b9dbe77531200d06b"
+  },
+  {
+    "seed": 44,
+    "role": "P",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+      "sha256": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    },
+    "output": "language_controls/bart_time/s44/P/trajectory_t3.jsonl",
+    "output_sha": "78f30e02e67511c9b410b2c3fecc3c18b903130d90238de437fa885e418a34af"
+  },
+  {
+    "seed": 44,
+    "role": "N_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/N_h0/final.pt",
+      "sha256": "5a9f5fe2b6ef21f39a3acb639a1d97d4d65d1b59717213a64afe18be6d78e01a",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/N_h0/trajectory_t3.jsonl",
+    "output_sha": "37e0461705a75dff64e7958927e9b6aed50c6bbda531558744e306a38b33745a"
+  },
+  {
+    "seed": 44,
+    "role": "S_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/S_h0/final.pt",
+      "sha256": "85b89ac8ecad8e4b3675cc479bca749df5edbf310faffdc5b56d63570971ca17",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": 2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/S_h0/trajectory_t3.jsonl",
+    "output_sha": "41e2c0dd024fca3cece2d08a2f7cc9bf5f7ac3fcd82e9a4dd3f9d1ab65fc4193"
+  },
+  {
+    "seed": 44,
+    "role": "M_h0",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/M_h0/final.pt",
+      "sha256": "a47aa06426226e142d50f57c56d187fdca95bbb1541179e870dc224f414b6865",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": 2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/M_h0/trajectory_t3.jsonl",
+    "output_sha": "16b2ec16929b5e99dd498b595fc4a3b5b58d0701c73505f86c909fc1df6ead64"
+  },
+  {
+    "seed": 44,
+    "role": "N_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/N_h1/final.pt",
+      "sha256": "9ec193fa42f2be406214eb30e12b84823c83781cd05b59c8dd30e303ff9d94d1",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/N_h1/trajectory_t3.jsonl",
+    "output_sha": "0477ea8180b03b26c8d90fe0a1fb432ba69e9cbfe272a02c65d49c5828d5d080"
+  },
+  {
+    "seed": 44,
+    "role": "S_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/S_h1/final.pt",
+      "sha256": "8a6615eb8a938b6e6f6feff5e3b519087fb6db0debf7d9abd36870aa641b6354",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": -2,
+      "edited_focus_states": [
+        0
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/S_h1/trajectory_t3.jsonl",
+    "output_sha": "93a7b9349455b1cb448fb72b8cedf5dee47642a983ff6aed92c6b5c74ab59ebc"
+  },
+  {
+    "seed": 44,
+    "role": "M_h1",
+    "template": 3,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/M_h1/final.pt",
+      "sha256": "c2fa20fe9f122c95bcf43fff267fb48c94ea47ca1067dce86e5d2791423dfa3d",
+      "parent_P_sha": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "heldout": -2,
+      "edited_focus_states": [
+        -1,
+        0,
+        1
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/bart_time/s44/M_h1/trajectory_t3.jsonl",
+    "output_sha": "d4be5be9bc3f7f0f72f5dc065a356e6e29b2ab644adc3d049989165c00deba10"
+  }
+]

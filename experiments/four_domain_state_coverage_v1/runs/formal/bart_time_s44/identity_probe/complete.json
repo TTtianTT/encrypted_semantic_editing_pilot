@@ -1,0 +1,39 @@
+{
+  "task": {
+    "index": 2,
+    "study": "four_domain_state_coverage_v1",
+    "model": "bart",
+    "domain": "time",
+    "seed": 44
+  },
+  "status": "completed",
+  "job_id": "2691",
+  "step_id": "0",
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "visible_devices": "0",
+  "plan_sha": "83aae0062af9ce75cee36358cbe32df88cefcf9736629784f5aa50a8762bb6a5",
+  "cache_files": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/probe/P_train.pt",
+      "sha256": "5b7b688349cd9326e369053c5397620fe76aef651d8f2fc45ad53afe1115a4ab"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/sources/P_test_t0.pt",
+      "sha256": "7fd90738a7e8dbfddf8a1fe9fc55ddd9260adae795330500a76ccd50e440025a"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/sources/Q_test_t0.pt",
+      "sha256": "6a1ed97d15f001979ded143f40f2c96d670ce96dbf7a95e4a25640e0f48fb65f"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/sources/U_test_t0.pt",
+      "sha256": "f92ce321d74c3cd773dae26ea47cfb962923e90572aed7f961ed33227b2ae4ba"
+    }
+  ],
+  "limitations": [
+    "linear readout does not establish editor use",
+    "time core anchor-owner label is constant and not fitted",
+    "no quote-versus-external-anchor probe labels available",
+    "fit/test representations are edited sources; no new natural encoding performed"
+  ]
+}

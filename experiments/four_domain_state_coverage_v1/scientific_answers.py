@@ -106,6 +106,7 @@ def research_answers():
     reg=[f'{m}/{d}/{c}自然core原成功损失{k}、原失败修复{repair}' for (m,d,c),(k,repair) in sorted(losses.items()) if k]
     a5='旧自然能力出现损失的设置：'+('；'.join(reg) if reg else '已完成core对照暂无损失；来源/表达损失仍需单列检查')+'。此处跨两个划分汇总用于定位，逐seed、逐划分及旧来源的损失/修复数是主要证据，见capability_regressions。'
     if (ROOT/'T5_EMOTION_NATURAL_CONTROL_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5Gemma情感seed44/H1的自然补训N独有11个自然core退化：7个negative→strongly negative、4个保持negative，gold均为neutral；全部案例保持非目标评价及客观事实。该划分S/M自然core均512/512，说明不能把所有退化归因于编辑态补训。'
+    if (ROOT.parent/'space_relation_confirmation_v1/N44_H1_NATURAL_REGRESSION_AGENT_REVIEW.md').exists():a5+=' 空间确认版seed44/H1的N另有17条自然core退化，全部是template0的right态逆时针转换：应为back却输出front，主体、物体、事实和语法保持；同划分S/M均512/512。相同转换的另一已训练句式未损失，显示该退化有表达条件，不能归因于编辑态训练或直接认定锚点换人。'
     if (ROOT/'T5_REPAIR_REGRESSION_AGENT_REVIEW.md').exists():a5+=' T5_REPAIR_REGRESSION_AGENT_REVIEW逐例核查同一checkpoint的修复与损失：人称seed42/M_h1、seed43/S_h0和M_h1、seed44/S_h0，以及情感seed44/N_h1。损失分别涉及语境、参与者绑定、评价等级或必要Listener信息；Listener缺失例的事件身份/事实仍正确，不能扩大为事件语义错误。'
     both=[d for d in DOMAINS if 'bart/'+d in completed and 't5gemma/'+d in completed]
     shared=[d for d in DOMAINS if all(presence[(m,d)]=={42,43,44} and (m+'/'+d in affected or m=='bart' and d in reviewed_domains) for m in MODELS)]

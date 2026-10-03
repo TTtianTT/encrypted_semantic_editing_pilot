@@ -1,0 +1,39 @@
+{
+  "task": {
+    "index": 29,
+    "study": "space_relation_confirmation_v1",
+    "model": "t5gemma",
+    "domain": "space",
+    "seed": 44
+  },
+  "status": "completed",
+  "job_id": "2585",
+  "step_id": "0",
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "visible_devices": "0",
+  "plan_sha": "83aae0062af9ce75cee36358cbe32df88cefcf9736629784f5aa50a8762bb6a5",
+  "cache_files": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/probe/P_train.pt",
+      "sha256": "b4a2a72ce3ae94f59886150db23e66466d043052fdb8e9bcc3d613ff285b302f"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/sources/P_test_t0.pt",
+      "sha256": "999a0d212ffb668993109e629248e429194e4bf79127a5f25e4355ab911e9c54"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/sources/Q_test_t0.pt",
+      "sha256": "fc04c46b6e313e00c2ceddbd4375900f37a329bd3b679d673781ab0d5039378f"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/space_relation_confirmation_v1/local/formal/t5gemma_space_s44/sources/U_test_t0.pt",
+      "sha256": "acc650ebb8cbfc4e92f054c541bef0a4ac597a10b8ff13c6258db9f075df73a5"
+    }
+  ],
+  "limitations": [
+    "linear readout does not establish editor use",
+    "time core anchor-owner label is constant and not fitted",
+    "no quote-versus-external-anchor probe labels available",
+    "fit/test representations are edited sources; no new natural encoding performed"
+  ]
+}

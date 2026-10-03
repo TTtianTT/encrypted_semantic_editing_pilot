@@ -1,0 +1,81 @@
+{
+  "generated_positive_checks": 17784,
+  "independent_case_agreement_and_incomplete_semantics_fixtures": 18,
+  "fixtures": [
+    {
+      "text": "Observer: David. The parcel is black. There are 6 copies.",
+      "expected": true
+    },
+    {
+      "text": "Speaker: Alice. Listener: Bob. Bob gives me my book.",
+      "expected": true
+    },
+    {
+      "text": "Speaker: Alice. Listener: Bob. He gives me her book.",
+      "expected": true
+    },
+    {
+      "text": "I give you my key.",
+      "expected": true
+    },
+    {
+      "text": "You give me his book.",
+      "expected": true
+    },
+    {
+      "text": "Alice gives me your book.",
+      "expected": true
+    },
+    {
+      "text": "I gives you my key.",
+      "expected": false
+    },
+    {
+      "text": "You gives me his book.",
+      "expected": false
+    },
+    {
+      "text": "Alice give me your book.",
+      "expected": false
+    },
+    {
+      "text": "Alice gives I my book.",
+      "expected": false
+    },
+    {
+      "text": "I likes the book.",
+      "expected": false
+    },
+    {
+      "text": "I like the book.",
+      "expected": true
+    },
+    {
+      "text": "I is neutral about the book.",
+      "expected": false
+    },
+    {
+      "text": "Alice does not likes the book.",
+      "expected": false
+    },
+    {
+      "text": "There are 1 copies.",
+      "expected": false
+    },
+    {
+      "text": "There is 2 copy.",
+      "expected": false
+    },
+    {
+      "text": "Unrecognized innovative sentence wording.",
+      "expected": null
+    },
+    {
+      "text": "Observer: David.",
+      "expected": null
+    }
+  ],
+  "no_gold_or_renderer_used_by_checker": true,
+  "no_gpu": true,
+  "checker_sha": "ebfb944c2d3188fa34c8b2cd241f09fe21190e87d1965d31dd727facd44d66d5"
+}
