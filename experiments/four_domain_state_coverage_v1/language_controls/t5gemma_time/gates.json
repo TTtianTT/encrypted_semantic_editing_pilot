@@ -970,5 +970,1949 @@
       "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
       "seed": 42
     }
+  },
+  {
+    "seed": 43,
+    "template": 2,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 157,
+      "rate": 0.5451388888888888,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 1,
+          "rate": 0.041666666666666664
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 109,
+      "rate": 0.45416666666666666,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 1,
+          "rate": 0.041666666666666664
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    }
+  },
+  {
+    "seed": 43,
+    "template": 3,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 192,
+      "rate": 0.6666666666666666,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 17,
+          "rate": 0.7083333333333334
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 18,
+          "rate": 0.75
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.125
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 144,
+      "rate": 0.6,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 17,
+          "rate": 0.7083333333333334
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 18,
+          "rate": 0.75
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        }
+      ],
+      "min_cell": 0.125
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    }
+  },
+  {
+    "seed": 43,
+    "template": 4,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 186,
+      "rate": 0.6458333333333334,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 22,
+          "rate": 0.9166666666666666
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 15,
+          "rate": 0.625
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 16,
+          "rate": 0.6666666666666666
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 8,
+          "rate": 0.3333333333333333
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 4,
+          "rate": 0.16666666666666666
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.125
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 140,
+      "rate": 0.5833333333333334,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 15,
+          "rate": 0.625
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 16,
+          "rate": 0.6666666666666666
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 8,
+          "rate": 0.3333333333333333
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 3,
+          "rate": 0.125
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 4,
+          "rate": 0.16666666666666666
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.125
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    }
+  },
+  {
+    "seed": 43,
+    "template": 5,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 0,
+      "rate": 0.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 0,
+      "rate": 0.0,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    }
+  },
+  {
+    "seed": 44,
+    "template": 2,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 172,
+      "rate": 0.5972222222222222,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 5,
+          "rate": 0.20833333333333334
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 124,
+      "rate": 0.5166666666666667,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 5,
+          "rate": 0.20833333333333334
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
+  },
+  {
+    "seed": 44,
+    "template": 3,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 243,
+      "rate": 0.84375,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 19,
+          "rate": 0.7916666666666666
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 16,
+          "rate": 0.6666666666666666
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 9,
+          "rate": 0.375
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 19,
+          "rate": 0.7916666666666666
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.375
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 195,
+      "rate": 0.8125,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 19,
+          "rate": 0.7916666666666666
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 12,
+          "rate": 0.5
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 16,
+          "rate": 0.6666666666666666
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 9,
+          "rate": 0.375
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 19,
+          "rate": 0.7916666666666666
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.375
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
+  },
+  {
+    "seed": 44,
+    "template": 4,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 231,
+      "rate": 0.8020833333333334,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 17,
+          "rate": 0.7083333333333334
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 9,
+          "rate": 0.375
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 18,
+          "rate": 0.75
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        }
+      ],
+      "min_cell": 0.375
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 184,
+      "rate": 0.7666666666666667,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 17,
+          "rate": 0.7083333333333334
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 23,
+          "rate": 0.9583333333333334
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 10,
+          "rate": 0.4166666666666667
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 11,
+          "rate": 0.4583333333333333
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 9,
+          "rate": 0.375
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 18,
+          "rate": 0.75
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 0.375
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
+  },
+  {
+    "seed": 44,
+    "template": 5,
+    "status": "not_admitted_structure",
+    "reconstruction": {
+      "n": 168,
+      "success": 168,
+      "rate": 1.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 24,
+          "rate": 1.0
+        }
+      ],
+      "min_cell": 1.0
+    },
+    "atomic": {
+      "n": 288,
+      "success": 0,
+      "rate": 0.0,
+      "cells": [
+        {
+          "state": -3,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 3,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "gold_next": {
+      "n": 240,
+      "success": 0,
+      "rate": 0.0,
+      "cells": [
+        {
+          "state": -2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": -1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 0,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 1,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "minus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        },
+        {
+          "state": 2,
+          "operation": "plus",
+          "n": 24,
+          "success": 0,
+          "rate": 0.0
+        }
+      ],
+      "min_cell": 0.0
+    },
+    "thresholds": {
+      "reconstruction": 0.95,
+      "atomic": 0.85,
+      "min_cell": 0.75
+    },
+    "P": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    }
   }
 ]

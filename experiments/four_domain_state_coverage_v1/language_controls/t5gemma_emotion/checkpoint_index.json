@@ -1,0 +1,776 @@
+[
+  {
+    "seed": 42,
+    "role": "P",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/P/best.pt",
+      "sha256": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42
+    },
+    "output": "language_controls/t5gemma_emotion/s42/P/trajectory_t4.jsonl",
+    "output_sha": "a2815c7dd4c4b72a125fc44795c42536592064145499981674c14959826fdec6"
+  },
+  {
+    "seed": 42,
+    "role": "N_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h0/final.pt",
+      "sha256": "457121ffadd92231e76e1cb19f20f9a85be7de7612d6cd931bdcb9045f6007e4",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/N_h0/trajectory_t4.jsonl",
+    "output_sha": "fe15327e1c79f524358b55fc8f8c086f6f83ddf40b7344c4a4905e1f7db73628"
+  },
+  {
+    "seed": 42,
+    "role": "S_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h0/final.pt",
+      "sha256": "822ee913f2a7f2be71544a428269fd38052b2cc0b5d5871b3d9689635bb7de4a",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/S_h0/trajectory_t4.jsonl",
+    "output_sha": "49daf49a70641da14346233d522fa81fa9e7e8d2c261fc830bbfd3051108e172"
+  },
+  {
+    "seed": 42,
+    "role": "M_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h0/final.pt",
+      "sha256": "ef860dbc0ba658882a38703980e37306ef3a09dfa163368d504ca283e4852dcc",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/M_h0/trajectory_t4.jsonl",
+    "output_sha": "2e7ddf66aaef51742ae9c3758b8190a91c2735869e219a6162f92e95a81cb6e6"
+  },
+  {
+    "seed": 42,
+    "role": "N_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h1/final.pt",
+      "sha256": "00923ff6cb3d4d5373b39c6965b8f18e31f1a9dac8efd870c5f6310a955b61fc",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/N_h1/trajectory_t4.jsonl",
+    "output_sha": "f83d38d818a41067796e188dc8ff7450e22cc8e4c68830fe69091f6892a0f2e8"
+  },
+  {
+    "seed": 42,
+    "role": "S_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h1/final.pt",
+      "sha256": "cc79de9c123dc3f6b0d59e22123e3ecc218f737e78c6019d1dd3abeb866d44ea",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/S_h1/trajectory_t4.jsonl",
+    "output_sha": "6da781d6a9cc9a96a2871875ff5adb35c8eb424f7176aa6ea46375b1a1870d1c"
+  },
+  {
+    "seed": 42,
+    "role": "M_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h1/final.pt",
+      "sha256": "5448e6506841b5609353f7e28c254b7e2a7ec48dd1d59f2c30ff4fbcf9db172a",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/M_h1/trajectory_t4.jsonl",
+    "output_sha": "643bc9125a03c1d540205c299662a7ef6d2bb1b7194ceb3981c6774032c71375"
+  },
+  {
+    "seed": 42,
+    "role": "P",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/P/best.pt",
+      "sha256": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 42
+    },
+    "output": "language_controls/t5gemma_emotion/s42/P/trajectory_t5.jsonl",
+    "output_sha": "76440a0178e7185659a57e612e3b4a951b73a61ec89f17c858dbb2a92429c0c6"
+  },
+  {
+    "seed": 42,
+    "role": "N_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h0/final.pt",
+      "sha256": "457121ffadd92231e76e1cb19f20f9a85be7de7612d6cd931bdcb9045f6007e4",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/N_h0/trajectory_t5.jsonl",
+    "output_sha": "9da0eaa3bef8a1d39054f6852371a7b56d18e6ea94f2a6c10eb8f589bbb2f28d"
+  },
+  {
+    "seed": 42,
+    "role": "S_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h0/final.pt",
+      "sha256": "822ee913f2a7f2be71544a428269fd38052b2cc0b5d5871b3d9689635bb7de4a",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/S_h0/trajectory_t5.jsonl",
+    "output_sha": "bde0b754c5df4f3f8936c6e0b1932597a00e214275163999fe67ac37381d0871"
+  },
+  {
+    "seed": 42,
+    "role": "M_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h0/final.pt",
+      "sha256": "ef860dbc0ba658882a38703980e37306ef3a09dfa163368d504ca283e4852dcc",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/M_h0/trajectory_t5.jsonl",
+    "output_sha": "eb705c6cbd29994596229ce15fddfe6d84fd1967398b2b095ff99a53ede87674"
+  },
+  {
+    "seed": 42,
+    "role": "N_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/N_h1/final.pt",
+      "sha256": "00923ff6cb3d4d5373b39c6965b8f18e31f1a9dac8efd870c5f6310a955b61fc",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/N_h1/trajectory_t5.jsonl",
+    "output_sha": "0650d7f62f70c486b5f0c2ea2ee2ee4028a42c8ecc00d837e6d8059a349bf3a3"
+  },
+  {
+    "seed": 42,
+    "role": "S_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/S_h1/final.pt",
+      "sha256": "cc79de9c123dc3f6b0d59e22123e3ecc218f737e78c6019d1dd3abeb866d44ea",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/S_h1/trajectory_t5.jsonl",
+    "output_sha": "4ec61ae8e3732134976e7580e304ad46b63ccb41a0bfa46457447dd735140294"
+  },
+  {
+    "seed": 42,
+    "role": "M_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s42/M_h1/final.pt",
+      "sha256": "5448e6506841b5609353f7e28c254b7e2a7ec48dd1d59f2c30ff4fbcf9db172a",
+      "parent_P_sha": "66bb372635c974fa2121d0192fd78133408c0df1f2673b23e92a607182d61835",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s42/M_h1/trajectory_t5.jsonl",
+    "output_sha": "3f1e805187dab69f0f6b3af9c9babb8165dcbb39db8a767ebcc1b9e68af4ad72"
+  },
+  {
+    "seed": 43,
+    "role": "P",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/P/best.pt",
+      "sha256": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    },
+    "output": "language_controls/t5gemma_emotion/s43/P/trajectory_t4.jsonl",
+    "output_sha": "9c7cb39916504d94b11d93f94c80939149d6e3c8f132486bd5748eebb7fd2122"
+  },
+  {
+    "seed": 43,
+    "role": "N_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h0/final.pt",
+      "sha256": "b23fd57f138940f59f6d98b9ba464dc093aedce549cd7eac8aaf00e04b396586",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/N_h0/trajectory_t4.jsonl",
+    "output_sha": "3ff1d49bf89a8f3a69e7461b124385869b02425e55993d96cedf9859c4e24c83"
+  },
+  {
+    "seed": 43,
+    "role": "S_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h0/final.pt",
+      "sha256": "5d14f9403b554501fa6098171be62ae0653253e2a6717c31e11e5766722993cb",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/S_h0/trajectory_t4.jsonl",
+    "output_sha": "727171917c09d0ae4bffa39064a5c7e41c79952da3c7135a8474bec84aba4d37"
+  },
+  {
+    "seed": 43,
+    "role": "M_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h0/final.pt",
+      "sha256": "19918b67a54cedbb85d1b9cedb4c59b64e6de73a52aea5d9caf87579a29160f4",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/M_h0/trajectory_t4.jsonl",
+    "output_sha": "2e67242d06d4271ecd9e431d23bb0949bde32cfcf346d4f19ddb9c053e5135b0"
+  },
+  {
+    "seed": 43,
+    "role": "N_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h1/final.pt",
+      "sha256": "b7af2df0639b64ba0e524c2a1a3b00db21017f0fc4c1fa2347d6ea436b0733af",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/N_h1/trajectory_t4.jsonl",
+    "output_sha": "136239aaf5ab9353d087e2fa73a7f252b09a5fe74dc970a57e908bbbfaebb93c"
+  },
+  {
+    "seed": 43,
+    "role": "S_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h1/final.pt",
+      "sha256": "df9251a1d85d0dc38403b74e4eab940a2fb3ec22e22c76ca591578827f001791",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/S_h1/trajectory_t4.jsonl",
+    "output_sha": "b410c6a711a97a62a4d5d5b31330a7e2eb2222602610c79043cbe86cde633b48"
+  },
+  {
+    "seed": 43,
+    "role": "M_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h1/final.pt",
+      "sha256": "1470fdf82f3bc8a8b60c791065f2bfb5e6b03e64bfe6919a26ff3706650c7f4f",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/M_h1/trajectory_t4.jsonl",
+    "output_sha": "146ea56af68b3c663ce10fd9378797ca2282cf4a365f2f47275e65ab56410414"
+  },
+  {
+    "seed": 43,
+    "role": "P",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/P/best.pt",
+      "sha256": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 43
+    },
+    "output": "language_controls/t5gemma_emotion/s43/P/trajectory_t5.jsonl",
+    "output_sha": "7f94dbb43e7c164d4ac9c806cc6c0511fb86c98a5aea2b24c8131aef5eab0b86"
+  },
+  {
+    "seed": 43,
+    "role": "N_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h0/final.pt",
+      "sha256": "b23fd57f138940f59f6d98b9ba464dc093aedce549cd7eac8aaf00e04b396586",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/N_h0/trajectory_t5.jsonl",
+    "output_sha": "24a01503ad2d48ac57ba7f065d0e84ce757337c0d7dcbd563c280b7a19c44d7f"
+  },
+  {
+    "seed": 43,
+    "role": "S_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h0/final.pt",
+      "sha256": "5d14f9403b554501fa6098171be62ae0653253e2a6717c31e11e5766722993cb",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/S_h0/trajectory_t5.jsonl",
+    "output_sha": "95eb1b59eaadba7a491dd3076353e7a61c127aeef32875c42dcc330e24b6638c"
+  },
+  {
+    "seed": 43,
+    "role": "M_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h0/final.pt",
+      "sha256": "19918b67a54cedbb85d1b9cedb4c59b64e6de73a52aea5d9caf87579a29160f4",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/M_h0/trajectory_t5.jsonl",
+    "output_sha": "43bec6e1c6569cbaaae176b7b6d942660757e8158ed4199a595ababfc6526e91"
+  },
+  {
+    "seed": 43,
+    "role": "N_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/N_h1/final.pt",
+      "sha256": "b7af2df0639b64ba0e524c2a1a3b00db21017f0fc4c1fa2347d6ea436b0733af",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/N_h1/trajectory_t5.jsonl",
+    "output_sha": "cf126e88838bae8773e71a26558116563ca86fb19181e3ea93a972993f60da63"
+  },
+  {
+    "seed": 43,
+    "role": "S_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/S_h1/final.pt",
+      "sha256": "df9251a1d85d0dc38403b74e4eab940a2fb3ec22e22c76ca591578827f001791",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/S_h1/trajectory_t5.jsonl",
+    "output_sha": "dc93789ad16417acbf40c87fbfc77c1a1633c355d15b06033d18ed85a8ee33d6"
+  },
+  {
+    "seed": 43,
+    "role": "M_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s43/M_h1/final.pt",
+      "sha256": "1470fdf82f3bc8a8b60c791065f2bfb5e6b03e64bfe6919a26ff3706650c7f4f",
+      "parent_P_sha": "e1cc5fa1c8ec7ae135a6939528f04fd383934d9389fdabf24abeea1a37b43271",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s43/M_h1/trajectory_t5.jsonl",
+    "output_sha": "6dbb5445df08e994e869392a4214d7fb2a11b525cf93607076e2ea477c9b7013"
+  },
+  {
+    "seed": 44,
+    "role": "P",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/P/best.pt",
+      "sha256": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    },
+    "output": "language_controls/t5gemma_emotion/s44/P/trajectory_t4.jsonl",
+    "output_sha": "6b039c164066b025c7fc28fc1d51ab45f3bfe9be07fb07750524598e03bc4d61"
+  },
+  {
+    "seed": 44,
+    "role": "N_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/N_h0/final.pt",
+      "sha256": "1e862df0131993245b2920dfb8abecf82bf80303714943a160d7ad21e373329e",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/N_h0/trajectory_t4.jsonl",
+    "output_sha": "e53e44cbcfea3166773a966cdd6d485d54b99a9c385fa02cf1ee4c817f81be02"
+  },
+  {
+    "seed": 44,
+    "role": "S_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/S_h0/final.pt",
+      "sha256": "334466f1f8c090e6782345399884effaebf0861873af7203d2e3de0baf8bf46f",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/S_h0/trajectory_t4.jsonl",
+    "output_sha": "6ebd6b398585463ca62461754cb2c00c2670357ea6b5577601113fc8c1019536"
+  },
+  {
+    "seed": 44,
+    "role": "M_h0",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/M_h0/final.pt",
+      "sha256": "cabbd992252e288852f810e511677ced4cf6bd9013d80a8d783d797d772c936e",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/M_h0/trajectory_t4.jsonl",
+    "output_sha": "ec3492f962a90b68cd8ab835df13bfa216653dd43633d159e63d11b57be54777"
+  },
+  {
+    "seed": 44,
+    "role": "N_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/N_h1/final.pt",
+      "sha256": "96d4f88fec624a39b5c359d8490c4be505c4aaf6599bb8d00696164280d67995",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/N_h1/trajectory_t4.jsonl",
+    "output_sha": "31a40ec3ab5aa9a4fcd3e48ee97f8b0b029184d04d2f8938738d13453b281b0c"
+  },
+  {
+    "seed": 44,
+    "role": "S_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/S_h1/final.pt",
+      "sha256": "c6e8045087ce6b4867787d464c33276fe661e541a1d33dcfb0a9a7591876851a",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/S_h1/trajectory_t4.jsonl",
+    "output_sha": "df03ce7cb7bbab38b7a1369105ebb606474db3f5a2c717635e1c6e054a9a71c5"
+  },
+  {
+    "seed": 44,
+    "role": "M_h1",
+    "template": 4,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/M_h1/final.pt",
+      "sha256": "2de89e60194eb443cc4dfe2d3420cfee2c5d840da80ae760cd17003e4292a065",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/M_h1/trajectory_t4.jsonl",
+    "output_sha": "b85e78585ee4c4c6d9197015ed76c6238275f2872fad59af975a4522976ff7b3"
+  },
+  {
+    "seed": 44,
+    "role": "P",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/P/best.pt",
+      "sha256": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+      "seed": 44
+    },
+    "output": "language_controls/t5gemma_emotion/s44/P/trajectory_t5.jsonl",
+    "output_sha": "b3aa4b45136ff9b23f9abc641630928f25657930a66b221e52a9f904a95ce596"
+  },
+  {
+    "seed": 44,
+    "role": "N_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/N_h0/final.pt",
+      "sha256": "1e862df0131993245b2920dfb8abecf82bf80303714943a160d7ad21e373329e",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/N_h0/trajectory_t5.jsonl",
+    "output_sha": "bbcdcc507fca42849de834801917bcdfc5876d898185fb6e600239fca07d7e7e"
+  },
+  {
+    "seed": 44,
+    "role": "S_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/S_h0/final.pt",
+      "sha256": "334466f1f8c090e6782345399884effaebf0861873af7203d2e3de0baf8bf46f",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/S_h0/trajectory_t5.jsonl",
+    "output_sha": "c4612b116f373c9ed57a6c15863d1d213b54019b797878d37d43db8a74393881"
+  },
+  {
+    "seed": 44,
+    "role": "M_h0",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/M_h0/final.pt",
+      "sha256": "cabbd992252e288852f810e511677ced4cf6bd9013d80a8d783d797d772c936e",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 1,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/M_h0/trajectory_t5.jsonl",
+    "output_sha": "44d1268402906d32d565d333e801a87e7568c71dcfcdb7abfeba6c56c80773fb"
+  },
+  {
+    "seed": 44,
+    "role": "N_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/N_h1/final.pt",
+      "sha256": "96d4f88fec624a39b5c359d8490c4be505c4aaf6599bb8d00696164280d67995",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "N",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/N_h1/trajectory_t5.jsonl",
+    "output_sha": "588f693265bce1ef48fb1cfbad40e77e9e8501483b75c5d737130c934d094a98"
+  },
+  {
+    "seed": 44,
+    "role": "S_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/S_h1/final.pt",
+      "sha256": "c6e8045087ce6b4867787d464c33276fe661e541a1d33dcfb0a9a7591876851a",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        2
+      ],
+      "condition": "S",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/S_h1/trajectory_t5.jsonl",
+    "output_sha": "6cc32e649adf2d565ecd8cbddea9190a3c36ceb7f7fc3baba0d93f4427afa16f"
+  },
+  {
+    "seed": 44,
+    "role": "M_h1",
+    "template": 5,
+    "checkpoint": {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_emotion_s44/M_h1/final.pt",
+      "sha256": "2de89e60194eb443cc4dfe2d3420cfee2c5d840da80ae760cd17003e4292a065",
+      "parent_P_sha": "e474d1a3787239246ab86c4d9b45162faa86bb09510e438ecc1844aceb8d9407",
+      "heldout": 3,
+      "edited_focus_states": [
+        0,
+        2,
+        4
+      ],
+      "condition": "M",
+      "updates": 200
+    },
+    "output": "language_controls/t5gemma_emotion/s44/M_h1/trajectory_t5.jsonl",
+    "output_sha": "32a39c69d9551d39f72797a6f31d94424c931bc1a0259d0d8a7637ec41d97b10"
+  }
+]

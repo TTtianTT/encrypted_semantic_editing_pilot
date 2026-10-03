@@ -92,6 +92,7 @@ def research_answers():
         a3+=' 释义修订后另建仅按当前输出选取的事后来源配对集，留出关系上的S/M为'+ '；'.join(f"seed{r['seed']}/H{r['holdout_split']} {r['adjudicated_S_k']}/{r['n']}与{r['adjudicated_M_k']}/{r['n']}，{r['worlds']}世界" for r in spatial_posthoc)+'。它与原固定集分开，不能用成功筛选后的覆盖变化代替预注册比较；没有按下一步结果筛选。'
     a3+=' 完成三seed的固定配对集来源/状态对照：'+('；'.join(source_state) if source_state else '尚待结果')+'；方括号是训练seed范围，不能作为置信区间。'
     a4='锚点/范围挑战的完整语义成功：'+('；'.join(scope) if scope else '尚待结果')+'。错误案例逐项区分绝对日期、历史原话、固定观察者、非目标评价、人物/所有者绑定；只错相对目标不自动证明选错锚点。未训练结构的单步失败不能归于latent组合。原空间朝向划分存在状态定义限制，确认版固定世界坐标并真正留出right/left当前关系。'
+    if (ROOT/'EMOTION_LANGUAGE_CONTINUATION_REVIEW.md').exists():a4+=' 独立语言结构准入中，T5Gemma情感多对象和历史引语均通过三seed门槛；P的第一步各96/96、纯latent第二步各0/96，而decode–reencode和gold-reencode第二步各96/96。固定六例区分正文缺失、重复、等级错误及非目标box评价改变/评价方向反转；引语第四步重编码仍有92/96、95/96、93/96的反例。见EMOTION_LANGUAGE_CONTINUATION_REVIEW，不是独立人工总体标注。'
     foils=[]
     for r in readcsv(ROOT,'position_order_pairs.csv'):
         if '/P/test_atomic.jsonl' in r['artifact']:
@@ -112,6 +113,7 @@ def research_answers():
     shared=[d for d in DOMAINS if all(presence[(m,d)]=={42,43,44} and (m+'/'+d in affected or m=='bart' and d in reviewed_domains) for m in MODELS)]
     a6='P的“当前正确、gold续步正确、latent下一步失败”在两模型均有三seed支持的领域为'+('、'.join(shared) if shared else '尚待三seed共同证据')+'。两模型全部三seed的正式N/S/M均完成并准入的领域为'+('、'.join(both) if both else '尚无全部完成的领域')+'；补训跨模型比较据此区分完整与部分结果。单模型准入失败与另一模型组合失败不能合并平均，T5Gemma实际是已核验2B IT而非270M IT，rank相同但编辑器参数量不同。'
     a7='最有证据的下一步是围绕已确认的“同当前文本、同mask/深度、下一步分歧”做受控兼容性和能力保护研究；分别验证来源、当前关系/角色状态和表达结构的覆盖。M覆盖更多状态但每状态监督减少；若稳定劣于S，需用匹配每状态监督及总监督的补充对照区分预算摊薄、状态梯度干扰和旧路径保护。这些是待检验解释，不是已发现机制。未准入领域优先解决固定接口的重构/原子能力。当前probe只支持可读性，不支持编辑器使用或因果机制；没有进行子空间干预。'
+    if (ROOT/'SUPPLEMENT_OUTPUT_COVERAGE_LIMIT.md').exists():a7+=' 实际draws审计还表明，当前状态覆盖同时改变每个操作头的下一步监督标签支持；后续应同时核对输入/输出覆盖、每状态监督、历史操作和mask，而不把M/S差异仅归因于当前状态覆盖。'
     return [a1,a2,a3,a4,a5,a6,a7]
 
 if __name__=='__main__':
