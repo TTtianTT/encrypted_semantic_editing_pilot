@@ -10,7 +10,6 @@ From this worktree:
 
 ```bash
 /dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -m unittest experiments.causal_next_edit_stability_v1.tests.test_cpu
-bash experiments/causal_next_edit_stability_v1/slurm/submit_stage.sh --config experiments/causal_next_edit_stability_v1/configs/scan_bart.json --manifest experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json --resume
 bash experiments/causal_next_edit_stability_v1/slurm/submit_stage.sh --account
 ```
 
@@ -21,6 +20,15 @@ python -m experiments.causal_next_edit_stability_v1.run_stage --config CONFIG --
 ```
 
 It is called inside `worker.sbatch` via `srun`, never directly for GPU work. Config/manifest names in the directory are the actual runnable stage snapshots; code/config/data/checkpoint hashes are checked. Completed markers and per-world partial results are atomic. Resume only applies to unchanged missing or technically failed shards after the entire earlier stage terminates. A low result is not a retry trigger. For a new checkout, recreate configs with audited absolute resource paths rather than altering historical manifests or mixing outputs.
+
+Historical stage manifests intentionally require their recorded code hash. To reproduce the locked BART test from the final implementation, create a fresh output namespace using the existing audited state caches and locked discovery bases (do not overwrite the historical test). The commands below create and submit the replay; repeated scientific evaluation is labelled replay and excluded from the original independent-test aggregate.
+
+```bash
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -c "from experiments.causal_next_edit_stability_v1.audit import make_stage; from experiments.causal_next_edit_stability_v1.common import ROOT,read,sha; lock=read(ROOT/'results/final_test_lock.json'); make_stage('replay_bart',[('bart',s) for s in (42,43,44)],'01:00:00',dict(mode='test',input_hashes=dict(lock['input_hashes'],**{'results/final_test_lock.json':sha(ROOT/'results/final_test_lock.json')})))"
+bash experiments/causal_next_edit_stability_v1/slurm/submit_stage.sh --config experiments/causal_next_edit_stability_v1/configs/replay_bart.json --manifest experiments/causal_next_edit_stability_v1/configs/replay_bart_tasks.json
+```
+
+Replay uses the same 40 GPU-hour ledger and two-GPU limit. Choose a new explicit namespace if replay results already exist. CPU aggregation is a `defq`, zero-GPU stage through the same worker; original stage inputs remain immutable.
 
 Small source code, configs, denominators, aggregate CSV/JSON and sample records are committed. Full state tensors, complete per-example result streams and logs use the original project's shared `local/` artifact convention and are excluded from Git. Published indexes link paths and hashes. Backbone and editor training are never performed.
 

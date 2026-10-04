@@ -1,0 +1,52 @@
+{
+  "stage": "test_bart",
+  "config_hash": "39da772482c2b729ed1a90bfe524c842ef3e6b1d0bdfd3c15c7917711db136c7",
+  "code_hash": "4924e61a677e4902cfd649a92853a18e5080584d6ed7d66eb253220c02b156a4",
+  "tasks": [
+    {
+      "stage": "test_bart",
+      "model": "bart",
+      "model_id": "facebook/bart-base",
+      "editor_seed": 42,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "39da772482c2b729ed1a90bfe524c842ef3e6b1d0bdfd3c15c7917711db136c7",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/test_bart/bart_s42",
+      "task_hash": "f91da517cf401506688321633d2df12aff7ec71675d3fb1e1d1cf53b25897a45"
+    },
+    {
+      "stage": "test_bart",
+      "model": "bart",
+      "model_id": "facebook/bart-base",
+      "editor_seed": 43,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+      "checkpoint_hash": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "39da772482c2b729ed1a90bfe524c842ef3e6b1d0bdfd3c15c7917711db136c7",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/test_bart/bart_s43",
+      "task_hash": "186e387f9a1a21530cf9c1dc89fe8a8d4e303232cbd3f18da9d39f774cfc4186"
+    },
+    {
+      "stage": "test_bart",
+      "model": "bart",
+      "model_id": "facebook/bart-base",
+      "editor_seed": 44,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+      "checkpoint_hash": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "39da772482c2b729ed1a90bfe524c842ef3e6b1d0bdfd3c15c7917711db136c7",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/test_bart/bart_s44",
+      "task_hash": "1db2a184ef44dc2db4283b59defcebfb476783a1a4fc5b5c1eee583997d83cbf"
+    }
+  ]
+}

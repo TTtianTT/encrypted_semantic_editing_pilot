@@ -1,27 +1,28 @@
 {
-  "stage": "qualification_t5gemma",
+  "stage": "fit_bart",
   "indices": [
-    0
+    0,
+    1
   ],
-  "manifest": "experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma_tasks.json",
-  "config": "experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma.json",
+  "manifest": "experiments/causal_next_edit_stability_v1/configs/fit_bart_tasks.json",
+  "config": "experiments/causal_next_edit_stability_v1/configs/fit_bart.json",
   "command": [
     "sbatch",
     "--parsable",
     "--partition=B300q",
     "--gres=gpu:1",
-    "--job-name=cesv1-qualification_t5gemma",
-    "--array=0%2",
+    "--job-name=cesv1-fit_bart",
+    "--array=0,1%2",
     "--time=00:15:00",
     "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
     "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma.json",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma_tasks.json"
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/fit_bart.json",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/fit_bart_tasks.json"
   ],
   "other_user_gpu_jobs": [],
-  "reserved_gpu_hours": 0.25,
-  "time": "2026-10-05T01:14:40.599232"
+  "reserved_gpu_hours": 0.5,
+  "time": "2026-10-05T01:20:59.050994"
 }

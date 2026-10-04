@@ -1,0 +1,47 @@
+{
+  "locked_at": "2026-10-05T01:22:52.488291",
+  "implementation_commit": "d4c970e28e1dfa27e1431c4ae172d8fc2ea23a09",
+  "code_hash": "4924e61a677e4902cfd649a92853a18e5080584d6ed7d66eb253220c02b156a4",
+  "input_hashes": {
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd",
+    "configs/worlds.jsonl": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+    "results/bart_method_lock.json": "2958f2d06259b4269751d923f01decfcb4339c91975aa0196e635f4c2cccfdd7",
+    "results/t5gemma_method_lock.json": "e2007814ac513adf09bd9033f29101020af7c56533b44396c5182f66f7ae0772",
+    "results/SAE_STATUS.json": "7021297ff51c419f684500254965acc4baacc7351e198fc51d3cde3e34783474",
+    "local/pca/bart_s42.pt": "c496a7fcd2c4bc55827cfce268721fb383b028a7ca779f1ac948c1d1749d7508",
+    "local/pca/bart_s43.pt": "2b3ef05e72d06489bd3d4a0d67e95e23ec579038d8a03a3841ae7c510eac576a",
+    "local/pca/bart_s44.pt": "6730c0a4e95dc93d5df58350c2970658ca375c0bcd8314e032e67cd19950ce24"
+  },
+  "test_interventions_seen": false,
+  "methods": [
+    {
+      "method": "pca",
+      "rank": 4,
+      "alpha": 1.0,
+      "name": "pca_k4_a1.0"
+    },
+    {
+      "method": "read",
+      "rank": 1,
+      "alpha": 0.25,
+      "name": "read_k1_a0.25"
+    }
+  ],
+  "test_world_limit_per_seed": 80,
+  "new_world_test_only": true,
+  "editor_seeds": [
+    42,
+    43,
+    44
+  ],
+  "T5Gemma_status": "NOT_ESTIMABLE; all three fixed qualification scans contain zero eligible pairs",
+  "SAE_decision": {
+    "status": "SKIPPED",
+    "reason": "Exact-text pairing unavailable for at least one model: the both-model discovery/validation prerequisite is unmet. No SAE escalation.",
+    "training_performed": false,
+    "allocated_GPU_hours": 0,
+    "decision_before_independent_test": true
+  },
+  "statistics_locked_in_protocol": true,
+  "all_method_selection_complete": true
+}

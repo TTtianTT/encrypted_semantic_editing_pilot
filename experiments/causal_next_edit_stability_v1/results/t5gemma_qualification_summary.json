@@ -1,0 +1,93 @@
+{
+  "worlds": 16,
+  "no_interventions": true,
+  "counts": {
+    "E_from_future_plus": {
+      "records": 16,
+      "raw_equal_to_natural": 0,
+      "strip_equal_diagnostic_only": 16,
+      "next_plus_success": 0,
+      "next_minus_success": 0
+    },
+    "E_from_past_minus": {
+      "records": 16,
+      "raw_equal_to_natural": 0,
+      "strip_equal_diagnostic_only": 16,
+      "next_plus_success": 0,
+      "next_minus_success": 0
+    },
+    "N_current": {
+      "records": 16,
+      "raw_equal_to_natural": 16,
+      "strip_equal_diagnostic_only": 16,
+      "next_plus_success": 16,
+      "next_minus_success": 16
+    },
+    "R_once": {
+      "records": 16,
+      "raw_equal_to_natural": 16,
+      "strip_equal_diagnostic_only": 16,
+      "next_plus_success": 16,
+      "next_minus_success": 16
+    }
+  },
+  "examples": [
+    {
+      "history": "E_from_future_plus",
+      "text": "The ticket event is dated today. Its status is planned. The ticket is white. There are 5 copies.",
+      "confidence": {
+        "token_mean_nll": 5.35937715540058e-06,
+        "mean_entropy": 0.00010704815940698609,
+        "key_margin": null,
+        "margin_status": "NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold",
+        "first_divergent_token_logit_margin": 14.84375,
+        "semantic_competitor": "The ticket event is dated tomorrow. Its status is planned. The ticket is white. There are 5 copies.",
+        "semantic_position": 5,
+        "margin_interpretation": "single first-divergent token under shared gold prefix, not full semantic phrase score"
+      }
+    },
+    {
+      "history": "E_from_past_minus",
+      "text": "The ticket event is dated today. Its status is planned. The ticket is white. There are 5 copies.",
+      "confidence": {
+        "token_mean_nll": 3.5464581742417067e-06,
+        "mean_entropy": 7.24487763363868e-05,
+        "key_margin": null,
+        "margin_status": "NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold",
+        "first_divergent_token_logit_margin": 20.46875,
+        "semantic_competitor": "The ticket event is dated tomorrow. Its status is planned. The ticket is white. There are 5 copies.",
+        "semantic_position": 5,
+        "margin_interpretation": "single first-divergent token under shared gold prefix, not full semantic phrase score"
+      }
+    },
+    {
+      "history": "N_current",
+      "text": "The ticket event is dated today. Its status is planned. The ticket is white. There are 5 copies. \n",
+      "confidence": {
+        "token_mean_nll": 0.7814332842826843,
+        "mean_entropy": 0.03520169109106064,
+        "key_margin": null,
+        "margin_status": "NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold",
+        "first_divergent_token_logit_margin": 11.375,
+        "semantic_competitor": "The ticket event is dated tomorrow. Its status is planned. The ticket is white. There are 5 copies.",
+        "semantic_position": 5,
+        "margin_interpretation": "single first-divergent token under shared gold prefix, not full semantic phrase score"
+      }
+    },
+    {
+      "history": "R_once",
+      "text": "The ticket event is dated today. Its status is planned. The ticket is white. There are 5 copies. \n",
+      "confidence": {
+        "token_mean_nll": 0.7814332842826843,
+        "mean_entropy": 0.03520169109106064,
+        "key_margin": null,
+        "margin_status": "NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold",
+        "first_divergent_token_logit_margin": 11.375,
+        "semantic_competitor": "The ticket event is dated tomorrow. Its status is planned. The ticket is white. There are 5 copies.",
+        "semantic_position": 5,
+        "margin_interpretation": "single first-divergent token under shared gold prefix, not full semantic phrase score"
+      }
+    }
+  ],
+  "qualification_rule_unchanged": true
+}

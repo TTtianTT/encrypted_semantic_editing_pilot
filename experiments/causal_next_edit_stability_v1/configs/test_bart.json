@@ -1,0 +1,37 @@
+{
+  "stage": "test_bart",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "01:00:00",
+  "walltime_hours": 1.0,
+  "mode": "test",
+  "prerequisites": [
+    {
+      "path": "local/validation_bart/bart_s42/complete.json"
+    },
+    {
+      "path": "local/decoder_bart/bart_s42/complete.json"
+    },
+    {
+      "path": "local/fit_bart/bart_s43/complete.json"
+    },
+    {
+      "path": "local/fit_bart/bart_s44/complete.json"
+    },
+    {
+      "path": "local/smoke_bart/bart_s42/complete.json",
+      "passed_required": true
+    }
+  ],
+  "input_hashes": {
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd",
+    "configs/worlds.jsonl": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+    "results/bart_method_lock.json": "2958f2d06259b4269751d923f01decfcb4339c91975aa0196e635f4c2cccfdd7",
+    "results/t5gemma_method_lock.json": "e2007814ac513adf09bd9033f29101020af7c56533b44396c5182f66f7ae0772",
+    "results/SAE_STATUS.json": "7021297ff51c419f684500254965acc4baacc7351e198fc51d3cde3e34783474",
+    "local/pca/bart_s42.pt": "c496a7fcd2c4bc55827cfce268721fb383b028a7ca779f1ac948c1d1749d7508",
+    "local/pca/bart_s43.pt": "2b3ef05e72d06489bd3d4a0d67e95e23ec579038d8a03a3841ae7c510eac576a",
+    "local/pca/bart_s44.pt": "6730c0a4e95dc93d5df58350c2970658ca375c0bcd8314e032e67cd19950ce24",
+    "results/final_test_lock.json": "5d6f8bf9bfc5bf139e73b749d5206ddc835b6e609b550324ece19a39dc5aea7c"
+  }
+}
