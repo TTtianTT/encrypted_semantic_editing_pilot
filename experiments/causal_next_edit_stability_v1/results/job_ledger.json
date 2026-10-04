@@ -312,9 +312,53 @@
           "limit_minutes": 60
         }
       ]
+    },
+    {
+      "stage": "qualification_t5gemma",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-qualification_t5gemma",
+        "--array=0%2",
+        "--time=00:15:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/qualification_t5gemma_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.25,
+      "time": "2026-10-05T01:14:40.599232",
+      "job_id": "2832",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": false,
+      "allocations": [
+        {
+          "job_id": "2832",
+          "array_id": "2832_0",
+          "state": "RUNNING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 162,
+          "gpus": 1,
+          "start": "2026-10-05T01:14:40",
+          "end": "Unknown",
+          "limit_minutes": 15
+        }
+      ]
     }
   ],
-  "gpu_hours": 2.046388888888889,
+  "gpu_hours": 2.091388888888889,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -395,10 +439,18 @@
       "task": "2",
       "time": "2026-10-04T23:06:12.404303",
       "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2832",
+      "parent": "2832",
+      "task": "0",
+      "time": "2026-10-05T01:14:49.545370",
+      "visible": "0"
     }
   ],
   "maximum_concurrent_gpus": 2,
-  "updated_at": "2026-10-05T01:09:52.110585",
+  "updated_at": "2026-10-05T01:17:22.091712",
   "squeue_samples": [
     {
       "time": "2026-10-04T22:33:52.642760",
@@ -429,6 +481,22 @@
     {
       "time": "2026-10-05T01:09:52.117263",
       "rows": []
+    },
+    {
+      "time": "2026-10-05T01:14:40.583505",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T01:15:20.242690",
+      "rows": [
+        "2832_0|cesv1-qualification_t5gemma|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:17:22.099625",
+      "rows": [
+        "2832_0|cesv1-qualification_t5gemma|gres/gpu:1|RUNNING"
+      ]
     }
   ]
 }

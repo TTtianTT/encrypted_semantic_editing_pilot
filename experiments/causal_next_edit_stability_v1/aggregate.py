@@ -104,7 +104,8 @@ def aggregate():
             for source in ('E→E','N→E','R→E'):
                 for confidence in ('all','NLL_matched'):
                     xs=[r for r in rs if r['editor_seed']==seed and r['donor_source']==source and (confidence=='all' or r['confidence_matched_nll'])]
-                    if lockpath.exists():xs=[r for r in xs if r['method_name']==read(lockpath)['methods'][0]['name']]
+                    locked_methods=read(lockpath).get('methods',[]) if lockpath.exists() else []
+                    xs=[r for r in xs if r['method_name']==locked_methods[0]['name']] if locked_methods else []
                     e.append(dict(model=model,editor_seed=seed,source=source,confidence_subset=confidence,n_worlds=len({r['world_id'] for r in xs}),C0=equal_seed_mean(xs,'C0'),R1=equal_seed_mean(xs,'R1'),R3=equal_seed_mean(xs,'R3'),R5=equal_seed_mean(xs,'R5'),status='executed' if xs else 'NA; no eligible primary-source records'))
     adjusted=holm([x['p_raw'] for x in modelstats])
     for x,p in zip(modelstats,adjusted):x['p_holm']=p

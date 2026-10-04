@@ -12,7 +12,7 @@ def scan(eng,worlds,folder,resume=True):
     for wi,w in enumerate(worlds):
         wp=folder/'worlds'/w['world_id'];done=wp/'complete.json'
         if done.exists():
-            marker=read(done);assert marker['checkpoint_hash']==eng.task['checkpoint_hash'] and marker['data_hash']==eng.task['data_hash']
+            marker=read(done);assert marker.get('task_hash')==eng.task['task_hash'] and marker['checkpoint_hash']==eng.task['checkpoint_hash'] and marker['data_hash']==eng.task['data_hash'], 'Partial scan inputs or code changed; preserve historical output and use a fresh run namespace'
             records.extend(rows(wp/'pairs.jsonl'));audits.extend(rows(wp/'audit.jsonl'));continue
         template=0;current=0;states={};nexts={}
         for history in HISTORIES:
@@ -59,7 +59,7 @@ def scan(eng,worlds,folder,resume=True):
                     selected.append(r);counts['final_pair_worlds']=1
                 else:counts['final_pair_worlds']=0
                 wa.append(dict(world_id=w['world_id'],split=w['mechanism_split'],original_split=w['original_split'],source=source,operation=op,model=eng.name,editor_seed=eng.task['editor_seed'],**counts))
-        jsonl(wp/'pairs.jsonl',selected);jsonl(wp/'audit.jsonl',wa);dump(done,dict(checkpoint_hash=eng.task['checkpoint_hash'],data_hash=eng.task['data_hash']))
+        jsonl(wp/'pairs.jsonl',selected);jsonl(wp/'audit.jsonl',wa);dump(done,dict(task_hash=eng.task['task_hash'],checkpoint_hash=eng.task['checkpoint_hash'],data_hash=eng.task['data_hash']))
         records.extend(selected);audits.extend(wa)
         print(f'scan {wi+1}/{len(worlds)} {w["world_id"]} pairs={len(selected)}',flush=True)
     jsonl(folder/'pairs.jsonl',records);jsonl(folder/'pair_audit.jsonl',audits)

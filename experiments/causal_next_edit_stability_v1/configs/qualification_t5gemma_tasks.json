@@ -1,0 +1,22 @@
+{
+  "stage": "qualification_t5gemma",
+  "config_hash": "ba58ee5ccae2c9435cab951f18ad140f5046df50b54e36370b34ef449c93f10c",
+  "code_hash": "616a00fca65b0d6cdc3974d0427a0c7528d0a69ff263a603a77353b5eadf2fad",
+  "tasks": [
+    {
+      "stage": "qualification_t5gemma",
+      "model": "t5gemma",
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "editor_seed": 42,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
+      "checkpoint_hash": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "ba58ee5ccae2c9435cab951f18ad140f5046df50b54e36370b34ef449c93f10c",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/qualification_t5gemma/t5gemma_s42",
+      "task_hash": "052d50503730818eedbe0a1d0c4fcd993b7cf1d1d3ef0809c621911173ab4617"
+    }
+  ]
+}

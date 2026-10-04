@@ -1,0 +1,22 @@
+{
+  "stage": "qualification_t5gemma",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "00:15:00",
+  "walltime_hours": 0.25,
+  "mode": "qualification_diagnostics",
+  "prerequisites": [
+    {
+      "path": "local/scan_t5gemma/t5gemma_s42/complete.json"
+    },
+    {
+      "path": "local/scan_t5gemma/t5gemma_s43/complete.json"
+    },
+    {
+      "path": "local/scan_t5gemma/t5gemma_s44/complete.json"
+    }
+  ],
+  "input_hashes": {
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd"
+  }
+}
