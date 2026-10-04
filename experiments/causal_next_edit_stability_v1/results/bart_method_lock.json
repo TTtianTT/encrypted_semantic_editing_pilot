@@ -1,0 +1,172 @@
+{
+  "methods": [
+    {
+      "method": "pca",
+      "rank": 4,
+      "alpha": 1.0,
+      "name": "pca_k4_a1.0"
+    },
+    {
+      "method": "read",
+      "rank": 1,
+      "alpha": 0.25,
+      "name": "read_k1_a0.25"
+    }
+  ],
+  "selection_split": "validation",
+  "n_worlds": 40,
+  "seed": 42,
+  "selection_rule": "R1,C0,smaller relative norm,rank,name",
+  "PCA_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/pca/bart_s42.pt",
+  "PCA_sha256": "c496a7fcd2c4bc55827cfce268721fb383b028a7ca779f1ac948c1d1749d7508",
+  "scores": {
+    "bad": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "good": {
+      "n": 40,
+      "R1": 1.0,
+      "C0": 1.0
+    },
+    "full": {
+      "n": 40,
+      "R1": 1.0,
+      "C0": 1.0
+    },
+    "noop": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "self": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "global_a0": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "global_a0.25": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "global_a0.5": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "global_a1.0": {
+      "n": 40,
+      "R1": 1.0,
+      "C0": 1.0
+    },
+    "pca_k4_a1.0": {
+      "n": 40,
+      "R1": 1.0,
+      "C0": 1.0
+    },
+    "reverse_pca_k4_a1.0": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_pca_k4_a1.0_61001": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.5
+    },
+    "random_pca_k4_a1.0_61002": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.1
+    },
+    "random_pca_k4_a1.0_61003": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.0
+    },
+    "random_pca_k4_a1.0_61004": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.0
+    },
+    "random_pca_k4_a1.0_61005": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.0
+    },
+    "random_pca_k4_a1.0_61006": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_pca_k4_a1.0_61007": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.15
+    },
+    "random_pca_k4_a1.0_61008": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 0.225
+    },
+    "read_k1_a0.25": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "reverse_read_k1_a0.25": {
+      "n": 40,
+      "R1": 1.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61001": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61002": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61003": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61004": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61005": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61006": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61007": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    },
+    "random_read_k1_a0.25_61008": {
+      "n": 40,
+      "R1": 0.0,
+      "C0": 1.0
+    }
+  },
+  "gate_passed": true,
+  "validation_R1_random_difference": 1.0,
+  "test_intervention_unread": true
+}

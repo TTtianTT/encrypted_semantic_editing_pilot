@@ -51,6 +51,8 @@ def refresh(ledger):
         s['terminal']=len(rs)==len(s['indices']) and all(r['state'] in TERMINAL for r in rs)
     ledger['gpu_hours'], ledger['maximum_concurrent_gpus']=summarize(allocations)
     ledger['updated_at']=datetime.now().isoformat()
+    queue=command(['squeue','-r','-h','-u',os.environ.get('USER','zailong'),'-o','%i|%j|%b|%T'])
+    ledger.setdefault('squeue_samples',[]).append(dict(time=datetime.now().isoformat(),rows=queue.splitlines()))
     dump(LEDGER,ledger); return ledger
 
 def eligible(ledger, n, hours):
@@ -71,7 +73,7 @@ def runtime_check(config):
 
 def submit(config_path, manifest_path, resume=False):
     c=read(config_path); m=read(manifest_path)
-    assert c['gpus']==1 and c['partition']=='B300q'
+    assert (c['gpus'],c['partition']) in ((1,'B300q'),(0,'defq'))
     assert m['code_hash']==code_hash() and m['config_hash']==sha(config_path)
     for gate in c.get('prerequisites',[]):
         marker=read(ROOT/gate['path'])
@@ -86,23 +88,24 @@ def submit(config_path, manifest_path, resume=False):
                 marker=read(p); assert marker['task_hash']==t['task_hash']
                 continue
             indices.append(i)
-        eligible(ledger,len(indices),c['walltime_hours'])
+        eligible(ledger,len(indices),c['walltime_hours']*c['gpus'])
         if not resume and any(s['stage']==c['stage'] for s in ledger['submissions']): raise RuntimeError('Use --resume for missing failed shards')
         user=os.environ.get('USER','zailong')
         q=command(['squeue','-r','-h','-u',user,'-o','%i|%j|%b|%T'])
         if any('cesv1-' in line for line in q.splitlines()): raise RuntimeError('Unclosed/unregistered experiment job detected')
         others=[line for line in q.splitlines() if 'gpu' in line]
-        concurrency=1 if others else 2
+        concurrency=1 if others or c['gpus']==0 else 2
         logs=ROOT/'local/logs'; logs.mkdir(parents=True,exist_ok=True)
-        args=['sbatch','--parsable','--partition='+c['partition'],'--gres=gpu:1','--job-name=cesv1-'+c['stage'],
+        args=['sbatch','--parsable','--partition='+c['partition'],'--job-name=cesv1-'+c['stage'],
               '--array='+','.join(map(str,indices))+'%'+str(concurrency),'--time='+c['walltime'],
               '--output='+str(logs/'%A_%a.out'),'--error='+str(logs/'%A_%a.err'),
               str(ROOT/'slurm/worker.sbatch'),str(WT),str(ROOT/'slurm/slurm_env.sh'),str(config_path.resolve()),str(manifest_path.resolve())]
-        intent=dict(stage=c['stage'],indices=indices,manifest=str(manifest_path),config=str(config_path),command=args,other_user_gpu_jobs=others,reserved_gpu_hours=len(indices)*c['walltime_hours'],time=datetime.now().isoformat())
+        if c['gpus']:args.insert(3,'--gres=gpu:1')
+        intent=dict(stage=c['stage'],indices=indices,manifest=str(manifest_path),config=str(config_path),command=args,other_user_gpu_jobs=others,reserved_gpu_hours=len(indices)*c['walltime_hours']*c['gpus'],time=datetime.now().isoformat())
         dump(ROOT/'results/submission_intent.json',intent)
         jid=command(args).split(';')[0]
         assert jid.isdigit(),jid
-        ledger['submissions'].append(dict(**intent,job_id=jid,gpus_per_task=1,concurrency=concurrency,terminal=False))
+        ledger['submissions'].append(dict(**intent,job_id=jid,gpus_per_task=c['gpus'],concurrency=concurrency,terminal=False))
         dump(LEDGER,ledger); print(jid,flush=True)
 
 def main():

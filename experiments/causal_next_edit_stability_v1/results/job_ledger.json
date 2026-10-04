@@ -76,10 +76,164 @@
       "job_id": "2816",
       "gpus_per_task": 1,
       "concurrency": 2,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2817",
+          "array_id": "2816_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 296,
+          "gpus": 1,
+          "start": "2026-10-04T22:16:19",
+          "end": "2026-10-04T22:21:15",
+          "limit_minutes": 30
+        },
+        {
+          "job_id": "2818",
+          "array_id": "2816_1",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 507,
+          "gpus": 1,
+          "start": "2026-10-04T22:16:19",
+          "end": "2026-10-04T22:24:46",
+          "limit_minutes": 30
+        },
+        {
+          "job_id": "2816",
+          "array_id": "2816_2",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 294,
+          "gpus": 1,
+          "start": "2026-10-04T22:21:15",
+          "end": "2026-10-04T22:26:09",
+          "limit_minutes": 30
+        }
+      ]
+    },
+    {
+      "stage": "discovery_bart",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/discovery_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/discovery_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-discovery_bart",
+        "--array=0%2",
+        "--time=00:30:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/discovery_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/discovery_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.5,
+      "time": "2026-10-04T22:28:17.180792",
+      "job_id": "2820",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2820",
+          "array_id": "2820_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 154,
+          "gpus": 1,
+          "start": "2026-10-04T22:28:17",
+          "end": "2026-10-04T22:30:51",
+          "limit_minutes": 30
+        }
+      ]
+    },
+    {
+      "stage": "validation_bart",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/validation_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/validation_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-validation_bart",
+        "--array=0%2",
+        "--time=00:30:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/validation_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/validation_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.5,
+      "time": "2026-10-04T22:33:52.661387",
+      "job_id": "2821",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2821",
+          "array_id": "2821_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 238,
+          "gpus": 1,
+          "start": "2026-10-04T22:33:55",
+          "end": "2026-10-04T22:37:53",
+          "limit_minutes": 30
+        }
+      ]
+    },
+    {
+      "stage": "smoke_t5gemma",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-smoke_t5gemma",
+        "--array=0%2",
+        "--time=00:30:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.5,
+      "time": "2026-10-04T22:40:56.520868",
+      "job_id": "2822",
+      "gpus_per_task": 1,
+      "concurrency": 2,
       "terminal": false
     }
   ],
-  "gpu_hours": 0.01861111111111111,
+  "gpu_hours": 0.43222222222222223,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -104,8 +258,42 @@
       "task": "0",
       "time": "2026-10-04T22:16:25.372276",
       "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2816",
+      "parent": "2816",
+      "task": "2",
+      "time": "2026-10-04T22:21:21.985789",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2820",
+      "parent": "2820",
+      "task": "0",
+      "time": "2026-10-04T22:28:24.327880",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2821",
+      "parent": "2821",
+      "task": "0",
+      "time": "2026-10-04T22:34:02.142496",
+      "visible": "0"
     }
   ],
-  "maximum_concurrent_gpus": 1,
-  "updated_at": "2026-10-04T22:16:19.336711"
+  "maximum_concurrent_gpus": 2,
+  "updated_at": "2026-10-04T22:40:56.492615",
+  "squeue_samples": [
+    {
+      "time": "2026-10-04T22:33:52.642760",
+      "rows": []
+    },
+    {
+      "time": "2026-10-04T22:40:56.499894",
+      "rows": []
+    }
+  ]
 }

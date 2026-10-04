@@ -26,4 +26,20 @@ class CPUChecks(unittest.TestCase):
         times=sorted(q.get() for _ in ps)
         for p in ps:p.join()
         self.assertGreaterEqual(times[1]-times[0],.09)
+    def test_masked_patch(self):
+        import torch
+        from ..state_patching import patch
+        b=torch.randn(1,4,5);g=torch.randn_like(b);m=torch.tensor([[1,1,0,0]])
+        h,c,_=patch(b,g,m,{'method':'full'})
+        self.assertTrue(torch.equal(h[:,:2],g[:,:2]));self.assertTrue(torch.equal(h[:,2:],b[:,2:]));self.assertEqual(float(c[:,2:].abs().sum()),0)
+        h,_,_=patch(b,g,m,{'method':'read','alpha':0});self.assertTrue(torch.equal(h,b))
+    def test_world_cluster_random_seeds_not_samples(self):
+        from ..metrics import clustered_difference
+        rs=[]
+        for world in ('w0','w1','w2'):
+            for seed in (42,43,44):
+                for method,value in [('local',True)]+[(f'random_{i}',False) for i in range(8)]:
+                    rs.append(dict(world_id=world,editor_seed=seed,sequence_name='primary',method_name=method,R1=value))
+        x=clustered_difference(rs,'local',[f'random_{i}' for i in range(8)],reps=100)
+        self.assertEqual(x['n_worlds'],3);self.assertEqual(x['n_seeds'],3);self.assertEqual(x['estimate'],1);self.assertEqual(x['ci95'],[1,1])
 if __name__=='__main__':unittest.main()

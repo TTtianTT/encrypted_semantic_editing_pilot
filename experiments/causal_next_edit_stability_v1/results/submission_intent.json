@@ -1,29 +1,27 @@
 {
-  "stage": "scan_bart",
+  "stage": "smoke_t5gemma",
   "indices": [
-    0,
-    1,
-    2
+    0
   ],
-  "manifest": "experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json",
-  "config": "experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
+  "manifest": "experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma_tasks.json",
+  "config": "experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma.json",
   "command": [
     "sbatch",
     "--parsable",
     "--partition=B300q",
     "--gres=gpu:1",
-    "--job-name=cesv1-scan_bart",
-    "--array=0,1,2%2",
+    "--job-name=cesv1-smoke_t5gemma",
+    "--array=0%2",
     "--time=00:30:00",
     "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
     "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json"
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma.json",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_t5gemma_tasks.json"
   ],
   "other_user_gpu_jobs": [],
-  "reserved_gpu_hours": 1.5,
-  "time": "2026-10-04T22:16:19.350679"
+  "reserved_gpu_hours": 0.5,
+  "time": "2026-10-04T22:40:56.520868"
 }

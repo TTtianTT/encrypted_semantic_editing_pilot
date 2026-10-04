@@ -1,0 +1,18 @@
+{
+  "stage": "validation_bart",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "00:30:00",
+  "walltime_hours": 0.5,
+  "mode": "validation",
+  "prerequisites": [
+    {
+      "path": "local/discovery_bart/bart_s42/complete.json"
+    }
+  ],
+  "input_hashes": {
+    "results/bart_discovery_shortlist.json": "a1163de56ecf26a0f32266d38a69dcd9fb1af994f3d54e140ed07585c48d5099",
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd",
+    "local/pca/bart_s42.pt": "c496a7fcd2c4bc55827cfce268721fb383b028a7ca779f1ac948c1d1749d7508"
+  }
+}

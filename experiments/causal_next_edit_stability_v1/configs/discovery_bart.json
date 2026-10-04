@@ -1,0 +1,17 @@
+{
+  "stage": "discovery_bart",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "00:30:00",
+  "walltime_hours": 0.5,
+  "mode": "discovery",
+  "prerequisites": [
+    {
+      "path": "local/scan_bart/bart_s42/complete.json"
+    }
+  ],
+  "input_hashes": {
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd",
+    "local/scan_bart/bart_s42/pairs.jsonl": "76917943b8b581984f02fef2454246c484a43ca9a1cf56dcd614bbbe3f03b907"
+  }
+}

@@ -33,11 +33,17 @@ class Engine(Backend):
         return self.model(encoder_outputs=BaseModelOutput(last_hidden_state=h),attention_mask=m,labels=labels,use_cache=False).logits.float(),labels
 
     @torch.no_grad()
-    def confidence(self,h,m,text):
+    def confidence(self,h,m,text,competitor=None):
         logits,y=self.logits(h,m,text); lp=logits.log_softmax(-1); valid=y!=-100
         nll=-lp.gather(-1,y.clamp_min(0)[...,None]).squeeze(-1)[valid].mean()
         entropy=-(lp.exp()*lp).sum(-1)[valid].mean()
-        return dict(token_mean_nll=float(nll),mean_entropy=float(entropy),key_margin=None,margin_status='NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold')
+        result=dict(token_mean_nll=float(nll),mean_entropy=float(entropy),key_margin=None,margin_status='NLL-only subset: relative-date candidates have variable multi-token lengths; no stable single-logit margin threshold')
+        if competitor is not None:
+            alt=self.labels([competitor]);limit=min(y.shape[1],alt.shape[1])
+            position=next(i for i in range(limit) if int(y[0,i])!=int(alt[0,i]))
+            assert torch.equal(y[:,:position],alt[:,:position])
+            result.update(first_divergent_token_logit_margin=float(logits[0,position,y[0,position]]-logits[0,position,alt[0,position]]),semantic_competitor=competitor,semantic_position=position,margin_interpretation='single first-divergent token under shared gold prefix, not full semantic phrase score')
+        return result
 
 @contextlib.contextmanager
 def native_hook(module,hook,pre=False):

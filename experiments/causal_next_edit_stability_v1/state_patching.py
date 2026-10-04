@@ -10,7 +10,8 @@ def project(delta,q):return (delta.float()@q)@q.T
 def patch(bad,good,mask,spec,q=None):
     valid=mask.bool()[...,None];delta=(good.float()-bad.float())*valid
     if spec['method'] in ('bad','noop','self') or spec.get('alpha',1)==0:return bad.clone(),torch.zeros_like(delta),{}
-    if spec['method'] in ('good','full'):
+    if spec['method']=='good':return good.clone(),delta,{}
+    if spec['method']=='full':
         result=torch.where(valid,good,bad);return result,(result.float()-bad.float())*valid,{}
     if spec['method']=='global': component=delta
     elif spec['method']=='token':

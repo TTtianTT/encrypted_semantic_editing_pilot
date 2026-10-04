@@ -13,6 +13,10 @@ def main():
     folder=ROOT/t['output_path'];folder.mkdir(parents=True,exist_ok=True)
     marker=folder/'complete.json'
     if a.resume and marker.exists():assert read(marker)['task_hash']==t['task_hash'];return
+    if c['gpus']==0:
+        assert os.environ.get('SLURM_JOB_ID') and os.environ.get('SLURM_STEP_ID')
+        from .aggregate import aggregate
+        result=aggregate();dump(marker,dict(task_hash=t['task_hash'],task=t,result=result));return
     from .resource_guard import runtime_check
     runtime_check(c)
     from .adapter import Engine
@@ -25,6 +29,9 @@ def main():
         elif c['stage'].startswith('scan'):
             from .pairs import scan
             result=scan(eng,ws[:c.get('world_cap',256)],folder,a.resume)
+        elif c.get('mode')=='decoder':
+            from .decoder_patching import run
+            result=run(eng,c,folder)
         else:
             from .rollout_eval import run
             result=run(eng,c,folder)

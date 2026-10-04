@@ -23,9 +23,12 @@ def scan(eng,worlds,folder,resume=True):
         # Exactly one decode–reencode from the first fixed edited history, labelled R.
         first=states[HISTORIES[0]['id']][2]
         hr,mr=eng.encode([first['text']]);rr=eng.evaluate(hr,mr,w,current,template)
-        states['R_once']=(hr,mr,rr,dict(id='R_once',start=current,operations=[],reencode_of=HISTORIES[0]['id']))
+        states['R_once']=(hr,mr,rr,dict(id='R_once',start=current,operations=[],reencode_of=HISTORIES[0]['id'],input_text=first['text']))
         for key,(h,m,r,hist) in states.items():
-            for op in ('plus','minus'):nexts[key,op]=eng.evaluate(eng.ed[op](h,m),m,w,advance('time',current,op),template)
+            for op in ('plus','minus'):
+                if key=='R_once' and torch.equal(hr,hn) and torch.equal(mr,mn):nexts[key,op]=nexts['N_current',op]
+                else:nexts[key,op]=eng.evaluate(eng.ed[op](h,m),m,w,advance('time',current,op),template)
+        confidence_cache={}
         selected=[];wa=[]
         for source,donorkeys in [('E→E',[h['id'] for h in HISTORIES]),('N→E',['N_current']),('R→E',['R_once'])]:
             for op in ('plus','minus'):
@@ -47,7 +50,9 @@ def scan(eng,worlds,folder,resume=True):
                 if chosen:
                     dk,bk=chosen;hg,m,g,dh=states[dk];hb,_,b,bh=states[bk]
                     pair_id=f"{eng.name}_s{eng.task['editor_seed']}_{w['world_id']}_{source.replace('→','_')}_{op}"
-                    gc=eng.confidence(hg,m,render(w,0,0));bc=eng.confidence(hb,m,render(w,0,0))
+                    for key in (dk,bk):
+                        if key not in confidence_cache:confidence_cache[key]=eng.confidence(states[key][0],states[key][1],render(w,0,0))
+                    gc=confidence_cache[dk];bc=confidence_cache[bk]
                     cached=wp/(pair_id+'.pt');wp.mkdir(parents=True,exist_ok=True)
                     temporary=cached.with_suffix('.tmp');torch.save(dict(good=hg.cpu(),bad=hb.cpu(),mask=m.cpu()),temporary);temporary.replace(cached)
                     r=dict(run_id=RUN_ID,world_id=w['world_id'],world=w,pair_id=pair_id,split=w['mechanism_split'],original_split=w['original_split'],original_IID_OOD='IID/template0',model_id=eng.task['model_id'],model=eng.name,checkpoint_hash=eng.task['checkpoint_hash'],editor_condition='P',editor_seed=eng.task['editor_seed'],donor_source=source,donor_history=dh,recipient_history=bh,current_state=0,current_text=g['text'],operation=op,template=0,gold_next_state=advance('time',0,op),gold_current=gold(w,0,0),mask_hash=objsha(m.cpu().tolist()),valid_memory_length=int(m.sum()),state_path=str(cached),good_current=gc,bad_current=bc,confidence_matched_nll=abs(gc['token_mean_nll']-bc['token_mean_nll'])<=.1,confidence_matched_margin=None,donor_next=nexts[dk,op],recipient_next=nexts[bk,op],job_id=__import__('os').environ['SLURM_JOB_ID'])

@@ -23,7 +23,7 @@ def load_state(pair):
 
 def token_positions(eng,pair):
     def positions(history):
-        text=render(pair['world'],history['start'],pair['template']);text=eng.wrap(text)
+        text=history.get('input_text',render(pair['world'],history['start'],pair['template']));text=eng.wrap(text)
         found=list(re.finditer(r'(?:dated|event is) ([^.]+)\.',text));assert found
         span=found[0].span(1)
         tok=eng.tok(text,add_special_tokens=not eng.chat,return_offsets_mapping=True)
@@ -70,12 +70,18 @@ def random_component(pair,delta,mask,component,spec,seed):
 @torch.no_grad()
 def evaluate_condition(eng,pair,h,mask,name,spec,component,sequence_name,operations):
     started=time.monotonic();w=pair['world'];current=pair['current_state'];template=pair['template']
-    c=eng.evaluate(h,mask,w,current,template);conf=eng.confidence(h,mask,render(w,current,template));step_success=[];sc=[];outputs=[];gold_states=[];state=h
+    c=eng.evaluate(h,mask,w,current,template);conf=eng.confidence(h,mask,render(w,current,template));step_success=[];sc=[];outputs=[];gold_states=[];state=h;target_score=None
+    other=None
+    if sequence_name=='primary' and len(operations)>=3:
+        other_op='minus' if pair['operation']=='plus' else 'plus'
+        other=eng.evaluate(eng.ed[other_op](h,mask),mask,w,advance('time',pair['current_state'],other_op),template)
     for op in operations:
         current=advance('time',current,op);gold_states.append(gold(w,current,template));state=eng.ed[op](state,mask)
         pred=eng.evaluate(state,mask,w,current,template);step_success.append(pred['success']);sc.append(pred['score']);outputs.append(pred['text'])
+        if len(step_success)==1:target_score=eng.confidence(state,mask,render(w,current,template),competitor=render(w,pair['current_state'],template))
     result={k:v for k,v in pair.items() if k not in ('world','state_path','donor_next','recipient_next')}
-    result.update(method_name=name,sequence_name=sequence_name,operation_sequence=operations,gold_states=gold_states,intervention_spec=spec,alpha=spec.get('alpha',1),effective_rank=spec.get('rank'),patched_positions=spec.get('positions','all_valid'),patch_norm=float(component.norm()),relative_patch_norm=float(component.norm()/(h.float()*mask[...,None]).norm().clamp_min(1e-12)),C0=c['success'],exact_preservation=c['text']==pair['current_text'],step_successes=step_success,step_scores=sc,step_texts=outputs,current_prediction=c['text'],R1=bool(c['success'] and all(step_success[:1])),R3=bool(c['success'] and all(step_success[:3])) if len(operations)>=3 else None,R5=bool(c['success'] and all(step_success[:5])) if len(operations)>=5 else None,first_failure=0 if not c['success'] else next((i+1 for i,v in enumerate(step_success) if not v),None),target_score=conf,failure_reason=None if c['success'] and all(step_success) else 'parse/semantic/grammar/EOS failure; see step_scores',job_id=os.environ['SLURM_JOB_ID'],walltime=time.monotonic()-started)
+    result.update(method_name=name,sequence_name=sequence_name,operation_sequence=operations,gold_states=gold_states,intervention_spec=spec,alpha=spec.get('alpha',1),effective_rank=spec.get('rank'),patched_positions=spec.get('positions','all_valid'),patch_norm=float(component.norm()),relative_patch_norm=float(component.norm()/(h.float()*mask[...,None]).norm().clamp_min(1e-12)),relative_patch_norm_denominator='patched valid-memory representation',C0=c['success'],exact_preservation=c['text']==pair['current_text'],step_successes=step_success,step_scores=sc,step_texts=outputs,current_prediction=c['text'],R1=bool(c['success'] and all(step_success[:1])),R3=bool(c['success'] and all(step_success[:3])) if len(operations)>=3 else None,R5=bool(c['success'] and all(step_success[:5])) if len(operations)>=5 else None,first_failure=0 if not c['success'] else next((i+1 for i,v in enumerate(step_success) if not v),None),current_target_score=conf,target_score=target_score,failure_reason=None if c['success'] and all(step_success) else 'parse/semantic/grammar/EOS failure; see step_scores',job_id=os.environ['SLURM_JOB_ID'],walltime=time.monotonic()-started)
+    result.update(patched_position_count=len(spec['positions']) if 'positions' in spec else int(mask.sum()),feature_dimension=h.shape[-1],other_operation_success=other['success'] if other else None,other_operation_text=other['text'] if other else None)
     return result
 
 def criterion(xs):
@@ -86,6 +92,9 @@ def run(eng,config,folder):
     allpairs=load_pairs(eng);stage=config['stage'];mode=config['mode']
     pcafile=ROOT/f'local/pca/{eng.name}_s{eng.task["editor_seed"]}.pt'
     discovery=primary_pairs(allpairs,'discovery',80)
+    if mode=='fit':
+        if not pcafile.exists():fit_pca(discovery,pcafile)
+        return dict(mode=mode,discovery_worlds=len(discovery),PCA_path=str(pcafile),PCA_sha256=sha(pcafile),no_test_interventions=True,resources=eng.resources())
     if mode=='discovery':
         fit_pca(discovery,pcafile);pairs=discovery[:16];specs=candidate_specs()
     elif mode=='validation':
@@ -116,6 +125,12 @@ def run(eng,config,folder):
         for h,component,s,name in conditions:
             sequences=SEQUENCES if mode=='test' and (name in ('bad','good','full') or name==specs[0]['name'] or name.startswith('random_'+specs[0]['name']+'_') or name=='global_a0.5') else dict(primary=[pair['operation']])
             for sequence_name,ops in sequences.items():outputs.append(evaluate_condition(eng,pair,h,mask,name,s,component,sequence_name,ops))
+        baseline={r['method_name']:r for r in outputs if r['sequence_name']=='primary'}
+        assert baseline['bad']['C0'] and not baseline['bad']['R1'],'Qualification reproduction drift'
+        assert baseline['full']['R1'] and baseline['good']['R1'],'Full donor sanity failed'
+        assert baseline['full']['step_texts']==baseline['good']['step_texts'],'Full donor trajectory mismatch'
+        for name in ('noop','self','global_a0'):
+            assert baseline[name]['C0']==baseline['bad']['C0'] and baseline[name]['R1']==baseline['bad']['R1'] and baseline[name]['current_prediction']==baseline['bad']['current_prediction']
         opdata=dict(world_id=pair['world_id'],pair_id=pair['pair_id'],split=pair['split'],editor_seed=eng.task['editor_seed'],model=eng.name,**analyze(eng.ed,bad,good,mask,pair['operation']))
         jsonl(pp/'results.jsonl',outputs);jsonl(pp/'operator.jsonl',[opdata]);dump(done,dict(task_hash=eng.task['task_hash']))
         records.extend(outputs);operators.append(opdata)
