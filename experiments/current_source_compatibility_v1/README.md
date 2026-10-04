@@ -26,3 +26,22 @@ All GPU model loading, generation, training and evaluation are guarded by Slurm+
 Raw semantic score is the original finite evaluator; unknown wording is unresolved. Grammar includes controlled content completeness and is not an unrestricted English grammaticality judge. Prefix error fields separate known relative-state mismatch, missing/changed non-target content, unresolved relative state, completeness and termination. Overlapping categories are labelled as such. F/R never filter or replace errors. Full2 is the primary direct repair measure; method-dependent conditional denominators are descriptive and are not used alone for ranking.
 
 The eight legal five-operation paths are evaluated separately from exhaustive two-step tests; their initial-state/sequence distribution differs. Never compare their length2 versus exhaustive full2 without identifying that distinction. World-cluster bootstrap intervals describe the fixed models and exclude all training randomness. Always inspect all seeds and old T0-success losses, even when macro is stable.
+
+After all allocations finish, the CPU-only delivery sequence is:
+
+```bash
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/account.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/analyze.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/attribution.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/publish.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/report.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/interpret_results.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/error_report.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/plot_results.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/report.py
+.venv/bin/python .current-source-worktree/experiments/current_source_compatibility_v1/delivery_audit.py
+```
+
+Read the deterministic raw case selection before recording AGENT_READING; these execution-agent notes are not independent human labels. The final report incorporates the seven quantitative answers and error categories after those files exist. `quality_metrics.csv` labels `natural_rows`, `exhaustive_two_step`, and `long_paths` cohorts explicitly because the latter two have different denominators. The standalone PNG/PDF plot bands are ranges across three training seeds, not confidence intervals. Plot packages live only in ignored `local/plot_packages`; the training environment was not modified.
+
+Commands above describe this cluster workspace. A fresh checkout must provide the recorded backbone cache, original T0 checkpoints, compatible Python environment, and actual Slurm partition before GPU execution; the public indexes include exact hashes and lineage, and never authorize direct GPU execution on a login node.

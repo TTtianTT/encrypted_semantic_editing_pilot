@@ -31,7 +31,7 @@ def main():
           summaries.append(dict(seed=seed,condition=method,update=u,test=template_bin,source='natural',metric='atomic_macro',cohort='all',n=len(rs),k=sum(r['score']['success'] for r in rs),rate=macro,denominator=len(rs)))
           individual[(seed,method,u,template_bin,'natural','atomic_macro','all')]={r['id']:(r['world_id'],int(r['score']['success'])) for r in rs}
           for (state,op),group in cells.items():natural_rows.append(dict(seed=seed,condition=method,update=u,test=template_bin,state=state,operation=op,n=len(group),success=sum(r['score']['success'] for r in group),rate=percent([r['score']['success'] for r in group])))
-          quality.append(dict(seed=seed,condition=method,update=u,test=template_bin,source='natural',step=1,n=len(rs),**{k:percent([r['score'][k] for r in rs]) for k in ('success','target','preserved','parseable','grammar','ended')}))
+          quality.append(dict(seed=seed,condition=method,update=u,test=template_bin,source='natural',cohort='natural_rows',step=1,n=len(rs),**{k:percent([r['score'][k] for r in rs]) for k in ('success','target','preserved','parseable','grammar','ended')}))
           if file=='old_natural':
             for (state,op),group in cells.items():
               lost=[r['id'] for r in group if old[r['id']]['score']['success'] and not r['score']['success']];repaired=[r['id'] for r in group if not old[r['id']]['score']['success'] and r['score']['success']]
@@ -40,7 +40,7 @@ def main():
           rs=rows(folder/f'continuation_{source}.jsonl');validate(rs);audited+=len(rs)
           for t,label in ((0,'iid'),(2,'ood')):
             group=[r for r in rs if r['template']==t]
-            quality.append(dict(seed=seed,condition=method,update=u,test=label,source=source,step=2,n=len(group),**{k:percent([r['score'][k] for r in group]) for k in ('success','target','preserved','parseable','grammar','ended')}))
+            quality.append(dict(seed=seed,condition=method,update=u,test=label,source=source,cohort='exhaustive_two_step',step=2,n=len(group),**{k:percent([r['score'][k] for r in group]) for k in ('success','target','preserved','parseable','grammar','ended')}))
             legalcells=collections.defaultdict(list)
             for r in group:legalcells[(r['initial_state'],r['a'],r['current_state'],r['b'],r['target_state'])].append(r)
             for key,cell in sorted(legalcells.items()):
@@ -67,7 +67,7 @@ def main():
           for mode in ('latent','gold_reencode','actual_reencode'):
             for step in range(1,6):
               allgroup=[r for r in trajectory if r['template']==t and r['method']==mode and r['step']==step]
-              quality.append(dict(seed=seed,condition=method,update=u,test=label,source=mode,step=step,n=len(allgroup),**{k:percent([r['score'][k] for r in allgroup]) for k in ('success','target','preserved','parseable','grammar','ended')}))
+              quality.append(dict(seed=seed,condition=method,update=u,test=label,source=mode,cohort='long_paths',step=step,n=len(allgroup),**{k:percent([r['score'][k] for r in allgroup]) for k in ('success','target','preserved','parseable','grammar','ended')}))
               sequences=collections.defaultdict(list)
               for r in allgroup:sequences[(r['initial_state'],tuple(r['operations']))].append(r)
               for (initial,ops),ss in sorted(sequences.items()):

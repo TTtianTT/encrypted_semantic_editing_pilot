@@ -1,6 +1,6 @@
 {
   "reviewer": "execution agent reading raw English predictions, not independent human annotation",
-  "stage": "T0 preflight",
+  "stage": "T0 and partial formal raw-reading audit; other seeds pending",
   "samples": [
     {
       "seed": 42,
@@ -21,5 +21,39 @@
       "assessment": "current correctly expresses r=-2, next fails to move relative date; book/status completed/color green/count3 remain intact"
     }
   ],
-  "at_utc": "2026-10-04T06:48:21.745953+00:00"
+  "at_utc": "2026-10-04T06:48:21.745953+00:00",
+  "formal_samples_seed42": [
+    {
+      "category": "correct_prefix_failed_next",
+      "condition": "N",
+      "id": "time_0120_t0_s-1_aminus_bplus",
+      "assessment": "r=-1 to0 to-1: first correctly today; next remains today instead of yesterday; book/status completed/green/3 preserved"
+    },
+    {
+      "category": "two_steps_correct_later_failed",
+      "condition": "N",
+      "id": "time_0120_t0_path2",
+      "assessment": "minus chain starts -3; first -2 and second -1 correct; third expected today but emits two days ago and omits status/color/count; fourth and fifth become short fragments"
+    },
+    {
+      "category": "bad_prefix_endpoint_recovery",
+      "condition": "F",
+      "id": "time_0120_t2_s-2_aminus_bplus",
+      "assessment": "first expected one day before anchor but emits three days before; second emits correct two days before; endpoint succeeds while full2 must fail"
+    },
+    {
+      "category": "paired_correct_prefix_loss",
+      "contrast": "R-F",
+      "source": "fixed_T0",
+      "id": "time_0120_t0_s-1_aplus_bplus",
+      "assessment": "same T0 first text two days ago; F correctly continues to three days ago while R remains two days ago; retained non-target facts"
+    },
+    {
+      "category": "paired_correct_prefix_gain",
+      "contrast": "R-F",
+      "source": "U",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "same U first text today; R correctly continues tomorrow while F stays today; retained non-target facts"
+    }
+  ]
 }

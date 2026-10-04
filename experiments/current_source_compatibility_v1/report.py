@@ -53,9 +53,17 @@ def main():
       '收益归属：训练刷新表及测试前缀分项区分正确前缀续步与失败前缀端点恢复；已知错误relative、内容缺失及评分未定另列。恢复错误/未定前缀不支持当前正确续步被修复的解释。',
       'GPU开销：每个seed的源刷新pipeline及optimizer时间见RESOURCE_USAGE。刷新时间包含新编码、前缀调用、质量解码与缓存I/O，额外分配GPU时间如实记录；累计allocation包括技术失败和恢复。'
     ]
-    lines+=['','## 七个研究问题','']+[f'{i}. {s}' for i,s in enumerate(answers,1)]+['','观察仅限于本模型、数据、rank16双头编辑器和200更新设置。即使R有帮助也不证明来源滞后是唯一失败机制。没有追加领域、probe、范围挑战或超参数搜索。','',f"累计{resource['gpu_hours']:.6f} allocation GPUh，本项目峰值{resource['peak_project_gpus']}，本轮开始后账号峰值{resource['peak_account_gpus_since_first_allocation']}。未完成列表见ANALYSIS_AUDIT。"]
+    if complete and (ROOT/'RESEARCH_ANSWERS.md').exists():
+      lines+=['', (ROOT/'RESEARCH_ANSWERS.md').read_text().replace('# 七个研究问题的定量回答', '## 七个研究问题的定量回答', 1)]
+    else:
+      lines+=['','## 七个研究问题','']+[f'{i}. {s}' for i,s in enumerate(answers,1)]
+    if (ROOT/'FIGURE_AUDIT.json').exists():
+      lines+=['','![纯latent完整轨迹与endpoint；三个seed均值及范围](figures/latent_length_transfer.png)']
+    lines+=['','观察仅限于本模型、数据、rank16双头编辑器和200更新设置。即使R有帮助也不证明来源滞后是唯一失败机制。没有追加领域、probe、范围挑战或超参数搜索。','',f"累计{resource['gpu_hours']:.6f} allocation GPUh，本项目峰值{resource['peak_project_gpus']}，本轮开始后账号峰值{resource['peak_account_gpus_since_first_allocation']}。未完成列表见ANALYSIS_AUDIT。"]
     (ROOT/'RESULTS.md').write_text('\n\n'.join(lines)+'\n')
-    (ROOT/'ERROR_ANALYSIS.md').write_text('# 错误分析\n\n逐例输出、解析槽位、target/preserved/ended及受控grammar均保留。未知表达不自动裁定语义错误，controlled grammar包含完整性，不是一般英文语法判断。\n\n训练来源：prefix_quality给每次刷新唯一前缀、全池加权及实际监督draws的质量，错误输入未删改。测试错误前缀端点恢复与正确前缀条件成功分开；只有full2/完整长链才要求所有前步均成功。repair_attribution.csv给配对差值分解；更新后共同正确前缀分层是描述性的，不用于重新筛选主结果。\n\n旧能力损失ID及状态/操作在old_capability_changes；首次失败分布在first_failure；固定诊断集不随方法重新筛选。ERROR_CASES、CASE_SELECTION与AGENT_READING记录固定选择及执行代理对原始文本的逐例阅读，不冒充独立人工标注。\n\n技术失败见ENGINEERING_EVENTS、failure.json和Slurm日志，不作为语义成功率0。初次smoke2739导入失败，2740恢复验证通过；首轮preflight归档复验混入dev及其他条件，限定原始P/test后恢复，已完成GPU预测不变。\n')
+    error_text='# 错误分析\n\n逐例输出、解析槽位、target/preserved/ended及受控grammar均保留。未知表达不自动裁定语义错误，controlled grammar包含完整性，不是一般英文语法判断。\n\n训练来源：prefix_quality给每次刷新唯一前缀、全池加权及实际监督draws的质量，错误输入未删改。测试错误前缀端点恢复与正确前缀条件成功分开；只有full2/完整长链才要求所有前步均成功。repair_attribution.csv给配对差值分解；更新后共同正确前缀分层是描述性的，不用于重新筛选主结果。\n\n旧能力损失ID及状态/操作在old_capability_changes；首次失败分布在first_failure；固定诊断集不随方法重新筛选。ERROR_CASES、CASE_SELECTION与AGENT_READING记录固定选择及执行代理对原始文本的逐例阅读，不冒充独立人工标注。\n\n技术失败见ENGINEERING_EVENTS、failure.json和Slurm日志，不作为语义成功率0。初次smoke2739导入失败，2740恢复验证通过；首轮preflight归档复验混入dev及其他条件，限定原始P/test后恢复，已完成GPU预测不变。\n'
+    if (ROOT/'ERROR_DETAIL.md').exists():error_text+='\n'+(ROOT/'ERROR_DETAIL.md').read_text()
+    (ROOT/'ERROR_ANALYSIS.md').write_text(error_text)
     costs=[]
     for seed in (42,43,44):
       for method in ('N','F','R'):
