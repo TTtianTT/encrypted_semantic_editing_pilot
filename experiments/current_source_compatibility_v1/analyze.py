@@ -16,7 +16,7 @@ def boot(worlds):
     values=np.sort(np.array([worlds[k] for k in keys])[draws].mean(axis=1))
     return float(values[int(.025*len(values))]),float(values[int(.975*len(values))])
 def main():
-    verify_lock();summaries=[];natural_rows=[];failure_rows=[];contrasts=[];individual={};regressions=[];prefix=[];audited=0;pending=[]
+    verify_lock();summaries=[];natural_rows=[];failure_rows=[];contrasts=[];individual={};regressions=[];prefix=[];audited=0;pending=[];quality=[];continuation_cells=[];sequence_rows=[]
     for seed in (42,43,44):
       baseline=ROOT/f'runs/preflight/s{seed}/T0'
       if not (baseline/'complete.json').exists():pending.append(dict(seed=seed,stage='T0 evaluation'));continue
@@ -31,6 +31,7 @@ def main():
           summaries.append(dict(seed=seed,condition=method,update=u,test=template_bin,source='natural',metric='atomic_macro',cohort='all',n=len(rs),k=sum(r['score']['success'] for r in rs),rate=macro,denominator=len(rs)))
           individual[(seed,method,u,template_bin,'natural','atomic_macro','all')]={r['id']:(r['world_id'],int(r['score']['success'])) for r in rs}
           for (state,op),group in cells.items():natural_rows.append(dict(seed=seed,condition=method,update=u,test=template_bin,state=state,operation=op,n=len(group),success=sum(r['score']['success'] for r in group),rate=percent([r['score']['success'] for r in group])))
+          quality.append(dict(seed=seed,condition=method,update=u,test=template_bin,source='natural',step=1,n=len(rs),**{k:percent([r['score'][k] for r in rs]) for k in ('success','target','preserved','parseable','grammar','ended')}))
           if file=='old_natural':
             for (state,op),group in cells.items():
               lost=[r['id'] for r in group if old[r['id']]['score']['success'] and not r['score']['success']];repaired=[r['id'] for r in group if not old[r['id']]['score']['success'] and r['score']['success']]
@@ -39,6 +40,12 @@ def main():
           rs=rows(folder/f'continuation_{source}.jsonl');validate(rs);audited+=len(rs)
           for t,label in ((0,'iid'),(2,'ood')):
             group=[r for r in rs if r['template']==t]
+            quality.append(dict(seed=seed,condition=method,update=u,test=label,source=source,step=2,n=len(group),**{k:percent([r['score'][k] for r in group]) for k in ('success','target','preserved','parseable','grammar','ended')}))
+            legalcells=collections.defaultdict(list)
+            for r in group:legalcells[(r['initial_state'],r['a'],r['current_state'],r['b'],r['target_state'])].append(r)
+            for key,cell in sorted(legalcells.items()):
+              first=sum(r['first_success'] for r in cell);full=sum(r['full2'] for r in cell)
+              continuation_cells.append(dict(seed=seed,condition=method,update=u,test=label,source=source,initial_state=key[0],a=key[1],current_state=key[2],b=key[3],target_state=key[4],n=len(cell),first=first,endpoint2=sum(r['score']['success'] for r in cell),full2=full,conditional_next=None if first==0 else full/first))
             for cohortname,selected in (('all',group),('fixed_diagnostic',[r for r in group if cohort[r['id']]])):
               for metric in ('first','endpoint2','full2','conditional_next','failed_prefix_endpoint_recovery','known_wrong_relative_recovery','unresolved_prefix_endpoint_recovery'):
                 ss=selected
@@ -58,6 +65,13 @@ def main():
         validate(trajectory);audited+=len(trajectory)
         for t,label in ((0,'iid'),(2,'ood')):
           for mode in ('latent','gold_reencode','actual_reencode'):
+            for step in range(1,6):
+              allgroup=[r for r in trajectory if r['template']==t and r['method']==mode and r['step']==step]
+              quality.append(dict(seed=seed,condition=method,update=u,test=label,source=mode,step=step,n=len(allgroup),**{k:percent([r['score'][k] for r in allgroup]) for k in ('success','target','preserved','parseable','grammar','ended')}))
+              sequences=collections.defaultdict(list)
+              for r in allgroup:sequences[(r['initial_state'],tuple(r['operations']))].append(r)
+              for (initial,ops),ss in sorted(sequences.items()):
+                sequence_rows.append(dict(seed=seed,condition=method,update=u,test=label,source=mode,initial_state=initial,operations=json.dumps(ops),step=step,n=len(ss),endpoint=sum(r['score']['success'] for r in ss),full=sum(r['full_success'] for r in ss)))
             for family in ('all','monotone','alternating','boundary_alternating'):
               for step in range(1,6):
                 group=[r for r in trajectory if r['template']==t and r['method']==mode and r['step']==step and (family=='all' or r['family']==family)]
@@ -90,6 +104,7 @@ def main():
       averaged={w:statistics.mean(v) for w,v in worlds.items()};low,high=boot(averaged)
       contrasts.append(dict(seed=seed,contrast=m+'-'+left_method,update=u,test=test,source=source,metric=metric,cohort=cohort,n=len(right),worlds=len(worlds),delta_pp=100*statistics.mean(averaged.values()),ci_low_pp=100*low,ci_high_pp=100*high))
     writecsv(ROOT/'summary_by_seed.csv',summaries);writecsv(ROOT/'natural_cells.csv',natural_rows);writecsv(ROOT/'first_failure.csv',failure_rows);writecsv(ROOT/'old_capability_changes.csv',regressions);writecsv(ROOT/'paired_contrasts.csv',contrasts);writecsv(ROOT/'prefix_quality.csv',prefix)
+    writecsv(ROOT/'quality_metrics.csv',quality);writecsv(ROOT/'continuation_cells.csv',continuation_cells);writecsv(ROOT/'sequence_metrics.csv',sequence_rows)
     grouped=collections.defaultdict(list)
     for r in summaries:
       if r['rate'] is not None:grouped[tuple(r[k] for k in ('condition','update','test','source','metric','cohort'))].append(r)
