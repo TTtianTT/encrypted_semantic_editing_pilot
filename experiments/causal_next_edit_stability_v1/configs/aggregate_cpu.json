@@ -1,0 +1,21 @@
+{
+  "stage": "aggregate_cpu",
+  "partition": "defq",
+  "gpus": 0,
+  "walltime": "00:30:00",
+  "walltime_hours": 0.5,
+  "prerequisites": [
+    {
+      "path": "local/test_bart/bart_s42/complete.json"
+    },
+    {
+      "path": "local/test_bart/bart_s43/complete.json"
+    },
+    {
+      "path": "local/test_bart/bart_s44/complete.json"
+    }
+  ],
+  "input_hashes": {
+    "results/final_test_lock.json": "5d6f8bf9bfc5bf139e73b749d5206ddc835b6e609b550324ece19a39dc5aea7c"
+  }
+}

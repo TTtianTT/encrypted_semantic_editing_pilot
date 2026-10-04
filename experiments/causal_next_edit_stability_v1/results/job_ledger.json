@@ -431,34 +431,124 @@
       "job_id": "2835",
       "gpus_per_task": 1,
       "concurrency": 2,
-      "terminal": false,
+      "terminal": true,
       "allocations": [
         {
           "job_id": "2836",
           "array_id": "2835_0",
-          "state": "RUNNING",
+          "state": "COMPLETED",
           "exit_code": "0:0",
-          "elapsed_seconds": 38,
+          "elapsed_seconds": 39,
           "gpus": 1,
           "start": "2026-10-05T01:20:59",
-          "end": "Unknown",
+          "end": "2026-10-05T01:21:38",
           "limit_minutes": 15
         },
         {
           "job_id": "2835",
           "array_id": "2835_1",
-          "state": "RUNNING",
+          "state": "COMPLETED",
           "exit_code": "0:0",
-          "elapsed_seconds": 37,
+          "elapsed_seconds": 43,
           "gpus": 1,
           "start": "2026-10-05T01:21:00",
-          "end": "Unknown",
+          "end": "2026-10-05T01:21:43",
           "limit_minutes": 15
+        }
+      ]
+    },
+    {
+      "stage": "test_bart",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/test_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-test_bart",
+        "--array=0,1,2%2",
+        "--time=01:00:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 5.0,
+      "time": "2026-10-05T01:22:57.426973",
+      "job_id": "2837",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": false,
+      "allocations": [
+        {
+          "job_id": "2838",
+          "array_id": "2837_0",
+          "state": "RUNNING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 661,
+          "gpus": 1,
+          "start": "2026-10-05T01:22:58",
+          "end": "Unknown",
+          "limit_minutes": 60
+        },
+        {
+          "job_id": "2839",
+          "array_id": "2837_1",
+          "state": "RUNNING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 661,
+          "gpus": 1,
+          "start": "2026-10-05T01:22:58",
+          "end": "Unknown",
+          "limit_minutes": 60
+        },
+        {
+          "job_id": "2837",
+          "array_id": "2837_2",
+          "state": "PENDING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 0,
+          "gpus": 0,
+          "start": "Unknown",
+          "end": "Unknown",
+          "limit_minutes": 180
+        }
+      ],
+      "resource_only_walltime_overrides": [
+        {
+          "time": "2026-10-05T01:30:23.746137",
+          "requested_walltime": "03:00:00",
+          "conservative_reserved_gpu_hours": 9.0,
+          "reason": "Observed generation throughput requires more allocation time; scientific configuration and seeds unchanged",
+          "command": [
+            "scontrol",
+            "update",
+            "JobId=2837",
+            "TimeLimit=03:00:00"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "2837_0-1: Access/permission denied\n",
+          "observed_child_limit_minutes": {
+            "2837_0": 60,
+            "2837_1": 60,
+            "2837_2": 180
+          }
         }
       ]
     }
   ],
-  "gpu_hours": 2.1550000000000002,
+  "gpu_hours": 2.524166666666667,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -571,10 +661,26 @@
       "task": "1",
       "time": "2026-10-05T01:21:10.190979",
       "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2838",
+      "parent": "2837",
+      "task": "0",
+      "time": "2026-10-05T01:23:04.946456",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2839",
+      "parent": "2837",
+      "task": "1",
+      "time": "2026-10-05T01:23:04.966016",
+      "visible": "0"
     }
   ],
   "maximum_concurrent_gpus": 2,
-  "updated_at": "2026-10-05T01:21:37.457968",
+  "updated_at": "2026-10-05T01:33:59.136659",
   "squeue_samples": [
     {
       "time": "2026-10-04T22:33:52.642760",
@@ -641,6 +747,34 @@
       "rows": [
         "2835_1|cesv1-fit_bart|gres/gpu:1|RUNNING",
         "2835_0|cesv1-fit_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:22:57.410814",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T01:25:48.060739",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:30:23.737910",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:33:59.142973",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
       ]
     }
   ]
