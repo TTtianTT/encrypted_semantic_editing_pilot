@@ -1,0 +1,95 @@
+{
+  "at_utc": "2026-10-04T06:13:37.848727+00:00",
+  "gpu_hours": 0.6225,
+  "peak_project_gpus": 2,
+  "peak_account_gpus_since_first_allocation": 2,
+  "allocation_attempts": 5,
+  "records": [
+    {
+      "JobIDRaw": "2739",
+      "JobID": "2739_0",
+      "JobName": "csc-v1-smoke",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "Start": "2026-10-04T02:50:39",
+      "End": "2026-10-04T02:51:27",
+      "ElapsedRaw": "48",
+      "AllocTRES": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "node02"
+    },
+    {
+      "JobIDRaw": "2740",
+      "JobID": "2740_0",
+      "JobName": "csc-v1-smoke",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Start": "2026-10-04T02:54:43",
+      "End": "2026-10-04T02:56:59",
+      "ElapsedRaw": "136",
+      "AllocTRES": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "node02"
+    },
+    {
+      "JobIDRaw": "2796",
+      "JobID": "2795_0",
+      "JobName": "csc-v1-preflight",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Start": "2026-10-04T13:56:28",
+      "End": "Unknown",
+      "ElapsedRaw": "1029",
+      "AllocTRES": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "node01"
+    },
+    {
+      "JobIDRaw": "2797",
+      "JobID": "2795_1",
+      "JobName": "csc-v1-preflight",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Start": "2026-10-04T13:56:29",
+      "End": "Unknown",
+      "ElapsedRaw": "1028",
+      "AllocTRES": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "node01"
+    },
+    {
+      "JobIDRaw": "2795",
+      "JobID": "2795_2",
+      "JobName": "csc-v1-preflight",
+      "State": "PENDING",
+      "ExitCode": "0:0",
+      "Start": "Unknown",
+      "End": "Unknown",
+      "ElapsedRaw": "0",
+      "AllocTRES": "",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "None assigned"
+    }
+  ],
+  "failures": [
+    {
+      "JobIDRaw": "2739",
+      "JobID": "2739_0",
+      "JobName": "csc-v1-smoke",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "Start": "2026-10-04T02:50:39",
+      "End": "2026-10-04T02:51:27",
+      "ElapsedRaw": "48",
+      "AllocTRES": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "ReqTRES": "billing=4,cpu=4,gres/gpu=1,mem=64G,node=1",
+      "Partition": "B300q",
+      "NodeList": "node02"
+    }
+  ]
+}

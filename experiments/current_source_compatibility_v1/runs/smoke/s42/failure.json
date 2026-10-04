@@ -1,0 +1,22 @@
+{
+  "phase": "smoke",
+  "seed": 42,
+  "error": "ImportError",
+  "message": "cannot import name 'schedule' from 'prepare' (/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/four_domain_state_coverage_v1/prepare.py)",
+  "traceback": "Traceback (most recent call last):\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/worker.py\", line 73, in main\n    if a.phase=='smoke':smoke(eng)\n                        ^^^^^^^^^^\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/worker.py\", line 36, in smoke\n    for method in ('N','F'):train_condition(eng,42,method,stop=2,folder=folder/method,smoke=True)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/engine.py\", line 96, in train_condition\n    from prepare import schedule\nImportError: cannot import name 'schedule' from 'prepare' (/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/four_domain_state_coverage_v1/prepare.py)\n",
+  "at_utc": "2026-10-03T18:51:26.000312+00:00",
+  "resources": {
+    "model": "t5gemma",
+    "dimension": 2304,
+    "backbone_parameters": 5596853760,
+    "parameters_per_operator": 76032,
+    "total_editor_parameters": 152064,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 11195806720,
+    "wall_seconds": 22.32791805593297,
+    "job_id": "2739",
+    "step_id": "0"
+  }
+}

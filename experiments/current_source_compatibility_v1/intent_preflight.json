@@ -1,0 +1,21 @@
+{
+  "phase": "preflight",
+  "indices": [
+    0,
+    1,
+    2
+  ],
+  "pre_account_squeue": "",
+  "all_account_GPU_dependencies": [],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--job-name=csc-v1-preflight",
+    "--array=0,1,2%2",
+    "--time=12:00:00",
+    "experiments/current_source_compatibility_v1/job.slurm",
+    "preflight"
+  ],
+  "created_utc": "2026-10-04T05:56:28.815571+00:00"
+}

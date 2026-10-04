@@ -1,0 +1,19 @@
+{
+  "phase": "smoke",
+  "indices": [
+    0
+  ],
+  "pre_account_squeue": "",
+  "all_account_GPU_dependencies": [],
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--job-name=csc-v1-smoke",
+    "--array=0%1",
+    "--time=01:00:00",
+    "experiments/current_source_compatibility_v1/job.slurm",
+    "smoke"
+  ],
+  "created_utc": "2026-10-03T18:54:43.733780+00:00"
+}

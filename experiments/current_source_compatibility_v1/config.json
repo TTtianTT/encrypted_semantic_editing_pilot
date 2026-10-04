@@ -1,0 +1,13 @@
+{
+  "model": "google/t5gemma-2b-2b-ul2-it",
+  "revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+  "seeds": [42,43,44], "rank":16, "updates":200,
+  "effective_batch":8, "microbatch":2, "refresh_every":20,
+  "replay_units_per_update":4, "continuation_units_per_update":4,
+  "lr":0.001, "weight_decay":0.0, "clip":1.0,
+  "eval_updates":[0,100,200], "decode_batch":8,
+  "bootstrap_replicates":2000, "bootstrap_seed":20261003,
+  "retention_drop_limit_pp":2.0,
+  "slurm_partition":"B300q", "slurm_time":"12:00:00",
+  "cpus":4, "memory":"64G", "max_account_gpus":2
+}

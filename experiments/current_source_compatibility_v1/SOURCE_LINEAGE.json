@@ -1,0 +1,60 @@
+{
+  "reference_commit": "0b73738",
+  "sources": [
+    {
+      "seed": 42,
+      "U_seed": 43,
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/four_domain_state_coverage_v1/checkpoints/formal/t5gemma_time_s42/P.pt",
+      "sha256": "950b8f9930c958159d632336cf80273ab7ad6eb931203f3cd7af83ed8080de8a",
+      "old_checkpoint": {
+        "phase": "formal",
+        "run": "t5gemma_time_s42",
+        "role": "P",
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
+        "sha256": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 42,
+        "published_editor": "checkpoints/formal/t5gemma_time_s42/P.pt",
+        "published_sha": "950b8f9930c958159d632336cf80273ab7ad6eb931203f3cd7af83ed8080de8a",
+        "step": 600
+      }
+    },
+    {
+      "seed": 43,
+      "U_seed": 44,
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/four_domain_state_coverage_v1/checkpoints/formal/t5gemma_time_s43/P.pt",
+      "sha256": "1d78da601271d610e862650dfce01f1290ebc0233c585659a491e5979f34f145",
+      "old_checkpoint": {
+        "phase": "formal",
+        "run": "t5gemma_time_s43",
+        "role": "P",
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+        "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 43,
+        "published_editor": "checkpoints/formal/t5gemma_time_s43/P.pt",
+        "published_sha": "1d78da601271d610e862650dfce01f1290ebc0233c585659a491e5979f34f145",
+        "step": 600
+      }
+    },
+    {
+      "seed": 44,
+      "U_seed": 42,
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/four_domain_state_coverage_v1/checkpoints/formal/t5gemma_time_s44/P.pt",
+      "sha256": "7041cbca25efc24a287f44626946982ba56c432ae09579020bcf58a80efe1cea",
+      "old_checkpoint": {
+        "phase": "formal",
+        "run": "t5gemma_time_s44",
+        "role": "P",
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+        "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 44,
+        "published_editor": "checkpoints/formal/t5gemma_time_s44/P.pt",
+        "published_sha": "7041cbca25efc24a287f44626946982ba56c432ae09579020bcf58a80efe1cea",
+        "step": 600
+      }
+    }
+  ],
+  "source_rule": "U is the next seed original P, frozen; neither old supplement checkpoints nor offset-U is used"
+}
