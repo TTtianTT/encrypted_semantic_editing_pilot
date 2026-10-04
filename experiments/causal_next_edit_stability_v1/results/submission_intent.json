@@ -1,0 +1,29 @@
+{
+  "stage": "scan_bart",
+  "indices": [
+    0,
+    1,
+    2
+  ],
+  "manifest": "experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json",
+  "config": "experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=B300q",
+    "--gres=gpu:1",
+    "--job-name=cesv1-scan_bart",
+    "--array=0,1,2%2",
+    "--time=00:30:00",
+    "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+    "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json"
+  ],
+  "other_user_gpu_jobs": [],
+  "reserved_gpu_hours": 1.5,
+  "time": "2026-10-04T22:16:19.350679"
+}

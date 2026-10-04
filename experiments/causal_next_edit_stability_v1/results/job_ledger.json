@@ -1,0 +1,111 @@
+{
+  "cap_gpu_hours": 40,
+  "submissions": [
+    {
+      "stage": "smoke_bart",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/smoke_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/smoke_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-smoke_bart",
+        "--array=0%2",
+        "--time=00:15:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/smoke_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.25,
+      "time": "2026-10-04T22:11:54.610166",
+      "job_id": "2815",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2815",
+          "array_id": "2815_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 67,
+          "gpus": 1,
+          "start": "2026-10-04T22:11:55",
+          "end": "2026-10-04T22:13:02",
+          "limit_minutes": 15
+        }
+      ]
+    },
+    {
+      "stage": "scan_bart",
+      "indices": [
+        0,
+        1,
+        2
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-scan_bart",
+        "--array=0,1,2%2",
+        "--time=00:30:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/scan_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 1.5,
+      "time": "2026-10-04T22:16:19.350679",
+      "job_id": "2816",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": false
+    }
+  ],
+  "gpu_hours": 0.01861111111111111,
+  "runtime_events": [
+    {
+      "event": "worker_started",
+      "job_id": "2815",
+      "parent": "2815",
+      "task": "0",
+      "time": "2026-10-04T22:12:02.143568",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2818",
+      "parent": "2816",
+      "task": "1",
+      "time": "2026-10-04T22:16:25.360420",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2817",
+      "parent": "2816",
+      "task": "0",
+      "time": "2026-10-04T22:16:25.372276",
+      "visible": "0"
+    }
+  ],
+  "maximum_concurrent_gpus": 1,
+  "updated_at": "2026-10-04T22:16:19.336711"
+}

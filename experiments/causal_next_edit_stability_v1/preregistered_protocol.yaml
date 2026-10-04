@@ -1,0 +1,86 @@
+version: causal_next_edit_stability_v1
+date: '2026-10-04'
+base_commit: 0b73738cf552e1ec29aa7a5db1eb1ee703804b66
+scientific_status: pre-intervention lock; qualification-only S1 may determine availability
+models: [facebook/bart-base, google/t5gemma-2b-2b-ul2-it]
+editor_condition: P
+editor_seeds: [42, 43, 44]
+domain: time
+current_state: 0
+primary_operation: plus
+secondary_operation: minus
+templates: [0]
+template_axis: IID only; template OOD is not inferred from mechanism split
+candidate_worlds_per_model_seed: 256
+new_worlds: 200
+scan_ceiling: 500
+train_world_exclusion: all 96 original train worlds and every duplicate rendered core content
+world_split: sha256('cesv1-world-split-20261004:' + world_id)[0:8] mod 10; 0..3 discovery,4..5 validation,6..9 test
+target_qualified_worlds: {discovery: 80, validation: 40, test: 80}
+low_test_count: fewer than 40 independent worlds is exploratory
+history_priority: [E_from_future_plus, E_from_past_minus]
+source_priority_primary: [E→E, N→E, R→E]
+pair_rule: same world/content/current state, exact greedy current string, checkpoint/operator/operation/gold next state, current joint correct, donor next correct and recipient next fails, identical shape/valid positions/mask
+donor_selection: first qualifying fixed history ID; no margin or later trajectory selection
+max_pairs: one per world/source/operation; primary one plus pair/world in fixed source priority
+confidence_subset: {absolute_token_mean_NLL_difference_max_nat: 0.1, margin: null, reason: relative phrases have variable multi-token lengths; use named NLL-only subset}
+split_exposure: old dev/test labels retained; only new-world test is independent of prior studies
+alphas: [0, 0.25, 0.5, 1.0]
+ranks: [1, 4, 8, 16]
+candidate_methods: [local_source_relative_span, editor_read_subspace, editor_write_subspace, discovery_centered_pair_PCA]
+mandatory_controls: [bad, good, noop, self, full_donor, global_interpolation, matched_random, reverse_corruption]
+random_subspace_seeds: [61001, 61002, 61003, 61004, 61005, 61006, 61007, 61008]
+random_norm_match: valid-position Frobenius; projection norm floor 1e-7; max 5 resamples
+PCA_fit: discovery only; shared d by k basis per token; centered pair differences
+discovery_smoke: seed42 first 16 discovery pairs, never test interventions
+screening: all locked candidates and alphas on discovery; at most two method families shortlisted by discovery R1 then lower norm/rank/fixed name
+validation_selection: R1 then C0 then lower relative norm/rank/fixed name; maximum two distinct method families per model; no test-driven revisions
+validation_gate: {independent_worlds_min: 20, C0_min: 0.95, R1_over_random_mean_min_pp: 10, recovered_worlds_min: 2}
+primary_endpoint: R1 = current_joint_correct AND next_joint_correct
+secondary_endpoints: [current_exact_string, C0, C1, target_NLL, entropy, R3, R5, first_failure, reverse_current_damage, reverse_next_damage, operation_preservation]
+rollouts:
+  only_patch_at_t0: true
+  primary: [plus, minus, plus, minus, plus]
+  reordered: [plus, plus, minus, minus, plus]
+  gold: explicit original world-state transitions; never derived from model output
+  illegal: N/A, no saturation
+independent_test: only new-world test, maximum 80 qualified worlds/model/seed; one immutable intervention evaluation after all selection; old test rows are exposed exploratory secondary
+statistics:
+  seed_average: equal weights over available editor seeds, report each seed
+  bootstrap: 10000 world-cluster resamples; same world across all seeds/history/methods stays together; RNG2026100402
+  confidence_interval: percentile 2.5/97.5
+  primary_comparison: first locked local method minus its matched-random 8-seed mean on R1
+  auxiliary_test: 10000 two-sided world-level sign flips; requires paired difference exchangeability/symmetry, not an exact randomized-trial p-value
+  family: two primary model/time comparisons; Holm auxiliary p-values
+  secondary: R3/R5/source/confidence/exposed-old-test exploratory
+decoder_auxiliary:
+  gate_required: true
+  discovery_worlds: 32
+  fixed_gold_prefix: true
+  coarse_components: [cross_attention_output_before_residual, MLP_output_before_residual, block_output_residual]
+  maximum_fine_components: 3
+  mediator_source: repaired bad R, not unrestricted donor
+  controls: [B, R, R_mediator_B, B_mediator_R, R_offpath_B, good_reverse]
+  interpretation: readout repair; candidate causal mechanism, not unique complete circuit
+SAE:
+  status: optional; before any independent-test intervention reads
+  validation_gate_required: true
+  both_model_behavior_workflows_required: true
+  additional_requirement: simple subspaces fail to describe differences clearly
+  maximum_GPU_hours: 4
+  max_models: 1
+  max_positions: 1
+  seeds: [71001, 71002]
+  max_activation_tokens: 100000
+  dictionary_expansion: 4
+  max_selected_features: 8
+resources:
+  allocated_GPU_hours_cap: 40
+  maximum_global_experiment_GPUs: 2
+  single_active_stage_array: true
+  GPUs_per_task: 1
+  array_concurrency: 2
+  other_user_GPU_jobs: serial concurrency1; leave other jobs intact
+  accounting: Slurm allocation records only, failed/smoke/retry included; conservative full-walltime reservation before submit
+  GPU_execution: sbatch and srun, no login CUDA, preserve CUDA_VISIBLE_DEVICES
+negative_result_policy: retain fixed candidate pool/filters/metrics; no SAE escalation without gate; finish few locked independent-test methods and report NA/MISSING/BLOCKED honestly

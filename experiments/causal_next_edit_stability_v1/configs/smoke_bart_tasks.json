@@ -1,0 +1,22 @@
+{
+  "stage": "smoke_bart",
+  "config_hash": "ba4e950e9d9979fa073e9eb029d60a927ff4bf200778ce077eca03f7b7ac0d47",
+  "code_hash": "8428d42a4bc34480cbd4d887ec5a331868f3121cd341e980df82353d463baa4f",
+  "tasks": [
+    {
+      "stage": "smoke_bart",
+      "model": "bart",
+      "model_id": "facebook/bart-base",
+      "editor_seed": 42,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "ba4e950e9d9979fa073e9eb029d60a927ff4bf200778ce077eca03f7b7ac0d47",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/smoke_bart/bart_s42",
+      "task_hash": "7f88a01663be07fd0491ed2fbe811827202ed3c92a5e509afd6c70e64da5c972"
+    }
+  ]
+}

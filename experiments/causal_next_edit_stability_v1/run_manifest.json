@@ -1,0 +1,668 @@
+{
+  "run_id": "causal_next_edit_stability_v1",
+  "base_commit": "0b73738cf552e1ec29aa7a5db1eb1ee703804b66",
+  "reference": "0b73738",
+  "original_branch": "experiment/g12-matched-input-source-v1",
+  "original_status": "?? .causal-next-edit-stability-v1.lock\n?? .causal-next-edit-worktree/\n?? .current-source-worktree/\n?? .four-domain-worktree/\n?? .g13-worktree/\n?? .g14-worktree/\n?? .g15-worktree/\n?? .g16-worktree/\n?? .g17-worktree/\n?? experiments/decoder_basin_anisotropy_v1/g8-1787.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1788.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1790.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1791.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1792.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1793.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1794.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1795.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1796.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1797.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1798.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1799.out\n?? experiments/decoder_basin_anisotropy_v1/g8-1800.out\n?? experiments/decoder_basin_anisotropy_v1/pilot_extraction_bart.json\n?? experiments/decoder_basin_anisotropy_v1/pilot_extraction_t5gemma.json\n?? experiments/decoder_basin_anisotropy_v1/pilot_scan_bart.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_scan_t5gemma.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_states_bart.jsonl\n?? experiments/decoder_basin_anisotropy_v1/pilot_states_t5gemma.jsonl\n?? experiments/latent_reset_v1/slurm-1766.out\n?? experiments/repeated_intervention_stability_v1/bart-1773.out\n?? experiments/repeated_intervention_stability_v1/bart-1775.out\n?? experiments/repeated_intervention_stability_v1/bart-1777.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1774.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1776.out\n?? experiments/repeated_intervention_stability_v1/t5gemma-1778.out\n?? experiments/semantically_matched_editors_v1/\n?? experiments/t5gemma_composition_v1/editor_latest.pt\n?? experiments/t5gemma_composition_v1/evaluate-1771.out\n?? experiments/t5gemma_composition_v1/evaluate-1772.out\n?? experiments/t5gemma_composition_v1/preflight-1767.out\n?? experiments/t5gemma_composition_v1/preflight-1768.out\n?? experiments/t5gemma_composition_v1/preflight-1769.out\n?? experiments/t5gemma_composition_v1/train-1770.out\n?? models/t5gemma-s-s-ul2/\n",
+  "branches": "origin/experiment/algebraic-generalization-v1 ce0ef36599beb76f06824ef50783ea99c49d9910 Diagnose G3 length generalization and test structured repair\norigin/experiment/current-source-compatibility-v1 aea8310b2f1a239cdbf690a11cbdf646b19a2a4f Complete current-source compatibility study across three seeds with audited results\norigin/experiment/decoder-basin-anisotropy-v1 6aa1c05eae33d37fa413e906d28fe72e5796e71d Add G8 decoder basin anisotropy diagnosis for BART and T5Gemma\norigin/experiment/four-domain-state-coverage-v1 0b73738cf552e1ec29aa7a5db1eb1ee703804b66 Complete four-domain experiments and publish final audited evidence\norigin/experiment/g10-matched-editor-composability-v1 b07abb4244415fea501cdb064bd9137a4db04587 Add G10 matched editor composability study\norigin/experiment/g11-semantic-history-v1 0d9da457d8e8362064200ea1d53ecde5793134b9 Add G11 matched semantic-history continuation and crossover results\norigin/experiment/g12-matched-input-source-v1 389bb85160df6311cc866fc573f73a24b3d87a09 Add G12 matched input-source continuation experiment and results\norigin/experiment/g13-source-overfit-audit-v1 c124e8c91a5b379725e17ef89937f4cf9da82301 Add G13 frozen-source overfit audit with three-seed Slurm results\norigin/experiment/g14-matched-state-handoff-v1 c82b5bfeea166edf0516f24e6e01abd3068b0912 Add G14 frozen matched-today producer-receiver diagnostic and three-seed results\norigin/experiment/g15-self-state-transfer-v1 155cd8793d2f83d21c0f567e45073d845753ad6f G15: audit self-state repair and held-out producer transfer\norigin/experiment/g16-capability-preserving-transfer-v1 92fe27beca7053d82074e16c2a0d7f4c87594d0e Run G16 fixed-source transfer replication with immutable dev selection\norigin/experiment/g17-state-source-transfer-v1 9ef92dbd0cf44f7bb41ba7756a36a01ebd7ee56b Evaluate G17 frozen state-source transfer boundaries\norigin/experiment/joint-reference-editor-v1 529fb6b671ecd185323dbac6b9012862368c080f Evaluate joint low-rank time and perspective editors on frozen T5Gemma IT\norigin/experiment/latent-reset-v1 83482e3a9014cfd09e1f44ec2a636eb500f54811 Add G6 learned latent reset experiment and negative result\norigin/experiment/projection-hypothesis-v1 489fc71de4b5e03cc806d1390ad71355fd197311 Test decode-reencode reset on G3 five-step chains\norigin/experiment/reference-frame-cross-backbone-v1 bc5087483b5c3d2476d615d8e9452b0f54bd289c Add cross-backbone reference-frame pilot with paired trajectory evaluation\norigin/experiment/repeated-intervention-stability-v1 4dbe8485a09db9c4a04e4f8344e4cac7adc61cb2 G7 diagnose repeated latent intervention stability across BART and T5Gemma\norigin/experiment/t5gemma-composition-v1 89d3108822d3f54540c8db79c7288df873cbbb77 Replicate latent composition and re-encoding reset on T5Gemma\norigin/main e1ec57b01a6aa8d3ddb2235b1e85c140b1911583 Add G3 stage supervision pilot with paired trajectory evaluation\n",
+  "python": "3.12.3 (main, Nov  6 2024, 18:32:19) [GCC 13.2.0]",
+  "python_executable": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.16.1",
+  "cuda_build": "12.8",
+  "dependencies": [
+    "accelerate==1.14.0",
+    "agent-detector==2.0.0",
+    "aiohappyeyeballs==2.7.1",
+    "aiohttp==3.14.3",
+    "aiosignal==1.4.0",
+    "annotated-doc==0.0.5",
+    "annotated-types==0.8.0",
+    "anthropic==1.4.0",
+    "anyio==4.15.1",
+    "apache-tvm-ffi==0.1.9",
+    "astor==0.8.1",
+    "attrs==26.1.0",
+    "blake3==1.0.9",
+    "blis==1.3.3",
+    "cachetools==7.1.8",
+    "catalogue==2.0.10",
+    "cbor2==6.1.4",
+    "certifi==2026.7.22",
+    "cffi==2.1.1",
+    "charset-normalizer==3.5.1",
+    "click==8.5.0",
+    "cloudpathlib==0.25.0",
+    "cloudpickle==3.1.2",
+    "colorama==0.4.6",
+    "compressed-tensors==0.17.0",
+    "confection==1.3.3",
+    "cryptography==50.0.1",
+    "cuda-bindings==12.9.7",
+    "cuda-pathfinder==1.6.0",
+    "cuda-python==12.9.7",
+    "cuda-tile==1.3.0",
+    "cuda-toolkit==12.8.1",
+    "cymem==2.0.13",
+    "datasets==5.0.1",
+    "depyf==0.20.0",
+    "detect-installer==0.2.1",
+    "dill==0.4.1",
+    "diskcache==5.6.3",
+    "dnspython==2.8.0",
+    "docstring_parser==0.18.0",
+    "einops==0.8.2",
+    "email-validator==2.3.0",
+    "en_core_web_sm @ file:///dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85",
+    "fastapi==0.136.3",
+    "fastapi-cli==0.0.32",
+    "fastapi-cloud-cli==0.25.0",
+    "fastar==0.12.0",
+    "fastsafetensors==0.4.0",
+    "filelock==3.32.3",
+    "fire==0.7.1",
+    "flashinfer-cubin==0.6.13",
+    "flashinfer-python==0.6.13",
+    "frozenlist==1.8.0",
+    "fsspec==2026.6.0",
+    "googleapis-common-protos==1.75.3",
+    "grpcio==1.83.1",
+    "h11==0.16.0",
+    "hf-xet==1.6.0",
+    "httpcore==1.0.9",
+    "httpcore2==2.12.0",
+    "httptools==0.8.0",
+    "httpx==0.28.1",
+    "httpx2==2.12.0",
+    "huggingface_hub==1.30.0",
+    "human-eval==1.0.3",
+    "humming-kernels==0.1.10",
+    "idna==3.20",
+    "ijson==3.5.1",
+    "iniconfig==2.3.0",
+    "interegular==0.3.3",
+    "Jinja2==3.1.6",
+    "jiter==0.16.0",
+    "jmespath==1.1.0",
+    "joblib==1.6.0",
+    "jsonschema==4.26.0",
+    "jsonschema-specifications==2025.9.1",
+    "lark==1.2.2",
+    "llguidance==1.7.6",
+    "llvmlite==0.47.0",
+    "lm-format-enforcer==0.11.3",
+    "loguru==0.7.3",
+    "lxml==6.1.3",
+    "markdown-it-py==4.2.0",
+    "MarkupSafe==3.0.3",
+    "mcp==2.2.0",
+    "mcp-types==2.2.0",
+    "mdurl==0.1.2",
+    "mistral_common==1.11.7",
+    "ml_dtypes==0.6.0",
+    "model-hosting-container-standards==0.1.16",
+    "mpmath==1.3.0",
+    "msgspec==0.21.1",
+    "multidict==6.7.1",
+    "multiprocess==0.70.19",
+    "murmurhash==1.0.15",
+    "narwhals==2.26.0",
+    "networkx==3.6.1",
+    "ninja==1.13.2",
+    "numba==0.65.0",
+    "numpy==2.5.3",
+    "nvidia-cublas-cu12==12.8.4.1",
+    "nvidia-cuda-cccl==13.3.3.4.1",
+    "nvidia-cuda-crt==13.3.73",
+    "nvidia-cuda-cupti-cu12==12.8.90",
+    "nvidia-cuda-nvcc==13.2.86",
+    "nvidia-cuda-nvrtc==13.3.33",
+    "nvidia-cuda-nvrtc-cu12==12.8.93",
+    "nvidia-cuda-runtime==13.3.29",
+    "nvidia-cuda-runtime-cu12==12.8.90",
+    "nvidia-cuda-tileiras==13.2.86",
+    "nvidia-cudnn-cu12==9.19.0.56",
+    "nvidia-cudnn-frontend==1.28.0",
+    "nvidia-cufft-cu12==11.3.3.83",
+    "nvidia-cufile-cu12==1.13.1.3",
+    "nvidia-curand-cu12==10.3.9.90",
+    "nvidia-cusolver-cu12==11.7.3.90",
+    "nvidia-cusparse-cu12==12.5.8.93",
+    "nvidia-cusparselt-cu12==0.7.1",
+    "nvidia-cutlass-dsl==4.5.2",
+    "nvidia-cutlass-dsl-libs-base==4.5.2",
+    "nvidia-cutlass-dsl-libs-cu13==4.5.2",
+    "nvidia-ml-py==13.610.43",
+    "nvidia-nccl-cu12==2.28.9",
+    "nvidia-nvjitlink==13.3.33",
+    "nvidia-nvjitlink-cu12==12.8.93",
+    "nvidia-nvshmem-cu12==3.4.5",
+    "nvidia-nvtx-cu12==12.8.90",
+    "nvidia-nvvm==13.2.86",
+    "nvtx==0.2.15",
+    "openai==3.8.0",
+    "openai-harmony==0.0.8",
+    "opencv-python-headless==5.0.0.93",
+    "opentelemetry-api==1.44.0",
+    "opentelemetry-exporter-otlp==1.44.0",
+    "opentelemetry-exporter-otlp-proto-common==1.44.0",
+    "opentelemetry-exporter-otlp-proto-grpc==1.44.0",
+    "opentelemetry-exporter-otlp-proto-http==1.44.0",
+    "opentelemetry-proto==1.44.0",
+    "opentelemetry-sdk==1.44.0",
+    "opentelemetry-semantic-conventions==0.65b0",
+    "opentelemetry-semantic-conventions-ai==0.5.1",
+    "outlines_core==0.2.14",
+    "packaging==26.3",
+    "pandas==3.0.5",
+    "partial-json-parser==0.2.1.1.post7",
+    "peft==0.20.0",
+    "-e git+https://github.com/TTtianTT/peft-sft-lab.git@139bfd7d401b7af94b983a0a20c257638fc6e847#egg=peft_sft_lab",
+    "pillow==12.3.0",
+    "pluggy==1.6.0",
+    "portalocker==4.4.0",
+    "preshed==3.0.13",
+    "prometheus-fastapi-instrumentator==8.1.0",
+    "prometheus_client==0.26.0",
+    "propcache==0.5.2",
+    "protobuf==7.36.1",
+    "psutil==7.2.2",
+    "py-cpuinfo==9.0.0",
+    "pyarrow==25.0.1",
+    "pybase64==1.5.0",
+    "pycountry==26.2.16",
+    "pycparser==3.0",
+    "pydantic==2.13.5",
+    "pydantic-extra-types==2.11.1",
+    "pydantic-settings==2.15.0",
+    "pydantic_core==2.46.5",
+    "pyelftools==0.33",
+    "Pygments==2.21.0",
+    "PyJWT==2.13.0",
+    "pypdf==6.19.0",
+    "pytest==9.1.1",
+    "python-dateutil==2.9.0.post0",
+    "python-dotenv==1.2.3",
+    "python-json-logger==4.2.0",
+    "python-multipart==0.0.32",
+    "PyYAML==6.0.3",
+    "pyzmq==27.2.0",
+    "quack-kernels==0.5.0",
+    "referencing==0.37.0",
+    "regex==2026.9.10",
+    "requests==2.34.2",
+    "rich==15.0.0",
+    "rich-toolkit==0.20.4",
+    "rignore==0.8.1",
+    "rpds-py==2026.6.3",
+    "sacrebleu==2.6.0",
+    "safetensors==0.8.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "sentencepiece==0.2.2",
+    "sentry-sdk==2.68.1",
+    "setproctitle==1.3.7",
+    "setuptools==84.0.0",
+    "shellingham==1.5.4",
+    "six==1.17.0",
+    "smart_open==8.0.1",
+    "sniffio==1.3.1",
+    "spacy==3.8.16",
+    "spacy-legacy==3.0.12",
+    "spacy-loggers==1.0.5",
+    "srsly==2.5.3",
+    "sse-starlette==3.4.11",
+    "starlette==1.6.0",
+    "supervisor==4.3.0",
+    "sympy==1.14.0",
+    "tabulate==0.10.0",
+    "tenseal==0.3.18",
+    "termcolor==3.3.0",
+    "thinc==8.3.13",
+    "threadpoolctl==3.7.0",
+    "tiktoken==0.14.0",
+    "tilelang==0.1.9",
+    "tokenizers==0.23.2",
+    "tokenspeed-mla==0.1.2",
+    "tokenspeed-triton==3.8.10.post20260906",
+    "torch==2.11.0+cu128",
+    "torch_c_dlpack_ext==0.1.5",
+    "torchvision==0.26.0+cu128",
+    "tqdm==4.70.1",
+    "transformers==5.16.1",
+    "triton==3.6.0",
+    "trl==1.12.0",
+    "truststore==0.10.4",
+    "typer==0.27.2",
+    "typing-inspection==0.4.4",
+    "typing_extensions==4.16.0",
+    "urllib3==2.8.0",
+    "uvicorn==0.52.4",
+    "uvloop==0.22.1",
+    "vllm @ https://github.com/vllm-project/vllm/releases/download/v0.25.1/vllm-0.25.1%2Bcu129-cp38-abi3-manylinux_2_28_x86_64.whl#sha256=9e206f370c934a2d4b6b1f05d3d09708d344e05d80260189ef19f60755709431",
+    "wasabi==1.1.3",
+    "watchfiles==1.2.0",
+    "weasel==1.0.0",
+    "websockets==17.1",
+    "wrapt==2.5.0",
+    "xgrammar==0.2.3",
+    "xxhash==4.0.1",
+    "yarl==1.24.5",
+    "z3-solver==4.15.4.0"
+  ],
+  "models": {
+    "bart": {
+      "model_id": "facebook/bart-base",
+      "revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+      "tokenizer_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+      "directory": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base",
+      "license": "apache-2.0",
+      "files": {
+        "vocab.json": {
+          "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+          "bytes": 898823
+        },
+        "README.md": {
+          "sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097",
+          "bytes": 2593
+        },
+        "tokenizer.json": {
+          "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+          "bytes": 1355863
+        },
+        "merges.txt": {
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+          "bytes": 456318
+        },
+        "model.safetensors": {
+          "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+          "bytes": 557709915
+        },
+        "config.json": {
+          "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+          "bytes": 1716
+        }
+      },
+      "local_files_verified": true
+    },
+    "t5gemma": {
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+      "tokenizer_revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+      "status": "downloaded",
+      "directory": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it",
+      "download_seconds": 79.64173451298848,
+      "files": {
+        "generation_config.json": {
+          "sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625",
+          "bytes": 156
+        },
+        "tokenizer.model": {
+          "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+          "bytes": 4241003
+        },
+        "chat_template.jinja": {
+          "sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6",
+          "bytes": 577
+        },
+        "README.md": {
+          "sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016",
+          "bytes": 18716
+        },
+        "tokenizer_config.json": {
+          "sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f",
+          "bytes": 46437
+        },
+        "model-00002-of-00003.safetensors": {
+          "sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac",
+          "bytes": 4988162344
+        },
+        "special_tokens_map.json": {
+          "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+          "bytes": 636
+        },
+        "model-00001-of-00003.safetensors": {
+          "sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1",
+          "bytes": 4988042296
+        },
+        "model.safetensors.index.json": {
+          "sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609",
+          "bytes": 68078
+        },
+        "tokenizer.json": {
+          "sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd",
+          "bytes": 34362429
+        },
+        "model-00003-of-00003.safetensors": {
+          "sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860",
+          "bytes": 1217595120
+        },
+        "config.json": {
+          "sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306",
+          "bytes": 3257
+        }
+      },
+      "local_files_verified": true,
+      "license": "gemma",
+      "historical_admission": {
+        "status": "passed",
+        "passed": true,
+        "selected_wrapper": "B",
+        "summaries": [
+          {
+            "wrapper": "A",
+            "rates": {
+              "source": 0.0,
+              "target": 0.0
+            },
+            "strata": {
+              "source/recorded_plan": {
+                "N": 360,
+                "joint": 0,
+                "rate": 0.0
+              },
+              "source/reported_completed": {
+                "N": 200,
+                "joint": 0,
+                "rate": 0.0
+              },
+              "source/reported_cancelled": {
+                "N": 360,
+                "joint": 0,
+                "rate": 0.0
+              },
+              "target/recorded_plan": {
+                "N": 2360,
+                "joint": 0,
+                "rate": 0.0
+              },
+              "target/reported_completed": {
+                "N": 1160,
+                "joint": 0,
+                "rate": 0.0
+              },
+              "target/reported_cancelled": {
+                "N": 2360,
+                "joint": 0,
+                "rate": 0.0
+              }
+            },
+            "N": 6800,
+            "joint": 0,
+            "exact": 0,
+            "normal_end": 77,
+            "unresolved": 6800,
+            "date_error": 0,
+            "nondate_error": 0
+          },
+          {
+            "wrapper": "B",
+            "rates": {
+              "source": 1.0,
+              "target": 1.0
+            },
+            "strata": {
+              "source/recorded_plan": {
+                "N": 360,
+                "joint": 360,
+                "rate": 1.0
+              },
+              "source/reported_completed": {
+                "N": 200,
+                "joint": 200,
+                "rate": 1.0
+              },
+              "source/reported_cancelled": {
+                "N": 360,
+                "joint": 360,
+                "rate": 1.0
+              },
+              "target/recorded_plan": {
+                "N": 2360,
+                "joint": 2360,
+                "rate": 1.0
+              },
+              "target/reported_completed": {
+                "N": 1160,
+                "joint": 1160,
+                "rate": 1.0
+              },
+              "target/reported_cancelled": {
+                "N": 2360,
+                "joint": 2360,
+                "rate": 1.0
+              }
+            },
+            "N": 6800,
+            "joint": 6800,
+            "exact": 0,
+            "normal_end": 6800,
+            "unresolved": 0,
+            "date_error": 0,
+            "nondate_error": 0
+          }
+        ],
+        "interface_passed": true,
+        "wall_seconds": 666.9972026699688,
+        "peak_cuda_bytes": 27552330240,
+        "reason": null,
+        "interface_hash": "17d1c444732f05b3b6b5fc1a8f235b4ca8cc2c14fb2378e3a62b3c650ba1b753"
+      }
+    }
+  },
+  "verified_backbone_files": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/vocab.json",
+      "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+      "bytes": 898823,
+      "expected_sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/README.md",
+      "sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097",
+      "bytes": 2593,
+      "expected_sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/tokenizer.json",
+      "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+      "bytes": 1355863,
+      "expected_sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/merges.txt",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "bytes": 456318,
+      "expected_sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/model.safetensors",
+      "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+      "bytes": 557709915,
+      "expected_sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/config.json",
+      "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+      "bytes": 1716,
+      "expected_sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/generation_config.json",
+      "sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625",
+      "bytes": 156,
+      "expected_sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer.model",
+      "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+      "bytes": 4241003,
+      "expected_sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/chat_template.jinja",
+      "sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6",
+      "bytes": 577,
+      "expected_sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/README.md",
+      "sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016",
+      "bytes": 18716,
+      "expected_sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer_config.json",
+      "sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f",
+      "bytes": 46437,
+      "expected_sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00002-of-00003.safetensors",
+      "sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac",
+      "bytes": 4988162344,
+      "expected_sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/special_tokens_map.json",
+      "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+      "bytes": 636,
+      "expected_sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00001-of-00003.safetensors",
+      "sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1",
+      "bytes": 4988042296,
+      "expected_sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model.safetensors.index.json",
+      "sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609",
+      "bytes": 68078,
+      "expected_sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer.json",
+      "sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd",
+      "bytes": 34362429,
+      "expected_sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00003-of-00003.safetensors",
+      "sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860",
+      "bytes": 1217595120,
+      "expected_sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860"
+    },
+    {
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/config.json",
+      "sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306",
+      "bytes": 3257,
+      "expected_sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306"
+    }
+  ],
+  "editors": [
+    {
+      "model": "bart",
+      "seed": 42,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "sha256": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+        "sha256": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 42
+      }
+    },
+    {
+      "model": "bart",
+      "seed": 43,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+      "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+        "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 43
+      }
+    },
+    {
+      "model": "bart",
+      "seed": 44,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+      "sha256": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+        "sha256": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 44
+      }
+    },
+    {
+      "model": "t5gemma",
+      "seed": 42,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
+      "sha256": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
+        "sha256": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 42
+      }
+    },
+    {
+      "model": "t5gemma",
+      "seed": 43,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+        "sha256": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 43
+      }
+    },
+    {
+      "model": "t5gemma",
+      "seed": 44,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+        "sha256": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 44
+      }
+    }
+  ],
+  "data_sha": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+  "candidate_worlds": 256,
+  "new_generated_worlds": 200,
+  "training_worlds_excluded": 96,
+  "split_counts": {
+    "discovery": 93,
+    "validation": 53,
+    "test": 110
+  },
+  "source_root": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1",
+  "artifact_root": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local",
+  "source_backend_sha": "083daec8548940e5e744e7428f4bb22b1e010cb70e133aa182f0fbf34982ca1d",
+  "source_parser_sha": "00144e2c21f7e713ef72411ea9da206706b894e0c5dfa0a32dc943715c1f0f25",
+  "slurm": {
+    "partition": "B300q",
+    "gres": "gpu:1",
+    "account": null,
+    "qos": "normal",
+    "environment": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv",
+    "source_script": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/job.slurm",
+    "global_limit": 2,
+    "budget": 40
+  },
+  "related_newer_branch": "experiment/current-source-compatibility-v1 at aea8310: source reconstruction/repair training, not localized pre-edit causal patching",
+  "condition_selection": "P/time: all seeds admitted and current-correct next failures in latest coverage; fixed before intervention results"
+}

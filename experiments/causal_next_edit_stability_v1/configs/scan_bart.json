@@ -1,0 +1,14 @@
+{
+  "stage": "scan_bart",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "00:30:00",
+  "walltime_hours": 0.5,
+  "world_cap": 256,
+  "prerequisites": [
+    {
+      "path": "local/smoke_bart/bart_s42/complete.json",
+      "passed_required": true
+    }
+  ]
+}
