@@ -39,7 +39,7 @@ def check_folder(folder, seed, expected_sha):
 
 def main():
     lock_sha=verify_lock()
-    for name in ('CPU_AUDIT','CPU_SMOKE_VERIFICATION','SMOKE_AUDIT','REPOSITORY_AUDIT','OLD_RESULT_REPRODUCTION','PUBLICATION_AUDIT'):
+    for name in ('CPU_AUDIT','CPU_SMOKE_VERIFICATION','SMOKE_AUDIT','REPOSITORY_AUDIT','OLD_RESULT_REPRODUCTION','PUBLICATION_AUDIT','SURFACE_LEAKAGE_AUDIT'):
         assert read(ROOT/(name+'.json'))['passed'],name
     assert read(ROOT/'ANALYSIS_AUDIT.json')['all_seeds_complete']
     checks=[];training=[]
@@ -63,10 +63,11 @@ def main():
             folder=ROOT/f'local/s{seed}/{method}';logs=rows(folder/'training.jsonl');refresh=read(folder/'refreshes.json')
             assert len(logs)==200 and [r['update'] for r in logs]==list(range(1,201))
             assert all(r['supervision_units']=={'replay':4,'continuation':4} for r in logs)
-            selected=[r['selected'] for r in logs]
+            selected=[dict(selected=r['selected'],operation=r['operation'],target_tokens=r['target_tokens'],supervision_units=r['supervision_units']) for r in logs]
             if reference is None:reference=selected
             else:assert selected==reference,(seed,method,'sample order')
             for draw,item in zip(draws,logs):
+                assert item['loss']==.5*(item['losses']['replay']+item['losses']['continuation'])
                 assert item['operation']==draw['operation']
                 assert item['selected']['continuation']==[continuation[i]['id'] for i in draw['continuation']]
                 for i in draw['replay']:assert replay[i]['operation']==draw['operation']
@@ -89,7 +90,9 @@ def main():
                 if method=='R':
                     source=folder/f'sources/update{event["update"]:03}.pt'
                     assert digest(source)==manifest['source_sha']==event['source_sha']
-                    weights=torch.load(source,map_location='cpu',weights_only=True)['editor']
+                    source_payload=torch.load(source,map_location='cpu',weights_only=True)
+                    assert source_payload['update']==event['update']
+                    weights=source_payload['editor']
                     if event['update']==0:assert all(torch.equal(weights[k],v) for k,v in initial.items())
                     if event['update']==100:
                         exported=torch.load(folder/'update100.pt',map_location='cpu',weights_only=True)['editor']
@@ -98,6 +101,11 @@ def main():
             assert latest['update']==200 and latest['initial_sha']==digest(checkpoint(seed))
             assert latest['draws_sha']==digest(ROOT/f'data/draws_s{seed}.jsonl')
             assert set(latest['rng'])=={'python','torch','cuda'} and latest['optimizer']['state']
+            assert latest['logs']==logs and latest['refreshes']==refresh
+            assert Path(latest['active_cache'])==folder/('cache_R/u180' if method=='R' else 'cache_'+method)
+            assert len(latest['optimizer']['state'])==len(initial)
+            assert all(int(state['step'])==100 for state in latest['optimizer']['state'].values())
+            assert all(group['lr']==.001 and group['weight_decay']==0 for group in latest['optimizer']['param_groups'])
             for update in (100,200):
                 cp=folder/f'update{update:03}.pt'
                 weights=torch.load(cp,map_location='cpu',weights_only=True)
@@ -117,7 +125,7 @@ def main():
     original_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ORIGINAL,text=True).strip()
     original_status=subprocess.check_output(['git','status','--porcelain=v1','-uno'],cwd=ORIGINAL,text=True)
     assert original_head==read(ROOT/'CPU_AUDIT.json')['original_git_head'] and not original_status
-    for name in ('EXPERIMENT_PLAN.md','coverage.csv','RESULTS.md','ERROR_ANALYSIS.md','RESOURCE_USAGE.md','README.md','summary_by_seed.csv','paired_contrasts.csv','mean_and_range.csv','SOURCE_LINEAGE_RESOLVED.json','CHECKPOINT_INDEX.json','PREDICTION_INDEX.json','LOG_INDEX.json'):
+    for name in ('EXPERIMENT_PLAN.md','coverage.csv','RESULTS.md','ERROR_ANALYSIS.md','RESOURCE_USAGE.md','README.md','summary_by_seed.csv','paired_contrasts.csv','mean_and_range.csv','ood_capability_changes.csv','RESEARCH_ANSWERS.md','error_categories.csv','FIGURE_AUDIT.json','SOURCE_LINEAGE_RESOLVED.json','CHECKPOINT_INDEX.json','PREDICTION_INDEX.json','LOG_INDEX.json'):
         assert (ROOT/name).exists(),name
     assert not torch.cuda.is_initialized()
     report=dict(passed=True,base_commit='0b73738',scientific_lock_sha256=lock_sha,backbone_files_verified=12,all_seeds_complete=True,checkpoint_evaluations=checks,training_runs=training,published=published,resources=resource,original_worktree_unchanged=True,baseline_experiment_unchanged=True,no_cuda_initialized=True,not_executed=['additional_domains','new_scope_challenges','new_probes','hyperparameter_search'],recovered_technical_failures=read(ROOT/'ENGINEERING_EVENTS.json'),unpassed_admission=[],still_running=[],at_utc=now())

@@ -8,6 +8,23 @@ def pct(v):return 'NA' if v in (None,'','None') else f'{float(v)*100:.2f}%'
 def main():
     audit=read(ROOT/'ANALYSIS_AUDIT.json');summary=csvrows('summary_by_seed.csv');paired=csvrows('paired_contrasts.csv');loss=csvrows('old_capability_changes.csv');prefix=csvrows('prefix_quality.csv');resource=read(ROOT/'resource_usage.json')
     complete=audit['all_seeds_complete'];lines=['# 当前来源兼容性：实验结果','', '**全部预定条件与评估已完成。**' if complete else '**当前工件快照；尚未全部完成，不能视为最终结论。**','', '模型google/t5gemma-2b-2b-ul2-it，原子T0 seeds42/43/44，各600步已选checkpoint；骨干冻结，两个rank16操作头共152064参数。N/F/R从各seed同一T0出发，各200 optimizer updates，800自然replay+800续步。训练覆盖全部合法当前状态及操作头输出标签；R仅一次前缀、每20更新重建、detach，不筛除错误。主checkpoint固定200，100仅诊断。','', '沿用96/24/32世界划分；IID与模板OOD共享32个测试世界，是同世界不同表达，不能当64个独立世界。旧自然测试768行/seed原样保留；IID/OOD穷举两步各704序列，长链每种模板在32个世界上合计256条序列、每步1–5。实际独立世界仍为32。U循环下一seed的原子T0，是来源对照，不是第四次训练重复。']
+    if complete:
+      headline=[]
+      for seed in (42,43,44):
+        item={'seed':seed}
+        for method in ('N','F','R'):
+          r=next(x for x in summary if x['seed']==str(seed) and x['condition']==method and x['update']=='200' and x['test']=='iid' and x['source']=='self' and x['cohort']=='all' and x['metric']=='full2')
+          item[method+'自身两步完整']=pct(r['rate'])
+        d=next(x for x in paired if x['seed']==str(seed) and x['contrast']=='R-F' and x['update']=='200' and x['test']=='iid' and x['source']=='self' and x['cohort']=='all' and x['metric']=='full2')
+        item['R减F百分点']=f"{float(d['delta_pp']):+.2f}"
+        headline.append(item)
+      lines[4:4]=[
+        '当前来源补训R在三个seed的IID自身两步完整率上均优于固定来源F；各方法第一步均正确，因此这项增益发生在正确前缀后的续步。核心旧自然单步均保持100%，逐例旧成功损失为0。',
+        table(['seed','N自身两步完整','F自身两步完整','R自身两步完整','R减F百分点'],headline),
+        '这种优势随来源与长度改变：R对固定T0和独立U来源的IID两步完整率在三个seed上均低于F；自身模板OOD两步优势方向不一致。IID第三步只在42/43改善，44从F的25/256降为R的0/256；第四步只在42/43有成功，所有条件、三个seed的五步完整率均为0。OOD第三步R在三个seed上有小幅改善，但绝对完整率仅1.17%–10.55%。这是局部长度迁移，长链问题仍未解决。',
+        '核心单步保护没有覆盖所有表达：R的模板OOD自然单步相对T0在三个seed均下降。训练中R也保留了错误前缀，OOD的部分endpoint增益属于错误前缀恢复。行为结果支持当前来源补训在本设置的自身两步编辑中有帮助，未确定来源滞后是唯一失败机制。',
+        '9个正式训练运行均完成200更新，21个checkpoint评估全部完成，333312条主预测已复算；3个核心准入均通过，未完成或仍运行项目为0。4次工程失败分配均已修复恢复，失败开销计入资源总数，没有作为语义失败计分。详细分项、区间、恢复记录和评估器边界如下。'
+      ]
     gates=[]
     for seed in (42,43,44):
       p=ROOT/f'runs/preflight/s{seed}/admission.json'
@@ -36,8 +53,15 @@ def main():
       rr=[x for x in loss if all(x[k]==r[k] for k in ('seed','condition','update'))];delta=(float(r['rate'])-float(base['rate']))*100
       retention.append(dict(seed=r['seed'],条件=r['condition'],update=r['update'],macro=pct(r['rate']),相对T0pp=f'{delta:+.2f}',旧成功损失=sum(int(x['old_success_lost']) for x in rr),旧失败修复=sum(int(x['old_failure_repaired']) for x in rr),保留判据=delta>=-2))
     lines+=['','## 旧自然能力：平均值与逐例损失','',table(['seed','条件','update','macro','相对T0pp','旧成功损失','旧失败修复','保留判据'],retention),'','每个seed独立采用下降≤2pp工作判据；仍保留全部损失ID、状态及操作，不能只凭macro声称旧能力完好。']
-    pr=[dict(seed=r['seed'],条件=r['condition'],刷新=r['refresh_update'],实际监督单位=r['n'],正确前缀=r['success'],已知相对状态错误=r['semantic_error'],内容缺失或改变=r['content_changed_or_lost'],评分未定=r['unresolved']) for r in prefix if r['sample_kind']=='actual_draws']
-    lines+=['','## 训练来源质量及收益归属','',table(['seed','条件','刷新','实际监督单位','正确前缀','已知相对状态错误','内容缺失或改变','评分未定'],pr),'','错误类别可重叠，未解析/relative未知不算已证实语义错误。没有删除、替换、重新抽样或加权失败输入。prefix_quality另给唯一前缀与全池权重；实际监督表按对应20更新窗口的draws计数。正确前缀条件续步、失败前缀端点恢复、已知错误relative恢复与未定前缀恢复在summary分别列。后两类恢复不能解释为当前正确续步修复。repair_attribution.csv另将配对full2差值按双方前缀是否正确分解：endpoint差值=full2差值+失败前缀恢复差值；这些更新后分层是描述性分析，不能替换训练前固定诊断集或总体主指标。']
+    ood_loss=csvrows('ood_capability_changes.csv');ood_retention=[]
+    for r in summary:
+      if r['update']!='200' or r['test']!='ood' or r['source']!='natural':continue
+      base=next(x for x in summary if x['seed']==r['seed'] and x['condition']=='T0' and x['test']=='ood' and x['source']=='natural')
+      ss=[x for x in ood_loss if all(x[k]==r[k] for k in ('seed','condition','update'))]
+      ood_retention.append(dict(seed=r['seed'],条件=r['condition'],macro=pct(r['rate']),相对T0pp=f"{100*(float(r['rate'])-float(base['rate'])):+.2f}",旧成功损失=sum(int(x['old_success_lost']) for x in ss),旧失败修复=sum(int(x['old_failure_repaired']) for x in ss)))
+    lines+=['','模板OOD自然单步的逐例变动也完整保留，不能由核心IID保留概括其表现。主保留判据使用计划中的test_core；OOD表达能力与相对T0的损失/修复另列。', '',table(['seed','条件','macro','相对T0pp','旧成功损失','旧失败修复'],ood_retention),'','分状态/操作及全部ID见ood_capability_changes.csv。']
+    pr=[dict(seed=r['seed'],条件=r['condition'],刷新=r['refresh_update'],实际监督单位=r['n'],正确前缀=r['success'],已知相对状态错误=r['semantic_error'],已知内容缺失或改变=r['content_changed_or_lost'],评分未定=r['unresolved']) for r in prefix if r['sample_kind']=='actual_draws']
+    lines+=['','## 训练来源质量及收益归属','',table(['seed','条件','刷新','实际监督单位','正确前缀','已知相对状态错误','已知内容缺失或改变','评分未定'],pr),'','错误类别可重叠，未解析/relative未知不算已证实语义错误。已知内容缺失/改变只在解析器给出槽位时统计；完全未解析可能同时缺失内容，不能由该列为0宣称内容全部保持。没有删除、替换、重新抽样或加权失败输入。prefix_quality另给唯一前缀与全池权重；实际监督表按对应20更新窗口的draws计数。正确前缀条件续步、失败前缀端点恢复、已知错误relative恢复与未定前缀恢复在summary分别列。后两类恢复不能解释为当前正确续步修复。repair_attribution.csv另将配对full2差值按双方前缀是否正确分解：endpoint差值=full2差值+失败前缀恢复差值；这些更新后分层是描述性分析，不能替换训练前固定诊断集或总体主指标。']
     diag=[dict(seed=r['seed'],条件=r['condition'],测试=r['test'],来源=r['source'],两步完整=f"{r['k']}/{r['denominator']}") for r in summary if r['update']=='200' and r['metric']=='full2' and r['cohort']=='fixed_diagnostic']
     lines+=['','## 补训前固定诊断集','',table(['seed','条件','测试','来源','两步完整'],diag),'','成员由T0第一步与T0 gold-current-reencode下一步同时成功确定，在正式训练前冻结。每个方法使用全部原始成员；更新后第一步变错计入自身full2失败。不会按更新后成功重新筛选。']
     def contrast(test,source,metric):

@@ -1,6 +1,6 @@
 {
   "reviewer": "execution agent reading raw English predictions, not independent human annotation",
-  "stage": "T0 and partial formal raw-reading audit; other seeds pending",
+  "stage": "All final200 checkpoints sampled and raw English readings completed; execution agent, not independent human annotation",
   "samples": [
     {
       "seed": 42,
@@ -54,6 +54,159 @@
       "source": "U",
       "id": "time_0120_t0_s-1_aminus_bminus",
       "assessment": "same U first text today; R correctly continues tomorrow while F stays today; retained non-target facts"
+    },
+    {
+      "condition": "F",
+      "category": "ood_natural_success_lost",
+      "id": "time_0120_t2_s-2_minus",
+      "assessment": "natural OOD r-2 minus should r-1: T0 correctly says yesterday, F says three days before anchor (r-3, opposite movement); all non-target facts preserved"
     }
-  ]
+  ],
+  "formal_samples_seed43": [
+    {
+      "condition": "N",
+      "category": "correct_prefix_failed_next",
+      "id": "time_0120_t0_s-1_aminus_bplus",
+      "assessment": "first correctly today after -1 to0; plus next remains today rather than yesterday; all non-target facts preserved"
+    },
+    {
+      "condition": "F",
+      "category": "bad_prefix_endpoint_recovery",
+      "id": "time_0120_t2_s0_aminus_bminus",
+      "assessment": "first fails to move on this day to one day after anchor; second correctly emits two days from now, accepted as paraphrase of two days after this anchor; full2 remains false"
+    },
+    {
+      "condition": "F",
+      "category": "two_steps_correct_later_failed",
+      "id": "time_0120_t0_path0",
+      "assessment": "plus chain from r3: first r2 and second tomorrow correct; third expected today but says date tomorrow and omits book/status/color; steps4/5 emit repetitive fragments without EOS"
+    },
+    {
+      "contrast": "F-N",
+      "category": "paired_correct_prefix_gain",
+      "source": "fixed_T0",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "same old-source first today: F next tomorrow correct; N stays today"
+    },
+    {
+      "condition": "F",
+      "category": "same_current_full_text_different_source",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "within F43 receiver fixed200, fixedT0 and ownF prefixes both depth1, r0, exact same full text, world, operations, full masks (sum44) and hidden shape256x2304 verified on CPU; hidden tensors differ. Next minus gives tomorrow for fixedT0 but two days from now for own source. Existing predictions and caches only, no new GPU experiment"
+    },
+    {
+      "condition": "N",
+      "category": "ood_natural_success_lost",
+      "id": "time_0121_t2_s2_minus",
+      "assessment": "natural OOD r2 minus should r3: T0 three days after anchor correct, N says four days after anchor. Finite parser leaves relative unresolved outside -3..3, but raw reading confirms this is an incorrect relative date; retained ticket/cancelled/green/8 facts. Controlled grammar failure does not imply ungrammatical English"
+    },
+    {
+      "condition": "R",
+      "category": "correct_prefix_failed_next",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "R43 current first today correct; next minus emits two days from now instead of tomorrow; facts preserved; R does not repair every self path"
+    },
+    {
+      "condition": "R",
+      "category": "two_steps_correct_later_failed",
+      "id": "time_0120_t0_path0",
+      "assessment": "plus chain from r3: R correctly reaches two days from now, tomorrow, today at steps1/2/3; step4 stays today instead of yesterday with facts preserved; step5 loses color/count while expected r-2. This is local length transfer, not full five-step success"
+    },
+    {
+      "contrast": "R-F",
+      "category": "paired_correct_prefix_loss",
+      "source": "fixed_T0",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "same fixedT0 first today: F next tomorrow correct; R two days from now incorrect; R loses this F-successful old-source path"
+    },
+    {
+      "contrast": "R-F",
+      "category": "paired_correct_prefix_gain",
+      "source": "fixed_T0",
+      "id": "time_0131_t0_s-3_aminus_bminus",
+      "assessment": "same fixedT0 first two days ago: R yesterday correct; F today overshoots; key/cancelled/blue/7 preserved"
+    }
+  ],
+  "formal_samples_seed44": [
+    {
+      "condition": "N",
+      "category": "correct_prefix_failed_next",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "first today correct; next minus should tomorrow but remains today; book/status completed/green/3 all preserved"
+    },
+    {
+      "condition": "N",
+      "category": "bad_prefix_endpoint_recovery",
+      "id": "time_0120_t2_s0_aminus_bminus",
+      "assessment": "first on this day incorrect at expected r1; next two days from now semantically matches r2 after this anchor; endpoint success but full2 failure"
+    },
+    {
+      "condition": "N",
+      "category": "ood_natural_success_lost",
+      "id": "time_0139_t2_s2_plus",
+      "assessment": "natural OOD r2 plus should r1: T0 tomorrow correct, N says three days after anchor (r3, opposite movement); retained book/cancelled/blue/4 facts"
+    },
+    {
+      "condition": "R",
+      "category": "correct_prefix_failed_next",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "first today correct, next stays today instead of tomorrow; book/completed/green/3 facts preserved"
+    },
+    {
+      "condition": "R",
+      "category": "bad_prefix_endpoint_recovery",
+      "id": "time_0120_t2_s-1_aminus_bplus",
+      "assessment": "first two days before anchor incorrect at gold0; second one day before anchor matches gold-1; endpoint recovers but full2 remains false"
+    },
+    {
+      "condition": "R",
+      "category": "two_steps_correct_later_failed",
+      "id": "time_0120_t0_path1",
+      "assessment": "plus chain from r2: first tomorrow and second today correct; third expected yesterday and emits Thest book event is dated yesterday but omits status/color/count; fourth/fifth short fragments. Full-semantic third failure is content/completeness, even though readable relative word matches"
+    },
+    {
+      "contrast": "R-F",
+      "source": "fixed_T0",
+      "category": "paired_correct_prefix_loss",
+      "id": "time_0120_t0_s-1_aminus_bminus",
+      "assessment": "same fixedT0 first today: F tomorrow correct; R stays today; lost F-successful old-source path"
+    },
+    {
+      "contrast": "R-F",
+      "source": "U",
+      "category": "paired_correct_prefix_gain",
+      "id": "time_0121_t0_s2_aplus_bminus",
+      "assessment": "same U first tomorrow: R correctly two days from now; F duplicates dated dated, a controlled grammar/relative-parse failure; facts retained"
+    },
+    {
+      "condition": "R",
+      "category": "ood_natural_success_lost",
+      "id": "time_0124_t2_s-2_minus",
+      "assessment": "T0 correctly yesterday for r-2 minus; R three days before anchor moves opposite direction; box/completed/red/3 facts preserved"
+    },
+    {
+      "contrast": "R-F",
+      "category": "paired_third_step_loss_after_both_first2_correct",
+      "id": "time_0120_t0_path1",
+      "assessment": "same predefined plus path from r2: both F/R first tomorrow then today correct. F third full text yesterday with all facts correct; R third Thest book event is dated yesterday omits status/color/count. All25 F-successful IID third paths are lost by R, despite R improving overall two-step rate; whole list archived in LONG_PATH_REGRESSIONS"
+    }
+  ],
+  "matched_source_case_cpu_verification": {
+    "seed": 43,
+    "condition": "F",
+    "update": 200,
+    "id": "time_0120_t0_s-1_aminus_bminus",
+    "full_mask_exact": true,
+    "hidden_shape": [
+      256,
+      2304
+    ],
+    "mask_sum": 44,
+    "hidden_equal": false,
+    "no_cuda_initialized": true,
+    "cache_metadata": [
+      ".current-source-worktree/experiments/current_source_compatibility_v1/local/preflight/s43/fixed_T0/batch00048.json",
+      ".current-source-worktree/experiments/current_source_compatibility_v1/runs/formal/s43/F_u200/self_prefix/batch00048.json"
+    ]
+  }
 }

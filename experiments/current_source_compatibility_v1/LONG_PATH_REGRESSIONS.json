@@ -1,0 +1,132 @@
+{
+  "seed": 44,
+  "update": 200,
+  "test": "iid",
+  "F_full3_success_R_full3_failure_both_first2_correct_count": 25,
+  "ids": [
+    "time_0120_t0_path1",
+    "time_0121_t0_path1",
+    "time_0122_t0_path1",
+    "time_0123_t0_path1",
+    "time_0124_t0_path1",
+    "time_0126_t0_path1",
+    "time_0127_t0_path1",
+    "time_0128_t0_path1",
+    "time_0129_t0_path1",
+    "time_0130_t0_path1",
+    "time_0131_t0_path1",
+    "time_0133_t0_path1",
+    "time_0135_t0_path1",
+    "time_0136_t0_path1",
+    "time_0137_t0_path1",
+    "time_0138_t0_path1",
+    "time_0141_t0_path1",
+    "time_0143_t0_path1",
+    "time_0144_t0_path1",
+    "time_0145_t0_path1",
+    "time_0146_t0_path1",
+    "time_0147_t0_path1",
+    "time_0149_t0_path1",
+    "time_0150_t0_path1",
+    "time_0151_t0_path1"
+  ],
+  "example": {
+    "id": "time_0120_t0_path1",
+    "F": [
+      {
+        "step": 1,
+        "prediction": "The book event is dated tomorrow. Its status is completed. The book is green. There are 3 copies.",
+        "target": "The book event is dated tomorrow. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": true,
+        "score": {
+          "success": true,
+          "target": true,
+          "preserved": true,
+          "scope": true,
+          "parseable": true,
+          "grammar": true,
+          "ended": true
+        }
+      },
+      {
+        "step": 2,
+        "prediction": "The book event is dated today. Its status is completed. The book is green. There are 3 copies.",
+        "target": "The book event is dated today. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": true,
+        "score": {
+          "success": true,
+          "target": true,
+          "preserved": true,
+          "scope": true,
+          "parseable": true,
+          "grammar": true,
+          "ended": true
+        }
+      },
+      {
+        "step": 3,
+        "prediction": "The book event is dated yesterday. Its status is completed. The book is green. There are 3 copies.",
+        "target": "The book event is dated yesterday. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": true,
+        "score": {
+          "success": true,
+          "target": true,
+          "preserved": true,
+          "scope": true,
+          "parseable": true,
+          "grammar": true,
+          "ended": true
+        }
+      }
+    ],
+    "R": [
+      {
+        "step": 1,
+        "prediction": "The book event is dated tomorrow. Its status is completed. The book is green. There are 3 copies.",
+        "target": "The book event is dated tomorrow. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": true,
+        "score": {
+          "success": true,
+          "target": true,
+          "preserved": true,
+          "scope": true,
+          "parseable": true,
+          "grammar": true,
+          "ended": true
+        }
+      },
+      {
+        "step": 2,
+        "prediction": "The book event is dated today. Its status is completed. The book is green. There are 3 copies.",
+        "target": "The book event is dated today. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": true,
+        "score": {
+          "success": true,
+          "target": true,
+          "preserved": true,
+          "scope": true,
+          "parseable": true,
+          "grammar": true,
+          "ended": true
+        }
+      },
+      {
+        "step": 3,
+        "prediction": "Thest book event is dated yesterday.",
+        "target": "The book event is dated yesterday. Its status is completed. The book is green. There are 3 copies.",
+        "full_success": false,
+        "score": {
+          "success": false,
+          "target": false,
+          "preserved": false,
+          "scope": false,
+          "parseable": false,
+          "grammar": false,
+          "ended": true
+        }
+      }
+    ]
+  },
+  "selection_rule": "lexicographically first ID among all25 matching paths; existing predictions only",
+  "new_gpu_work": false
+}

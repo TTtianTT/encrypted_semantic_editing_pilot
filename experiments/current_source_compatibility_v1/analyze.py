@@ -16,11 +16,12 @@ def boot(worlds):
     values=np.sort(np.array([worlds[k] for k in keys])[draws].mean(axis=1))
     return float(values[int(.025*len(values))]),float(values[int(.975*len(values))])
 def main():
-    verify_lock();summaries=[];natural_rows=[];failure_rows=[];contrasts=[];individual={};regressions=[];prefix=[];audited=0;pending=[];quality=[];continuation_cells=[];sequence_rows=[]
+    verify_lock();summaries=[];natural_rows=[];failure_rows=[];contrasts=[];individual={};regressions=[];ood_regressions=[];prefix=[];audited=0;pending=[];quality=[];continuation_cells=[];sequence_rows=[]
     for seed in (42,43,44):
       baseline=ROOT/f'runs/preflight/s{seed}/T0'
       if not (baseline/'complete.json').exists():pending.append(dict(seed=seed,stage='T0 evaluation'));continue
       old={r['id']:r for r in rows(baseline/'old_natural.jsonl')};cohort={r['id']:r['qualified'] for r in rows(baseline/'fixed_diagnostic.jsonl')}
+      old_ood={r['id']:r for r in rows(baseline/'ood_natural.jsonl')}
       jobs=[('T0',0,baseline)]+[(m,u,ROOT/f'runs/formal/s{seed}/{m}_u{u}') for m in ('N','F','R') for u in (100,200)]
       for method,u,folder in jobs:
         if not (folder/'complete.json').exists():pending.append(dict(seed=seed,condition=method,update=u));continue
@@ -36,6 +37,10 @@ def main():
             for (state,op),group in cells.items():
               lost=[r['id'] for r in group if old[r['id']]['score']['success'] and not r['score']['success']];repaired=[r['id'] for r in group if not old[r['id']]['score']['success'] and r['score']['success']]
               regressions.append(dict(seed=seed,condition=method,update=u,state=state,operation=op,n=len(group),old_success_lost=len(lost),old_failure_repaired=len(repaired),net=len(repaired)-len(lost),lost_ids=json.dumps(lost),repaired_ids=json.dumps(repaired)))
+          else:
+            for (state,op),group in cells.items():
+              lost=[r['id'] for r in group if old_ood[r['id']]['score']['success'] and not r['score']['success']];repaired=[r['id'] for r in group if not old_ood[r['id']]['score']['success'] and r['score']['success']]
+              ood_regressions.append(dict(seed=seed,condition=method,update=u,test='ood',state=state,operation=op,n=len(group),old_success_lost=len(lost),old_failure_repaired=len(repaired),net=len(repaired)-len(lost),lost_ids=json.dumps(lost),repaired_ids=json.dumps(repaired)))
         for source in ('fixed_T0','U','self','gold_reencode','actual_reencode'):
           rs=rows(folder/f'continuation_{source}.jsonl');validate(rs);audited+=len(rs)
           for t,label in ((0,'iid'),(2,'ood')):
@@ -105,6 +110,7 @@ def main():
       contrasts.append(dict(seed=seed,contrast=m+'-'+left_method,update=u,test=test,source=source,metric=metric,cohort=cohort,n=len(right),worlds=len(worlds),delta_pp=100*statistics.mean(averaged.values()),ci_low_pp=100*low,ci_high_pp=100*high))
     writecsv(ROOT/'summary_by_seed.csv',summaries);writecsv(ROOT/'natural_cells.csv',natural_rows);writecsv(ROOT/'first_failure.csv',failure_rows);writecsv(ROOT/'old_capability_changes.csv',regressions);writecsv(ROOT/'paired_contrasts.csv',contrasts);writecsv(ROOT/'prefix_quality.csv',prefix)
     writecsv(ROOT/'quality_metrics.csv',quality);writecsv(ROOT/'continuation_cells.csv',continuation_cells);writecsv(ROOT/'sequence_metrics.csv',sequence_rows)
+    writecsv(ROOT/'ood_capability_changes.csv',ood_regressions)
     grouped=collections.defaultdict(list)
     for r in summaries:
       if r['rate'] is not None:grouped[tuple(r[k] for k in ('condition','update','test','source','metric','cohort'))].append(r)

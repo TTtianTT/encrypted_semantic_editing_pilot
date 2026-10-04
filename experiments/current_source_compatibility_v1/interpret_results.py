@@ -13,7 +13,9 @@ def main():
     paired = csvrows('paired_contrasts.csv')
     attribution = csvrows('repair_attribution.csv')
     changes = csvrows('old_capability_changes.csv')
+    ood_changes = csvrows('ood_capability_changes.csv')
     costs = csvrows('condition_compute.csv')
+    prefix = csvrows('prefix_quality.csv')
 
     def pick(seed, method, test, source, metric, cohort='all'):
         rs = [r for r in summary if r['seed']==str(seed) and r['condition']==method
@@ -33,8 +35,11 @@ def main():
                    and r['test']==test and r['source']==source and r['metric']==metric
                    and r['contrast']==contrast and r['cohort']==cohort) for s in SEEDS]
         vs = [float(r['delta_pp']) for r in rs]
-        return ('/'.join(f'{v:+.2f}' for v in vs)+f' pp；均值 {statistics.mean(vs):+.2f} pp；'
-                +('三个 seed 均严格正向' if all(v>0 for v in vs) else '未满足三个 seed 均严格正向的预设稳定优势判据'))
+        direction = ('三个 seed 均严格正向' if all(v>0 for v in vs)
+                     else '三个 seed 均严格负向' if all(v<0 for v in vs)
+                     else '三个 seed 均为零' if all(v==0 for v in vs)
+                     else '未满足三个 seed 均严格正向的预设稳定优势判据')
+        return ('/'.join(f'{v:+.2f}' for v in vs)+f' pp；均值 {statistics.mean(vs):+.2f} pp；'+direction)
 
     lines = ['# 七个研究问题的定量回答', '',
              '以下按 seed 42/43/44 排列，主结果固定 update 200；百分点差值使用相同世界配对。'
@@ -46,6 +51,14 @@ def main():
              '普通自然补训对照 F−N 的 IID 自身两步差值：'
              +delta('iid','self','full2','F-N')+'。', '',
              '## 2. 改善是否仅限于训练的第二步？', '']
+    losses=[]
+    for source in ('fixed_T0','U','self'):
+        pairs=[]
+        for seed in SEEDS:
+            ss=[r for r in attribution if r['seed']==str(seed) and r['contrast']=='R-F' and r['test']=='iid' and r['source']==source]
+            pairs.append(f"seed {seed}={sum(int(r['right_full2_gain_count']) for r in ss)}新增/{sum(int(r['right_full2_loss_count']) for r in ss)}损失")
+        losses.append('IID '+source+' 的 R 相对 F 逐例两步成功新增/损失数：'+'/'.join(pairs)+'（每个 seed 总数704）。')
+    position=lines.index('## 2. 改善是否仅限于训练的第二步？');lines[position:position]=losses+['净改善仍可能损伤另一条原先成功的路径；全部逐例预测和描述性分层保留。','']
     for test in ('iid','ood'):
         for step in (3,4,5):
             metric=f'full{step}_all'
@@ -87,6 +100,16 @@ def main():
                          +f'净变化 {gained-lost:+d}；'+('通过' if diff>=-2 else '未通过')+'下降≤2 pp 判据。')
     lines += ['逐例 ID 与合法状态/操作变化保留在 old_capability_changes.csv。', '',
               '## 6. 收益来自正确前缀续步，还是失败前缀恢复？', '']
+    expression_changes=[]
+    for seed in SEEDS:
+        for method in ('N','F','R'):
+            r=pick(seed,method,'ood','natural','atomic_macro');b=pick(seed,'T0','ood','natural','atomic_macro')
+            ss=[x for x in ood_changes if x['seed']==str(seed) and x['condition']==method and x['update']=='200']
+            lost=sum(int(x['old_success_lost']) for x in ss);gained=sum(int(x['old_failure_repaired']) for x in ss)
+            expression_changes.append(f'seed {seed} {method} 模板 OOD 自然单步相对 T0 '
+                                      +f"{100*(float(r['rate'])-float(b['rate'])):+.2f} pp；旧成功损失 {lost}，旧失败修复 {gained}。")
+    position=lines.index('## 6. 收益来自正确前缀续步，还是失败前缀恢复？')
+    lines[position:position]=['核心 IID 保留判据与模板 OOD 的表达能力分别判断；OOD 全部逐例变动见 ood_capability_changes.csv。']+expression_changes+['']
     for seed in SEEDS:
         for test in ('iid','ood'):
             ss=[r for r in attribution if r['seed']==str(seed) and r['contrast']=='R-F'
@@ -105,6 +128,21 @@ def main():
     lines += ['上述更新后分层用于描述收益归属，不能代替总体指标或训练前固定诊断集。'
               '错误前缀的 endpoint 恢复不计入完整轨迹；训练刷新质量另列 prefix_quality.csv，'
               '未解析前缀与已知相对状态错误分开统计。', '', '## 7. 相比 F，R 增加多少 GPU 时间？', '']
+    training_quality=[]
+    for seed in SEEDS:
+        for method in ('F','R'):
+            ss=[r for r in prefix if r['seed']==str(seed) and r['condition']==method and r['sample_kind']=='actual_draws']
+            total=sum(int(r['n']) for r in ss)
+            assert total==800
+            correct=sum(int(r['success']) for r in ss)
+            wrong=sum(int(r['semantic_error']) for r in ss)
+            unresolved=sum(int(r['unresolved']) for r in ss)
+            content=sum(int(r['content_changed_or_lost']) for r in ss)
+            training_quality.append(f'seed {seed} {method} 实际800个续步监督槽位：前缀正确 {correct}/800，'
+                                    +f'已知相对状态错误 {wrong}，非目标内容缺失/改变 {content}，未定 {unresolved}。')
+    position=lines.index('## 7. 相比 F，R 增加多少 GPU 时间？')
+    lines[position:position]=training_quality+['训练收益的因果来源未被这些描述性分层确定：R 的训练同时可能包含正确前缀续步与错误前缀恢复，'
+                                           '本轮没有对这两类训练输入分别做消融。', '']
     extra=[]
     for seed in SEEDS:
         rr={r['condition']:r for r in costs if r['seed']==str(seed)}
