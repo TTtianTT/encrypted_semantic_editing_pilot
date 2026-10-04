@@ -7,5 +7,15 @@
     "fix": "Append immutable baseline module directory after current study directory; verify module paths on CPU",
     "scientific_configuration_changed": false,
     "at_utc": "2026-10-03T18:54:32.898076+00:00"
+  },
+  {
+    "event": "preflight_archive_scope",
+    "detected_utc": "2026-10-04T06:51:11.811140+00:00",
+    "error": "old prediction archive contains dev and N/S/M/P rows; expected dict mixed worlds/conditions",
+    "fix": "select artifact suffix /outputs/P/atomic_core.jsonl and old templates0/1 only",
+    "scientific_change": false,
+    "GPU_predictions_changed": false,
+    "recovery": "Slurm preflight --resume after previous phase allocations end; reuse completed GPU admissions, source caches and full evaluation; rerun affected archive verification",
+    "prior_worker_and_lock": "protocol_revisions/preflight_archive_scope/"
   }
 ]

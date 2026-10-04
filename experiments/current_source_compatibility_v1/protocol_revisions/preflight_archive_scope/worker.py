@@ -24,7 +24,7 @@ def admission(eng,seed):
     with gzip.open(old,'rt') as f:
      for line in f:
       x=json.loads(line);r=x.get('row',x)
-      if x.get('artifact','').endswith('/outputs/P/atomic_core.jsonl') and r.get('kind')=='atomic' and r.get('template') in (0,1) and r.get('state') is not None:
+      if r.get('kind')=='atomic' and r.get('template') in (0,1) and r.get('state') is not None:
        expected[f"{r['world_id']}_t{r['template']}_s{r['state']}_{r['operation']}"]=r['score']['success']
     actual=rows(folder/'T0/old_natural.jsonl');assert len(expected)==len(actual)==768
     assert all(expected[r['id']]==r['score']['success'] for r in actual),'Old natural admission not reproduced'

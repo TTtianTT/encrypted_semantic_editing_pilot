@@ -1,0 +1,25 @@
+{
+  "reviewer": "execution agent reading raw English predictions, not independent human annotation",
+  "stage": "T0 preflight",
+  "samples": [
+    {
+      "seed": 42,
+      "id": "time_0120_t0_s-3_aminus_bplus",
+      "arithmetic": "initial r=-3; minus increases r to-2; plus decreases r back to-3",
+      "current_text_relative": "two days ago",
+      "next_text_relative": "two days ago",
+      "expected_next_relative": "three days ago",
+      "assessment": "current correctly expresses r=-2, next fails to move relative date; book/status completed/color green/count3 remain intact"
+    },
+    {
+      "seed": 43,
+      "id": "time_0120_t0_s-3_aminus_bplus",
+      "arithmetic": "initial r=-3; minus increases r to-2; plus decreases r back to-3",
+      "current_text_relative": "two days ago",
+      "next_text_relative": "two days ago",
+      "expected_next_relative": "three days ago",
+      "assessment": "current correctly expresses r=-2, next fails to move relative date; book/status completed/color green/count3 remain intact"
+    }
+  ],
+  "at_utc": "2026-10-04T06:48:21.745953+00:00"
+}
