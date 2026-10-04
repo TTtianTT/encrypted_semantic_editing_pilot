@@ -2,7 +2,7 @@
 import gzip,io,shutil,torch
 from study import *
 def main():
-    archives=[];checkpoints=[];sources=[]
+    archives=[];checkpoints=[];sources=[];source_snapshots=[]
     for seed in (42,43,44):
       for folder in [ROOT/f'runs/preflight/s{seed}/T0']+[ROOT/f'runs/formal/s{seed}/{m}_u{u}' for m in ('N','F','R') for u in (100,200)]:
         if not (folder/'complete.json').exists():continue
@@ -30,9 +30,15 @@ def main():
         for refresh in read(folder/'refreshes.json'):
           cachefolder=folder/(f'cache_R/u{refresh["update"]:03}' if method=='R' else 'cache_'+method);info=read(cachefolder/'complete.json');quality=public/f'prefix_u{refresh["update"]:03}.jsonl.gz'
           with quality.open('wb') as raw,gzip.GzipFile(filename='',fileobj=raw,mode='wb',mtime=0) as gz:gz.write((cachefolder/'prefix_quality.jsonl').read_bytes())
-          sources.append(dict(seed=seed,condition=method,refresh_update=refresh['update'],source_checkpoint_sha=refresh['source_sha'],prefix_quality_archive=str(quality.relative_to(ROOT)),prefix_quality_sha=digest(quality),cache_manifest=str(cachefolder/'complete.json'),cache_manifest_sha=digest(cachefolder/'complete.json'),cache=info))
+          source_public=None
+          if method=='R':
+            raw_source=folder/f'sources/update{refresh["update"]:03}.pt'
+            exported_source=ROOT/f'checkpoints/s{seed}/R_sources/u{refresh["update"]:03}.pt';exported_source.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(raw_source,exported_source)
+            assert digest(exported_source)==refresh['source_sha']
+            source_public=str(exported_source.relative_to(ROOT));source_snapshots.append(dict(seed=seed,update=refresh['update'],path=source_public,sha256=refresh['source_sha']))
+          sources.append(dict(seed=seed,condition=method,refresh_update=refresh['update'],source_checkpoint_sha=refresh['source_sha'],source_checkpoint_public=source_public,prefix_quality_archive=str(quality.relative_to(ROOT)),prefix_quality_sha=digest(quality),cache_manifest=str(cachefolder/'complete.json'),cache_manifest_sha=digest(cachefolder/'complete.json'),cache=info))
     logs=[dict(path=str(p),sha256=digest(p),bytes=p.stat().st_size) for p in sorted((ROOT/'logs').glob('*')) if p.is_file()]
-    dump(ROOT/'PREDICTION_INDEX.json',archives);dump(ROOT/'CHECKPOINT_INDEX.json',checkpoints);dump(ROOT/'SOURCE_LINEAGE_RESOLVED.json',dict(original=read(ROOT/'SOURCE_LINEAGE.json'),supplement_sources=sources));dump(ROOT/'LOG_INDEX.json',logs)
+    dump(ROOT/'PREDICTION_INDEX.json',archives);dump(ROOT/'CHECKPOINT_INDEX.json',checkpoints);dump(ROOT/'SOURCE_SNAPSHOT_INDEX.json',source_snapshots);dump(ROOT/'SOURCE_LINEAGE_RESOLVED.json',dict(original=read(ROOT/'SOURCE_LINEAGE.json'),supplement_sources=sources));dump(ROOT/'LOG_INDEX.json',logs)
     assert not torch.cuda.is_initialized()
-    dump(ROOT/'PUBLICATION_AUDIT.json',dict(passed=True,archives=len(archives),prediction_rows=sum(r['rows'] for r in archives),exact_editor_exports=len(checkpoints),supplement_source_manifests=len(sources),logs=len(logs),no_cuda_initialized=True,at_utc=now()));print('Published',len(archives),'prediction archives;',len(checkpoints),'editors;',len(sources),'source manifests')
+    dump(ROOT/'PUBLICATION_AUDIT.json',dict(passed=True,archives=len(archives),prediction_rows=sum(r['rows'] for r in archives),exact_editor_exports=len(checkpoints),exact_R_source_snapshots=len(source_snapshots),supplement_source_manifests=len(sources),logs=len(logs),no_cuda_initialized=True,at_utc=now()));print('Published',len(archives),'prediction archives;',len(checkpoints),'editors;',len(sources),'source manifests')
 if __name__=='__main__':main()

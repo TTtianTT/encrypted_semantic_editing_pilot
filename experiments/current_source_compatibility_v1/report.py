@@ -62,13 +62,21 @@ def main():
         p=ROOT/f'local/s{seed}/{method}'
         if not (p/'refreshes.json').exists():continue
         refresh=read(p/'refreshes.json');logs=rows(p/'training.jsonl')
-        costs.append(dict(seed=seed,condition=method,updates=len(logs),refreshes=len(refresh),source_pipeline_seconds=sum(r['generation_seconds'] for r in refresh),optimizer_seconds=sum(r['optimizer_seconds'] for r in logs)))
+        status=read(p/'training_status.json');evals=[]
+        for u in (100,200):
+          cp=ROOT/f'runs/formal/s{seed}/{method}_u{u}/complete.json'
+          evals.append(read(cp)['wall_seconds'] if cp.exists() else None)
+        costs.append(dict(seed=seed,condition=method,updates=len(logs),refreshes=len(refresh),source_pipeline_seconds=sum(r['generation_seconds'] for r in refresh),optimizer_seconds=sum(r['optimizer_seconds'] for r in logs),training_wall_seconds=status['wall_seconds_this_invocation'],evaluation100_seconds=evals[0],evaluation200_seconds=evals[1],completed_stage_seconds=None if None in evals else status['wall_seconds_this_invocation']+sum(evals)))
     with (ROOT/'condition_compute.csv').open('w') as f:
       if costs:w=csv.DictWriter(f,fieldnames=list(costs[0]));w.writeheader();w.writerows(costs)
     extra=[]
     for seed in (42,43,44):
       rr={r['condition']:r for r in costs if r['seed']==seed}
-      if set(rr)=={'N','F','R'}:extra.append(dict(seed=seed,R源pipeline秒=round(rr['R']['source_pipeline_seconds'],3),F源pipeline秒=round(rr['F']['source_pipeline_seconds'],3),额外R减F_GPUh=(rr['R']['source_pipeline_seconds']-rr['F']['source_pipeline_seconds'])/3600))
-    (ROOT/'RESOURCE_USAGE.md').write_text('# 资源核验\n\n'+f"全部GPU计算经sbatch+srun，单任务1GPU；累计{resource['gpu_hours']:.6f} allocation GPUh，本项目峰值{resource['peak_project_gpus']}，账号本轮峰值{resource['peak_account_gpus_since_first_allocation']}。失败/重试计入，batch/step行不重复加总。\n\n"+table(['seed','R源pipeline秒','F源pipeline秒','额外R减F_GPUh'],extra)+'\n\n刷新pipeline按实际GPU分配下的壁钟时间记录，包括新编码、前缀计算、质量解码、缓存I/O；不是GPU内核利用率。optimizer时间在condition_compute.csv。全部其他模型加载、评估、队列后分配等待与CPU写盘开销包含在总allocation记账中，不归因于纯前缀计算。原始JobID、GPU请求、节点、开始结束、退出码和Elapsed在slurm_accounting.psv。\n')
+      if set(rr)=={'N','F','R'}:
+        complete_wall=all(r['completed_stage_seconds'] is not None for r in rr.values())
+        extra.append(dict(seed=seed,R源pipeline秒=round(rr['R']['source_pipeline_seconds'],3),F源pipeline秒=round(rr['F']['source_pipeline_seconds'],3),额外R减F_来源GPUh=(rr['R']['source_pipeline_seconds']-rr['F']['source_pipeline_seconds'])/3600,R减F_训练壁钟GPUh=(rr['R']['training_wall_seconds']-rr['F']['training_wall_seconds'])/3600,R减F_含评估阶段GPUh=None if not complete_wall else (rr['R']['completed_stage_seconds']-rr['F']['completed_stage_seconds'])/3600))
+    formal_recovery=len([r for r in read(ROOT/'submissions.json') if r['phase']=='formal'])>1
+    recovery_note='正式阶段有恢复；完成调用的阶段壁钟不含恢复前未完成调用时间，不能当完整条件成本，精确总成本以allocation记账为准。' if formal_recovery else '正式阶段无恢复时，可定位训练+评估阶段的壁钟可比较；共享模型加载、任务进入/退出及不可定位开销由总allocation记账覆盖。'
+    (ROOT/'RESOURCE_USAGE.md').write_text('# 资源核验\n\n'+f"全部GPU计算经sbatch+srun，单任务1GPU；累计{resource['gpu_hours']:.6f} allocation GPUh，本项目峰值{resource['peak_project_gpus']}，账号本轮峰值{resource['peak_account_gpus_since_first_allocation']}。失败/重试计入，batch/step行不重复加总。\n\n"+table(['seed','R源pipeline秒','F源pipeline秒','额外R减F_来源GPUh','R减F_训练壁钟GPUh','R减F_含评估阶段GPUh'],extra)+'\n\n刷新pipeline按实际GPU分配下的壁钟时间记录，包括新编码、前缀计算、质量解码、缓存I/O；不是GPU内核利用率。optimizer、训练和两次评估时间在condition_compute.csv；评估输出长度会影响运行时间，因此额外来源成本与含评估阶段净差分别列。'+recovery_note+'全部其他模型加载、评估、队列后分配等待与CPU写盘开销包含在总allocation记账中，不归因于纯前缀计算。原始JobID、GPU请求、节点、开始结束、退出码和Elapsed在slurm_accounting.psv；Start/End保留集群UTC+8显示，来源生成UTC另存。\n')
     print('Reports written; complete=',complete)
 if __name__=='__main__':main()

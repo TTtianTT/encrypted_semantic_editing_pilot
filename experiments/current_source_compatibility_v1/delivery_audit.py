@@ -108,6 +108,8 @@ def main():
         assert read(ROOT/f'runs/formal/s{seed}/complete.json')['passed']
     published=read(ROOT/'PUBLICATION_AUDIT.json')
     assert published['archives']==21 and published['exact_editor_exports']==18 and published['supplement_source_manifests']==36
+    assert published['exact_R_source_snapshots']==30
+    for source in read(ROOT/'SOURCE_SNAPSHOT_INDEX.json'):assert digest(ROOT/source['path'])==source['sha256']
     resource=read(ROOT/'resource_usage.json')
     assert resource['peak_project_gpus']<=2 and resource['peak_account_gpus_since_first_allocation']<=2
     assert all(r['State'] not in ('RUNNING','PENDING','COMPLETING') for r in resource['records'])
