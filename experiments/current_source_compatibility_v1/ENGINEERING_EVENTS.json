@@ -16,6 +16,7 @@
     "scientific_change": false,
     "GPU_predictions_changed": false,
     "recovery": "Slurm preflight --resume after previous phase allocations end; reuse completed GPU admissions, source caches and full evaluation; rerun affected archive verification",
-    "prior_worker_and_lock": "protocol_revisions/preflight_archive_scope/"
+    "prior_worker_and_lock": "protocol_revisions/preflight_archive_scope/",
+    "additional_resume_hardening": "a saved update200 without final log/status markers must resume train_condition at completed update200 to reconstruct metadata, performing no optimizer update; no science change"
   }
 ]

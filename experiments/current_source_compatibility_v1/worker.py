@@ -59,7 +59,9 @@ def formal(eng,seed):
     for method in ('N','F','R'):
       if (out/f'{method}_complete.json').exists():continue
       training=ROOT/f'local/s{seed}/{method}'
-      if not (training/'update200.pt').exists():train_condition(eng,seed,method)
+      status=training/'training_status.json'
+      finished=(training/'update200.pt').exists() and status.exists() and read(status)['completed_updates']==200 and (training/'training.jsonl').exists() and (training/'refreshes.json').exists()
+      if not finished:train_condition(eng,seed,method)
       for u in (100,200):
        cp=training/f'update{u:03}.pt';ed=load(eng,cp);evaluate(eng,seed,ed,cp,out/f'{method}_u{u}');del ed
       dump(out/f'{method}_complete.json',dict(seed=seed,method=method,updates=200,checkpoint100_sha=digest(training/'update100.pt'),checkpoint200_sha=digest(training/'update200.pt')))

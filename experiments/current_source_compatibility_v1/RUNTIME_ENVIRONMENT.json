@@ -1,0 +1,15 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.2",
+    "accelerate": "1.14.0",
+    "numpy": "2.5.3"
+  },
+  "python_executable": "/usr/bin/python3.12",
+  "precision": "frozen BF16 backbone,FP32 affine editors; original backend disables TF32",
+  "model_loading": "local_files_only/offline; only inside Slurm srun",
+  "captured_utc": "2026-10-04T07:06:19.668031+00:00"
+}
