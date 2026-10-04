@@ -495,7 +495,7 @@
           "array_id": "2837_0",
           "state": "RUNNING",
           "exit_code": "0:0",
-          "elapsed_seconds": 661,
+          "elapsed_seconds": 1004,
           "gpus": 1,
           "start": "2026-10-05T01:22:58",
           "end": "Unknown",
@@ -506,7 +506,7 @@
           "array_id": "2837_1",
           "state": "RUNNING",
           "exit_code": "0:0",
-          "elapsed_seconds": 661,
+          "elapsed_seconds": 1004,
           "gpus": 1,
           "start": "2026-10-05T01:22:58",
           "end": "Unknown",
@@ -548,7 +548,7 @@
       ]
     }
   ],
-  "gpu_hours": 2.524166666666667,
+  "gpu_hours": 2.7147222222222225,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -680,7 +680,7 @@
     }
   ],
   "maximum_concurrent_gpus": 2,
-  "updated_at": "2026-10-05T01:33:59.136659",
+  "updated_at": "2026-10-05T01:39:42.725142",
   "squeue_samples": [
     {
       "time": "2026-10-04T22:33:52.642760",
@@ -771,6 +771,14 @@
     },
     {
       "time": "2026-10-05T01:33:59.142973",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:39:42.732412",
       "rows": [
         "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
         "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",

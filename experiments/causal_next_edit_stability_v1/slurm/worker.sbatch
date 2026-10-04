@@ -11,3 +11,6 @@ source "$2"
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-4}"
 export TOKENIZERS_PARALLELISM=false
 srun --ntasks=1 --kill-on-bad-exit=1 python -u -m experiments.causal_next_edit_stability_v1.run_stage --config "$3" --manifest "$4" --task-index "$SLURM_ARRAY_TASK_ID" --resume
+if [[ "$3" == */configs/aggregate_cpu.json ]]; then
+  srun --ntasks=1 --kill-on-bad-exit=1 bash experiments/causal_next_edit_stability_v1/slurm/finish_cpu.sh
+fi
