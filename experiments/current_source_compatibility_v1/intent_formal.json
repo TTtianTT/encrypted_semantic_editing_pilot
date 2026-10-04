@@ -1,5 +1,5 @@
 {
-  "phase": "preflight",
+  "phase": "formal",
   "indices": [
     0,
     1,
@@ -11,11 +11,11 @@
     "sbatch",
     "--parsable",
     "--partition=B300q",
-    "--job-name=csc-v1-preflight",
+    "--job-name=csc-v1-formal",
     "--array=0,1,2%2",
     "--time=12:00:00",
     "experiments/current_source_compatibility_v1/job.slurm",
-    "preflight"
+    "formal"
   ],
-  "created_utc": "2026-10-04T07:17:19.826248+00:00"
+  "created_utc": "2026-10-04T07:30:02.785186+00:00"
 }

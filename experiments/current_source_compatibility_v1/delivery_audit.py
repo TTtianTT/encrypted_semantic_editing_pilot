@@ -39,7 +39,7 @@ def check_folder(folder, seed, expected_sha):
 
 def main():
     lock_sha=verify_lock()
-    for name in ('CPU_AUDIT','CPU_SMOKE_VERIFICATION','SMOKE_AUDIT','REPOSITORY_AUDIT','PUBLICATION_AUDIT'):
+    for name in ('CPU_AUDIT','CPU_SMOKE_VERIFICATION','SMOKE_AUDIT','REPOSITORY_AUDIT','OLD_RESULT_REPRODUCTION','PUBLICATION_AUDIT'):
         assert read(ROOT/(name+'.json'))['passed'],name
     assert read(ROOT/'ANALYSIS_AUDIT.json')['all_seeds_complete']
     checks=[];training=[]

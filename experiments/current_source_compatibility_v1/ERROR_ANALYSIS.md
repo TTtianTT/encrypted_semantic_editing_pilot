@@ -1,0 +1,9 @@
+# 错误分析
+
+逐例输出、解析槽位、target/preserved/ended及受控grammar均保留。未知表达不自动裁定语义错误，controlled grammar包含完整性，不是一般英文语法判断。
+
+训练来源：prefix_quality给每次刷新唯一前缀、全池加权及实际监督draws的质量，错误输入未删改。测试错误前缀端点恢复与正确前缀条件成功分开；只有full2/完整长链才要求所有前步均成功。repair_attribution.csv给配对差值分解；更新后共同正确前缀分层是描述性的，不用于重新筛选主结果。
+
+旧能力损失ID及状态/操作在old_capability_changes；首次失败分布在first_failure；固定诊断集不随方法重新筛选。ERROR_CASES、CASE_SELECTION与AGENT_READING记录固定选择及执行代理对原始文本的逐例阅读，不冒充独立人工标注。
+
+技术失败见ENGINEERING_EVENTS、failure.json和Slurm日志，不作为语义成功率0。初次smoke2739导入失败，2740恢复验证通过；首轮preflight归档复验混入dev及其他条件，限定原始P/test后恢复，已完成GPU预测不变。
