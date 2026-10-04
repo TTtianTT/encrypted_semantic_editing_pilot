@@ -98,4 +98,18 @@ def run(eng,config,folder):
             lowread,_=score_and_cache(eng,bnext,mask,prefix,modules,patch_values={name:(bc[name].float()+low)})
             pathrows.append(dict(world_id=pair['world_id'],pair_id=pair['pair_id'],model=eng.name,editor_seed=eng.task['editor_seed'],module=name,offpath_module=off,prefix_position=prefix['position'],B=bscore,R=rscore,R_mediator_B=blocked,B_mediator_R=inserted,R_offpath_B=offblocked,Good=gs,Good_reverse=rev,B_lowrank_R=lowread,effective_mediator_rank=q.shape[1],R_mediator_shift_norm=float(delta.norm()),reverse_mediator_shift_norm=float((revc[name]-gc[name]).float().norm()),blocked_gain_removed=rscore['margin']-blocked['margin'],offpath_gain_removed=rscore['margin']-offblocked['margin'],inserted_gain=inserted['margin']-bscore['margin'],upstream_gain=rscore['margin']-bscore['margin'],meaning='candidate upstream–mediator–readout evidence at a fixed gold prefix; does not identify unique/full circuit'))
     jsonl(folder/'paths.jsonl',pathrows);torch.save(bases,folder/'module_bases.pt')
+    doses=[];divergences=[]
+    for pair in contexts[:8]:
+        bad,good,mask=load_state(pair);w=pair['world'];op=eng.ed[pair['operation']];nxt=advance('time',0,pair['operation'])
+        for alpha in (0,.25,.5,1.0):
+            dose=dict(spec,alpha=alpha);h,comp,_,_=get_patch(eng,pair,bad,good,mask,dose,pca)
+            now=eng.confidence(h,mask,render(w,0,0),competitor=render(w,1,0))
+            after=eng.confidence(op(h,mask),mask,render(w,nxt,0),competitor=render(w,0,0))
+            doses.append(dict(world_id=pair['world_id'],alpha=alpha,current=now,next=after,patch_norm=float(comp.norm()),current_joint=eng.evaluate(h,mask,w,0,0)['success'],next_joint=eng.evaluate(op(h,mask),mask,w,nxt,0)['success'],interpretation='finite dose; first-divergent token margins are local prefix scores'))
+        if len(divergences)<4:
+            for label,bh,gh,target,competitor in [('current',bad,good,render(w,0,0),render(w,1,0)),('next',op(bad,mask),op(good,mask),render(w,nxt,0),render(w,0,0))]:
+                lb,y=eng.logits(bh,mask,target);lg,_=eng.logits(gh,mask,target);alt=eng.labels([competitor]);pos=next(i for i in range(min(y.shape[1],alt.shape[1])) if int(y[0,i])!=int(alt[0,i]))
+                p=lg[0,pos].log_softmax(-1);q=lb[0,pos].log_softmax(-1);mix=torch.logaddexp(p,q)-__import__('math').log(2)
+                divergences.append(dict(world_id=pair['world_id'],stage=label,position=pos,KL_good_bad=float((p.exp()*(p-q)).sum()),JS=float(.5*((p.exp()*(p-mix)).sum()+(q.exp()*(q-mix)).sum())),full_distributions_saved=False))
+    jsonl(folder/'dose_curves.jsonl',doses);jsonl(folder/'key_position_divergences.jsonl',divergences)
     return dict(n_worlds=len(pairs),selected=selected,readout_only=True,resources=eng.resources())

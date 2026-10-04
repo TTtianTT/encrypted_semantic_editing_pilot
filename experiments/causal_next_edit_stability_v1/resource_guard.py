@@ -111,6 +111,8 @@ def submit(config_path, manifest_path, resume=False):
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--config',type=lambda s:__import__('pathlib').Path(s));p.add_argument('--manifest',type=lambda s:__import__('pathlib').Path(s));p.add_argument('--resume',action='store_true');p.add_argument('--account',action='store_true');a=p.parse_args()
     if a.account:
-        with locked(): print(refresh(read(LEDGER)))
+        with locked():
+            ledger=refresh(read(LEDGER))
+            print(dict(gpu_hours=ledger['gpu_hours'],maximum_concurrent_gpus=ledger['maximum_concurrent_gpus'],stages=[dict(stage=s['stage'],job_id=s['job_id'],terminal=s['terminal'],states=[r['state'] for r in s['allocations']]) for s in ledger['submissions']]))
     else: submit(a.config,a.manifest,a.resume)
 if __name__=='__main__':main()

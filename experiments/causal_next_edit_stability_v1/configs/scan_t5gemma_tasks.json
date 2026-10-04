@@ -1,0 +1,52 @@
+{
+  "stage": "scan_t5gemma",
+  "config_hash": "c3f7a86b773558fa8b37c5ec9b366879d0730aa9e993f33fb1db413ed7858763",
+  "code_hash": "f532d1aba6a362cc927136ddd1132042a74e752f74934816abacb0d9ccc562a5",
+  "tasks": [
+    {
+      "stage": "scan_t5gemma",
+      "model": "t5gemma",
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "editor_seed": 42,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
+      "checkpoint_hash": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "c3f7a86b773558fa8b37c5ec9b366879d0730aa9e993f33fb1db413ed7858763",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/scan_t5gemma/t5gemma_s42",
+      "task_hash": "2fb681f3c260a869c2c0f2647628aaba9e6528521531449fd66baccfc1df88f3"
+    },
+    {
+      "stage": "scan_t5gemma",
+      "model": "t5gemma",
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "editor_seed": 43,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s43/P/best.pt",
+      "checkpoint_hash": "d9f856cc9c94010048ae56ed738bc341f376835ad65e3fa3c3a9032f072a90ab",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "c3f7a86b773558fa8b37c5ec9b366879d0730aa9e993f33fb1db413ed7858763",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/scan_t5gemma/t5gemma_s43",
+      "task_hash": "32ecf7fdf737cbbbeb958f9884b9504b0190928672e9dabd780a8283e08b0614"
+    },
+    {
+      "stage": "scan_t5gemma",
+      "model": "t5gemma",
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "editor_seed": 44,
+      "editor_condition": "P",
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s44/P/best.pt",
+      "checkpoint_hash": "f0a1870124dc5f62618b342c4882ce123d0df85400397085ee787b6106129aa9",
+      "world_shard": "all",
+      "method": "grouped",
+      "config_hash": "c3f7a86b773558fa8b37c5ec9b366879d0730aa9e993f33fb1db413ed7858763",
+      "data_hash": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+      "output_path": "local/scan_t5gemma/t5gemma_s44",
+      "task_hash": "cabe883a8b922f99036cb82d8b2c8fe47984cbc1f221488205674ff8a8842a80"
+    }
+  ]
+}

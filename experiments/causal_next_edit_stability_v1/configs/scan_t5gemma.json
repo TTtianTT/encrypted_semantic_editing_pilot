@@ -1,0 +1,17 @@
+{
+  "stage": "scan_t5gemma",
+  "partition": "B300q",
+  "gpus": 1,
+  "walltime": "01:00:00",
+  "walltime_hours": 1.0,
+  "world_cap": 256,
+  "prerequisites": [
+    {
+      "path": "local/smoke_t5gemma/t5gemma_s42/complete.json",
+      "passed_required": true
+    }
+  ],
+  "input_hashes": {
+    "preregistered_protocol.yaml": "a6798734bd5d56523d59b306bc4de0fae239ac5415ae25914563cd0d67b71efd"
+  }
+}
