@@ -104,6 +104,28 @@ def make_stage(stage,model_seeds,walltime,extra=None):
     mp=ROOT/f'configs/{stage}_tasks.json';dump(mp,dict(stage=stage,config_hash=sha(cp),code_hash=code_hash(),tasks=tasks))
     print(str(cp),str(mp))
 
+def qualification_diagnostics(eng,worlds,folder):
+    import torch
+    from .adapter import reconstruct,render,advance
+    from .pairs import HISTORIES
+    from .operator_analysis import analyze
+    output=[];algebra=[]
+    for w in [w for w in worlds if w['mechanism_split']=='discovery'][:16]:
+        states={}
+        for hist in HISTORIES:
+            h,m=reconstruct(eng,w,hist,0);states[hist['id']]=(h,m,eng.evaluate(h,m,w,0,0))
+        hn,mn=eng.encode([render(w,0,0)]);states['N_current']=(hn,mn,eng.evaluate(hn,mn,w,0,0))
+        first=states[HISTORIES[0]['id']][2]
+        hr,mr=eng.encode([first['text']]);states['R_once']=(hr,mr,eng.evaluate(hr,mr,w,0,0))
+        natural=states['N_current'][2]['text']
+        for name,(h,m,pred) in states.items():
+            nxt={op:eng.evaluate(eng.ed[op](h,m),m,w,advance('time',0,op),0) for op in ('plus','minus')}
+            output.append(dict(world_id=w['world_id'],split='discovery',history=name,current=pred,current_confidence=eng.confidence(h,m,render(w,0,0),competitor=render(w,1,0)),next=nxt,mask_length=int(m.sum()),mask_hash=objsha(m.cpu().tolist()),raw_equal_to_natural=pred['text']==natural,strip_equal_to_natural_diagnostic_only=pred['text'].strip()==natural.strip(),strip_used_for_qualification=False))
+        hb,mb,_=states[HISTORIES[0]['id']]
+        if torch.equal(mb,mn):algebra.append(dict(world_id=w['world_id'],model=eng.name,editor_seed=eng.task['editor_seed'],analysis_source='qualification-only, raw-text-unmatched states; excluded from primary intervention statistics',**analyze(eng.ed,hb,hn,mb,'plus')))
+    jsonl(folder/'qualification_diagnostics.jsonl',output);jsonl(folder/'operator_diagnostic.jsonl',algebra)
+    return dict(worlds=16,records=len(output),no_interventions=True,resources=eng.resources())
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--prepare',action='store_true');p.add_argument('--stage');p.add_argument('--models',default='bart:42');p.add_argument('--walltime',default='00:15:00');a=p.parse_args()
     if a.prepare:prepare()

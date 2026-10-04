@@ -4,7 +4,7 @@ import torch
 from .common import *
 from .adapter import render,advance,native_hook
 from .pairs import primary_pairs
-from .rollout_eval import load_pairs,load_state,get_patch
+from .rollout_eval import load_pairs,load_state,get_patch,random_component,evaluate_condition,RANDOM_SEEDS
 
 def components(eng):
     dec=eng.model.get_decoder();out={}
@@ -112,4 +112,16 @@ def run(eng,config,folder):
                 p=lg[0,pos].log_softmax(-1);q=lb[0,pos].log_softmax(-1);mix=torch.logaddexp(p,q)-__import__('math').log(2)
                 divergences.append(dict(world_id=pair['world_id'],stage=label,position=pos,KL_good_bad=float((p.exp()*(p-q)).sum()),JS=float(.5*((p.exp()*(p-mix)).sum()+(q.exp()*(q-mix)).sum())),full_distributions_saved=False))
     jsonl(folder/'dose_curves.jsonl',doses);jsonl(folder/'key_position_divergences.jsonl',divergences)
+    token_controls=[]
+    for pair in contexts[:16]:
+        bad,good,mask=load_state(pair);delta=(good.float()-bad.float())*mask[...,None]
+        h,comp,actual,_=get_patch(eng,pair,bad,good,mask,dict(method='token',alpha=1),pca)
+        token_controls.append(evaluate_condition(eng,pair,h,mask,'token_span_aux',actual,comp,'primary',[pair['operation']]))
+        reversed_h=torch.where(mask.bool()[...,None],(good.float()-comp).to(good.dtype),good)
+        token_controls.append(evaluate_condition(eng,pair,reversed_h,mask,'reverse_token_span_aux',dict(actual,reverse=True),-comp,'primary',[pair['operation']]))
+        for seed in RANDOM_SEEDS:
+            rc,meta=random_component(pair,delta,mask,comp,actual,seed)
+            rh=torch.where(mask.bool()[...,None],(bad.float()+rc).to(bad.dtype),bad)
+            token_controls.append(evaluate_condition(eng,pair,rh,mask,f'random_token_positions_{seed}',dict(actual,positions=meta['random_positions'],**meta),rc,'primary',[pair['operation']]))
+    jsonl(folder/'token_position_controls.jsonl',token_controls)
     return dict(n_worlds=len(pairs),selected=selected,readout_only=True,resources=eng.resources())

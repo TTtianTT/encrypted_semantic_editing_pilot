@@ -32,6 +32,9 @@ def main():
         elif c.get('mode')=='decoder':
             from .decoder_patching import run
             result=run(eng,c,folder)
+        elif c.get('mode')=='qualification_diagnostics':
+            from .audit import qualification_diagnostics
+            result=qualification_diagnostics(eng,ws,folder)
         else:
             from .rollout_eval import run
             result=run(eng,c,folder)

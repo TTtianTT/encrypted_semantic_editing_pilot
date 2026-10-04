@@ -59,6 +59,7 @@ def aggregate():
                 for (sp,old,source,op),rs in gr.items():
                     x=dict(model=model,editor_seed=seed,split=sp,original_split=old,source=source,operation=op,scanned_worlds=len(rs))
                     for key in ('candidate_history_combinations','current_double_correct','exact_current_text','next_step_fork','same_shape_mask','final_pair_worlds','current_not_both_correct','current_text_mismatch','not_good_bad_fork','shape_or_mask_mismatch'):x[key]=sum(r.get(key,0) for r in rs)
+                    for key in ('current_double_correct','exact_current_text','next_step_fork','same_shape_mask'):x[key+'_worlds']=sum(r.get(key,0)>0 for r in rs)
                     paircounts.append(x)
             p=ROOT/f'local/test_{model}/{model}_s{seed}/results.jsonl'
             if p.exists():testrecords.extend(rows(p));operators.extend(rows(p.parent/'operator.jsonl'))
@@ -82,6 +83,7 @@ def aggregate():
                 x['step_endpoints']=[sum(sum(r['step_successes'][i] for r in xs if r['editor_seed']==s)/sum(r['editor_seed']==s for r in xs) for s in sorted({r['editor_seed'] for r in xs}))/len({r['editor_seed'] for r in xs}) for i in range(5)]
                 x['first_failure_distribution']=dict(sum((Counter(r['first_failure_distribution']) for r in xs),Counter()));c.append(x)
         lockpath=ROOT/f'results/{model}_method_lock.json'
+        if not rs:modelstats.append(dict(model=model,method=None,n_worlds=0,n_seeds=0,estimate=None,ci95=None,p_raw=None,status='NOT_ESTIMABLE; no eligible independent-test intervention records'))
         if lockpath.exists() and rs:
             for mi,method_spec in enumerate(read(lockpath)['methods']):
                 method=method_spec['name'];stats=clustered_difference([r for r in testrecords if r['model']==model],method,[f'random_{method}_{s}' for s in range(61001,61009)])
@@ -108,9 +110,9 @@ def aggregate():
     for model in ('bart','t5gemma'):
         rs=[r for r in testrecords if r['model']==model and r['sequence_name']=='primary']
         lock=read(ROOT/f'results/{model}_method_lock.json') if (ROOT/f'results/{model}_method_lock.json').exists() else None
-        if not lock:continue
+        if not lock or not lock.get('methods'):continue
         method=lock['methods'][0]['name']
-        choices=[('recovery',lambda r:r['method_name']==method and r['R1']),('failure',lambda r:r['method_name']==method and not r['R1']),('reverse_damage',lambda r:r['method_name']=='reverse_'+method and not r['R1'])]
+        choices=[('recovery',lambda r:r['method_name']==method and r['R1']),('failure',lambda r:r['method_name']==method and (not r['R1'] or r.get('R5') is False)),('reverse_damage',lambda r:r['method_name']=='reverse_'+method and not r['R1'])]
         for tag,predicate in choices:
             candidates=sorted((r for r in rs if predicate(r)),key=lambda r:(r['world_id'],r['editor_seed']))
             if candidates:samples.append(dict(example_type=tag,**candidates[0]))

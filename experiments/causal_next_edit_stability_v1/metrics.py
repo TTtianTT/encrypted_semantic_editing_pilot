@@ -23,5 +23,5 @@ def clustered_difference(records,local,random_names,reps=10000,seed=2026100402):
 
 def holm(ps):
     valid=sorted((p,i) for i,p in enumerate(ps) if p is not None);out=[None]*len(ps);last=0
-    for rank,(p,i) in enumerate(valid):last=max(last,min(1,p*(len(valid)-rank)));out[i]=last
+    for rank,(p,i) in enumerate(valid):last=max(last,min(1,p*(len(ps)-rank)));out[i]=last
     return out

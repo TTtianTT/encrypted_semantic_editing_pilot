@@ -276,10 +276,45 @@
       "job_id": "2823",
       "gpus_per_task": 1,
       "concurrency": 2,
-      "terminal": false
+      "terminal": false,
+      "allocations": [
+        {
+          "job_id": "2824",
+          "array_id": "2823_0",
+          "state": "RUNNING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 955,
+          "gpus": 1,
+          "start": "2026-10-04T22:45:36",
+          "end": "Unknown",
+          "limit_minutes": 60
+        },
+        {
+          "job_id": "2825",
+          "array_id": "2823_1",
+          "state": "RUNNING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 954,
+          "gpus": 1,
+          "start": "2026-10-04T22:45:37",
+          "end": "Unknown",
+          "limit_minutes": 60
+        },
+        {
+          "job_id": "2823",
+          "array_id": "2823_2",
+          "state": "PENDING",
+          "exit_code": "0:0",
+          "elapsed_seconds": 0,
+          "gpus": 0,
+          "start": "Unknown",
+          "end": "Unknown",
+          "limit_minutes": 60
+        }
+      ]
     }
   ],
-  "gpu_hours": 0.4691666666666667,
+  "gpu_hours": 0.9994444444444445,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -336,10 +371,34 @@
       "task": "0",
       "time": "2026-10-04T22:41:03.146984",
       "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2825",
+      "parent": "2823",
+      "task": "1",
+      "time": "2026-10-04T22:45:43.089849",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2824",
+      "parent": "2823",
+      "task": "0",
+      "time": "2026-10-04T22:45:43.105601",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2823",
+      "parent": "2823",
+      "task": "2",
+      "time": "2026-10-04T23:06:12.404303",
+      "visible": "0"
     }
   ],
   "maximum_concurrent_gpus": 2,
-  "updated_at": "2026-10-04T22:45:36.215835",
+  "updated_at": "2026-10-04T23:01:31.627206",
   "squeue_samples": [
     {
       "time": "2026-10-04T22:33:52.642760",
@@ -358,6 +417,14 @@
     {
       "time": "2026-10-04T22:45:36.223597",
       "rows": []
+    },
+    {
+      "time": "2026-10-04T23:01:31.635783",
+      "rows": [
+        "2823_2|cesv1-scan_t5gemma|gres/gpu:1|PENDING",
+        "2823_1|cesv1-scan_t5gemma|gres/gpu:1|RUNNING",
+        "2823_0|cesv1-scan_t5gemma|gres/gpu:1|RUNNING"
+      ]
     }
   ]
 }
