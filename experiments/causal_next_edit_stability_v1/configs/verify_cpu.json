@@ -1,0 +1,17 @@
+{
+  "stage": "verify_cpu",
+  "partition": "defq",
+  "gpus": 0,
+  "walltime": "00:15:00",
+  "walltime_hours": 0.25,
+  "mode": "verify_artifacts",
+  "prerequisites": [
+    {
+      "path": "local/aggregate_cpu/complete/complete.json"
+    }
+  ],
+  "input_hashes": {
+    "results/artifact_index.json": "78fbfba82a8a05c8ca0284f4f1106f70be970daac7ae3365f3a5f149c04cbd37",
+    "run_manifest.json": "e99de121e31a9c8277dd10594cdc0be69a255c996ef1608b7a19cedd3aefc357"
+  }
+}

@@ -128,6 +128,23 @@ def qualification_diagnostics(eng,worlds,folder):
     jsonl(folder/'qualification_diagnostics.jsonl',output);jsonl(folder/'operator_diagnostic.jsonl',algebra)
     return dict(worlds=16,records=len(output),no_interventions=True,resources=eng.resources())
 
+def verify_artifacts():
+    """CPU Slurm audit of immutable science artifacts and admitted model files."""
+    import os
+    assert os.environ.get('SLURM_JOB_ID') and os.environ.get('SLURM_STEP_ID')
+    inventory=read(ROOT/'results/artifact_index.json');manifest=read(ROOT/'run_manifest.json')
+    checks=list(inventory)+list(manifest['verified_backbone_files'])+list(manifest['editors'])
+    checks += [dict(path=str(SOURCE/f),sha256=manifest[k]) for f,k in [('backend.py','source_backend_sha'),('evaluator.py','source_parser_sha')]]
+    mismatches=[];total=0
+    for i,item in enumerate(checks):
+        p=Path(item['path']);total+=p.stat().st_size
+        if sha(p)!=item['sha256']:mismatches.append(str(p))
+        if (i+1)%1000==0:print(f'CPU hash verification {i+1}/{len(checks)}',flush=True)
+    result=dict(passed=not mismatches,checked_files=len(checks),checked_bytes=total,science_artifact_files=len(inventory),backbone_files=len(manifest['verified_backbone_files']),editor_checkpoints=len(manifest['editors']),mismatches=mismatches,job_id=os.environ['SLURM_JOB_ID'],GPU_count=0,new_interventions=False)
+    dump(ROOT/'results/FINAL_HASH_VERIFICATION.json',result)
+    assert result['passed'], 'Artifact or admitted checkpoint hash changed'
+    return result
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--prepare',action='store_true');p.add_argument('--stage');p.add_argument('--models',default='bart:42');p.add_argument('--walltime',default='00:15:00');a=p.parse_args()
     if a.prepare:prepare()

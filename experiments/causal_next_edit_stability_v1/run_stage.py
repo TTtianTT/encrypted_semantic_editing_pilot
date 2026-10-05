@@ -15,8 +15,13 @@ def main():
     if a.resume and marker.exists():assert read(marker)['task_hash']==t['task_hash'];return
     if c['gpus']==0:
         assert os.environ.get('SLURM_JOB_ID') and os.environ.get('SLURM_STEP_ID')
-        from .aggregate import aggregate
-        result=aggregate();dump(marker,dict(task_hash=t['task_hash'],task=t,result=result));return
+        if c.get('mode')=='verify_artifacts':
+            from .audit import verify_artifacts
+            result=verify_artifacts()
+        else:
+            from .aggregate import aggregate
+            result=aggregate()
+        dump(marker,dict(task_hash=t['task_hash'],task=t,result=result));return
     from .resource_guard import runtime_check
     runtime_check(c)
     from .adapter import Engine
