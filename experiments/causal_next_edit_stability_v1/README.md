@@ -9,7 +9,7 @@ All GPU execution uses the single entry below, a shared lock, one active 1-GPU a
 From this worktree:
 
 ```bash
-/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -m unittest experiments.causal_next_edit_stability_v1.tests.test_cpu
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -m unittest experiments.causal_next_edit_stability_v1.tests.test_cpu experiments.causal_next_edit_stability_v1.tests.test_storage_cpu
 bash experiments/causal_next_edit_stability_v1/slurm/submit_stage.sh --account
 ```
 
@@ -24,7 +24,7 @@ It is called inside `worker.sbatch` via `srun`, never directly for GPU work. Con
 Historical stage manifests intentionally require their recorded code hash. To reproduce the locked BART test from the final implementation, create a fresh output namespace using the existing audited state caches and locked discovery bases (do not overwrite the historical test). The commands below create and submit the replay; repeated scientific evaluation is labelled replay and excluded from the original independent-test aggregate.
 
 ```bash
-/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -c "from experiments.causal_next_edit_stability_v1.audit import make_stage; from experiments.causal_next_edit_stability_v1.common import ROOT,read,sha; lock=read(ROOT/'results/final_test_lock.json'); make_stage('replay_bart',[('bart',s) for s in (42,43,44)],'01:00:00',dict(mode='test',input_hashes=dict(lock['input_hashes'],**{'results/final_test_lock.json':sha(ROOT/'results/final_test_lock.json')})))"
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python -c "from experiments.causal_next_edit_stability_v1.audit import make_stage; from experiments.causal_next_edit_stability_v1.common import ROOT,read,sha; lock=read(ROOT/'results/final_test_lock.json'); make_stage('replay_bart',[('bart',s) for s in (42,43,44)],'03:00:00',dict(mode='test',input_hashes=dict(lock['input_hashes'],**{'results/final_test_lock.json':sha(ROOT/'results/final_test_lock.json')})))"
 bash experiments/causal_next_edit_stability_v1/slurm/submit_stage.sh --config experiments/causal_next_edit_stability_v1/configs/replay_bart.json --manifest experiments/causal_next_edit_stability_v1/configs/replay_bart_tasks.json
 ```
 
@@ -33,3 +33,7 @@ Replay uses the same 40 GPU-hour ledger and two-GPU limit. Choose a new explicit
 Small source code, configs, denominators, aggregate CSV/JSON and sample records are committed. Full state tensors, complete per-example result streams and logs use the original project's shared `local/` artifact convention and are excluded from Git. Published indexes link paths and hashes. Backbone and editor training are never performed.
 
 Official scheduling references: [Slurm arrays](https://slurm.schedmd.com/job_array.html), [sbatch](https://slurm.schedmd.com/sbatch.html). The distinction between intervention choice and scoring follows the concerns described in [Towards Best Practices of Activation Patching](https://arxiv.org/abs/2309.16042); no model conversion library is required.
+
+The original test allocations used a one-hour limit; timeouts and a partially accepted Slurm limit increase are retained in the ledger. Technical recovery uses `--resume-walltime 03:00:00` on the original config/manifest after the entire prior array terminates. This changes only the allocation reservation, preserves scientific hashes, and skips complete world records. Three hours is the conservative replay allocation limit, not a runtime forecast.
+
+The executed independent-test and CPU-analysis Python snapshot is `c288ad1` (code SHA256 `4924e61a677e4902cfd649a92853a18e5080584d6ed7d66eb253220c02b156a4`). After every allocation terminated, delivery changes added atomic PCA/module-basis/CSV/report publication, refusal to overwrite stage namespaces, and repeatable final resource refresh. These storage/report changes do not change intervention mathematics, selection, data, or the original results. Historical manifests retain their execution hashes; fresh replay manifests use the delivery code hash.

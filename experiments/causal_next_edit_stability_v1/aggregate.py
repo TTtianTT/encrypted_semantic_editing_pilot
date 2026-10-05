@@ -2,6 +2,7 @@
 import argparse
 import csv
 import gzip
+import io
 from collections import Counter,defaultdict
 from .common import *
 from .metrics import clustered_difference,holm
@@ -10,9 +11,10 @@ def write_csv(path,xs):
     xs=list(xs)
     keys=list(dict.fromkeys(k for r in xs for k in r))
     path.parent.mkdir(parents=True,exist_ok=True)
-    with path.open('w',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=keys);w.writeheader()
-        for r in xs:w.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(dict,list)) else v for k,v in r.items()})
+    f=io.StringIO(newline='')
+    w=csv.DictWriter(f,fieldnames=keys);w.writeheader()
+    for r in xs:w.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(dict,list)) else v for k,v in r.items()})
+    atomic_text(path,f.getvalue())
 
 def display_method(name):
     return name.rsplit('_',1)[0]+'_8seed_mean' if name.startswith('random_') else name
@@ -170,7 +172,7 @@ def aggregate():
     text+='实际Slurm资源：\n\n'+mdtable(resources,['stage','array_id','terminal','GPU_hours','states'])+'\n'
     text+=f'总 allocation GPU-hours={ledger["gpu_hours"]:.6f}，allocation起止事件重建最大并发={ledger["maximum_concurrent_gpus"]} GPU，上限40 GPU-hours/2 GPU。失败、smoke与重试均计费，不重复加.batch/step。残留未终态数组：{[s["job_id"] for s in ledger["submissions"] if not s["terminal"]]}。Peak显存见每任务complete.resources，模型、数据、checkpoint、日志与完整结果hash见artifact_index/run_manifest。\n\n'
     text+='结论标签按实际表现：上游仅恢复一步为 operation-specific one-step compatibility repair；一次上游patch若提升所测完整长链为 observed multi-step recoverability improvement，仅限所测序列/分布；decoder单独patch为 readout repair。阴性/区间重叠不证明相等。少量成功、失败与reverse反例按固定world排序抽取于examples.jsonl，不能代替聚合。\n'
-    (ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md').write_text(text)
+    atomic_text(ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md',text)
     dump(ROOT/'results/summary.json',dict(statistics=modelstats,resources=resources,total_gpu_hours=ledger['gpu_hours'],maximum_concurrent_gpus=ledger['maximum_concurrent_gpus'],operator_summary=operator_summary,SAE=sae))
     summary=dict(statistics=modelstats,gpu_hours=ledger['gpu_hours'])
     print(json.dumps(summary,ensure_ascii=False));return summary
@@ -179,14 +181,17 @@ def refresh_resource_report():
     ledger=read(ROOT/'results/job_ledger.json');summary=read(ROOT/'results/summary.json')
     resources=[dict(stage=s['stage'],array_id=s['job_id'],terminal=s['terminal'],GPU_hours=sum(r['gpus']*r['elapsed_seconds']/3600 for r in s['allocations']),states=dict(Counter(r['state'] for r in s['allocations'])),indices=s['indices']) for s in ledger['submissions']]
     summary.update(resources=resources,total_gpu_hours=ledger['gpu_hours'],maximum_concurrent_gpus=ledger['maximum_concurrent_gpus']);dump(ROOT/'results/summary.json',summary);write_csv(ROOT/'results/slurm_resources.csv',resources)
-    p=ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md';text=p.read_text();begin=text.index('实际Slurm资源：');end=text.index('结论标签按实际表现：',begin)
-    text=text[:begin]+'实际Slurm资源（最终sacct刷新）：\n\n'+mdtable(resources,['stage','array_id','terminal','GPU_hours','states'])+f'\n总allocation GPU-hours={ledger["gpu_hours"]:.6f}，allocation起止事件重建峰值并发={ledger["maximum_concurrent_gpus"]} GPU。未终态数组={[s["job_id"] for s in ledger["submissions"] if not s["terminal"]]}。40GPUh/2GPU上限均按allocation核算；失败/smoke/retry计入，.batch和step不重复。\n\n'+text[end:];p.write_text(text)
+    p=ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md';text=p.read_text();begin=text.index('实际Slurm资源');end=text.index('结论标签按实际表现：',begin)
+    text=text[:begin]+'实际Slurm资源（最终sacct刷新）：\n\n'+mdtable(resources,['stage','array_id','terminal','GPU_hours','states'])+f'\n总allocation GPU-hours={ledger["gpu_hours"]:.6f}，allocation起止事件重建峰值并发={ledger["maximum_concurrent_gpus"]} GPU。未终态数组={[s["job_id"] for s in ledger["submissions"] if not s["terminal"]]}。40GPUh/2GPU上限均按allocation核算；失败/smoke/retry计入，.batch和step不重复。\n\n'+text[end:];atomic_text(p,text)
     index=read(ROOT/'results/artifact_index.json');known={x['path'] for x in index}
     for sub in ledger['submissions']:
-        m=read(ROOT/sub['manifest'])
+        m=read(Path(sub['manifest']) if Path(sub['manifest']).is_absolute() else WT/sub['manifest'])
         for i in sub['indices']:
             p=ROOT/m['tasks'][i]['output_path']/'complete.json'
             if p.exists() and str(p) not in known:index.append(dict(path=str(p),bytes=p.stat().st_size,sha256=sha(p)))
+    for item in index:
+        p=Path(item['path'])
+        if p.parent==ROOT/'local/logs':item.update(bytes=p.stat().st_size,sha256=sha(p))
     dump(ROOT/'results/artifact_index.json',index)
     print(dict(gpu_hours=ledger['gpu_hours'],peak=ledger['maximum_concurrent_gpus'],unfinished=[s['job_id'] for s in ledger['submissions'] if not s['terminal']]))
 

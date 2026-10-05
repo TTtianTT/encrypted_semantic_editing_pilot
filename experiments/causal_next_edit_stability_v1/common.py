@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -21,6 +22,24 @@ def objsha(x):
 
 def read(path): return json.loads(Path(path).read_text())
 def rows(path): return [json.loads(s) for s in Path(path).read_text().splitlines() if s.strip()]
+
+def atomic_write(path, writer):
+    """Publish a complete file; a failed write preserves any previous artifact."""
+    p = Path(path); p.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(dir=p.parent, prefix='.' + p.name + '.', suffix='.tmp')
+    try:
+        with os.fdopen(fd, 'wb') as f:
+            writer(f); f.flush(); os.fsync(f.fileno())
+        Path(temporary).replace(p)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
+
+def atomic_text(path, text):
+    atomic_write(path, lambda f: f.write(text.encode('utf-8')))
+
+def atomic_torch_save(path, value):
+    import torch
+    atomic_write(path, lambda f: torch.save(value, f))
 
 def dump(path, x):
     p = Path(path); p.parent.mkdir(parents=True, exist_ok=True)

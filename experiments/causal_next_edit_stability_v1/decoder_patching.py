@@ -98,7 +98,7 @@ def run(eng,config,folder):
             q=bases[name];delta=(rc[name]-bc[name]).float();low=(delta@q)@q.T
             lowread,_=score_and_cache(eng,bnext,mask,prefix,modules,patch_values={name:(bc[name].float()+low)})
             pathrows.append(dict(world_id=pair['world_id'],pair_id=pair['pair_id'],model=eng.name,editor_seed=eng.task['editor_seed'],module=name,offpath_module=off,prefix_position=prefix['position'],B=bscore,R=rscore,R_mediator_B=blocked,B_mediator_R=inserted,R_offpath_B=offblocked,Good=gs,Good_reverse=rev,B_lowrank_R=lowread,effective_mediator_rank=q.shape[1],R_mediator_shift_norm=float(delta.norm()),offpath_shift_norm=float((ro[off]-bo[off]).float().norm()),offpath_matching='same tensor dimension and token position; norms reported separately, not normalized',reverse_mediator_shift_norm=float((revc[name]-gc[name]).float().norm()),blocked_gain_removed=rscore['margin']-blocked['margin'],offpath_gain_removed=rscore['margin']-offblocked['margin'],inserted_gain=inserted['margin']-bscore['margin'],upstream_gain=rscore['margin']-bscore['margin'],meaning='candidate upstream–mediator–readout evidence at a fixed gold prefix; does not identify unique/full circuit'))
-    jsonl(folder/'paths.jsonl',pathrows);torch.save(bases,folder/'module_bases.pt')
+    jsonl(folder/'paths.jsonl',pathrows);atomic_torch_save(folder/'module_bases.pt',bases)
     doses=[];divergences=[]
     for pair in contexts[:8]:
         bad,good,mask=load_state(pair);w=pair['world'];op=eng.ed[pair['operation']];nxt=advance('time',0,pair['operation'])

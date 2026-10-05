@@ -42,7 +42,7 @@ def fit_pca(pairs,path):
     if n<2:raise RuntimeError('Insufficient discovery pair tokens for PCA')
     cov=(moment-total[:,None]*total[None,:]/n)/(n-1)
     vals,vec=torch.linalg.eigh(cov);q=vec[:,-16:].flip(1).cpu()
-    path.parent.mkdir(parents=True,exist_ok=True);torch.save(dict(q=q,values=vals[-16:].flip(0).cpu(),mean=(total/n).cpu(),worlds=[r['world_id'] for r in pairs],tokens=n),path)
+    atomic_torch_save(path,dict(q=q,values=vals[-16:].flip(0).cpu(),mean=(total/n).cpu(),worlds=[r['world_id'] for r in pairs],tokens=n))
 
 def candidate_specs():
     return [dict(method=m,rank=k,alpha=a,name=f'{m}_k{k}_a{a}') for m in ('read','write','pca') for k in (1,4,8,16) for a in (.25,.5,1.0)] + [dict(method='token',alpha=a,name=f'token_a{a}') for a in (.25,.5,1.0)]

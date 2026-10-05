@@ -5,7 +5,7 @@ set -euo pipefail
 python - <<'PY'
 import os,sys
 from collections import defaultdict,Counter
-from experiments.causal_next_edit_stability_v1.common import ROOT,SOURCE,read,rows,dump,jsonl
+from experiments.causal_next_edit_stability_v1.common import ROOT,SOURCE,read,rows,dump,jsonl,atomic_text
 from experiments.causal_next_edit_stability_v1.aggregate import collapse,equal_seed_mean,write_csv,mdtable
 from experiments.causal_next_edit_stability_v1.metrics import clustered_difference
 import numpy as np
@@ -99,7 +99,7 @@ text+='10. 已执行S0/S1双模型三seed扫描，BART discovery/validation、di
 text+='主比较经验bootstrap在全一/全零样本上可能退化为零宽区间，这不表示总体无不确定性。仅3个固定编辑器seed、有限语法world及有特权good donor，不能推出通用语义feature、唯一circuit或无donor部署修复。\n\n'
 text+='逐seed主方法表：\n\n'+mdtable([r for r in byseed if r['method'] in (method,'random_'+method+'_8seed_mean','reverse_'+method,'good')],['editor_seed','method','n_worlds','C0','C1','R1','exact_preservation'])+'\n'
 text+='次要探索性长链差值的10,000次world-cluster CI：\n\n'+mdtable(longstats,['sequence','endpoint','n_worlds','estimate','ci95'])+'\n'
-path=ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md';path.write_text(path.read_text()+text)
+path=ROOT/'CAUSAL_NEXT_EDIT_STABILITY_V1_REPORT.md';atomic_text(path,path.read_text()+text)
 dump(ROOT/'results/descriptive_completion.json',dict(passed=True,job_id=os.environ['SLURM_JOB_ID'],independent_raw_records=len(rs),new_interventions=False,extra_training=False,tables=['table_B_by_seed','table_C_by_seed','confidence_audit','operator_relations','secondary_rollout_statistics'],interpretation='descriptive analyses specified before test results were read'))
 print(dict(descriptive_tables_complete=True,records=len(rs)))
 PY
