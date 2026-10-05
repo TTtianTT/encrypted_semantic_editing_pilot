@@ -1,0 +1,353 @@
+{
+  "models": {
+    "bart": {
+      "model_id": "facebook/bart-base",
+      "revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+      "tokenizer_revision": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+      "directory": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base",
+      "license": "apache-2.0",
+      "files": {
+        "vocab.json": {
+          "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+          "bytes": 898823
+        },
+        "README.md": {
+          "sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097",
+          "bytes": 2593
+        },
+        "tokenizer.json": {
+          "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+          "bytes": 1355863
+        },
+        "merges.txt": {
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+          "bytes": 456318
+        },
+        "model.safetensors": {
+          "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+          "bytes": 557709915
+        },
+        "config.json": {
+          "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+          "bytes": 1716
+        }
+      },
+      "local_files_verified": true
+    },
+    "t5gemma": {
+      "model_id": "google/t5gemma-2b-2b-ul2-it",
+      "revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+      "tokenizer_revision": "6a196a58ce2786cd139a1217a85d1f7b9984e330",
+      "status": "downloaded",
+      "directory": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it",
+      "download_seconds": 79.64173451298848,
+      "files": {
+        "generation_config.json": {
+          "sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625",
+          "bytes": 156
+        },
+        "tokenizer.model": {
+          "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+          "bytes": 4241003
+        },
+        "chat_template.jinja": {
+          "sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6",
+          "bytes": 577
+        },
+        "README.md": {
+          "sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016",
+          "bytes": 18716
+        },
+        "tokenizer_config.json": {
+          "sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f",
+          "bytes": 46437
+        },
+        "model-00002-of-00003.safetensors": {
+          "sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac",
+          "bytes": 4988162344
+        },
+        "special_tokens_map.json": {
+          "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+          "bytes": 636
+        },
+        "model-00001-of-00003.safetensors": {
+          "sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1",
+          "bytes": 4988042296
+        },
+        "model.safetensors.index.json": {
+          "sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609",
+          "bytes": 68078
+        },
+        "tokenizer.json": {
+          "sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd",
+          "bytes": 34362429
+        },
+        "model-00003-of-00003.safetensors": {
+          "sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860",
+          "bytes": 1217595120
+        },
+        "config.json": {
+          "sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306",
+          "bytes": 3257
+        }
+      },
+      "local_files_verified": true,
+      "license": "gemma"
+    }
+  },
+  "editors": [
+    {
+      "model": "bart",
+      "seed": 42,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "sha256": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "step": 600,
+      "rank": 16,
+      "dtype": "float32",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+        "sha256": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 42
+      },
+      "source_commit": "0b73738cf552e1ec29aa7a5db1eb1ee703804b66"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 42,
+      "condition": "F",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s42/F_u200.pt",
+      "sha256": "4c3654dd03217cfa7f6cf91f2ff183ccbf760fdbd2fe413925bf29fad8c1b8b5",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s42/F/update200.pt",
+      "raw_sha256": "18e3dc65e28fa2ae3018e3bd1373291b09d1611310dde4681a1ab13cfce689f0",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 42,
+      "condition": "R",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s42/R_u200.pt",
+      "sha256": "8f0220ead9302ca07694a3b5a600fa11ace04055b1b19e26caf977c514844fe2",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s42/R/update200.pt",
+      "raw_sha256": "1bcac649244634ad34e6771a27ed1205b3362fbfa3b1aaec989b14029b2a9b03",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "bart",
+      "seed": 43,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+      "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+      "step": 600,
+      "rank": 16,
+      "dtype": "float32",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt",
+        "sha256": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 43
+      },
+      "source_commit": "0b73738cf552e1ec29aa7a5db1eb1ee703804b66"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 43,
+      "condition": "F",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s43/F_u200.pt",
+      "sha256": "015f9e4195b2049bd57eb59eeeca3375be377edf3a156fcd4aebad5be28a8b06",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s43/F/update200.pt",
+      "raw_sha256": "854453e9d66405591f4c92dcc7b91cb01a6e78adc8b1730b3ce3c395ef3d9da4",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 43,
+      "condition": "R",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s43/R_u200.pt",
+      "sha256": "9e6f218d55cb8d80da117a77fd78acebe81aad441a3a0391a280c329f6a34682",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s43/R/update200.pt",
+      "raw_sha256": "40ba63402c299f869d3c381e48072004656c5dae51cabfd48e17d8091b871937",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "bart",
+      "seed": 44,
+      "condition": "P",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+      "sha256": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+      "step": 600,
+      "rank": 16,
+      "dtype": "float32",
+      "metadata": {
+        "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt",
+        "sha256": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+        "selection": "minimum full-core-dev per-example token mean NLL every100 atomic updates; supplement final200",
+        "seed": 44
+      },
+      "source_commit": "0b73738cf552e1ec29aa7a5db1eb1ee703804b66"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 44,
+      "condition": "F",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s44/F_u200.pt",
+      "sha256": "af6fda35b8c6be5206bc2eb8f7b6f196558aaf861d816e72b38e657dae775af6",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s44/F/update200.pt",
+      "raw_sha256": "8e3987f4986ce192df7da5b87b332191b61bd23c25c14c916fb35b6609494f1c",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 44,
+      "condition": "R",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s44/R_u200.pt",
+      "sha256": "34b516939e22a458d06d683e347b9b70ce02cbbc1974afdde31ecbdd0fb2a707",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s44/R/update200.pt",
+      "raw_sha256": "9b3edd7a591a4211300267df6f20b6271d140bca8d243b6b141f64ea29e5f899",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    }
+  ],
+  "verified_backbone_files": [
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/vocab.json",
+      "bytes": 898823,
+      "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+    },
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/README.md",
+      "bytes": 2593,
+      "sha256": "98072cdef48c6076f108099a2531166cd4112d0f60f31fb84a216830484e3097"
+    },
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/tokenizer.json",
+      "bytes": 1355863,
+      "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+    },
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/merges.txt",
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/model.safetensors",
+      "bytes": 557709915,
+      "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b"
+    },
+    {
+      "model": "bart",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/config.json",
+      "bytes": 1716,
+      "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/generation_config.json",
+      "bytes": 156,
+      "sha256": "1068b94599a94ceea097dd3936819f108c2e70806d7c6cc5ec425610af347625"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer.model",
+      "bytes": 4241003,
+      "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/chat_template.jinja",
+      "bytes": 577,
+      "sha256": "05caca2f1a27fedef588223760024ecac491ef6fe08fcaea593e11eb07b9c9c6"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/README.md",
+      "bytes": 18716,
+      "sha256": "ef1f4d0bb62d919d54e52d37eca03e575921a5113872440abbcef440502cb016"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer_config.json",
+      "bytes": 46437,
+      "sha256": "9546baec0dfefec0e29873edea9488ecde153f846e18c06ea48cb44587bf408f"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00002-of-00003.safetensors",
+      "bytes": 4988162344,
+      "sha256": "f11bf6b42170f31254a9ffc05b57f0c883f09c7e5fa598622b9c17a2822ea2ac"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/special_tokens_map.json",
+      "bytes": 636,
+      "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00001-of-00003.safetensors",
+      "bytes": 4988042296,
+      "sha256": "810ed18542a12cc20341e7807f9d4dd95cc1a211c94e81a1e3c6d2a02a8d50f1"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model.safetensors.index.json",
+      "bytes": 68078,
+      "sha256": "ae8c2904128fc6919d655686fa55f0124e4a9962de9dda4fb27b085357a11609"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/tokenizer.json",
+      "bytes": 34362429,
+      "sha256": "7794135caa3ea73918949c902a781cc61dab674a4b59c17d85931c77c1114cbd"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/model-00003-of-00003.safetensors",
+      "bytes": 1217595120,
+      "sha256": "37d62b9ce73039cc01cf9cd18f6317a7b9debc03ac19e852c13bd4cf69190860"
+    },
+    {
+      "model": "t5gemma",
+      "path": "/dataset1/zailong/models/reference-frame-cross-backbone/t5gemma-2b-2b-ul2-it/config.json",
+      "bytes": 3257,
+      "sha256": "acbefb31370823096ef23635c27af009df89cb0056178fda086d34425d48b306"
+    }
+  ],
+  "source_files": {
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/backend.py": "083daec8548940e5e744e7428f4bb22b1e010cb70e133aa182f0fbf34982ca1d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/semantics.py": "fb92114837ced81d65a54d247534ac22fc75e8437d2820147aa31326b98f5c3f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/evaluator.py": "00144e2c21f7e713ef72411ea9da206706b894e0c5dfa0a32dc943715c1f0f25",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/common.py": "98e6513df56fbd16a281e6afe5dd6e05c02709fe3b9bf0680f793f7a787aa5ac",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/config.json": "9bbb8adebecd7863723192b275ad929b2095dcfd6a157a6fa646e764af40452c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/model_manifest.json": "fe56c72a8f02c1fcdf489eda928ea7fc401002d03f5f2c9aa479319760e22dca"
+  }
+}

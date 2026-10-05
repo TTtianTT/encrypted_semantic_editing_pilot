@@ -1,0 +1,53 @@
+{
+  "run_id": "R02_t5gemma_s44_confirm",
+  "round": "R02",
+  "model": "t5gemma",
+  "seed": 44,
+  "split": "confirmation",
+  "scope": "IID_time_template0",
+  "world_file": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.state-handoff-worktree/experiments/state_handoff_diagnosis_v1/world_manifest.jsonl",
+  "world_hash": "c31b107aa81a99e3a23f42bc2139a90c3cc97a4907a288de764947eedce55eca",
+  "protocol_hash": "79ac6cdf22bc5bf373b83e9c494b5f0b423ac00b3697792d6491fecd36c62900",
+  "semantic_version": "handoff-v1-raw-text-frozen-20261005",
+  "checkpoint_records": [
+    {
+      "model": "t5gemma",
+      "seed": 44,
+      "condition": "F",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s44/F_u200.pt",
+      "sha256": "af6fda35b8c6be5206bc2eb8f7b6f196558aaf861d816e72b38e657dae775af6",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s44/F/update200.pt",
+      "raw_sha256": "8e3987f4986ce192df7da5b87b332191b61bd23c25c14c916fb35b6609494f1c",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    },
+    {
+      "model": "t5gemma",
+      "seed": 44,
+      "condition": "R",
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/checkpoints/s44/R_u200.pt",
+      "sha256": "34b516939e22a458d06d683e347b9b70ce02cbbc1974afdde31ecbdd0fb2a707",
+      "update": 200,
+      "raw_path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.current-source-worktree/experiments/current_source_compatibility_v1/local/s44/R/update200.pt",
+      "raw_sha256": "9b3edd7a591a4211300267df6f20b6271d140bca8d243b6b141f64ea29e5f899",
+      "export_exact_tensor_match": true,
+      "rank": 16,
+      "dtype": "float32",
+      "source_commit": "aea8310b2f1a239cdbf690a11cbdf646b19a2a4f"
+    }
+  ],
+  "source_files": {
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/backend.py": "083daec8548940e5e744e7428f4bb22b1e010cb70e133aa182f0fbf34982ca1d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/semantics.py": "fb92114837ced81d65a54d247534ac22fc75e8437d2820147aa31326b98f5c3f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/evaluator.py": "00144e2c21f7e713ef72411ea9da206706b894e0c5dfa0a32dc943715c1f0f25",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/common.py": "98e6513df56fbd16a281e6afe5dd6e05c02709fe3b9bf0680f793f7a787aa5ac",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/config.json": "9bbb8adebecd7863723192b275ad929b2095dcfd6a157a6fa646e764af40452c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/model_manifest.json": "fe56c72a8f02c1fcdf489eda928ea7fc401002d03f5f2c9aa479319760e22dca"
+  },
+  "output": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.state-handoff-worktree/experiments/state_handoff_diagnosis_v1/local/runs/R02_t5gemma_s44_confirm",
+  "batch_size": 8,
+  "scientific_hash": "85f682804b58a4988226d83c967f541f9e1e77562e536e628add4a726a2aac48"
+}

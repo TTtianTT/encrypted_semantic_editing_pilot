@@ -1,0 +1,75 @@
+version: state_handoff_diagnosis_v1
+date: '2026-10-05'
+semantic_version: handoff-v1-raw-text-frozen-20261005
+baseline: 2f4713f259b980c47b9e9dfeb4d54f183d749c77
+current_source_reference: aea8310b2f1a239cdbf690a11cbdf646b19a2a4f
+domain: time
+template: 0
+editor_seeds: [42, 43, 44]
+models:
+  bart: {id: facebook/bart-base, backbone_dtype: float32, editors: [P], editor_dtype: float32}
+  t5gemma: {id: google/t5gemma-2b-2b-ul2-it, backbone_dtype: bfloat16, editors: [F200, R200], editor_dtype: float32}
+data:
+  maximum_new_worlds: 104
+  development: 24
+  confirmation: 80
+  generator: original four-domain prepare.make_worlds sampling algorithm, seed2026100501, core-content exclusion before hash ordering
+  split: first24 sha256('handoff-v1-split:'+canonical_core_text), remaining80 confirmation; shared across all runs
+  exclusion: all referenced training and exposed evaluation core content; dates and IDs do not define uniqueness
+  replace_failed_worlds: false
+  exploratory_threshold_worlds: 40
+R00: {smoke_exposed_worlds: 8, no_confirmation_outputs: true, seeds: [42, 43, 44]}
+R01:
+  initial_state: 0
+  sequences: [[plus, minus], [plus, plus]]
+  inputs: [PURE, ACTUAL_REENCODE, GOLD_CANONICAL]
+  atomic_cells: all12 legal natural state-operation cells
+  actual_text: raw unmodified decode, original wrapper applied once
+  primary: world_mean(Full2_actual_reencode - Full2_pure), operation_macro and equal_seed_mean
+R02:
+  cells: all22 legal two-step cells
+  matrix: [F_F, F_R, R_F, R_R]
+  direct_memory_handoff: true
+  primary: I = M_FF + M_RR - M_FR - M_RF
+  shared_subset: C0 AND C1_F AND C1_R, never filters C2
+  string_labels: [raw_exact, trailing_ASCII_only, parser_semantic]
+  normalization_changes_actual_inputs: false
+  natural_cells: all12 legal natural state-operation cells for both editors
+R03:
+  initial_state: 0
+  sequences: [[plus, minus, plus, minus, plus], [plus, plus, minus, minus, plus]]
+  depths: [1, 2, 3]
+  inputs: [PURE, ACTUAL_REENCODE, GOLD_CANONICAL]
+  producers: {bart: [P], t5gemma: [F, R]}
+  receivers: {bart: [P], t5gemma: [F, R]}
+  prefix: pure latent; decoder only evaluates; no bridge feedback into prefix
+  eligible_interpretation: C0 AND all preceding pure prefix steps correct
+  small_prefix_threshold_worlds: 20
+  depth1: reuse exact same cached R01/R02 states and records where available
+  full5: descriptive, no selection and no bridge credited as pure
+statistics:
+  independent_unit: world
+  seeds: report each; equal seed weighting
+  cells: equal macro weighting; raw numerators and denominators also
+  bootstrap: 5000 world-cluster resamples, all seeds/methods/cells stay together
+  seed: 2026100502
+  CI: percentile 2.5 and 97.5; conditional denominator recomputed each draw
+  p_values: none
+  saturated_CI: fixed-sample limitation, not population certainty
+resources:
+  allocated_GPU_hours_cap: 16
+  GPUs_per_task: 1
+  maximum_account_project_GPUs: 2
+  array_concurrency: 2
+  single_active_GPU_array: true
+  other_GPU_jobs: refuse new submissions and wait; never cancel
+  defaults: {partition: B300q, gres: 'gpu:1', qos: normal, cpus: 4}
+  recovery_reserve_GPU_hours: 2
+training: prohibited
+SAE: prohibited
+PCA_search: prohibited
+publication:
+  execution: committed immutable git archive snapshot before submit
+  each_run_terminal: collect, audit, report, commit, ordinary push, remote SHA verify before next round
+  failures: publish partial or blocked with missing denominators; never replace by zero
+  changed_science: requires new protocol and new independent data; no silent resume
