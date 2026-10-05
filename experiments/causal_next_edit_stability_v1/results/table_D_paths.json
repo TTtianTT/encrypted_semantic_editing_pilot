@@ -1,0 +1,38 @@
+[
+  {
+    "model": "bart",
+    "module": "layer5.MLP",
+    "n_worlds": 32,
+    "upstream_gain": 11.583461850881577,
+    "blocked_gain_removed": 4.80748188495636,
+    "offpath_gain_removed": 0.8276843428611755,
+    "inserted_gain": 4.267984598875046,
+    "R_mediator_shift_norm": 5.768249347805977,
+    "reverse_mediator_shift_norm": 5.7947667092084885,
+    "offpath_shift_norm": 8.254123613238335
+  },
+  {
+    "model": "bart",
+    "module": "layer5.cross_attention",
+    "n_worlds": 32,
+    "upstream_gain": 11.583461850881577,
+    "blocked_gain_removed": 10.08952260017395,
+    "offpath_gain_removed": 0.55634605884552,
+    "inserted_gain": 8.351935923099518,
+    "R_mediator_shift_norm": 18.089894235134125,
+    "reverse_mediator_shift_norm": 19.43460464477539,
+    "offpath_shift_norm": 15.27580127120018
+  },
+  {
+    "model": "bart",
+    "module": "layer5.residual",
+    "n_worlds": 32,
+    "upstream_gain": 11.583461850881577,
+    "blocked_gain_removed": 11.583461850881577,
+    "offpath_gain_removed": 0.55634605884552,
+    "inserted_gain": 11.583461850881577,
+    "R_mediator_shift_norm": 45.54595875740051,
+    "reverse_mediator_shift_norm": 47.280086040496826,
+    "offpath_shift_norm": 5.774225428700447
+  }
+]

@@ -1,0 +1,228 @@
+{
+  "statistics": [
+    {
+      "model": "bart",
+      "method": "pca_k4_a1.0",
+      "n_worlds": 80,
+      "n_seeds": 3,
+      "estimate": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "p_raw": 9.999000099990002e-05,
+      "per_seed": {
+        "42": 1.0,
+        "43": 1.0,
+        "44": 1.0
+      },
+      "resampling": "union-world clusters shared across seeds; equal-weight seed means; missing seed/world cells kept missing",
+      "assumption": "two-sided sign flips require symmetric/exchangeable world-level paired differences; not exact randomized-trial p",
+      "p_holm": 0.00019998000199980003
+    },
+    {
+      "model": "t5gemma",
+      "method": null,
+      "n_worlds": 0,
+      "n_seeds": 0,
+      "estimate": null,
+      "ci95": null,
+      "p_raw": null,
+      "status": "NOT_ESTIMABLE; no eligible independent-test intervention records",
+      "p_holm": null
+    }
+  ],
+  "resources": [
+    {
+      "stage": "smoke_bart",
+      "array_id": "2815",
+      "terminal": true,
+      "GPU_hours": 0.01861111111111111,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "scan_bart",
+      "array_id": "2816",
+      "terminal": true,
+      "GPU_hours": 0.3047222222222222,
+      "states": {
+        "COMPLETED": 3
+      },
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": "discovery_bart",
+      "array_id": "2820",
+      "terminal": true,
+      "GPU_hours": 0.042777777777777776,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "validation_bart",
+      "array_id": "2821",
+      "terminal": true,
+      "GPU_hours": 0.0661111111111111,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "smoke_t5gemma",
+      "array_id": "2822",
+      "terminal": true,
+      "GPU_hours": 0.036944444444444446,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "scan_t5gemma",
+      "array_id": "2823",
+      "terminal": true,
+      "GPU_hours": 1.5772222222222223,
+      "states": {
+        "COMPLETED": 3
+      },
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": "qualification_t5gemma",
+      "array_id": "2832",
+      "terminal": true,
+      "GPU_hours": 0.059722222222222225,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "decoder_bart",
+      "array_id": "2834",
+      "terminal": true,
+      "GPU_hours": 0.028055555555555556,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "fit_bart",
+      "array_id": "2835",
+      "terminal": true,
+      "GPU_hours": 0.02277777777777778,
+      "states": {
+        "COMPLETED": 2
+      },
+      "indices": [
+        0,
+        1
+      ]
+    },
+    {
+      "stage": "test_bart",
+      "array_id": "2837",
+      "terminal": true,
+      "GPU_hours": 3.66,
+      "states": {
+        "TIMEOUT": 2,
+        "COMPLETED": 1
+      },
+      "indices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": "test_bart",
+      "array_id": "2873",
+      "terminal": true,
+      "GPU_hours": 0.7388888888888889,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "aggregate_cpu",
+      "array_id": "2875",
+      "terminal": true,
+      "GPU_hours": 0.0,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    },
+    {
+      "stage": "verify_cpu",
+      "array_id": "2877",
+      "terminal": true,
+      "GPU_hours": 0.0,
+      "states": {
+        "COMPLETED": 1
+      },
+      "indices": [
+        0
+      ]
+    }
+  ],
+  "total_gpu_hours": 6.555833333333333,
+  "maximum_concurrent_gpus": 2,
+  "operator_summary": [
+    {
+      "model": "bart",
+      "n": 240,
+      "max_absolute_error": 3.5762786865234375e-07,
+      "max_relative_error": 1.461834955307495e-07,
+      "mean_read_fraction": 0.06708661457523704,
+      "mean_bias_norm": 0.40454965829849243
+    },
+    {
+      "model": "t5gemma",
+      "n": 16,
+      "max_absolute_error": 0.22992783784866333,
+      "max_relative_error": 0.004557623062282801,
+      "mean_read_fraction": 0.01178436994086951,
+      "mean_bias_norm": 0.5497328042984009
+    }
+  ],
+  "SAE": {
+    "status": "SKIPPED",
+    "reason": "Exact-text pairing unavailable for at least one model: the both-model discovery/validation prerequisite is unmet. No SAE escalation.",
+    "training_performed": false,
+    "allocated_GPU_hours": 0,
+    "decision_before_independent_test": true
+  }
+}

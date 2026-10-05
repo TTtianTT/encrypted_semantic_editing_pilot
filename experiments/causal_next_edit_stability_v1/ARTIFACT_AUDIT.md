@@ -10,4 +10,17 @@ Editor: z=h.float(); delta=b+u(v(z)); output=(z+delta*mask[...,None]).to(h.dtype
 
 Existing environment Python3.12.3, torch2.11.0+cu128, transformers5.16.1; no upgrades. CUDA/GPU runtime inspected only inside Slurm. B300q/gpu:1, blank account/default normal QoS verified from historical sacct; script uses existing .venv and srun. New data/configs/small results in Git; large CPU state caches, logs and complete per-example results under ignored local/.
 
-S0 runtime acceptance and peak GPU memory will be linked in results; missing/unexecuted checks are not assumed passed.
+S0实际验收见results/S0_ACCEPTANCE.json：两模型各16world全部通过。观测Torch allocated显存峰值11,390,295,552 bytes（10.61GiB），逐任务记录与缺失allocation峰值的NA见GPU_memory_observations。8,684文件/15,612,036,908 bytes最终SHA256全部一致，见FINAL_HASH_VERIFICATION。
+
+所有领域合法变换（原semantics.advance/states，仅time在本轮运行）：
+
+| domain | states | plus | minus | stop |
+| --- | --- | --- | --- | --- |
+| time | -3..3 | s-1 | s+1 | 越界ValueError，无饱和 |
+| space | 0..3 | (s+1)%4 | (s-1)%4 | 旋转循环 |
+| person | 0..2 | (s+1)%3 | (s-1)%3 | speaker/listener循环 |
+| emotion | 0..4 | s+1 | s-1 | 越界ValueError，无饱和 |
+
+独立parser为语义判定规范化空格/大小写，未知表达不丢弃；joint success = ended AND grammar AND target AND preserved，其中scope=target AND preserved。当前文本配对及exact preservation使用未经strip的greedy原始文本。末轮再次核实训练ID/核心render与256候选零重叠，源码/权重/缓存哈希核验通过。实际GPU型号：NVIDIA B300 SXM6 AC。
+
+独立测试与统计执行Python为c288ad1/hash4924e61a677e4902cfd649a92853a18e5080584d6ed7d66eb253220c02b156a4；交付实现和仅工程修改在run_manifest区分。哈希审计所用旧清单保存于results/hash_audit_inputs，保留历史输入。

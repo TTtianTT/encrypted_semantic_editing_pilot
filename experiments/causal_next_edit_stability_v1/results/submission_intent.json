@@ -1,29 +1,26 @@
 {
-  "stage": "test_bart",
+  "stage": "verify_cpu",
   "indices": [
-    0,
-    1,
-    2
+    0
   ],
-  "manifest": "experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json",
-  "config": "experiments/causal_next_edit_stability_v1/configs/test_bart.json",
+  "manifest": "experiments/causal_next_edit_stability_v1/configs/verify_cpu_tasks.json",
+  "config": "experiments/causal_next_edit_stability_v1/configs/verify_cpu.json",
   "command": [
     "sbatch",
     "--parsable",
-    "--partition=B300q",
-    "--gres=gpu:1",
-    "--job-name=cesv1-test_bart",
-    "--array=0,1,2%2",
-    "--time=01:00:00",
+    "--partition=defq",
+    "--job-name=cesv1-verify_cpu",
+    "--array=0%1",
+    "--time=00:15:00",
     "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
     "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
     "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart.json",
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json"
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/verify_cpu.json",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/verify_cpu_tasks.json"
   ],
   "other_user_gpu_jobs": [],
-  "reserved_gpu_hours": 3.0,
-  "time": "2026-10-05T01:22:57.426973"
+  "reserved_gpu_hours": 0.0,
+  "time": "2026-10-05T16:36:44.448498"
 }

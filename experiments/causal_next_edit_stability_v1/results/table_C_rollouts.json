@@ -1,0 +1,308 @@
+[
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "bad",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "1": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 1200.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "full",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "global_a0.5",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "1": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 1060.0,
+      "grammar": 32.0,
+      "semantic": 108.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "good",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "pca_k4_a1.0",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "primary",
+    "method": "random_pca_k4_a1.0_8seed_mean",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 0.1864583333333333,
+    "exact_preservation": 0.1864583333333333,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "0": 195.25,
+      "1": 44.75
+    },
+    "failure_type_distribution": {
+      "parse": 1200.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "bad",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "1": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 1200.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "full",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "global_a0.5",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "1": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 1060.0,
+      "grammar": 32.0,
+      "semantic": 108.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "good",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "pca_k4_a1.0",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 1.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 1.0,
+    "exact_preservation": 1.0,
+    "step_endpoints": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "2": 240.0
+    },
+    "failure_type_distribution": {
+      "parse": 960.0
+    }
+  },
+  {
+    "model": "bart",
+    "sequence": "reordered",
+    "method": "random_pca_k4_a1.0_8seed_mean",
+    "n_worlds": 80,
+    "n_seed_worlds": 240,
+    "R1": 0.0,
+    "R3": 0.0,
+    "R5": 0.0,
+    "C0": 0.1864583333333333,
+    "exact_preservation": 0.1864583333333333,
+    "step_endpoints": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "first_failure_distribution": {
+      "0": 195.25,
+      "1": 44.75
+    },
+    "failure_type_distribution": {
+      "parse": 1200.0
+    }
+  }
+]

@@ -488,39 +488,39 @@
       "job_id": "2837",
       "gpus_per_task": 1,
       "concurrency": 2,
-      "terminal": false,
+      "terminal": true,
       "allocations": [
         {
           "job_id": "2838",
           "array_id": "2837_0",
-          "state": "RUNNING",
+          "state": "TIMEOUT",
           "exit_code": "0:0",
-          "elapsed_seconds": 1004,
+          "elapsed_seconds": 3626,
           "gpus": 1,
           "start": "2026-10-05T01:22:58",
-          "end": "Unknown",
+          "end": "2026-10-05T02:23:24",
           "limit_minutes": 60
         },
         {
           "job_id": "2839",
           "array_id": "2837_1",
-          "state": "RUNNING",
+          "state": "TIMEOUT",
           "exit_code": "0:0",
-          "elapsed_seconds": 1004,
+          "elapsed_seconds": 3618,
           "gpus": 1,
           "start": "2026-10-05T01:22:58",
-          "end": "Unknown",
+          "end": "2026-10-05T02:23:16",
           "limit_minutes": 60
         },
         {
           "job_id": "2837",
           "array_id": "2837_2",
-          "state": "PENDING",
+          "state": "COMPLETED",
           "exit_code": "0:0",
-          "elapsed_seconds": 0,
-          "gpus": 0,
-          "start": "Unknown",
-          "end": "Unknown",
+          "elapsed_seconds": 5932,
+          "gpus": 1,
+          "start": "2026-10-05T02:23:16",
+          "end": "2026-10-05T04:02:08",
           "limit_minutes": 180
         }
       ],
@@ -546,9 +546,144 @@
           }
         }
       ]
+    },
+    {
+      "stage": "test_bart",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/test_bart.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=B300q",
+        "--gres=gpu:1",
+        "--job-name=cesv1-test_bart",
+        "--array=0%2",
+        "--time=03:00:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/test_bart_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 3.0,
+      "time": "2026-10-05T15:41:04.870961",
+      "resource_only_walltime_override": {
+        "original_walltime": "01:00:00",
+        "allocation_walltime": "03:00:00",
+        "reason": "Resume confirmed technical timeout; scientific config/task hashes unchanged"
+      },
+      "job_id": "2873",
+      "gpus_per_task": 1,
+      "concurrency": 2,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2873",
+          "array_id": "2873_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 2660,
+          "gpus": 1,
+          "start": "2026-10-05T15:41:04",
+          "end": "2026-10-05T16:25:24",
+          "limit_minutes": 180
+        }
+      ]
+    },
+    {
+      "stage": "aggregate_cpu",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/aggregate_cpu_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/aggregate_cpu.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=defq",
+        "--job-name=cesv1-aggregate_cpu",
+        "--array=0%1",
+        "--time=00:30:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/aggregate_cpu.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/aggregate_cpu_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.0,
+      "time": "2026-10-05T16:26:02.800059",
+      "job_id": "2875",
+      "gpus_per_task": 0,
+      "concurrency": 1,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2875",
+          "array_id": "2875_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 107,
+          "gpus": 0,
+          "start": "2026-10-05T16:26:02",
+          "end": "2026-10-05T16:27:49",
+          "limit_minutes": 30
+        }
+      ]
+    },
+    {
+      "stage": "verify_cpu",
+      "indices": [
+        0
+      ],
+      "manifest": "experiments/causal_next_edit_stability_v1/configs/verify_cpu_tasks.json",
+      "config": "experiments/causal_next_edit_stability_v1/configs/verify_cpu.json",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--partition=defq",
+        "--job-name=cesv1-verify_cpu",
+        "--array=0%1",
+        "--time=00:15:00",
+        "--output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.out",
+        "--error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/local/logs/%A_%a.err",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/worker.sbatch",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/slurm/slurm_env.sh",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/verify_cpu.json",
+        "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/verify_cpu_tasks.json"
+      ],
+      "other_user_gpu_jobs": [],
+      "reserved_gpu_hours": 0.0,
+      "time": "2026-10-05T16:36:44.448498",
+      "job_id": "2877",
+      "gpus_per_task": 0,
+      "concurrency": 1,
+      "terminal": true,
+      "allocations": [
+        {
+          "job_id": "2877",
+          "array_id": "2877_0",
+          "state": "COMPLETED",
+          "exit_code": "0:0",
+          "elapsed_seconds": 541,
+          "gpus": 0,
+          "start": "2026-10-05T16:36:44",
+          "end": "2026-10-05T16:45:45",
+          "limit_minutes": 15
+        }
+      ]
     }
   ],
-  "gpu_hours": 2.7147222222222225,
+  "gpu_hours": 6.555833333333333,
   "runtime_events": [
     {
       "event": "worker_started",
@@ -677,10 +812,26 @@
       "task": "1",
       "time": "2026-10-05T01:23:04.966016",
       "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2837",
+      "parent": "2837",
+      "task": "2",
+      "time": "2026-10-05T02:23:23.854500",
+      "visible": "0"
+    },
+    {
+      "event": "worker_started",
+      "job_id": "2873",
+      "parent": "2873",
+      "task": "0",
+      "time": "2026-10-05T15:41:12.430579",
+      "visible": "0"
     }
   ],
   "maximum_concurrent_gpus": 2,
-  "updated_at": "2026-10-05T01:39:42.725142",
+  "updated_at": "2026-10-05T16:45:51.570909",
   "squeue_samples": [
     {
       "time": "2026-10-04T22:33:52.642760",
@@ -784,6 +935,1406 @@
         "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
         "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
       ]
+    },
+    {
+      "time": "2026-10-05T01:55:43.926695",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:56:42.050458",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:57:27.996106",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:58:13.912080",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:58:59.818824",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T01:59:45.704057",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:00:31.635771",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:01:17.503318",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:02:03.416345",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:02:49.297003",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:03:35.211664",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:04:21.090299",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:05:06.995341",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:05:52.878236",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:06:38.811016",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:07:24.723847",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:08:10.655240",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:08:56.556503",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:09:42.466119",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:10:28.385135",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:11:14.306822",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:12:00.227701",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:12:46.145616",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:13:32.048035",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:14:17.949792",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:15:03.847542",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:15:49.753039",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:16:35.665735",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:17:21.571036",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:18:07.486148",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:18:53.468760",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:19:39.365984",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:20:25.284233",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:21:11.180942",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:21:57.102282",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:22:43.037385",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|PENDING",
+        "2837_0|cesv1-test_bart|gres/gpu:1|RUNNING",
+        "2837_1|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:23:28.946266",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:24:14.857711",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:25:00.766114",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:25:46.659630",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:26:32.586135",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:27:18.475818",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:28:04.427038",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:28:50.351768",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:29:36.261961",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:30:22.160229",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:31:08.035595",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:31:53.911144",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:32:39.833892",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:33:25.719427",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:34:11.604889",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:34:57.531746",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:35:43.440546",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:36:29.337195",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:37:15.250963",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:38:01.161829",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:38:47.123653",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:39:33.036723",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:40:18.968465",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:41:04.875540",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:41:50.762418",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:42:36.715642",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:43:22.638541",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:44:08.512325",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:44:54.417607",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:45:40.327095",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:46:26.238452",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:47:12.152935",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:47:58.048451",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:48:43.956192",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:49:29.842915",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:50:15.786835",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:51:01.676855",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:51:47.604983",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:52:33.541266",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:53:19.464443",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:54:05.426348",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:54:51.349765",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:55:37.272605",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:56:23.145118",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:57:09.061864",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:57:54.942742",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:58:40.878073",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T02:59:26.785954",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:00:12.675858",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:00:58.563190",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:01:44.479464",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:02:30.401159",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:03:16.333769",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:04:02.234504",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:04:48.129060",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:05:34.016456",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:06:19.929361",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:07:05.832077",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:07:51.756107",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:08:37.665013",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:09:23.570766",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:10:09.515694",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:10:55.457365",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:11:41.346203",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:12:27.264877",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:13:13.165051",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:13:59.084407",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:14:45.011653",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:15:30.914194",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:16:16.828765",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:17:02.747805",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:17:48.660810",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:18:34.577424",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:19:20.490860",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:20:06.417251",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:20:52.339078",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:21:38.215232",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:22:24.152086",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:23:10.035512",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:23:55.964380",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:24:41.902900",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:25:27.838397",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:26:13.809649",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:26:59.732746",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:27:45.687564",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:28:31.655281",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:29:17.586415",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:30:03.489410",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:30:49.371955",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:31:35.271375",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:32:21.186075",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:33:07.091716",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:33:53.021904",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:34:38.931062",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:35:24.894080",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:36:10.816162",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:36:56.717770",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:37:42.646545",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:38:28.546371",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:39:14.429729",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:40:00.360617",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:40:46.278092",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:41:32.159196",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:42:18.091071",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:43:03.995280",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:43:49.893190",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:44:35.831811",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:45:21.770521",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:46:07.722172",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:46:53.641566",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:47:39.557110",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:48:25.488454",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:49:11.426495",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:49:57.367448",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:50:43.311839",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:51:29.266894",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:52:15.199103",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:53:01.130283",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:53:47.070637",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:54:33.026304",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:55:18.943805",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:56:04.864149",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T03:56:50.760054",
+      "rows": [
+        "2837_2|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:41:03.096744",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T15:41:04.846134",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T15:41:50.600655",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:45:38.189773",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:46:24.211573",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:47:10.215285",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:47:56.265983",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:48:42.236767",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:49:28.225690",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:50:14.188749",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:51:00.178102",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:51:46.161053",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:52:32.106231",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:53:18.089212",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:54:04.071821",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:54:50.031669",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:56:07.815178",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:56:53.777610",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:57:39.762026",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:58:25.727292",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:59:11.703871",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T15:59:57.687209",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:00:43.684730",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:01:29.642818",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:02:15.640865",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:03:01.604790",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:03:47.593439",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:04:33.604825",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:05:19.601694",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:06:05.655795",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:06:51.617721",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:07:37.561206",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:08:23.547584",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:09:09.505916",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:09:55.494731",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:10:41.459558",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:11:27.454391",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:12:13.432971",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:12:59.389889",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:13:45.369279",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:14:31.333345",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:15:17.289604",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:16:03.286256",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:16:49.242607",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:17:35.206485",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:18:21.222480",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:19:07.221565",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:19:53.206265",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:20:39.144575",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:21:25.140253",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:22:11.133958",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:22:57.105486",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:23:43.101559",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:24:29.068268",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:25:15.045897",
+      "rows": [
+        "2873_0|cesv1-test_bart|gres/gpu:1|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:26:01.030468",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T16:26:02.779198",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T16:26:48.564824",
+      "rows": [
+        "2875_0|cesv1-aggregate_cpu|N/A|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:27:34.588073",
+      "rows": [
+        "2875_0|cesv1-aggregate_cpu|N/A|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:28:20.634051",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T16:29:12.722878",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T16:36:44.427860",
+      "rows": []
+    },
+    {
+      "time": "2026-10-05T16:37:50.797343",
+      "rows": [
+        "2877_0|cesv1-verify_cpu|N/A|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:39:27.456924",
+      "rows": [
+        "2877_0|cesv1-verify_cpu|N/A|RUNNING"
+      ]
+    },
+    {
+      "time": "2026-10-05T16:45:51.578446",
+      "rows": []
     }
   ]
 }
