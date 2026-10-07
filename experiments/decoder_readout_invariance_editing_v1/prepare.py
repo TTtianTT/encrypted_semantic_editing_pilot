@@ -49,7 +49,7 @@ def initialize():
 
 def prepare(stage):
     initialize()
-    if stage not in ('S0','S1'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
@@ -67,7 +67,8 @@ def prepare(stage):
     for p in list(SOURCE.glob('*.py'))+[SOURCE/'config.json',SOURCE/'model_manifest.json']:shutil.copy2(p,native/p.name)
     for folder in ('configs','manifests'):shutil.copytree(ROOT/folder,target/folder)
     filehash={str(p.relative_to(snapshot)):sha(p) for p in snapshot.rglob('*') if p.is_file()}
-    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage=='S0' else '03:00:00',reservation_GPU_hours=len(tasks)*(1 if stage=='S0' else 3),gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
+    hours=1 if stage=='S0' else .25 if stage=='PARITY_DIAG' else 3
+    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage=='S0' else '00:15:00' if stage=='PARITY_DIAG' else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
     dump(path,manifest)
     print(path)
 

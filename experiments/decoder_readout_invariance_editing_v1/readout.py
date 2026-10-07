@@ -69,7 +69,7 @@ def pairs(eng,w,folder):
             if torch.equal(bm,m):
                 delta=((h.float()-bad.float())@q)@q.T;states['P']=(bad+delta*bm[...,None],bm);pred['P']=eng.evaluate(*states['P'],w,0)
     records=[];eligible=[];dedup=[]
-    order=[('N','E_future_plus'),('N','E_past_minus'),('E_future_plus','E_past_minus'),('R','E_future_plus'),('E_future_plus','P')]
+    order=[('E_future_plus','N'),('E_past_minus','N'),('E_future_plus','E_past_minus'),('E_future_plus','R'),('E_future_plus','P')]
     seen=[]
     for an,bn in order:
         if an not in states or bn not in states:continue
@@ -94,6 +94,7 @@ def pairs(eng,w,folder):
 @torch.no_grad()
 def run(eng,folder):
     ws=rows(ROOT/'configs/worlds.jsonl');discovery=[w for w in ws if w['split']=='train'][:32];validation=[w for w in ws if w['split']=='validation'][:32]
+    replay=rows(ROOT/'configs/replay_worlds.jsonl')
     # Internal attention requires native eager alignment first, with fixed tolerance.
     h,m=eng.encode([render(discovery[0],0)]);y=eng.labels([render(discovery[0],0)]);reference=eng.logits(h,m,y);ids=eng.ids(h,m)
     eng.model.set_attn_implementation('eager');aligned=eng.logits(h,m,y);error=float((reference-aligned).abs().max())
@@ -101,12 +102,15 @@ def run(eng,folder):
     assert torch.equal(ids,eng.ids(h,m)),'Eager generation parity failed'
     dump(folder/'EAGER_ACCEPTANCE.json',dict(logit_max_error=error,tolerance=3e-5 if not eng.chat else .125,tokens_equal=True))
     allscores=[];curves=[];propagation=[];prefixcontrols=[];causal=[];counts={};cache=folder/'tensor_cache';cache.mkdir(exist_ok=True)
-    for wi,w in enumerate(discovery+validation):
-        group='discovery' if w['split']=='train' else 'validation';ps,states,pred=pairs(eng,w,folder)
+    for wi,w in enumerate(discovery+validation+replay):
+        group='discovery' if w['split']=='train' else 'validation' if w['split']=='validation' else 'replay';ps,states,pred=pairs(eng,w,folder)
         counts.setdefault(group,dict(scanned_worlds=0,qualified_worlds=0,qualified_pairs=0));counts[group]['scanned_worlds']+=1;counts[group]['qualified_worlds']+=bool(ps);counts[group]['qualified_pairs']+=len(ps)
         for ri,(pair,a,b,mask) in enumerate(ps):
             native=torch.tensor(pair['a']['token_ids'],device='cuda')[None];labels=native[:,1:]
             la=eng.logits(a,mask,decoder_ids=native[:,:-1]);lb=eng.logits(b,mask,decoder_ids=native[:,:-1]);groups=token_sites(eng,pair['a']['text'])
+            for op,next_state in [('plus',-1),('minus',1)]:
+                next_a=eng.evaluate(eng.ed[op](a,mask),mask,w,next_state);next_b=eng.evaluate(eng.ed[op](b,mask),mask,w,next_state)
+                jsonl(folder/(w['world_id']+'_'+str(ri)+'_'+op+'_bridge.jsonl'),[dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],panel_A=True,panel_B=next_a['score']['success']!=next_b['score']['success'],operation=op,a_next=next_a,b_next=next_b)])
             scores=distribution(la,lb,labels,groups)
             for s in scores:allscores.append(dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],**s))
             # Complete raw logits only for fixed 4 discovery worlds, never test.
@@ -116,7 +120,7 @@ def run(eng,folder):
                 for name in ta:propagation.append(dict(world_id=w['world_id'],source_pair=pair['source_pair'],module=name,**tensor_difference(ta[name],tb[name],mask)))
                 if wi==0:torch.save(dict(a={n:v.cpu() for n,v in ta.items()},b={n:v.cpu() for n,v in tb.items()}),cache/(pair['source_pair'].replace(':','_')+'_trace.pt'))
             # Finite paths on fixed first8 worlds per group and all strict source pairs.
-            index=wi if group=='discovery' else wi-len(discovery)
+            index=wi if group=='discovery' else wi-len(discovery) if group=='validation' else wi-len(discovery)-len(validation)
             if index<8:
                 delta=(b-a).float()*mask[...,None]
                 directions=[('real',delta,None)]
@@ -165,4 +169,4 @@ def run(eng,folder):
             print(eng.name,group,'processed',wi+1,counts,flush=True)
             jsonl(folder/'readout_scores.jsonl',allscores);jsonl(folder/'perturbation_curves.jsonl',curves);jsonl(folder/'propagation.jsonl',propagation);jsonl(folder/'source_prefix_controls.jsonl',prefixcontrols);jsonl(folder/'causal_conditions.jsonl',causal)
     jsonl(folder/'readout_scores.jsonl',allscores);jsonl(folder/'perturbation_curves.jsonl',curves);jsonl(folder/'propagation.jsonl',propagation);jsonl(folder/'source_prefix_controls.jsonl',prefixcontrols);jsonl(folder/'causal_conditions.jsonl',causal)
-    return dict(passed=True,worlds=64,panel_counts=counts,maximum_JS=max((r['JS'] for r in allscores),default=None),mean_JS=sum(r['JS'] for r in allscores)/max(1,len(allscores)),mechanism_status='DISCOVERY_VALIDATION_ONLY; head-level/fixed-pattern controls still required before regularizer',independent_test_accessed=0,resources=eng.resources())
+    return dict(passed=True,worlds=len(discovery+validation+replay),panel_counts=counts,maximum_JS=max((r['JS'] for r in allscores),default=None),mean_JS=sum(r['JS'] for r in allscores)/max(1,len(allscores)),mechanism_status='DISCOVERY_VALIDATION_ONLY; head-level/fixed-pattern controls still required before regularizer',independent_test_accessed=0,resources=eng.resources())

@@ -171,5 +171,23 @@
     "T5Gemma": "after BART priority; never substitute checkpoint",
     "preconditioning": "only after S0-S4; NOT_RUN_BUDGET if unavailable"
   },
-  "claims": "no semantic nullspace/unique complete circuit/long-term solved presumption"
+  "claims": "no semantic nullspace/unique complete circuit/long-term solved presumption",
+  "S1_subset_lock": {
+    "discovery_train": 32,
+    "validation": 32,
+    "old_replay": 8,
+    "finite_path_worlds_per_group": 8,
+    "full_raw_logits_discovery_worlds": 4,
+    "full_trace_discovery_worlds": 1,
+    "prefix_worlds_per_group": 4,
+    "source_pair_recipient_donor_priority": [
+      "E_future_plus:N",
+      "E_past_minus:N",
+      "E_future_plus:E_past_minus",
+      "E_future_plus:R",
+      "E_future_plus:P"
+    ],
+    "test_scan_denominator": 128,
+    "limits": "fixed before S1; no replenishment"
+  }
 }

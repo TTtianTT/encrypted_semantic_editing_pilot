@@ -1,0 +1,52 @@
+{
+  "status": "FAILED_TECHNICAL",
+  "stage": "S1",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3011",
+  "array_job_id": "3011",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-07T17:45:51.028785+00:00",
+  "manifest_hash": "ab53bc9e59121977d7cfd51d8116379e7a1bc0eaf9ed0cc4be4c9371a7b962ee",
+  "code_hash": "8f0ebdecab40a080ba2a625fc46aef86d0809086dbfb07e33c56a6243fe835ad",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 0,
+  "remaining_samples": 8,
+  "exit_code": 1,
+  "error": "AssertionError('Eager native logits parity failed')",
+  "traceback": "Traceback (most recent call last):\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S1_20261007T174545Z/experiments/decoder_readout_invariance_editing_v1/run_stage.py\", line 41, in main\n    result=run(engine,folder)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S1_20261007T174545Z/experiments/decoder_readout_invariance_editing_v1/readout.py\", line 101, in run\n    assert error<=(3e-5 if not eng.chat else .125),'Eager native logits parity failed'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Eager native logits parity failed\n",
+  "ended": "2026-10-07T17:46:25.605564+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 588323840,
+    "wall_seconds": 8.299065105995396,
+    "job_id": "3011",
+    "step_id": "0"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_20261007T174545Z/bart_s42/FAILURE.txt",
+      "sha256": "3e088075569765a31941d2e2b742b76dcf7f4bef729868a53f492982e8bd42a2",
+      "bytes": 1005
+    }
+  ],
+  "allocation": {
+    "job_id": "3011_0",
+    "state": "FAILED",
+    "elapsed_seconds": 41,
+    "GPUs": 1,
+    "GPU_hours": 0.01138888888888889,
+    "start": "2026-10-08T01:45:46",
+    "end": "2026-10-08T01:46:27",
+    "exit_code": "1:0"
+  }
+}
