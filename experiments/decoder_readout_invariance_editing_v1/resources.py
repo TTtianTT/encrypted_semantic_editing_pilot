@@ -11,7 +11,7 @@ def gpu_count(tres):
 
 def accounting(jobs):
     if not jobs:return dict(GPU_hours=0.,peak_concurrent_GPUs=0,allocations=[],all_terminal=True)
-    raw=command('sacct','-j',','.join(jobs),'-X','-n','-P','-o','JobIDRaw,State,ElapsedRaw,AllocTRES,Start,End,ExitCode')
+    raw=command('sacct','-j',','.join(jobs),'-X','-n','-P','-o','JobID%50,State,ElapsedRaw,AllocTRES%200,Start,End,ExitCode')
     allocations=[];events=[]
     for line in raw.splitlines():
         cols=line.split('|');jid,state,elapsed,tres,start,end,exitcode=cols[:7]

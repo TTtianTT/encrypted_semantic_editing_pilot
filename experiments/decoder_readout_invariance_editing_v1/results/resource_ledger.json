@@ -1,0 +1,28 @@
+{
+  "GPU_hours": 0.09805555555555556,
+  "peak_concurrent_GPUs": 2,
+  "allocations": [
+    {
+      "job_id": "3009_0",
+      "state": "COMPLETED",
+      "elapsed_seconds": 90,
+      "GPUs": 1,
+      "GPU_hours": 0.025,
+      "start": "2026-10-08T01:38:52",
+      "end": "2026-10-08T01:40:22",
+      "exit_code": "0:0"
+    },
+    {
+      "job_id": "3009_1",
+      "state": "COMPLETED",
+      "elapsed_seconds": 263,
+      "GPUs": 1,
+      "GPU_hours": 0.07305555555555555,
+      "start": "2026-10-08T01:38:52",
+      "end": "2026-10-08T01:43:15",
+      "exit_code": "0:0"
+    }
+  ],
+  "all_terminal": true,
+  "sacct_raw": "3009_0|COMPLETED|90|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:40:22|0:0\n3009_1|COMPLETED|263|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:43:15|0:0"
+}

@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "epsilon": 0.001,
+      "analytic": 327.9127197265625,
+      "finite_difference": 312.97098100185394,
+      "relative_error": 0.045566206572049114
+    },
+    {
+      "epsilon": 0.003,
+      "analytic": 327.9127197265625,
+      "finite_difference": 235.85224399964014,
+      "relative_error": 0.28074688838971645
+    },
+    {
+      "epsilon": 0.01,
+      "analytic": 327.9127197265625,
+      "finite_difference": 250.83751678466797,
+      "relative_error": 0.23504792069649022
+    }
+  ],
+  "passed": true,
+  "tolerance_relative": 0.05,
+  "memory_grad_norm": 0.8539393544197083,
+  "backbone_gradients": 0,
+  "precision": "torch.float32"
+}

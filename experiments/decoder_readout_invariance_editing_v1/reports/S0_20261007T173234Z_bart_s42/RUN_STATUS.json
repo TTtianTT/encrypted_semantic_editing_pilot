@@ -1,0 +1,80 @@
+{
+  "status": "COMPLETED",
+  "stage": "S0",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3010",
+  "array_job_id": "3009",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-07T17:38:57.080975+00:00",
+  "manifest_hash": "f952b0e657ea8386a7a6c678154a66093f146a8d823107c93ff969a3cc2000bb",
+  "code_hash": "6cc92bf922d60257792bee4fc2f45509e8dcf950bc03201877de40f681a65c1d",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 8,
+  "remaining_samples": 0,
+  "exit_code": 0,
+  "ended": "2026-10-07T17:40:19.192454+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 694760448,
+    "wall_seconds": 37.19420794000325,
+    "job_id": "3010",
+    "step_id": "0"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/smoke_training.jsonl",
+      "sha256": "541896299621f3dc1b825066def0a5de97b07d40511fa10e904d39ba32458987",
+      "bytes": 5311
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/S0_ACCEPTANCE.json",
+      "sha256": "df50eee4518da9dcba0760af1871b87272258632e78572349aa5bf84a411dc2f",
+      "bytes": 11330
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/smoke_predictions.jsonl",
+      "sha256": "735a2c8eaeb779519e1a3d9b783cdf8aff4388aefac7853486e5ca7f7fec8ff1",
+      "bytes": 4473
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/acceptance_records.jsonl",
+      "sha256": "dfa0904abfb57825817cd144c091fd597ce24c31e57104413289e0f0304b5bdf",
+      "bytes": 5930
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/GRADIENT_CHECK.json",
+      "sha256": "a59a29dc6565879bfe352109395f1016ed91511a5f747c34d10c9bdb30a816de",
+      "bytes": 665
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/SUMMARY.json",
+      "sha256": "df50eee4518da9dcba0760af1871b87272258632e78572349aa5bf84a411dc2f",
+      "bytes": 11330
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S0_20261007T173234Z/bart_s42/HOOK_MAP.json",
+      "sha256": "38a7d4c8d7f892aebc0dabb370f86da146e9d3cbe628ebb1cd5df39353a05314",
+      "bytes": 53148
+    }
+  ],
+  "allocation": {
+    "job_id": "3009_0",
+    "state": "COMPLETED",
+    "elapsed_seconds": 90,
+    "GPUs": 1,
+    "GPU_hours": 0.025,
+    "start": "2026-10-08T01:38:52",
+    "end": "2026-10-08T01:40:22",
+    "exit_code": "0:0"
+  }
+}

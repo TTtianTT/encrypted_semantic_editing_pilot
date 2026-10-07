@@ -1,0 +1,2563 @@
+{
+  "model": "bart",
+  "cross_attention": [
+    {
+      "name": "model.decoder.layers.0.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 0,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 1,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 2,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 3,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 4,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn",
+      "heads": 12,
+      "KV_heads": 12,
+      "head_dim": 64,
+      "layer_index": 5,
+      "zero_based": true,
+      "K_V_site": "linear projection output before head reshape/replication; cross-attention has no RoPE",
+      "output_projection": "out_proj",
+      "includes_residual": false,
+      "normalization": "BART residual then encoder_attn_layer_norm (post norm)"
+    }
+  ],
+  "modules": [
+    {
+      "name": "model.decoder.layernorm_embedding",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.0.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.1.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.2.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.3.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.4.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.q_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.k_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.v_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        192,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.out_proj",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn",
+      "class_name": "BartAttention",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": true,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.fc1",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        3072
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.fc2",
+      "class_name": "Linear",
+      "input_shapes": [
+        [
+          1,
+          24,
+          3072
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5.final_layer_norm",
+      "class_name": "LayerNorm",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    },
+    {
+      "name": "model.decoder.layers.5",
+      "class_name": "BartDecoderLayer",
+      "input_shapes": [
+        [
+          1,
+          24,
+          768
+        ],
+        [
+          1,
+          192,
+          768
+        ]
+      ],
+      "output_shape": [
+        1,
+        24,
+        768
+      ],
+      "dtype": "torch.float32",
+      "tuple_output": false,
+      "observational": true
+    }
+  ],
+  "module_tree": [
+    {
+      "name": "",
+      "class_name": "BartForConditionalGeneration"
+    },
+    {
+      "name": "model",
+      "class_name": "BartModel"
+    },
+    {
+      "name": "model.shared",
+      "class_name": "BartScaledWordEmbedding"
+    },
+    {
+      "name": "model.encoder",
+      "class_name": "BartEncoder"
+    },
+    {
+      "name": "model.encoder.embed_tokens",
+      "class_name": "BartScaledWordEmbedding"
+    },
+    {
+      "name": "model.encoder.embed_positions",
+      "class_name": "BartLearnedPositionalEmbedding"
+    },
+    {
+      "name": "model.encoder.layers",
+      "class_name": "ModuleList"
+    },
+    {
+      "name": "model.encoder.layers.0",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.0.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.0.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.0.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.1",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.1.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.1.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.1.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.2",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.2.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.2.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.2.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.3",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.3.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.3.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.3.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.4",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.4.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.4.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.4.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.5",
+      "class_name": "BartEncoderLayer"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layers.5.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.encoder.layers.5.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.encoder.layers.5.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.encoder.layernorm_embedding",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder",
+      "class_name": "BartDecoder"
+    },
+    {
+      "name": "model.decoder.embed_tokens",
+      "class_name": "BartScaledWordEmbedding"
+    },
+    {
+      "name": "model.decoder.embed_positions",
+      "class_name": "BartLearnedPositionalEmbedding"
+    },
+    {
+      "name": "model.decoder.layers",
+      "class_name": "ModuleList"
+    },
+    {
+      "name": "model.decoder.layers.0",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.0.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.0.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.0.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.1",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.1.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.1.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.1.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.2",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.2.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.2.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.2.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.3",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.3.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.3.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.3.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.4",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.4.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.4.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.4.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.5",
+      "class_name": "BartDecoderLayer"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.activation_fn",
+      "class_name": "GELUActivation"
+    },
+    {
+      "name": "model.decoder.layers.5.self_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn",
+      "class_name": "BartAttention"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.k_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.v_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.q_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn.out_proj",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.encoder_attn_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layers.5.fc1",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.fc2",
+      "class_name": "Linear"
+    },
+    {
+      "name": "model.decoder.layers.5.final_layer_norm",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "model.decoder.layernorm_embedding",
+      "class_name": "LayerNorm"
+    },
+    {
+      "name": "lm_head",
+      "class_name": "Linear"
+    }
+  ],
+  "memory_dependencies": "audited source: cross K/V only, plus source attention mask; validated all-layer replacement"
+}
