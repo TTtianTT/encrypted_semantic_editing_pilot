@@ -130,7 +130,7 @@ def run(eng,folder):
                         d*=mask[...,None];d=d/(d.norm(dim=-1,keepdim=True)+1e-9)*delta.norm(dim=-1,keepdim=True)
                         directions.append((kind,d,seed))
                 for kind,d,seed in directions:
-                    grid=ALPHAS if kind=='real' else [0,1] # full random-alpha grid recorded as pending if budget reduced; no substitution
+                    grid=ALPHAS
                     for alpha in grid:
                         hp=(a.float()+alpha*d).to(a.dtype);p=eng.evaluate(hp,mask,w,0)
                         curves.append(dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],direction=kind,random_seed=seed,alpha=alpha,delta_norm=float((hp-a).float()[mask.bool()].norm()),per_token_energy_max_error=float((d.norm(dim=-1)-delta.norm(dim=-1)).abs().max()),text_preserved=p['text']==pair['a']['text'],tokens_preserved=effective_ids(p['token_ids'],eng.eos)[0]==effective_ids(pair['a']['token_ids'],eng.eos)[0],prediction=p))

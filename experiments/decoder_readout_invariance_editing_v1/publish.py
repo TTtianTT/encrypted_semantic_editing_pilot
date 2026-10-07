@@ -14,7 +14,12 @@ def publish(stage):
             if old and old['status']=='VERIFIED':continue
             assert command('git','branch','--show-current')==BRANCH
             if not old:
-                command('git','add',str(ROOT.relative_to(WT)))
+                dump(folder/'PUBLICATION_RECORD.json',dict(run=key,terminal_status=read(folder/'RUN_STATUS.json')['status'],source_manifest=stage,verified_before_commit=True))
+                # Stage only this terminal report and shared implementation/metadata.
+                changed=command('git','diff','--name-only','HEAD').splitlines()+command('git','ls-files','--others','--exclude-standard').splitlines()
+                base=str(ROOT.relative_to(WT))+'/'
+                paths=[p for p in changed if p.startswith(base) and ('/reports/' not in p or p.startswith(str(folder.relative_to(WT))+'/'))]
+                if paths:command('git','add','--',*paths)
                 command('git','commit','-m','drie-v1: '+folder.name+' terminal results and limitations')
                 old=dict(run=key,commit=command('git','rev-parse','HEAD'),status='PUSH_PENDING');receipts.append(old);dump(CONTROL/'publications.json',receipts)
             try:

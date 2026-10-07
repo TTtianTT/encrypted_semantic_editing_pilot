@@ -33,8 +33,12 @@ def main():
         assert torch.cuda.device_count()==1,'Exactly one allocated visible GPU required'
         from .engine import Engine
         engine=Engine(t)
-        from .acceptance import run
-        if t['stage']=='S0':result=run(engine,folder)
+        if t['stage']=='S0':
+            from .acceptance import run
+            result=run(engine,folder)
+        elif t['stage']=='S1':
+            from .readout import run
+            result=run(engine,folder)
         else:raise RuntimeError('Unimplemented stage; no fabricated completion')
         dump(folder/'SUMMARY.json',result)
         status.update(status='COMPLETED' if result['passed'] else 'FAILED_TECHNICAL',exit_code=0 if result['passed'] else 1,completed_samples=result.get('worlds',0),remaining_samples=0)
