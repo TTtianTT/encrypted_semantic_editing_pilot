@@ -1,0 +1,175 @@
+{
+  "version": "decoder_readout_invariance_editing_v1",
+  "date": "2026-10-08",
+  "models": {
+    "bart": "facebook/bart-base FP32",
+    "t5gemma": "google/t5gemma-2b-2b-ul2-it BF16"
+  },
+  "domain": "time",
+  "operations": {
+    "plus": "relative day decrements",
+    "minus": "relative day increments"
+  },
+  "historical_condition": "P, not person",
+  "rank": 16,
+  "backbone_frozen": true,
+  "history_editors_frozen": true,
+  "split": {
+    "seed": 2026100801,
+    "counts": {
+      "train": 192,
+      "validation": 64,
+      "test_iid": 128,
+      "reserved_iid": 128
+    },
+    "sha256": "aab11038c94411222ce2b716428b8b8f4153e327bd8e3acc93b2cbee38098a80",
+    "grouping": "object,color,quantity,status; all dates,templates,histories,seeds,sources grouped",
+    "OOD": "UNAVAILABLE: original templates0-5 already exposed; reserved128 is not renamed OOD",
+    "test_unseal": "S4 only after mechanism/hyperparameters/all checkpoints locked",
+    "mechanism_qualification_min_worlds": 40
+  },
+  "budget_GPU_hours": 40,
+  "max_global_GPUs": 2,
+  "one_active_stage_array": true,
+  "neural_execution": "sbatch allocation via srun only",
+  "panels": {
+    "A": "correct current gold + native exact effective token IDs/raw text + EOS + same valid shape/mask + delta beyond repeat numerical noise; no next fork required",
+    "B": "A plus frozen next edit fork",
+    "C": "unconditional 50/50 natural/history source; incorrect history retained"
+  },
+  "sources": [
+    "N",
+    "E_future_plus",
+    "E_past_minus",
+    "R_actual_once",
+    "P_locked_PCA"
+  ],
+  "source_priority": [
+    "N:E_future_plus",
+    "N:E_past_minus",
+    "E_future_plus:E_past_minus",
+    "R:E_future_plus",
+    "P:E_future_plus"
+  ],
+  "numerical_dedup": true,
+  "token_alignment": "exclude decoder start; include forced tokens/EOS; stop first EOS after start; no strip for A",
+  "alphas": [
+    -0.5,
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.25,
+    1.5
+  ],
+  "random_seeds": [
+    61001,
+    61002,
+    61003,
+    61004,
+    61005,
+    61006,
+    61007,
+    61008
+  ],
+  "random_controls": [
+    "per-token matched norm isotropic",
+    "per-token matched norm rank4 shared basis",
+    "validation-only scalar matching current preservation"
+  ],
+  "mechanism": {
+    "train_discovery": true,
+    "max_validation_components": 3,
+    "conditions": [
+      "AA",
+      "BA",
+      "AB",
+      "BB"
+    ],
+    "bidirectional": true,
+    "no_normalized_recovery": true,
+    "evidence_gate": "reproducible non-target content intervention support on validation; otherwise MECHANISM_NOT_IDENTIFIED"
+  },
+  "training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "rank": 16,
+    "batch": 16,
+    "microbatch": 2,
+    "updates": 400,
+    "save_updates": [
+      200,
+      400
+    ],
+    "lr": 0.001,
+    "clip": 1.0,
+    "weight_decay": 0.0,
+    "methods": [
+      "Plain",
+      "Output-only",
+      "Mechanism-guided",
+      "Random-site"
+    ],
+    "lambda_mech": [
+      0.1,
+      1.0
+    ],
+    "same_init_and_draws": true,
+    "selection": "content >= Output-only minus0.02 then joint success; tie lower lambda/cost; keep/size locks shared",
+    "test_input": [
+      "H",
+      "mask",
+      "operation"
+    ],
+    "test_forbidden": [
+      "donor",
+      "gold text",
+      "reencode",
+      "decoder gradients",
+      "rejection sampling"
+    ]
+  },
+  "evaluation": {
+    "primary": "50/50 source-balanced joint target,preserved,parseable,grammar,EOS",
+    "lengths": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "sequences": [
+      [
+        "plus",
+        "minus",
+        "plus",
+        "minus",
+        "plus"
+      ],
+      [
+        "plus",
+        "plus",
+        "minus",
+        "minus",
+        "plus"
+      ]
+    ],
+    "reverse_directions": true,
+    "all_steps_correct": true,
+    "bootstrap": 20000,
+    "unit": "paired core world cluster",
+    "holm_family": [
+      "Mechanism-guided vs Output-only",
+      "Mechanism-guided vs Random-site"
+    ],
+    "boundary": "Wilson per seed plus paired counts"
+  },
+  "optional": {
+    "T5Gemma": "after BART priority; never substitute checkpoint",
+    "preconditioning": "only after S0-S4; NOT_RUN_BUDGET if unavailable"
+  },
+  "claims": "no semantic nullspace/unique complete circuit/long-term solved presumption"
+}
