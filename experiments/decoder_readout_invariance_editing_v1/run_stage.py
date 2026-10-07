@@ -36,12 +36,21 @@ def main():
         if t['stage']=='S0':
             from .acceptance import run
             result=run(engine,folder)
-        elif t['stage']=='S1':
+        elif t['stage'] in ('S1','S1_NATIVE'):
             from .readout import run
             result=run(engine,folder)
         elif t['stage']=='PARITY_DIAG':
             from .parity_diagnostic import run
             result=run(engine,folder)
+        elif t['stage']=='S2':
+            from .causal import run
+            result=run(engine,folder)
+        elif t['stage'] in ('S3_SELECT','S3_MAIN'):
+            from .training import run
+            result=run(engine,folder)
+        elif t['stage']=='S3_PLAIN':
+            from .training import run_plain
+            result=run_plain(engine,folder)
         else:raise RuntimeError('Unimplemented stage; no fabricated completion')
         dump(folder/'SUMMARY.json',result)
         status.update(status=result.get('status','COMPLETED' if result['passed'] else 'FAILED_TECHNICAL'),exit_code=0 if result['passed'] else 1,completed_samples=result.get('worlds',0),remaining_samples=0)

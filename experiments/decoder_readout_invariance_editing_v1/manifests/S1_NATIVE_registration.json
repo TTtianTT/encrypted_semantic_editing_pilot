@@ -1,0 +1,13 @@
+{
+  "stage": "S1_NATIVE",
+  "job_id": "3013",
+  "manifest": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/S1_NATIVE.json",
+  "manifest_hash": "75c477f3d04e1782961ad106f8513de881a1beb48da8bac7baf39c2524b8cf07",
+  "snapshot": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S1_NATIVE_20261007T175045Z",
+  "GPUs_per_task": 1,
+  "array_concurrency": 2,
+  "reservation_GPU_hours": 3,
+  "submitted": "2026-10-07T17:50:46.723192+00:00",
+  "queue_before": "",
+  "command": "sbatch --parsable --partition=B300q --gres=gpu:1 --time=03:00:00 --job-name=drie-v1-S1_NATIVE --array=0-0%2 --output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.out --error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.err --export=ALL,RUN_SNAPSHOT=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S1_NATIVE_20261007T175045Z,MANIFEST=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/S1_NATIVE.json,PYTHON_BIN=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python /dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/slurm/worker.sbatch"
+}

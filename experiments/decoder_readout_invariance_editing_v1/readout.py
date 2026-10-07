@@ -95,12 +95,14 @@ def pairs(eng,w,folder):
 def run(eng,folder):
     ws=rows(ROOT/'configs/worlds.jsonl');discovery=[w for w in ws if w['split']=='train'][:32];validation=[w for w in ws if w['split']=='validation'][:32]
     replay=rows(ROOT/'configs/replay_worlds.jsonl')
-    # Internal attention requires native eager alignment first, with fixed tolerance.
+    # Eager is prohibited after failed optional backend parity. All interventions stay native SDPA.
     h,m=eng.encode([render(discovery[0],0)]);y=eng.labels([render(discovery[0],0)]);reference=eng.logits(h,m,y);ids=eng.ids(h,m)
-    eng.model.set_attn_implementation('eager');aligned=eng.logits(h,m,y);error=float((reference-aligned).abs().max())
-    assert error<=(3e-5 if not eng.chat else .125),'Eager native logits parity failed'
-    assert torch.equal(ids,eng.ids(h,m)),'Eager generation parity failed'
-    dump(folder/'EAGER_ACCEPTANCE.json',dict(logit_max_error=error,tolerance=3e-5 if not eng.chat else .125,tokens_equal=True))
+    with eng.kv_hooks(eng.projected(h)):
+        aligned=eng.logits(h,m,y);aligned_ids=eng.ids(h,m)
+    error=float((reference-aligned).abs().max())
+    assert error==0,'Native SDPA self-projection hook changed logits'
+    assert torch.equal(ids,aligned_ids),'Native SDPA self-projection hook changed generation'
+    dump(folder/'NATIVE_HOOK_ACCEPTANCE.json',dict(logit_max_error=error,tolerance=0,tokens_equal=True,backend='sdpa',eager_switch=False,failed_eager_retained=True))
     allscores=[];curves=[];propagation=[];prefixcontrols=[];causal=[];counts={};cache=folder/'tensor_cache';cache.mkdir(exist_ok=True)
     for wi,w in enumerate(discovery+validation+replay):
         group='discovery' if w['split']=='train' else 'validation' if w['split']=='validation' else 'replay';ps,states,pred=pairs(eng,w,folder)

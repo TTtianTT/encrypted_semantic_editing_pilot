@@ -1,0 +1,22 @@
+{
+  "version": "pre-S3-v1",
+  "rank": 16,
+  "effective_batch": 16,
+  "microbatch": 2,
+  "updates": 400,
+  "checkpoint_updates": [200, 400],
+  "primary_checkpoint_update": 400,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "clip": 1.0,
+  "lambda_size": 0.001,
+  "output_keep_grid": [0.1, 1.0],
+  "mechanism_grid": [0.1, 1.0],
+  "mechanism_random_same_weights": true,
+  "same_initialization_and_draw_order": true,
+  "test_accessed": false,
+  "selection": "validation-only; Output-only gets two keep weights; selected keep shared by proposed/random. Proposed content no worse than selected Output-only minus0.02, then joint success; tie smaller mechanism weight. If none eligible, retain0.1 with failed-content-gate label. All primary exports update400; update200 ancillary.",
+  "human_mask_review_required_for_keep_and_mechanism_losses": true,
+  "plain_baseline_independent_of_keep_mask": true
+}

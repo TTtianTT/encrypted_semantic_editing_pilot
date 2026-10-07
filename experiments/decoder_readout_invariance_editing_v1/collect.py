@@ -13,16 +13,21 @@ def collect(stage):
         allocation=next((r for r in acct['allocations'] if r['job_id']==registered['job_id']+'_'+str(i)),None)
         if allocation is None or allocation['state'] in ACTIVE:continue
         status=read(status_path) if status_path.exists() else dict(stage=stage,model=task['model'],seed=task['seed'],completed_samples=0,remaining_samples=8)
-        if status.get('status') not in ('COMPLETED','FAILED_TECHNICAL','BLOCKED_BACKEND_PARITY'):
+        if status.get('status') not in ('COMPLETED','FAILED_TECHNICAL','BLOCKED_BACKEND_PARITY','NOT_LOCALIZED','NOT_ESTIMABLE'):
             status.update(status='TIMEOUT_PARTIAL' if allocation['state']=='TIMEOUT' else 'FAILED_TECHNICAL',error='allocation terminated without complete worker result',exit_code=allocation['exit_code'])
         status['allocation']=allocation
         dest=ROOT/'reports'/f"{stage}_{m['version']}_{task['model']}_s{task['seed']}";dest.mkdir(parents=True,exist_ok=True)
         if (dest/'REPORT.md').exists():continue # terminal report never rewritten by later ledger refresh
         dump(dest/'RUN_STATUS.json',status)
-        for name in ('SUMMARY.json','S0_ACCEPTANCE.json','HOOK_MAP.json','GRADIENT_CHECK.json','EAGER_ACCEPTANCE.json','PARITY_DIAGNOSTIC.json','FAILURE.txt'):
+        for name in ('SUMMARY.json','S0_ACCEPTANCE.json','HOOK_MAP.json','GRADIENT_CHECK.json','EAGER_ACCEPTANCE.json','NATIVE_HOOK_ACCEPTANCE.json','PARITY_DIAGNOSTIC.json','FAILURE.txt'):
             if (folder/name).exists():shutil.copy2(folder/name,dest/name)
-        for p in folder.glob('*.jsonl'):
-            with p.open('rb') as src:atomic(dest/(p.name+'.gz'),gzip.compress(src.read(),mtime=0))
+        for p in folder.rglob('*.jsonl'):
+            with p.open('rb') as src:atomic(dest/(str(p.relative_to(folder))+'.gz'),gzip.compress(src.read(),mtime=0))
+        for p in folder.rglob('update*.pt'):
+            if p.stat().st_size<5_000_000:
+                dst=dest/p.relative_to(folder);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dst)
+        for p in folder.rglob('*LOCK.json'):
+            dst=dest/p.relative_to(folder);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dst)
         logroot=ROOT/'local/slurm_logs'
         for p in logroot.glob(f"*{registered['job_id']}_{i}.*"):
             atomic(dest/(p.name+'.gz'),gzip.compress(p.read_bytes(),mtime=0))
