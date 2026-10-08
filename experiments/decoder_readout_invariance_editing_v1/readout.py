@@ -7,6 +7,7 @@ import torch
 from .common import *
 from .engine import hooks,first,replace,render
 from .metrics import effective_ids
+from .provenance import control_core_allowed
 
 ALPHAS=[-.5,0,.25,.5,.75,1,1.25,1.5]
 RANDOM_SEEDS=list(range(61001,61009))
@@ -151,10 +152,13 @@ def run(eng,folder):
                         end=1+int((native.shape[1]-2)*fraction);prefix=native[:,:end]
                         projected=eng.projected(mem);zero={k:torch.zeros_like(v) if k[1]=='v' else v for k,v in projected.items()}
                         with eng.kv_hooks(zero,k=False,v=True):zero_pred=eng.evaluate(mem,mask,w,0,prefix=prefix)
-                        donor_w=dict(w,color='red' if w['color']!='red' else 'blue');donor,donor_mask=eng.encode([render(donor_w,0)])
-                        if torch.equal(donor_mask,mask):
-                            with eng.kv_hooks(eng.projected(donor),k=False,v=True):resample=eng.evaluate(mem,mask,w,0,prefix=prefix)
-                        else:resample=dict(status='SHAPE_MASK_MISMATCH')
+                        donor_w=dict(w,color='red' if w['color']!='red' else 'blue')
+                        if control_core_allowed(donor_w,w['split']):
+                            donor,donor_mask=eng.encode([render(donor_w,0)])
+                            if torch.equal(donor_mask,mask):
+                                with eng.kv_hooks(eng.projected(donor),k=False,v=True):resample=eng.evaluate(mem,mask,w,0,prefix=prefix)
+                            else:resample=dict(status='SHAPE_MASK_MISMATCH')
+                        else:resample=dict(status='CONTROL_CORE_PROVENANCE_BLOCKED')
                         prefixcontrols.append(dict(world_id=w['world_id'],split=group,side=side,prefix_fraction=fraction,prefix_ids=prefix[0].tolist(),zeroing_OOD=True,zero=zero_pred,resample=resample))
             # All-layer observational ranking then exact layer K/V 2x2 and symmetric value ablations.
             if ri==0:

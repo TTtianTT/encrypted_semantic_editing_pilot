@@ -36,16 +36,30 @@ class Engine(Backend):
             if module.__class__.__name__ in ('BartAttention','T5GemmaCrossAttention') and ('encoder_attn' in name or 'cross_attn' in name) and hasattr(module,'k_proj'):
                 self.cross.append((name,module))
         assert self.cross
+        self.encoder_calls=0;self.decoder_forwards=0
+        def encoder_counter(mod,args):self.encoder_calls+=1
+        def decoder_counter(mod,args):self.decoder_forwards+=1
+        self.encoder_counter_handle=self.model.get_encoder().register_forward_pre_hook(encoder_counter)
+        self.decoder_counter_handle=self.model.register_forward_pre_hook(decoder_counter)
 
     @torch.no_grad()
     def ids(self,h,m,prefix=None,native=False):
         kw=dict(self.native_kw if native else self.kw)
         if prefix is not None:kw['decoder_input_ids']=prefix
-        return self.model.generate(encoder_outputs=BaseModelOutput(last_hidden_state=h),attention_mask=m,**kw)
+        before=self.encoder_calls
+        result=self.model.generate(encoder_outputs=BaseModelOutput(last_hidden_state=h),attention_mask=m,**kw)
+        assert self.encoder_calls==before,'Memory generation unexpectedly executed encoder'
+        return result
 
     def logits_with_memory_grad(self,h,m,labels=None,decoder_ids=None):
         kw=dict(labels=labels) if labels is not None else dict(decoder_input_ids=decoder_ids)
-        return self.model(encoder_outputs=BaseModelOutput(last_hidden_state=h),attention_mask=m,use_cache=False,**kw).logits.float()
+        before=self.encoder_calls
+        result=self.model(encoder_outputs=BaseModelOutput(last_hidden_state=h),attention_mask=m,use_cache=False,**kw).logits.float()
+        assert self.encoder_calls==before,'Memory logits unexpectedly executed encoder'
+        return result
+
+    def resources(self):
+        return dict(super().resources(),encoder_calls=self.encoder_calls,decoder_forward_calls=self.decoder_forwards,SLURM_JOB_GPUS=__import__('os').environ.get('SLURM_JOB_GPUS'),SLURM_STEP_GPUS=__import__('os').environ.get('SLURM_STEP_GPUS'))
 
     @torch.no_grad()
     def logits(self,h,m,labels=None,decoder_ids=None):return self.logits_with_memory_grad(h,m,labels,decoder_ids)

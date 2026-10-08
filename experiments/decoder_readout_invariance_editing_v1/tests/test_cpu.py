@@ -19,6 +19,12 @@ class CPUChecks(unittest.TestCase):
         # BART decoder start is itself EOS; source EOS is never removed by this function.
         self.assertEqual(effective_ids([2,0,5,2,1,1],{2}),([0,5,2],True))
         self.assertEqual(effective_ids([2,0,5],{2}),([0,5],False))
+    def test_counterfactual_reserved_core_guard(self):
+        from ..provenance import control_core_allowed
+        collisions=read(ROOT/'results/COUNTERFACTUAL_EXPOSURE_AUDIT.json')['collisions']
+        for row in collisions:
+            key=row['donor_core'];candidate=dict(object=key[0],color=key[1],quantity=key[2],status=key[3])
+            self.assertFalse(control_core_allowed(candidate,row['recipient_split']))
     def test_missing(self):self.assertIsNone(proportion(0,0));self.assertEqual(proportion(0,8),0)
     def test_joint(self):
         s=dict(target=True,preserved=True,parseable=True,grammar=True,ended=True)

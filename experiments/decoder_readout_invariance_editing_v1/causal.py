@@ -3,6 +3,7 @@ import torch
 from .common import *
 from .engine import hooks,first,replace,render
 from .readout import pairs,distribution,token_sites
+from .provenance import control_core_allowed
 
 @torch.no_grad()
 def run(eng,folder):
@@ -71,7 +72,10 @@ def run(eng,folder):
                         records.append(dict(world_id=w['world_id'],split=w['split'],module=name,scope=scope,head=head_id,recipient=side,condition=condition,free=free,content_margin_shift=sum(metrics[j]['b_margin']-metrics[j]['a_margin'] for j in content)/len(content),mean_JS=sum(r['JS'] for r in metrics)/len(metrics),query_path='recipient recomputed, no gold future activations'))
                     assert all(torch.equal(q,current_queries[0]) for q in current_queries),'Local recipient query changed across K/V conditions'
                 # Matched normal source value resampling; protects content not judged by attention mass.
-                wrong_world=dict(w,color='red' if w['color']!='red' else 'blue');wrong,wm=eng.encode([render(wrong_world,0)])
+                wrong_world=dict(w,color='red' if w['color']!='red' else 'blue')
+                if not control_core_allowed(wrong_world,w['split']):
+                    records.append(dict(world_id=w['world_id'],split=w['split'],module=name,condition='NORMAL_COLOR_VALUE_RESAMPLE',status='CONTROL_CORE_PROVENANCE_BLOCKED'));continue
+                wrong,wm=eng.encode([render(wrong_world,0)])
                 if torch.equal(mask,wm):
                     wrongproj=eng.projected(wrong)
                     with eng.kv_hooks(wrongproj,[name],k=False,v=True):lp=eng.logits(recipient,mask,decoder_ids=ids[:,:-1]);free=eng.evaluate(recipient,mask,w,0)

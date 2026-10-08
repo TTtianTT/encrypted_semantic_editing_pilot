@@ -52,7 +52,7 @@ def prepare(stage):
     if stage=='S4' and (ROOT/'configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json').exists():
         dump(ROOT/'results/S4_SUBMISSION_STATUS.json',dict(status='BLOCKED_TEST_INTEGRITY',reason='Five counterfactual donor cores were encoded before S4; fixed full128 independent endpoint is compromised',original_scan_denominator=128,replacement_sampling=False,formal_test_evaluations=0))
         raise RuntimeError('BLOCKED_TEST_INTEGRITY; preserve fixed scan and exposure audit, do not silently substitute a new endpoint')
-    if stage not in ('S0','S1','S1_NATIVE','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]

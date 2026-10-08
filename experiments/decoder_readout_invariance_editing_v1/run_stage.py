@@ -43,6 +43,9 @@ def main():
         elif t['stage'] in ('S1','S1_NATIVE'):
             from .readout import run
             result=run(engine,folder)
+        elif t['stage']=='S1_GENERATION_AUDIT':
+            from .generation_audit import run
+            result=run(engine,folder)
         elif t['stage']=='PARITY_DIAG':
             from .parity_diagnostic import run
             result=run(engine,folder)
