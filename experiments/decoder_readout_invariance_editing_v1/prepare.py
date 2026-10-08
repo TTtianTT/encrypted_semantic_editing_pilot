@@ -49,7 +49,7 @@ def initialize():
 
 def prepare(stage):
     initialize()
-    if stage not in ('S0','S1','S1_NATIVE','S2','S3_SELECT','S3_MAIN','S3_PLAIN','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','S1_NATIVE','S2','S2_NATIVE','S3_SELECT','S3_MAIN','S3_PLAIN','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
@@ -59,7 +59,7 @@ def prepare(stage):
             assert accepted and read(accepted[-1])['passed'],'Model S0 acceptance required'
         ck=next(e for e in inp['editors'] if e['model']==model and e['seed']==42)
         tasks.append(dict(model=model,seed=42,checkpoint=ck['path'],checkpoint_hash=ck['sha256'],stage=stage))
-    if stage=='S2':assert (ROOT/'configs/S2_CANDIDATES.json').exists()
+    if stage in ('S2','S2_NATIVE'):assert (ROOT/'configs/S2_CANDIDATES.json').exists()
     if stage.startswith('S3') and stage!='S3_PLAIN':
         assert (ROOT/'configs/MECHANISM_LOCK.json').exists()
         assert read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')['reviewed_by_human']

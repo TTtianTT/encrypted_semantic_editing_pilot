@@ -10,7 +10,8 @@ class CPUChecks(unittest.TestCase):
     def test_world_grouping(self):
         worlds=rows(ROOT/'configs/worlds.jsonl');self.assertEqual(len(worlds),512)
         self.assertEqual(len({core(w) for w in worlds}),512)
-        old={tuple(w['core_content']) for w in rows(ROOT/'world_exposure_registry.jsonl')}
+        history=ROOT/'configs/historical_exposure_registry.jsonl'
+        old={tuple(w['core_content']) for w in rows(history if history.exists() else ROOT/'world_exposure_registry.jsonl')}
         self.assertFalse(old & {core(w) for w in worlds})
         self.assertEqual(sum(w['split']=='test_iid' for w in worlds),128)
         self.assertEqual(sum(w['split']=='train' for w in worlds),192)

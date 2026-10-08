@@ -25,7 +25,8 @@ def main():
     folder=Path(m['output_root'])/f"{t['model']}_s{t['seed']}";folder.mkdir(parents=True,exist_ok=True)
     status_path=folder/'RUN_STATUS.json'
     if status_path.exists() and read(status_path)['status']=='COMPLETED':return
-    status=dict(status='RUNNING',stage=t['stage'],model=t['model'],seed=t['seed'],job_id=os.environ['SLURM_JOB_ID'],array_job_id=parent,task_index=a.task_index,step_id=os.environ['SLURM_STEP_ID'],started=datetime.now(timezone.utc).isoformat(),manifest_hash=sha(a.manifest),code_hash=objsha(m['files']),split_hash=m['split_hash'],checkpoint_hash=t['checkpoint_hash'],completed_samples=0,remaining_samples=8 if t['stage']=='S0' else 1 if t['stage']=='PARITY_DIAG' else 72,exit_code=None)
+    expected=8 if t['stage']=='S0' else 1 if t['stage']=='PARITY_DIAG' else 64 if t['stage'].startswith('S2') else 256 if t['stage'].startswith('S3') else 32 if t['stage']=='T5_QUALIFICATION' else 72
+    status=dict(status='RUNNING',stage=t['stage'],model=t['model'],seed=t['seed'],job_id=os.environ['SLURM_JOB_ID'],array_job_id=parent,task_index=a.task_index,step_id=os.environ['SLURM_STEP_ID'],started=datetime.now(timezone.utc).isoformat(),manifest_hash=sha(a.manifest),code_hash=objsha(m['files']),split_hash=m['split_hash'],checkpoint_hash=t['checkpoint_hash'],completed_samples=0,remaining_samples=expected,exit_code=None)
     dump(status_path,status)
     engine=None
     try:
@@ -33,6 +34,9 @@ def main():
         assert torch.cuda.device_count()==1,'Exactly one allocated visible GPU required'
         from .engine import Engine
         engine=Engine(t)
+        from .acceptance import parameter_sha
+        if t['stage'].startswith('S3'):
+            frozen_sha=parameter_sha(engine.model);history_sha=parameter_sha(engine.ed)
         if t['stage']=='S0':
             from .acceptance import run
             result=run(engine,folder)
@@ -42,7 +46,7 @@ def main():
         elif t['stage']=='PARITY_DIAG':
             from .parity_diagnostic import run
             result=run(engine,folder)
-        elif t['stage']=='S2':
+        elif t['stage'] in ('S2','S2_NATIVE'):
             from .causal import run
             result=run(engine,folder)
         elif t['stage'] in ('S3_SELECT','S3_MAIN'):
@@ -55,6 +59,13 @@ def main():
             from .t5_qualification import run
             result=run(engine,folder)
         else:raise RuntimeError('Unimplemented stage; no fabricated completion')
+        if t['stage'].startswith('S3'):
+            result['frozen_backbone_sha_before']=frozen_sha
+            result['frozen_backbone_sha_after']=parameter_sha(engine.model)
+            result['frozen_history_sha_before']=history_sha
+            result['frozen_history_sha_after']=parameter_sha(engine.ed)
+            assert frozen_sha==result['frozen_backbone_sha_after'] and history_sha==result['frozen_history_sha_after']
+            assert all(p.grad is None for p in engine.model.parameters())
         dump(folder/'SUMMARY.json',result)
         status.update(status=result.get('status','COMPLETED' if result['passed'] else 'FAILED_TECHNICAL'),exit_code=0 if result['passed'] else 1,completed_samples=result.get('worlds',0),remaining_samples=0)
     except BaseException as e:

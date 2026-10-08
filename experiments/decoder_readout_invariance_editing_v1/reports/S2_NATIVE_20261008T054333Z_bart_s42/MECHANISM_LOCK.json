@@ -1,0 +1,50 @@
+{
+  "status": "IDENTIFIED_LOCAL_CONTENT_READOUT",
+  "selected": [
+    "model.decoder.layers.5.encoder_attn"
+  ],
+  "random_sites": [
+    "model.decoder.layers.0.encoder_attn"
+  ],
+  "scale_squared": {
+    "model.decoder.layers.5.encoder_attn": 0.2786477948538959,
+    "model.decoder.layers.0.encoder_attn": 0.2756591404322535
+  },
+  "validation_worlds": 32,
+  "validation_side_records": 64,
+  "content_damage": 1.0,
+  "target_damage": 0.765625,
+  "content_margin_shift": -3.490507209300995,
+  "gate": {
+    "min_worlds": 20,
+    "content_damage_min": 0.1,
+    "content_damage_gte_target_damage": true,
+    "mean_content_margin_shift_max": -0.2
+  },
+  "site": "whole cross-attention after W_O before residual (actual combined A V); only semantic content token positions",
+  "support": "local content dependency under matched normal value resampling, not unique invariance circuit",
+  "independent_test_accessed": 0,
+  "selection": {
+    "candidate": "model.decoder.layers.5.encoder_attn",
+    "head": 0,
+    "random_site": "model.decoder.layers.0.encoder_attn",
+    "ranked_discovery_mean_margin": {
+      "model.decoder.layers.5.encoder_attn": -9.92184101343155,
+      "model.decoder.layers.2.encoder_attn": -2.8828813597559932,
+      "model.decoder.layers.0.encoder_attn": -1.3942606687545775,
+      "model.decoder.layers.3.encoder_attn": -1.317794853448868,
+      "model.decoder.layers.4.encoder_attn": -1.2049620687961577,
+      "model.decoder.layers.1.encoder_attn": -0.8048118293285369
+    },
+    "choice": "most negative content-margin change under discovery value zeroing; independently validate normal color resampling; fixed head0 supplementary",
+    "random_seed": 81001,
+    "max_candidates": 1,
+    "validation_gate": {
+      "min_worlds": 20,
+      "content_damage_min": 0.1,
+      "content_damage_gte_target_damage": true,
+      "mean_content_margin_shift_max": -0.2
+    },
+    "test_accessed": 0
+  }
+}

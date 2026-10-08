@@ -19,7 +19,7 @@ def collect(stage):
         dest=ROOT/'reports'/f"{stage}_{m['version']}_{task['model']}_s{task['seed']}";dest.mkdir(parents=True,exist_ok=True)
         if (dest/'REPORT.md').exists():continue # terminal report never rewritten by later ledger refresh
         dump(dest/'RUN_STATUS.json',status)
-        for name in ('SUMMARY.json','S0_ACCEPTANCE.json','HOOK_MAP.json','GRADIENT_CHECK.json','EAGER_ACCEPTANCE.json','NATIVE_HOOK_ACCEPTANCE.json','PARITY_DIAGNOSTIC.json','FAILURE.txt'):
+        for name in ('SUMMARY.json','S0_ACCEPTANCE.json','HOOK_MAP.json','GRADIENT_CHECK.json','EAGER_ACCEPTANCE.json','NATIVE_HOOK_ACCEPTANCE.json','LOCAL_SDPA_ACCEPTANCE.json','PARITY_DIAGNOSTIC.json','FAILURE.txt'):
             if (folder/name).exists():shutil.copy2(folder/name,dest/name)
         for p in folder.rglob('*.jsonl'):
             with p.open('rb') as src:atomic(dest/(str(p.relative_to(folder))+'.gz'),gzip.compress(src.read(),mtime=0))

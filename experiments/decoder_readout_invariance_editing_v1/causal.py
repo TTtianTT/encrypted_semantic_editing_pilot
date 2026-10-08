@@ -28,9 +28,12 @@ def run(eng,folder):
                 with eng.kv_hooks(recipient_proj,[name]):selflp=eng.logits(recipient,mask,decoder_ids=ids[:,:-1])
                 assert torch.equal(selflp,reference)
                 # Fixed attention pattern is an explicitly modified diagnostic network.
-                qcache=[];avcache=[]
+                qcache=[];avcache=[];actual_masks=[]
                 output_projection=mod.o_proj if eng.chat else mod.out_proj
-                with hooks([(mod.q_proj,lambda module,args,out:qcache.append(out.detach().clone()),False),(output_projection,lambda module,args:avcache.append(args[0].detach().clone()),True)]):eng.logits(recipient,mask,decoder_ids=ids[:,:-1])
+                mask_handle=mod.register_forward_pre_hook(lambda module,args,kwargs:actual_masks.append(kwargs.get('attention_mask')),with_kwargs=True)
+                try:
+                    with hooks([(mod.q_proj,lambda module,args,out:qcache.append(out.detach().clone()),False),(output_projection,lambda module,args:avcache.append(args[0].detach().clone()),True)]):eng.logits(recipient,mask,decoder_ids=ids[:,:-1])
+                finally:mask_handle.remove()
                 if not eng.chat:
                     heads=mod.num_heads;q=qcache[0].view(1,-1,heads,mod.head_dim).transpose(1,2)
                     def pattern(projected):
@@ -40,15 +43,24 @@ def run(eng,folder):
                         return scores.softmax(-1)
                     aa=pattern(recipient_proj);ab=pattern(donorproj)
                     va=recipient_proj[(name,'v')].view(1,-1,heads,mod.head_dim).transpose(1,2);vb=donorproj[(name,'v')].view(1,-1,heads,mod.head_dim).transpose(1,2)
-                    native_av=(aa@va).transpose(1,2).reshape_as(avcache[0]);reconstruction_error=float((native_av-avcache[0]).abs().max())
-                    assert reconstruction_error<=3e-6,'Native SDPA AV reconstruction failed local acceptance'
+                    # Manual softmax/matmul is a different numerical backend. It failed the
+                    # original 3e-6 gate; retain the difference and never inject that result.
+                    manual_av=(aa@va).transpose(1,2).reshape_as(avcache[0]);manual_error=float((manual_av-avcache[0]).abs().max())
+                    ka=recipient_proj[(name,'k')].view(1,-1,heads,mod.head_dim).transpose(1,2)
+                    kb=donorproj[(name,'k')].view(1,-1,heads,mod.head_dim).transpose(1,2)
+                    def native_av(key,value):
+                        return torch.nn.functional.scaled_dot_product_attention(q,key,value,attn_mask=actual_masks[0],dropout_p=0.,is_causal=False,scale=mod.scaling).transpose(1,2).contiguous().reshape_as(avcache[0])
+                    reconstructed=native_av(ka,va);reconstruction_error=float((reconstructed-avcache[0]).abs().max())
+                    acceptance=dict(world_id=w['world_id'],module=name,recipient=side,native_SDPA_max_error=reconstruction_error,native_tolerance=0,manual_max_error=manual_error,manual_original_tolerance=3e-6,manual_gate_passed=manual_error<=3e-6,manual_result_injected=False,actual_attention_mask_replayed=True,prior_failed_run='S2_20261008T054028Z')
+                    dump(folder/'LOCAL_SDPA_ACCEPTANCE.json',acceptance)
+                    assert reconstruction_error==0,'Actual SDPA local reconstruction must be bit-identical'
                     delta_exact=ab@vb-aa@va;decomposed=(ab-aa)@va+aa@(vb-va)+(ab-aa)@(vb-va)
                     decomposition_error=float((delta_exact-decomposed).abs().max());assert decomposition_error<=1e-5
-                    for label,pattern_value,value in [('FIX_A_REPLACE_V',aa,vb),('FIX_V_REPLACE_K',ab,va)]:
-                        changed=(pattern_value@value).transpose(1,2).reshape_as(avcache[0])
+                    for label,key,value in [('FIX_A_REPLACE_V',ka,vb),('FIX_V_REPLACE_K',kb,va)]:
+                        changed=native_av(key,value)
                         with hooks([(output_projection,lambda module,args,changed=changed:(changed,)+args[1:],True)]):lp=eng.logits(recipient,mask,decoder_ids=ids[:,:-1])
                         metrics=distribution(reference,lp,labels,groups)
-                        records.append(dict(world_id=w['world_id'],split=w['split'],module=name,scope='layer',recipient=side,condition=label,free_generation_status='NOT_RUN_DIAGNOSTIC_TEACHER_PREFIX_ONLY',content_margin_shift=sum(metrics[j]['b_margin']-metrics[j]['a_margin'] for j in content)/len(content),mean_JS=sum(r['JS'] for r in metrics)/len(metrics),diagnostic_modified_network=True,reconstructed_A_not_materialized_SDPA_probs=True,local_AV_max_error=reconstruction_error,KV_interaction_decomposition_max_error=decomposition_error,recipient_query_fixed=True))
+                        records.append(dict(world_id=w['world_id'],split=w['split'],module=name,scope='layer',recipient=side,condition=label,free_generation_status='NOT_RUN_DIAGNOSTIC_TEACHER_PREFIX_ONLY',content_margin_shift=sum(metrics[j]['b_margin']-metrics[j]['a_margin'] for j in content)/len(content),mean_JS=sum(r['JS'] for r in metrics)/len(metrics),diagnostic_modified_network=True,pattern_held_by_frozen_QK_native_SDPA=True,materialized_A_status='NOT_AVAILABLE_NATIVE_FUSED',local_AV_max_error=reconstruction_error,manual_AV_max_error=manual_error,manual_result_injected=False,KV_interaction_decomposition_max_error=decomposition_error,recipient_query_fixed=True))
                 for scope,head_id in [('layer',None),('head',head)]:
                     current_queries=[]
                     for condition,k,v in [('AA',False,False),('BA',True,False),('AB',False,True),('BB',True,True)]:

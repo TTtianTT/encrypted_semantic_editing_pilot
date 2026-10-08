@@ -1,0 +1,116 @@
+{
+  "collisions": [
+    {
+      "recipient": "drie_c422b41d571884e2",
+      "recipient_split": "train",
+      "donor_core": [
+        "cup",
+        "red",
+        5,
+        "completed"
+      ],
+      "donor_world_id": "drie_c4d18357480b1ee2",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_4f8170c47bab4224",
+      "recipient_split": "train",
+      "donor_core": [
+        "cup",
+        "red",
+        4,
+        "cancelled"
+      ],
+      "donor_world_id": "drie_5d6a2f174fe45257",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_f14a57b3e3138ffc",
+      "recipient_split": "train",
+      "donor_core": [
+        "ticket",
+        "red",
+        7,
+        "cancelled"
+      ],
+      "donor_world_id": "drie_d9efacd378676beb",
+      "donor_split": "reserved_iid"
+    },
+    {
+      "recipient": "drie_86a54155abfec618",
+      "recipient_split": "train",
+      "donor_core": [
+        "book",
+        "red",
+        3,
+        "planned"
+      ],
+      "donor_world_id": "drie_9e11c2d0a264131f",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_22ce93278726bb0d",
+      "recipient_split": "train",
+      "donor_core": [
+        "book",
+        "red",
+        9,
+        "cancelled"
+      ],
+      "donor_world_id": "drie_d29fe0bc385fd240",
+      "donor_split": "reserved_iid"
+    },
+    {
+      "recipient": "drie_8f9e66675f852185",
+      "recipient_split": "train",
+      "donor_core": [
+        "lamp",
+        "red",
+        3,
+        "cancelled"
+      ],
+      "donor_world_id": "drie_a2c841d55026615c",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_b9479f1a434d3ee6",
+      "recipient_split": "validation",
+      "donor_core": [
+        "sensor",
+        "red",
+        9,
+        "planned"
+      ],
+      "donor_world_id": "drie_272429984e2fcd45",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_2562ccdc1fc6b8bf",
+      "recipient_split": "validation",
+      "donor_core": [
+        "lamp",
+        "red",
+        3,
+        "cancelled"
+      ],
+      "donor_world_id": "drie_a2c841d55026615c",
+      "donor_split": "test_iid"
+    },
+    {
+      "recipient": "drie_6583264935834809",
+      "recipient_split": "validation",
+      "donor_core": [
+        "cup",
+        "red",
+        5,
+        "completed"
+      ],
+      "donor_world_id": "drie_c4d18357480b1ee2",
+      "donor_split": "test_iid"
+    }
+  ],
+  "status": "BLOCKED_INDEPENDENT_TEST_INTEGRITY",
+  "test_outputs_opened": 0,
+  "reason": "Changed color controls can have a different core_content hash; must not silently claim their colliding reserved test worlds independent",
+  "refill_allowed": false
+}

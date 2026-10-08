@@ -69,6 +69,23 @@ def readout(stage='S1_NATIVE'):
     text(ROOT/'S1_READOUT_REPORT.md','# Discovery/validation readout results\n\n'+json.dumps(numerical,ensure_ascii=False,indent=2)+'\n\n配对只要求当前正确、exact native tokens/raw text、shape/mask及非底噪差异；不以next fork筛选。旧PCA replay单列。当前共同文本不等于概率/内部等价。曲线保留完整非单调网格，未二分搜索。独立test仍封存。32 validation worlds为探索性分析，不能越过独立确认至少40-world门槛。\n\nSDPA native projection self-patch误差0；eager候选backend对齐失败另报，未用于此run。SDPA不物化attention probs；AV/W_O及residual/norm实际hook值与观测传播保存。推断注意力pattern仅作后续诊断，不能声称是materialized fused-kernel内部张量。matched-current-preservation随机幅度仅由validation锁定，若alpha=0须称退化零扰动对照，不能解释为同范数随机方向保护能力。未称完整S1确认。\n')
     return selection
 
+def causal(stage='S2_NATIVE'):
+    m=read(ROOT/f'manifests/{stage}.json');folder=Path(m['output_root'])/'bart_s42';records=rows(folder/'causal_conditions.jsonl')
+    grouped={}
+    for r in records:grouped.setdefault((r['split'],r['module'],r.get('scope','NA'),r['condition']),[]).append(r)
+    summary=[]
+    for (split,module,scope,condition),rs in sorted(grouped.items()):
+        free=[r['free'] for r in rs if 'free' in r]
+        margin=[r['content_margin_shift'] for r in rs if 'content_margin_shift' in r]
+        summary.append(dict(split=split,module=module,scope=scope,condition=condition,independent_worlds=len({r['world_id'] for r in rs}),side_record_denominator=len(rs),free_generation_denominator=len(free),joint_numerator=sum(r['score']['success'] for r in free),content_numerator=sum(r['score']['preserved'] for r in free),target_numerator=sum(r['score']['target'] for r in free),EOS_numerator=sum(r['ended'] for r in free),content_margin_shift=float(np.mean(margin)) if margin else None,mean_JS=float(np.mean([r['mean_JS'] for r in rs if 'mean_JS' in r])) if any('mean_JS' in r for r in rs) else None))
+    csv_write(ROOT/'results/causal_conditions_summary.csv',summary)
+    lock=read(folder/'MECHANISM_LOCK.json');dump(ROOT/'configs/MECHANISM_LOCK.json',dict(lock,source_manifest=stage,source_lock_sha=sha(folder/'MECHANISM_LOCK.json')))
+    fixed=[r for r in records if 'local_AV_max_error' in r]
+    evidence=dict(lock=lock,summary=summary,native_AV_max_error=max(r['local_AV_max_error'] for r in fixed),manual_AV_max_error=max(r['manual_AV_max_error'] for r in fixed),manual_AV_failed_original_gate_rows=sum(r['manual_AV_max_error']>3e-6 for r in fixed),manual_AV_gate_denominator=len(fixed),manual_AV_injected=False,independent_test_accessed=0,confirmation_status='NOT_RUN_TEST_SEALED',claim='local non-target content dependency, not unique invariance circuit or independent algorithm gain')
+    dump(ROOT/'results/S2_NUMERICAL_AUDIT.json',evidence)
+    text(ROOT/'S2_CAUSAL_REPORT.md','# Exact native causal diagnostics (discovery/validation)\n\n'+json.dumps(evidence,ensure_ascii=False,indent=2)+'\n\n32 train/32 validation worlds；两个recipient方向属于同一world。全层及固定head0 K/V四条件均在实际recipient前缀重算；本地Q一致性、自替换逐位一致性通过；自由生成没有注入gold未来激活。正常颜色value resampling是内容依赖证据，同时明确报告目标损害；whole-layer readout可能混含日期信息，不能声称专属内容电路。固定pattern由冻结实际Q/K并使用原生SDPA实现，A未物化；手算backend失配完整保留且未注入。\n\n原S2手算AV验收失败；新版本重放实际mask/原生SDPA，要求局部AV误差严格0。稀疏head电路、自然K/V补偿唯一性、独立test机制确认及编辑增益均未成立。\n')
+    return evidence
+
 def paired_bootstrap(records,method_a,method_b,field='joint',draws=20000,seed=2026100802):
     # Each world retains every source/operation/seed before equal-source weighting.
     cells={}
@@ -92,5 +109,7 @@ def holm(values):
     return out
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--readout',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--readout',action='store_true');p.add_argument('--causal',action='store_true');a=p.parse_args()
     if a.readout:print(json.dumps(readout(),ensure_ascii=False))
+    if a.causal:
+        e=causal();print(json.dumps(dict(lock=e['lock'],native_AV_max_error=e['native_AV_max_error'],manual_AV_max_error=e['manual_AV_max_error']),ensure_ascii=False))
