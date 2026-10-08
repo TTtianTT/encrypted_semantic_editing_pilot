@@ -11,6 +11,8 @@ def write_report():
     trajectory=read(trajectory_path) if trajectory_path.exists() else None
     resources=read(ROOT/'results/resource_ledger.json')
     review=read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')
+    predicted=read(ROOT/'results/PREDICTED_CORE_EXPOSURE_AUDIT.json') if (ROOT/'results/PREDICTED_CORE_EXPOSURE_AUDIT.json').exists() else {}
+    additional=predicted.get('additional_test_cores',[])
     assert review['reviewed_by_human']
     methods=atomic_audit['methods'];atomic_table=[]
     for seed in (42,43,44):
@@ -44,13 +46,13 @@ def write_report():
 
 2026-10-08，Asia/Singapore；分支experiment/decoder-readout-invariance-editing-v1。用户确认“16例抽查通过”后，已完成具体KL/readout正则GPU梯度与8world过拟合验收，以及BART rank16四方法三个seed正式训练和全量validation单操作评测。此确认只解除I_keep人工抽查门槛，未授权变更独立test。
 
-**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；虽未做正式test评测，仍不能称原128全部未暴露。我已保存暴露ID/证据、原split SHA与门禁修复；不补搜、不将剩余123静默改成确认终点。完整记录见reports/DATA_EXPOSURE_CORRECTION.md和configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json。
+**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；另经全量输出文本核验，T5Gemma下一操作输出还出现{len(additional)}个额外test core：{', '.join(additional) or '暂无'}。正式test评测0不等于所有core未暴露。已保存暴露ID/原文/出处、原split SHA与门禁修复；不补搜，不静默改分母。原123提案因额外输出暴露已撤回，不能按旧提案批准解封；需完成跨分支原始输出审计，再提出准确分母。见DATA_EXPOSURE_CORRECTION、PREDICTED_CORE_EXPOSURE_AUDIT和S4_AMENDMENT_PROPOSAL。
 
 ## 完成范围
 
 | 阶段 | 实际执行 | 仍缺失 |
 | --- | --- | --- |
-| 审计/CPU | 原分支HEAD、1321文件SHA、21分支暴露扫描、固定train192/val64/test128/reserved128；真实人工16例通过 | 原128独立终点已破坏；模板0–5均历史暴露，OOD为UNAVAILABLE |
+| 审计/CPU | 原分支HEAD、1321文件SHA、21分支暴露扫描、固定train192/val64/test128/reserved128；真实人工16例通过 | 已知5编码+{len(additional)}额外生成输出core暴露；原128独立终点已破坏；OOD为UNAVAILABLE |
 | S0 | BART FP32与原版T5Gemma BF16；memory注入、native无干预一致、mask/EOS/KV、H梯度、冻结参数、8world smoke通过 | 可选eager对齐失败已保留，不采用 |
 | S1 BART | train32/val32/旧replay8，共288严格pair、概率/有限路径/随机/源前缀/传播/真实generation scores | 独立机制确认及完整多token语义候选log-prob未完成 |
 | S2 BART | 全层discovery、固定L5/L0整层与head0双向K/V、native SDPA诊断、在线Q替换 | 无完整/唯一稀疏电路；未独立确认，top2/frozen-norm扩展未运行 |

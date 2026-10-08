@@ -1,0 +1,11 @@
+# S4测试终点修订提案（尚未批准）
+
+原定128个IID core world中，5个已在S1/S2派生颜色donor对照被encoder处理。原128全部独立的终点不能恢复。本提案只允许一个显式的新终点：保留原128扫描索引，5个预暴露world以NA和原因列出，对其余固定123个此前未暴露world进行评测。不补样本，不改变split/world SHA，不按输出或成功率排除。
+
+所有四方法三个seed的12个checkpoint、超参、L5/L0组件、keep位置、随机匹配幅度已经锁定；checkpoint锁SHA：9c1f793bbe4a83c2bc2f0912c88f4c5a211a30e33f04c875edbae8d3a6977c6d。123-world单操作分母每seed2952（自然/history各1476），仍按50/50汇总；主指标目标、保护内容、可解析、grammar、正常EOS的交集。原128主终点仍标BLOCKED，不将123称原协议完整确认。
+
+同一解封批次测一般SAME_TEXT资格/概率，以及预选L5/L0双向K/V和正常颜色resampling；不足40独立world则只探索，零pair则NOT_ESTIMABLE。有限alpha/随机曲线仅固定前8个eligible world，是小子集，不强行称全池确认。纯latent1/2/3/5步使用各方法自己的状态，全部三seed完整记录。20,000次paired world bootstrap及两项主对比Holm保持原规则；0/100%另给world比例Wilson区间。
+
+预暴露ID：drie_272429984e2fcd45, drie_5d6a2f174fe45257, drie_9e11c2d0a264131f, drie_a2c841d55026615c, drie_c4d18357480b1ee2。精确123个ID、所有锁文件SHA和运行规则在configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json。没有新的训练或test选型，也没有donor用于主编辑器推理。只允许已有train/validation/historical core充当诊断颜色donor；任何test/reserved core拒绝，不能补搜到可用donor。
+
+只有用户显式同意此修订，才生成S4_AMENDMENT_AUTHORIZATION.json并启动Slurm作业；当前test_unseal_authorized=False，正式test评测仍为0。预计额外约3小时墙钟（两GPU上限），具体以队列和首批实际耗时修正；包括正式编辑、轨迹和锁定机制诊断，40 GPU-hours总预算和失败计费继续生效。若不同意，保留原阻塞报告，交付已完成的validation结果。

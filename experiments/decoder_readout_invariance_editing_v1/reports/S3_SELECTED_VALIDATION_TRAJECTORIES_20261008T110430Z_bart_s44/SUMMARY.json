@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "worlds": 64,
+  "seed": 44,
+  "trajectories": [
+    {
+      "method": "Original",
+      "length": 1,
+      "complete_numerator": 256,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Original",
+      "length": 2,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Original",
+      "length": 3,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Original",
+      "length": 5,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Plain",
+      "length": 1,
+      "complete_numerator": 256,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Plain",
+      "length": 2,
+      "complete_numerator": 7,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Plain",
+      "length": 3,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Plain",
+      "length": 5,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Output-only",
+      "length": 1,
+      "complete_numerator": 256,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Output-only",
+      "length": 2,
+      "complete_numerator": 55,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Output-only",
+      "length": 3,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Output-only",
+      "length": 5,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Mechanism-guided",
+      "length": 1,
+      "complete_numerator": 256,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Mechanism-guided",
+      "length": 2,
+      "complete_numerator": 7,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Mechanism-guided",
+      "length": 3,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Mechanism-guided",
+      "length": 5,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Random-site",
+      "length": 1,
+      "complete_numerator": 256,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Random-site",
+      "length": 2,
+      "complete_numerator": 54,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Random-site",
+      "length": 3,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    },
+    {
+      "method": "Random-site",
+      "length": 5,
+      "complete_numerator": 0,
+      "trajectory_denominator": 256,
+      "worlds": 64
+    }
+  ],
+  "scientific_scope": "EXPLORATORY_VALIDATION_ONLY",
+  "test_accessed": 0,
+  "old_Original_Plain_reused": true,
+  "own_latent_states": true,
+  "inference_benchmark_records": 128,
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 598755328,
+    "wall_seconds": 400.73868640098954,
+    "job_id": "3045",
+    "step_id": "0",
+    "encoder_calls": 0,
+    "decoder_forward_calls": 81151,
+    "SLURM_JOB_GPUS": "4",
+    "SLURM_STEP_GPUS": "4"
+  },
+  "frozen_backbone_sha_before": "7836f07a52877d3457b69cae97a4e46feb972b6789f429014d1e616595026b5b",
+  "frozen_backbone_sha_after": "7836f07a52877d3457b69cae97a4e46feb972b6789f429014d1e616595026b5b",
+  "frozen_history_sha_before": "056e48a17ea9088662db2a647f91d36d2a91c5928f06eec755451f14be0140ff",
+  "frozen_history_sha_after": "056e48a17ea9088662db2a647f91d36d2a91c5928f06eec755451f14be0140ff"
+}

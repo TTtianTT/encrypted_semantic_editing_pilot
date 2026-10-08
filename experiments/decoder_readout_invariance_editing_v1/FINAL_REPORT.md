@@ -2,18 +2,18 @@
 
 2026-10-08，Asia/Singapore；分支experiment/decoder-readout-invariance-editing-v1。用户确认“16例抽查通过”后，已完成具体KL/readout正则GPU梯度与8world过拟合验收，以及BART rank16四方法三个seed正式训练和全量validation单操作评测。此确认只解除I_keep人工抽查门槛，未授权变更独立test。
 
-**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；虽未做正式test评测，仍不能称原128全部未暴露。我已保存暴露ID/证据、原split SHA与门禁修复；不补搜、不将剩余123静默改成确认终点。完整记录见reports/DATA_EXPOSURE_CORRECTION.md和configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json。
+**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；另经全量输出文本核验，T5Gemma下一操作输出还出现3个额外test core：drie_2a54d98b8359a00a, drie_afe8214e075315d0, drie_b6910a8334525244。正式test评测0不等于所有core未暴露。已保存暴露ID/原文/出处、原split SHA与门禁修复；不补搜，不静默改分母。原123提案因额外输出暴露已撤回，不能按旧提案批准解封；需完成跨分支原始输出审计，再提出准确分母。见DATA_EXPOSURE_CORRECTION、PREDICTED_CORE_EXPOSURE_AUDIT和S4_AMENDMENT_PROPOSAL。
 
 ## 完成范围
 
 | 阶段 | 实际执行 | 仍缺失 |
 | --- | --- | --- |
-| 审计/CPU | 原分支HEAD、1321文件SHA、21分支暴露扫描、固定train192/val64/test128/reserved128；真实人工16例通过 | 原128独立终点已破坏；模板0–5均历史暴露，OOD为UNAVAILABLE |
+| 审计/CPU | 原分支HEAD、1321文件SHA、21分支暴露扫描、固定train192/val64/test128/reserved128；真实人工16例通过 | 已知5编码+3额外生成输出core暴露；原128独立终点已破坏；OOD为UNAVAILABLE |
 | S0 | BART FP32与原版T5Gemma BF16；memory注入、native无干预一致、mask/EOS/KV、H梯度、冻结参数、8world smoke通过 | 可选eager对齐失败已保留，不采用 |
 | S1 BART | train32/val32/旧replay8，共288严格pair、概率/有限路径/随机/源前缀/传播/真实generation scores | 独立机制确认及完整多token语义候选log-prob未完成 |
 | S2 BART | 全层discovery、固定L5/L0整层与head0双向K/V、native SDPA诊断、在线Q替换 | 无完整/唯一稀疏电路；未独立确认，top2/frozen-norm扩展未运行 |
 | S3 BART | Plain/Output-only/Mechanism-guided/Random-site，seed42/43/44，192train/64val，400updates；keep/mech网格锁定 | validation不等于独立test；历史错误当前状态实际无覆盖 |
-| validation长链 | 选定新方法运行待结束 | 独立IID链与真实OOD未执行 |
+| validation长链 | 四方法及Original全量1/2/3/5步已完成 | 独立IID链与真实OOD未执行 |
 | S4 | CPU暴露审计和阻塞报告 | BLOCKED_TEST_INTEGRITY；没有隐式修改分母 |
 | T5Gemma | 原google/t5gemma-2b-2b-ul2-it BF16，S0及train16/val16一般SAME_TEXT小规模分析 | 每split16world，独立确认不可估计；新方法强对照未运行 |
 | S5预调节 | 未运行 | NOT_RUN_PREREQUISITES；S0–S4主结果未完成，不是GPU配额耗尽 |
@@ -95,7 +95,27 @@ vsPlain提升不证明机制有额外价值；只有vsOutput-only和vsRandom-sit
 
 ## 原子与长期能力
 
-选定三种新方法的纯latent1/2/3/5步评测尚未进入终态，数字NA。旧Original/Plain结果见审批前报告；不能从新单操作结果推断长链。
+64 validation worlds，每world两个固定操作顺序及两个方向。全部从自然起点出发，后续只使用各方法自己的latent输出，不重置gold state。完整轨迹要求每个步骤正确，不能以最后一步替代整链成功。Original/Plain旧轨迹和checkpoint/hash匹配后复用，原allocation已经计费。
+
+| 方法 | seed | 1步 | 2步 | 3步 | 5步 |
+| --- | --- | --- | --- | --- | --- |
+| Original | 42 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Plain | 42 | 256/256 | 9/256 | 0/256 | 0/256 |
+| Output-only | 42 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Mechanism-guided | 42 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Random-site | 42 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Original | 43 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Plain | 43 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Output-only | 43 | 256/256 | 19/256 | 0/256 | 0/256 |
+| Mechanism-guided | 43 | 256/256 | 124/256 | 0/256 | 0/256 |
+| Random-site | 43 | 256/256 | 66/256 | 0/256 | 0/256 |
+| Original | 44 | 256/256 | 0/256 | 0/256 | 0/256 |
+| Plain | 44 | 256/256 | 7/256 | 0/256 | 0/256 |
+| Output-only | 44 | 256/256 | 55/256 | 0/256 | 0/256 |
+| Mechanism-guided | 44 | 256/256 | 7/256 | 0/256 | 0/256 |
+| Random-site | 44 | 256/256 | 54/256 | 0/256 | 0/256 |
+
+逐步target/content/parse/EOS、顺序/逆方向、20,000次paired world-cluster差值和原始world differences见SELECTED_TRAJECTORY_NUMERICAL_AUDIT与CSV。每seed每长度256条相关轨迹对应64独立core world；另给“同world四条轨迹全部成功”的Wilson区间，避免0/100% bootstrap退化被解读为确定总体效果。三seed只代表已锁定checkpoint。单操作提升不能写成长期编辑解决，validation上的长链差异也不能写成独立test证据。
 
 ## 原版T5Gemma
 
@@ -105,7 +125,7 @@ vsPlain提升不证明机制有额外价值；只有vsOutput-only和vsRandom-sit
 
 ## 资源、终态发布与复现
 
-最新账本：20个allocation，总3.591667 GPU-hours，峰值2GPU；全部终态=True。预算40 GPU-hours，失败/重试计入，allocation计费不重复.batch/.extern/srun steps。最后实时队列以results/FINAL_QUEUE_AUDIT为准，不能以旧STATUS猜当前作业。
+最新账本：23个allocation，总4.023056 GPU-hours，峰值2GPU；全部终态=True。预算40 GPU-hours，失败/重试计入，allocation计费不重复.batch/.extern/srun steps。最后实时队列以results/FINAL_QUEUE_AUDIT为准，不能以旧STATUS猜当前作业。
 
 所有神经工作经唯一submit_stage→sbatch→srun，从不可变snapshot执行；没有登录节点神经工作或覆盖CUDA_VISIBLE_DEVICES。全项目外部锁/登记/squeue/sacct门禁最多两GPU，一个stage结束后才启动新array。所有新worktree、tmp/cache、环境尝试、checkpoint、日志、大产物和外部ledger在/dataset1/zailong/；原工作区/未提交历史未改。每terminal run全量记录独立核验、数字报告、commit/push/remote SHA核验，失败也发布。最后commit及远端回执在外部.decoder-readout-control-v1/final_receipt.json，避免commit内写自身SHA。
 
