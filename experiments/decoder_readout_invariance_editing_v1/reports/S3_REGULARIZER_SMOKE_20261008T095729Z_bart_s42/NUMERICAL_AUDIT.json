@@ -1,0 +1,74 @@
+{
+  "predictions": 24,
+  "worlds": 8,
+  "methods": [
+    {
+      "method": "Output-only",
+      "isolated_editor_gradient_norms": {
+        "CE": 0.7908864617347717,
+        "KL": 0.08582770824432373
+      },
+      "teacher_detached": true,
+      "student_readout_retains_gradient": true,
+      "keep_tokens_in_probe": [
+        5,
+        5
+      ],
+      "hooks_cleaned": true,
+      "updates": 120,
+      "initial_loss": 0.4531189575791359,
+      "final_loss": 0.0010264899901812896,
+      "initial_CE": 0.4531189575791359,
+      "final_CE": 0.00047974101835279725,
+      "joint_numerator": 8,
+      "denominator": 8
+    },
+    {
+      "method": "Mechanism-guided",
+      "isolated_editor_gradient_norms": {
+        "CE": 0.7908864617347717,
+        "KL": 0.08582770824432373,
+        "mechanism": 0.11193709075450897
+      },
+      "teacher_detached": true,
+      "student_readout_retains_gradient": true,
+      "keep_tokens_in_probe": [
+        5,
+        5
+      ],
+      "hooks_cleaned": true,
+      "updates": 120,
+      "initial_loss": 0.4531189575791359,
+      "final_loss": 0.0016681360139045864,
+      "initial_CE": 0.4531189575791359,
+      "final_CE": 0.0006268129945965484,
+      "joint_numerator": 8,
+      "denominator": 8
+    },
+    {
+      "method": "Random-site",
+      "isolated_editor_gradient_norms": {
+        "CE": 0.7908864617347717,
+        "KL": 0.08582770824432373,
+        "mechanism": 0.014563802629709244
+      },
+      "teacher_detached": true,
+      "student_readout_retains_gradient": true,
+      "keep_tokens_in_probe": [
+        5,
+        5
+      ],
+      "hooks_cleaned": true,
+      "updates": 120,
+      "initial_loss": 0.4531189575791359,
+      "final_loss": 0.001300838055612985,
+      "initial_CE": 0.4531189575791359,
+      "final_CE": 0.0005171303437236929,
+      "joint_numerator": 8,
+      "denominator": 8
+    }
+  ],
+  "frozen_backbone_unchanged": true,
+  "frozen_history_unchanged": true,
+  "test_evaluations": 0
+}

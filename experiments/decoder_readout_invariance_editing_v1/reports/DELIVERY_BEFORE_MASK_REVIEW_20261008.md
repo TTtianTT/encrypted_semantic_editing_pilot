@@ -1,5 +1,3 @@
-> 更新：用户已确认16例抽查通过。S3审核阻塞解除，正在进行正则GPU验收/训练；下面保留此前交付结论，待新终态逐轮更新。独立S4阻塞未解除。审批前完整版本保存在reports/DELIVERY_BEFORE_MASK_REVIEW_20261008.md。
-
 # Decoder readout invariance editing v1 — 实际执行与阻塞报告
 
 2026-10-08，Asia/Singapore。分支 `experiment/decoder-readout-invariance-editing-v1`。

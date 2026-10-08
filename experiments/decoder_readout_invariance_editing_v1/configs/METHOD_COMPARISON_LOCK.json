@@ -1,0 +1,49 @@
+{
+  "scope": "EXPLORATORY_VALIDATION_ONLY; S4 full128 independent endpoint remains blocked",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "methods": [
+    "Original",
+    "Plain",
+    "Output-only",
+    "Mechanism-guided",
+    "Random-site"
+  ],
+  "worlds": 64,
+  "source_weights": {
+    "natural": 0.5,
+    "history": 0.5
+  },
+  "main_field": "joint",
+  "comparison_family": [
+    [
+      "Mechanism-guided",
+      "Output-only"
+    ],
+    [
+      "Mechanism-guided",
+      "Random-site"
+    ]
+  ],
+  "paired_cluster_bootstrap_draws": 20000,
+  "Holm": true,
+  "norm_bins": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    1000000000
+  ],
+  "trajectories": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "review_lock_sha256": "ffa2502879136c5935a8bac3854c7b8e38e2fc997b863f15f2786ee8d04eb7cc",
+  "test_evaluations_allowed": false
+}

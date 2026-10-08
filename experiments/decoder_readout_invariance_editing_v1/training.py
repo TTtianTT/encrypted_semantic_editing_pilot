@@ -1,6 +1,7 @@
 """Rank16, one-pass latent editors. Training gold enters losses only."""
 import copy
 import random
+import shutil
 import time
 import torch
 import torch.nn.functional as F
@@ -20,8 +21,15 @@ def source_record(eng,w,state,source):
 @torch.no_grad()
 def cache_sources(eng,worlds,folder):
     cache={};parts=folder/'source_worlds';parts.mkdir(exist_ok=True)
+    reuse_path=ROOT/'configs/S3_REUSE_LOCK.json'
+    reuse=next((r for r in read(reuse_path)['entries'] if r['seed']==eng.task['seed']),None) if reuse_path.exists() else None
     for i,w in enumerate(worlds):
         saved=parts/(w['world_id']+'.pt')
+        if reuse:
+            original=reuse['source_worlds'][w['world_id']]
+            assert sha(original['path'])==original['sha256'],'Reused source memory changed'
+            if not saved.exists():shutil.copy2(original['path'],saved)
+            assert sha(saved)==original['sha256'],'Reused source memory differs'
         if saved.exists():
             cache.update(torch.load(saved,map_location='cpu',weights_only=False));continue
         current={}
@@ -52,7 +60,7 @@ def validate(eng,ed,worlds,cache,folder,name):
     scores=[r['prediction']['score'] for r in records]
     return dict(joint=sum(r['success'] for r in scores)/len(scores),content=sum(r['preserved'] for r in scores)/len(scores),target=sum(r['target'] for r in scores)/len(scores),denominator=len(scores),worlds=len(worlds))
 
-def loss(eng,ed,op,h,m,targets,keep_weight,size_weight,mechanism_sites,scales,mechanism_weight):
+def loss(eng,ed,op,h,m,targets,keep_weight,size_weight,mechanism_sites,scales,mechanism_weight,return_details=False):
     labels=eng.labels(targets);student=ed[op](h,m);assert torch.equal(student[m==0],h[m==0])
     keep=torch.zeros(labels.shape,device='cuda',dtype=torch.bool)
     if keep_weight or mechanism_weight:
@@ -78,7 +86,13 @@ def loss(eng,ed,op,h,m,targets,keep_weight,size_weight,mechanism_sites,scales,me
     if mechanism_weight and keep.any():
         mech=sum((student_sites[n].float()-teacher_sites[n].detach().float()).square().mean(-1)[keep].mean()/max(scales[n],1e-9) for n in mechanism_sites)/len(mechanism_sites)
     total=ce+keep_weight*kl+mechanism_weight*mech+size_weight*size
-    return total,dict(CE=float(ce.detach()),KL=float(kl.detach()),mechanism=float(mech.detach()),size=float(size.detach()),keep_available_fraction=float(keep.any(1).float().mean()))
+    metrics=dict(CE=float(ce.detach()),KL=float(kl.detach()),mechanism=float(mech.detach()),size=float(size.detach()),keep_available_fraction=float(keep.any(1).float().mean()))
+    if return_details:
+        return total,metrics,dict(terms={'CE':ce,'KL':kl,'mechanism':mech,'size':size},keep_mask=keep,
+            labels=labels,teacher_logits_requires_grad=teacher_logits.requires_grad if teacher_logits is not None else None,
+            teacher_sites_require_grad={n:z.requires_grad for n,z in teacher_sites.items()},
+            student_sites_require_grad={n:z.requires_grad for n,z in student_sites.items()})
+    return total,metrics
 
 def train_one(eng,cache,worlds,seed,method,keep_weight,mechanism_weight,sites,scales,folder):
     ed=editors(eng.d,seed);opt=torch.optim.AdamW(ed.parameters(),lr=.001,weight_decay=0.)
@@ -111,14 +125,31 @@ def train_one(eng,cache,worlds,seed,method,keep_weight,mechanism_weight,sites,sc
         state=dict(editor=ed.state_dict(),optimizer=opt.state_dict(),logs=logs,next_update=update+1,metadata=meta,torch_rng=torch.get_rng_state(),cuda_rng=torch.cuda.get_rng_state_all(),wall_seconds=previous_wall+time.monotonic()-start)
         temporary=resume_path.with_suffix('.tmp');torch.save(state,temporary);temporary.replace(resume_path)
     jsonl(folder/'training.jsonl',logs);dump(folder/'TRAINING_COMPLETE.json',dict(metadata=meta,wall_seconds=previous_wall+time.monotonic()-start,checkpoints=[dict(path=str(p),sha256=sha(p)) for p in folder.glob('update*.pt')],editor_parameters=sum(p.numel() for p in ed.parameters()),decoder_parameters_updated=0,update_matched=True,teacher_forwards_per_update=8 if keep_weight or mechanism_weight else 0,student_forwards_per_update=8,backwards_per_update=8,resumed_from_update=first_update))
+    reuse=next((r for r in read(ROOT/'configs/S3_REUSE_LOCK.json')['entries'] if r['seed']==seed),None) if (ROOT/'configs/S3_REUSE_LOCK.json').exists() else None
+    if reuse:
+        assert sha(reuse['training_draws'])==reuse['training_draws_sha256']
+        reference=rows(reuse['training_draws'])
+        assert len(reference)==len(logs)==400
+        assert all((a['operation'],a['draws'])==(b['operation'],b['draws']) for a,b in zip(reference,logs)), 'Minibatch sequence differs from Plain'
+        dump(folder/'MATCHED_DRAW_ACCEPTANCE.json',dict(passed=True,updates=400,seed=seed,reference= reuse['training_draws'],reference_sha256=reuse['training_draws_sha256']))
     return ed
+
+def reuse_plain(eng,folder):
+    item=next(r for r in read(ROOT/'configs/S3_REUSE_LOCK.json')['entries'] if r['seed']==eng.task['seed'])
+    assert sha(item['checkpoint'])==item['checkpoint_sha256'] and sha(item['validation'])==item['validation_sha256']
+    original=Path(item['checkpoint']).parent;dest=folder/'Plain';dest.mkdir(exist_ok=True)
+    for name in ('update200.pt','update400.pt','training.jsonl','Plain_validation.jsonl','TRAINING_COMPLETE.json'):
+        shutil.copy2(original/name,dest/name)
+    result=read(item['summary'])['validation']
+    dump(dest/'REUSE_RECEIPT.json',dict(seed=eng.task['seed'],checkpoint_sha256=item['checkpoint_sha256'],validation_sha256=item['validation_sha256'],source='completed S3_PLAIN run',additional_Plain_updates=0,additional_Plain_neural_forwards=0,original_GPU_allocation_already_in_ledger=True))
+    return dict(method='Plain',selection_score=result,path=str(dest/'update400.pt'),reused=True)
 
 def run(eng,folder):
     lock=read(ROOT/'configs/MECHANISM_LOCK.json');seed=eng.task['seed'];ws=rows(ROOT/'configs/worlds.jsonl');train=[w for w in ws if w['split']=='train'];validation=[w for w in ws if w['split']=='validation']
     assert read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')['reviewed_by_human'],'Required manual content-mask review missing'
     cache=cache_sources(eng,train+validation,folder);summaries=[]
     if seed==42:
-        plainfolder=folder/'Plain';plainfolder.mkdir(exist_ok=True);ed=train_one(eng,cache,train,seed,'Plain',0.,0.,[],{},plainfolder);plain=validate(eng,ed,validation,cache,plainfolder,'Plain');summaries.append(dict(method='Plain',selection_score=plain,path=str(plainfolder/'update400.pt')))
+        summaries.append(reuse_plain(eng,folder))
         output=[]
         for kw in (.1,1.):
             name='Output-only_k'+str(kw);mf=folder/name;mf.mkdir(exist_ok=True);ed=train_one(eng,cache,train,seed,name,kw,0.,[],{},mf);vs=validate(eng,ed,validation,cache,mf,name);output.append(dict(method='Output-only',keep_weight=kw,selection_score=vs,path=str(mf/'update400.pt')))
@@ -140,6 +171,7 @@ def run(eng,folder):
     else:
         selection=read(ROOT/'configs/TRAINING_SELECTION_LOCK.json');kw=selection['keep_weight'];mw=selection['mechanism_weight']
         for method in [r['method'] for r in selection['methods']]:
+            if method=='Plain':summaries.append(reuse_plain(eng,folder));continue
             sites=lock['selected'] if method=='Mechanism-guided' else lock['random_sites'] if method=='Random-site' else []
             mf=folder/method;mf.mkdir(exist_ok=True);ed=train_one(eng,cache,train,seed,method,0 if method=='Plain' else kw,0 if method in ('Plain','Output-only') else mw,sites,lock['scale_squared'],mf);vs=validate(eng,ed,validation,cache,mf,method);summaries.append(dict(method=method,selection_score=vs,path=str(mf/'update400.pt')))
     dump(folder/'TRAINING_SUMMARY.json',summaries)

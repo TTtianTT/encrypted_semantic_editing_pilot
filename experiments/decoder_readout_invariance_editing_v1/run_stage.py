@@ -58,6 +58,9 @@ def main():
         elif t['stage'] in ('S3_SELECT','S3_MAIN'):
             from .training import run
             result=run(engine,folder)
+        elif t['stage']=='S3_REGULARIZER_SMOKE':
+            from .regularizer_smoke import run
+            result=run(engine,folder)
         elif t['stage']=='S3_PLAIN':
             from .training import run_plain
             result=run_plain(engine,folder)

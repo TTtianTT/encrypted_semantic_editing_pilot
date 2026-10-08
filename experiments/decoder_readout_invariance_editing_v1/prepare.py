@@ -62,7 +62,7 @@ def prepare(stage):
                 human_review_received=False,submitted_GPU_jobs=0,
                 completed_methods=['Plain'],remaining_methods=['Output-only','Mechanism-guided','Random-site']))
             raise RuntimeError('BLOCKED_MASK_REVIEW: no human-reviewed keep-mask lock; review material is prepared')
-    if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_REGULARIZER_SMOKE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
@@ -76,6 +76,8 @@ def prepare(stage):
     if stage.startswith('S3') and stage not in ('S3_PLAIN','S3_VALIDATION_TRAJECTORIES'):
         assert (ROOT/'configs/MECHANISM_LOCK.json').exists()
         assert read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')['reviewed_by_human']
+    if stage in ('S3_SELECT','S3_MAIN'):
+        assert read(ROOT/'configs/REGULARIZER_ACCEPTANCE_LOCK.json')['passed'],'Regularizer GPU acceptance required'
     if stage in ('S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES'):
         if stage=='S3_MAIN':assert (ROOT/'configs/TRAINING_SELECTION_LOCK.json').exists()
         tasks=[]
@@ -91,8 +93,13 @@ def prepare(stage):
     for p in list(SOURCE.glob('*.py'))+[SOURCE/'config.json',SOURCE/'model_manifest.json']:shutil.copy2(p,native/p.name)
     for folder in ('configs','manifests'):shutil.copytree(ROOT/folder,target/folder)
     filehash={str(p.relative_to(snapshot)):sha(p) for p in snapshot.rglob('*') if p.is_file()}
-    hours=1 if stage in ('S0','T5_QUALIFICATION') else .25 if stage=='PARITY_DIAG' else 3
-    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage in ('S0','T5_QUALIFICATION') else '00:15:00' if stage=='PARITY_DIAG' else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
+    hours=1 if stage in ('S0','T5_QUALIFICATION') else .25 if stage in ('PARITY_DIAG','S3_REGULARIZER_SMOKE') else 3
+    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage in ('S0','T5_QUALIFICATION') else '00:15:00' if stage in ('PARITY_DIAG','S3_REGULARIZER_SMOKE') else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
+    if stage in ('S3_REGULARIZER_SMOKE','S3_SELECT','S3_MAIN'):
+        for item in read(ROOT/'configs/S3_REUSE_LOCK.json')['entries']:
+            if item['seed'] in {t['seed'] for t in tasks}:
+                manifest['checkpoint_hashes'][item['checkpoint']]=item['checkpoint_sha256']
+                manifest['checkpoint_hashes'][item['validation']]=item['validation_sha256']
     if stage=='S3_VALIDATION_TRAJECTORIES':
         for item in read(ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
     dump(path,manifest)
