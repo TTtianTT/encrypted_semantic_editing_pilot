@@ -42,6 +42,7 @@ BART SAME_TEXT面板：train32/32world、validation32/32、旧replay8/8，每wor
 | L5 AA | 32 | 64 | 64/64 | 64/64 | 原生recipient |
 | L5 BA / AB / BB | 32 | 各64 | 各0/64 | 各64/64 | 日期损坏；成对K/V本身不能恢复 |
 | L0 AA / BA / AB / BB | 32 | 各64 | 各64/64 | 各64/64 | 同规模非候选比较 |
+| L5固定head0 AA / BA / AB / BB | 32 | 各64 | 各64/64 | 各64/64 | 未将整层作用定位到该head |
 | L5正常颜色V resampling | 32 | 64 | 0/64 | 0/64 | 内容损坏64/64，同时目标损坏49/64；组件混含目标信息 |
 | 在线L5 KV_B | 16 | 32 | 0/32 | 32/32 | 保持recipient上游query时失败 |
 | 在线L5 Q_B | 16 | 32 | 32/32 | 32/32 | donor query在recipient实际当前前缀在线重算 |

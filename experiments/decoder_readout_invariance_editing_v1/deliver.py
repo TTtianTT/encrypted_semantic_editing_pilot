@@ -64,6 +64,7 @@ BART SAME_TEXT面板：train32/32world、validation32/32、旧replay8/8，每wor
 | L5 AA | 32 | 64 | 64/64 | 64/64 | 原生recipient |
 | L5 BA / AB / BB | 32 | 各64 | 各0/64 | 各64/64 | 日期损坏；成对K/V本身不能恢复 |
 | L0 AA / BA / AB / BB | 32 | 各64 | 各64/64 | 各64/64 | 同规模非候选比较 |
+| L5固定head0 AA / BA / AB / BB | 32 | 各64 | 各64/64 | 各64/64 | 未将整层作用定位到该head |
 | L5正常颜色V resampling | 32 | 64 | 0/64 | 0/64 | 内容损坏64/64，同时目标损坏49/64；组件混含目标信息 |
 | 在线L5 KV_B | 16 | 32 | 0/32 | 32/32 | 保持recipient上游query时失败 |
 | 在线L5 Q_B | 16 | 32 | 32/32 | 32/32 | donor query在recipient实际当前前缀在线重算 |
@@ -150,6 +151,7 @@ T5Gemma E→E一般同文本pair存在，下一步生成token不同却两端都�
 | K/V自身成对补偿即可解释 | 不支持 | L5 BB仍0/64 |
 | 局部query/memory配合 | 探索支持 | 在线KV_B0/32、Q_B与QKV_B32/32；非唯一电路 |
 | L5是非目标内容专属电路 | 不支持 | 正常颜色V替换也伤害目标49/64 |
+| 固定head0解释整层替换效应 | 不支持 | 四条件均64/64当前成功，未定位该head |
 | 机制正则胜过输出/随机正则 | NA未运行 | 三方法缺checkpoint，主检验族未执行 |
 | Plain改善这批历史源单操作 | validation支持 | 每seedhistory0/768→768/768，冻结历史参考不是update-matched新对照 |
 | 长期编辑已稳定 | 反证 | 三/五步均0/256 |
