@@ -1,0 +1,1 @@
+更多单操作CE训练可修复所锁定历史来源的一步编辑：Plain较Original validation联合成功+50pp，自然原子能力保持满分。纯latent闭环三步/五步仍0/256，两步几乎全失败；不支持长期稳定。Historical来源以future_plus为主，上边界用past_minus；所报告请求plus/minus平衡，不代表所有历史类型。尚无机制正则或输出约束的比较。独立test完整128终点受派生donor暴露阻塞。
