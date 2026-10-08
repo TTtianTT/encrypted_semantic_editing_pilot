@@ -9,6 +9,14 @@ ROOT = Path(__file__).resolve().parent
 WT = ROOT.parent.parent
 PROJECT = Path('/dataset1/zailong/workspace/encrypted_semantic_editing_pilot')
 CONTROL = PROJECT / '.decoder-readout-control-v1'
+TASK_TMP = CONTROL / 'tmp'
+TASK_TMP.mkdir(parents=True, exist_ok=True)
+# The execution request requires every task-created temporary file under /dataset1/zailong.
+os.environ['TMPDIR'] = str(TASK_TMP)
+tempfile.tempdir = str(TASK_TMP)
+for key, folder in {'MPLCONFIGDIR':'matplotlib','PIP_CACHE_DIR':'pip',
+                    'TORCHINDUCTOR_CACHE_DIR':'torchinductor','TRITON_CACHE_DIR':'triton'}.items():
+    os.environ[key] = str(CONTROL / 'cache' / folder)
 PYTHON = PROJECT / '.venv/bin/python'
 BRANCH = 'experiment/decoder-readout-invariance-editing-v1'
 

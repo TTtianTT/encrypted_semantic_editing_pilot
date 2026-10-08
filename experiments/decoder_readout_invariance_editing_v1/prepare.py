@@ -49,11 +49,11 @@ def initialize():
 
 def prepare(stage):
     initialize()
-    if stage not in ('S0','S1','S1_NATIVE','S2','S3_SELECT','S3_MAIN','S3_PLAIN','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','S1_NATIVE','S2','S3_SELECT','S3_MAIN','S3_PLAIN','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
-    for model in (('bart','t5gemma') if stage=='S0' else ('bart',)):
+    for model in (('bart','t5gemma') if stage=='S0' else ('t5gemma',) if stage=='T5_QUALIFICATION' else ('bart',)):
         if stage!='S0':
             accepted=list((ROOT/'reports').glob('S0_*_'+model+'_s42/S0_ACCEPTANCE.json'))
             assert accepted and read(accepted[-1])['passed'],'Model S0 acceptance required'
@@ -77,8 +77,8 @@ def prepare(stage):
     for p in list(SOURCE.glob('*.py'))+[SOURCE/'config.json',SOURCE/'model_manifest.json']:shutil.copy2(p,native/p.name)
     for folder in ('configs','manifests'):shutil.copytree(ROOT/folder,target/folder)
     filehash={str(p.relative_to(snapshot)):sha(p) for p in snapshot.rglob('*') if p.is_file()}
-    hours=1 if stage=='S0' else .25 if stage=='PARITY_DIAG' else 3
-    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage=='S0' else '00:15:00' if stage=='PARITY_DIAG' else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
+    hours=1 if stage in ('S0','T5_QUALIFICATION') else .25 if stage=='PARITY_DIAG' else 3
+    manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage in ('S0','T5_QUALIFICATION') else '00:15:00' if stage=='PARITY_DIAG' else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
     dump(path,manifest)
     print(path)
 

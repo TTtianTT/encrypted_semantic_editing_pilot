@@ -51,6 +51,9 @@ def main():
         elif t['stage']=='S3_PLAIN':
             from .training import run_plain
             result=run_plain(engine,folder)
+        elif t['stage']=='T5_QUALIFICATION':
+            from .t5_qualification import run
+            result=run(engine,folder)
         else:raise RuntimeError('Unimplemented stage; no fabricated completion')
         dump(folder/'SUMMARY.json',result)
         status.update(status=result.get('status','COMPLETED' if result['passed'] else 'FAILED_TECHNICAL'),exit_code=0 if result['passed'] else 1,completed_samples=result.get('worlds',0),remaining_samples=0)

@@ -1,5 +1,5 @@
 {
-  "GPU_hours": 0.11861111111111111,
+  "GPU_hours": 0.8516666666666667,
   "peak_concurrent_GPUs": 2,
   "allocations": [
     {
@@ -41,8 +41,18 @@
       "start": "2026-10-08T01:48:46",
       "end": "2026-10-08T01:49:19",
       "exit_code": "1:0"
+    },
+    {
+      "job_id": "3013_0",
+      "state": "COMPLETED",
+      "elapsed_seconds": 2639,
+      "GPUs": 1,
+      "GPU_hours": 0.7330555555555556,
+      "start": "2026-10-08T01:50:46",
+      "end": "2026-10-08T02:34:45",
+      "exit_code": "0:0"
     }
   ],
   "all_terminal": true,
-  "sacct_raw": "3009_0|COMPLETED|90|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:40:22|0:0\n3009_1|COMPLETED|263|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:43:15|0:0\n3011_0|FAILED|41|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:45:46|2026-10-08T01:46:27|1:0\n3012_0|FAILED|33|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:48:46|2026-10-08T01:49:19|1:0"
+  "sacct_raw": "3009_0|COMPLETED|90|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:40:22|0:0\n3009_1|COMPLETED|263|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:43:15|0:0\n3011_0|FAILED|41|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:45:46|2026-10-08T01:46:27|1:0\n3012_0|FAILED|33|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:48:46|2026-10-08T01:49:19|1:0\n3013_0|COMPLETED|2639|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:50:46|2026-10-08T02:34:45|0:0"
 }
