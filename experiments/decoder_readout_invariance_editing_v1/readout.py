@@ -117,7 +117,7 @@ def run(eng,folder):
             la=eng.logits(a,mask,decoder_ids=native[:,:-1]);lb=eng.logits(b,mask,decoder_ids=native[:,:-1]);groups=token_sites(eng,pair['a']['text'])
             for op,next_state in [('plus',-1),('minus',1)]:
                 next_a=eng.evaluate(eng.ed[op](a,mask),mask,w,next_state);next_b=eng.evaluate(eng.ed[op](b,mask),mask,w,next_state)
-                jsonl(folder/(w['world_id']+'_'+str(ri)+'_'+op+'_bridge.jsonl'),[dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],panel_A=True,panel_B=next_a['score']['success']!=next_b['score']['success'],operation=op,a_next=next_a,b_next=next_b)])
+                jsonl(folder/(w['world_id']+'_'+str(ri)+'_'+op+'_bridge.jsonl'),[dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],panel_A=True,panel_B=next_a['token_ids']!=next_b['token_ids'],legacy_accuracy_fork=next_a['score']['success']!=next_b['score']['success'],panel_B_definition='different next native generated token sequence',operation=op,a_next=next_a,b_next=next_b)])
             scores=distribution(la,lb,labels,groups)
             for s in scores:allscores.append(dict(world_id=w['world_id'],split=group,source_pair=pair['source_pair'],**s))
             # Complete raw logits only for fixed 4 discovery worlds, never test.

@@ -1,0 +1,61 @@
+{
+  "definition": "A plus different next native output tokens",
+  "legacy": "old worker panel_B field stored correctness XOR; immutable raw runs retained",
+  "summary": [
+    {
+      "model": "bart",
+      "split": "discovery",
+      "records": 256,
+      "independent_worlds": 32,
+      "next_native_token_fork": 256,
+      "next_raw_text_fork": 256,
+      "legacy_accuracy_fork": 192,
+      "a_next_joint": 0,
+      "b_next_joint": 192
+    },
+    {
+      "model": "bart",
+      "split": "replay",
+      "records": 64,
+      "independent_worlds": 8,
+      "next_native_token_fork": 64,
+      "next_raw_text_fork": 64,
+      "legacy_accuracy_fork": 48,
+      "a_next_joint": 0,
+      "b_next_joint": 48
+    },
+    {
+      "model": "bart",
+      "split": "validation",
+      "records": 256,
+      "independent_worlds": 32,
+      "next_native_token_fork": 256,
+      "next_raw_text_fork": 256,
+      "legacy_accuracy_fork": 192,
+      "a_next_joint": 0,
+      "b_next_joint": 192
+    },
+    {
+      "model": "t5gemma",
+      "split": "train",
+      "records": 32,
+      "independent_worlds": 16,
+      "next_native_token_fork": 32,
+      "next_raw_text_fork": 32,
+      "legacy_accuracy_fork": 0,
+      "a_next_joint": 0,
+      "b_next_joint": 0
+    },
+    {
+      "model": "t5gemma",
+      "split": "validation",
+      "records": 32,
+      "independent_worlds": 16,
+      "next_native_token_fork": 31,
+      "next_raw_text_fork": 31,
+      "legacy_accuracy_fork": 0,
+      "a_next_joint": 0,
+      "b_next_joint": 0
+    }
+  ]
+}

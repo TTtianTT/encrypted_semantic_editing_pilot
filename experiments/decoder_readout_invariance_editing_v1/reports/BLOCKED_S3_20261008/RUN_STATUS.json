@@ -1,0 +1,29 @@
+{
+  "status": "BLOCKED_MASK_REVIEW",
+  "stage": "S3_SELECT",
+  "reason": "Protocol section 6.2 requires human spot-check of I_keep accuracy",
+  "review_material": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/reports/KEEP_MASK_REVIEW.md",
+  "review_material_sha256": "98006e136b9eecc1722e96455910bff58888c5dea9a90cbbd558b4b6894762de",
+  "human_review_received": false,
+  "submitted_GPU_jobs": 0,
+  "completed_methods": [
+    "Plain"
+  ],
+  "remaining_methods": [
+    "Output-only",
+    "Mechanism-guided",
+    "Random-site"
+  ],
+  "model": "bart",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "job_id": null,
+  "exit_code": null,
+  "completed_samples": 0,
+  "remaining_samples": null,
+  "GPU_hours": 0,
+  "allocation": "NOT_SUBMITTED_CPU_PREFLIGHT"
+}

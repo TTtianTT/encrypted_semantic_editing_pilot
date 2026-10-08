@@ -1,6 +1,6 @@
 # 方法来源与实际采用情况
 
-访问日期：2026-10-08（Asia/Singapore）。所有外部工具均为思路参考，无代码导入/安装。实际复用的是本仓库 four-domain HF/PyTorch backend、rank16 affine editor、独立 parser；branch `0b73738cf552e1ec29aa7a5db1eb1ee703804b66` 的精确文件 SHA 见 INPUTS.json / historical_file_audit.json。运行包版本锁定在 INPUTS.json（torch / transformers）；许可证遵循原仓库和依赖的既有政策，没有把论文引用当作代码授权。
+访问日期：2026-10-08（Asia/Singapore）。所有外部解释方法框架均为思路参考，无代码导入/安装。实际复用的是本仓库 four-domain HF/PyTorch backend、rank16 affine editor、独立 parser；branch `0b73738cf552e1ec29aa7a5db1eb1ee703804b66` 的精确文件 SHA 见 INPUTS.json / historical_file_audit.json。运行包版本锁定在 INPUTS.json（torch / transformers）；许可证遵循原仓库和依赖的既有政策，没有把论文引用当作代码授权。
 
 | 来源 | 本轮采用 | 限制、版本与代码许可证 |
 | --- | --- | --- |
@@ -13,3 +13,5 @@
 | [Slurm arrays](https://slurm.schedmd.com/job_array.html)，[sbatch](https://slurm.schedmd.com/sbatch.html)，[srun](https://slurm.schedmd.com/srun.html) | allocation、step和array区分 | `%2`只约束单array；外部全局锁+登记+squeue/sacct作跨stage门禁；官方文档参考，无代码复用 |
 
 未安装Inseq或circuit-tracer；没有改变已有环境。论文不保证本仓库hook正确，S0实际验收结果决定后续是否可执行。
+
+CPU科研绘图另在 local/analysis_deps 安装隔离 matplotlib3.10.7 及绘图依赖，未升级原环境；精确版本、许可证元数据和安装位置见 manifests/PLOT_DEPENDENCIES.json。临时文件和缓存同样位于 /dataset1/zailong/。

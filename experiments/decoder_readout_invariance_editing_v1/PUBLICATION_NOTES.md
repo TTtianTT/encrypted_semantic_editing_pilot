@@ -1,0 +1,11 @@
+# 发布与复现注意事项
+
+推荐描述：探索性的decoder读出保持与query/memory干预，外加Plain三seed单操作validation和失败的长期latent轨迹。本文尚不能作为mechanism-guided editor优于输出约束的确认研究。
+
+任何摘要须同时披露5/128test core派生暴露、人工内容mask review未收到、强对照尚未运行、只有validation结果、真实模板OOD不存在。bootstrap退化不能写为无不确定性。每seed64world内1536操作和256轨迹不是1536或256独立world；三seed不是随机checkpoint总体。PCA/donor/Q诊断含额外信息与计算，Plain推理仅一次latent forward。
+
+原生HF/PyTorch、affine editor/parser精确版本与文件SHA见INPUTS；外部解释框架仅借鉴思路。没有SAE/transcoder/backbone训练、没有完整ALTI+或circuit-tracer移植。CPU绘图依赖隔离安装，许可证元数据见PLOT_DEPENDENCIES。原仓库许可政策需继承，论文引用不授权第三方代码。
+
+从terminal报告的压缩全量预测重算：finalize模块、CSV和VALIDATION_NUMERICAL_AUDIT；raw/processed生成与head记录连接world/module/sample ID。传播图标observational；精确native替换仅称intervention_supported本地效应。大型产物只保存manifest、hash和local存储路径，小editor checkpoint随终态commit提交。所有路径位于/dataset1/zailong/。
+
+worker不能修改Git。CPU collect/publish共享锁，终态结果逐run推送，禁止force-push/main merge。每个run的源码由immutable snapshot执行，修正另立run版本，旧失败保留。不声称重试调度/完整S4 evaluator已通过验收；当前自动重复提交是拒绝，技术断点恢复仅实现于训练与逐world缓存。

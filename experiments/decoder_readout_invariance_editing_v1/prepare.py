@@ -52,6 +52,16 @@ def prepare(stage):
     if stage=='S4' and (ROOT/'configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json').exists():
         dump(ROOT/'results/S4_SUBMISSION_STATUS.json',dict(status='BLOCKED_TEST_INTEGRITY',reason='Five counterfactual donor cores were encoded before S4; fixed full128 independent endpoint is compromised',original_scan_denominator=128,replacement_sampling=False,formal_test_evaluations=0))
         raise RuntimeError('BLOCKED_TEST_INTEGRITY; preserve fixed scan and exposure audit, do not silently substitute a new endpoint')
+    if stage in ('S3_SELECT','S3_MAIN'):
+        review=ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json'
+        if not review.exists() or not read(review).get('reviewed_by_human',False):
+            dump(ROOT/'results/S3_SUBMISSION_STATUS.json',dict(status='BLOCKED_MASK_REVIEW',
+                stage=stage,reason='Protocol section 6.2 requires human spot-check of I_keep accuracy',
+                review_material=str(ROOT/'reports/KEEP_MASK_REVIEW.md'),
+                review_material_sha256=sha(ROOT/'reports/KEEP_MASK_REVIEW.md'),
+                human_review_received=False,submitted_GPU_jobs=0,
+                completed_methods=['Plain'],remaining_methods=['Output-only','Mechanism-guided','Random-site']))
+            raise RuntimeError('BLOCKED_MASK_REVIEW: no human-reviewed keep-mask lock; review material is prepared')
     if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return

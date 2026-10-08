@@ -269,7 +269,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "plus",
       "panel_A_denominator": 32,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -278,7 +280,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "minus",
       "panel_A_denominator": 32,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -288,6 +292,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -297,6 +303,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -306,6 +314,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -315,6 +325,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -324,6 +336,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -333,6 +347,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -341,7 +357,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "plus",
       "panel_A_denominator": 32,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -350,7 +368,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "minus",
       "panel_A_denominator": 32,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -360,6 +380,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -369,6 +391,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -378,6 +402,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -387,6 +413,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -396,6 +424,8 @@
       "operation": "plus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -405,6 +435,8 @@
       "operation": "minus",
       "panel_A_denominator": 32,
       "panel_B_numerator": 32,
+      "legacy_accuracy_fork_numerator": 32,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 32
     },
@@ -413,7 +445,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "plus",
       "panel_A_denominator": 8,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -422,7 +456,9 @@
       "source_pair": "E_future_plus:E_past_minus",
       "operation": "minus",
       "panel_A_denominator": 8,
-      "panel_B_numerator": 0,
+      "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 0,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 0
     },
@@ -432,6 +468,8 @@
       "operation": "plus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     },
@@ -441,6 +479,8 @@
       "operation": "minus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     },
@@ -450,6 +490,8 @@
       "operation": "plus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     },
@@ -459,6 +501,8 @@
       "operation": "minus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     },
@@ -468,6 +512,8 @@
       "operation": "plus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     },
@@ -477,6 +523,8 @@
       "operation": "minus",
       "panel_A_denominator": 8,
       "panel_B_numerator": 8,
+      "legacy_accuracy_fork_numerator": 8,
+      "panel_B_definition": "native next generated token sequence differs; legacy field was correctness XOR",
       "a_next_joint": 0,
       "b_next_joint": 8
     }
@@ -734,3 +782,5 @@
 配对只要求当前正确、exact native tokens/raw text、shape/mask及非底噪差异；不以next fork筛选。旧PCA replay单列。当前共同文本不等于概率/内部等价。曲线保留完整非单调网格，未二分搜索。独立test仍封存。32 validation worlds为探索性分析，不能越过独立确认至少40-world门槛。
 
 SDPA native projection self-patch误差0；eager候选backend对齐失败另报，未用于此run。SDPA不物化attention probs；AV/W_O及residual/norm实际hook值与观测传播保存。推断注意力pattern仅作后续诊断，不能声称是materialized fused-kernel内部张量。matched-current-preservation随机幅度仅由validation锁定，若alpha=0须称退化零扰动对照，不能解释为同范数随机方向保护能力。未称完整S1确认。
+
+最终更正：正式独立test评测仍0，但5个IIDtest core已被派生颜色donor编码；不能再称全128未暴露。独立确认BLOCKED_TEST_INTEGRITY，见FINAL_REPORT和DATA_EXPOSURE_CORRECTION；桥接panel_B按实际next token不同重新计算，旧correctness XOR单列。

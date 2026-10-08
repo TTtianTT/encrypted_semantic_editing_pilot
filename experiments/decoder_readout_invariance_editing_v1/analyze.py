@@ -10,7 +10,7 @@ from .metrics import wilson
 
 def csv_write(p,records):
     if not records:text(p,'status\nNOT_RUN\n');return
-    keys=sorted(set().union(*(r.keys() for r in records)));s=io.StringIO();writer=csv.DictWriter(s,fieldnames=keys);writer.writeheader();writer.writerows(records);text(p,s.getvalue())
+    keys=sorted(set().union(*(r.keys() for r in records)));s=io.StringIO();writer=csv.DictWriter(s,fieldnames=keys,lineterminator='\n');writer.writeheader();writer.writerows(records);text(p,s.getvalue())
 
 def readout(stage='S1_NATIVE'):
     m=read(ROOT/f'manifests/{stage}.json');folder=Path(m['output_root'])/'bart_s42'
@@ -54,7 +54,7 @@ def readout(stage='S1_NATIVE'):
         for pair in sorted({r['source_pair'] for r in bridge}):
             for op in ('plus','minus'):
                 rs=[r for r in bridge if r['split']==group and r['source_pair']==pair and r['operation']==op]
-                if rs:bsummary.append(dict(split=group,source_pair=pair,operation=op,panel_A_denominator=len(rs),panel_B_numerator=sum(r['panel_B'] for r in rs),a_next_joint=sum(r['a_next']['score']['success'] for r in rs),b_next_joint=sum(r['b_next']['score']['success'] for r in rs)))
+                if rs:bsummary.append(dict(split=group,source_pair=pair,operation=op,panel_A_denominator=len(rs),panel_B_numerator=sum(r['a_next']['token_ids']!=r['b_next']['token_ids'] for r in rs),legacy_accuracy_fork_numerator=sum(r['a_next']['score']['success']!=r['b_next']['score']['success'] for r in rs),panel_B_definition='native next generated token sequence differs; legacy field was correctness XOR',a_next_joint=sum(r['a_next']['score']['success'] for r in rs),b_next_joint=sum(r['b_next']['score']['success'] for r in rs)))
     csv_write(ROOT/'results/next_edit_bridge.csv',bsummary)
     endpoint=[r for r in cs if r['alpha']==1 and r['split']=='validation']
     numerical=dict(readout=summary,panel_A=qsummary,panel_B=bsummary,validation_alpha1=endpoint,matched_random_lock=matched)
@@ -77,7 +77,7 @@ def causal(stage='S2_NATIVE'):
     for (split,module,scope,condition),rs in sorted(grouped.items()):
         free=[r['free'] for r in rs if 'free' in r]
         margin=[r['content_margin_shift'] for r in rs if 'content_margin_shift' in r]
-        summary.append(dict(split=split,module=module,scope=scope,condition=condition,independent_worlds=len({r['world_id'] for r in rs}),side_record_denominator=len(rs),free_generation_denominator=len(free),joint_numerator=sum(r['score']['success'] for r in free),content_numerator=sum(r['score']['preserved'] for r in free),target_numerator=sum(r['score']['target'] for r in free),EOS_numerator=sum(r['ended'] for r in free),content_margin_shift=float(np.mean(margin)) if margin else None,mean_JS=float(np.mean([r['mean_JS'] for r in rs if 'mean_JS' in r])) if any('mean_JS' in r for r in rs) else None))
+        summary.append(dict(split=split,module=module,scope=scope,condition=condition,independent_worlds=len({r['world_id'] for r in rs}),side_record_denominator=len(rs),free_generation_status='COMPLETED' if free else 'NOT_RUN_DIAGNOSTIC_PREFIX_ONLY',free_generation_denominator=len(free) if free else None,joint_numerator=sum(r['score']['success'] for r in free) if free else None,content_numerator=sum(r['score']['preserved'] for r in free) if free else None,target_numerator=sum(r['score']['target'] for r in free) if free else None,EOS_numerator=sum(r['ended'] for r in free) if free else None,content_margin_shift=float(np.mean(margin)) if margin else None,mean_JS=float(np.mean([r['mean_JS'] for r in rs if 'mean_JS' in r])) if any('mean_JS' in r for r in rs) else None))
     csv_write(ROOT/'results/causal_conditions_summary.csv',summary)
     lock=read(folder/'MECHANISM_LOCK.json');dump(ROOT/'configs/MECHANISM_LOCK.json',dict(lock,source_manifest=stage,source_lock_sha=sha(folder/'MECHANISM_LOCK.json')))
     fixed=[r for r in records if 'local_AV_max_error' in r]

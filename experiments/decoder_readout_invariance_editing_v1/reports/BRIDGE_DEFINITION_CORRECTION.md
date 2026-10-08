@@ -1,0 +1,7 @@
+# NEXT_EDIT_FORK口径更正
+
+最初worker的panel_B错误存储“下一步联合成功的XOR”。计划B只要求A之上下一步结果不同。旧不可变run及字段不覆盖；从完整生成token重新计算，追加native_token_fork和legacy_accuracy_fork两列。
+
+BART discovery32world：256/256 token分叉，192/256正确性分叉；validation同256/256与192/256；replay8world为64/64与48/64。T5Gemma train16world为32/32与0/32，validation16world为31/32与0/32。两端都失败时仍可发生输出分叉，不能由correctness XOR=0推断输出相同。
+
+该CPU更正不改变A资格、不重新选择pair、不访问新test、不做模型运行。表与逐对来源见next_edit_bridge_recomputed.csv/summary.csv和BRIDGE_DEFINITION_AUDIT.json。T5Gemma资格记录中P缺失被泛化写成SOURCE_UNAVAILABLE_CONTENT_PROVENANCE_GUARD；实质是没有可核验本模型PCA，不能迁移BART basis。没有因此删除E→E pair。

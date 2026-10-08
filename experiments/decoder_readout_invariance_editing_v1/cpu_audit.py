@@ -1,0 +1,73 @@
+"""Final CPU-only source, artifact, queue and headline audit."""
+from datetime import datetime,timezone
+import csv
+import gzip
+import io
+import unittest
+from .common import *
+from .resources import accounting
+
+
+def run():
+    ledger=accounting([r['job_id'] for r in read(CONTROL/'jobs.json')])
+    assert ledger['all_terminal'] and ledger['peak_concurrent_GPUs']<=2
+    dump(ROOT/'results/resource_ledger.json',ledger)
+    queue=command('squeue','-u',command('id','-un'),'-h','-o','%i|%T|%j|%b')
+    assert not queue,'Current queue needs manual audit before claiming no leftover jobs'
+    dump(ROOT/'results/FINAL_QUEUE_AUDIT.json',dict(time_UTC=datetime.now(timezone.utc).isoformat(),
+        command='squeue -u zailong -h -o %i|%T|%j|%b',stdout=queue,
+        registered_allocations=len(ledger['allocations']),all_terminal=True,
+        GPU_hours=ledger['GPU_hours'],peak_concurrent_GPUs=ledger['peak_concurrent_GPUs'],remaining_jobs=[]))
+    inputs=read(ROOT/'manifests/INPUTS.json');checked=[]
+    for r in inputs['checked_files']:
+        actual=sha(r['path']);assert actual==r['sha256']
+        checked.append(dict(path=r['path'],before_sha256=r['sha256'],after_sha256=actual,unchanged=True))
+    branch_names=['causal-next-edit-stability-v1','state-handoff-diagnosis-v1',
+        'four-domain-state-coverage-v1','current-source-compatibility-v1']
+    remote=command('git','ls-remote','origin',*['refs/heads/experiment/'+n for n in branch_names])
+    refs={ref.removeprefix('refs/heads/experiment/'):head for head,ref in (r.split() for r in remote.splitlines())}
+    assert all(refs[n]==inputs['baseline_remote_heads'][n] for n in branch_names)
+    original_diff=command('git','diff','--name-only',cwd=PROJECT)
+    assert original_diff==inputs['original_tracked_diff']
+    assert command('git','branch','--show-current',cwd=PROJECT)==inputs['original_branch']
+    reports=list((ROOT/'reports').glob('*/RUN_STATUS.json'))
+    GPU_reports=[p for p in reports if read(p).get('allocation') and isinstance(read(p)['allocation'],dict)]
+    allocation_ids={read(p)['allocation']['job_id'] for p in GPU_reports}
+    assert allocation_ids=={r['job_id'] for r in ledger['allocations']}
+    published=read(CONTROL/'publications.json')
+    assert all(any(r['run']==str(p.parent) and r['status']=='VERIFIED' for r in published) for p in GPU_reports)
+    for p in GPU_reports:
+        folder=p.parent
+        assert all((folder/f).exists() for f in ('REPORT.md','INTERPRETATION.md','ARTIFACTS.json'))
+        # Big local caches, complete predictions, and small checkpoints are all indexed.
+        for r in read(folder/'ARTIFACTS.json'):
+            assert Path(r['path']).exists() and sha(r['path'])==r['sha256']
+    audit=read(ROOT/'results/VALIDATION_NUMERICAL_AUDIT.json')
+    path=ROOT/'results/validation_atomic_recomputed.jsonl.gz'
+    atomic_rows=[json.loads(r) for r in gzip.decompress(path.read_bytes()).decode().splitlines()]
+    for record in audit['atomic']:
+        rs=[r for r in atomic_rows if r['seed']==record['seed'] and r['method']==record['method']]
+        group=record['grouping'];value=record['stratum']
+        if group=='source':
+            if value!='all_50_50':rs=[r for r in rs if r['source']==value]
+        else:rs=[r for r in rs if r[group]==value]
+        assert len(rs)==record['records']
+        for field in ('joint','target','content','parseable','EOS','exact_match'):
+            assert sum(r[field] for r in rs)==record[field+'_numerator']
+    suite=unittest.defaultTestLoader.loadTestsFromName('experiments.decoder_readout_invariance_editing_v1.tests.test_cpu')
+    out=io.StringIO();test=unittest.TextTestRunner(stream=out,verbosity=2).run(suite)
+    assert test.wasSuccessful()
+    dump(ROOT/'results/CPU_ACCEPTANCE_FINAL.json',dict(passed=True,tests=test.testsRun,
+        failures=0,errors=0,stdout=out.getvalue(),neural_model_loaded=False,temporary_root=str(TASK_TMP)))
+    dump(ROOT/'results/FINAL_DELIVERY_AUDIT.json',dict(time_UTC=datetime.now(timezone.utc).isoformat(),
+        neural_model_loaded=False,checked_input_files=checked,remote_source_heads=refs,
+        original_workspace_tracked_diff=original_diff,original_branch=inputs['original_branch'],
+        GPU_terminal_report_count=len(GPU_reports),all_GPU_reports_published_verified=True,
+        artifacts_hashes_verified=True,atomic_headlines_recomputed=True,CPU_tests=test.testsRun,
+        independent_test_status='BLOCKED_TEST_INTEGRITY',overall_status='BLOCKED',
+        location_prefix='/dataset1/zailong/'))
+    print(dict(passed=True,CPU_tests=test.testsRun,GPU_reports=len(GPU_reports),
+        input_files=len(checked),GPU_hours=ledger['GPU_hours'],queue=[]))
+
+
+if __name__=='__main__':run()

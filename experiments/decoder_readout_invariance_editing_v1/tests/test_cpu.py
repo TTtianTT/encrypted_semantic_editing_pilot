@@ -61,3 +61,21 @@ class CPUChecks(unittest.TestCase):
     def test_holm(self):
         from ..analyze import holm
         self.assertEqual(holm([.04,.01]),[.04,.02])
+    def test_literal_next_fork_is_not_accuracy_xor(self):
+        # Actual T5Gemma records include two failed next edits with different outputs.
+        audit=read(ROOT/'results/BRIDGE_DEFINITION_AUDIT.json')
+        rs=[r for r in audit['summary'] if r['model']=='t5gemma']
+        self.assertEqual(sum(r['next_native_token_fork'] for r in rs),63)
+        self.assertEqual(sum(r['legacy_accuracy_fork'] for r in rs),0)
+    def test_prefix_only_missing_free_generation_is_NA(self):
+        audit=read(ROOT/'results/S2_NUMERICAL_AUDIT.json')
+        rs=[r for r in audit['summary'] if r['free_generation_status']=='NOT_RUN_DIAGNOSTIC_PREFIX_ONLY']
+        self.assertTrue(rs)
+        for row in rs:
+            self.assertIsNone(row['free_generation_denominator'])
+            self.assertIsNone(row['joint_numerator'])
+    def test_main_unrun_comparisons_are_NA(self):
+        audit=read(ROOT/'results/main_method_status.json')
+        self.assertFalse(audit['confirmatory_family_executed'])
+        for row in audit['comparisons']:
+            self.assertIsNone(row['estimate']);self.assertIsNone(row['Holm_adjusted_p'])
