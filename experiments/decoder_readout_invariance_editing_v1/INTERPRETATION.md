@@ -1,7 +1,1 @@
-# 解释与反证
-
-大幅状态改变仍可留在相同离散argmax输出区域，概率不等价；有限路径出现中间失配/重入，否定全局线性nullspace或凸盆地解释。BART L5的K/V成对替换并不恢复，recipient实际前缀上的在线Q恢复可以恢复，支持上游query与memory配合。Q-only也有效；不能将QKV联合恢复称唯一必要完整电路。
-
-正常颜色value替换证明局部内容依赖，同时伤害日期目标，说明正则可能保护目标信息。未训练Mechanism-guided/Output-only/Random-site，所以没有机制带来增量算法价值的估计。Plain仅说明本validation历史来源单操作可以用同架构复训改善；三/五步仍0，长期失败未解决。
-
-T5Gemma E→E一般同文本pair存在，下一步生成token不同却两端都不正确，说明读出不变、输出分叉和成功提升是三件不同的测量。独立确认被数据完整性阻塞；不能把探索性32world称跨模型确认。
+当前相同native文本主要支持离散argmax容忍，不支持分布/内部状态相同。原生L5整层K/V替换和在线Q干预支持局部query-memory配合；固定head0阴性、Q-only亦恢复、正常颜色resampling同时损坏目标均限制完整/专属电路claim。四种新方法只有validation结果，必须按vsOutput-only/vsRandom-site的paired world差值和区间判断探索性增量，不能以vsPlain或选择分数宣称确认性机制收益。长链要求每步成功，单操作不能替代。原128独立test不可维持，保持阻塞与暴露记录，不改分母。

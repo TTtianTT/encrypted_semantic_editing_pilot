@@ -69,6 +69,7 @@ def pairs(eng,w,folder):
     if eng.name=='bart':
         pca_path=read(ROOT/'manifests/INPUTS.json').get('PCA_path')
         if pca_path:
+            assert sha(pca_path)==read(ROOT/'manifests/INPUTS.json')['PCA_sha256']
             q=torch.load(pca_path,map_location='cuda',weights_only=True)['q'].float();bad,bm=states['E_future_plus']
             if torch.equal(bm,m):
                 delta=((h.float()-bad.float())@q)@q.T;states['P']=(bad+delta*bm[...,None],bm);pred['P']=eng.evaluate(*states['P'],w,0)

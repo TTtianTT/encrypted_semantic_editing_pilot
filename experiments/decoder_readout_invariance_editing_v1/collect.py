@@ -44,12 +44,16 @@ def collect(stage):
             dump(dest/'NUMERICAL_AUDIT.json',audit)
             outcome+='\n\n完整逐样本重算：'+json.dumps(audit,ensure_ascii=False)
             interpretation='Plain rank16正式复训192 train worlds，400 updates；64 validation worlds、每world12合法操作×2来源。输入仅H/mask/op、一次latent forward，无donor/目标文本/重编码/推理反传。内容mask没有用于此loss。数字仅为validation参考；不能替代Output-only、真实/随机机制对照或独立test。长期结果本run未执行。\n'
-        report=f"""# {stage} {task['model']} seed{task['seed']} 终态\n\n状态：{status['status']}；Slurm {allocation['job_id']} / {allocation['state']}。完成world {n}；剩余{status.get('remaining_samples','NA')}；独立test访问0。GPU-hours={allocation['GPU_hours']:.6f}，本轮累计={acct['GPU_hours']:.6f}，登记allocation峰值={acct['peak_concurrent_GPUs']} GPU。\n\n{outcome}\n\n当前机制、机制相对Output-only/Random-site编辑收益、原子与长期能力、新T5Gemma独立资格均为NA，尚未执行。技术验收失败阻断该模型后续分析，不删除world通过。关键失败详细记录在 FAILURE.txt / 原始压缩日志。\n\n所有源代码来自manifest指向的immutable snapshot；checkpoint、split、代码SHA在RUN_STATUS/manifest。完整逐样本记录及日志压缩提交；大产物路径与SHA索引见 ARTIFACTS.json。\n"""
+        test_scope='独立test访问0' if stage!='S4' else '本run属于显式授权的amended123 test；可能已打开部分样本，完整与剩余以实际marker/预测核验；原128终点仍不恢复'
+        report=f"""# {stage} {task['model']} seed{task['seed']} 终态\n\n状态：{status['status']}；Slurm {allocation['job_id']} / {allocation['state']}。完成world {n}；剩余{status.get('remaining_samples','NA')}；{test_scope}。GPU-hours={allocation['GPU_hours']:.6f}，本轮累计={acct['GPU_hours']:.6f}，登记allocation峰值={acct['peak_concurrent_GPUs']} GPU。\n\n{outcome}\n\n本run未完成的科学估计为NA；技术失败不记0%科学结果，不删除world通过。关键失败详细记录在 FAILURE.txt / 原始压缩日志。\n\n所有源代码来自manifest指向的immutable snapshot；checkpoint、split、代码SHA在RUN_STATUS/manifest。完整逐样本记录及日志压缩提交；大产物路径与SHA索引见 ARTIFACTS.json。\n"""
         if stage in ('S3_SELECT','S3_MAIN') and status['status']=='COMPLETED':
             from .training_results import audit_run
             audit_run(folder,dest,summary)
         elif stage=='S3_SELECTED_VALIDATION_TRAJECTORIES' and status['status']=='COMPLETED':
             from .trajectory_results import audit_run
+            audit_run(folder,dest,summary)
+        elif stage=='S4' and status['status']=='COMPLETED':
+            from .test_results import audit_run
             audit_run(folder,dest,summary)
         else:
             text(dest/'REPORT.md',report);text(dest/'INTERPRETATION.md',interpretation)

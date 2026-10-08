@@ -110,6 +110,8 @@ def prepare(stage):
         for item in read(ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
     if stage in ('S3_SELECTED_VALIDATION_TRAJECTORIES','S4'):
         for item in read(ROOT/'configs/FINAL_METHOD_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
+    if stage=='S4':
+        manifest['checkpoint_hashes'][inp['PCA_path']]=inp['PCA_sha256']
     dump(path,manifest)
     print(path)
 

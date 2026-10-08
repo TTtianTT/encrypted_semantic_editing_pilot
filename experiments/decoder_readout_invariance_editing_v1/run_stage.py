@@ -22,6 +22,7 @@ def main():
     assert registered,'Unregistered allocation'
     for rel,digest in m['files'].items():assert sha(WT/rel)==digest,rel
     assert sha(t['checkpoint'])==t['checkpoint_hash']
+    for path,digest in m['checkpoint_hashes'].items():assert sha(path)==digest,path
     if t['stage']=='S4':
         auth=read(ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json')
         assert auth['approved'] and auth['proposal_sha256']==sha(ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json'),'Explicit test amendment authorization required'

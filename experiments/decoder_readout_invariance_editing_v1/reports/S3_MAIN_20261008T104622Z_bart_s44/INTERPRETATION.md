@@ -1,0 +1,1 @@
+本run完成监督编辑和内容保护候选或锁定方法，只有validation结果。主比较vsOutput-only/vsRandom-site需三seed配对world统计；若无差异只说明本批validation未见增量，不能推广普遍无效。独立test阻塞保留，长链不能由单操作推断。
