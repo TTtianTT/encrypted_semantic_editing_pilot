@@ -1,0 +1,739 @@
+{
+  "status": "COMPLETED",
+  "stage": "S3_SELECTED_VALIDATION_TRAJECTORIES",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3046",
+  "array_job_id": "3045",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-08T11:04:43.331107+00:00",
+  "manifest_hash": "c715ee6e6fbe845e0ed8d68f072d735a91a99390c7c523d9a1ae9e786dd67df3",
+  "code_hash": "4c69532b7d39516037a1d6b1ab842bd84352f76977d83a84cfac707b7e4c0617",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 64,
+  "remaining_samples": 0,
+  "exit_code": 0,
+  "ended": "2026-10-08T11:13:33.848865+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 636845056,
+    "wall_seconds": 509.87247141401167,
+    "job_id": "3046",
+    "step_id": "0",
+    "encoder_calls": 0,
+    "decoder_forward_calls": 123409,
+    "SLURM_JOB_GPUS": "4",
+    "SLURM_STEP_GPUS": "4"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_11dc2d2beabd096d_benchmark.jsonl",
+      "sha256": "6c93e50b46edeb6421f3746e3b09d5157dcb00e57d22e225e843f05b3d2dc74b",
+      "bytes": 10334
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_11dc2d2beabd096d_COMPLETE.json",
+      "sha256": "5041123f59a1038b4d87c11991dc12b52ff46c597021b532dc78b791dbd9a42f",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_472ff3c89e620aec_benchmark.jsonl",
+      "sha256": "db1ec2007f4e1a44076913ed2bfd238c86b6d7c510b70f458cdfa013876a2973",
+      "bytes": 10338
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_82748cfb8e60a37c_COMPLETE.json",
+      "sha256": "95bd777011dd529a9734608c6d59597a4f762aad761df25cf5e8852bc678a09b",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_7bb49eec939d686b_benchmark.jsonl",
+      "sha256": "12c2da9d6ad63d332f8383821314db7ee9850383aecdf52ef8be3a2f915b0444",
+      "bytes": 10331
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_41f4d91b087887a6_COMPLETE.json",
+      "sha256": "fad1dfb7491374aa853b7af47b800cc5deadf7fc7f49d4ecd4dcf41c186d4cf4",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_14c0b91c5c9bdb8e_COMPLETE.json",
+      "sha256": "83b43156ffce1c2ad51911eb40c05e5e343b9209ddff55d5cac9fda7a702d0bf",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_746ea417a76197d7_COMPLETE.json",
+      "sha256": "260371b7ac9ca94049ce6c156bf9f442fe837cec3769217fd1d5cf7bf4b3603a",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a5823faa44efd97e_COMPLETE.json",
+      "sha256": "f96e4a9dad31ec34bc33dfa1580d9f2cc323cb49695b076888f6b8000eba5934",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_20e1e8b823aabcaa_COMPLETE.json",
+      "sha256": "6b4f0a44ed12f872e666941282f2af02c7cc756ee9f2f5d8ece33080e7c8752c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_cc6c8dde3696a403_trajectories.jsonl",
+      "sha256": "d7fada550b722b04d838dd8293cefe57d15d6fa6038f14a6fcc1e3d86eab77ad",
+      "bytes": 76657
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_cc6c8dde3696a403_COMPLETE.json",
+      "sha256": "400cc0406dc9ba3c0f20e2f32022ca4be33cabe3cc6a514a7a0d18f18312167a",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ab7fc72a23810441_COMPLETE.json",
+      "sha256": "6b74df40e583e1c27ddc033d0144c84786b6314bf0410641b8d9a118d83081b1",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_73c5c8ae1f3bec16_COMPLETE.json",
+      "sha256": "aebc2563abbd2d24927a95fa883598b97f226a4ea79dc2f96a9d0f48aadbd5a0",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_6aee5bf620ba0936_trajectories.jsonl",
+      "sha256": "0c3fbbe10d595065fe93cc0a0bb847ff7af44c27e55a1efffa5f98b04d366b13",
+      "bytes": 75062
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a614bdda4e726500_COMPLETE.json",
+      "sha256": "62e21f4649594a7b5228c5564193c78d80ae6b0e8b723bdce925fb9a4778ea1b",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ace074e7cb68ba5a_trajectories.jsonl",
+      "sha256": "5900a5b7a7bf4d997f620d6bf4b8c098666559c02ce6446e2b961d947d73e4b9",
+      "bytes": 77568
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2ad5f987809cb697_COMPLETE.json",
+      "sha256": "270139d22d70a8d17a679d8474711bd5306b5c7703f9a681eee616b13bf88493",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ce27d6c38040f682_trajectories.jsonl",
+      "sha256": "d792c7dbcdda3524f8cce3053e42209601a6e1b1500e3f1d69af5c84bee45591",
+      "bytes": 76632
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_df8e9deb18f40797_COMPLETE.json",
+      "sha256": "384c5407520c4743ec357ec373dfb7c448ef42ae3b352af5b4bbb84dd0684b91",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_3a2221a23e8fb093_benchmark.jsonl",
+      "sha256": "87623db3861985f6c61608537e6b09f8bc03f9bfea6895383b13f8cc14133221",
+      "bytes": 10331
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_0261b8f2b1fccaa1_benchmark.jsonl",
+      "sha256": "cfd9b7c346a461c5b470cff1541a707847a3fb80073cc1af96754251c759e34b",
+      "bytes": 10330
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_0261b8f2b1fccaa1_trajectories.jsonl",
+      "sha256": "2ceaa47f26c2e27d419361ea181816f4add8115b0224069ae97b15148d389740",
+      "bytes": 77696
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_403de1aaa0f7e178_COMPLETE.json",
+      "sha256": "9266ddb742f698be58502591ec94757c9d9d5a890eb8f5311139f8ac984b4421",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_05c7f6c159714ef3_trajectories.jsonl",
+      "sha256": "da569fddf684388779eb65f51e07e69f3081770d938784e96a8b7f65cceff663",
+      "bytes": 74498
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_41f4d91b087887a6_trajectories.jsonl",
+      "sha256": "467eba5bff3ba5c86a493f12ae741c97e983fb85e5296f797fbb43406ee9578f",
+      "bytes": 78393
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_070f3a31cbcc6044_COMPLETE.json",
+      "sha256": "da01d45319e65f6567df683ae6f44b9f4db763b7c76d1bde1846a1948f14d95c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_115060ee078d900f_COMPLETE.json",
+      "sha256": "0f3d729adb67f42b49639b74dad83b8f4f2eb58c4c98f7f0ae2dc24a39fd5001",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_73c5c8ae1f3bec16_trajectories.jsonl",
+      "sha256": "4937bbe6b375a1a57cbe249bb5adbd50d0f958143cc941394f08d418b445c501",
+      "bytes": 77736
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_809951d18e6bb415_trajectories.jsonl",
+      "sha256": "d93304201b61bf9c12ebf426b29710887208fc72b519f083c6ca65beb30a316d",
+      "bytes": 79760
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_66f3b333bb0e025c_trajectories.jsonl",
+      "sha256": "96d96551f653e65a8affe5d1b8bb2aa721eb2703c5fab8ac5a1fd7b040f6be6b",
+      "bytes": 79667
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ace074e7cb68ba5a_COMPLETE.json",
+      "sha256": "f7ca1ea6ce7c1856ee9f8d10b1a1ac8c63c89cbf3226cf5fc7e62ba0d3d2faa3",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_d75770c2943bd89f_COMPLETE.json",
+      "sha256": "2c69543d6bfedb5235c1645b2913d33c29199f9589215e9c03509c7efa085919",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a737073c9f06fbce_COMPLETE.json",
+      "sha256": "9a1aaa589e244d903c7d2a0484fb3c4df16f0f24767a3640171134454bf7a8f1",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_df8e9deb18f40797_trajectories.jsonl",
+      "sha256": "ca0e1c18532d0c83d3032f143932e17855ecfdb9c58427cc855e3ded06769861",
+      "bytes": 81199
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_0d42b9bc65e887a1_COMPLETE.json",
+      "sha256": "1f61fe1a44e0fde8631801adf8ce007457d91d782db1228c4a4608fafd2711ab",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_3a2221a23e8fb093_trajectories.jsonl",
+      "sha256": "3a53ad54f6fd378fb412b66af0b2744d82add755cd5570ca60937ae66beda36e",
+      "bytes": 79820
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b133bc3c74918840_benchmark.jsonl",
+      "sha256": "b190c6079a196e7e6ad10412a96a9c7ed334bce3a769af8a3d6cd27470798561",
+      "bytes": 10332
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b133bc3c74918840_COMPLETE.json",
+      "sha256": "5b609cf0ad75aaad98b032fb80962b74bf31eb49a0c4bd7c7da2370b13bee38c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f72a2bbfff57fe3e_COMPLETE.json",
+      "sha256": "d7e15a088e18b648e609b098b1fa34666bfce6887b8c5c6f87c2b3409afc1df9",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_49039e671af2773d_trajectories.jsonl",
+      "sha256": "7639c75a51443bbbcdb6ebc0985bb97bbd19616bea74af1103228ab039e76c29",
+      "bytes": 79143
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_d902a3fd6c31f347_COMPLETE.json",
+      "sha256": "3606b40a7af36b29947fdbdfa3fe8438039e217e237d8e711578b51f85bdacc0",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_85d6114901581d2a_trajectories.jsonl",
+      "sha256": "facbcadd2e0eea9c25d8a22e1b98a96800ca024f6f64883f553b32dbc7517983",
+      "bytes": 77648
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_85d6114901581d2a_COMPLETE.json",
+      "sha256": "0186c44785522e076f7831bee9699569cc41cf61a59ed7ece250f6ff4af70761",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2562ccdc1fc6b8bf_trajectories.jsonl",
+      "sha256": "f18ca23b893233fba5f8ceb7d4640da78dd252d788e2874ee935c872185f1074",
+      "bytes": 73775
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a5823faa44efd97e_trajectories.jsonl",
+      "sha256": "cc87f866d0f15cccb46a36dbe74c62662ff99d74757e58f72901e9fbebe0fc87",
+      "bytes": 76490
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e52d4e276ac88cd1_trajectories.jsonl",
+      "sha256": "ae6315303cc8e089491fbc79c4d306ea06ad797e84c53c07a53dd094eeff5789",
+      "bytes": 78033
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2aa0dab528e531cc_trajectories.jsonl",
+      "sha256": "7ac06f84b454b259dc13df61ddbc697c52b0a365937e15662107731f33a5ad5f",
+      "bytes": 77108
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_036f0172ca51259e_COMPLETE.json",
+      "sha256": "48d631281431ab3acb40d268e5c3c3b96617c6f97d5dd1158a3008437350f056",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_6aee5bf620ba0936_COMPLETE.json",
+      "sha256": "5faa97ff0f9717670dbcb617f0bbafe7d8c146a1979ab05e263d9f670747de9d",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_fcebef3715a4d90a_trajectories.jsonl",
+      "sha256": "ebe64ce85117fb40000a08c7d65c79d2d8c4f06edbe37122dba7f240f61f5ee7",
+      "bytes": 77578
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e0d7a382dd92157a_trajectories.jsonl",
+      "sha256": "5a8245ca9384625832db8c738917fc096ef809d485b47439823e1d9888f03a98",
+      "bytes": 75683
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_66f3b333bb0e025c_COMPLETE.json",
+      "sha256": "43ba26740e4e1ba807d8a7ef9787151050778763dc34a8dbf2052fef10e0056b",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/inference_benchmark.jsonl",
+      "sha256": "c910f9cad9af846263282dd9752419212ef24379f4974430806e06d8e6e9581e",
+      "bytes": 82665
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a737073c9f06fbce_trajectories.jsonl",
+      "sha256": "c138949c8c323df41aeceb9f500e2cd050e9fcae9024c08fd6daa29e877f596b",
+      "bytes": 76971
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b9479f1a434d3ee6_trajectories.jsonl",
+      "sha256": "e368f179b847e7fe446fb16d4e6df7204166f1472831416fb77f7287086f91f4",
+      "bytes": 76934
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b133bc3c74918840_trajectories.jsonl",
+      "sha256": "8a92c266fb9669f3fa013ea79a54cb6287097afb59d520ca079fdb8b294984f6",
+      "bytes": 81164
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_05c7f6c159714ef3_COMPLETE.json",
+      "sha256": "2d82464f0024766db159607f2d2e8b9085a7503a6c9f747484fa9e1118674f62",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_eda33b018a117f9a_trajectories.jsonl",
+      "sha256": "5020bcb4e6389e34873c8734426947f817b7c3743c08c5c5ccb122026a0f045d",
+      "bytes": 77968
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_c8c7e99bcbc01597_trajectories.jsonl",
+      "sha256": "b26c89936fc54b65f1ea461403b00b4f56803668b306408ecc9fe9ef7269d974",
+      "bytes": 74649
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_798ba0b2437f13ff_trajectories.jsonl",
+      "sha256": "272a47ddd7438e0d5a32df90ca5b800ce759f7c4dc2768349d9c446f281bd03a",
+      "bytes": 77212
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e52d4e276ac88cd1_COMPLETE.json",
+      "sha256": "0e4c548bf258d0158c4a126a2fe526fe3989db02694a1006697766f0610f1e2b",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f6021a6d4a3629de_trajectories.jsonl",
+      "sha256": "c06cf5ddb7eaa3a00ad0e1b146d9314fb52c5a2b1bc82f6e217c7cdf16b264c9",
+      "bytes": 77480
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_3aaa310be778d870_COMPLETE.json",
+      "sha256": "16a69384975c4fad45146bcb8b15701ff88a3cc6bc27ab295fc434f1c03c4064",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_dcf4464a1001671f_trajectories.jsonl",
+      "sha256": "a03c4bcc2be05ce5319d6da39ba5ded72c3df975f8d4fe2b29963091db2c81eb",
+      "bytes": 76329
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_472ff3c89e620aec_COMPLETE.json",
+      "sha256": "464fe0aabaa9ae12f02dddb04c0f2b4e11712fb218567fd5837d9b2ac721058c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_0261b8f2b1fccaa1_COMPLETE.json",
+      "sha256": "25efb46b4a09e53a12d55663e9ae993cf6dbe2b108e3ddebd0f097ac3461c464",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_5e110e712d94b2b9_trajectories.jsonl",
+      "sha256": "5679e447b2381e890e3b786acbbe37b208f5b53e6a81c68599d818a4f3771467",
+      "bytes": 77138
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_5e110e712d94b2b9_COMPLETE.json",
+      "sha256": "8e601ba1b9c4a9164aeab85310dae7200b023773117289e2915bc1f3fa35d67e",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_cf1b89ca7e7fb6a3_COMPLETE.json",
+      "sha256": "f185f0a0e9881b199f5572545d267243da3c65285e97e8291913fac6015a767c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_d902a3fd6c31f347_trajectories.jsonl",
+      "sha256": "eaf50eee2c2566d07e43aad174666a0608da452b76a5a5e0f8ba1f52a2788f8b",
+      "bytes": 76933
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2562ccdc1fc6b8bf_COMPLETE.json",
+      "sha256": "1df08bbad02ffdafbba1d5027d2e5b1f8f1a4148e6468dab00c35c4e3f9ed1e9",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f78af2a1df3be01e_trajectories.jsonl",
+      "sha256": "0b8a2cc7f2e7178ed72bf0e6c6a4647f159d306cddbe5ecafad52e8987d2aa86",
+      "bytes": 77161
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f78af2a1df3be01e_COMPLETE.json",
+      "sha256": "c7f2f50dababd603b08ae41f14ee7f030aa032c4a0d2ccfb37f806673c23a5c8",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2aa0dab528e531cc_COMPLETE.json",
+      "sha256": "0607e4d586bb09e85ff4e85ef2241743d073e459cb88f994a5484b4448149883",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_115060ee078d900f_trajectories.jsonl",
+      "sha256": "f0da88f1d3ce37319ee427bdbeb938bca18c8fff9f769384703949a1ae134dd3",
+      "bytes": 76169
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ab7fc72a23810441_trajectories.jsonl",
+      "sha256": "b7381ad881d99258665a5b149cf5622c61e44d15751019420a2b416ef92ef73f",
+      "bytes": 75440
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_036f0172ca51259e_trajectories.jsonl",
+      "sha256": "42cc12c011f031f80f55e9596965d84d7436121c37fabfb010af8528840c425a",
+      "bytes": 78150
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b404940a63eff86e_trajectories.jsonl",
+      "sha256": "1abf2863395eb97a7b82d1098fda9c8f24e08361f6e6724391a5df3666e6528d",
+      "bytes": 78009
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f6021a6d4a3629de_COMPLETE.json",
+      "sha256": "e25e2f2be2126cd6f0c7bb00b2e3bc499d20c2a340d780b551db97d85208d60c",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e9e60f54d14356a7_trajectories.jsonl",
+      "sha256": "1780dbb793b66389547c84cb1044c8e0b6fa2df9e430f559e4300e47f6f996ef",
+      "bytes": 80106
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f29bf5e733679ab7_trajectories.jsonl",
+      "sha256": "3c45c85354921147bd8eb8dbf44e78e4125237c5f86353cdd390dbccfa09c0c7",
+      "bytes": 78718
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/SUMMARY.json",
+      "sha256": "cca26cf40bb8ae952ecf86e908263b0a657e6852e013d61991767beacab0a065",
+      "bytes": 4151
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b9479f1a434d3ee6_benchmark.jsonl",
+      "sha256": "410fdba58940f4a721bad3b5884c3652076b0adc14540749b331f8db512ad9a5",
+      "bytes": 10330
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_3a2221a23e8fb093_COMPLETE.json",
+      "sha256": "f99f7eba5372c9b3ead2550ee11c1628c624937c3a7077c7a425f2fae9b9815d",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_23f8cfccebf59f6d_COMPLETE.json",
+      "sha256": "1b12f800e8e862faa7b5f651c888a19192ab0b30047a272c586f6c49ae2773ed",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_11dc2d2beabd096d_trajectories.jsonl",
+      "sha256": "069d8cfe224ded2084a1bb8925f8005dfce6563ee9dff08926a9848e80ed4606",
+      "bytes": 80985
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_82748cfb8e60a37c_trajectories.jsonl",
+      "sha256": "4268fb95f08d322d90539341d3f39c78d70f003ba4b70ee0bdf2787cee0a8ddc",
+      "bytes": 76294
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a1a764cd35b44e3d_COMPLETE.json",
+      "sha256": "b5bf01c067081502f867d06386d356f3a219000fd90820726aa0fdad6f577ff5",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_643397ab6f9ad567_trajectories.jsonl",
+      "sha256": "f980f8fb6aee20d843470f02daa5c6e7d9598bc2f27fd95083ed01966ea02f84",
+      "bytes": 74883
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_643397ab6f9ad567_COMPLETE.json",
+      "sha256": "e0460d8bf2b3894d5ac40fbdd53efd0aadbe6a7c7393466e527232e6b30915c4",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_cf1b89ca7e7fb6a3_trajectories.jsonl",
+      "sha256": "e8983b93d0dde81287fae0f239edea9334974e7d7197ddb714361e4f0aa3e8fb",
+      "bytes": 78087
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_55736165109ab6f7_COMPLETE.json",
+      "sha256": "c646924c01eb1254739de7ddd900e48b45385fb7981f6f5ea017af4a79490f10",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_14c0b91c5c9bdb8e_trajectories.jsonl",
+      "sha256": "bcbdfa2c07462c74f57925de95a92e0d74b6bf232feca8cdbd759dadb95f9bd0",
+      "bytes": 78064
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_746ea417a76197d7_trajectories.jsonl",
+      "sha256": "ab934284555986fd6d15dc02e46695075bf4a39daa304f4ba85f50c4ae5bb7ca",
+      "bytes": 76970
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b404940a63eff86e_COMPLETE.json",
+      "sha256": "3b52de4fefb99ed008e68c9e842dba118d87443a42b091210aa1ff524439c5af",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_809951d18e6bb415_COMPLETE.json",
+      "sha256": "f1a7952f17279ea11baea882e4dcac6f94819cdcf96b414819005da8db7a2fd3",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_3aaa310be778d870_trajectories.jsonl",
+      "sha256": "f64389d45c239c84f04b701dfa239062b77ee3c67bb3f4a403df9f401446fd18",
+      "bytes": 77083
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_ce27d6c38040f682_COMPLETE.json",
+      "sha256": "af97bb5b6de2db506c6323b269b36446107d91ae5e19a8f207340c96f18ad364",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_188e3a88a586f41e_COMPLETE.json",
+      "sha256": "a6ce1e6620ebd1b22fbf60073b4c88f528f6615986cafa6fa386ab8cdc66ba83",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b332d2487d7d9629_trajectories.jsonl",
+      "sha256": "0e053f2209418dec276c0d4c9a072cb3856d2bbb083d2fd5c2402f43eba3f838",
+      "bytes": 77893
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_03bd11dca79d3d21_trajectories.jsonl",
+      "sha256": "c248aa70bb1fd1df4826be3e562e40d7dd67611d9c987e3bcb1999580e0a17a4",
+      "bytes": 79411
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e9e60f54d14356a7_COMPLETE.json",
+      "sha256": "ebf41fea9e4f43cdcfd361780a7c319146c929c8c3dd52121c7aa912a1afcbd3",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b9479f1a434d3ee6_COMPLETE.json",
+      "sha256": "16f302c983c73cd2f841c1d9e265fbdb324d320b8fdae75f06f532bcaa8c96f0",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_23f8cfccebf59f6d_trajectories.jsonl",
+      "sha256": "85f69f46b1c496e50975436777f0b158655c8ce83ed283c8378f6253bfc0f2ec",
+      "bytes": 81300
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_472ff3c89e620aec_trajectories.jsonl",
+      "sha256": "ecdfc6f3948e5620afada4a191cc76d9876e7759d88fd764898f68434c85a404",
+      "bytes": 78031
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_7bb49eec939d686b_trajectories.jsonl",
+      "sha256": "e7553d8b085cca496c85dfc5e937087c70a1859ec5795ca09995095260b4e028",
+      "bytes": 78787
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_7bb49eec939d686b_COMPLETE.json",
+      "sha256": "a9545ee97a323325c7ba7c54073b7d152d8cbea5c3f1585e0c9f5b524bc1ef89",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_49039e671af2773d_COMPLETE.json",
+      "sha256": "6b38ef331cd814d95bb9cb108e8e24a00f1e6bfa9a08c72cb7ee4c49fb47aaa5",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f72a2bbfff57fe3e_trajectories.jsonl",
+      "sha256": "1b478f18d5dc019a0f0866ae739e0a377e541afca4ba5cc7567482cd1a585995",
+      "bytes": 75806
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_eda33b018a117f9a_COMPLETE.json",
+      "sha256": "fa5da9767fc2e6fd2737faf33c6f7c4d5638a2d15ee3cdd3a24994038a8be03a",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_070f3a31cbcc6044_trajectories.jsonl",
+      "sha256": "dd72bc43177c412cbe64993a05f0d17a25a49a3a614535685226874669566340",
+      "bytes": 80124
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_798ba0b2437f13ff_COMPLETE.json",
+      "sha256": "ceb0367fe2aaf9ea000e8f22c9cca1afd14d2dcc8d83c9858be3b58a37a367d8",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_6583264935834809_trajectories.jsonl",
+      "sha256": "7389bc83067f7e2d6d598fe60a51e53d2e262ffdb334b7a897e5bea1d96e64ee",
+      "bytes": 78569
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_20e1e8b823aabcaa_trajectories.jsonl",
+      "sha256": "0c4864ff3ef8ad92187b89f895f6faa21f140320e5f47c6e50088f633f2d9518",
+      "bytes": 76798
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_549736566a9d4330_trajectories.jsonl",
+      "sha256": "abab8831d9c846dff2ea5a691c1fbe7d2e44986109b63402c87f3dba7eeeae51",
+      "bytes": 79632
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_fcebef3715a4d90a_COMPLETE.json",
+      "sha256": "c4cb88a63bff3734b6d669dd2da7f6ef5887c33a1ba1235047688e52ec0d5ae4",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_dcf4464a1001671f_COMPLETE.json",
+      "sha256": "eb934616610a79104939a439b373ddd9b7483b8d563cac7283d71e168e2b9fef",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_e0d7a382dd92157a_COMPLETE.json",
+      "sha256": "5dbc51b4a0150c1d296827a16810a33fb637318e046b67e3f32eacaeba87dc03",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_2ad5f987809cb697_trajectories.jsonl",
+      "sha256": "fd116277ec7aebdb8472ce3c70ebd5574f3be28b600d38dffe5cdf3efb0d837f",
+      "bytes": 76086
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_d75770c2943bd89f_trajectories.jsonl",
+      "sha256": "072e50105974a5359cc9cd5e885d00e41039a472433044f62f6957529e21aea6",
+      "bytes": 74798
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_55ce2df8cd41e60e_trajectories.jsonl",
+      "sha256": "10114fd42c79087beca5a3d5a6b813e94eb08f6689277cb4ed657f7866e17e5c",
+      "bytes": 75348
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_0d42b9bc65e887a1_trajectories.jsonl",
+      "sha256": "0f76d7e69c9076a02efc23b26835d2a2b8d97b4eb4215ea6700af37647e7f851",
+      "bytes": 78241
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_23f8cfccebf59f6d_benchmark.jsonl",
+      "sha256": "291f873611b852f7669988f6b4910a380ff66430b5bdcf3d20c4e974a204d5b3",
+      "bytes": 10339
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_403de1aaa0f7e178_trajectories.jsonl",
+      "sha256": "356320cb9d67e54fa14d5d84602eb23b391120bc4bb57565eeb1ece084013f21",
+      "bytes": 75619
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a1a764cd35b44e3d_trajectories.jsonl",
+      "sha256": "18a403dcbf9be918d15365f8ea4a1331fd4405fb940eea98cc868eb12395925a",
+      "bytes": 75581
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_c8c7e99bcbc01597_COMPLETE.json",
+      "sha256": "3c89cbef1fdb4973868cd218e4cb4c22c979b5dea347a7c30490445bb64384f1",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_55736165109ab6f7_trajectories.jsonl",
+      "sha256": "c85e8ebfb6c5aac9de285e02f77a1ea9eea1fcb263f1b09c025d17869f04638b",
+      "bytes": 80882
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_6583264935834809_COMPLETE.json",
+      "sha256": "b6e62715b5d6ef94025958ca275fca862f96e413d99b1e5cda3bb077ae4ccf8e",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_549736566a9d4330_COMPLETE.json",
+      "sha256": "ffb0beb02fb386f11425e456acb9ea8bdc2d36f2a9df56433c18feedeb80d5a3",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_08645286f58a7d01_trajectories.jsonl",
+      "sha256": "32a8c73ff86e6bea50ef8d65988fa9c0879a81bb59927792cdabd0103399f118",
+      "bytes": 79212
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_a614bdda4e726500_trajectories.jsonl",
+      "sha256": "4b3295c5c47dc56d1162d43523b4623992cc15f32a0b9c7551aea4c1d4703710",
+      "bytes": 78102
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_08645286f58a7d01_COMPLETE.json",
+      "sha256": "0d3a1f7bd843e0b919e7e30c1048a23cb8b82f14566e56f12d4492567a4e5dad",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_188e3a88a586f41e_trajectories.jsonl",
+      "sha256": "8710fbd95e5ffd3e2bc57ea48295a30daacc2d1f4eb3b6e4f91eb461f64f25e7",
+      "bytes": 79883
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_b332d2487d7d9629_COMPLETE.json",
+      "sha256": "cb3ecb5f393e9ea9acdca6acc1a3a77bd301aa74cf650e9b0eb855ff075ed31b",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_55ce2df8cd41e60e_COMPLETE.json",
+      "sha256": "2687e69465e9e9d7e7a782ece71010f515f75cc737fb77cadc4ed7b185112f63",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_03bd11dca79d3d21_COMPLETE.json",
+      "sha256": "c74aa4414e83b327841755de01c925da710294a660c177cbbec6397e8ce008e3",
+      "bytes": 63
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECTED_VALIDATION_TRAJECTORIES_20261008T110430Z/bart_s42/drie_f29bf5e733679ab7_COMPLETE.json",
+      "sha256": "424d2f26c73a3857477ee7764ea0ac1d2f19bef3283cc6ce07f8fb82db24ad28",
+      "bytes": 63
+    }
+  ],
+  "allocation": {
+    "job_id": "3045_0",
+    "state": "COMPLETED",
+    "elapsed_seconds": 537,
+    "GPUs": 1,
+    "GPU_hours": 0.14916666666666667,
+    "start": "2026-10-08T19:04:38",
+    "end": "2026-10-08T19:13:35",
+    "exit_code": "0:0"
+  }
+}
