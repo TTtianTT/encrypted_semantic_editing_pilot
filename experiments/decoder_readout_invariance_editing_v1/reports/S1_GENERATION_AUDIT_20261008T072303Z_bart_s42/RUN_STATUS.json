@@ -1,0 +1,149 @@
+{
+  "status": "COMPLETED",
+  "stage": "S1_GENERATION_AUDIT",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3035",
+  "array_job_id": "3035",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-08T07:23:11.833812+00:00",
+  "manifest_hash": "fbb4177b7c1151286fd98492710771aa1c40c92ee494ee5e081575a9eac49084",
+  "code_hash": "f960af5cb7df637abcb037786586fa5f6bf0735e9c48c2777ab1de9a26a472e9",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 8,
+  "remaining_samples": 0,
+  "exit_code": 0,
+  "ended": "2026-10-08T07:24:02.754665+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 601184256,
+    "wall_seconds": 27.704376440000487,
+    "job_id": "3035",
+    "step_id": "0",
+    "encoder_calls": 32,
+    "decoder_forward_calls": 2560,
+    "SLURM_JOB_GPUS": "1",
+    "SLURM_STEP_GPUS": "1"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_past_minus_N_a_actual_generation_scores.pt",
+      "sha256": "5a5c1ea537fbdbe6c445e75b2ca2471eb254d6222102eef23dafd1b2251b8138",
+      "bytes": 9668190
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_N_b_actual_generation_scores.pt",
+      "sha256": "2094876acb0657b2c6b9e5f4f6e42e10d48b27fc0ffac168afcd2657dbbce0dd",
+      "bytes": 9668245
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_P_a_actual_generation_scores.pt",
+      "sha256": "6f9c9e358edd245aaa16a82ea2b03f4405a26502b292ab445ff17fff26ae329b",
+      "bytes": 9668245
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_11dc2d2beabd096d_qualification.jsonl",
+      "sha256": "af437f2a6f4f78bb65615f07f48d359813a28d271191e4b86a2a923cbb7bb4b0",
+      "bytes": 6177
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_E_past_minus_b_actual_generation_scores.pt",
+      "sha256": "6fb8653622a9bfd91bb203b6a530a8747529322e95d4a36d739283b94a9d4d91",
+      "bytes": 9668850
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/head_readouts.jsonl",
+      "sha256": "a74149b49a0fd0d13ebe2118668213a14f09b9036847115ec9294ec37238e5a2",
+      "bytes": 5472083
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_c5fdacb609ac92cd_qualification.jsonl",
+      "sha256": "eb5e80fb1ea5b156b9801c1bb6568fd8f1f502deac640f6c13a9689e53697b0d",
+      "bytes": 6111
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/raw_processed_decisions.jsonl",
+      "sha256": "a2b4f0657ed3145916921d3273a37af530fdb4cd264724a1035bb39c0e1dab4d",
+      "bytes": 622463
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_N_a_actual_generation_scores.pt",
+      "sha256": "c50c3235df3315c45429c935ffb099b98451aa9b3778507f4542384bfbe4b3e2",
+      "bytes": 9668245
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_P_b_actual_generation_scores.pt",
+      "sha256": "d22a70c3a399c1347270ae12da79809a8a6c4adfd9fcf4990c58976634bb1abf",
+      "bytes": 9668245
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_b9479f1a434d3ee6_qualification.jsonl",
+      "sha256": "d46d0de55392a51ad61675b72ea0c5a62ed7ba4c16b33b8e4a69668fc9d52e23",
+      "bytes": 6156
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/SUMMARY.json",
+      "sha256": "67f07185a214f1edc059011f9c6c1507ac7adb0a3b9911c614149ea7613dead6",
+      "bytes": 829
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_future_plus_E_past_minus_a_actual_generation_scores.pt",
+      "sha256": "58dbccecbcbf30c2c3de975cca839a599ea4ea133f39823177ed1379dcc79718",
+      "bytes": 9668850
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_3a2221a23e8fb093_qualification.jsonl",
+      "sha256": "e346b60373402e43b18ea47ba4ab25657a2441949c914d5838d555c695927761",
+      "bytes": 6146
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/DECODING_CONFIG.json",
+      "sha256": "0d36c60102744821b9e906add983515c3001bf6647bf726e97c179215ef89a95",
+      "bytes": 2349
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/E_past_minus_N_b_actual_generation_scores.pt",
+      "sha256": "91ec01d010bcad2ef27d1819fa11449296dcd89abffe692936e9e18c51c003af",
+      "bytes": 9668190
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_7bfd1901f2d82f26_qualification.jsonl",
+      "sha256": "e35be5f6d4c3132ce0605eabb85621c7fd02e8696f9fd94e1eb5f4c8e800c100",
+      "bytes": 6107
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_23f8cfccebf59f6d_qualification.jsonl",
+      "sha256": "de23772ea5dc6a11de68b605b4100a87d6fe5d4c0e301782dda089b8cf26bf59",
+      "bytes": 6176
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_013a626fe072d215_qualification.jsonl",
+      "sha256": "29df35fd29a52aeee9fe191d2db99706dc0f62de2b6aa75869aa2d1aed9e99dd",
+      "bytes": 6172
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S1_GENERATION_AUDIT_20261008T072303Z/bart_s42/drie_21b85f778b13aef3_qualification.jsonl",
+      "sha256": "d0180b31b5d8b4cd7c5c1cbafb895ded416790605961ef1546da1d06aad6f2f1",
+      "bytes": 6032
+    }
+  ],
+  "allocation": {
+    "job_id": "3035_0",
+    "state": "COMPLETED",
+    "elapsed_seconds": 57,
+    "GPUs": 1,
+    "GPU_hours": 0.015833333333333335,
+    "start": "2026-10-08T15:23:07",
+    "end": "2026-10-08T15:24:04",
+    "exit_code": "0:0"
+  }
+}

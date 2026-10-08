@@ -1,0 +1,13 @@
+{
+  "stage": "T5_QUALIFICATION",
+  "job_id": "3037",
+  "manifest": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/T5_QUALIFICATION.json",
+  "manifest_hash": "11d2e646476cbb0baf9c9e8c3cf3e046d657d5a03c20d3ccda9d6729a9ed920e",
+  "snapshot": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/T5_QUALIFICATION_20261008T055543Z",
+  "GPUs_per_task": 1,
+  "array_concurrency": 2,
+  "reservation_GPU_hours": 1,
+  "submitted": "2026-10-08T07:35:06.090150+00:00",
+  "queue_before": "",
+  "command": "sbatch --parsable --partition=B300q --gres=gpu:1 --time=01:00:00 --job-name=drie-v1-T5_QUALIFICATION --array=0-0%2 --output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.out --error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.err --export=ALL,RUN_SNAPSHOT=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/T5_QUALIFICATION_20261008T055543Z,MANIFEST=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/T5_QUALIFICATION.json,PYTHON_BIN=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python /dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/slurm/worker.sbatch"
+}

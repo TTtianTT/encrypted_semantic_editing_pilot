@@ -1,0 +1,1 @@
+除强制BOS外，本固定小子集的普通token确实保持原始argmax；不是仅靠generation processor掩盖raw翻转。结合S1非零JS，支持离散决策容忍而非分布等价。encoder计数0、padding与cache验收排除已测实现假象。逐head贡献仅观测，不能替代因果干预。正式test0；全项目派生donor暴露5core纠正在DATA_EXPOSURE_CORRECTION.md。

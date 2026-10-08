@@ -1,5 +1,5 @@
 {
-  "GPU_hours": 2.301388888888889,
+  "GPU_hours": 2.317222222222222,
   "peak_concurrent_GPUs": 2,
   "allocations": [
     {
@@ -141,8 +141,18 @@
       "start": "2026-10-08T14:48:10",
       "end": "2026-10-08T15:05:33",
       "exit_code": "0:0"
+    },
+    {
+      "job_id": "3035_0",
+      "state": "COMPLETED",
+      "elapsed_seconds": 57,
+      "GPUs": 1,
+      "GPU_hours": 0.015833333333333335,
+      "start": "2026-10-08T15:23:07",
+      "end": "2026-10-08T15:24:04",
+      "exit_code": "0:0"
     }
   ],
   "all_terminal": true,
-  "sacct_raw": "3009_0|COMPLETED|90|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:40:22|0:0\n3009_1|COMPLETED|263|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:43:15|0:0\n3011_0|FAILED|41|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:45:46|2026-10-08T01:46:27|1:0\n3012_0|FAILED|33|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:48:46|2026-10-08T01:49:19|1:0\n3013_0|COMPLETED|2639|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:50:46|2026-10-08T02:34:45|0:0\n3024_0|FAILED|38|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:40:43|2026-10-08T13:41:21|1:0\n3025_0|COMPLETED|392|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:43:34|2026-10-08T13:50:06|0:0\n3026_0|COMPLETED|494|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:54:59|2026-10-08T14:03:13|0:0\n3026_1|COMPLETED|494|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:54:59|2026-10-08T14:03:13|0:0\n3026_2|COMPLETED|509|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:03:13|2026-10-08T14:11:42|0:0\n3030_0|COMPLETED|122|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:28:12|2026-10-08T14:30:14|0:0\n3031_0|COMPLETED|1008|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:31:22|2026-10-08T14:48:10|0:0\n3031_1|COMPLETED|1119|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:31:22|2026-10-08T14:50:01|0:0\n3031_2|COMPLETED|1043|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:48:10|2026-10-08T15:05:33|0:0"
+  "sacct_raw": "3009_0|COMPLETED|90|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:40:22|0:0\n3009_1|COMPLETED|263|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:38:52|2026-10-08T01:43:15|0:0\n3011_0|FAILED|41|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:45:46|2026-10-08T01:46:27|1:0\n3012_0|FAILED|33|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:48:46|2026-10-08T01:49:19|1:0\n3013_0|COMPLETED|2639|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T01:50:46|2026-10-08T02:34:45|0:0\n3024_0|FAILED|38|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:40:43|2026-10-08T13:41:21|1:0\n3025_0|COMPLETED|392|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:43:34|2026-10-08T13:50:06|0:0\n3026_0|COMPLETED|494|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:54:59|2026-10-08T14:03:13|0:0\n3026_1|COMPLETED|494|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T13:54:59|2026-10-08T14:03:13|0:0\n3026_2|COMPLETED|509|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:03:13|2026-10-08T14:11:42|0:0\n3030_0|COMPLETED|122|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:28:12|2026-10-08T14:30:14|0:0\n3031_0|COMPLETED|1008|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:31:22|2026-10-08T14:48:10|0:0\n3031_1|COMPLETED|1119|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:31:22|2026-10-08T14:50:01|0:0\n3031_2|COMPLETED|1043|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T14:48:10|2026-10-08T15:05:33|0:0\n3035_0|COMPLETED|57|billing=8,cpu=8,gres/gpu=1,node=1|2026-10-08T15:23:07|2026-10-08T15:24:04|0:0"
 }
