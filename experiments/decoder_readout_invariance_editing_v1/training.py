@@ -44,6 +44,14 @@ def cache_sources(eng,worlds,folder):
 def validate(eng,ed,worlds,cache,folder,name):
     path=folder/(name+'_validation.jsonl');records=rows(path) if path.exists() else []
     completed={r['world_id'] for r in records}
+    reference_path=ROOT/'configs/S3_REUSE_LOCK.json';prior={}
+    if reference_path.exists():
+        item=next(r for r in read(reference_path)['entries'] if r['seed']==eng.task['seed'])
+        assert sha(item['validation'])==item['validation_sha256']
+        for r in rows(item['validation']):
+            key=(r['world_id'],r['state'],r['source'])
+            if key in prior:assert prior[key]==r['current']
+            prior[key]=r['current']
     for wi,w in enumerate(worlds):
         if w['world_id'] in completed:continue
         for state in range(-3,4):
@@ -52,7 +60,8 @@ def validate(eng,ed,worlds,cache,folder,name):
                 except ValueError:continue
                 for source in ('natural','history'):
                     r=cache[(w['world_id'],state,source)];h=r['hidden'][None].cuda();m=r['mask'][None].cuda()
-                    current=eng.evaluate(h,m,w,state);edited=ed[op](h,m);pred=eng.evaluate(edited,m,w,next_state)
+                    current=prior[(w['world_id'],state,source)] if prior else eng.evaluate(h,m,w,state)
+                    edited=ed[op](h,m);pred=eng.evaluate(edited,m,w,next_state)
                     records.append(dict(world_id=w['world_id'],split=w['split'],state=state,operation=op,source=source,method=name,current=current,prediction=pred,update_norm=float((edited-h).float()[m.bool()].norm()),base_norm=float(h.float()[m.bool()].norm()),extra_test_input=False,inference_editor_forwards=1))
         jsonl(path,records)
         if (wi+1)%8==0:print('validation',name,wi+1,flush=True)

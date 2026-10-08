@@ -1,0 +1,404 @@
+{
+  "passed": true,
+  "seed": 42,
+  "worlds": 64,
+  "candidates": [
+    {
+      "name": "Mechanism-guided_m0.1",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1530,
+          "denominator": 1536,
+          "rate": 0.99609375
+        },
+        "target": {
+          "numerator": 1530,
+          "denominator": 1536,
+          "rate": 0.99609375
+        },
+        "content": {
+          "numerator": 1530,
+          "denominator": 1536,
+          "rate": 0.99609375
+        },
+        "parseable": {
+          "numerator": 1530,
+          "denominator": 1536,
+          "rate": 0.99609375
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 762,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "caecd51551f1f5ff447c82b1961e7c3ba7f92936908ff6f65c75ba966da86a43",
+      "validation_sha256": "caaf320d437290098262aadc9c6caac04231696bfcd92b6798955cffce92f606",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "sites": [
+        "model.decoder.layers.5.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 79.59843007598829,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Mechanism-guided_m1.0",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1523,
+          "denominator": 1536,
+          "rate": 0.9915364583333334
+        },
+        "target": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "content": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "parseable": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 755,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "a6c934d70cf7ae80f64e487929a41d3420cfed9a0139956165ce51298d6d5ec6",
+      "validation_sha256": "f80265450eba9ad97a20de5202b590ed1e2e12deeb9ac44a508e62c5927d65d3",
+      "keep_weight": 0.1,
+      "mechanism_weight": 1.0,
+      "sites": [
+        "model.decoder.layers.5.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 103.31843975800439,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Output-only_k0.1",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "target": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "content": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "parseable": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 757,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "0fa6176c89bf61e160b418504fca58e525c07fa2daac042049abd3c1822d07b6",
+      "validation_sha256": "e3a9e61620d788e9ef170e0234a970c81facb609e3aad8c0b93a3ef563c02cd7",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.0,
+      "sites": [],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 73.28628356500121,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Output-only_k1.0",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1456,
+          "denominator": 1536,
+          "rate": 0.9479166666666666
+        },
+        "target": {
+          "numerator": 1516,
+          "denominator": 1536,
+          "rate": 0.9869791666666666
+        },
+        "content": {
+          "numerator": 1516,
+          "denominator": 1536,
+          "rate": 0.9869791666666666
+        },
+        "parseable": {
+          "numerator": 1516,
+          "denominator": 1536,
+          "rate": 0.9869791666666666
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 688,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "4fb8dcbb594351195bfdda1d361d27bc191126892bc3996116173943b3d8988d",
+      "validation_sha256": "008cdac48aaf45149ff95704f57785c282e24122c54eda61efdbda9b3a329fa5",
+      "keep_weight": 1.0,
+      "mechanism_weight": 0.0,
+      "sites": [],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 76.4434478339972,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Plain",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "target": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "content": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "parseable": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 768,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "aa0d75a032cc27c5ac9d50671377abae8199c58498946f8889a83269e66e8a68",
+      "validation_sha256": "b3b030f218b21c042b0ea44c23d96eb412a39b25c6bd0b8b5733a06228d86f90",
+      "keep_weight": 0.0,
+      "mechanism_weight": 0.0,
+      "sites": [],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 60.03393373799918,
+      "teacher_forwards_per_update": 0,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": true
+    },
+    {
+      "name": "Random-site_m0.1",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1528,
+          "denominator": 1536,
+          "rate": 0.9947916666666666
+        },
+        "target": {
+          "numerator": 1528,
+          "denominator": 1536,
+          "rate": 0.9947916666666666
+        },
+        "content": {
+          "numerator": 1528,
+          "denominator": 1536,
+          "rate": 0.9947916666666666
+        },
+        "parseable": {
+          "numerator": 1528,
+          "denominator": 1536,
+          "rate": 0.9947916666666666
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 760,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "3ea2f7ac0c1ca74c32c89e5a56b33cde2066457d48ec75e156a7ff4dab5c8aee",
+      "validation_sha256": "e034e3a919155703d8284fad940edb7576ac250555e737ab684baa892ce4b350",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "sites": [
+        "model.decoder.layers.0.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 84.03702291600348,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Random-site_m1.0",
+      "seed": 42,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1535,
+          "denominator": 1536,
+          "rate": 0.9993489583333334
+        },
+        "target": {
+          "numerator": 1535,
+          "denominator": 1536,
+          "rate": 0.9993489583333334
+        },
+        "content": {
+          "numerator": 1535,
+          "denominator": 1536,
+          "rate": 0.9993489583333334
+        },
+        "parseable": {
+          "numerator": 1535,
+          "denominator": 1536,
+          "rate": 0.9993489583333334
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 767,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "d880fba163acfedad980918b91c1f87497e8d47a4cf8c8e1e2cfafa5cb02b5f9",
+      "validation_sha256": "e05988d4060b3d05974868f7552c4ffb161cca30db18ef8f9216f8449d2b767b",
+      "keep_weight": 0.1,
+      "mechanism_weight": 1.0,
+      "sites": [
+        "model.decoder.layers.0.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 102.71054780500708,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    }
+  ],
+  "frozen_backbone_unchanged": true,
+  "frozen_history_unchanged": true,
+  "independent_test_evaluations": 0,
+  "scientific_scope": "EXPLORATORY_VALIDATION_ONLY"
+}

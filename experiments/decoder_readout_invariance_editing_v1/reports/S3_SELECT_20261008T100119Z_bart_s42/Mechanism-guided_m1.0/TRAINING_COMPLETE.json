@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "method": "Mechanism-guided_m1.0",
+    "seed": 42,
+    "rank": 16,
+    "keep_weight": 0.1,
+    "mechanism_weight": 1.0,
+    "size_weight": 0.001,
+    "sites": [
+      "model.decoder.layers.5.encoder_attn"
+    ],
+    "scales": {
+      "model.decoder.layers.5.encoder_attn": 0.2786477948538959,
+      "model.decoder.layers.0.encoder_attn": 0.2756591404322535
+    },
+    "updates": 400,
+    "batch": 16,
+    "microbatch": 2,
+    "lr": 0.001,
+    "inference_inputs": [
+      "H",
+      "mask",
+      "operation"
+    ]
+  },
+  "wall_seconds": 103.31843975800439,
+  "checkpoints": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Mechanism-guided_m1.0/update200.pt",
+      "sha256": "97becd8d1b6a9d9a059c577ce4ac901ab024d9b5fdc7cacdb2054c5e3aeee714"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Mechanism-guided_m1.0/update400.pt",
+      "sha256": "a6c934d70cf7ae80f64e487929a41d3420cfed9a0139956165ce51298d6d5ec6"
+    }
+  ],
+  "editor_parameters": 50688,
+  "decoder_parameters_updated": 0,
+  "update_matched": true,
+  "teacher_forwards_per_update": 8,
+  "student_forwards_per_update": 8,
+  "backwards_per_update": 8,
+  "resumed_from_update": 0
+}

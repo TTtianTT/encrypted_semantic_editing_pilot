@@ -18,7 +18,7 @@ def collect(stage):
             status.update(status='TIMEOUT_PARTIAL' if allocation['state']=='TIMEOUT' else 'FAILED_TECHNICAL',error='allocation terminated without complete worker result',exit_code=allocation['exit_code'])
         status['allocation']=allocation
         dest=ROOT/'reports'/f"{stage}_{m['version']}_{task['model']}_s{task['seed']}";dest.mkdir(parents=True,exist_ok=True)
-        if (dest/'REPORT.md').exists():continue # terminal report never rewritten by later ledger refresh
+        if (dest/'REPORT.md').exists() and (dest/'ARTIFACTS.json').exists():continue # complete terminal reports never rewritten
         dump(dest/'RUN_STATUS.json',status)
         for name in ('SUMMARY.json','S0_ACCEPTANCE.json','REGULARIZER_ACCEPTANCE.json','HOOK_MAP.json','GRADIENT_CHECK.json','EAGER_ACCEPTANCE.json','NATIVE_HOOK_ACCEPTANCE.json','LOCAL_SDPA_ACCEPTANCE.json','PARITY_DIAGNOSTIC.json','FAILURE.txt'):
             if (folder/name).exists():shutil.copy2(folder/name,dest/name)
@@ -45,7 +45,14 @@ def collect(stage):
             outcome+='\n\n完整逐样本重算：'+json.dumps(audit,ensure_ascii=False)
             interpretation='Plain rank16正式复训192 train worlds，400 updates；64 validation worlds、每world12合法操作×2来源。输入仅H/mask/op、一次latent forward，无donor/目标文本/重编码/推理反传。内容mask没有用于此loss。数字仅为validation参考；不能替代Output-only、真实/随机机制对照或独立test。长期结果本run未执行。\n'
         report=f"""# {stage} {task['model']} seed{task['seed']} 终态\n\n状态：{status['status']}；Slurm {allocation['job_id']} / {allocation['state']}。完成world {n}；剩余{status.get('remaining_samples','NA')}；独立test访问0。GPU-hours={allocation['GPU_hours']:.6f}，本轮累计={acct['GPU_hours']:.6f}，登记allocation峰值={acct['peak_concurrent_GPUs']} GPU。\n\n{outcome}\n\n当前机制、机制相对Output-only/Random-site编辑收益、原子与长期能力、新T5Gemma独立资格均为NA，尚未执行。技术验收失败阻断该模型后续分析，不删除world通过。关键失败详细记录在 FAILURE.txt / 原始压缩日志。\n\n所有源代码来自manifest指向的immutable snapshot；checkpoint、split、代码SHA在RUN_STATUS/manifest。完整逐样本记录及日志压缩提交；大产物路径与SHA索引见 ARTIFACTS.json。\n"""
-        text(dest/'REPORT.md',report);text(dest/'INTERPRETATION.md',interpretation)
+        if stage in ('S3_SELECT','S3_MAIN') and status['status']=='COMPLETED':
+            from .training_results import audit_run
+            audit_run(folder,dest,summary)
+        elif stage=='S3_SELECTED_VALIDATION_TRAJECTORIES' and status['status']=='COMPLETED':
+            from .trajectory_results import audit_run
+            audit_run(folder,dest,summary)
+        else:
+            text(dest/'REPORT.md',report);text(dest/'INTERPRETATION.md',interpretation)
         dump(dest/'ARTIFACTS.json',[dict(path=str(p),sha256=sha(p),bytes=p.stat().st_size) for p in folder.rglob('*') if p.is_file()])
         print(str(dest),status['status'])
     return acct

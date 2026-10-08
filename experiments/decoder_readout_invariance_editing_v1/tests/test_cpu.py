@@ -79,3 +79,20 @@ class CPUChecks(unittest.TestCase):
         self.assertFalse(audit['confirmatory_family_executed'])
         for row in audit['comparisons']:
             self.assertIsNone(row['estimate']);self.assertIsNone(row['Holm_adjusted_p'])
+    def test_review_accepted_material_is_exact(self):
+        from ..common import sha
+        lock=read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')
+        self.assertTrue(lock['reviewed_by_human']);self.assertEqual(lock['confirmation'],'16例抽查通过。')
+        self.assertEqual(lock['review_material_sha256'],sha(ROOT/'reports/KEEP_MASK_REVIEW.md'))
+        self.assertEqual(lock['mask_audit_sha256'],sha(ROOT/'configs/KEEP_MASK_AUDIT.jsonl'))
+    def test_reused_memory_pool_has_no_test_world(self):
+        allowed={w['world_id'] for w in rows(ROOT/'configs/worlds.jsonl') if w['split'] in ('train','validation')}
+        for item in read(ROOT/'configs/S3_REUSE_LOCK.json')['entries']:
+            self.assertEqual(set(item['source_worlds']),allowed)
+            self.assertEqual(len(item['source_worlds']),256)
+    def test_regularizer_GPU_acceptance(self):
+        lock=read(ROOT/'configs/REGULARIZER_ACCEPTANCE_LOCK.json');self.assertTrue(lock['passed'])
+        self.assertEqual(len(lock['checks']),3)
+        for check in lock['checks']:
+            self.assertTrue(check['teacher_detached']);self.assertTrue(check['hooks_cleaned'])
+            self.assertTrue(all(v>0 for v in check['isolated_editor_gradient_norms'].values()))

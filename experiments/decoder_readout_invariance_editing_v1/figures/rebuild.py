@@ -63,6 +63,42 @@ def rebuild():
         for ax in axes:ax.set_ylim(0,1.1);ax.set_xlabel('exact native intervention');ax.grid(axis='y',alpha=.2)
         axes[0].set_ylabel('joint current semantic success');fig.suptitle('Exploratory local causal evidence; donor + extra forward used in query diagnostics')
         fig.tight_layout();fig.savefig(ROOT/'figures/05_native_causal_interventions.png',dpi=180);plt.close(fig)
+    if (ROOT/'results/SELECTED_VALIDATION_NUMERICAL_AUDIT.json').exists():
+        data=read(ROOT/'results/SELECTED_VALIDATION_NUMERICAL_AUDIT.json')
+        methods=data['methods'];x=np.arange(len(methods));labels=['Original','Plain','Output-only','Mechanism','Random-site']
+        fig,axes=plt.subplots(1,2,figsize=(12,4))
+        for ax,source in zip(axes,['natural','history']):
+            for j,(field,label) in enumerate([('joint_rate','joint success'),('target_rate','target accuracy'),('content_rate','content preserved')]):
+                vals=[np.mean([r[field] for r in data['atomic'] if r['grouping']=='source' and r['source']==source and r['method']==method]) for method in methods]
+                ax.bar(x+(j-1)*.25,vals,width=.25,label=label)
+            for i,method in enumerate(methods):
+                vals=[r['joint_rate'] for r in data['atomic'] if r['grouping']=='source' and r['source']==source and r['method']==method]
+                ax.scatter(np.full(len(vals),i-.25),vals,s=12,c='black',zorder=5)
+            ax.set(xticks=x,xticklabels=labels,title=source+' (768 operations / seed)',ylim=(0,1.1));ax.tick_params(axis='x',rotation=15);ax.grid(axis='y',alpha=.2)
+        axes[0].set_ylabel('mean of three fixed training seeds');axes[-1].legend(fontsize=8)
+        fig.suptitle('64 validation worlds; all selected controls executed; independent test BLOCKED')
+        fig.tight_layout();fig.savefig(ROOT/'figures/06_all_methods_validation.png',dpi=180);plt.close(fig)
+        fig,axes=plt.subplots(1,2,figsize=(12,4))
+        costs=data['training_costs'];trained=methods[1:]
+        axes[0].bar(np.arange(4),[np.mean([r['train_wall_seconds'] for r in costs if r['method']==method])/60 for method in trained]);axes[0].set(xticks=np.arange(4),xticklabels=labels[1:],ylabel='training wall minutes (mean fixed seeds)',title='400 updates; parameter count and draws matched')
+        for i,method in enumerate(trained):
+            vals=[r['mean_update_norm'] for r in data['atomic'] if r['grouping']=='source' and r['source']=='all_50_50' and r['method']==method]
+            axes[1].scatter(np.full(len(vals),i),vals,s=45)
+        axes[1].set(xticks=np.arange(4),xticklabels=labels[1:],ylabel='mean valid-memory update norm',title='Magnitude differs; fixed norm strata reported separately')
+        for ax in axes:ax.tick_params(axis='x',rotation=15);ax.grid(axis='y',alpha=.2)
+        fig.suptitle('Compute and perturbation controls; Plain reused, not trained twice')
+        fig.tight_layout();fig.savefig(ROOT/'figures/08_compute_and_norm_controls.png',dpi=180);plt.close(fig)
+    if (ROOT/'results/SELECTED_TRAJECTORY_NUMERICAL_AUDIT.json').exists():
+        data=read(ROOT/'results/SELECTED_TRAJECTORY_NUMERICAL_AUDIT.json');methods=['Original','Plain','Output-only','Mechanism-guided','Random-site']
+        fig,axes=plt.subplots(1,3,figsize=(13,4),sharey=True)
+        for seed,ax in zip([42,43,44],axes):
+            for method in methods:
+                rs=sorted([r for r in data['trajectories'] if r['seed']==seed and r['method']==method],key=lambda r:r['length'])
+                ax.plot([r['length'] for r in rs],[r['rate'] for r in rs],marker='o',label=method,alpha=.8)
+            ax.set(title='seed'+str(seed),xlabel='length (all steps correct)',xticks=[1,2,3,5],ylim=(-.05,1.12));ax.grid(alpha=.2)
+        axes[0].set_ylabel('complete trajectory success');axes[-1].legend(fontsize=7)
+        fig.suptitle('All five methods: own latent states; 64 validation worlds x four trajectories; test BLOCKED')
+        fig.tight_layout();fig.savefig(ROOT/'figures/07_all_methods_latent_trajectories.png',dpi=180);plt.close(fig)
     dump(ROOT/'figures/FIGURE_INDEX.json',[dict(path=str(p),sha256=sha(p),rebuild='python experiments/decoder_readout_invariance_editing_v1/figures/rebuild.py',classification='observational / executed aggregate; no untested causal edges') for p in sorted((ROOT/'figures').glob('*.png'))])
 
 if __name__=='__main__':rebuild()

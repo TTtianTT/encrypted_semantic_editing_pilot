@@ -1,5 +1,5 @@
 # 当前执行状态
 
-用户已确认16例内容位置抽查通过，KEEP_MASK_REVIEW_LOCK保存原文与材料SHA。S3已解除人工审核门槛，Slurm3041正在单GPU进行regularizer smoke；通过后执行seed42网格选择，再锁定seed43/44对照。旧阻塞终态报告保留。
+用户确认16例抽查通过，正则GPU验收通过。seed42六个候选已完成400updates与64world validation：锁定keep=0.1、mechanism=0.1；联合成功Plain1536/1536、Output-only1525/1536、Mechanism-guided1530/1536、Random-site1528/1536。仅为validation选型，不能称独立收益。正在发布本轮，随后seed43/44并行执行相同锁定方法。
 
-Plain三seed与全部训练/validation原始H/mask缓存冻结复用。新方法仍未完成，当前收益NA。S4独立test仍BLOCKED_TEST_INTEGRITY（5/128core派生暴露）；未得到新终点授权，不解封。所有新文件/缓存/tmp位于/dataset1/zailong/，全项目最多2GPU。
+S4独立test仍BLOCKED_TEST_INTEGRITY（5/128core提前暴露），正式test评测0；16例人工验收没有授权修改测试终点。所有产物位于/dataset1/zailong/，受控峰值最多2GPU。

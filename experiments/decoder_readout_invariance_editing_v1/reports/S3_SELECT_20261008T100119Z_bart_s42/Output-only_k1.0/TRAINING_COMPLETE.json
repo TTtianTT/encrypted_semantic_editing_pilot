@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "method": "Output-only_k1.0",
+    "seed": 42,
+    "rank": 16,
+    "keep_weight": 1.0,
+    "mechanism_weight": 0.0,
+    "size_weight": 0.001,
+    "sites": [],
+    "scales": {},
+    "updates": 400,
+    "batch": 16,
+    "microbatch": 2,
+    "lr": 0.001,
+    "inference_inputs": [
+      "H",
+      "mask",
+      "operation"
+    ]
+  },
+  "wall_seconds": 76.4434478339972,
+  "checkpoints": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Output-only_k1.0/update200.pt",
+      "sha256": "6cefd46a2cf296398f97821ce0e9b7cdbacbae0a24c951c09026e679f3017db8"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Output-only_k1.0/update400.pt",
+      "sha256": "4fb8dcbb594351195bfdda1d361d27bc191126892bc3996116173943b3d8988d"
+    }
+  ],
+  "editor_parameters": 50688,
+  "decoder_parameters_updated": 0,
+  "update_matched": true,
+  "teacher_forwards_per_update": 8,
+  "student_forwards_per_update": 8,
+  "backwards_per_update": 8,
+  "resumed_from_update": 0
+}

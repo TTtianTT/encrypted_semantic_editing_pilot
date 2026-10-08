@@ -26,6 +26,7 @@ def main():
     status_path=folder/'RUN_STATUS.json'
     if status_path.exists() and read(status_path)['status']=='COMPLETED':return
     expected=8 if t['stage']=='S0' else 1 if t['stage']=='PARITY_DIAG' else 64 if t['stage'].startswith('S2') else 256 if t['stage'].startswith('S3') else 32 if t['stage']=='T5_QUALIFICATION' else 72
+    expected={'S3_REGULARIZER_SMOKE':8,'S3_SELECTED_VALIDATION_TRAJECTORIES':64,'S3_VALIDATION_TRAJECTORIES':64,'S2_QUERY_BRIDGE':32,'S1_GENERATION_AUDIT':8}.get(t['stage'],expected)
     status=dict(status='RUNNING',stage=t['stage'],model=t['model'],seed=t['seed'],job_id=os.environ['SLURM_JOB_ID'],array_job_id=parent,task_index=a.task_index,step_id=os.environ['SLURM_STEP_ID'],started=datetime.now(timezone.utc).isoformat(),manifest_hash=sha(a.manifest),code_hash=objsha(m['files']),split_hash=m['split_hash'],checkpoint_hash=t['checkpoint_hash'],completed_samples=0,remaining_samples=expected,exit_code=None)
     dump(status_path,status)
     engine=None
@@ -66,6 +67,9 @@ def main():
             result=run_plain(engine,folder)
         elif t['stage']=='S3_VALIDATION_TRAJECTORIES':
             from .validation_trajectories import run
+            result=run(engine,folder)
+        elif t['stage']=='S3_SELECTED_VALIDATION_TRAJECTORIES':
+            from .selected_trajectories import run
             result=run(engine,folder)
         elif t['stage']=='T5_QUALIFICATION':
             from .t5_qualification import run

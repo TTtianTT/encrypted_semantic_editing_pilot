@@ -1,0 +1,150 @@
+{
+  "methods": [
+    {
+      "method": "Plain",
+      "selection_score": {
+        "joint": 1.0,
+        "content": 1.0,
+        "target": 1.0,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Plain/update400.pt",
+      "reused": true
+    },
+    {
+      "method": "Output-only",
+      "keep_weight": 0.1,
+      "selection_score": {
+        "joint": 0.9928385416666666,
+        "content": 0.9928385416666666,
+        "target": 0.9928385416666666,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Output-only_k0.1/update400.pt"
+    },
+    {
+      "method": "Mechanism-guided",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "selection_score": {
+        "joint": 0.99609375,
+        "content": 0.99609375,
+        "target": 0.99609375,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Mechanism-guided_m0.1/update400.pt",
+      "content_gate_passed": true
+    },
+    {
+      "method": "Random-site",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "selection_score": {
+        "joint": 0.9947916666666666,
+        "content": 0.9947916666666666,
+        "target": 0.9947916666666666,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Random-site_m0.1/update400.pt"
+    }
+  ],
+  "keep_weight": 0.1,
+  "mechanism_weight": 0.1,
+  "selection": "update400, validation joint after content constraint; no test",
+  "all_validation_candidates": [
+    {
+      "method": "Plain",
+      "selection_score": {
+        "joint": 1.0,
+        "content": 1.0,
+        "target": 1.0,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Plain/update400.pt",
+      "reused": true
+    },
+    {
+      "method": "Output-only",
+      "keep_weight": 0.1,
+      "selection_score": {
+        "joint": 0.9928385416666666,
+        "content": 0.9928385416666666,
+        "target": 0.9928385416666666,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Output-only_k0.1/update400.pt"
+    },
+    {
+      "method": "Output-only",
+      "keep_weight": 1.0,
+      "selection_score": {
+        "joint": 0.9479166666666666,
+        "content": 0.9869791666666666,
+        "target": 0.9869791666666666,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Output-only_k1.0/update400.pt"
+    },
+    {
+      "method": "Mechanism-guided",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "selection_score": {
+        "joint": 0.99609375,
+        "content": 0.99609375,
+        "target": 0.99609375,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Mechanism-guided_m0.1/update400.pt",
+      "content_gate_passed": true
+    },
+    {
+      "method": "Random-site",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "selection_score": {
+        "joint": 0.9947916666666666,
+        "content": 0.9947916666666666,
+        "target": 0.9947916666666666,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Random-site_m0.1/update400.pt"
+    },
+    {
+      "method": "Mechanism-guided",
+      "keep_weight": 0.1,
+      "mechanism_weight": 1.0,
+      "selection_score": {
+        "joint": 0.9915364583333334,
+        "content": 1.0,
+        "target": 1.0,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Mechanism-guided_m1.0/update400.pt"
+    },
+    {
+      "method": "Random-site",
+      "keep_weight": 0.1,
+      "mechanism_weight": 1.0,
+      "selection_score": {
+        "joint": 0.9993489583333334,
+        "content": 0.9993489583333334,
+        "target": 0.9993489583333334,
+        "denominator": 1536,
+        "worlds": 64
+      },
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_SELECT_20261008T100119Z/bart_s42/Random-site_m1.0/update400.pt"
+    }
+  ],
+  "test_unopened": true
+}

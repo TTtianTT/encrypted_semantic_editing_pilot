@@ -16,7 +16,7 @@ def stage_folder(stage, seed=42, model='bart'):
 
 def summarize_atomic(rs, **keys):
     n=len(rs)
-    out=dict(**keys, status='EXPLORATORY_VALIDATION', records=n,
+    out=dict(**keys, status='EXPLORATORY_VALIDATION' if n else 'NOT_ESTIMABLE_EMPTY_BIN', records=n,
              independent_worlds=len({r['world_id'] for r in rs}))
     for field in ('joint','target','content','parseable','EOS','exact_match'):
         good=sum(r[field] for r in rs)

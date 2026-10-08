@@ -62,7 +62,7 @@ def prepare(stage):
                 human_review_received=False,submitted_GPU_jobs=0,
                 completed_methods=['Plain'],remaining_methods=['Output-only','Mechanism-guided','Random-site']))
             raise RuntimeError('BLOCKED_MASK_REVIEW: no human-reviewed keep-mask lock; review material is prepared')
-    if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_REGULARIZER_SMOKE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage not in ('S0','S1','S1_NATIVE','S1_GENERATION_AUDIT','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_REGULARIZER_SMOKE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','S3_SELECTED_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
@@ -78,13 +78,14 @@ def prepare(stage):
         assert read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')['reviewed_by_human']
     if stage in ('S3_SELECT','S3_MAIN'):
         assert read(ROOT/'configs/REGULARIZER_ACCEPTANCE_LOCK.json')['passed'],'Regularizer GPU acceptance required'
-    if stage in ('S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES'):
+    if stage in ('S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','S3_SELECTED_VALIDATION_TRAJECTORIES'):
         if stage=='S3_MAIN':assert (ROOT/'configs/TRAINING_SELECTION_LOCK.json').exists()
         tasks=[]
         for seed in ((43,44) if stage=='S3_MAIN' else (42,43,44)):
             ck=next(e for e in inp['editors'] if e['model']=='bart' and e['seed']==seed)
             tasks.append(dict(model='bart',seed=seed,checkpoint=ck['path'],checkpoint_hash=ck['sha256'],stage=stage))
     if stage=='S3_VALIDATION_TRAJECTORIES':assert (ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json').exists()
+    if stage=='S3_SELECTED_VALIDATION_TRAJECTORIES':assert (ROOT/'configs/FINAL_METHOD_CHECKPOINT_LOCK.json').exists()
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ');snapshot=ROOT/f'local/snapshots/{stage}_{stamp}'
     target=snapshot/'experiments'/ROOT.name;target.mkdir(parents=True)
     for p in ROOT.glob('*.py'):shutil.copy2(p,target/p.name)
@@ -102,6 +103,8 @@ def prepare(stage):
                 manifest['checkpoint_hashes'][item['validation']]=item['validation_sha256']
     if stage=='S3_VALIDATION_TRAJECTORIES':
         for item in read(ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
+    if stage=='S3_SELECTED_VALIDATION_TRAJECTORIES':
+        for item in read(ROOT/'configs/FINAL_METHOD_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
     dump(path,manifest)
     print(path)
 
