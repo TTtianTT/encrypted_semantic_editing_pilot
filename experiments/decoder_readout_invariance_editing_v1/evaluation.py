@@ -9,11 +9,17 @@ from .readout import pairs,distribution,token_sites
 @torch.no_grad()
 def run(eng,folder):
     lock=read(ROOT/'configs/FINAL_TEST_LOCK.json');assert lock['all_seeds_locked'] and lock['independent_test_unseal_stage']=='S4'
+    auth=read(ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json');proposal=read(ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json')
+    assert auth['approved'] and auth['proposal_sha256']==sha(ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json')
+    assert lock['checkpoint_lock_sha256']==sha(ROOT/'configs/FINAL_METHOD_CHECKPOINT_LOCK.json')
     seed=eng.task['seed'];models={'Original':eng.ed}
     for item in lock['checkpoints']:
         if item['seed']!=seed:continue
         assert sha(item['path'])==item['sha256'];ed=editors(eng.d,seed);ed.load_state_dict(torch.load(item['path'],map_location='cuda',weights_only=False)['editor']);models[item['method']]=ed.eval()
-    ws=[w for w in rows(ROOT/'configs/worlds.jsonl') if w['split']=='test_iid'];lo,hi=eng.task['world_slice'];ws=ws[lo:hi]
+    all_test=[w for w in rows(ROOT/'configs/worlds.jsonl') if w['split']=='test_iid']
+    assert len(all_test)==128 and set(proposal['eligible_worlds'])|set(proposal['excluded_worlds'])=={w['world_id'] for w in all_test}
+    ws=[w for w in all_test if w['world_id'] in proposal['eligible_worlds']];assert len(ws)==123
+    jsonl(folder/'pre_exposure_exclusions.jsonl',[dict(world_id=w['world_id'],status='NA_PRIOR_EXPOSURE',reason='counterfactual encoder exposure before S4',not_zero_failure=True) for w in all_test if w['world_id'] in proposal['excluded_worlds']])
     records=[];trajectories=[];qualification=[];readouts=[]
     sequences=[['plus','minus','plus','minus','plus'],['plus','plus','minus','minus','plus']]
     for wi,w in enumerate(ws):
@@ -44,11 +50,9 @@ def run(eng,folder):
                     world_trajectories.append(dict(world_id=w['world_id'],seed=seed,method=name,source='natural_start',order=order,direction=direction,steps=steps,length_success={str(length):all(s['prediction']['score']['success'] for s in steps[:length]) for length in (1,2,3,5)},latent_only=True,gold_state_replacements=0))
         # S1/S2 confirmation qualification is only now unsealed, using the unchanged A rules.
         ps,_,_=pairs(eng,w,folder)
-        world_readouts=[]
-        for pair,a,b,m in ps:
-            ids=torch.tensor(pair['a']['token_ids'],device='cuda')[None];la=eng.logits(a,m,decoder_ids=ids[:,:-1]);lb=eng.logits(b,m,decoder_ids=ids[:,:-1])
-            world_readouts.extend(dict(world_id=w['world_id'],seed=seed,source_pair=pair['source_pair'],**r) for r in distribution(la,lb,ids[:,1:],token_sites(eng,pair['a']['text'])))
-        jsonl(folder/(w['world_id']+'_editing.jsonl'),world_records);jsonl(folder/(w['world_id']+'_trajectories.jsonl'),world_trajectories);jsonl(folder/(w['world_id']+'_readouts.jsonl'),world_readouts)
-        dump(marker,dict(world_id=w['world_id'],complete=True,seed=seed,editing_rows=len(world_records),trajectories=len(world_trajectories),panel_A_pairs=len(ps)))
+        from .test_mechanism import confirm
+        confirmed=confirm(eng,w,ps,folder,wi)
+        jsonl(folder/(w['world_id']+'_editing.jsonl'),world_records);jsonl(folder/(w['world_id']+'_trajectories.jsonl'),world_trajectories)
+        dump(marker,dict(world_id=w['world_id'],complete=True,seed=seed,editing_rows=len(world_records),trajectories=len(world_trajectories),panel_A_pairs=len(ps),mechanism_confirmation=confirmed))
         if (wi+1)%8==0:print('S4',seed,wi+1,len(ws),flush=True)
-    return dict(passed=True,worlds=len(ws),methods=list(models),source_weights={'natural':.5,'history':.5},OOD_status='UNAVAILABLE',donor_used_by_main_methods=False,test_time_backward=False,reencoding_used_by_main_methods=False,resources=eng.resources())
+    return dict(passed=True,worlds=len(ws),original_scan_worlds=128,excluded_prior_exposure=5,endpoint='explicit amended unexposed123, not original128',methods=list(models),source_weights={'natural':.5,'history':.5},OOD_status='UNAVAILABLE',donor_used_by_main_methods=False,test_time_backward=False,reencoding_used_by_main_methods=False,resources=eng.resources())

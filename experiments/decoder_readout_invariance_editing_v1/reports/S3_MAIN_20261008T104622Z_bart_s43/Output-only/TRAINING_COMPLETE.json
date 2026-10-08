@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "method": "Output-only",
+    "seed": 43,
+    "rank": 16,
+    "keep_weight": 0.1,
+    "mechanism_weight": 0,
+    "size_weight": 0.001,
+    "sites": [],
+    "scales": {
+      "model.decoder.layers.5.encoder_attn": 0.2786477948538959,
+      "model.decoder.layers.0.encoder_attn": 0.2756591404322535
+    },
+    "updates": 400,
+    "batch": 16,
+    "microbatch": 2,
+    "lr": 0.001,
+    "inference_inputs": [
+      "H",
+      "mask",
+      "operation"
+    ]
+  },
+  "wall_seconds": 125.17719906600541,
+  "checkpoints": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_MAIN_20261008T104622Z/bart_s43/Output-only/update200.pt",
+      "sha256": "0db42f29468448557001c993088a478781dfc211b8936d810929b90daeca1834"
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_MAIN_20261008T104622Z/bart_s43/Output-only/update400.pt",
+      "sha256": "81560bb319909447741a1e9781bfd2df82bfb656271373bc6a50ffe63fc07966"
+    }
+  ],
+  "editor_parameters": 50688,
+  "decoder_parameters_updated": 0,
+  "update_matched": true,
+  "teacher_forwards_per_update": 8,
+  "student_forwards_per_update": 8,
+  "backwards_per_update": 8,
+  "resumed_from_update": 0
+}

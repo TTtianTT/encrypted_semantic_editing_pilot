@@ -54,6 +54,34 @@ def run():
         assert len(rs)==record['records']
         for field in ('joint','target','content','parseable','EOS','exact_match'):
             assert sum(r[field] for r in rs)==record[field+'_numerator']
+    selected_checked=False;trajectory_checked=False
+    if (ROOT/'results/SELECTED_VALIDATION_NUMERICAL_AUDIT.json').exists():
+        selected=read(ROOT/'results/SELECTED_VALIDATION_NUMERICAL_AUDIT.json')
+        full=[json.loads(r) for r in gzip.decompress((ROOT/'results/selected_validation_atomic.jsonl.gz').read_bytes()).decode().splitlines()]
+        assert len(full)==selected['records']==23040 and len({r['world_id'] for r in full})==64
+        for record in selected['atomic']:
+            rs=[r for r in full if r['seed']==record['seed'] and r['method']==record['method']]
+            group=record['grouping'];val=record['stratum']
+            if group=='source':
+                if val!='all_50_50':rs=[r for r in rs if r['source']==val]
+            elif group=='update_norm':
+                low,high=map(float,val[1:-1].split(','));rs=[r for r in rs if low<=r['update_norm']<high]
+            else:rs=[r for r in rs if r[group]==val]
+            assert len(rs)==record['records']
+            for field in ('joint','target','content','parseable','EOS','exact_match'):
+                assert sum(r[field] for r in rs)==record[field+'_numerator']
+                assert record[field+'_rate']==(sum(r[field] for r in rs)/len(rs) if rs else None)
+        selected_checked=True
+    if (ROOT/'results/SELECTED_TRAJECTORY_NUMERICAL_AUDIT.json').exists():
+        selected=read(ROOT/'results/SELECTED_TRAJECTORY_NUMERICAL_AUDIT.json')
+        full=[json.loads(r) for r in gzip.decompress((ROOT/'results/selected_validation_trajectories.jsonl.gz').read_bytes()).decode().splitlines()]
+        assert len(full)==selected['records']==15360
+        for record in selected['trajectories']:
+            rs=[r for r in full if (r['seed'],r['method'],r['length'])==(record['seed'],record['method'],record['length'])]
+            assert len(rs)==record['trajectory_denominator']==256
+            assert sum(r['success'] for r in rs)==record['complete_numerator']
+            assert sum(all(r['success'] for r in rs if r['world_id']==world) for world in {r['world_id'] for r in rs})==record['all_four_trajectories_world_numerator']
+        trajectory_checked=True
     suite=unittest.defaultTestLoader.loadTestsFromName('experiments.decoder_readout_invariance_editing_v1.tests.test_cpu')
     out=io.StringIO();test=unittest.TextTestRunner(stream=out,verbosity=2).run(suite)
     assert test.wasSuccessful()
@@ -63,7 +91,9 @@ def run():
         neural_model_loaded=False,checked_input_files=checked,remote_source_heads=refs,
         original_workspace_tracked_diff=original_diff,original_branch=inputs['original_branch'],
         GPU_terminal_report_count=len(GPU_reports),all_GPU_reports_published_verified=True,
-        artifacts_hashes_verified=True,atomic_headlines_recomputed=True,CPU_tests=test.testsRun,
+        artifacts_hashes_verified=True,atomic_headlines_recomputed=True,
+        selected_method_headlines_recomputed=selected_checked,
+        selected_trajectory_headlines_recomputed=trajectory_checked,CPU_tests=test.testsRun,
         independent_test_status='BLOCKED_TEST_INTEGRITY',overall_status='BLOCKED',
         location_prefix='/dataset1/zailong/'))
     print(dict(passed=True,CPU_tests=test.testsRun,GPU_reports=len(GPU_reports),

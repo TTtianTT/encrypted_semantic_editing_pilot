@@ -1,0 +1,235 @@
+{
+  "passed": true,
+  "seed": 43,
+  "worlds": 64,
+  "candidates": [
+    {
+      "name": "Mechanism-guided",
+      "seed": 43,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1519,
+          "denominator": 1536,
+          "rate": 0.9889322916666666
+        },
+        "target": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "content": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "parseable": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 751,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "9f8565f087ef407dd646457daedfe5ef7d897ac0506c2560fed9cf309ad85bc7",
+      "validation_sha256": "8dad18be2d5d0566aee63cca3089ea3ab5a8b7b7b3b7279d0e2bbaf7036c77f3",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "sites": [
+        "model.decoder.layers.5.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 75.99448741500964,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Output-only",
+      "seed": 43,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1520,
+          "denominator": 1536,
+          "rate": 0.9895833333333334
+        },
+        "target": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "content": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "parseable": {
+          "numerator": 1525,
+          "denominator": 1536,
+          "rate": 0.9928385416666666
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 752,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "81560bb319909447741a1e9781bfd2df82bfb656271373bc6a50ffe63fc07966",
+      "validation_sha256": "be684603e973ef2313a7ab0a89cabc5534f304debd27c72e409427fcc3abbd5c",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0,
+      "sites": [],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 125.17719906600541,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    },
+    {
+      "name": "Plain",
+      "seed": 43,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "target": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "content": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "parseable": {
+          "numerator": 1536,
+          "denominator": 1536,
+          "rate": 1.0
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 768,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "fc93df82de21202fe00bc4299c8f72ea51a2e47f4c77bf375b3cbcba65ee816b",
+      "validation_sha256": "c462b558702f2f66bfb36aed74a9bd4acea55059bd526d64929780994ddaa668",
+      "keep_weight": 0.0,
+      "mechanism_weight": 0.0,
+      "sites": [],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 59.14204013600829,
+      "teacher_forwards_per_update": 0,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": true
+    },
+    {
+      "name": "Random-site",
+      "seed": 43,
+      "worlds": 64,
+      "records": 1536,
+      "scores": {
+        "joint": {
+          "numerator": 1524,
+          "denominator": 1536,
+          "rate": 0.9921875
+        },
+        "target": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "content": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "parseable": {
+          "numerator": 1532,
+          "denominator": 1536,
+          "rate": 0.9973958333333334
+        },
+        "EOS": {
+          "numerator": 1536,
+          "denominator": 1536
+        }
+      },
+      "source_scores": {
+        "natural": {
+          "numerator": 756,
+          "denominator": 768
+        },
+        "history": {
+          "numerator": 768,
+          "denominator": 768
+        }
+      },
+      "checkpoint_sha256": "dcdb437a821174d6016accb390151b92bd1abde4795e4c33ef5d7978847a3f75",
+      "validation_sha256": "758dc6870da0e9bff51ce3d1b46cbcd497a42e406a144a94c664d2bf54c84fd7",
+      "keep_weight": 0.1,
+      "mechanism_weight": 0.1,
+      "sites": [
+        "model.decoder.layers.0.encoder_attn"
+      ],
+      "updates": 400,
+      "matched_Plain_initialization_seed": true,
+      "matched_400_minibatches": true,
+      "training_wall_seconds": 70.66573448400595,
+      "teacher_forwards_per_update": 8,
+      "student_forwards_per_update": 8,
+      "backwards_per_update": 8,
+      "reused": false
+    }
+  ],
+  "frozen_backbone_unchanged": true,
+  "frozen_history_unchanged": true,
+  "independent_test_evaluations": 0,
+  "scientific_scope": "EXPLORATORY_VALIDATION_ONLY"
+}
