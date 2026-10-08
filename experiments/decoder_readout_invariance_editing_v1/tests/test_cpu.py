@@ -76,9 +76,13 @@ class CPUChecks(unittest.TestCase):
             self.assertIsNone(row['joint_numerator'])
     def test_main_unrun_comparisons_are_NA(self):
         audit=read(ROOT/'results/main_method_status.json')
-        self.assertFalse(audit['confirmatory_family_executed'])
-        for row in audit['comparisons']:
-            self.assertIsNone(row['estimate']);self.assertIsNone(row['Holm_adjusted_p'])
+        if not audit['confirmatory_family_executed']:
+            for row in audit['comparisons']:
+                self.assertIsNone(row['estimate']);self.assertIsNone(row['Holm_adjusted_p'])
+        else:
+            self.assertTrue(read(ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json')['approved'])
+            self.assertEqual(audit['endpoint'],'AMENDED_UNEXPOSED123')
+            for row in audit['comparisons']:self.assertIsNotNone(row['estimate'])
     def test_review_accepted_material_is_exact(self):
         from ..common import sha
         lock=read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')
@@ -96,3 +100,15 @@ class CPUChecks(unittest.TestCase):
         for check in lock['checks']:
             self.assertTrue(check['teacher_detached']);self.assertTrue(check['hooks_cleaned'])
             self.assertTrue(all(v>0 for v in check['isolated_editor_gradient_norms'].values()))
+    def test_amendment_preserves_original_scan_without_refill(self):
+        path=ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json'
+        if not path.exists():self.skipTest('No checkpoint-locked amendment proposal prepared')
+        proposal=read(path);worlds={w['world_id'] for w in rows(ROOT/'configs/worlds.jsonl') if w['split']=='test_iid'}
+        self.assertEqual(set(proposal['eligible_worlds'])|set(proposal['excluded_worlds']),worlds)
+        self.assertFalse(set(proposal['eligible_worlds'])&set(proposal['excluded_worlds']))
+        self.assertEqual(len(proposal['eligible_worlds']),123);self.assertEqual(len(proposal['excluded_worlds']),5)
+        self.assertFalse(proposal['replacement_search']);self.assertFalse(proposal['original_endpoint_restored'])
+    def test_no_test_unseal_without_explicit_amendment(self):
+        if (ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json').exists():self.skipTest('Explicit authorization exists; tested by worker manifest guard')
+        from ..prepare import prepare
+        with self.assertRaisesRegex(RuntimeError,'BLOCKED_TEST_INTEGRITY'):prepare('S4')
