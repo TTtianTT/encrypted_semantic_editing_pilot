@@ -1,0 +1,1 @@
+只换late-layer KV使共同正确输出的日期翻转；同一位置同时换取donor在实际recipient前缀下的Q恢复当前正确输出。仅Q替换也保持当前输出。结合全层KV replacement验收，支持memory相关的上游query/late-cross-attention协调，反驳source完全不敏感和仅K/V自补偿的强解释。16 validation worlds不足独立确认门槛；不能称完整唯一电路。算法增益仍NA。诊断使用donor和在线额外decoder计算。

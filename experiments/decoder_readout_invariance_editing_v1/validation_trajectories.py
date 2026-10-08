@@ -10,13 +10,15 @@ def run(eng,folder):
     plain=editors(eng.d,seed);plain.load_state_dict(torch.load(item['path'],map_location='cuda',weights_only=False)['editor']);plain.eval()
     models={'Original':eng.ed,'Plain':plain}
     worlds=[w for w in rows(ROOT/'configs/worlds.jsonl') if w['split']=='validation']
-    old=rows(Path(item['run_folder'])/'Plain/Plain_validation.jsonl');current={(r['world_id'],r['state'],r['source']):r['current'] for r in old}
+    old_path=Path(item['run_folder'])/'Plain/Plain_validation.jsonl';assert sha(old_path)==item['validation_sha256']
+    old=rows(old_path);current={(r['world_id'],r['state'],r['source']):r['current'] for r in old}
     sequences=[['plus','minus','plus','minus','plus'],['plus','plus','minus','minus','plus']]
     atomics=[];tracks=[]
     for i,w in enumerate(worlds):
         atomic_path=folder/(w['world_id']+'_editing.jsonl');chain_path=folder/(w['world_id']+'_trajectories.jsonl');marker=folder/(w['world_id']+'_COMPLETE.json')
         if marker.exists():atomics.extend(rows(atomic_path));tracks.extend(rows(chain_path));continue
-        cache=torch.load(Path(item['run_folder'])/'source_worlds'/(w['world_id']+'.pt'),map_location='cpu',weights_only=False)
+        cache_path=Path(item['run_folder'])/'source_worlds'/(w['world_id']+'.pt');assert sha(cache_path)==item['source_world_sha256'][w['world_id']]
+        cache=torch.load(cache_path,map_location='cpu',weights_only=False)
         record=[];chains=[]
         for state in range(-3,4):
             for op in ('plus','minus'):
