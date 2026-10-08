@@ -1,3 +1,3 @@
-# 原123-world提案撤回
+# Previous proposal withdrawn
 
-额外CPU全量生成文本审计发现3个更多test core，除5个encoder donor暴露外还需保守排除。原123提案与问题已撤回，不能按该旧提案解封。完整核验后另行给出可审阅的新分母；当前正式test评测0，授权不存在。详见results/PREDICTED_CORE_EXPOSURE_AUDIT.json。
+The original 123-world proposal is not executable. Complete conservative audits now identify 12/128 known exposed core worlds and 116 not known exposed. This classification does not authorize a revised scientific endpoint; original S4 stays BLOCKED_TEST_INTEGRITY, formal evaluations 0. See configs/FINAL_EXPOSURE_LOCK.json and S4_EXPOSURE_CLOSURE_20261008T121251Z_bart_s42/REPORT.md for full provenance and limitations. No refill, no silent test selection.

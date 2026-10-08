@@ -13,11 +13,15 @@ def run():
     assert ledger['all_terminal'] and ledger['peak_concurrent_GPUs']<=2
     dump(ROOT/'results/resource_ledger.json',ledger)
     queue=command('squeue','-u',command('id','-un'),'-h','-o','%i|%T|%j|%b')
-    assert not queue,'Current queue needs manual audit before claiming no leftover jobs'
+    registered={r['job_id'] for r in read(CONTROL/'jobs.json')}
+    queue_rows=[dict(job_id=parts[0],state=parts[1],name=parts[2],resources=parts[3]) for parts in (line.split('|') for line in queue.splitlines())]
+    controlled_active=[r for r in queue_rows if r['job_id'].split('_')[0] in registered]
+    assert not controlled_active,'Registered jobs remain active'
+    external=[r for r in queue_rows if r not in controlled_active]
     dump(ROOT/'results/FINAL_QUEUE_AUDIT.json',dict(time_UTC=datetime.now(timezone.utc).isoformat(),
         command='squeue -u zailong -h -o %i|%T|%j|%b',stdout=queue,
         registered_allocations=len(ledger['allocations']),all_terminal=True,
-        GPU_hours=ledger['GPU_hours'],peak_concurrent_GPUs=ledger['peak_concurrent_GPUs'],remaining_jobs=[]))
+        GPU_hours=ledger['GPU_hours'],peak_concurrent_GPUs=ledger['peak_concurrent_GPUs'],remaining_controlled_jobs=[],external_jobs=external,external_jobs_not_cancelled=True))
     inputs=read(ROOT/'manifests/INPUTS.json');checked=[]
     for r in inputs['checked_files']:
         actual=sha(r['path']);assert actual==r['sha256']
@@ -82,6 +86,16 @@ def run():
             assert sum(r['success'] for r in rs)==record['complete_numerator']
             assert sum(all(r['success'] for r in rs if r['world_id']==world) for world in {r['world_id'] for r in rs})==record['all_four_trajectories_world_numerator']
         trajectory_checked=True
+    magnitude_checked=False
+    if (ROOT/'results/TRAJECTORY_MAGNITUDE_NUMERICAL_AUDIT.json').exists():
+        magnitude=read(ROOT/'results/TRAJECTORY_MAGNITUDE_NUMERICAL_AUDIT.json')
+        full=[json.loads(r) for r in gzip.decompress((ROOT/'results/selected_trajectory_magnitudes.jsonl.gz').read_bytes()).decode().splitlines()]
+        assert len(full)==magnitude['records']==19200 and magnitude['stored_prediction_checks']==300 and magnitude['mismatches']==0
+        for record in magnitude['table']:
+            rs=[r for r in full if (r['seed'],r['method'],r['step'])==(record['seed'],record['method'],record['step'])]
+            assert len(rs)==256 and sum(r['complete_to_step'] for r in rs)==record['complete_numerator']
+            assert sum(r['update_norm'] for r in rs)/256==record['mean_update_norm']
+        magnitude_checked=True
     suite=unittest.defaultTestLoader.loadTestsFromName('experiments.decoder_readout_invariance_editing_v1.tests.test_cpu')
     out=io.StringIO();test=unittest.TextTestRunner(stream=out,verbosity=2).run(suite)
     assert test.wasSuccessful()
@@ -94,10 +108,11 @@ def run():
         artifacts_hashes_verified=True,atomic_headlines_recomputed=True,
         selected_method_headlines_recomputed=selected_checked,
         selected_trajectory_headlines_recomputed=trajectory_checked,CPU_tests=test.testsRun,
+        selected_trajectory_magnitudes_recomputed=magnitude_checked,
         independent_test_status='BLOCKED_TEST_INTEGRITY',overall_status='BLOCKED',
         location_prefix='/dataset1/zailong/'))
     print(dict(passed=True,CPU_tests=test.testsRun,GPU_reports=len(GPU_reports),
-        input_files=len(checked),GPU_hours=ledger['GPU_hours'],queue=[]))
+        input_files=len(checked),GPU_hours=ledger['GPU_hours'],controlled_queue=[],external_jobs=external))
 
 
 if __name__=='__main__':run()

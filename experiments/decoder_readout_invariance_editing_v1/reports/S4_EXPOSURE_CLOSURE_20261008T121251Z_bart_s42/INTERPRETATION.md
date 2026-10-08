@@ -1,0 +1,1 @@
+Historical output texts can expose core worlds without explicitly reusing their world IDs. Metadata-only historical auditing was insufficient. Preserve the original fixed denominator and report the failure rather than silently relabeling a reduced pool as the original independent endpoint.

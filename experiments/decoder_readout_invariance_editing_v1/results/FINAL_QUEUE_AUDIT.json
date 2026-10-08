@@ -1,10 +1,19 @@
 {
-  "time_UTC": "2026-10-08T08:21:43.302507+00:00",
+  "time_UTC": "2026-10-08T11:57:56.456608+00:00",
   "command": "squeue -u zailong -h -o %i|%T|%j|%b",
-  "stdout": "",
-  "registered_allocations": 16,
+  "stdout": "3053|RUNNING|srf-response|gres/gpu:1",
+  "registered_allocations": 26,
   "all_terminal": true,
-  "GPU_hours": 2.3925,
+  "GPU_hours": 4.076666666666667,
   "peak_concurrent_GPUs": 2,
-  "remaining_jobs": []
+  "remaining_controlled_jobs": [],
+  "external_jobs": [
+    {
+      "job_id": "3053",
+      "state": "RUNNING",
+      "name": "srf-response",
+      "resources": "gres/gpu:1"
+    }
+  ],
+  "external_jobs_not_cancelled": true
 }

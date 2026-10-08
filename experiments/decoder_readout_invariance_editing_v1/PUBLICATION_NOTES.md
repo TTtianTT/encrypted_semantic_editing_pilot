@@ -1,1 +1,1 @@
-本轮可发表材料是native encoder-memory读出与局部因果干预、全量匹配训练的validation正/负结果，以及明确的数据完整性错误。不得声称独立机制编辑确认、全局语义零空间、唯一完整电路、错误历史状态恢复或长期编辑解决。数据派生core提前暴露5个原IID test world，正式test评测0，需显式预解封修订后才能新建确认结果；本轮现有validation不改名独立test。完整原始预测、失败、成本、三seed和norm差异公开，旧终态报告不覆盖。
+本轮可发表材料是native encoder-memory读出与局部因果干预、全量匹配训练的validation正/负结果，以及明确的数据完整性错误。不得声称独立机制编辑确认、全局语义零空间、唯一完整电路、错误历史状态恢复或长期编辑解决。正式test评测0；已知编码、生成及历史输出core暴露合并见FINAL_EXPOSURE_LOCK，123提案已撤回，无已授权修订终点。本轮现有validation不改名独立test。单操作机制方法未超过Output-only/Random-site；两步均值优势随seed/方向变号，三/五步均0。完整原始预测、失败、成本、三seed和norm差异公开，旧终态报告不覆盖。

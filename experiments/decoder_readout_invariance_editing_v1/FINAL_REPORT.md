@@ -2,13 +2,17 @@
 
 2026-10-08，Asia/Singapore；分支experiment/decoder-readout-invariance-editing-v1。用户确认“16例抽查通过”后，已完成具体KL/readout正则GPU梯度与8world过拟合验收，以及BART rank16四方法三个seed正式训练和全量validation单操作评测。此确认只解除I_keep人工抽查门槛，未授权变更独立test。
 
-**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；另经全量输出文本核验，T5Gemma下一操作输出还出现3个额外test core：drie_2a54d98b8359a00a, drie_afe8214e075315d0, drie_b6910a8334525244。正式test评测0不等于所有core未暴露。已保存暴露ID/原文/出处、原split SHA与门禁修复；不补搜，不静默改分母。原123提案因额外输出暴露已撤回，不能按旧提案批准解封；需完成跨分支原始输出审计，再提出准确分母。见DATA_EXPOSURE_CORRECTION、PREDICTED_CORE_EXPOSURE_AUDIT和S4_AMENDMENT_PROPOSAL。
+**完整研究计划仍未完成：独立S4为BLOCKED_TEST_INTEGRITY，正式test评测0。** 全部本轮方法比较是validation探索性证据。此前源颜色对照派生core漏检，提前编码了固定IID test的5/128 core；另经全量输出文本核验，T5Gemma下一操作输出还出现3个额外test core：drie_2a54d98b8359a00a, drie_afe8214e075315d0, drie_b6910a8334525244。正式test评测0不等于所有core未暴露。已保存暴露ID/原文/出处、原split SHA与门禁修复；不补搜，不静默改分母。原123提案因额外输出暴露已撤回，不能按旧提案批准解封；任何新终点都需要另行锁定和显式决定。见DATA_EXPOSURE_CORRECTION、PREDICTED_CORE_EXPOSURE_AUDIT和S4_AMENDMENT_PROPOSAL。
+
+完整保守审计已确认原test共12/128个core暴露，116/128暂未发现暴露；后者只是审计分类，不是已授权终点。历史原始输出审计覆盖21个冻结ref、16381个SHA去重文件、213495209个字符串字段，解析错误0。完整union ID、原文、文件/branch/blob SHA、prior train/validation匹配及审计范围见FINAL_EXPOSURE_LOCK与压缩历史审计。
+
+历史输出还出现13个train core及1个validation core（drie_6aee5bf620ba0936），原先只查含domain字段的world元数据不足以识别这些输出暴露。保留原192/64划分及已训练checkpoint，逐core登记先前暴露，不将它们改称本轮全新独立样本；现有validation结果均为探索性。实际可访问输出的完整原文与SHA保留，未访问文件、未记录会话或不符合解析文法的表达仍不能保证无暴露。
 
 ## 完成范围
 
 | 阶段 | 实际执行 | 仍缺失 |
 | --- | --- | --- |
-| 审计/CPU | 原分支HEAD、1321文件SHA、21分支暴露扫描、固定train192/val64/test128/reserved128；真实人工16例通过 | 已知5编码+3额外生成输出core暴露；原128独立终点已破坏；OOD为UNAVAILABLE |
+| 审计/CPU | 原分支HEAD、1321文件SHA、21分支元数据及完整可访问输出审计、固定train192/val64/test128/reserved128；真实人工16例通过 | 原test已知暴露12/128；原128独立终点已破坏；OOD为UNAVAILABLE |
 | S0 | BART FP32与原版T5Gemma BF16；memory注入、native无干预一致、mask/EOS/KV、H梯度、冻结参数、8world smoke通过 | 可选eager对齐失败已保留，不采用 |
 | S1 BART | train32/val32/旧replay8，共288严格pair、概率/有限路径/随机/源前缀/传播/真实generation scores | 独立机制确认及完整多token语义候选log-prob未完成 |
 | S2 BART | 全层discovery、固定L5/L0整层与head0双向K/V、native SDPA诊断、在线Q替换 | 无完整/唯一稀疏电路；未独立确认，top2/frozen-norm扩展未运行 |
@@ -93,6 +97,8 @@ Plain已完成的同预算训练、checkpoint及全量预测SHA匹配后复用�
 
 vsPlain提升不证明机制有额外价值；只有vsOutput-only和vsRandom-site才对应增量及组件特异性。负差值、区间含0、目标/内容下降和所有失败均保留。KL/readout正则可能保护混含目标的层输出，S2已经观察到这种反证。选定checkpoint的事实不替代独立确认。
 
+单操作主终点没有发现机制增量：三seed合并Mechanism-guided4579/4608（99.3707%），Output-only4580/4608（99.3924%），Random-site4579/4608（99.3707%），Plain4608/4608（100%）。Mechanism−Output −0.021701百分点，CI95 [−0.238715,0.173611]；Mechanism−Random约0，CI95 [−0.130208,0.108507]。相比Original各seed768/1536，四种新方法保留明显原子改善；相对Plain，加入正则出现少量目标/内容失败，不能描述成原子能力完全无损。
+
 ## 原子与长期能力
 
 64 validation worlds，每world两个固定操作顺序及两个方向。全部从自然起点出发，后续只使用各方法自己的latent输出，不重置gold state。完整轨迹要求每个步骤正确，不能以最后一步替代整链成功。Original/Plain旧轨迹和checkpoint/hash匹配后复用，原allocation已经计费。
@@ -117,6 +123,10 @@ vsPlain提升不证明机制有额外价值；只有vsOutput-only和vsRandom-sit
 
 逐步target/content/parse/EOS、顺序/逆方向、20,000次paired world-cluster差值和原始world differences见SELECTED_TRAJECTORY_NUMERICAL_AUDIT与CSV。每seed每长度256条相关轨迹对应64独立core world；另给“同world四条轨迹全部成功”的Wilson区间，避免0/100% bootstrap退化被解读为确定总体效果。三seed只代表已锁定checkpoint。单操作提升不能写成长期编辑解决，validation上的长链差异也不能写成独立test证据。
 
+两步Mechanism-guided的seed42/43/44分别为0/124/7，Output-only为0/19/55，Random-site为0/66/54，分母各256。机制方法优势集中在seed43的forward方向（两种顺序64/64和60/64）；该seed inverse方向均0/64，seed44则低于两种强对照。三seed固定checkpoint均值差：vsOutput-only +7.421875百分点，world-cluster CI95 [5.859375,8.984375]；vsRandom-site +1.432292百分点，CI95 [0.130208,2.734375]。这些区间没有反映新训练seed总体的不确定性，不能从均值写成seed稳定收益。所有方法所有seed的三步和五步均0/256；“同world四条两步轨迹全部成功”也均0/64，Wilson95上界约5.6624%。
+
+补充posthoc范数诊断复播19,200个已锁定latent步骤，首world共300次stored预测复核全部一致，算法/checkpoint不变。第二步机制平均update norm随seed为8.2915/8.9968/9.1566，Output-only为10.0234/11.5681/10.6247，Random-site为8.4981/8.4287/8.6517；幅度不同且成功差值随seed变号。预锁norm bins及完整有效token范数已报告，这些分层是描述性证据，不是随机化的等范数算法因果对照。
+
 ## 原版T5Gemma
 
 使用原google/t5gemma-2b-2b-ul2-it BF16，未替换模型。train16/16和validation16/16 world各获得一个严格E_future_plus:E_past_minus pair；不是主动构造搜索，不要求下一操作分叉。最大有效memory差值norm444.5026245，768 token-pair，最大JS3.7178426e−5。旧next-fork资格不适用于当前面板A。
@@ -125,7 +135,9 @@ vsPlain提升不证明机制有额外价值；只有vsOutput-only和vsRandom-sit
 
 ## 资源、终态发布与复现
 
-最新账本：23个allocation，总4.023056 GPU-hours，峰值2GPU；全部终态=True。预算40 GPU-hours，失败/重试计入，allocation计费不重复.batch/.extern/srun steps。最后实时队列以results/FINAL_QUEUE_AUDIT为准，不能以旧STATUS猜当前作业。
+最新账本：26个allocation，总4.076667 GPU-hours，峰值2GPU；全部终态=True。预算40 GPU-hours，失败/重试计入，allocation计费不重复.batch/.extern/srun steps。最后实时队列以results/FINAL_QUEUE_AUDIT为准，不能以旧STATUS猜当前作业。
+
+FINAL_QUEUE_AUDIT区分受控作业与用户其他项目作业：本实验remaining_controlled_jobs为空；外部srf-response作业3053使用一GPU、不在本调度器登记表中，未取消，其启动19:51:16晚于本实验最后allocation结束19:46:05，未与最后两GPU核验批次重叠。外部作业不计入本轮GPU-hours，不宣称用户账户全部队列为空。
 
 所有神经工作经唯一submit_stage→sbatch→srun，从不可变snapshot执行；没有登录节点神经工作或覆盖CUDA_VISIBLE_DEVICES。全项目外部锁/登记/squeue/sacct门禁最多两GPU，一个stage结束后才启动新array。所有新worktree、tmp/cache、环境尝试、checkpoint、日志、大产物和外部ledger在/dataset1/zailong/；原工作区/未提交历史未改。每terminal run全量记录独立核验、数字报告、commit/push/remote SHA核验，失败也发布。最后commit及远端回执在外部.decoder-readout-control-v1/final_receipt.json，避免commit内写自身SHA。
 

@@ -34,6 +34,17 @@ def update_registry():
                     w=lookup[wid];changed=dict(w,color='red' if w['color']!='red' else 'blue');key=core(changed)
                     rec=by.setdefault(key,dict(core_content=list(key),core_hash=objsha(key),history_and_checkpoint_provenance='counterfactual color donor, retained exposure correction',exposures=[]))
                     rec['exposures'].append(dict(experiment='decoder_readout_invariance_editing_v1',stage=task['stage'],model=task['model'],seed=task['seed'],recipient_world_id=wid,recipient_split=w['split'],template=0,exposure='neural encoder/value projection control',proof_path=str(output),proof_sha256=sha(output),manifest_sha256=sha(reg['manifest']),checkpoint_hash=task['checkpoint_hash'],counterfactual_core=True))
+    for name in ('PREDICTED_CORE_EXPOSURE_AUDIT.json','HISTORICAL_OUTPUT_EXPOSURE_AUDIT.json'):
+        audit_path=ROOT/'results'/name
+        if not audit_path.exists():continue
+        digest=sha(audit_path);grouped={}
+        for hit in read(audit_path)['hits']:
+            key=tuple(hit['core_content']);grouped.setdefault(key,[]).append(hit)
+        for key,hits in grouped.items():
+            hit=hits[0]
+            rec=by.setdefault(key,dict(core_content=list(key),core_hash=objsha(key),history_and_checkpoint_provenance='actual output text conservatively counted as core exposure',exposures=[]))
+            entry=dict(experiment='decoder_readout_invariance_editing_v1' if name.startswith('PREDICTED') else 'historical_output_audit',world_id=hit['world_id'],declared_split=hit['split'],exposure='complete core appears in actual stored output; includes malformed grammar conservatively',proof_path=str(audit_path),proof_sha256=digest,matching_output_records=len(hits),representative_output_source=hit.get('source',hit.get('file')),representative_output_field=hit['field'])
+            if entry not in rec['exposures']:rec['exposures'].append(entry)
     jsonl(ROOT/'world_exposure_registry.jsonl',[rec for key,rec in sorted(by.items())])
     return dict(core_records=len(by),historical_core_records=len(records),source='actual qualification/source-cache/terminal artifacts; no inference on metadata CPU')
 

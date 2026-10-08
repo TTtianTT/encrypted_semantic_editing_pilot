@@ -37,6 +37,7 @@ def audit():
                         hits.append(dict(world_id=w['world_id'],split=w['split'],core_content=list(key),field='/'.join((str(index),)+field),text=s,source=source,source_sha256=digest))
         except (ValueError,UnicodeError,OSError) as exc:errors.append(dict(source=source,error=repr(exc)))
         scanned.append(dict(source=source,sha256=digest,bytes=len(raw),text_fields=count))
+        if len(scanned)%25==0:print(dict(files_scanned=len(scanned),bytes_scanned=sum(r['bytes'] for r in scanned),text_fields_scanned=text_count,matched_records=len(hits)),flush=True)
     for blob,source in sorted(blobs.items()):
         raw=subprocess.check_output(['git','cat-file','blob',blob],cwd=WT)
         consume(raw,source[0]['path'],dict(git_blob=blob,refs=source))

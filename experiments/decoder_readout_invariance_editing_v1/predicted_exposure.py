@@ -5,7 +5,11 @@ from .common import *
 
 
 def text_cores(value):
-    text=re.sub(r'\s+',' ',value.lower().replace('\u2019',"'"))
+    lower=value.lower().replace('\u2019',"'")
+    # Necessary lexical markers for either accepted complete-core grammar.
+    # Skipping other metadata strings preserves exactly the same parser result.
+    if 'status' not in lower or ('cop' not in lower and 'quantity' not in lower):return set()
+    text=re.sub(r'\s+',' ',lower)
     facts=re.findall(r'the ([a-z]+) is (blue|red|green|white|black)\.',text)
     quantities=re.findall(r'there (?:are|is) ([1-9]) cop(?:y|ies)\.',text)
     statuses=re.findall(r'its status is (planned|completed|cancelled)\.',text)
