@@ -15,6 +15,7 @@ TASK_TMP.mkdir(parents=True, exist_ok=True)
 os.environ['TMPDIR'] = str(TASK_TMP)
 tempfile.tempdir = str(TASK_TMP)
 for key, folder in {'MPLCONFIGDIR':'matplotlib','PIP_CACHE_DIR':'pip',
+                    'XDG_CACHE_HOME':'xdg','HF_HOME':'huggingface',
                     'TORCHINDUCTOR_CACHE_DIR':'torchinductor','TRITON_CACHE_DIR':'triton'}.items():
     os.environ[key] = str(CONTROL / 'cache' / folder)
 PYTHON = PROJECT / '.venv/bin/python'

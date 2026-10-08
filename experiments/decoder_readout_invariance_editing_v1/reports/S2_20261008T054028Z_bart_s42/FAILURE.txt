@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S2_20261008T054028Z/experiments/decoder_readout_invariance_editing_v1/run_stage.py", line 47, in main
+    result=run(engine,folder)
+           ^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S2_20261008T054028Z/experiments/decoder_readout_invariance_editing_v1/causal.py", line 44, in run
+    assert reconstruction_error<=3e-6,'Native SDPA AV reconstruction failed local acceptance'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Native SDPA AV reconstruction failed local acceptance

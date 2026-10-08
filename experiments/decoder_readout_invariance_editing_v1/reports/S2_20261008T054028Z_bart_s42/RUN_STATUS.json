@@ -1,0 +1,57 @@
+{
+  "status": "FAILED_TECHNICAL",
+  "stage": "S2",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3024",
+  "array_job_id": "3024",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-08T05:40:47.663720+00:00",
+  "manifest_hash": "b3744fad181255dc45cb587b6d66fe75f2701cafcb42c1dfd3d70709d434683a",
+  "code_hash": "f35ba8c2b3fefb8eb5da2abd9892cddb77187f000541b442b5c8a8a645942d5e",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 0,
+  "remaining_samples": 72,
+  "exit_code": 1,
+  "error": "AssertionError('Native SDPA AV reconstruction failed local acceptance')",
+  "traceback": "Traceback (most recent call last):\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S2_20261008T054028Z/experiments/decoder_readout_invariance_editing_v1/run_stage.py\", line 47, in main\n    result=run(engine,folder)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S2_20261008T054028Z/experiments/decoder_readout_invariance_editing_v1/causal.py\", line 44, in run\n    assert reconstruction_error<=3e-6,'Native SDPA AV reconstruction failed local acceptance'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native SDPA AV reconstruction failed local acceptance\n",
+  "ended": "2026-10-08T05:41:20.036071+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 605137920,
+    "wall_seconds": 10.967446140988613,
+    "job_id": "3024",
+    "step_id": "0"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S2_20261008T054028Z/bart_s42/FAILURE.txt",
+      "sha256": "2249e0106916a9c045eb2dddf8258f2b4da6efa20b672920b81eefbc6d7a7a23",
+      "bytes": 1017
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S2_20261008T054028Z/bart_s42/drie_013a626fe072d215_qualification.jsonl",
+      "sha256": "29df35fd29a52aeee9fe191d2db99706dc0f62de2b6aa75869aa2d1aed9e99dd",
+      "bytes": 6172
+    }
+  ],
+  "allocation": {
+    "job_id": "3024_0",
+    "state": "FAILED",
+    "elapsed_seconds": 38,
+    "GPUs": 1,
+    "GPU_hours": 0.010555555555555556,
+    "start": "2026-10-08T13:40:43",
+    "end": "2026-10-08T13:41:21",
+    "exit_code": "1:0"
+  }
+}
