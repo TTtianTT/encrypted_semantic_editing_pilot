@@ -49,12 +49,18 @@ def main():
         elif t['stage'] in ('S2','S2_NATIVE'):
             from .causal import run
             result=run(engine,folder)
+        elif t['stage']=='S2_QUERY_BRIDGE':
+            from .query_bridge import run
+            result=run(engine,folder)
         elif t['stage'] in ('S3_SELECT','S3_MAIN'):
             from .training import run
             result=run(engine,folder)
         elif t['stage']=='S3_PLAIN':
             from .training import run_plain
             result=run_plain(engine,folder)
+        elif t['stage']=='S3_VALIDATION_TRAJECTORIES':
+            from .validation_trajectories import run
+            result=run(engine,folder)
         elif t['stage']=='T5_QUALIFICATION':
             from .t5_qualification import run
             result=run(engine,folder)

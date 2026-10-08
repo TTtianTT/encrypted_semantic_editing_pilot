@@ -61,7 +61,10 @@ def pairs(eng,w,folder):
     states={};h,m=eng.encode([render(w,0)]);states['N']=(h,m)
     for name,hist in [('E_future_plus','future_plus'),('E_past_minus','past_minus')]:states[name]=eng.history(w,history=hist)
     pred={n:eng.evaluate(*hm,w,0) for n,hm in states.items()}
-    states['R']=eng.encode([pred['E_future_plus']['text']]);pred['R']=eng.evaluate(*states['R'],w,0)
+    # Re-encoding an incorrect content output could introduce a different reserved
+    # core. Such an E:R pair cannot qualify anyway; record it without encoding.
+    if pred['E_future_plus']['score']['preserved'] and pred['E_future_plus']['score']['parseable']:
+        states['R']=eng.encode([pred['E_future_plus']['text']]);pred['R']=eng.evaluate(*states['R'],w,0)
     if eng.name=='bart':
         pca_path=read(ROOT/'manifests/INPUTS.json').get('PCA_path')
         if pca_path:
@@ -72,7 +75,8 @@ def pairs(eng,w,folder):
     order=[('E_future_plus','N'),('E_past_minus','N'),('E_future_plus','E_past_minus'),('E_future_plus','R'),('E_future_plus','P')]
     seen=[]
     for an,bn in order:
-        if an not in states or bn not in states:continue
+        if an not in states or bn not in states:
+            records.append(dict(world_id=w['world_id'],split=w['split'],source_pair=an+':'+bn,eligible=False,reasons=['SOURCE_UNAVAILABLE_CONTENT_PROVENANCE_GUARD'],delta_norm=None,a=pred.get(an),b=pred.get(bn),length=None,qualification_requires_next_fork=False));continue
         a,ma=states[an];b,mb=states[bn];pa,pb=pred[an],pred[bn]
         reasons=[];same_shape=a.shape==b.shape and torch.equal(ma,mb)
         if not(pa['score']['success'] and pb['score']['success']):reasons.append('CURRENT_NOT_DOUBLE_CORRECT')

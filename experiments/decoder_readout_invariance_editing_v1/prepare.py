@@ -49,7 +49,10 @@ def initialize():
 
 def prepare(stage):
     initialize()
-    if stage not in ('S0','S1','S1_NATIVE','S2','S2_NATIVE','S3_SELECT','S3_MAIN','S3_PLAIN','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
+    if stage=='S4' and (ROOT/'configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json').exists():
+        dump(ROOT/'results/S4_SUBMISSION_STATUS.json',dict(status='BLOCKED_TEST_INTEGRITY',reason='Five counterfactual donor cores were encoded before S4; fixed full128 independent endpoint is compromised',original_scan_denominator=128,replacement_sampling=False,formal_test_evaluations=0))
+        raise RuntimeError('BLOCKED_TEST_INTEGRITY; preserve fixed scan and exposure audit, do not silently substitute a new endpoint')
+    if stage not in ('S0','S1','S1_NATIVE','S2','S2_NATIVE','S2_QUERY_BRIDGE','S3_SELECT','S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES','T5_QUALIFICATION','PARITY_DIAG'):raise RuntimeError('Stage implementation/gates must exist before preparation')
     path=ROOT/f'manifests/{stage}.json'
     if path.exists():print(path);return
     inp=read(ROOT/'manifests/INPUTS.json');tasks=[]
@@ -59,16 +62,17 @@ def prepare(stage):
             assert accepted and read(accepted[-1])['passed'],'Model S0 acceptance required'
         ck=next(e for e in inp['editors'] if e['model']==model and e['seed']==42)
         tasks.append(dict(model=model,seed=42,checkpoint=ck['path'],checkpoint_hash=ck['sha256'],stage=stage))
-    if stage in ('S2','S2_NATIVE'):assert (ROOT/'configs/S2_CANDIDATES.json').exists()
-    if stage.startswith('S3') and stage!='S3_PLAIN':
+    if stage.startswith('S2'):assert (ROOT/'configs/S2_CANDIDATES.json').exists()
+    if stage.startswith('S3') and stage not in ('S3_PLAIN','S3_VALIDATION_TRAJECTORIES'):
         assert (ROOT/'configs/MECHANISM_LOCK.json').exists()
         assert read(ROOT/'configs/KEEP_MASK_REVIEW_LOCK.json')['reviewed_by_human']
-    if stage in ('S3_MAIN','S3_PLAIN'):
+    if stage in ('S3_MAIN','S3_PLAIN','S3_VALIDATION_TRAJECTORIES'):
         if stage=='S3_MAIN':assert (ROOT/'configs/TRAINING_SELECTION_LOCK.json').exists()
         tasks=[]
         for seed in ((43,44) if stage=='S3_MAIN' else (42,43,44)):
             ck=next(e for e in inp['editors'] if e['model']=='bart' and e['seed']==seed)
             tasks.append(dict(model='bart',seed=seed,checkpoint=ck['path'],checkpoint_hash=ck['sha256'],stage=stage))
+    if stage=='S3_VALIDATION_TRAJECTORIES':assert (ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json').exists()
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ');snapshot=ROOT/f'local/snapshots/{stage}_{stamp}'
     target=snapshot/'experiments'/ROOT.name;target.mkdir(parents=True)
     for p in ROOT.glob('*.py'):shutil.copy2(p,target/p.name)
@@ -79,6 +83,8 @@ def prepare(stage):
     filehash={str(p.relative_to(snapshot)):sha(p) for p in snapshot.rglob('*') if p.is_file()}
     hours=1 if stage in ('S0','T5_QUALIFICATION') else .25 if stage=='PARITY_DIAG' else 3
     manifest=dict(stage=stage,version=stamp,snapshot=str(snapshot),output_root=str(ROOT/'local/runs'/f'{stage}_{stamp}'),tasks=tasks,python=str(PYTHON),partition='B300q',walltime='01:00:00' if stage in ('S0','T5_QUALIFICATION') else '00:15:00' if stage=='PARITY_DIAG' else '03:00:00',reservation_GPU_hours=len(tasks)*hours,gpus_per_task=1,files=filehash,config_hash=sha(ROOT/'protocol.yaml'),split_hash=sha(ROOT/'configs/SPLIT_LOCK.json'),worlds_hash=sha(ROOT/'configs/worlds.jsonl'),checkpoint_hashes={t['checkpoint']:t['checkpoint_hash'] for t in tasks})
+    if stage=='S3_VALIDATION_TRAJECTORIES':
+        for item in read(ROOT/'configs/PLAIN_CHECKPOINT_LOCK.json')['checkpoints']:manifest['checkpoint_hashes'][item['path']]=item['sha256']
     dump(path,manifest)
     print(path)
 

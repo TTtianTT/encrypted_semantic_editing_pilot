@@ -34,8 +34,17 @@ def collect(stage):
         summary=read(folder/'SUMMARY.json') if (folder/'SUMMARY.json').exists() else {}
         smoke=summary.get('overfit',{});n=summary.get('worlds',status.get('completed_samples',0))
         outcome=f"8-world smoke联合成功：{smoke.get('joint_success','NA')}/8；CE {smoke.get('initial_CE','NA')} → {smoke.get('final_CE','NA')}，更新{smoke.get('updates','NA')}。这些为训练验收数据，不是方法独立效果。" if stage=='S0' else '结果：'+json.dumps(summary,ensure_ascii=False)+'\n\n失败原因：'+status.get('error','无')
+        interpretation='本run仅实施工具/梯度/训练loss验收。任何科学效应不能由此推断。失败为技术阻塞，不是0%科学结果；未运行项为NA。\n'
+        if stage=='S3_PLAIN' and status['status']=='COMPLETED':
+            samples=rows(folder/'Plain/Plain_validation.jsonl');scores=[r['prediction']['score'] for r in samples];den=len(scores)
+            recomputed=dict(denominator=den,worlds=len({r['world_id'] for r in samples}),joint=sum(r['success'] for r in scores)/den,content=sum(r['preserved'] for r in scores)/den,target=sum(r['target'] for r in scores)/den)
+            assert recomputed==summary['validation'],'Validation headline disagrees with complete predictions'
+            audit=dict(recomputed=recomputed,numerators={key:sum(r[field] for r in scores) for key,field in [('joint','success'),('target','target'),('content','preserved')]},sources={source:dict(denominator=sum(r['source']==source for r in samples),joint_numerator=sum(r['prediction']['score']['success'] for r in samples if r['source']==source)) for source in ('natural','history')},independent_worlds=64,scientific_status='VALIDATION_ONLY',frozen_backbone_unchanged=summary['frozen_backbone_sha_before']==summary['frozen_backbone_sha_after'],history_unchanged=summary['frozen_history_sha_before']==summary['frozen_history_sha_after'])
+            dump(dest/'NUMERICAL_AUDIT.json',audit)
+            outcome+='\n\n完整逐样本重算：'+json.dumps(audit,ensure_ascii=False)
+            interpretation='Plain rank16正式复训192 train worlds，400 updates；64 validation worlds、每world12合法操作×2来源。输入仅H/mask/op、一次latent forward，无donor/目标文本/重编码/推理反传。内容mask没有用于此loss。数字仅为validation参考；不能替代Output-only、真实/随机机制对照或独立test。长期结果本run未执行。\n'
         report=f"""# {stage} {task['model']} seed{task['seed']} 终态\n\n状态：{status['status']}；Slurm {allocation['job_id']} / {allocation['state']}。完成world {n}；剩余{status.get('remaining_samples','NA')}；独立test访问0。GPU-hours={allocation['GPU_hours']:.6f}，本轮累计={acct['GPU_hours']:.6f}，登记allocation峰值={acct['peak_concurrent_GPUs']} GPU。\n\n{outcome}\n\n当前机制、机制相对Output-only/Random-site编辑收益、原子与长期能力、新T5Gemma独立资格均为NA，尚未执行。技术验收失败阻断该模型后续分析，不删除world通过。关键失败详细记录在 FAILURE.txt / 原始压缩日志。\n\n所有源代码来自manifest指向的immutable snapshot；checkpoint、split、代码SHA在RUN_STATUS/manifest。完整逐样本记录及日志压缩提交；大产物路径与SHA索引见 ARTIFACTS.json。\n"""
-        text(dest/'REPORT.md',report);text(dest/'INTERPRETATION.md','本run仅实施工具/梯度/训练loss验收。任何科学效应不能由此推断。失败为技术阻塞，不是0%科学结果；未运行项为NA。\n')
+        text(dest/'REPORT.md',report);text(dest/'INTERPRETATION.md',interpretation)
         dump(dest/'ARTIFACTS.json',[dict(path=str(p),sha256=sha(p),bytes=p.stat().st_size) for p in folder.rglob('*') if p.is_file()])
         print(str(dest),status['status'])
     return acct

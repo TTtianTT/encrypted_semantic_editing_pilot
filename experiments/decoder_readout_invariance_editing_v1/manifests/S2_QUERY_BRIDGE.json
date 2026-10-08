@@ -1,21 +1,21 @@
 {
-  "stage": "T5_QUALIFICATION",
-  "version": "20261008T055543Z",
-  "snapshot": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/T5_QUALIFICATION_20261008T055543Z",
-  "output_root": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/T5_QUALIFICATION_20261008T055543Z",
+  "stage": "S2_QUERY_BRIDGE",
+  "version": "20261008T060231Z",
+  "snapshot": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S2_QUERY_BRIDGE_20261008T060231Z",
+  "output_root": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S2_QUERY_BRIDGE_20261008T060231Z",
   "tasks": [
     {
-      "model": "t5gemma",
+      "model": "bart",
       "seed": 42,
-      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt",
-      "checkpoint_hash": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447",
-      "stage": "T5_QUALIFICATION"
+      "checkpoint": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt",
+      "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+      "stage": "S2_QUERY_BRIDGE"
     }
   ],
   "python": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python",
   "partition": "B300q",
-  "walltime": "01:00:00",
-  "reservation_GPU_hours": 1,
+  "walltime": "03:00:00",
+  "reservation_GPU_hours": 3,
   "gpus_per_task": 1,
   "files": {
     "experiments/decoder_readout_invariance_editing_v1/collect.py": "7ab20b624486ddf0db4c8198b9814c6078d109abc51ef4feb7f24fface5461fa",
@@ -29,12 +29,14 @@
     "experiments/decoder_readout_invariance_editing_v1/metrics.py": "fefad6bb203f81b1e889a1efed450108ddb312a877a9d4ae27a0b57baf69db0a",
     "experiments/decoder_readout_invariance_editing_v1/causal.py": "7874d220f98ba847290e82074e7413efd78ac6406f4b6eeefc09e7f64d7c036b",
     "experiments/decoder_readout_invariance_editing_v1/evaluation.py": "2cedfdd03fa1c6920a084e65253cdaaca161b435c815a80cb9f99676b00c3038",
-    "experiments/decoder_readout_invariance_editing_v1/run_stage.py": "621869276f10779896bab6ef5d69fc80a194cce07ed24f04729f747907f09a5b",
+    "experiments/decoder_readout_invariance_editing_v1/validation_trajectories.py": "9823419a7dffafadfa68436a214216a8fb7385e9241d76c012bdec6700081412",
+    "experiments/decoder_readout_invariance_editing_v1/run_stage.py": "027f22bea589bf4fb8e4d53f9879f1d7447cc8f3e5798cb4b72d48863671939f",
     "experiments/decoder_readout_invariance_editing_v1/publish.py": "5325c1463fb6e5f648e475356531503a7c4c75cac340cd119938d8feaab24b29",
+    "experiments/decoder_readout_invariance_editing_v1/query_bridge.py": "d41feaf06497a8819fc1440ba3422a0e857386c1982ad011731f04ff71103df4",
     "experiments/decoder_readout_invariance_editing_v1/__init__.py": "28d33ec7f0862cdb9410e99d76f28e159b2d568641776feaa6f1503e2feddd22",
     "experiments/decoder_readout_invariance_editing_v1/exposure.py": "63383102471114a3b650f1ec6540ec9635a9249c79ec25e45d1d2fa91242fe0d",
     "experiments/decoder_readout_invariance_editing_v1/acceptance.py": "5b947abf7865d66cdd4d8fc7682754734242b646f17a79a64a75efaba4561711",
-    "experiments/decoder_readout_invariance_editing_v1/prepare.py": "28af7d45448e34c1e2624ffd0009dee6b97b068a901babf15708dffe27596391",
+    "experiments/decoder_readout_invariance_editing_v1/prepare.py": "0d35329b83859665b28ee98a9d68d309ae9cce6131a90a6e2f7c49fd49defb64",
     "experiments/decoder_readout_invariance_editing_v1/t5_qualification.py": "590efbabd4bfbc21128c3b97005ed893e62724e18e93672f4dc11384f7e2dd64",
     "experiments/decoder_readout_invariance_editing_v1/protocol.yaml": "04d99e41b450fabfb47a88e19e5109565ec177ed6c27e6eb98ff6429e12c3911",
     "experiments/decoder_readout_invariance_editing_v1/readout.py": "0bfdad9ffef7be8a43283be91abb84ca8d1952080c7e86951fb994411acf3a4d",
@@ -155,6 +157,7 @@
     "experiments/decoder_readout_invariance_editing_v1/manifests/S3_PLAIN.json": "92f706d03446e1fae36b16f69e67ffdf4e87ee9356567c880e7541144869d9f9",
     "experiments/decoder_readout_invariance_editing_v1/manifests/S0_registration.json": "93262f1935e14c0cb31472f9f17c7f0d8581ebe41a0131afc226fb2db9d6d1e1",
     "experiments/decoder_readout_invariance_editing_v1/manifests/S1_NATIVE_registration.json": "dcfb928045bdc52cedc71196de1f05f5b6e2f0b8f87802a9c81f14e9f445e713",
+    "experiments/decoder_readout_invariance_editing_v1/manifests/T5_QUALIFICATION.json": "11d2e646476cbb0baf9c9e8c3cf3e046d657d5a03c20d3ccda9d6729a9ed920e",
     "experiments/decoder_readout_invariance_editing_v1/manifests/S2.json": "b3744fad181255dc45cb587b6d66fe75f2701cafcb42c1dfd3d70709d434683a",
     "experiments/decoder_readout_invariance_editing_v1/manifests/exposure_inventory.json": "e3d4f945b285d9e315311872470dbb1db21a5639fde022f39a905d33964244bd",
     "experiments/decoder_readout_invariance_editing_v1/manifests/S2_NATIVE.json": "5fe1e063a453cd0b6882e0df31c59c179776d76b10cf8f68cfee13d3351e643e",
@@ -172,6 +175,6 @@
   "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
   "worlds_hash": "aab11038c94411222ce2b716428b8b8f4153e327bd8e3acc93b2cbee38098a80",
   "checkpoint_hashes": {
-    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/t5gemma_time_s42/P/best.pt": "fe1451e9d8df8fc6e0b106a2cc9523ab7f8eff091ad542730c322d8423637447"
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b"
   }
 }

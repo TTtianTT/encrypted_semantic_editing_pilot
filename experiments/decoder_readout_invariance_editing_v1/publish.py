@@ -18,7 +18,8 @@ def publish(stage):
                 # Stage only this terminal report and shared implementation/metadata.
                 changed=command('git','diff','--name-only','HEAD').splitlines()+command('git','ls-files','--others','--exclude-standard').splitlines()
                 base=str(ROOT.relative_to(WT))+'/'
-                paths=[p for p in changed if p.startswith(base) and ('/reports/' not in p or p.startswith(str(folder.relative_to(WT))+'/'))]
+                report_root=str((ROOT/'reports').relative_to(WT))
+                paths=[p for p in changed if p.startswith(base) and ('/reports/' not in p or str(Path(p).parent)==report_root or p.startswith(str(folder.relative_to(WT))+'/'))]
                 if paths:command('git','add','--',*paths)
                 command('git','commit','-m','drie-v1: '+folder.name+' terminal results and limitations')
                 old=dict(run=key,commit=command('git','rev-parse','HEAD'),status='PUSH_PENDING');receipts.append(old);dump(CONTROL/'publications.json',receipts)

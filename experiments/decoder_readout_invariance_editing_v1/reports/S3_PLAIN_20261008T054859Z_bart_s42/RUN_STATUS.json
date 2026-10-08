@@ -1,0 +1,1370 @@
+{
+  "status": "COMPLETED",
+  "stage": "S3_PLAIN",
+  "model": "bart",
+  "seed": 42,
+  "job_id": "3027",
+  "array_job_id": "3026",
+  "task_index": 0,
+  "step_id": "0",
+  "started": "2026-10-08T05:55:03.312643+00:00",
+  "manifest_hash": "92f706d03446e1fae36b16f69e67ffdf4e87ee9356567c880e7541144869d9f9",
+  "code_hash": "91a6083a5e430356d96a73f715eb0e07f4eed0b38c6598a313bfa12951c83db9",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+  "completed_samples": 256,
+  "remaining_samples": 0,
+  "exit_code": 0,
+  "ended": "2026-10-08T06:03:02.163702+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 650343936,
+    "wall_seconds": 463.40065412200056,
+    "job_id": "3027",
+    "step_id": "0"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/PLAIN_SUMMARY.json",
+      "sha256": "30905f3e3d3da8a2bf6e9281fe6e4fc22939814baaf96a99685a1f32a6c482d9",
+      "bytes": 93
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/SUMMARY.json",
+      "sha256": "c3a19c7341c627e65d571047cc1ee2192a3a7222041fbd4bf452e303f2174a5f",
+      "bytes": 1383
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_cache.pt",
+      "sha256": "27ba27d64b8fefddd7a914b62028c069d001b7c5256beb07ecb06a7e33731ead",
+      "bytes": 2121724277
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7ec9c4e11532e597.pt",
+      "sha256": "63e6176fd2a084af51569234c325afba6ecbfc8f699c59676fc7e248bd8574c7",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f1942e7cfb9f1b0c.pt",
+      "sha256": "0980f79e1c70c81118318b655cd262b70b37a1f9d2445b1aed4c8e4742e17942",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4f8170c47bab4224.pt",
+      "sha256": "5eb8b5248377cf4a027cbecf7a6b65fd330d7291792ea9c35a047a7c38787b54",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_22ce93278726bb0d.pt",
+      "sha256": "dab0a476069e16c105831cc54eb12ff28022df69d872cf9a0f0d04d8d1b04f88",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_55ba58dbd7f66299.pt",
+      "sha256": "6a89a0cee3dfc1abdf2bf66911716d1c392991d643a370350104a94002f65120",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2213b9a1cfa4a571.pt",
+      "sha256": "0a7cf7ae5b045805cd00f51f6b61bf3e47f5ab2ee69890ec4cb915b28bfe23bc",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_52a4a5e3f693fdf8.pt",
+      "sha256": "1e5f462bf1baab0d834d88d2b2b29cde6085204d4e87dc74f867019f3187bc6f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_240d840e8e3e435a.pt",
+      "sha256": "e4ccffaa92f4a241c9f837fbc4bcb9f405ea145ad1655044e7d190f70b5ffda1",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_45897765d87c1308.pt",
+      "sha256": "d8f031ccfaa0a449700c35230fca48102473e9d60d1024f68306deafbd813c92",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ca84dde9bd850b29.pt",
+      "sha256": "daf74f721b14ecf1063056246bfffc923507cb994de81d156db76a8794ba8309",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_8a1b397e3adfec44.pt",
+      "sha256": "4be33de29ee6c41f03cc445b4a91af3916230315d727cbb6bb5623e65802fe5d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a80b5be23b0f0f46.pt",
+      "sha256": "0cb1fb8d295726bec00a862967c3c5b1134772f12606023f7b9fecdc2f693aad",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4e1e65bea3faf16d.pt",
+      "sha256": "75fd8cb5fe3bb998542a4844fd1b4137ce2f72873b7c2c14163f88ba08f4083b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a916426620b5b7f5.pt",
+      "sha256": "3e1494b43679e0172c82410e753c4515ba60e6760f49e370abf0784888c2c31e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3f961547b6e84fb5.pt",
+      "sha256": "6b9a5ee1d21fa013c167bb6e879b11ab3ee65ad034d59c4a1efbcbdc744b90f0",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_463b43d0ceabda66.pt",
+      "sha256": "3528ec8209f3e0fd77179358309ed99f14cf9192021958465c38b04aa7d158c8",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6cab22f993999b37.pt",
+      "sha256": "36326ea0f2f607a521075d5f9977de1b0e1c6f02df5c766a9e9caea4a104f10f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d30d55122cf6171e.pt",
+      "sha256": "c11d7d4d8a93820485e771f9a912edf7015b3eda33aa4bcc41d4dc25b740419a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_33cb9615a22d0b69.pt",
+      "sha256": "eed86e419b6bf08c4cd562881663a652d0039b1aa7cff9af835046dc179c4e0a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_90e8d55914151f87.pt",
+      "sha256": "dcb26ac679b6ae8e4ff58dfa319ac45130e829fb5f4417a634ffa63c320f0f9b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_919b2a6e721e6f08.pt",
+      "sha256": "b43de58fb4a6fcb0e4dac0559b5cd0cb8f537b094ce525827ddff7607c81d0c8",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_472ff3c89e620aec.pt",
+      "sha256": "45b8d190df2b3e6cc9ed252eb2b65b73dc808f83cc83fc0221fad029dfb6a25a",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_14c0b91c5c9bdb8e.pt",
+      "sha256": "10b8b42f048426008db7d47a9c36094c3aefb2f4935dc7415e25b54cafa84b31",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d902a3fd6c31f347.pt",
+      "sha256": "e24519ccbb7272f193d3151321bb84a892d2d4054e709f2e2c724ebb53345bb6",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6583264935834809.pt",
+      "sha256": "da6215533513219296c22a9a303d6bd101815bd58f2b0bf8ac18b3ae186e5afd",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cc6c8dde3696a403.pt",
+      "sha256": "f04f0556d4fca27714c3dbcceb29e9f54bbbc41038b25e1ae5cbe1a113361c98",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_fcebef3715a4d90a.pt",
+      "sha256": "81ed790d1e2b0c745a23f799c2f22b89c28c51ae8d71ad09b29770d8c70e43a5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_df8e9deb18f40797.pt",
+      "sha256": "99ca69c3395b0e058004dea48dce7be05fb312ba845785ea0b180ad9bb7b5cf2",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_edbe2cb528222b4a.pt",
+      "sha256": "29ad2586e1c0c5e0664143e875f88c156e8d238f5d8c78b1ef15dc5b251a4dcb",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cdc4387e2a95fb31.pt",
+      "sha256": "d4ed846f8f91a2320f710edd175b4431a4a0aee35e267ea5dfa7ec59865e6f19",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a2280432de2c711d.pt",
+      "sha256": "f2fa7aef5ab57c3b5f443e8c6a4245db45fdacd8aed2457177fdd188317a3d2c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b404d64513e9e2de.pt",
+      "sha256": "352d759a5e0c6b60eef1a5c5de2abeeb71e02d8d573abafb327f587cbbabbeb9",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3ba2f1bf8d74f9fa.pt",
+      "sha256": "42e8f74ac29e49626885529b18f037e1698a3deaf3fb6252699ee998b4ac54ce",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_04f1a6317bb48d6f.pt",
+      "sha256": "08ccb90938a5a2ba4dd0ec7c4fa6672f749254aa8fe040fbfdb99856982dc3ba",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_04d891626a7fbbb9.pt",
+      "sha256": "bb1803065844aeeaf46c307bf5016d5b1e660355af08e3114e4ce6e5c9f3be83",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e12b23ea9e2313fb.pt",
+      "sha256": "cec3bc4fe1f72e9a0e35289f519129e77ffa914009a492fa9b31cc3de983572f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_97776ad38fde1080.pt",
+      "sha256": "70eb4b53f30b8a6de1de465caca65457ffac241fd8d4bcc675bbe617a9db4f25",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e3f13a350115a73c.pt",
+      "sha256": "36763b3ca8f2f0cb765e5e9067fefc56faa9afcd5a20138aa9a9d2078eeb999d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6e830870ed540238.pt",
+      "sha256": "d9e89af1a97144642e5e168c4866ac8d219ac21b77f7e3da1e8423dba2ba9c80",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2cfd86a6c7f77dd6.pt",
+      "sha256": "80d5ed08e11a4937bebd30ef106c55a9159fc216103f6592f1d17b320ae20d19",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d1b0cebbc9c12776.pt",
+      "sha256": "05809c27532b791434e275744cfb99adac80a06e1a4e148d6f12589a547c406f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cff7fd30b05b9046.pt",
+      "sha256": "e9172512a8499daf10264049300ebd1797437482b17b0110e68678946d7c05b4",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_eb8550c546244af2.pt",
+      "sha256": "3b2b64d85e366ce4b9436db5eebd452c75933fc7c824584c557b7d4a0c0e7f47",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_061a9ad3c99fd09c.pt",
+      "sha256": "cc2117a993d2c7256e95448c437e76a1c60124543dabc5fb34ff06ea0f9df87d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5de2d0fae232ac5d.pt",
+      "sha256": "5b60ff96531505a4fe575c5d3854cc8d8b461e35b9faa728731125da1d81fab5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_20ee58611307d2b5.pt",
+      "sha256": "aef72366ace1ccffe0d30ece7c4294459c23dfb6193bf1423ab05f87786de955",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ce3771a077a5e53b.pt",
+      "sha256": "ba2a7ae1f6203b35e43e40de53b133a5228b8c4e5261cd13f39e89e4aa4efe09",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_02c9eed914b4d5f0.pt",
+      "sha256": "347e0d6779da40c06346fd1ffe9afd3a09cb74b5f92061534476abed437e6b18",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_0b0f65e52a559269.pt",
+      "sha256": "dc4994b4ba29ec4e176e88ab9d638e2d0f8ca04cc6203102c5217adbc7efa9ba",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cb6de0a45f08a7ff.pt",
+      "sha256": "4fe17482ee4a6f8618fd70ce66062975e0d03f1dd3164c8b0793fab3f7b6c2fd",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7f9ad69bf0298e67.pt",
+      "sha256": "996e1d26eaf4a5d439ef55e81dff63d98805d28bb1f617b251b55cd354cd9de6",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b15fe64d407a3f53.pt",
+      "sha256": "7c7428e493ccfe250ca83c5ee62ae1e6a505d632f1d340e6b71e8e922bd762ea",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4fa4471e0c278402.pt",
+      "sha256": "441b7c8ff944daf38bd409d3fae3800d7ed06d80aea3ac0a2766d7c429152344",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_da9223e60af0c468.pt",
+      "sha256": "37a2bd627d33cc40043716d026faa9f92b00e2030eb18737eb81dc75cb0a7009",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a88ff72c87e466a6.pt",
+      "sha256": "9afe24351e31293e18fbd72af6fea3134d98df90c3647f503bcc3cdd936e4165",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c14044d9f8816007.pt",
+      "sha256": "1c5789becce1f7a059a99551b44fae83f44533975e7fd73f85b036e3945bec0a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_dfd60cebda5f319e.pt",
+      "sha256": "411aa6754ed6b3c20ee7af9061b8b5884e4d985e1402584ee59bb31f15ebbab5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_11dc2d2beabd096d.pt",
+      "sha256": "949e63cdd5eb292aaa58e27fbd3535746d1f23da4ee38bbbed3f1cd51d1c0d0a",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7e1b07e5aae120da.pt",
+      "sha256": "0b30d422be8ac44ef81b4225fa13ae0b7cdd94f112bc8539045a3136a2a6382f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_643397ab6f9ad567.pt",
+      "sha256": "9d21c270b2c2e296d4e2e176eb83301503ab36705dc9e8830877d0b3b0c50dcf",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_070f3a31cbcc6044.pt",
+      "sha256": "bebdd27b41f31cb422ab2cb2903294e2e9fffca7cb793aeaa3b56aa8d08c771e",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_85d6114901581d2a.pt",
+      "sha256": "b7c461c383e2f075f1acae19f6a555f2201e2161d1a768601e11fac9509bda49",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2ad5f987809cb697.pt",
+      "sha256": "5fa17731cbc724e8a00ada563b57c9af45fcd689c0609c3ffc0adc5935cbdd8a",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e9e60f54d14356a7.pt",
+      "sha256": "d264ea2090f15ce0bf6f6aca19777081ac2f641fec16368cf239b976da55e408",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_013a626fe072d215.pt",
+      "sha256": "7eae7afcae850ab0ecd01e3154dbffbd31bb38843e120938e9410e14274df14a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_55880e993fe4e9ae.pt",
+      "sha256": "bcf3b22d61695fff390c4538c413f726aa9b78b8b9aa719ff5241f75b8422204",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_90df04fe966e71f5.pt",
+      "sha256": "995c4dfc22eff82148ab33c3584244de6099f09fca2848f73a910aa3ec0d9e78",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_201e4eded04210c0.pt",
+      "sha256": "0b10ee2de00c43d12be03babcbb92d47c0eecc3980395aa0ac5e970302ec31c8",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9de0814c26adf2de.pt",
+      "sha256": "f5e1440996d43ed6faa9bedf0550f3b5a2cfa6432092685dfe80907c59216890",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4bb64e201329dba7.pt",
+      "sha256": "d0bbab98db92576be71ed8caecac75a38135dc14c9699538f2946bf293a20826",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cef739fed6f6dbe9.pt",
+      "sha256": "1676e4234b25def8c73cb5b74aa6523dfbbf390c171b1d840d7bd3b8b6d188cf",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7a8a85a9cd307241.pt",
+      "sha256": "10c567f586e84e54116997e28375e205186364129adbb0a7aeea1020c8d9621e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_330379383264cee0.pt",
+      "sha256": "4ad7f5d16169e3d0f7dd5b70165dc2f17c797c9e3e09cbed9e4e4cdb6de9ab6a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_29a613471256bc27.pt",
+      "sha256": "4c131a9e950d1e35c7b0b98f9d6ebe92b752cf93fd442907e006d96cd4f7116b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_fe8a410e312dcab2.pt",
+      "sha256": "9dff715249a7f82c0f7f34a8981868d348d3cba275e0eecac9c873fbc529fa8a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6829eb7df4bc5a20.pt",
+      "sha256": "9b09873922fc0938c721e9a2e11359a1936b1c7ca1efdf68fd0313f66e8c567d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_177ba6c4c2c5a65a.pt",
+      "sha256": "ef3f9ddaee4efbc16ec27854ed418ff90e43d611c4afb2e1e28b2073d8904160",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7dbb706ca7a3dd20.pt",
+      "sha256": "a3cb9fa74f94e2bc32ac4b3283330022266966b954cd7e2fa65686c56a0bbd37",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4247a95c1d9307cc.pt",
+      "sha256": "832a56a9886ab4dc2af2bd3a93930e5a3861e7014aea1bbdbc678b4c10ef98a2",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_38b15d91cff634d5.pt",
+      "sha256": "22bf2797d7586addef0100e7f050fdfb23fefc3962d91483c460254976165284",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f20123a32f545d18.pt",
+      "sha256": "07a74497a6f22b8e92762dd8dff442db9357b4f2d91106798c6ce4e00e7689e2",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b7ba5e6a1d0741ce.pt",
+      "sha256": "6a5082691cc406b50a39c3957ba602bbee9cb5b9da1d64bbca0811b41a30ca76",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f64d55b6c154d3ee.pt",
+      "sha256": "ee7d3a6e319e4d41b46e0863956acfd734382d4ed4c6a579df6520fdf33ffd17",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_fbca843c481be819.pt",
+      "sha256": "7ec3e32086f9a1cc861ec9194688b683ff0bfc213661e902e87254b8d1785430",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_64bc2b6b60e5cdf1.pt",
+      "sha256": "d0084cee245d0ee9beac0adbc4b0ed5d109955958025b076766285678154fe21",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b3899036b04fd50b.pt",
+      "sha256": "9c11c5729fb572acf0d7400f63403940c16a420566ecd76a57f4dabd5425b0a2",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b28e5019950401e0.pt",
+      "sha256": "c1a806ae5b6a3803e27793c955457cd03335fbd39ed4bcaa024d82d79f6374f5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_16c3b8d72d8709b3.pt",
+      "sha256": "784f8e20c854f94d01820f9962f76b1aef69eb31c622bb53d7c0fc9301e595c3",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6bdf368170e2fbb9.pt",
+      "sha256": "d65be208cb1398fd73613787fad1b7ef5030411245c7f1f6419702d78c05a6b1",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2cc2919aede674b7.pt",
+      "sha256": "a946bcb4209d99efc29bb2a099b4d8dbf450a50aaa85b1bdd0b7315f01950f7f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_0261b8f2b1fccaa1.pt",
+      "sha256": "8a2ba3487101c513629f736db2218b2942c436e0f951e55bd972048bc039921d",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_1e203c0a10abcde8.pt",
+      "sha256": "45a0971f1bebd7673b0007cda6ec8a4cb515988ef5fa4ec23361f4140a8818c5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2562ccdc1fc6b8bf.pt",
+      "sha256": "c6b222c0c3d45fbcd9981d9550845631b6ef134a5f01907e74107d66d44a2153",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a5823faa44efd97e.pt",
+      "sha256": "1873e77e730e9ccd442e16fea323107e1db2e493d03c85a660263f351311acae",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_73c5c8ae1f3bec16.pt",
+      "sha256": "a4da22866d8484f48c70d41d43b493e4e9134cc873627e97e8ba94d397951436",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_809951d18e6bb415.pt",
+      "sha256": "26f4a45996293812dac1404c93215828c52f4d4dd90ac16edc02d26591e844fb",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e0d7a382dd92157a.pt",
+      "sha256": "411f415f8f3d1f0c5e8fa97426f5a739ffa929a9722ddd29007918d13afd7317",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ce27d6c38040f682.pt",
+      "sha256": "d589fc0da2d7ddd451d88a12a0111d779c709d905b1c97d9478e9e90297e2c64",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_0d42b9bc65e887a1.pt",
+      "sha256": "1a687126bb90ad0483b3eca0d0caefa61276b3440341a7a9ae754fd44df56ef7",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4ae63971af505285.pt",
+      "sha256": "7f984fb2748f91160c38cc657a271939cf99a3009e05205b87ab800a13355d35",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3f692f40b7550e88.pt",
+      "sha256": "db59e6db9a6a16ad9d0f92a78f5846d58bb54e79d9d71222d6a8502eef09ac89",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c11b19a4feaf6e29.pt",
+      "sha256": "1154fc195399f2c804c1932c0c23d524aa82919ac789adadb4bf92ae7bb2f7ba",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5c3a5a25cf7758ef.pt",
+      "sha256": "b694d9baadee886abb02dc8f2d9978cf4e9ff239a47eebbbdb53bdb0998a22f5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c9b3aaef659770e1.pt",
+      "sha256": "17bdfed61e5bc48ae8526396ab572ab91cf2881bb5ec4097d0ebb06c8941502f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ba5e201752e4a215.pt",
+      "sha256": "acc861069060cff0571cef032772e31fc4132174fb9dd4f465fa4438dacf99fc",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5e3e392f6f742b2c.pt",
+      "sha256": "4275a05efe3ca0bedbddbd9e8caba17cccab0e827615711cecae5258e035febb",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7864ae5c4a1c83c5.pt",
+      "sha256": "002819989f602c5137f3d3964757810d0291eb788462258030b27260c1037b75",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d78e99c2c559da61.pt",
+      "sha256": "0d0a8d9b916a559156270e8c6bd69703262db10f455cc4260888613308dfd6ed",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2be3cf4557b3b432.pt",
+      "sha256": "ac39cb444f824fa63e93d152dfd81f79b60fd3f4512a89f0ce0d1392987c66a7",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_976f1c261b6cde5b.pt",
+      "sha256": "a8ebb1fdcd35b82f0f80b32d42b8019ed3283febd3f64d5195a7cae56f684d67",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e4ab28ff4d58fdea.pt",
+      "sha256": "a4e1fe5877bc6adf1bc819eeae3534027a99b0262c22667db266cdc777d52159",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_776d30c7f16f8623.pt",
+      "sha256": "6b79da8dbf42178a22db46e04038968b8ae8d787f25703c86a7f8f3528879ecb",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f992fc78299809c6.pt",
+      "sha256": "fbe4e61de128a3eaff2291dd89dbb151c1fcf222c8f3e5821f2218123ef6419a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_981478983e89dae5.pt",
+      "sha256": "1d3769db17483ca96cf2d56069dcf1b57095e4f617f0ed91a18893ac8198869d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b294aabc87d2d3fe.pt",
+      "sha256": "9b19433a2538487b09702c17a3b78d748a8b6137646137fe3e5bd0aed5faa6f4",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4cbacd998c8cd8e7.pt",
+      "sha256": "cee0a137498a86ade3e24ae466236d5acbe77973d2b24044b59124fdd92a8472",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6936aa765b5211fa.pt",
+      "sha256": "c4f1848e66b2ff809ffee77e87b602a8f05d3c993c8df33c0cea233fc4cf0223",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6f7d5028810084a4.pt",
+      "sha256": "9b752a6cce1db1e4adefddedf55166487d18f9dc63f8caec58012e536726a13c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e9cd431499758fe7.pt",
+      "sha256": "3c6b811fe14b12ee688c5fda099b29efe044aa3628121e6af14cf6f0b8beccce",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c3d3d91609875009.pt",
+      "sha256": "c918ed43d57a3c8f5fb4e2d1f9c8ce69493353d8a6cd201be230a5a12b2b93c5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_1aab2ee00097ee0e.pt",
+      "sha256": "099b2e42d232c703e3d96f643a95558adb387c5d5c41c8b5d6e32e9991a767ce",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_23f8cfccebf59f6d.pt",
+      "sha256": "1ab5a2f2a38f7c68f2ffb8800926cf9fb284b303bd8919383d169fa816c761be",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_4fb5b45dc9b48ba7.pt",
+      "sha256": "57dcfb0e6b139629066e8f8a1c9626e5287c2507b129fb7c8a49807bfd2d64d1",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_403de1aaa0f7e178.pt",
+      "sha256": "3fc1288f24523bee5fc8464646095bb9b05c9bc22cd1acd5572ac12be477b734",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a1a764cd35b44e3d.pt",
+      "sha256": "7afeeab1e649aeb3157e8ad9927f0ef5b00a98d5c7690b8594a6a256f9ba9d7a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_eda33b018a117f9a.pt",
+      "sha256": "686aa437ef22a3d189e3f6ad77f7cb0e4ca7a78bb7cffec4aeee01b9a8d98ae5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_41f4d91b087887a6.pt",
+      "sha256": "f0f71c171b03859421ce04cce637741bf857d860600073a8c22da84c9baaed62",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f78af2a1df3be01e.pt",
+      "sha256": "9e6a093f127ba460c0a81e027e3c891822dede43d3c2dbe9d4ebe04c4b1db733",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a614bdda4e726500.pt",
+      "sha256": "814f68ba662c79f48d1e2faf9ffca523534b61386ab604a85152164b1aa070f8",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3aaa310be778d870.pt",
+      "sha256": "cbd60acb47dbddf917b0f0b2c70502f3934cc48d68a10881e4aa00472b118f50",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_dcf4464a1001671f.pt",
+      "sha256": "eaf7b4b07c4ebbeca0c9d8b45ec0193f6ddda7272267775d530e7550c4a70681",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ace074e7cb68ba5a.pt",
+      "sha256": "ee2fe0695cba9286af4c3ba1922c144ef86762674cec3a3f76d19b3a4ef5cb92",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_03bd11dca79d3d21.pt",
+      "sha256": "81a52e4ca47360de08157b660b3e59246fd1a0993f17976b95571dc17c64558d",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_594d650d276507ca.pt",
+      "sha256": "90aea1de1480d9e085e846faf0937427ff8fe8910def2bd1dad50d781a2fc744",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_dfc05856f7d46683.pt",
+      "sha256": "80871ad31eaad3d8aa3c6f12f7e50bd28784dfddb794b0c703dac282b44b56f7",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9eb53d8745b5c5bb.pt",
+      "sha256": "d55eddbe96656d4e75d941635e9ae823fc8161d8b93b4cd427aae4b023dad414",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7f6d875cbfe7f043.pt",
+      "sha256": "359f7be5ac83cea6664fe36a0b4d3c6679c5ea01839ea5d91c2375f2a9ed1a47",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e12260dfda4a1e7d.pt",
+      "sha256": "136ca60628228ab1ac1bfbc2a87f56cecc858de3d67386a3734f243414b82ab0",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e26b07e48dad22f8.pt",
+      "sha256": "4081fb2010dbb3172cb8146a965b1d076f3054fb88e308ecfc45bc97748ecb9e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_938d29f20b3a89ab.pt",
+      "sha256": "e72e6827df3d4f239cca2a096eb43cbd646fdbc9029eba1f05d3fd1769f1d409",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7679e12f87654020.pt",
+      "sha256": "607eb0b6d7e46fa9740db51ee5ad78563387bc11a204c276a873a34bbdf919c3",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7ef087f2905aa706.pt",
+      "sha256": "d5262c073a41407807201cd296ebbbceab7b0ae2aa902c1705391e331dc5c66d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9b5ca24e8a54fe89.pt",
+      "sha256": "a146b15d9aae7252361ec277960c70accf9a6a2278b92e9091b8ef02b8e20064",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2d44cf25cb96ff21.pt",
+      "sha256": "5d8d0c207382edbe56b7e882162285cec634724933645aa07f3284bc29576336",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_dc0da7c84faa902b.pt",
+      "sha256": "8597b1a65fd910418bd4d7b568feee7e1cdcbe63c933d68f02499562c9ee7bdf",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9b8e2451bc324bf5.pt",
+      "sha256": "e21d27cab066f9ad05e408fb189d27b36eabcc47a1d4a39345f6a5c8179cba9f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_56f5adda26798db7.pt",
+      "sha256": "cd4420a7736292874e1736908a660782fdbfb4244c9aeaf431273be42ad06d79",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5bd857289db47f15.pt",
+      "sha256": "e10b412427b97ee5782d477daf61926f7b239647f8c38d83f2a7608c80539508",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5c7e977259bf4548.pt",
+      "sha256": "b6372c031b209845ce514efd55564b496f6b2fe742b33b12b315c4b4389a2005",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cae59a5b911acc53.pt",
+      "sha256": "45f792c8d5ddb53679218948cb5848e301f6b23535ffe2cd2b9c6f6e74c274a4",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_28ca79069713ffcc.pt",
+      "sha256": "facaab8a9286dd580fbf7da7c9b1c3e0c9f2831f89bec9416a46b6db6b9fde80",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_bce8f2c8aab8cc28.pt",
+      "sha256": "7ac11e0994e008ddddeaac00db81882f0720e0ff85d072478d15f119c1a11731",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_53446eb58b3b9082.pt",
+      "sha256": "c8afac4f2b3c0e4ecc088968c70d798e6350fbf82c2e6a491ed138795351b27c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6a87e30c2e342e96.pt",
+      "sha256": "e192aeb964d28295702ce366559bed8bc1f837c62310bd480f5a774cc0ef1c68",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c35f6b9d55229331.pt",
+      "sha256": "11c436ea85c74f8becdca1bf874874cd1e3e6b4826831f9709c3bfb108cc6b3c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_21348079cf6a3f9b.pt",
+      "sha256": "7789de0c0d448a2a8eb36eab2446a46636ec57c69c0dd6514ce138664f7840aa",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a3d526c21e1d13c4.pt",
+      "sha256": "8976df2b22922d736dcc70abc44c73aa9dbf6ec224f6b1063e02a1ab652ccca1",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_0c7880cf8f98a99b.pt",
+      "sha256": "8b6c88fc2d980eaaa4ed1053840469ad4d736f2a5ed15ca63af6edeed6c40378",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ec39c7b48bc3084d.pt",
+      "sha256": "c9248917645b2ddf7415b140d1b4ecedcaec2899f593b474c34186bd6343cf0f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_1a2f809239234a3b.pt",
+      "sha256": "f65a1f0ec2ebe28867c0a50a38fa707aca047d00beb2c8599590cf0f5b91b171",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7bb49eec939d686b.pt",
+      "sha256": "5ed4bd7c3632b4f451b03d5170028682e21b526ded2c6ee52175754cdb72d47f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_49039e671af2773d.pt",
+      "sha256": "ac31c676ae6e130cd2893cf4d67ff8bd847663937b0b67ec8808564f250c75d0",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_ab7fc72a23810441.pt",
+      "sha256": "5d0d2b67ee1371c0cdf10bdeabdc8a08f24d36affa4616021adb127d6c4c10d0",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_036f0172ca51259e.pt",
+      "sha256": "9c9b0987e4b61876af0e2064bdc21021ab2ec7c0e77beb73de6515d096dbebe5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f29bf5e733679ab7.pt",
+      "sha256": "ad17acb8244c97e0dc8fe3a91dfb9609bbcd81710e161c036d91f4e59fe89450",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_17a0a6b03c5066a5.pt",
+      "sha256": "3f0eca9662a2bb97d18288ca9f03d7160290c2ead144d638b7693809a8b73199",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_29261698ee8d4652.pt",
+      "sha256": "130516d0ceaf3e35321014ad8b4226a9e59a4bf8511384d824f175cb4dda9453",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9030e20b81b3043d.pt",
+      "sha256": "62717175c44b1e7a8d2e25cba3e3fb8c0aeb0546d52b7ce4b71162f17ebe586e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f0fe44d673ac3cc2.pt",
+      "sha256": "65c11bb9880b5d57356fdef9f7b99e32816fa7aded788b703b3a0d5883ce9d5b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9779bdaed716ee80.pt",
+      "sha256": "f5ecf0ea2e323c366fe36096979283b1dc7aae5f14ef963ea19a296d8e715383",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_027dd150f166561d.pt",
+      "sha256": "12e289e5087e5a97c2cd6aea04f2ae29335c26eeda5e0d358620e1f8842981e9",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_514fcdb45b4db6e5.pt",
+      "sha256": "235c76a1c9824261d4a2cdb56e4c6f7efdcd3c37f56e3e7c5291f4f63b5b25cf",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_9c489945aa07badf.pt",
+      "sha256": "a3f947f9456812741f9de66bdbca2cac6451e0c3e6365a0beeee51dba8518aed",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e8b5deffbec40520.pt",
+      "sha256": "d7dfe71af60843e7df8e031bcb797c33fe383d4a011a651ec12224dae406a3dd",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a201de64b889f4e7.pt",
+      "sha256": "1c9e4af20d1b2cd65c809140316e4396494af21b0252b4542a512aaa0e46c28e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f0bd85c1873ceae7.pt",
+      "sha256": "3d1d56e41e9a670edda641a17970224f56be1eb90c16596c50e7adb30bc2b5c7",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b2f8166519e695f4.pt",
+      "sha256": "d00d5e87fa647d317b7a95d2745a1180457aa0bcd22d8c3376de13829922c03e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f06221eae47ad11b.pt",
+      "sha256": "40390ab784a27fbfa6dabbd044754947ac7accb386d0c47f67472febab1a704a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a92f2083a8c222b3.pt",
+      "sha256": "e9e7558b3f7f893e5dacb26d3303ec3049ece692666dc58cd7ced5340b3fe54f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_14158b5ba60ad3a8.pt",
+      "sha256": "81692dcc9d5eaf1dd3f6543c9a5f975060f71e7bf23814599e6fcfaacfc41e5f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_15f75e30b30dceaf.pt",
+      "sha256": "eadd8d213ffc1fb23eee71b3ca16146fae1644b10a2cb9a4aaf78b3a6caa703c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_03ec65201037abaa.pt",
+      "sha256": "2fbc45d64cbb7e3bbc7f4ed6383c7f8bd710ac8b0a9c56b292b9e1767aaedc76",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a1efa2859738cd9f.pt",
+      "sha256": "defc15480c2c9f921261391b856e3d8b75c0886101e691cd182cd7e0659d6b5c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3af0ad0893db33f3.pt",
+      "sha256": "52216ae6a6eafbc2176824655f94a299eb09144b9a1e613e26310f19a6221a29",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e6b3852d7b1ec937.pt",
+      "sha256": "709d500789adca3a51349f165454c163c33353a062a39f0491b4c735cf56dfac",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c69f7ec20774eb87.pt",
+      "sha256": "5fca211703bd9364dcd0d62794ce37e97483a77a63674b2b505c282bb6274126",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_82748cfb8e60a37c.pt",
+      "sha256": "6d2335e4b4357d0f193ee36f5ba04634c7f21e02ff3caf7e8eedce4720c82bbf",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f72a2bbfff57fe3e.pt",
+      "sha256": "dc97ea2e3f97a6678d326d7afdb928c1fc84772d43913d2acf07931bdfbbccbc",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c8c7e99bcbc01597.pt",
+      "sha256": "e39e9ff1442029f72fb3d346b7b2d4be43b59748034630bcc09e04b24446d6ba",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_20e1e8b823aabcaa.pt",
+      "sha256": "b73ab451064ba271944e8ce157f1d19849f43da046b68a7183d379f5252e6802",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2aa0dab528e531cc.pt",
+      "sha256": "afee97fef9ece36e591e4101e103caa22b33b117c2cb9a59069a30e7abdc327f",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b332d2487d7d9629.pt",
+      "sha256": "bcaa484a05afdf8b37ec4c57e3cf77f6d23f896391aedf02f5f6a4638be0e9b0",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a737073c9f06fbce.pt",
+      "sha256": "96581ee22b296762bb323c554232269dee07f79c773f52e516475fc9d14c30a7",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_55ce2df8cd41e60e.pt",
+      "sha256": "a597ff236bb88b98c133caa5790525789bff1f186018389be313939ade6a4439",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_dd0f1c98756ff57e.pt",
+      "sha256": "7aec5a88813977635eecb001f7278dccbeb9edeeddffc46cd724eb5a7e67b183",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c5fdacb609ac92cd.pt",
+      "sha256": "b92532d631175fa2e71d0746f8ebb1629f73c87ff627dfe41a9f4fa55bdb42af",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f14a57b3e3138ffc.pt",
+      "sha256": "da54cd9d36b4311eb6bb1a69963e262f9a290762b4c300275e86d6555de94502",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_86a54155abfec618.pt",
+      "sha256": "b53915f49960ca7bdb2a69c75ec1a77ddad96dfc1e34c7e3c12299ec0aa408ef",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_8f9e66675f852185.pt",
+      "sha256": "13674d49b78234120d8f457ee8f0be260fb2ae7b547a2d4c7a96948a64473c12",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2612a521f7012be9.pt",
+      "sha256": "2295e03447f3079cb3b73259c489391b2f6fa42f1485db3e3095f20f45be66da",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b54e89c6ca5b0ec6.pt",
+      "sha256": "2779d785a566ae42a70f71927129720f917dd9aed19b442a51b8f280575b1833",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f45981ae51ce186b.pt",
+      "sha256": "0b8bcf1ed77c8a75bc6cb16e2dbd08dd136b66274e5a6b60b3b645fb96c04d13",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_59d2e3831f09e4c1.pt",
+      "sha256": "7ce5f07bd5bedd864216f967a1413942c335391e93d4ea95ba4279e5377c16af",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_00942c166c3f7460.pt",
+      "sha256": "296d9d16b424d96b51610058d6ba5f13547571b5ede99a16736f95f7d57da4fb",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_01f68e0681b7806a.pt",
+      "sha256": "299ac59a03f12cc0d6a6f012380d7deb60ab1b7388c78d89aa2a365980bedc22",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_840bdfb34950a299.pt",
+      "sha256": "6003b8003a50f70f888adc98d07689a717a5de395dab916852d6041cb4817ad3",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2aa49800496df13d.pt",
+      "sha256": "339e85d7eeb869da857b09ea6c82669246088ff52c9898fabe1827ee8deee71f",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_237398e39957079a.pt",
+      "sha256": "abe1628bea7bf65fb2ee6069f93042e9f226a2f61416f007804a389c73a1a32a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_bde84385bb7fb80d.pt",
+      "sha256": "c6cfc6dd25ee9ad42c38a5c2b6cf4014049768884988e9348f67cb6d2ab172d8",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_06149e8438450afb.pt",
+      "sha256": "5508785fbab92bf7c78bc411946a7580e6c8ce7a3b9c687943cdeeaad2bbd819",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_60bc435054045e65.pt",
+      "sha256": "0b33267a41ebca2393b352f4c485404507b2466db5de512ea9ddb095f6c84a28",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_343ee65ce33d7fc9.pt",
+      "sha256": "0afda28e368287dce08f0ca59487ff6f02cc7a18b6be533d6a5da25460e69aa6",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_db6bcfcedec4bae3.pt",
+      "sha256": "e1b3f6ffc2a499be617b174c660b1a17278f92b2852453f568c01435c976bc22",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_09485bcfb1213ab6.pt",
+      "sha256": "d3f78926260e373bfbe804b7307a913862522c4847b1fb26b850b75824e0ef09",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5b57dd4fa7f81729.pt",
+      "sha256": "b7f8265618850c72fbdf991ebbe56900571d3a414928ffc9e7e8bfc71ec7e545",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_bac92628384e35d3.pt",
+      "sha256": "2928cdffded9c17486f7e2330a744bc6b4eb28b5b52303d5954eaf0edd10fc30",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_8250cd1ec378de22.pt",
+      "sha256": "7bdfdd82e49d8c176c6a7fe2ede3c8eb5642a53f2964fce0e8437651c695ffec",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c39a275228f7de40.pt",
+      "sha256": "9cf5679073e9623d051c00b7c6dd22a2283852ef9e53e798598a7de78402d775",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e8119b3a6110c948.pt",
+      "sha256": "c71e2692a425ad900c1dd044a8528145c013de6e937af318878535ce5ddf441b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_a53b912122c47661.pt",
+      "sha256": "337a51ef962fcd6e6ff144617db29c2d2357f0ad8816dcb84de89077325f064c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b9479f1a434d3ee6.pt",
+      "sha256": "a82ba3bc4e394e55a2b6eacfa7fcd9f97ffca26ab4841ffecc5a199425e025a1",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b133bc3c74918840.pt",
+      "sha256": "0ecdb56c8935ddbedbc1aac04256a32e0ff570a77255b72d41a3814e0052bc23",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_05c7f6c159714ef3.pt",
+      "sha256": "14be2a5682cfd68f6cbd18d46fa3d0db9c3037bf22cf09028ac18b3da728fb08",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_cf1b89ca7e7fb6a3.pt",
+      "sha256": "fcf9d55e29f6c5629dbf801ad04a0c9a4285f8eb09e10cb52deea3173b9ae4be",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_55736165109ab6f7.pt",
+      "sha256": "1911795823b7a1fc953294ca41f616f8b3d7f3901e4abae4b640801210ed066e",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_115060ee078d900f.pt",
+      "sha256": "a0eda64789618cab7ea7d20dfb7eb7f767bb54a247beef8cad9616f7f8c40c07",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_798ba0b2437f13ff.pt",
+      "sha256": "e5b270a0a88ded3e0cb43b6e043fe536e06bd5076dcf40cd2663b550888e81c3",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d75770c2943bd89f.pt",
+      "sha256": "63a3b7b3a048a43f9f4f88af8d266b4dae257cd6648192c59f6f8acb0ee099dd",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_188e3a88a586f41e.pt",
+      "sha256": "88f81f2a74cd53e250bf123d61e97b362ec6a456ea9285eb70564d4d9c67e5c0",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_21b85f778b13aef3.pt",
+      "sha256": "ec7df3d117b0b7e303092342dccdea2af75419432ab1553289a3cd666f900084",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_7bfd1901f2d82f26.pt",
+      "sha256": "e2e65dbd9ded114f9a46c3324c600420faa15a560ebf4157f8f30c9bd1acbe66",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c422b41d571884e2.pt",
+      "sha256": "f01f4c95bc6ead0db388fe552dc70e997d375a7e3628a5a084bd6d9aa4e27841",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b55710dfc12b2794.pt",
+      "sha256": "2e071bd6d33aef3fa633f895214f3daf6fad0a4721e616345debba88b263343d",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_8304a59cd7a85259.pt",
+      "sha256": "f2e8f187f4d2eb24380a31ccd47d42ceaafc8516a054e3cdca4d99a76c0ae369",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c41a9ea0675b8680.pt",
+      "sha256": "7016fee5fdc5b5d283a97b5576f121fd5334a2509972a03fa4021deaaa1e956a",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b05e13832e5d0b3f.pt",
+      "sha256": "46ea150f17471bf15e80403fa4cb8efcea9eec507f4195dfa126ed5b601b8023",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_1d75be1209404d24.pt",
+      "sha256": "7596052fcff927227a7ad9ec5d288dcf914e8514e9c3a82ed24ee080f4d811aa",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_fb626a4bba0a22fd.pt",
+      "sha256": "082859f6d891093c40aace3e1aa79f368088c6e793fb4df898feeddabbdebe7e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_d57c294cd6f27434.pt",
+      "sha256": "b2a8d1bf0317f060ce673e53aaf4d0be408d3d0ec03ba4368af57a008938485e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_26810a693d9178ef.pt",
+      "sha256": "3abfc658141b0fa3f3dd87f6685c5ebc42262962fd6e9c325c56534e2f7ca150",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_c73fb2d28b6c1e42.pt",
+      "sha256": "c11ff987f06ed7d4bab5ad2278f9f7f1da253abd34a4ed7d6252de725e3410fa",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_1cfc5b513366a6b7.pt",
+      "sha256": "ec1a310d2ffc22646aa3cd3ea293c8b936ea027922af3d31a5e3b2fc93ab3a3b",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3701f5f5edf247b1.pt",
+      "sha256": "4a535db431f0a979aa102692ec0204081860fd75d49aba66f6cf16ca0c4bb355",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_851e3cda2dc58cfa.pt",
+      "sha256": "3c9401a4dabd0661d62e9387711a72ebcd6f2b47950580d18a3f2fcdd8717600",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_0ea4eb8e4cd9b98a.pt",
+      "sha256": "34e769255c4bbac91b54884c2116cdca290cb726e4f47ccd371ccb7484cf667e",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_2822089574d34157.pt",
+      "sha256": "b1c6280d4b97695c6eaf6a4139d51ae80c3d8eeb08763fa7d1197e149f3d6bb5",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_3a2221a23e8fb093.pt",
+      "sha256": "ef15941e6c9c4f0fecb265aff5bd4634a43735bfb94dcbe67b0fdc78759ffb05",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_5e110e712d94b2b9.pt",
+      "sha256": "9abaa87228413bc79da11c5b1143c23afd7ebed1390f85ee127c6f4d543e6f35",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_746ea417a76197d7.pt",
+      "sha256": "54d20408082e41e209d4a036159d7fc1361ed7632e4efdb4f8067e19cef3d2c1",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_e52d4e276ac88cd1.pt",
+      "sha256": "f663fbbd3a7363cef2d13b41ce74837bf73d6ad49deaab07b37b6e17d06d526c",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_549736566a9d4330.pt",
+      "sha256": "5679a8286066cfc93565403d64a12117b0771342f38b91047c55e07c0cc4b554",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_6aee5bf620ba0936.pt",
+      "sha256": "088aac97d4a3b1b62a24e72c2f624c01ebbd0bef09500b4a30b1b10caed035de",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_66f3b333bb0e025c.pt",
+      "sha256": "eb8d94dcb274e9ea2f6e27085c70f45512ff292dc433be1ee00870fc90072d8e",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_b404940a63eff86e.pt",
+      "sha256": "6a200ff5bbe8959ed15e78879eb27c3f566103eb607397e404b4d4d9b4d56cc4",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_f6021a6d4a3629de.pt",
+      "sha256": "e899d4c1316e526dcca977064c14626775a2bc56b498c489cd050a4e670790db",
+      "bytes": 8288875
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/source_worlds/drie_08645286f58a7d01.pt",
+      "sha256": "2838cab17cd3741d0aaa87d921e40b16d0656fb2a873ddf7c0f2d1d1a8248530",
+      "bytes": 8288811
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/training.jsonl",
+      "sha256": "e832612d0f75e33cde2497211b06efc7504758b13cc88da10ecc73ef9c586cb7",
+      "bytes": 529900
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/TRAINING_COMPLETE.json",
+      "sha256": "07022a82c4f52906049a3593a862ccab9088e10e0951e1900b497b8787f2799d",
+      "bytes": 1253
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/Plain_validation.jsonl",
+      "sha256": "b3b030f218b21c042b0ea44c23d96eb412a39b25c6bd0b8b5733a06228d86f90",
+      "bytes": 2007012
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/update200.pt",
+      "sha256": "e9d4b3bcde0ccec5ea245bfdd02fb7a9235eff786a0f211bf31a4a8b4df0abfd",
+      "bytes": 206061
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/update400.pt",
+      "sha256": "aa0d75a032cc27c5ac9d50671377abae8199c58498946f8889a83269e66e8a68",
+      "bytes": 206061
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_PLAIN_20261008T054859Z/bart_s42/Plain/training_state.pt",
+      "sha256": "3fde2c2ea47ceb88386a8e0dc771be236aec1eebc1b94bd15cace4e6cdad7f75",
+      "bytes": 831221
+    }
+  ],
+  "allocation": {
+    "job_id": "3026_0",
+    "state": "COMPLETED",
+    "elapsed_seconds": 494,
+    "GPUs": 1,
+    "GPU_hours": 0.13722222222222222,
+    "start": "2026-10-08T13:54:59",
+    "end": "2026-10-08T14:03:13",
+    "exit_code": "0:0"
+  }
+}
