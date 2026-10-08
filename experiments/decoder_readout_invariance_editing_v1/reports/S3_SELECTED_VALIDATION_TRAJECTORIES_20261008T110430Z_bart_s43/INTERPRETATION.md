@@ -1,0 +1,1 @@
+Every full trajectory requires success at each preceding step. Final-step success alone does not repair earlier failures. Natural-start trajectories do not establish recovery of previously incorrect history states. Retain zero rates and distinguish method readout regularization from demonstrated long-term stability.
