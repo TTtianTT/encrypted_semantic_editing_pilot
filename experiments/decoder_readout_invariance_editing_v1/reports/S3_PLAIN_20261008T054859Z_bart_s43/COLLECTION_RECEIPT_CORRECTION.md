@@ -1,0 +1,1 @@
+ARTIFACTS.json在首轮publisher读取待提交文件列表后才完成写入，故首次commit遗漏该索引。此后独立CPU补交完整索引，保留原commit历史。collector与publisher已共享锁，并要求REPORT/ARTIFACTS全部存在后发布。headline数字在收集阶段已由完整1536条记录重算；预测/参数checkpoint未变化。

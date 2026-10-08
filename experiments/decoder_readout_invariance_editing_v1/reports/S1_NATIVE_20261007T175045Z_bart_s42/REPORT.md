@@ -25,4 +25,4 @@
 - E_past_minus:N / real: 8/8
 - E_past_minus:N / shared_rank4: 9/64
 
-匹配保持率随机对照按预设 validation 网格选幅度，含 alpha=0 的退化情况；它不提供同范数解释。每 world 多 pair/随机方向非独立世界；未作 test 显著性检验。
+匹配保持率随机对照按预设 validation 网格选幅度，网格允许 alpha=0；实际八个来源对×随机方向均选择 alpha=0.25，在 validation 上均为 64/64 保持；它不提供同范数解释。每 world 多 pair/随机方向非独立世界；未作 test 显著性检验。

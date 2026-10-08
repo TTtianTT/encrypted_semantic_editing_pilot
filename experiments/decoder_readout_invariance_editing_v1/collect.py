@@ -1,5 +1,6 @@
 """CPU-only per-terminal-run collection; preserves failed/missing records."""
 import argparse
+import fcntl
 import gzip
 import shutil
 from .common import *
@@ -50,4 +51,6 @@ def collect(stage):
     return acct
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--stage',required=True);a=p.parse_args();collect(a.stage)
+    p=argparse.ArgumentParser();p.add_argument('--stage',required=True);a=p.parse_args()
+    with (CONTROL/'publish.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX);collect(a.stage)

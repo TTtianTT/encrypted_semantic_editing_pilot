@@ -9,7 +9,7 @@ def publish(stage):
         fcntl.flock(lock,fcntl.LOCK_EX)
         receipts=read(CONTROL/'publications.json') if (CONTROL/'publications.json').exists() else []
         for folder in sorted((ROOT/'reports').glob(stage+'_*')):
-            if not (folder/'RUN_STATUS.json').exists():continue
+            if not all((folder/name).exists() for name in ('RUN_STATUS.json','REPORT.md','ARTIFACTS.json')):continue
             key=str(folder);old=next((r for r in receipts if r['run']==key),None)
             if old and old['status']=='VERIFIED':continue
             assert command('git','branch','--show-current')==BRANCH
