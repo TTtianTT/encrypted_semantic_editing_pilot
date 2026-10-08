@@ -1,0 +1,1 @@
+Posthoc validation magnitude diagnostics cannot convert heterogeneous two-step effects into confirmation or long-term stability. No training, selection or test definition changes are supported by this replay.

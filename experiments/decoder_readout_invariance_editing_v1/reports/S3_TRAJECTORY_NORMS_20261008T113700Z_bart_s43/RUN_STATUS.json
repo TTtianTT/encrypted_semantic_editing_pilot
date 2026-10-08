@@ -1,0 +1,59 @@
+{
+  "status": "COMPLETED",
+  "stage": "S3_TRAJECTORY_NORMS",
+  "model": "bart",
+  "seed": 43,
+  "job_id": "3050",
+  "array_job_id": "3048",
+  "task_index": 1,
+  "step_id": "0",
+  "started": "2026-10-08T11:44:07.003128+00:00",
+  "manifest_hash": "a6536f075b2f18be80c2daa263e7de15be15ed7a9a4a84f9a7041740b4226ddd",
+  "code_hash": "bd205be2366ba8e0a22a95404c7f5e49888d3c4c786209461a30c0fefb6fda4f",
+  "split_hash": "d9b9f8a585f9cad863de220b00e7e87880f6b545d86c7a7dd8b9b1d7e5e260f1",
+  "checkpoint_hash": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+  "completed_samples": 64,
+  "remaining_samples": 0,
+  "exit_code": 0,
+  "ended": "2026-10-08T11:45:03.576958+00:00",
+  "GPU_config": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 636253696,
+    "wall_seconds": 33.77291158800654,
+    "job_id": "3050",
+    "step_id": "0",
+    "encoder_calls": 0,
+    "decoder_forward_calls": 4129,
+    "SLURM_JOB_GPUS": "5",
+    "SLURM_STEP_GPUS": "5"
+  },
+  "artifacts": [
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_TRAJECTORY_NORMS_20261008T113700Z/bart_s43/trajectory_norms.jsonl",
+      "sha256": "77177c712ef3dd3ed6918600d1c70872b4224c281676a72f242e563d9321c13d",
+      "bytes": 2728236
+    },
+    {
+      "path": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/runs/S3_TRAJECTORY_NORMS_20261008T113700Z/bart_s43/SUMMARY.json",
+      "sha256": "556e2532791326bba1132421b881f957082da575f0e3c801276ac9b8ab38afe0",
+      "bytes": 1199
+    }
+  ],
+  "allocation": {
+    "job_id": "3048_1",
+    "state": "COMPLETED",
+    "elapsed_seconds": 61,
+    "GPUs": 1,
+    "GPU_hours": 0.016944444444444446,
+    "start": "2026-10-08T19:44:03",
+    "end": "2026-10-08T19:45:04",
+    "exit_code": "0:0"
+  }
+}
