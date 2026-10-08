@@ -7,7 +7,7 @@ from ..metrics import effective_ids,proportion,joint,masked_squared_norm,wilson
 from ..resources import gpu_count
 
 class CPUChecks(unittest.TestCase):
-    def test_world_grouping(self):
+    def test_split_grouping_against_original_metadata_registry(self):
         worlds=rows(ROOT/'configs/worlds.jsonl');self.assertEqual(len(worlds),512)
         self.assertEqual(len({core(w) for w in worlds}),512)
         history=ROOT/'configs/historical_exposure_registry.jsonl'
@@ -112,3 +112,16 @@ class CPUChecks(unittest.TestCase):
         if (ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json').exists():self.skipTest('Explicit authorization exists; tested by worker manifest guard')
         from ..prepare import prepare
         with self.assertRaisesRegex(RuntimeError,'BLOCKED_TEST_INTEGRITY'):prepare('S4')
+    def test_final_exposure_union_is_blocked_and_registered(self):
+        path=ROOT/'configs/FINAL_EXPOSURE_LOCK.json'
+        if not path.exists():self.skipTest('Complete output audit not yet closed')
+        lock=read(path)
+        known=set(lock['encoder_exposed_worlds'])|set(lock['current_output_exposed_worlds'])|set(lock['historical_output_exposed_worlds'])
+        self.assertEqual(known,set(lock['all_known_exposed_worlds']))
+        self.assertEqual(len(known),lock['known_exposed_count'])
+        self.assertEqual(lock['known_exposed_count']+lock['not_known_exposed_count'],128)
+        self.assertEqual(lock['status'],'BLOCKED_TEST_INTEGRITY')
+        self.assertFalse(lock['new_endpoint_authorized']);self.assertFalse(lock['original_endpoint_restored'])
+        by={tuple(r['core_content']):r for r in rows(ROOT/'world_exposure_registry.jsonl')}
+        worlds={w['world_id']:w for w in rows(ROOT/'configs/worlds.jsonl')}
+        for wid in known:self.assertTrue(by[core(worlds[wid])]['exposures'])

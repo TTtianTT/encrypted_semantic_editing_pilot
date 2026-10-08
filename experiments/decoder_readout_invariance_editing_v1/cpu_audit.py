@@ -115,4 +115,26 @@ def run():
         input_files=len(checked),GPU_hours=ledger['GPU_hours'],controlled_queue=[],external_jobs=external))
 
 
-if __name__=='__main__':run()
+def closeout():
+    prior=ROOT/'results/FINAL_DELIVERY_AUDIT.json';prior_sha=sha(prior)
+    lock=read(ROOT/'configs/FINAL_EXPOSURE_LOCK.json')
+    assert not lock['new_endpoint_authorized'] and lock['test_model_evaluations']==0
+    for name,digest in lock['evidence_sha256'].items():assert sha(ROOT/'results'/name)==digest
+    assert sha(ROOT/'configs/worlds.jsonl')==lock['original_worlds_sha256']==read(ROOT/'configs/SPLIT_LOCK.json')['sha256']
+    for item in read(ROOT/'configs/FINAL_METHOD_CHECKPOINT_LOCK.json')['checkpoints']:assert sha(item['path'])==item['sha256']
+    out=io.StringIO();suite=unittest.defaultTestLoader.loadTestsFromName('experiments.decoder_readout_invariance_editing_v1.tests.test_cpu')
+    test=unittest.TextTestRunner(stream=out,verbosity=2).run(suite);assert test.wasSuccessful()
+    dump(ROOT/'results/CPU_ACCEPTANCE_FINAL.json',dict(passed=True,tests=test.testsRun,failures=0,errors=0,stdout=out.getvalue(),neural_model_loaded=False,temporary_root=str(TASK_TMP)))
+    acct=accounting([r['job_id'] for r in read(CONTROL/'jobs.json')]);assert acct['all_terminal'] and acct['peak_concurrent_GPUs']<=2
+    queue=command('squeue','-u',command('id','-un'),'-h','-o','%i|%T|%j|%b')
+    registered={r['job_id'] for r in read(CONTROL/'jobs.json')}
+    external=[dict(job_id=p[0],state=p[1],name=p[2],resources=p[3]) for p in (line.split('|') for line in queue.splitlines())]
+    assert not any(r['job_id'].split('_')[0] in registered for r in external)
+    dump(ROOT/'results/FINAL_QUEUE_AUDIT.json',dict(time_UTC=datetime.now(timezone.utc).isoformat(),command='squeue -u zailong -h -o %i|%T|%j|%b',stdout=queue,registered_allocations=len(acct['allocations']),all_terminal=True,GPU_hours=acct['GPU_hours'],peak_concurrent_GPUs=acct['peak_concurrent_GPUs'],remaining_controlled_jobs=[],external_jobs=external,external_jobs_not_cancelled=True))
+    dump(ROOT/'results/FINAL_CLOSEOUT_AUDIT.json',dict(passed=True,prior_full_source_artifact_headline_audit_sha256=prior_sha,CPU_tests=test.testsRun,exposure_union_count=lock['known_exposed_count'],original_test_denominator=128,test_model_evaluations=0,worlds_and_all12_checkpoints_unchanged=True,exposure_evidence_hashes_verified=True,withdrawn_endpoint_guard_passed=True,neural_model_loaded=False,registered_GPU_allocations=len(acct['allocations']),GPU_hours=acct['GPU_hours'],peak_concurrent_GPUs=acct['peak_concurrent_GPUs'],remaining_controlled_jobs=[],external_jobs=external))
+    print(dict(passed=True,CPU_tests=test.testsRun,known_exposed=lock['known_exposed_count'],GPU_hours=acct['GPU_hours'],external_jobs=external))
+
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--closeout',action='store_true');args=parser.parse_args()
+    closeout() if args.closeout else run()

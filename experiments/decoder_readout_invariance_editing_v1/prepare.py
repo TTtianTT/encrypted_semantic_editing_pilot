@@ -50,6 +50,11 @@ def initialize():
 def prepare(stage):
     initialize()
     if stage=='S4' and (ROOT/'configs/TEST_EXPOSURE_WITHDRAWAL_LOCK.json').exists():
+        proposal=ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json'
+        if proposal.exists() and read(proposal).get('status','').startswith('WITHDRAWN'):
+            final_exposure=ROOT/'configs/FINAL_EXPOSURE_LOCK.json'
+            dump(ROOT/'results/S4_SUBMISSION_STATUS.json',dict(status='BLOCKED_TEST_INTEGRITY',reason='Prior123 proposal withdrawn; encoder/current-output/historical-output core union is audited and no revised endpoint authorized',original_scan_denominator=128,known_exposed=read(final_exposure)['known_exposed_count'] if final_exposure.exists() else None,replacement_sampling=False,formal_test_evaluations=0))
+            raise RuntimeError('BLOCKED_TEST_INTEGRITY: withdrawn proposal cannot authorize test unsealing')
         auth=ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json'
         if not auth.exists() or not read(auth).get('approved',False):
             dump(ROOT/'results/S4_SUBMISSION_STATUS.json',dict(status='BLOCKED_TEST_INTEGRITY',reason='Five counterfactual donor cores were encoded before S4; fixed full128 independent endpoint is compromised',original_scan_denominator=128,replacement_sampling=False,formal_test_evaluations=0))

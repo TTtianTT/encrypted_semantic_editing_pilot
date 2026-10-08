@@ -24,6 +24,7 @@ def main():
     assert sha(t['checkpoint'])==t['checkpoint_hash']
     for path,digest in m['checkpoint_hashes'].items():assert sha(path)==digest,path
     if t['stage']=='S4':
+        assert not read(ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json').get('status','').startswith('WITHDRAWN'),'BLOCKED_TEST_INTEGRITY: withdrawn endpoint'
         auth=read(ROOT/'configs/S4_AMENDMENT_AUTHORIZATION.json')
         assert auth['approved'] and auth['proposal_sha256']==sha(ROOT/'configs/S4_PROTOCOL_AMENDMENT_PROPOSAL.json'),'Explicit test amendment authorization required'
     folder=Path(m['output_root'])/f"{t['model']}_s{t['seed']}";folder.mkdir(parents=True,exist_ok=True)
