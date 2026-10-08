@@ -1,0 +1,1 @@
+Plain rank16正式复训192 train worlds，400 updates；64 validation worlds、每world12合法操作×2来源。输入仅H/mask/op、一次latent forward，无donor/目标文本/重编码/推理反传。内容mask没有用于此loss。数字仅为validation参考；不能替代Output-only、真实/随机机制对照或独立test。长期结果本run未执行。
