@@ -1,0 +1,13 @@
+{
+  "stage": "S3_TRAJECTORY_NORMS",
+  "job_id": "3048",
+  "manifest": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/S3_TRAJECTORY_NORMS.json",
+  "manifest_hash": "a6536f075b2f18be80c2daa263e7de15be15ed7a9a4a84f9a7041740b4226ddd",
+  "snapshot": "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S3_TRAJECTORY_NORMS_20261008T113700Z",
+  "GPUs_per_task": 1,
+  "array_concurrency": 2,
+  "reservation_GPU_hours": 0.75,
+  "submitted": "2026-10-08T11:44:02.737978+00:00",
+  "queue_before": "",
+  "command": "sbatch --parsable --partition=B300q --gres=gpu:1 --time=00:15:00 --job-name=drie-v1-S3_TRAJECTORY_NORMS --array=0-2%2 --output=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.out --error=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/slurm_logs/%x-%A_%a.err --export=ALL,RUN_SNAPSHOT=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/local/snapshots/S3_TRAJECTORY_NORMS_20261008T113700Z,MANIFEST=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/manifests/S3_TRAJECTORY_NORMS.json,PYTHON_BIN=/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.venv/bin/python /dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.decoder-readout-worktree/experiments/decoder_readout_invariance_editing_v1/slurm/worker.sbatch"
+}

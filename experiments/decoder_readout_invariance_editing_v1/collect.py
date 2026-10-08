@@ -52,6 +52,9 @@ def collect(stage):
         elif stage=='S3_SELECTED_VALIDATION_TRAJECTORIES' and status['status']=='COMPLETED':
             from .trajectory_results import audit_run
             audit_run(folder,dest,summary)
+        elif stage=='S3_TRAJECTORY_NORMS' and status['status']=='COMPLETED':
+            from .trajectory_norm_results import audit_run
+            audit_run(folder,dest,summary)
         elif stage=='S4' and status['status']=='COMPLETED':
             from .test_results import audit_run
             audit_run(folder,dest,summary)

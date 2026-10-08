@@ -10,21 +10,25 @@ def text_cores(value):
     quantities=re.findall(r'there (?:are|is) ([1-9]) cop(?:y|ies)\.',text)
     statuses=re.findall(r'its status is (planned|completed|cancelled)\.',text)
     event_objects=re.findall(r'the ([a-z]+) event is dated',text)
-    if not facts or not quantities or not statuses:return set()
     result=set()
     for (obj,color),quantity,status in product(facts,quantities,statuses):
         result.add((obj,color,int(quantity),status))
         for event in event_objects:result.add((event,color,int(quantity),status))
+    symbolic={key:re.findall(r'\b'+key+r'\s*=\s*([a-z0-9]+)',text) for key in ('object','event_object','color','quantity','status')}
+    for obj,color,quantity,status in product(symbolic['object']+symbolic['event_object'],symbolic['color'],symbolic['quantity'],symbolic['status']):
+        if quantity.isdigit() and 1<=int(quantity)<=9 and color in ('blue','red','green','white','black') and status in ('planned','completed','cancelled'):result.add((obj,color,int(quantity),status))
     return result
 
 
 def strings(value,path=()):
     if isinstance(value,dict):
         for key,v in value.items():
-            if isinstance(v,str) and key in ('text','gold_text','current_text','target_text','prediction_text'):yield path+(key,),v
+            if isinstance(v,str):yield path+(key,),v
             elif isinstance(v,(dict,list)):yield from strings(v,path+(str(key),))
     elif isinstance(value,list):
-        for i,v in enumerate(value):yield from strings(v,path+(str(i),))
+        for i,v in enumerate(value):
+            if isinstance(v,str):yield path+(str(i),),v
+            else:yield from strings(v,path+(str(i),))
 
 
 def audit():
