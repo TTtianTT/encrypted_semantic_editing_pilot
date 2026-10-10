@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-11",
+  "authority": "User instruction during the running confirmation experiment",
+  "instruction": "继续运行，但是最多使用两张卡，使用srun和sbatch提交，其余的不符合要求的任务重新按照标准提交",
+  "original_protocol_sha256": "34f87aa6924890571519cdecbfe611e766633719bca4fc8536f1234c97cbbc00",
+  "maximum_gpus": 2,
+  "gpu_limit_scope": "GLOBAL across all projects and jobs combined; check squeue -u $USER before any GPU submission",
+  "submission": "sbatch allocation and srun execution for every computational phase; CPU analyses request no GPU",
+  "scientific_change": false,
+  "allocation_cap_seconds": 14400,
+  "gpu_dependency_change": "3323 closure released after completed training 3321; overlaps the end of 3322 evaluation. After 3322 completes, 3324 mechanism runs alongside closure. 3325 historical likelihood and cost reference waits for both 3323 and 3324, so the synchronized GPU timing has no concurrent GPU task from this experiment.",
+  "cpu_replay": ["compile", "analyze_existing", "matched_context", "context_figure", "horizon_existing", "summarize_controls"],
+  "fresh_prediction_repetition": false
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "template": 0,
+    "metric": "entering_token_mse",
+    "fit_worlds": 41,
+    "test_worlds": 39,
+    "fit_weighting": "equal total weight per condition, within condition per eligible record",
+    "intercept": -7.743623222883678,
+    "slope": -3.458872642534943,
+    "threshold_50": 0.005770708761034885,
+    "test_auc_failure": 0.9376545408749446,
+    "test_brier": 0.09483486559669446,
+    "by_condition": [
+      {
+        "condition": "C1",
+        "n": 351,
+        "observed_success": 0.0,
+        "predicted_success": 0.5165605043508599,
+        "brier": 0.2689137983230488,
+        "failure_auc": null
+      },
+      {
+        "condition": "C2",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.991975499648099,
+        "brier": 9.027695706841696e-05,
+        "failure_auc": null
+      },
+      {
+        "condition": "C3",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9910803527022586,
+        "brier": 0.00011135417065776019,
+        "failure_auc": null
+      },
+      {
+        "condition": "C4",
+        "n": 7636,
+        "observed_success": 0.7189628077527501,
+        "predicted_success": 0.502891145085659,
+        "brier": 0.1713800610604347,
+        "failure_auc": 0.9469662285236056
+      },
+      {
+        "condition": "C5",
+        "n": 944,
+        "observed_success": 0.5042372881355932,
+        "predicted_success": 0.23342527966171944,
+        "brier": 0.24137413169949362,
+        "failure_auc": 0.9392013215542627
+      },
+      {
+        "condition": "closure",
+        "n": 5462,
+        "observed_success": 0.9941413401684365,
+        "predicted_success": 0.931871942581926,
+        "brier": 0.0188332981082438,
+        "failure_auc": 0.9735324585635359
+      },
+      {
+        "condition": "dose",
+        "n": 5568,
+        "observed_success": 0.6968390804597702,
+        "predicted_success": 0.7523927761997617,
+        "brier": 0.07637220197690175,
+        "failure_auc": 0.968023831045097
+      }
+    ]
+  },
+  {
+    "template": 0,
+    "metric": "entering_S_mse",
+    "fit_worlds": 41,
+    "test_worlds": 39,
+    "fit_weighting": "equal total weight per condition, within condition per eligible record",
+    "intercept": -1.666200444489159,
+    "slope": -2.7178617561150027,
+    "threshold_50": 0.24374985860834397,
+    "test_auc_failure": 0.9265835563528153,
+    "test_brier": 0.08960346340676045,
+    "by_condition": [
+      {
+        "condition": "C1",
+        "n": 351,
+        "observed_success": 0.0,
+        "predicted_success": 0.40759240165130917,
+        "brier": 0.1709975418113579,
+        "failure_auc": null
+      },
+      {
+        "condition": "C2",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9969257407054881,
+        "brier": 1.2348645079781676e-05,
+        "failure_auc": null
+      },
+      {
+        "condition": "C3",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9961375264721553,
+        "brier": 1.971234237539665e-05,
+        "failure_auc": null
+      },
+      {
+        "condition": "C4",
+        "n": 7636,
+        "observed_success": 0.7189628077527501,
+        "predicted_success": 0.7485704239660322,
+        "brier": 0.13440722721055365,
+        "failure_auc": 0.8776384920816803
+      },
+      {
+        "condition": "C5",
+        "n": 944,
+        "observed_success": 0.5042372881355932,
+        "predicted_success": 0.21528549748332795,
+        "brier": 0.2825086986691527,
+        "failure_auc": 0.8404932485814839
+      },
+      {
+        "condition": "closure",
+        "n": 5462,
+        "observed_success": 0.9941413401684365,
+        "predicted_success": 0.9542678451776552,
+        "brier": 0.019965215739441888,
+        "failure_auc": 0.9386740331491713
+      },
+      {
+        "condition": "dose",
+        "n": 5568,
+        "observed_success": 0.6968390804597702,
+        "predicted_success": 0.6016101085323696,
+        "brier": 0.10381542755281171,
+        "failure_auc": 0.9484258196120584
+      }
+    ]
+  },
+  {
+    "template": 3,
+    "metric": "entering_token_mse",
+    "fit_worlds": 41,
+    "test_worlds": 39,
+    "fit_weighting": "equal total weight per condition, within condition per eligible record",
+    "intercept": -7.230308791500372,
+    "slope": -3.407407171773048,
+    "threshold_50": 0.0075519899541526166,
+    "test_auc_failure": 0.8889203006062586,
+    "test_brier": 0.13232951580833924,
+    "by_condition": [
+      {
+        "condition": "C1",
+        "n": 351,
+        "observed_success": 0.0,
+        "predicted_success": 0.6899091253284517,
+        "brier": 0.47838737822036786,
+        "failure_auc": null
+      },
+      {
+        "condition": "C2",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9758769912787163,
+        "brier": 0.0006427886219851227,
+        "failure_auc": null
+      },
+      {
+        "condition": "C3",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.97892714338447,
+        "brier": 0.0004834526755612727,
+        "failure_auc": null
+      },
+      {
+        "condition": "C4",
+        "n": 7126,
+        "observed_success": 0.6890261015997755,
+        "predicted_success": 0.4786751899457601,
+        "brier": 0.16226394587244386,
+        "failure_auc": 0.9742664899600756
+      },
+      {
+        "condition": "C5",
+        "n": 907,
+        "observed_success": 0.4895259095920617,
+        "predicted_success": 0.36846628404782705,
+        "brier": 0.16065958927128549,
+        "failure_auc": 0.9400988461463623
+      },
+      {
+        "condition": "closure",
+        "n": 1137,
+        "observed_success": 0.8970976253298153,
+        "predicted_success": 0.6268418652781861,
+        "brier": 0.1689912665930585,
+        "failure_auc": 0.711706049941344
+      },
+      {
+        "condition": "dose",
+        "n": 5577,
+        "observed_success": 0.6973283127129281,
+        "predicted_success": 0.6783157905723606,
+        "brier": 0.12656318839064357,
+        "failure_auc": 0.9387144625928765
+      }
+    ]
+  },
+  {
+    "template": 3,
+    "metric": "entering_S_mse",
+    "fit_worlds": 41,
+    "test_worlds": 39,
+    "fit_weighting": "equal total weight per condition, within condition per eligible record",
+    "intercept": -2.3029447816533697,
+    "slope": -3.840405314967842,
+    "threshold_50": 0.25138426557714716,
+    "test_auc_failure": 0.9153470382938398,
+    "test_brier": 0.10619613487824743,
+    "by_condition": [
+      {
+        "condition": "C1",
+        "n": 351,
+        "observed_success": 0.0,
+        "predicted_success": 0.48839719770846507,
+        "brier": 0.24683453791198393,
+        "failure_auc": null
+      },
+      {
+        "condition": "C2",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9939610860555144,
+        "brier": 4.2471719377289116e-05,
+        "failure_auc": null
+      },
+      {
+        "condition": "C3",
+        "n": 1404,
+        "observed_success": 1.0,
+        "predicted_success": 0.9947675870092261,
+        "brier": 3.258911787540365e-05,
+        "failure_auc": null
+      },
+      {
+        "condition": "C4",
+        "n": 7126,
+        "observed_success": 0.6890261015997755,
+        "predicted_success": 0.7212236836424525,
+        "brier": 0.13134128913395343,
+        "failure_auc": 0.9044754130302117
+      },
+      {
+        "condition": "C5",
+        "n": 907,
+        "observed_success": 0.4895259095920617,
+        "predicted_success": 0.21304520461974857,
+        "brier": 0.25371907153779194,
+        "failure_auc": 0.8647529819236083
+      },
+      {
+        "condition": "closure",
+        "n": 1137,
+        "observed_success": 0.8970976253298153,
+        "predicted_success": 0.8124241003283338,
+        "brier": 0.09625761961942411,
+        "failure_auc": 0.7291017261605497
+      },
+      {
+        "condition": "dose",
+        "n": 5577,
+        "observed_success": 0.6973283127129281,
+        "predicted_success": 0.5745126424177744,
+        "brier": 0.0967002949877487,
+        "failure_auc": 0.9564260418558116
+      }
+    ]
+  }
+]

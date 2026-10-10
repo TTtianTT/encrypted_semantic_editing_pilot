@@ -65,16 +65,17 @@ def main():
      ci95=old.bootstrap_mean([np.mean(vv) for vv in wv.values()]);mu=float(y[ii].mean());xm=float(x[ii].mean());ax.plot(10**xm,mu,'o',color=f'C{ci}',label=v if a==edges[0] else None,ms=4,alpha=.75)
      binsout.append(dict(template=t,metric=metric,condition=v,x=10**xm,n=len(ii),worlds=len(wv),success=mu,ci95_equal_world_weighted=ci95))
    grid=np.linspace(x.min(),x.max(),200);ax.plot(10**grid,1/(1+np.exp(-np.clip(b[0]+b[1]*grid,-35,35))),'k--',lw=1.5);ax.set_xscale('log');ax.set_ylim(-.03,1.03);ax.set_title(f'Template {t}: {metric}');ax.set_ylabel('Next success | prefix correct');ax.set_xlabel('Residual entering next edit');fitsout.append(overall)
- fig.tight_layout();fig.savefig(ROOT/'results/continuation_risk.svg');fig.savefig(ROOT/'results/continuation_risk.png',dpi=160);plt.close(fig)
+ from matplotlib.lines import Line2D
+ fig.legend([Line2D([0],[0],marker='o',ls='',color=f'C{i}') for i in range(len(uniq))],uniq,loc='lower center',ncol=7);fig.tight_layout(rect=(0,.04,1,1));fig.savefig(ROOT/'results/continuation_risk.svg');fig.savefig(ROOT/'results/continuation_risk.png',dpi=160);plt.close(fig)
  dump('results/continuation_risk_models.json',fitsout);dump('results/continuation_risk_bins.json',binsout)
  # Leave an entire family out as a portability check; no evaluation labels used in fit.
  loo=[]
  for t in (0,3):
-  rs=[r for r in lag if r['template']==t];cond=np.array([r['condition'] for r in rs]);y=np.array([r['next_success'] for r in rs],float)
+  rs=[r for r in lag if r['template']==t];cond=np.array([r['condition'] for r in rs]);y=np.array([r['next_success'] for r in rs],float);fold=np.array([int(hashlib.sha256(r['world_id'].encode()).hexdigest(),16)%2 for r in rs])
   for metric in ('entering_token_mse','entering_S_mse'):
    x=np.log10(np.maximum([r[metric] for r in rs],1e-12))
    for v in sorted(set(cond)):
-    tr=cond!=v;te=~tr;cn={q:int(sum(tr&(cond==q))) for q in set(cond)};weights=np.array([1/max(1,cn[q]) for q in cond]);b=logistic(x[tr],y[tr],weights[tr]);pp=1/(1+np.exp(-np.clip(b[0]+b[1]*x[te],-35,35)));loo.append(dict(template=t,metric=metric,held_family=v,n=int(te.sum()),observed=float(y[te].mean()),predicted=float(pp.mean()),brier=float(np.mean((pp-y[te])**2)),failure_auc=auc(1-y[te],1-pp)))
+    tr=(cond!=v)&(fold==0);te=(cond==v)&(fold==1);cn={q:int(sum(tr&(cond==q))) for q in set(cond)};weights=np.array([1/max(1,cn[q]) for q in cond]);b=logistic(x[tr],y[tr],weights[tr]);pp=1/(1+np.exp(-np.clip(b[0]+b[1]*x[te],-35,35)));loo.append(dict(template=t,metric=metric,held_family=v,n=int(te.sum()),observed=float(y[te].mean()),predicted=float(pp.mean()),brier=float(np.mean((pp-y[te])**2)),failure_auc=auc(1-y[te],1-pp)))
  dump('results/continuation_leave_family_out.json',loo)
 def grouped(rs,keys):
  d=defaultdict(list)

@@ -1,0 +1,98 @@
+[
+  {
+    "mode": "latent_C3",
+    "repetition": 0,
+    "warmup": true,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 0.7212965060025454,
+    "current_correct_checked": 0,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "latent_C3",
+    "repetition": 1,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 0.3319959850050509,
+    "current_correct_checked": 0,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "latent_C3",
+    "repetition": 2,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 0.33138307300396264,
+    "current_correct_checked": 0,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "latent_C3",
+    "repetition": 3,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 0.3304579250398092,
+    "current_correct_checked": 0,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "decode_symbolic_reencode",
+    "repetition": 0,
+    "warmup": true,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 2.3555826999945566,
+    "current_correct_checked": 400,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "decode_symbolic_reencode",
+    "repetition": 1,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 2.306585301004816,
+    "current_correct_checked": 400,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "decode_symbolic_reencode",
+    "repetition": 2,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 2.306327820988372,
+    "current_correct_checked": 400,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  },
+  {
+    "mode": "decode_symbolic_reencode",
+    "repetition": 3,
+    "warmup": false,
+    "worlds": 80,
+    "steps": 5,
+    "batch": 16,
+    "seconds": 2.313221921969671,
+    "current_correct_checked": 400,
+    "final_correct": 80,
+    "includes": "Start encoder cache fetch; five state updates and final decode. Reencode additionally decodes/parses current eachstep and invokes frozen encoder; controlled symbolic transform uses known world fields and state (oracle upper bound if copying ever fails). No start encoding in either mode."
+  }
+]
