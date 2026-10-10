@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "C4_initial_RRR_score_matches": 9600,
+  "complete_trajectories": 23040,
+  "archives_verified": 7,
+  "checkpoint_entries": 36,
+  "parameter_count": 50688,
+  "backbone_frozen": true,
+  "python": "3.12.3",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "notes": [
+    "Derived post-lock analysis scripts do not change inference or training.",
+    "Pooled affine geometry is computed on CPU; tokenwise GPU residuals are the primary aligned metrics."
+  ]
+}

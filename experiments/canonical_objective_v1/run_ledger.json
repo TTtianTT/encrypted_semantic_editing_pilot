@@ -1,0 +1,19 @@
+{
+  "jobs": [
+    {"job_id": 3313, "phase": "pre_c", "state": "COMPLETED", "exit_code": "0:0", "elapsed_allocation_seconds": 1089, "gpu_count": 1, "start": "2026-10-11T02:38:02", "end": "2026-10-11T02:56:11", "training_updates": 0},
+    {"job_id": 3314, "phase": "train_c", "state": "COMPLETED", "exit_code": "0:0", "elapsed_allocation_seconds": 687, "gpu_count": 1, "start": "2026-10-11T02:56:11", "end": "2026-10-11T03:07:38", "training_updates": 9000},
+    {"job_id": 3315, "phase": "eval_c", "state": "COMPLETED", "exit_code": "0:0", "elapsed_allocation_seconds": 1149, "gpu_count": 1, "start": "2026-10-11T03:07:38", "end": "2026-10-11T03:26:47", "training_updates": 0},
+    {"job_id": 3316, "phase": "mechanism_c", "state": "COMPLETED", "exit_code": "0:0", "elapsed_allocation_seconds": 84, "gpu_count": 1, "start": "2026-10-11T03:26:47", "end": "2026-10-11T03:28:11", "training_updates": 0}
+  ],
+  "timestamp_timezone": "Slurm cluster default; no timezone conversion applied",
+  "total_gpu_allocation_seconds": 3009,
+  "total_gpu_allocation_minutes": 50.15,
+  "total_gpu_allocation_hours": 0.8358333333333333,
+  "maximum_concurrent_gpus": 1,
+  "neural_training_updates": 9000,
+  "backbone_training_updates": 0,
+  "exploratory_models": 15,
+  "independent_confirmation_run": false,
+  "training_wall_seconds_by_group": {"C1": 180.2, "C2": 21.9, "C3": 50.6, "C4": 94.0, "C5": 308.8},
+  "timing_limit": "Sequential group timings include checkpoint I/O and have different warmup/cache conditions. They are observational timings, not a randomized speed benchmark. Reencoding remains the previously measured cost reference, approximately 0.078 seconds/world; compute savings are not the contribution."
+}

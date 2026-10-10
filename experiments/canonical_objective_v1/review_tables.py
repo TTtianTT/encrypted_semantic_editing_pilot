@@ -7,6 +7,14 @@ def clustered(rs,fn):
     v=[float(np.mean(x)) for x in by.values()]
     return dict(mean=float(np.mean(v)),worlds=len(v),ci95_world_bootstrap=old.bootstrap_mean(v))
 def main():
+    # Post-hoc stability explanation after seeing finite closure drift; no refit.
+    fs=load(PRIOR/'local/rrr.pt');maps={op:torch.eye(768,dtype=torch.float64)+fs['iid_only',op,16]['left'].double()@fs['iid_only',op,16]['right'].double() for op in ('plus','minus')};spectrum=[]
+    cycles={'original_alternating':['plus','minus'],'aligned_from_plus_one':['plus','plus','minus','minus'],'aligned_from_minus_one':['minus','minus','plus','plus']}
+    for name,ops in cycles.items():
+        a=torch.eye(768,dtype=torch.float64)
+        for op in ops:a=a@maps[op]
+        ev=torch.linalg.eigvals(a);rho=float(ev.abs().max());spectrum.append(dict(path=name,cycle_length=len(ops),spectral_radius=rho,asymptotic_per_step_radius=rho**(1/len(ops)),unstable_eigenvalues=int((ev.abs()>1+1e-6).sum()),post_hoc=True))
+    dump('results/closure_spectrum.json',spectrum)
     if (ROOT/'results/closure.jsonl').exists():
         rs=rows(ROOT/'results/closure.jsonl');out=[]
         for t in (0,3):
@@ -46,5 +54,36 @@ def main():
                 v=[r for r in rs if r['seed']==seed and r['template']==t and r['lambda_']==lam]
                 summary.append(dict(seed=seed,template=t,lambda_=lam,min_single_transition_success=min(r['success']['rate'] for r in v),min_single_transition_preservation=min(r['preserved']['rate'] for r in v)))
         dump('results/dose_single_minima.json',summary)
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        chain=read(ROOT/'results/dose_summary.json');fig,axes=plt.subplots(2,3,figsize=(13,7),sharex=True,sharey=True)
+        for row,t in enumerate((0,3)):
+          for col,seed in enumerate(SEEDS):
+            ax=axes[row,col]
+            for path,label in [('aligned_from_plus_one','R5 aligned +1'),('aligned_from_minus_one','R5 aligned -1')]:
+              z=sorted([r for r in chain if r['seed']==seed and r['template']==t and r['path']==path and r['step']==5],key=lambda r:r['lambda_']);ax.plot([r['lambda_'] for r in z],[r['trajectory']['rate'] for r in z],'o-',label=label)
+            z=sorted([r for r in summary if r['seed']==seed and r['template']==t],key=lambda r:r['lambda_']);ax.plot([r['lambda_'] for r in z],[r['min_single_transition_success'] for r in z],'s--',label='worst aligned atomic cell')
+            ax.set(title=f'seed {seed}, template {t}',ylim=(-.03,1.03),xlabel='RRR mixture weight',ylabel='success rate')
+        axes[0,0].legend(fontsize=8);fig.tight_layout();fig.savefig(ROOT/'results/dose_atomic_guard.svg');fig.savefig(ROOT/'results/dose_atomic_guard.png',dpi=160);plt.close(fig)
+    if (ROOT/'results/chain_summary.json').exists():
+        rs=read(ROOT/'results/chain_summary.json');idx={(r['group'],r['seed'],r['checkpoint'],r['template'],r['path'],r['step']):r for r in rs};conditional=[]
+        for key,r in idx.items():
+            step=key[-1];n=80 if step==1 else idx[(*key[:-1],step-1)]['trajectory']['k'];k=r['trajectory']['k']
+            conditional.append(dict(**{a:r[a] for a in ('group','seed','checkpoint','template','path','step')},prefix_success_n=n,next_success_k=k,conditional_rate=k/n if n else None,ci95=old.previous.binomial_ci(k,n)))
+        dump('results/conditional_continuation.json',conditional)
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+        fig,axes=plt.subplots(2,3,figsize=(13,7));steps=read(ROOT/'protocol.json')['training']['evaluation_C4_checkpoints']
+        for row,t in enumerate((0,3)):
+          for seed in SEEDS:
+            r=sorted([x for x in rs if x['group']=='C4' and x['seed']==seed and x['template']==t and x['path']=='aligned_from_plus_one' and x['step']==1],key=lambda x:x['checkpoint']);r5=sorted([x for x in rs if x['group']=='C4' and x['seed']==seed and x['template']==t and x['path']=='aligned_from_plus_one' and x['step']==5],key=lambda x:x['checkpoint'])
+            axes[row,0].semilogy(steps,[x['token_mse'] for x in r],'o-',label=f'seed{seed}');axes[row,1].plot(steps,[x['trajectory']['rate'] for x in r],'o-');line=axes[row,2].plot(steps,[x['trajectory']['rate'] for x in r5],'o-')[0]
+            axes[row,2].fill_between(steps,[x['trajectory']['ci95'][0] for x in r5],[x['trajectory']['ci95'][1] for x in r5],color=line.get_color(),alpha=.1)
+          for col,label in enumerate(('first-step token MSE','R1','R5')):
+            ax=axes[row,col];ax.set_xscale('symlog',linthresh=10);ax.set_xticks(steps);ax.set_xticklabels(steps,rotation=45,fontsize=8);ax.set(xlabel='CE updates from RRR initialization',ylabel=label,title=f'template {t}')
+            if col:ax.set_ylim(-.03,1.03)
+        axes[0,0].legend();fig.tight_layout();fig.savefig(ROOT/'results/c4_drift_early.svg');fig.savefig(ROOT/'results/c4_drift_early.png',dpi=160);plt.close(fig)
 
 if __name__=='__main__':main()
