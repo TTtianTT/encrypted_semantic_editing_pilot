@@ -1,0 +1,25 @@
+{
+  "recorded_utc": "2026-10-10T17:04:05.190144+00:00",
+  "protocol_sha256": "b2f61725771ff6650a890ef2e01c911b8f7d7217a049e78904ba51471d4dcc11",
+  "amendments": [
+    {
+      "phase": "cross_conditioned",
+      "failed_job": 3295,
+      "retry_job": 3298,
+      "change": "Mask read-consistency assertion to valid tokens and check padding unchanged. Intervention definition and sample pool unchanged.",
+      "original_code_sha256": "17c3878eab4415ef1cf2d3c93dd5f65b95ec8cdcdd4fea92314ed24637646477",
+      "current_code_sha256": "917747b97f1bff69dec05271edf00fdce91b401aaaec0c532282625b89ebdff0"
+    },
+    {
+      "phase": "decoder_cumulative",
+      "reason": "All preplanned single-layer and token-group patches had 0% rescue. Post-hoc cumulative prefix/suffix native K, V, KV replacements use the same fixed 40 worlds per seed.",
+      "code_sha256": "7a3e5a1ffc0053c1870daa3048235edbd0651f792c14d3ece44490f685328bec",
+      "layer_sets": "prefix lengths 1..6; suffix lengths 1..5; all valid memory positions"
+    }
+  ],
+  "estimator_diagnostic": {
+    "post_hoc": true,
+    "code_sha256": "037319ccd73aa757299ec8527672b36eaa29e4038eefe1f2aef53b7e09e2c20e",
+    "GPU_inference": false
+  }
+}

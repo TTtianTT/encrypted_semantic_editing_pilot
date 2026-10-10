@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-10-10T16:41:31.759910+00:00",
+  "protocol_sha256": "b2f61725771ff6650a890ef2e01c911b8f7d7217a049e78904ba51471d4dcc11",
+  "inputs": {
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/interventions.py": "695812e1d0b0c1d9e0b93d8ad3a7c30e6eb6809e39238601daf9d217609d9c36",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/projection.py": "f585be5b2baeed43a2ea36e02c15485e3890ee7338d6405f951562598e0e7354",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/decoder.py": "c821ce87796d9426ca08a940118eabe75227436505d43e26792387c2202424b8",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/g4_same_editor.py": "424bb053b4afeaf5563e50f28e8ed5e6de8be020e828de6007b24fd897827ac7",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/canonical_control.py": "eb714f78902eeb1f238010e04a7a20faefabdc8bc26ed0da7433bc6114dce7b8",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/cross_conditioned.py": "17c3878eab4415ef1cf2d3c93dd5f65b95ec8cdcdd4fea92314ed24637646477",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/reference_frame_pilot_v3/checkpoints/G3/best.pt": "dca3cb26c0d3c1e33e3215f86e911d4c19df7417160598dcfdba8fbcffd8654d"
+  },
+  "status_note": "Recorded after attribution and projection initiation; decoder and supplementary stages still pending. This is an execution-source snapshot, not retrospective preregistration.",
+  "supplementary_plan": {
+    "g4_same_editor": "Fixed first 96 eligible V3 training worlds, current-exact and next-failing qualification, at least 20 required, historical held-out G4 prediction only.",
+    "canonical_control": "Templates 0 2 3, states 0 -1, 80 worlds each, mean ridge and first fixed random ridge seed 91001.",
+    "cross_conditioned": "Recipient full read repair plus source PCA perpendicular component, templates 0 and 3, all 80 evaluation worlds."
+  }
+}

@@ -1,0 +1,25 @@
+basis_seed,split,step,metric,N,failures,auroc,ci95,status
+42,test_iid,1,mahal,53,0,,,one_class
+42,test_iid,1,random_mahal,53,0,,,one_class
+42,test_iid,1,reference_full_distance,53,0,,,one_class
+42,test_iid,pooled_steps,mahal,139,53,0.9078543220710839,"[0.8804975292003594, 0.9403254115415647]",estimable
+42,test_iid,pooled_steps,random_mahal,139,53,0.9365949978060553,"[0.9084506027253668, 0.963910474267324]",estimable
+42,test_iid,pooled_steps,reference_full_distance,139,53,0.9229925405879772,"[0.8938073716542343, 0.9538802785265049]",estimable
+42,test_iid,2,mahal,53,20,0.36363636363636365,"[0.21400401069518715, 0.524250398724083]",estimable
+42,test_iid,2,random_mahal,53,20,0.5621212121212121,"[0.3807225831732228, 0.7333407738095237]",estimable
+42,test_iid,2,reference_full_distance,53,20,0.4681818181818182,"[0.2939169164169164, 0.6442574786324785]",estimable
+42,test_iid,3,mahal,33,33,,,one_class
+42,test_iid,3,random_mahal,33,33,,,one_class
+42,test_iid,3,reference_full_distance,33,33,,,one_class
+42,test_template_ood,1,mahal,53,12,0.6910569105691057,"[0.5, 0.8512040672505786]",estimable
+42,test_template_ood,1,random_mahal,53,12,0.8882113821138211,"[0.774984756097561, 0.9654776422764226]",estimable
+42,test_template_ood,1,reference_full_distance,53,12,0.9390243902439024,"[0.8576785714285714, 0.9875076219512195]",estimable
+42,test_template_ood,pooled_steps,mahal,103,53,0.869056603773585,"[0.803848666569158, 0.9258793139897468]",estimable
+42,test_template_ood,pooled_steps,random_mahal,103,53,0.930188679245283,"[0.8892521774038713, 0.9640801886792453]",estimable
+42,test_template_ood,pooled_steps,reference_full_distance,103,53,0.9086792452830189,"[0.8643261455525606, 0.9522988203501731]",estimable
+42,test_template_ood,2,mahal,41,32,0.6979166666666666,"[0.4932385510510511, 0.8889204545454543]",estimable
+42,test_template_ood,2,random_mahal,41,32,0.9236111111111112,"[0.8243044515103339, 0.9924242424242424]",estimable
+42,test_template_ood,2,reference_full_distance,41,32,0.6388888888888888,"[0.42563984438984437, 0.8409389952153109]",estimable
+42,test_template_ood,3,mahal,9,9,,,one_class
+42,test_template_ood,3,random_mahal,9,9,,,one_class
+42,test_template_ood,3,reference_full_distance,9,9,,,one_class
