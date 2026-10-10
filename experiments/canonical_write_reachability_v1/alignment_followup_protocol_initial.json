@@ -1,0 +1,133 @@
+{
+  "post_hoc": true,
+  "reason": "Initial mask coverage excludes length-changing transitions; reordered source 0 crosses an uncovered edge",
+  "fitting_parameters_unchanged": true,
+  "neural_training": false,
+  "ranks": [
+    16,
+    768
+  ],
+  "conditions": [
+    "iid_only",
+    "aligned_templates"
+  ],
+  "eval_templates": [
+    0,
+    3
+  ],
+  "paths": {
+    "from_plus_one": {
+      "initial_state": 1,
+      "operations": [
+        "plus",
+        "plus",
+        "minus",
+        "minus",
+        "plus"
+      ]
+    },
+    "from_minus_one": {
+      "initial_state": -1,
+      "operations": [
+        "minus",
+        "minus",
+        "plus",
+        "plus",
+        "minus"
+      ]
+    }
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "evaluation_worlds": [
+    "new_time_0000",
+    "new_time_0003",
+    "new_time_0004",
+    "new_time_0005",
+    "new_time_0008",
+    "new_time_0009",
+    "new_time_0011",
+    "new_time_0012",
+    "new_time_0013",
+    "new_time_0020",
+    "new_time_0021",
+    "new_time_0026",
+    "new_time_0027",
+    "new_time_0028",
+    "new_time_0033",
+    "new_time_0035",
+    "new_time_0036",
+    "new_time_0038",
+    "new_time_0040",
+    "new_time_0042",
+    "new_time_0043",
+    "new_time_0044",
+    "new_time_0045",
+    "new_time_0048",
+    "new_time_0049",
+    "new_time_0053",
+    "new_time_0054",
+    "new_time_0055",
+    "new_time_0061",
+    "new_time_0064",
+    "new_time_0066",
+    "new_time_0067",
+    "new_time_0068",
+    "new_time_0069",
+    "new_time_0070",
+    "new_time_0071",
+    "new_time_0075",
+    "new_time_0078",
+    "new_time_0081",
+    "new_time_0082",
+    "new_time_0086",
+    "new_time_0088",
+    "new_time_0094",
+    "new_time_0095",
+    "new_time_0096",
+    "new_time_0104",
+    "new_time_0105",
+    "new_time_0108",
+    "new_time_0109",
+    "new_time_0110",
+    "new_time_0113",
+    "new_time_0115",
+    "new_time_0119",
+    "new_time_0121",
+    "new_time_0122",
+    "new_time_0131",
+    "new_time_0132",
+    "new_time_0133",
+    "new_time_0135",
+    "new_time_0136",
+    "new_time_0138",
+    "new_time_0139",
+    "new_time_0140",
+    "new_time_0142",
+    "new_time_0143",
+    "new_time_0147",
+    "new_time_0149",
+    "new_time_0152",
+    "new_time_0153",
+    "new_time_0155",
+    "new_time_0159",
+    "new_time_0160",
+    "new_time_0161",
+    "new_time_0162",
+    "new_time_0169",
+    "new_time_0170",
+    "new_time_0176",
+    "new_time_0177",
+    "new_time_0183",
+    "new_time_0186"
+  ],
+  "exposure": "Historical worlds, post-hoc diagnostic; no independent confirmation",
+  "rrr_sha256": "a1456942b71d9307378ce9d62d5f5b688793f4fdf958de1409d48670946015d8",
+  "sources": {
+    "alignment_followup.py": "e825f14e0aa7cfdf9690c369d4e57719680977aa043cfb58fd44dd1514140c8a",
+    "followup_report.py": "acae02a62a55766aab91236b0987049a8202e8db7e5a42806b706bcab78a9cba"
+  }
+}
