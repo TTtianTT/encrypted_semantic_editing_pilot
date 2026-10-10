@@ -1,0 +1,279 @@
+{
+  "created_utc": "2026-10-10T19:55:05Z",
+  "rank": 16,
+  "confirmation_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "train_worlds": 96,
+  "confirmation_worlds": 160,
+  "confirmation_generation_seed": 271828,
+  "excluded_legacy_cores": 352,
+  "available_new_cores": 728,
+  "disjoint_key": [
+    "object",
+    "color",
+    "quantity",
+    "status"
+  ],
+  "time_templates": [
+    0,
+    3
+  ],
+  "paths": {
+    "original_alternating": {
+      "initial_state": 0,
+      "operations": [
+        "plus",
+        "minus",
+        "plus",
+        "minus",
+        "plus"
+      ]
+    },
+    "original_reordered": {
+      "initial_state": 0,
+      "operations": [
+        "plus",
+        "plus",
+        "minus",
+        "minus",
+        "plus"
+      ]
+    },
+    "aligned_from_plus_one": {
+      "initial_state": 1,
+      "operations": [
+        "plus",
+        "plus",
+        "minus",
+        "minus",
+        "plus"
+      ]
+    },
+    "aligned_from_minus_one": {
+      "initial_state": -1,
+      "operations": [
+        "minus",
+        "minus",
+        "plus",
+        "plus",
+        "minus"
+      ]
+    }
+  },
+  "path_origin": "Aligned paths selected post hoc before canonical-objective round; fixed here before all fresh-world scores",
+  "main_groups": [
+    "C1",
+    "C3",
+    "RRR",
+    "reencode"
+  ],
+  "C4_checkpoints": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    50
+  ],
+  "training": {
+    "C1_C3_updates": 600,
+    "C4_updates": 50,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0,
+    "clip": 1,
+    "batch": 8,
+    "microbatch": 2,
+    "l2_weight": 1,
+    "l2_normalization": "Per-operation train canonical ideal-write token energy, unchanged from prior experiment",
+    "batch_rng": "persistent Random(seed), alternation plus first",
+    "selection": "None; final600 and predeclared C4 checkpoints",
+    "reuse": "Reuse unchanged C1/C3 endpoints seeds42-44; train45-46 on same96worlds. Replay all5 C4 to50 for dense checkpoints. Exact equality with old10/25/50 required for42-44. RRR deterministic single map, not five independent fits"
+  },
+  "closure": {
+    "groups": [
+      "C3",
+      "RRR"
+    ],
+    "worlds": "First80 newly generated time worlds, fixed before scores",
+    "horizons": [
+      10,
+      20,
+      50
+    ],
+    "paths": [
+      "original_alternating",
+      "aligned_from_plus_one",
+      "aligned_from_minus_one"
+    ],
+    "evaluate_every_step": true,
+    "spectra": "Full affine token mapping over closed2/4step cycles; report amplification and forcing, not universal divergence"
+  },
+  "mechanism": {
+    "worlds": "First80 fresh time worlds",
+    "source": 1,
+    "first_operation": "plus",
+    "matched_state": 0,
+    "next_operation": "plus",
+    "next_state": -1,
+    "S": "Centered PCA4 of C1 train96 source1->0 differences, per seed, frozen before new-world inference",
+    "read_space": "row(C1 plus.v)",
+    "conditions": [
+      "none",
+      "full",
+      "S",
+      "S_R",
+      "S_perp",
+      "random_S_norm"
+    ],
+    "alpha": 1,
+    "eligible": "Current edited and canonical states decode correctly, canonical next succeeds, edited next fails; publish all counts and conditional denominators",
+    "visibility": "KL(canonical||canonical+S_perp) on current and KL(edited_canonical||edited_canonical+S_perp) on next; gold teacher forcing",
+    "random_seed": 91001
+  },
+  "replication": {
+    "model": "bart",
+    "domain": "person",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "train_worlds": 96,
+    "new_worlds": 80,
+    "generation_seed": 314159,
+    "templates": [
+      0,
+      3
+    ],
+    "groups": [
+      "C1",
+      "C3",
+      "C4",
+      "RRR",
+      "reencode"
+    ],
+    "fit": "All mask-identical template0 train transitions; fixed ridge1e-4, no evaluation selection",
+    "paths": "1 plus/minus alternation and2 minus/plus alternation, five steps",
+    "boundary": "State0 generally length-changing and excluded from aligned fit. Template3 not previously admitted: report canonical/single floors before any composition claim"
+  },
+  "confidence": "Per seed/path/template Wilson95 for one complete trajectory per world; means and state-aggregated metrics bootstrap worlds2000. Deterministic RRR/reencode evaluated once and not counted as independent seeds",
+  "limits": [
+    "Controlled synthetic worlds; confirmation is fresh semantic cores, not natural text",
+    "No new length-changing method, KL or target-network exploration",
+    "Sensitivity prevention and robustness are distinct",
+    "Finite50steps do not prove closure"
+  ],
+  "maximum_gpus": 1,
+  "allocation_cap_seconds": 14400,
+  "inputs": {
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/train_worlds.jsonl": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/eval_worlds.jsonl": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/core.py": "8b8c1476d6bac389d7b3315d00b3f36a3036f4aaf08c849a9efb1fb3ebf6abc5",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/shared.py": "23ddfee65e328cdd1c2d81235dcb5b6a1a5c5fc67ac33a336c80210e6621c7f7",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/protocol.json": "871769658aa91ea5be456a5b97097dfc4c1c97ca130f02502a04fdfc34af9259",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/alignment_followup_protocol.json": "23175b0584dcb1480010bf1772ddbc1d908c32240dfe281072d7d3e4ad7256ab",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/rrr.pt": "a1456942b71d9307378ce9d62d5f5b688793f4fdf958de1409d48670946015d8",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-3.pt": "ab2cfb4aa752397d93fd2882a74798de90b301dd22630fb928413631fda37447",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s-2.pt": "31ac8d3cbe9afeed5bad1043df6555f3365cbf78fa1eabeeffa4210b932c1e17",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s3.pt": "c0653c22fd2a89cab4a71e02a662cbaab537ad9624a91780b32bc35d70fb7ffc",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s1.pt": "7fc609498419d3e6e8fc6fc2ec8971b93769f866523682bb22ffaa49e0c30d6c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s0.pt": "4ddb5c2dd267f88ecf8a6bb2f7e890101c1a21199d2a564d02d17cad1f2d3444",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-3.pt": "a5a8ccc3b580789650456ce984aae9ddc23468be7d7159701f3bce041865bd01",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s2.pt": "8ce98b2a1f81fb06dd9c56817c9aff6ba3223f12bfd8323da1343a8906cde591",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-2.pt": "59906b67c9bce637a93040735cdc908e9a2310ee0f2b07e155d0d1de4fe62160",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s2.pt": "62a68ef72479ecd4c7c1672c4e739488e59eda4c67e9ffea74c5da2918bd0ced",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-1.pt": "2ced2dd11e37210fb0232c7412a39c9f49d41ea9390b3dd6f7f0cc594d24077d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s0.pt": "6e6d44a177aaa01137a454fa6071bf9b1ad6e0c6c1d4ece468b4853c1737350f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-1.pt": "99a74d64f828db36150c90c9ffd5415f17fbb441facdfa97c9eac862327edc1e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s1.pt": "393b638caa8ec69ab8a5c21423bed20b56ffd0f1b78afbc9f9e076e85fa31414",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s3.pt": "1248577b62442ed9de1670d32129c665432e36b80f96d49a44247862f9c0bd61",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s1.pt": "ee16e59981a3022d170c022954f626267a408e5299e0fadafe64cb05ef6ac3a5",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-2.pt": "dc764cad5272443bbb145a5132ee2e2b6c0ead3d95de165e06275ac675f749e1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s3.pt": "1e41ae194d55ec7fea21c3f8da57f31bd7fed799c66282ae3a8df95958302421",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-3.pt": "202600350a75a6be139d6cb1e7d85086589733e5d621e871166a6862b3284949",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-2.pt": "ee92a65acdda4d16539f72f502c6bfce92d61b065ceb5fe414bc102529e15bf1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s-3.pt": "b03b1392cb99c4f7d8f7a681a410360b5563340d438592b33c108b931be49fb0",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s2.pt": "8d49ccf1d87fb6750a98e44867a67a2a3712764d42e298d802f5e1358d5e7787",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s0.pt": "9a457b04e6558c571c9b650b385cf5adb1b7222fba60e2e79f6679aa653a6cec",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s-1.pt": "72fc8007fde36af6ad4d11f4761ce03390e9fcc06074fd30cd994293d1f61592",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s2.pt": "490ef027e61e5935fc092d5d2077f5a1cf97d6e2417272db405ad24dcf74cf71",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t3_s0.pt": "ce4891bd8e18b0a54351e421850db932671bd29fcd7d82b7eb52756231ef6a8f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s1.pt": "c50746c4a058c7c8a2d8a40bc473d987f27038cfb71c3f2799020d1c2ee9b33d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s3.pt": "8c6f29307e6732e3e5ff4a70732b0f8f91fb1fc7e9bcc017a97cad2e2b892ce0",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-1.pt": "43f43d2d2cc59f3e06a1db93470564e0de0ed76408febddd29a07a07b9f42c3b",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/local/fit_s42.pt": "adbe94f5b9bbf5feff397e3a365f955474dab78df13beb9843dc6e0d5d08992e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/local/fit_s43.pt": "da8a80d46aa70216027166f1fe2623c204235fdf0014992cab00cb798f62dc5f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/local/fit_s44.pt": "a7b3bc594b75b42226eeba890999707d5eb7f498a764bd2962036021fc28a1ca",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s42/P/best.pt": "eb67d279a13c7dddc3f17cff10cef9253169e145de8670ae83b3a5bcc712930b",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s43/P/best.pt": "e3842c86634074a5ecd9e0a6730c2443b676a743b85b7417f01c9f1400253377",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/local/formal/bart_time_s44/P/best.pt": "39ddbec53689ea2f2d92dcda35c3275bfd0d079b2d7ae4480e8d0aa517fd0213",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/backend.py": "083daec8548940e5e744e7428f4bb22b1e010cb70e133aa182f0fbf34982ca1d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/train.py": "fe8e335c9cb853309daef19d17d9969ff60af4a4c071d053e57138ce06e86726",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/semantics.py": "fb92114837ced81d65a54d247534ac22fc75e8437d2820147aa31326b98f5c3f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/evaluator.py": "00144e2c21f7e713ef72411ea9da206706b894e0c5dfa0a32dc943715c1f0f25",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/common.py": "98e6513df56fbd16a281e6afe5dd6e05c02709fe3b9bf0680f793f7a787aa5ac",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/config.json": "9bbb8adebecd7863723192b275ad929b2095dcfd6a157a6fa646e764af40452c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/model_manifest.json": "fe56c72a8f02c1fcdf489eda928ea7fc401002d03f5f2c9aa479319760e22dca",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/models/bart-base/model.safetensors": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/protocol.json": "b3e280649ef56ea0a1a4876732fbd2b7605f07caf03e269f1c7330b00c202075",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0100.pt": "52973f93b927fd730e9fbac65279266679315f999f94517edd4bf72256f66c4e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0025.pt": "9bdc002f979cdc919c30ece26b9d6b0a5dacd80d8b773a0b66f66c8f6fdf03f1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0300.pt": "c6125e1ebda9f3aaf80caaf844ba56f09f1e3932c1659d57c5499ab5ec4797da",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0000.pt": "d690682eafb6f6f0aa7935f88b9b6f63d6a655ba9a209aaaaa60584ef71cf227",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0010.pt": "b8a02ff7a2235044eba611eafe1f70b9bcc10badc22f5f4a6f75a42efb4e6f3a",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0400.pt": "37e707486a711dda4073d248a36b8521d314289c369ac9304b509d3ad20ae62f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0200.pt": "18c205a352797cef64527f733930d01376c6cc3579bf7f244bf7a97c02ac9e8c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0200.pt": "73703809e8c3183ea65774eaac243e3cf87be082fa9f5c05a72fb09bf112de14",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0600.pt": "f3a9b59406a65f30334401b26f4736b41bca9c8ca8cdb296c59229e5fae7dc91",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0000.pt": "990b041227bdbe995cd8af9cbb25be92b5f8d51faafd4402b245daaab5829ad1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0025.pt": "20819bfdc0b88a4d86ad590d083ba50589953819edc6cf0d884ea407e241d706",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0300.pt": "7397a38e2c4032a2aa2b1c211312b4a3365b69b2f16297fc0008908d8a9cf6f4",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0100.pt": "35f296d3aad156dbb1a55537d2cf647771ece32480d5f58e3113efbb9fd493d8",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0050.pt": "092e3ae57ae226bb83fcd9d5790a49c63160c1f5148ba18c4f4c69b80216f6c0",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_latest.pt": "4e05a98d9c3305cfb5415f872037ba57e6d07d8ec34851bfb393c35770313f54",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0050.pt": "e783d418fefd829ea29b3ae77473c2a1e817522581c9cd60abf54a9c28ba017a",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0100.pt": "e8dcdc0ba8a1334c434e17ff1efb53a8551395ae8deaf641a582cdfc73ec1621",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0010.pt": "7e114c96a4bc62fbf5fce73103b54008b10d44b5b5af128f2fb46cf0096dec3c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0400.pt": "ed13e5f98cff349d628fdcb2c90a957c3b34d005a8f46fd0ee77188c92ffe8e6",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0000.pt": "ee858bb99db52cb5c667046bed741a51f0a43ab0ddd7d6ed573307b512acf856",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0600.pt": "96393449abecef6cd4daf0f4a06eae9b3ffbd6502a985bd8ad988944db291598",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0600.pt": "f3a8f4e9eb6ad6b466d1bcc450f15df5ba07a260dc90f2a5784b25dcb6d03d6a",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0200.pt": "c57936b46bcfe2472bd85a92d46e1fee34c1cbc5dfc51cb09e5185030f038dc2",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_latest.pt": "5b02b6ba3e84ac0d5e456e9abaec289083d151f5d8ee12927bb81d2743fa4063",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0400.pt": "d62d94fbb42705eeebc3b1eedf3f63b7c9d0f4148368e0eeff32606548c74c25",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s44_0010.pt": "2d81991c8e96a159adaaf06d7b9d8b32774c10dd157b0073bf556b77f2eb9c08",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s42_0050.pt": "b837d8dfb7f24b4952975d89b2be5936092a9504290cc5f4a5bbea56285bd98a",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0025.pt": "aad5ffbbe1f884d8079c43efde66a8c3c5cd8e01f67503c527637e68638685ba",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_0300.pt": "a542fb1415672640d31dbedb9a7ca6717fbbb6667568fbde8d077b0cb2404ae7",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C4_s43_latest.pt": "4e8ded6345f625a3ea29629752f0681a3b464516ddeed0bb0f785827a0fe27d0",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/cutil.py": "567ea0e63bf5a1deecb6eccfb46faac9753a5968133a77553ea6162e759cfd06",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/worlds.jsonl": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/data/time_eval.jsonl": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/data/person_train.jsonl": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/data/person_eval.jsonl": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C1_s42_0600.pt": "05e358f429162366d474d4181788282a8697ea855a45f015ef895ff70f71d3ae",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C3_s42_0600.pt": "5cfe72b86b4855bf4b0e3d9f2a47f666835ec5baa1e354b96a641b85a79ada3e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C1_s43_0600.pt": "ac5ef39cfdb7d09263e8767b62ca8f5acaa9a0142207d182f979f753a3403811",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C3_s43_0600.pt": "3b39598eaad0c6f4335e97b8e265b7e0c7d280eec404077f287512d9b11e7612",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C1_s44_0600.pt": "82ae1a3d16646f0baf79dde2c8b209f7ae59f62836672f7102ec94192d941862",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/local/C3_s44_0600.pt": "f2ce10883a51aee4c89d3ec66914fd2e152e51eaff48b808c1295dd1b551be74"
+  },
+  "sources": {
+    "futils.py": "8a06a3e277137c13739bec325753c0f0614967882b9b8be46e69c8190fe31cbc",
+    "extract_fresh.py": "a5b482b514666554863ad7141c24787572488116511c8299520eb645bc823b68",
+    "train_final.py": "bdf20514fb7833f9e51471e5f881f71e1d1ae6642b0db3c1b9e552ff7c9b2c02",
+    "eval_final.py": "eeb4219ff663047f3b2607e41b2ab192d653e3a49b3e93d6274987c20167b693",
+    "closure_final.py": "60ae6698822cf9e3ef3d53bc294f9b3252c75bcca6647d09bfc55b886abb224f",
+    "mechanism_final.py": "0e5d4ae0b5100cfebc5873bf15acd3c6324790a58e1194527608f43d3a65a1dd",
+    "job.slurm": "e115585a8a615e7a8d8633535d8a99cb7866f9c3f039c7f49144dfef1cadde15"
+  }
+}
