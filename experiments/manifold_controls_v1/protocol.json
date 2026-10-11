@@ -1,0 +1,170 @@
+{
+  "created_utc": "2026-10-11T06:28:56Z",
+  "lock_job_id": "3340",
+  "maximum_global_gpus": 2,
+  "model": "Frozen BART, existing semantic editor interface",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "person": {
+    "train_worlds": 96,
+    "dev_worlds": 80,
+    "confirmation_worlds": 160,
+    "ranks": [
+      16,
+      64,
+      256,
+      768
+    ],
+    "ridge_grid": [
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "ridge_selection": "Per operation/rank minimum dev token MSE; train96 only; no dev refit",
+    "rank_selection": "Maximum mean dev R5 over forward/reverse paths, then mean all-legal single success, then minimum aligned token MSE, then smallest rank",
+    "confirm": "Once-only all four ranks for a predeclared rank curve; selected rank is primary. Templates0 and3; report unsupported canonical/single floors. No train updates"
+  },
+  "baseline": {
+    "train_worlds": 96,
+    "all_legal_transitions": true,
+    "template": 0,
+    "rank": 16,
+    "updates": 600,
+    "batch": 8,
+    "microbatch": 2,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0,
+    "clip": 1,
+    "groups": [
+      "CE_all",
+      "floor",
+      "adv_pool",
+      "adv_set"
+    ],
+    "lambda_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "dev_worlds": 32,
+    "dev_origin": "First32 of historical80, explicitly exploratory and previously exposed",
+    "dev_template": 0,
+    "selection": "Each discriminator: best mean dev R5 across all four paths and all3seeds; then all-legal single success; then smallest lambda. Floor/CE_all no selection; fixed final600",
+    "floor": "Per-example max(CE(z,y)-stopgrad(CE(E(y),y)),0), before mean; no latent alignment",
+    "adversarial": "Non-saturating logistic BCE; one discriminator update per editor update; discriminator AdamW lr1e-4 wd0 clip1; frozen backbone; generator CE+lambda*softplus(-D(z))",
+    "discriminator_architecture": "pool: normalized masked mean ->128 LeakyReLU ->1; set: normalized token ->128->128 LeakyReLU, masked mean and max ->128->1",
+    "normalization": "Canonical train-only feature mean/std, clamp std0.01",
+    "real_sampling": "Uniform train canonical sequences from all states, conditioned on exactly same valid length as edited source. No direct access to mask length or padding. Marginal manifold constraint; not target-paired L2. Accessible source lengths differ from target lengths on some transitions",
+    "confirmation_worlds": 160,
+    "templates": [
+      0,
+      3
+    ],
+    "paths": {
+      "original_alternating": {
+        "initial_state": 0,
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "minus",
+          "plus"
+        ]
+      },
+      "original_reordered": {
+        "initial_state": 0,
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ]
+      },
+      "aligned_from_plus_one": {
+        "initial_state": 1,
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ]
+      },
+      "aligned_from_minus_one": {
+        "initial_state": -1,
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "plus",
+          "minus"
+        ]
+      }
+    },
+    "confirmation": "Fresh semantic cores excluded from original data and earlier confirmation; run once after dev selection. Report per seed/path Wilson95, non-target preservation and aligned/mask-changing subsets"
+  },
+  "limitations": [
+    "Emb2Emb-style adaptation to token memory with CE task loss, not reproduction of original sentence-embedding/cosine objective",
+    "A failed finite discriminator or lambda grid does not disprove all manifold methods",
+    "CE floor removes incentive but does not prohibit optimizer momentum drift below floor",
+    "Development worlds are excluded from selected-model confirmation; three exploratory seeds do not replace a final5-seed confirmation",
+    "Decoder-only model/layer/read-write specification awaits user clarification"
+  ],
+  "inputs": {
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.causal-next-edit-worktree/experiments/causal_next_edit_stability_v1/configs/worlds.jsonl": "53de93a72a2912c2c356c33a73220a030d59adf57472155b717e0725b4dcf07e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/train_worlds.jsonl": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/operator_residual_v2/eval_worlds.jsonl": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/data/time_eval.jsonl": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/data/person_eval.jsonl": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/futils.py": "8a06a3e277137c13739bec325753c0f0614967882b9b8be46e69c8190fe31cbc",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_objective_v1/cutil.py": "567ea0e63bf5a1deecb6eccfb46faac9753a5968133a77553ea6162e759cfd06",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/fit.py": "4174c69cae7f93b84ced16aad53cefb00280f56f92cbce77972808309b1ba880",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/manifold_controls_v1/data/time_confirm.jsonl": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/manifold_controls_v1/data/person_dev.jsonl": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/manifold_controls_v1/data/person_confirm.jsonl": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/local/person_train_t0_s1.pt": "5bac266fc546c7166188eea54eff1574fb9bb677143537662cb9f099b8d3e193",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/local/person_train_t0_s0.pt": "cee67241cb2b3446bb672d2d8304817d4f697fb5d33d39dbba6d9166765b4861",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_confirmation_v1/local/person_train_t0_s2.pt": "8ee8c047f762e157951952ab2aa46ade6c3089f274f55d05333d82ce13f21a74",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-3.pt": "ab2cfb4aa752397d93fd2882a74798de90b301dd22630fb928413631fda37447",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-3.pt": "a5a8ccc3b580789650456ce984aae9ddc23468be7d7159701f3bce041865bd01",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-3.pt": "202600350a75a6be139d6cb1e7d85086589733e5d621e871166a6862b3284949",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-2.pt": "ee92a65acdda4d16539f72f502c6bfce92d61b065ceb5fe414bc102529e15bf1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-2.pt": "dc764cad5272443bbb145a5132ee2e2b6c0ead3d95de165e06275ac675f749e1",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-2.pt": "59906b67c9bce637a93040735cdc908e9a2310ee0f2b07e155d0d1de4fe62160",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s-1.pt": "99a74d64f828db36150c90c9ffd5415f17fbb441facdfa97c9eac862327edc1e",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s-1.pt": "2ced2dd11e37210fb0232c7412a39c9f49d41ea9390b3dd6f7f0cc594d24077d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s-1.pt": "43f43d2d2cc59f3e06a1db93470564e0de0ed76408febddd29a07a07b9f42c3b",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s0.pt": "4ddb5c2dd267f88ecf8a6bb2f7e890101c1a21199d2a564d02d17cad1f2d3444",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s0.pt": "6e6d44a177aaa01137a454fa6071bf9b1ad6e0c6c1d4ece468b4853c1737350f",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s0.pt": "9a457b04e6558c571c9b650b385cf5adb1b7222fba60e2e79f6679aa653a6cec",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s1.pt": "ee16e59981a3022d170c022954f626267a408e5299e0fadafe64cb05ef6ac3a5",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s1.pt": "c50746c4a058c7c8a2d8a40bc473d987f27038cfb71c3f2799020d1c2ee9b33d",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s1.pt": "7fc609498419d3e6e8fc6fc2ec8971b93769f866523682bb22ffaa49e0c30d6c",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s2.pt": "62a68ef72479ecd4c7c1672c4e739488e59eda4c67e9ffea74c5da2918bd0ced",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s2.pt": "8ce98b2a1f81fb06dd9c56817c9aff6ba3223f12bfd8323da1343a8906cde591",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s2.pt": "490ef027e61e5935fc092d5d2077f5a1cf97d6e2417272db405ad24dcf74cf71",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/train_t0_s3.pt": "8c6f29307e6732e3e5ff4a70732b0f8f91fb1fc7e9bcc017a97cad2e2b892ce0",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t0_s3.pt": "1e41ae194d55ec7fea21c3f8da57f31bd7fed799c66282ae3a8df95958302421",
+    "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/canonical_write_reachability_v1/local/eval_t3_s3.pt": "1248577b62442ed9de1670d32129c665432e36b80f96d49a44247862f9c0bd61"
+  },
+  "sources": {
+    "mutil.py": "cd8c1200fe1b91d7e7ef5788e351445929bda5ff529f76aec82c568b7f2df7a0",
+    "extract.py": "b83d8e72dce865105187754d6d26ebf80495fe51f2b464d341166ff771de33ec",
+    "person_fit.py": "748079293532bf90a5739cf4ef0f16a890a5c94427b31513fa31cf1f39503392",
+    "person_dev.py": "446c111eb48938b321cc584584ba1d07065b30a4229f0a9a382376f13a50a541",
+    "baseline_train.py": "17b0630e83386e9bdf3a57781ea9674bb70005b735d86e34d026b0e01cbf95f9",
+    "baseline_dev.py": "0a391e86a13500f4470534d8a92fa6b3e15e28453d0847e1e4a78bae5b8b4661",
+    "confirm.py": "ff5bcc5a48c96287819964930e3793c2e3d7cc6158afceec1968ceb1bbd0971d",
+    "job.slurm": "3558d09c08a7643bf03f05e791c42ebfc49ac63ba340a51a05e7ca4f572e3c14",
+    "job_cpu.slurm": "25e80bdbab8965ec83e4c5491f7640bcd086885f729b337aeb0895894192b60f"
+  }
+}
