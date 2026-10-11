@@ -11,13 +11,14 @@ def main():
    rs=sorted(curves[v,seed],key=lambda r:r['checkpoint']);x=[r['nll']['mean'] for r in rs]
    for row,metric in [(0,'token_mse'),(1,'R5')]:
     y=[r[metric]['mean' if row==0 else 'rate'] for r in rs];a=ax[row,j];a.plot(x,y,'-o',ms=3,color=f'C{i}',label=v)
-    for k in (0,10,25,100):
-     q=next(r for r in rs if r['checkpoint']==k);a.annotate(str(k),(q['nll']['mean'],q[metric]['mean' if row==0 else 'rate']),xytext=(3,3),textcoords='offset points',fontsize=6,color=f'C{i}')
+    for k in ((0,10,15,20,25,100) if i==0 else ()):
+     q=next(r for r in rs if r['checkpoint']==k);offset=(4,-16) if row==1 and k in (10,15) else (4,5)
+     a.annotate(str(k),(q['nll']['mean'],q[metric]['mean' if row==0 else 'rate']),xytext=offset,textcoords='offset points',fontsize=7,color=f'C{i}')
     ci=[r[metric]['ci95_world_bootstrap' if row==0 else 'ci95'] for r in rs];a.fill_between(x,[c[0] for c in ci],[c[1] for c in ci],alpha=.10,color=f'C{i}');a.axvline(canonical,color='k',ls=':',lw=.8);a.set_xscale('log')
    ax[0,j].set_yscale('log')
   # Explicit limits once per shared column: likelihood improves left-to-right.
   ax[1,j].set_xlim(canonical*1.2,min(r['nll']['mean'] for v in variants for r in curves[v,seed])*.8);ax[1,j].set_ylim(-.03,1.04);ax[0,j].set_title(f'Seed {seed}');ax[1,j].set_xlabel('Measured CE (nats / target token; decreases ->)')
- ax[0,0].set_ylabel('Aligned token MSE');ax[1,0].set_ylabel('Aligned +1 complete R5');ax[0,0].legend(fontsize=8);fig.tight_layout()
+ ax[0,0].set_ylabel('Aligned token MSE');ax[1,0].set_ylabel('Aligned +1 complete R5');ax[0,0].legend(fontsize=8);fig.suptitle('Dotted line: canonical CE; labels: AdamW 1e-3 update count',fontsize=11);fig.tight_layout()
  for suffix in ('svg','png','pdf'):fig.savefig(ROOT/f'results/optimizer_absolute_ce.{suffix}',dpi=180)
  fig,ax=plt.subplots(1,3,figsize=(13,3.8));gaps=[]
  for j,seed in enumerate(SEEDS):
