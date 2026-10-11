@@ -1,4 +1,24 @@
-\paragraph{Follow-up status.}
-The development-selected person rank curve and alignment-free controls are
-being evaluated under a separate locked protocol. Numerical results will be
-inserted from the checked confirmation summaries. No outcome is assumed here.
+\paragraph{Development-selected follow-up.}
+The person diagnostic selects rank 256 on 80 fresh development worlds, then evaluates all four predeclared ranks on 160 separate worlds. The temporal controls use three seeds, 96 training worlds, 32 historical development worlds, and 160 new confirmation cores.
+\begin{center}\begin{tabular}{llrr}\toprule
+Domain & Condition & Single (\%) & Forward aligned $R_5$ (\%) \\ \midrule
+person & RRR16 & 8.44 & 0.62 \\
+person & RRR64 & 10.10 & 4.38 \\
+person & RRR256 & 10.10 & 12.50 \\
+person & RRR768 & 10.10 & 9.38 \\
+person & reencode & 100.00 & 100.00 \\
+time & CE\_all\_s42 & 100.00 & 0.00 \\
+time & CE\_all\_s43 & 100.00 & 0.00 \\
+time & CE\_all\_s44 & 100.00 & 0.00 \\
+time & floor\_s42 & 100.00 & 0.00 \\
+time & floor\_s43 & 100.00 & 0.00 \\
+time & floor\_s44 & 100.00 & 0.00 \\
+time & adv\_pool\_l0.01\_s42 & 99.79 & 0.00 \\
+time & adv\_pool\_l0.01\_s43 & 99.95 & 0.00 \\
+time & adv\_pool\_l0.01\_s44 & 99.95 & 0.00 \\
+time & adv\_set\_l0.01\_s42 & 100.00 & 0.00 \\
+time & adv\_set\_l0.01\_s43 & 100.00 & 0.00 \\
+time & adv\_set\_l0.01\_s44 & 98.85 & 0.00 \\
+time & reencode & 100.00 & 100.00 \\
+\bottomrule\end{tabular}\end{center}
+The table gives every seed separately; single success averages all legal transitions, including unsupported length changes. Full forward/reverse trajectories, structural-template floors, and world confidence intervals are in the accompanying checked report. Selected adversarial weights and held-out discriminator diagnostics remain finite implementation tests rather than proof of manifold membership.

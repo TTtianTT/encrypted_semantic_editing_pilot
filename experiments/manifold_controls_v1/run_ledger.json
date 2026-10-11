@@ -1,0 +1,269 @@
+{
+  "jobs": [
+    {
+      "job_id": "3340",
+      "phase": "prospective data/protocol lock (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:28:46",
+      "end": "2026-10-11T14:28:56",
+      "elapsed_seconds": 10,
+      "gpus": 0,
+      "log": "results/slurm_logs/3340.log"
+    },
+    {
+      "job_id": "3341",
+      "phase": "optimizer redraw (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:29:17",
+      "end": "2026-10-11T14:29:30",
+      "elapsed_seconds": 13,
+      "gpus": 0,
+      "log": "results/slurm_logs/3341.log"
+    },
+    {
+      "job_id": "3342",
+      "phase": "fresh canonical extraction and cached CE",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:29:20",
+      "end": "2026-10-11T14:30:02",
+      "elapsed_seconds": 42,
+      "gpus": 1,
+      "log": "results/slurm_logs/3342.log"
+    },
+    {
+      "job_id": "3343",
+      "phase": "closed-form person RRR fit (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:30:24",
+      "end": "2026-10-11T14:30:38",
+      "elapsed_seconds": 14,
+      "gpus": 0,
+      "log": "results/slurm_logs/3343.log"
+    },
+    {
+      "job_id": "3344",
+      "phase": "baseline training lane0",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:30:25",
+      "end": "2026-10-11T14:39:52",
+      "elapsed_seconds": 567,
+      "gpus": 1,
+      "log": "results/slurm_logs/3344.log"
+    },
+    {
+      "job_id": "3345",
+      "phase": "baseline training lane1",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:30:25",
+      "end": "2026-10-11T14:38:19",
+      "elapsed_seconds": 474,
+      "gpus": 1,
+      "log": "results/slurm_logs/3345.log"
+    },
+    {
+      "job_id": "3346",
+      "phase": "person dev evaluation, after3343+3344",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:39:52",
+      "end": "2026-10-11T14:41:36",
+      "elapsed_seconds": 104,
+      "gpus": 1,
+      "log": "results/slurm_logs/3346.log"
+    },
+    {
+      "job_id": "3347",
+      "phase": "baseline dev lane0, after3346",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:41:37",
+      "end": "2026-10-11T14:44:34",
+      "elapsed_seconds": 177,
+      "gpus": 1,
+      "log": "results/slurm_logs/3347.log"
+    },
+    {
+      "job_id": "3348",
+      "phase": "baseline dev lane1, after3345",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:38:19",
+      "end": "2026-10-11T14:42:27",
+      "elapsed_seconds": 248,
+      "gpus": 1,
+      "log": "results/slurm_logs/3348.log"
+    },
+    {
+      "job_id": "3349",
+      "phase": "redraw label cleanup (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:33:46",
+      "end": "2026-10-11T14:33:59",
+      "elapsed_seconds": 13,
+      "gpus": 0,
+      "log": "results/slurm_logs/3349.log"
+    },
+    {
+      "job_id": "3350",
+      "phase": "source syntax and protocol verification (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:35:50",
+      "end": "2026-10-11T14:36:00",
+      "elapsed_seconds": 10,
+      "gpus": 0,
+      "log": "results/slurm_logs/3350.log"
+    },
+    {
+      "job_id": "3352",
+      "phase": "dev-only selection, after3347+3348 (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:44:34",
+      "end": "2026-10-11T14:44:47",
+      "elapsed_seconds": 13,
+      "gpus": 0,
+      "log": "results/slurm_logs/3352.log"
+    },
+    {
+      "job_id": "3353",
+      "phase": "cancelled before start: mistaken dependency, requested1 GPU",
+      "state": "CANCELLED by 2006",
+      "start": "None",
+      "end": "2026-10-11T14:36:56",
+      "elapsed_seconds": 0,
+      "gpus": 0,
+      "log": null
+    },
+    {
+      "job_id": "3354",
+      "phase": "cancelled before start: mistaken dependency, requested1 GPU",
+      "state": "CANCELLED by 2006",
+      "start": "None",
+      "end": "2026-10-11T14:36:56",
+      "elapsed_seconds": 0,
+      "gpus": 0,
+      "log": null
+    },
+    {
+      "job_id": "3355",
+      "phase": "cancelled before start: obsolete summary dependency (CPU)",
+      "state": "CANCELLED by 2006",
+      "start": "None",
+      "end": "2026-10-11T14:36:56",
+      "elapsed_seconds": 0,
+      "gpus": 0,
+      "log": null
+    },
+    {
+      "job_id": "3356",
+      "phase": "cancelled before start: obsolete report dependency (CPU)",
+      "state": "CANCELLED by 2006",
+      "start": "None",
+      "end": "2026-10-11T14:36:56",
+      "elapsed_seconds": 0,
+      "gpus": 0,
+      "log": null
+    },
+    {
+      "job_id": "3357",
+      "phase": "fresh confirmation lane0, after3352",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:44:47",
+      "end": "2026-10-11T15:00:22",
+      "elapsed_seconds": 935,
+      "gpus": 1,
+      "log": "results/slurm_logs/3357.log"
+    },
+    {
+      "job_id": "3358",
+      "phase": "fresh confirmation lane1, after3352",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:44:47",
+      "end": "2026-10-11T15:05:03",
+      "elapsed_seconds": 1216,
+      "gpus": 1,
+      "log": "results/slurm_logs/3358.log"
+    },
+    {
+      "job_id": "3359",
+      "phase": "checked summaries and deterministic archive, after3357+3358 (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T15:05:03",
+      "end": "2026-10-11T15:05:41",
+      "elapsed_seconds": 38,
+      "gpus": 0,
+      "log": "results/slurm_logs/3359.log"
+    },
+    {
+      "job_id": "3360",
+      "phase": "report, figures, manuscript tables and manifest, after3359 (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T15:05:41",
+      "end": "2026-10-11T15:05:53",
+      "elapsed_seconds": 12,
+      "gpus": 0,
+      "log": "results/slurm_logs/3360.log"
+    },
+    {
+      "job_id": "3361",
+      "phase": "failed person dev review: select module name collision (CPU)",
+      "state": "FAILED",
+      "start": "2026-10-11T14:41:58",
+      "end": "2026-10-11T14:42:06",
+      "elapsed_seconds": 8,
+      "gpus": 0,
+      "log": "results/slurm_logs/3361.log"
+    },
+    {
+      "job_id": "3362",
+      "phase": "person dev review via absolute runpy path, after3346 (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:42:17",
+      "end": "2026-10-11T14:42:26",
+      "elapsed_seconds": 9,
+      "gpus": 0,
+      "log": "results/slurm_logs/3362.log"
+    },
+    {
+      "job_id": "3363",
+      "phase": "fresh person confirmation review (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:49:40",
+      "end": "2026-10-11T14:49:52",
+      "elapsed_seconds": 12,
+      "gpus": 0,
+      "log": "results/slurm_logs/3363.log"
+    },
+    {
+      "job_id": "3364",
+      "phase": "fresh CE and canonical-floor confirmation review (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T14:58:10",
+      "end": "2026-10-11T14:58:27",
+      "elapsed_seconds": 17,
+      "gpus": 0,
+      "log": "results/slurm_logs/3364.log"
+    },
+    {
+      "job_id": "3365",
+      "phase": "manifest, archive and manuscript-input verification, after3360 (CPU)",
+      "state": "COMPLETED",
+      "start": "2026-10-11T15:05:53",
+      "end": "2026-10-11T15:06:02",
+      "elapsed_seconds": 9,
+      "gpus": 0,
+      "log": "results/slurm_logs/3365.log"
+    },
+    {
+      "job_id": "3367",
+      "phase": "final document/artifact verification, after3366 (CPU)",
+      "state": "PENDING",
+      "start": "Unknown",
+      "end": "Unknown",
+      "elapsed_seconds": 0,
+      "gpus": 0,
+      "log": null
+    }
+  ],
+  "peak_gpus": 2,
+  "global_peak_gpus": 2,
+  "gpu_allocation_seconds": 3763,
+  "postprocessing_job_id": "3366",
+  "resource_policy": "Every compute phase sbatch allocation + srun step; global2 across projects; inspect user queue before GPU submission"
+}

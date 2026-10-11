@@ -18,13 +18,51 @@ def main():
   if g and end!='Unknown':events.append((end,-g))
  active=peak=0
  for ts,delta in sorted(events,key=lambda a:(a[0],a[1])):active+=delta;peak=max(peak,active)
- assert peak<=2;gpu_secs=sum(j['gpus']*j['elapsed_seconds'] for j in ledger);dump('run_ledger.json',dict(jobs=ledger,peak_gpus=peak,gpu_allocation_seconds=gpu_secs,postprocessing_job_id=os.environ['SLURM_JOB_ID'],resource_policy='Every compute phase sbatch allocation + srun step; global2 across projects; inspect user queue before GPU submission'))
+ assert peak<=2;gpu_secs=sum(j['gpus']*j['elapsed_seconds'] for j in ledger)
+ start=min(j['start'] for j in ledger if j['start']!='Unknown');all_raw=subprocess.check_output(['sacct','-X','-u',os.environ['USER'],'--starttime',start,'--endtime','now','--format=JobIDRaw,State,Start,End,ElapsedRaw,AllocTRES','--parsable2','--noheader'],text=True);global_events=[];global_jobs=[]
+ for line in all_raw.splitlines():
+  jid,state,begin,end,elapsed,tres=line.split('|')[:6];match=re.search(r'gres/gpu=(\d+)',tres);g=int(match.group(1)) if match else 0
+  if not g:continue
+  global_jobs.append(dict(job_id=jid,state=state,start=begin,end=end,gpus=g,elapsed_seconds=int(elapsed)))
+  if begin!='Unknown':global_events.append((begin,g))
+  if end!='Unknown':global_events.append((end,-g))
+ total=global_peak=0
+ for ts,delta in sorted(global_events,key=lambda a:(a[0],a[1])):total+=delta;global_peak=max(global_peak,total)
+ assert global_peak<=2,'Global per-user GPU cap, across every project';dump('global_gpu_audit.json',dict(user=os.environ['USER'],start=start,all_project_gpu_jobs=global_jobs,global_peak_gpus=global_peak))
+ dump('run_ledger.json',dict(jobs=ledger,peak_gpus=peak,global_peak_gpus=global_peak,gpu_allocation_seconds=gpu_secs,postprocessing_job_id=os.environ['SLURM_JOB_ID'],resource_policy='Every compute phase sbatch allocation + srun step; global2 across projects; inspect user queue before GPU submission'))
+ import matplotlib;matplotlib.use('Agg');import matplotlib.pyplot as plt
+ fig,axs=plt.subplots(1,2,figsize=(10,4))
+ for t in (0,3):
+  rrs=sorted([r for r in rr if r['domain']=='person' and r['template']==t and r['label']!='reencode'],key=lambda r:int(r['label'][3:]));x=[int(r['label'][3:]) for r in rrs]
+  for ax,path in zip(axs,['person_forward','person_reverse']):
+   for k,style in [(1,'--'),(5,'-')]:ax.plot(x,[r['paths'][path][f'R{k}']['rate'] for r in rrs],style+'o',label=f'Template{t} R{k}');ax.set_xscale('log',base=2);ax.set_xticks(x,[str(v) for v in x]);ax.set_ylim(-.03,1.03);ax.set_xlabel('RRR rank (dev ridge per rank)');ax.set_title(path)
+ axs[0].set_ylabel('Complete trajectory success');axs[0].legend(fontsize=8);fig.tight_layout()
+ for suffix in ('svg','png','pdf'):fig.savefig(ROOT/f'results/person_rank_curve.{suffix}',dpi=180)
+ fig,axs=plt.subplots(1,2,figsize=(10,4))
+ for j,t in enumerate((0,3)):
+  for i,n in enumerate(sel['time']['selected_groups']):
+   vals=[r for r in rr if r['domain']=='time' and r['template']==t and r['label'].startswith(n+'_s')]
+   for k,r in enumerate(vals):
+    x=r['single']['mean'];y=r['paths']['aligned_from_plus_one']['R5']['rate'];xc=r['single']['ci95_world_bootstrap'];yc=r['paths']['aligned_from_plus_one']['R5']['ci95'];axs[j].errorbar(x,y,xerr=[[max(0,x-xc[0])],[max(0,xc[1]-x)]],yerr=[[max(0,y-yc[0])],[max(0,yc[1]-y)]],fmt=['o','s','^'][k],color=f'C{i}',label=n if k==0 else None,alpha=.85)
+  axs[j].set_title(f'Template {t}');axs[j].set_xlim(-.04,1.04);axs[j].set_ylim(-.04,1.04);axs[j].set_xlabel('All-legal single-edit success')
+ axs[0].set_ylabel('Aligned +1 complete R5');axs[0].legend(fontsize=8);fig.tight_layout()
+ for suffix in ('svg','png','pdf'):fig.savefig(ROOT/f'results/baseline_single_R5.{suffix}',dpi=180)
  title='# 优化器重画、人称可达性与无对齐基线\n\n';text=title+f"所有训练与预测已完成并检查。新确认记录 **{checks['expected_confirmation_records']}** 条；全项目 GPU 实测峰值 **{peak}**，分配时间 **{gpu_secs/3600:.3f} GPU 小时**。新实验按 [protocol.json](protocol.json) 执行，权重选择只使用 dev，确认集不反向参与选择。\n\n"
+ text+='独立图：[人称rank—R1/R5](results/person_rank_curve.svg)、[时间基线单步—R5](results/baseline_single_R5.svg)。\n\n'
+ pr=next(r for r in rr if r['domain']=='person' and r['label']==f"RRR{sel['person']['selected_rank']}" and r['template']==0)
+ text+=f"**主要结果。**人称dev选定rank{sel['person']['selected_rank']}，新worlds上规范拟合覆盖单步为{pct(pr['canonical_fit_single']['mean'])}，正向/反向R5为{pct(pr['paths']['person_forward']['R5']['rate'])}/{pct(pr['paths']['person_reverse']['R5']['rate'])}；尚未通过修复准入。升秩降低L2残差，但不等于获得足够规范且可解码的状态，不能据此证明所有线性语义编辑都不可能。\n\n"
+ for group in sel['time']['selected_groups']:
+  vals=[r for r in rr if r['domain']=='time' and r['label'].startswith(group+'_s')];rate5=[r['paths']['aligned_from_plus_one']['R5']['rate'] for r in vals];single=[r['single']['mean'] for r in vals]
+  text+=f"- {group}：跨3seed/2模板，全部合法单步均值范围{pct(min(single))}–{pct(max(single))}，对齐+1 R5范围{pct(min(rate5))}–{pct(max(rate5))}；逐seed区间、其他路径及长度变化结果见下表。\n"
+ text+='\n'
+ ds0=read(ROOT/'results/discriminator_summary.json')
+ if all(r['accuracy']['mean']>.75 and r['real_probability']['mean']>r['fake_probability']['mean'] for r in ds0):text+='**流形结论必须降级。**选中判别器在未用于训练的dev worlds上仍能区分real/fake（AUROC0.798–1.000），所测real-state边缘分布匹配没有达成。有限判别器的分布匹配读数不是个体流形成员资格证明；真实采样先验/长度接口也影响判别。因此负结果是“本预算的流形对抗适配未修复组合”，不是“已经在流形上但不规范”的直接证据。\n\n'
  text+='## 优化器与主张表\n\n[绝对 CE 对照图](results/optimizer_absolute_ce.svg)、[规范 CE 差值图](results/optimizer_canonical_gap.svg)由原有固定面板重画，没有新预测。横轴给出 nats/target-token，虚线为规范编码 CE，标签为 AdamW1e-3 更新数。每个点为实测检查点；连线并非精确损失匹配的模型。Token MSE 为 world bootstrap95%，R5 为 world Wilson95%。\n\n'
  gaps=read(ROOT/'results/canonical_ce_gap.json');a=[r for r in gaps if r['variant']=='adam_1e3' and r['checkpoint'] in (0,100)];text+=table(['seed','更新','CE(编辑)−CE(规范)，nats/token','配对 world95% CI'],[[r['seed'],r['checkpoint'],f"{r['edited_minus_canonical_ce_mean']:.7g}",str(r['ci95_world_bootstrap'])] for r in a]);text+='负值是相同目标在规范编码之外具有更低 CE 的直接证据，不能把规范编码视为当前 CE 最优点；收益的绝对值很小。写入几何表和区间见 [write_geometry.json](results/write_geometry.json)：历史 CE 写入相对规范方向几乎正交，IID 范数比3.31–3.40，OOD3.69–3.80。此处比较的是理想写入大小，不是整个源状态大小。\n\n'
  text+='## 人称域：先 dev 选择，再新 worlds 确认\n\n闭式 ridge-RRR 在原96训练 worlds 的模板0、1↔2转换上拟合，训练更新为0。80新 dev worlds 与160新确认 worlds 及此前人称80确认 worlds 按 people/object/color/quantity 完整核心互斥。各操作与各 rank 按 dev token MSE 选 ridge，全部选到0.001。秩按 dev双向R5、全部合法单步、对齐MSE、较小rank依次排序。\n\n'
  text+=table(['rank','dev双向R5均值','dev全部单步','dev对齐MSE'],[[r,pct(v['R5']),pct(v['single']),f"{v['aligned_token_mse']:.6g}"] for r,v in sel['person']['dev'].items()]);text+=f"主分析选定 rank **{sel['person']['selected_rank']}**。以下四秩确认曲线均是预定诊断，不再按确认表现另选秩。\n\n"
- text+=table(['rank/条件','模板','全部合法单步均值','mask相等单步','对齐token MSE','正向R1 / R2 / R3 / R4 / R5','正向R5 95% CI','反向R5'],[[r['label'],r['template'],pct(r['single']['mean']),pct(r['aligned_single']['mean']) if r['aligned_single'] else 'NA',f"{r['token_mse']['mean']:.6g}" if r['token_mse'] else 'NA',' / '.join(pct(r['paths']['person_forward'][f'R{k}']['rate']) for k in range(1,6)),rate(r['paths']['person_forward']['R5']),rate(r['paths']['person_reverse']['R5'])] for r in rr if r['domain']=='person']);text+='模板3在此域没有 mask相等转换，单步地板与长度变化边界必须单列。不能将 MSE下降或某个rank单步失败单独解读为规范写法不存在；需要同时看解码准入、残差、双向链和 dev选择。RRR为确定性拟合，不能当作三个独立seed。\n\n'
+ text+=table(['rank/条件','模板','全部合法单步均值','规范拟合覆盖单步','覆盖边token MSE','正向R1 / R2 / R3 / R4 / R5','正向R5 95% CI','反向R5'],[[r['label'],r['template'],pct(r['single']['mean']),pct(r['canonical_fit_single']['mean']),f"{r['canonical_fit_token_mse']['mean']:.6g}" if r['canonical_fit_token_mse'] else 'NA',' / '.join(pct(r['paths']['person_forward'][f'R{k}']['rate']) for k in range(1,6)),rate(r['paths']['person_forward']['R5']),rate(r['paths']['person_reverse']['R5'])] for r in rr if r['domain']=='person'])
+ text+='规范拟合覆盖图固定为1↔2，必须与“所有mask相等转换”分开。模板3覆盖图的MSE为NA；其他未训练转换可能恰好mask相等，其MSE另存JSON，不能替代覆盖边。单步地板与长度变化边界必须单列。不能将MSE下降或单步失败单独解读为规范写法不存在。RRR为确定性拟合，不能当作三个独立seed。\n\n'
  text+='## 时间域：覆盖匹配的无对齐对照\n\n四组均冻结同一 BART、rank16、随机初始化3 seeds42–44；训练全部12合法转换，template0、96worlds、600次更新、batch8/micro2、AdamW1e-3。CE_all 是覆盖与预算匹配的对照，不能把仅对齐C1当作其同数据基线。Floor 逐例计算 max(CE−CE_canonical,0) 后取均值；规范CE全程stop-gradient、提前缓存；它无需token对齐，也与经典反向梯度 flooding不同。\n\n'
  text+='Emb2Emb 风格控制采用非饱和 logistic adversarial loss，pool判别器和 DeepSets式 token-set(mean+max)敏感性，各扫描λ=0.01/0.1/1。每次editor更新配一次D更新，D lr1e-4，train-only固定归一化。真实样本来自原train规范序列，按编辑source的有效长度匹配，判别器看不到 padding/长度输入；长度变化时约束的是该 source长度可访问的边缘规范分布，而非目标配对表示。它无需token对齐，但不是原Emb2Emb的句向量/cosine任务目标复现。[原论文](https://aclanthology.org/2020.emnlp-main.491/)是方法来源。\n\n'
  text+=table(['判别器/λ','dev四路径R5均值（三seed）','dev全部单步均值','选中'],[[n,pct(v['mean_R5']),pct(v['mean_single']),'是' if n in sel['time']['selected_groups'] else '否'] for n,v in sel['time']['dev'].items()]);text+='dev为历史80中的固定前32worlds，明确属于暴露过的探索面板；选择后在完全新的160 time cores上一次性评测模板0和3。模型选择不使用OOD或确认输出。确认cores排除了历史五个明确文件（含上一轮160确认）。\n\n'
@@ -51,6 +89,10 @@ def main():
  ['轨迹监督与状态锚定有不同经验视界','既有exp5/C5与C3/RRR闭包','有限权重/训练预算，非理论上限']]);
  text+='## 论文初稿与 decoder-only\n\n[论文LaTeX初稿](../../paper/main.tex)已写出现象、机制、成因、修复和边界，并从本轮检查输出生成补充结果表。作者和venue未指定。服务器没有pdflatex，未声称已编译论文PDF；图有独立PDF/SVG/PNG。\n\ndecoder-only的“上次方案”在当前上下文与仓库中未找到模型、层和读取/写入接口；已在任务开始时请求补充。该复现尚未运行，按用户允许的future work方式写进稿件，不虚构准入或C1/C3/C4结果。其余优先项不依赖该信息。\n\n'
  text+='## 运行、异常与复现\n\n';text+=table(['job','阶段','GPU','秒','状态','日志'],[[j['job_id'],j['phase'],j['gpus'],j['elapsed_seconds'],j['state'],f"[{j['job_id']}]({j['log']})" if j['log'] else '未启动，无日志'] for j in ledger]);text+='所有计算由sbatch分配、srun执行；GPU提交前检查用户全局队列。两条串行依赖链确保此轮最多2×1GPU，没有绕过Slurm的后台训练。0 GPU后处理同样通过Slurm。\n\n3353–3356曾误用预估作业号作为依赖，在启动前取消（0分配秒）；3357–3360使用实际返回ID重新提交，未增加GPU并发。该提交错误不影响权重或预测。\n\n';text+='[完整审计](checks.json)、[开发选择与预测SHA](selection.json)、[确定性gzip证据](results/evidence.json)、[协议](protocol.json)、[账本](run_ledger.json)。权重/编码缓存保留本地，其指纹保存于每任务完成记录；原始预测、解析状态与评分均归档。图的CPU第二次重跑只改善标签可读性，没有重新训练或新增预测。\n'
+ text=text.replace('模板3在此域没有 mask相等转换，','模板3的训练覆盖1↔2转换没有 mask相等条件；其他未覆盖转换的mask相等项也列在自然分层中。')
+ text+='\n数据范围：新time worlds的event_date/quote_date分别固定为2027-01-12/2027-01-10，与训练和此前确认日期不同。模板0是训练格式的新核心/日期评测；模板3额外改变结构。不将这轮模板0误称为所有字段分布都不变的严格IID。\n'
+ text+='\nCE下限只截断该样本当前的超规范置信梯度，不约束潜空间；共享参数为其他样本更新以及Adam动量仍可改变已低于floor的样本。有限预算下的负结果因此针对这一具体目标/优化设置，不是对全部置信度约束的否定。\n'
+ text+='\nCPU作业3361的开发面板审查因脚本名select与Python标准扩展重名而导入失败；3362改用绝对runpy路径重跑成功。没有改变训练、dev模型选择或确认预测。\n'
  (ROOT/'REPORT.md').write_text(text)
  (ROOT/'README.md').write_text('# Manifold controls and person reachability\n\nRead [REPORT.md](REPORT.md), [protocol.json](protocol.json), and [selection.json](selection.json). All compute uses sbatch + srun; global GPU cap2. Main manuscript: [paper/main.tex](../../paper/main.tex).\n')
  # Automatically populate manuscript figures/tables without inventing outcomes.

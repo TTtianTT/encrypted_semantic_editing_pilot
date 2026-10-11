@@ -158,7 +158,15 @@ Connecting lines do not constitute measurements of intermediate models.}
 \end{figure}
 
 \section{Repair and its boundaries}
-Canonical anchoring adds normalized aligned-state MSE to CE. In the locked
+Canonical anchoring adds normalized aligned-state MSE to CE:
+\begin{equation}
+ \mathcal L_{\mathrm{canon}}=\mathrm{CE}(D(T_o(E(x))),y)
+ +\lambda\frac{\|T_o(E(x))-\operatorname{sg}[E(y)]\|^2_{\mathrm{valid}}}
+ {n\,768\,\sigma_o^2},
+\end{equation}
+where $\sigma_o^2$ is the training-only per-token ideal-write energy and
+$\lambda=1$ in the fixed comparison. No canonical test states enter training.
+In the locked
 five-seed temporal confirmation, C3 attains 100\% complete five-step success
 on aligned paths in both templates. It also preserves every trajectory through
 20 steps on the closure panel, but 50-step success varies from 0\% to 100\%
@@ -177,7 +185,12 @@ The rank-16 person-domain repair does not transfer: residuals decrease but
 second-step success remains zero. Its inherited-ridge RRR initialization also
 fails the single-step admission check. We therefore diagnose reachability
 using a development-selected rank curve before interpreting this outcome as
-an objective or capacity failure.
+an objective or capacity failure. That follow-up selects rank 256 on dev;
+on 160 separate worlds its supported single-edit mean is 30.31\% and forward
+and reverse complete $R_5$ are 12.50\% and 11.25\%. Full rank reduces aligned
+MSE further but still fails admission and general repair. These results rule
+out a simple ``raise the rank'' fix under this fitted L2 objective, not the
+existence of every possible decoder-relevant linear solution.
 
 \subsection{Alignment-free controls}
 Emb2Emb constrains mapped embeddings using a discriminator over encoder
@@ -192,6 +205,15 @@ weights on development data and report discriminator generalization along
 with composition; finite discriminator failure cannot refute all manifold
 regularization.
 
+Both selected discriminator variants preserve 98.12--100\% single-edit success
+across seeds and templates, while forward aligned $R_5$ remains zero.
+Held-out dev discriminators still separate real and fake distributions
+(AUROC 0.798--1.000). Thus this finite-budget adaptation does not repair
+composition and has not established empirical state-distribution matching.
+It is not direct evidence of a genuinely on-manifold but noncanonical state;
+sampling priors, the length interface, discriminator capacity, and adversarial
+optimization remain possible explanations.
+
 We also test the canonical-confidence floor
 \begin{equation}
  \mathcal L_{\mathrm{floor}}=
@@ -201,8 +223,12 @@ We also test the canonical-confidence floor
 The hinge is applied per example before averaging and requires no token
 alignment. Unlike conventional flooding \cite{ishida2020flooding}, it stops the
 loss gradient below the floor rather than reversing it. Adam momentum may
-still move parameters there. Failure would indicate that removing additional
-likelihood incentive alone does not select valid states under this setting.
+still move parameters there, as can updates for other examples through shared
+parameters. The new-world floor comparison preserves 100\% single-edit success
+for all three seeds in both templates, while forward aligned $R_5$ remains
+0\%. Residual MSE decreases only slightly relative to coverage-matched CE.
+Removing this additional likelihood incentive alone therefore does not select
+valid states under the tested objective and optimizer setting.
 
 \input{followup_results.tex}
 
