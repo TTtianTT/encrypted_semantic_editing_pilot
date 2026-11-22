@@ -1,0 +1,125 @@
+{
+  "done": [
+    "pron3/train",
+    "pron3/dev",
+    "name3/train",
+    "name3/dev",
+    "bind3/train",
+    "bind3/dev",
+    "bind3fix/train",
+    "bind3fix/dev"
+  ],
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 815045120,
+    "wall_seconds": 5.190223511017393,
+    "job_id": "72355",
+    "step_id": "0"
+  },
+  "seconds": 24.61376142501831,
+  "files": {
+    "bart_bind3_dev_t3_s0.pt": {
+      "sha256": "43546ddb68b8573d59ef106aa92fade6cff7923072086f5bdf4c62c48e748059",
+      "bytes": 2762253
+    },
+    "bart_bind3_dev_t3_s1.pt": {
+      "sha256": "e266bcbeef01ef0ddae690a6109a0421e177aea765389cd19fb5559997083f7e",
+      "bytes": 2762253
+    },
+    "bart_bind3_dev_t3_s2.pt": {
+      "sha256": "6782c983f6ae298e7d0c6527b6dffacbe6e5c8c84bcab30722625bf727dd656c",
+      "bytes": 2762253
+    },
+    "bart_bind3_train_t3_s0.pt": {
+      "sha256": "e8a0c92fbfc25fc2f18676a4b9106e3c08ff017c8e3f8a6a569e01bbf083037e",
+      "bytes": 8282781
+    },
+    "bart_bind3_train_t3_s1.pt": {
+      "sha256": "a6cf1764e993dc3df7ee26e28ea233b237b43086ebd41a50cda04932ad242dce",
+      "bytes": 8282781
+    },
+    "bart_bind3_train_t3_s2.pt": {
+      "sha256": "2c452de12db6a305852a6e1a800e6e1531a13996139d71ae40669ce3bc1e9a4c",
+      "bytes": 8282781
+    },
+    "bart_bind3fix_dev_t3_s0.pt": {
+      "sha256": "e7402e67e15fa5752a06244948d3d05c1f5f60f4a16499c2a6dda973e61383cf",
+      "bytes": 2663845
+    },
+    "bart_bind3fix_dev_t3_s1.pt": {
+      "sha256": "3a73119ca86eba5a47da089c88e0af2f7fd4a6a246d17c3c7f6e28feedad4f2b",
+      "bytes": 2663845
+    },
+    "bart_bind3fix_dev_t3_s2.pt": {
+      "sha256": "dbd1df94749d7a21dfb758e472e8b4a762004d7dc31f8a82d30be72011492bd9",
+      "bytes": 2663845
+    },
+    "bart_bind3fix_train_t3_s0.pt": {
+      "sha256": "24785bd3ac07c200f4818535309b9597b3797267badda6c4f82e4db55587594a",
+      "bytes": 7987381
+    },
+    "bart_bind3fix_train_t3_s1.pt": {
+      "sha256": "8f8fafdffbb5a4e889566c0ea91b10b491a6d82f89c25c18ae56b752972148d4",
+      "bytes": 7987381
+    },
+    "bart_bind3fix_train_t3_s2.pt": {
+      "sha256": "b26bd826ba4c7f09441c53e0dae4244c360ff569ba24e53062649cc2f9381190",
+      "bytes": 7987381
+    },
+    "bart_name3_dev_t3_s0.pt": {
+      "sha256": "fe53cee183b85116443f8c1815adeec70c88dfdc762c5fbeada56cee13b6983f",
+      "bytes": 2762253
+    },
+    "bart_name3_dev_t3_s1.pt": {
+      "sha256": "9b3bc0412207696d41ff0b20fb4d2fc1c4721df20d849ddfb16354046597cc6c",
+      "bytes": 2762253
+    },
+    "bart_name3_dev_t3_s2.pt": {
+      "sha256": "e7ddb0c93ced4ec820e5ca8b46c0e41cb931ae32eb9ea18a0dc32bde89ba5c05",
+      "bytes": 2762253
+    },
+    "bart_name3_train_t3_s0.pt": {
+      "sha256": "a16c69a4cd11f79433c968f878f9dc5835819afff3b653051297fb4622ea005d",
+      "bytes": 8282781
+    },
+    "bart_name3_train_t3_s1.pt": {
+      "sha256": "a9ea14272cc13cf3447b17c789c5063af482e8a9b5454022809ad3a1a9facbac",
+      "bytes": 8282781
+    },
+    "bart_name3_train_t3_s2.pt": {
+      "sha256": "06b91833244b4f2ba0b226ac55886048aac5b3a6d7f8fc900dd8b94b01b036a2",
+      "bytes": 8282781
+    },
+    "bart_pron3_dev_t3_s0.pt": {
+      "sha256": "90034ce5e4174d027d5ef049c71b36f47e0ee2be011b68cbd8ca7882f10b3165",
+      "bytes": 2762253
+    },
+    "bart_pron3_dev_t3_s1.pt": {
+      "sha256": "8185c8979b1585fbed3a916a2033d2d76c4be7ee7419b8d0685620e7fad97430",
+      "bytes": 2762253
+    },
+    "bart_pron3_dev_t3_s2.pt": {
+      "sha256": "f8fe3bb2cc3e8f2e448d0bafb7009c4dc28208e75c4a18ea42de79b2c0eb8b1f",
+      "bytes": 2762253
+    },
+    "bart_pron3_train_t3_s0.pt": {
+      "sha256": "d8d88bb035281df1bc4024e7e737a47b1f29625ee269722d7a1059efe91f5ca7",
+      "bytes": 8282781
+    },
+    "bart_pron3_train_t3_s1.pt": {
+      "sha256": "81c671af7bcf32da0cfe9b4e390ce0948524cfdc6dc7cc73ddefdb67cf250cd7",
+      "bytes": 8282781
+    },
+    "bart_pron3_train_t3_s2.pt": {
+      "sha256": "8afe3a6179da9e198770492d4ba0d5293c911e73b4000eb5c2c781d261b54a57",
+      "bytes": 8282781
+    }
+  }
+}

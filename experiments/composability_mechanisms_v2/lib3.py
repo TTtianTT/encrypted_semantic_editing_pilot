@@ -14,6 +14,7 @@ BB_NAME = {'bart': 'bart', 't5': 't5gemma'}
 CYC = ['weekday', 'month', 'compass', 'egoside']
 T_DOMAINS = ['weekday', 'month', 'compass']
 SHARD = 16
+SHARDS = ROOT / 'results/shards'   # module attribute (patched only by the pre-lock smoke test)
 DEV = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
@@ -256,7 +257,8 @@ class PlaneEd:
 
 # ---------------------------------------------------------------- chains (A.4)
 def files(kind, bb, d, mp, method, tag, n):
-    return [ROOT / f'results/shards/{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
+    import lib3
+    return [lib3.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
 
 
 def write_shards(fs, recs):
@@ -403,3 +405,111 @@ def _legal(d, s, op, mp):
 def load_editor(eng, path):
     source_path(); from backend import editors
     c = load(path); ed = editors(eng.d, c.get('seed', 42)); ed.load_state_dict(c['editor']); return ed.eval().requires_grad_(False)
+
+
+# ---------------------------------------------------------------- unit block (v2 algebra.unit_block, copied)
+def unit_block(AQ, N, unit=0.9):
+    ev, V = torch.linalg.eig(AQ.cpu())
+    keep = ev.abs() >= unit; lam = ev[keep]; Vu = V[:, keep]; Vu = Vu / Vu.norm(dim=0, keepdim=True)
+    sv = torch.linalg.svdvals(Vu) if Vu.shape[1] else torch.tensor([1.])
+    ph = torch.rad2deg(torch.angle(lam)).numpy(); step = 360. / N
+    j = np.round(ph / step).astype(int) % N; dev = np.abs(((ph - j * step) + 180) % 360 - 180)
+    harm = sorted({int(min(a, N - a)) for a, dv in zip(j, dev) if dv < 2})
+    return dict(n_unit=int(keep.sum()), kappa_u=float(sv.max() / sv.min()), max_phase_dev_deg=float(dev.max()) if len(dev) else None, harmonics_present=harm)
+
+
+def harmonics_of(U, V, b, N):
+    st, _, AQ = operator_stats(U.double().cpu(), V.double().cpu(), b.double().cpu())
+    return dict(unit_block(AQ, N), DRIFT=st['DRIFT'], ISO=st['ISO'])
+
+
+# ---------------------------------------------------------------- probe (v2 s3, torch multinomial logistic regression)
+def logreg(X, y, C, K, iters=300):
+    W = torch.zeros(X.shape[1], K, dtype=torch.float64, device=X.device, requires_grad=True); b = torch.zeros(K, dtype=torch.float64, device=X.device, requires_grad=True)
+    opt = torch.optim.LBFGS([W, b], max_iter=iters, line_search_fn='strong_wolfe', tolerance_grad=1e-9)
+    def closure():
+        opt.zero_grad(); loss = Fn.cross_entropy(X @ W + b, y) + (W ** 2).sum() / (2 * C * len(X)); loss.backward(); return loss
+    opt.step(closure)
+    return W.detach(), b.detach()
+
+
+def probe(bb, d, CS=(0.01, 0.1, 1.0, 10.0)):
+    """Train on canonical train slot vectors (labels = state), C by 5-fold world CV; returns info and predict(slot (n,dim))."""
+    with torch.enable_grad():
+        def data(split):
+            X = slot_matrix(bb, d, split); W, N, dim = X.shape
+            return X.reshape(-1, dim).to(DEV), torch.arange(N).repeat(W).to(DEV), torch.arange(W).repeat_interleave(N)
+        X, y, w = data('train'); mu, sd = X.mean(0), X.std(0).clamp_min(1e-6); Xs = (X - mu) / sd; folds = (w % 5).to(DEV); cv = {}; K = len(S.states(d))
+        for C in CS:
+            acc = []
+            for f in range(5):
+                tr = folds != f; Wt, bt = logreg(Xs[tr], y[tr], C, K); acc.append(float(((Xs[~tr] @ Wt + bt).argmax(1) == y[~tr]).float().mean()))
+            cv[C] = float(np.mean(acc))
+        Cb = max(CS, key=lambda c: (cv[c], -c)); Wt, bt = logreg(Xs, y, Cb, K)
+        Xd, yd, _ = data('dev'); dev_acc = float((((Xd - mu) / sd @ Wt + bt).argmax(1) == yd).float().mean())
+    st = S.states(d)
+    return dict(C=Cb, cv_accuracy={str(k): v for k, v in cv.items()}, dev_accuracy=dev_acc), (lambda Z: [st[i] for i in (((Z.double().to(DEV) - mu) / sd) @ Wt + bt).argmax(1).tolist()])
+
+
+def cosrows(a, b):
+    return Fn.cosine_similarity(a.flatten(1).double(), b.flatten(1).double(), dim=1)
+
+
+@torch.no_grad()
+def write_metrics(eng, bb, d, mp, T, predict, split='confirm3', m4=True):
+    """M1-M3 (v2 definitions) and the A.5 transplant classification for a plus operator T under mapping mp."""
+    ws = worlds3(d, split); n = len(ws); st = S.states(d); N = len(st); t = tmpl(d); pos = slots(bb, d, split).to(DEV); ar = torch.arange(n, device=DEV)
+    H = {s: cache3(bb, d, split, s)['h'].to(DEV) for s in st}; M = cache3(bb, d, split, st[0])['m'].to(DEV); v = M[..., None]
+    legal = [s for s in st if _legal(d, s, 'plus', mp)]; g = {s: S.advance(d, s, 'plus', mp) for s in legal}
+    Wr = {s: (T(H[s], M) - H[s]) * v for s in legal}; Wc = {s: (H[g[s]] - H[s]) * v for s in legal}
+    pc = torch.stack([cosrows(Wr[a], Wr[b]) for i, a in enumerate(legal) for b in legal[i + 1:]], 1).mean(1).cpu().numpy()
+    cw = torch.stack([cosrows(Wr[s], Wc[s]) for s in legal], 1).mean(1).cpu().numpy()
+    src = tgt = oth = 0
+    for s in legal:
+        pr = predict((H[s] + Wr[s])[ar, pos]); src += sum(p == s for p in pr); tgt += sum(p == g[s] for p in pr); oth += sum(p not in (s, g[s]) for p in pr)
+    tot = src + tgt + oth
+    out = dict(M1=boot_mean(pc), M2=dict(median=float(np.median(cw)), ci95=boot_stat(lambda i: np.median(cw[i]), n)['ci95'], mean=float(cw.mean())),
+               M3=dict(source=src / tot, target=tgt / tot, other=oth / tot, n=tot))
+    if m4:
+        from collections import Counter
+        c = Counter()
+        for s in legal:
+            for s2 in legal:
+                if s2 == s: continue
+                for o, w in zip(dec(eng, H[s2] + Wr[s], M), ws):
+                    ps, _ = Ev.parse_state(o['text'], d, S.people(w) if d in S.S1B else None)
+                    nat = S.advance(d, s2, 'plus') if _legal(d, s2, 'plus', 'natural') else None
+                    if ps == g[s2] and Ev.score(o['text'], S.gold(w, g[s2], t), w, o['ended'])['success']: c['relative'] += 1
+                    elif ps == g[s]: c['absolute'] += 1
+                    elif ps == s2: c['null'] += 1
+                    elif ps is not None and ps == nat and nat != g[s2]: c['natural_successor'] += 1
+                    elif ps is None: c['unparsable'] += 1
+                    else: c['other'] += 1
+        tot = sum(c.values()); out['M4'] = {k: x / tot for k, x in c.items()} | dict(n=tot)
+    out['writes'] = {s: Wr[s].cpu() for s in legal} if m4 == 'keep' else None
+    return out
+
+
+# ---------------------------------------------------------------- protocol / shards
+LOCKED3 = ['symutil.py', 'sym3_semantics.py', 'sym3_evaluator.py', 'lib3.py', 'd_encode.py', 'h_chains.py', 'b_run.py', 'n_run.py', 't_run.py',
+           'a_run.py', 'algebra.py', 'analyze.py', 'job_gpu.slurm', 'job_cpu.slurm']
+
+
+def verify_protocol3():
+    p = read(ROOT / 'protocol.json'); assert p.get('locked') is True, 'protocol not locked'
+    for k, v in p['sources'].items(): assert sha(ROOT / k) == v, f'locked source changed: {k}'
+    for k, v in p['data'].items(): assert sha(REPO / k) == v, f'locked data changed: {k}'
+    return p
+
+
+def chain_records(bb, d, mp, method, path):
+    out = []
+    import lib3
+    for f in sorted(lib3.SHARDS.glob(f'chain_{bb}_{d}_{mp}_{method}_{path}_*.jsonl')): out += rows(f)
+    return out
+
+
+def chain_rate(bb, d, mp, method, path, k):
+    rs = chain_records(bb, d, mp, method, path); ws = {r['world_id'] for r in rs}
+    ok = {r['world_id']: r['trajectory_success'] for r in rs if r['step'] == k}; assert len(ok) == len(ws)
+    return rate(list(ok.values()))
