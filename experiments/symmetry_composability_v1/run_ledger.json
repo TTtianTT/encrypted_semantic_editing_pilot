@@ -330,7 +330,67 @@
       "node": "node01",
       "start": "2026-11-22T22:14:35",
       "end": "2026-11-22T22:25:29"
+    },
+    {
+      "unit": "E1.5",
+      "lane": "A",
+      "job_id": "72297",
+      "name": "symcomp-e1_eval",
+      "state": "COMPLETED",
+      "elapsed_s": 640,
+      "gpus": 1,
+      "gpu_hours": 0.17777777777777778,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:26:25",
+      "end": "2026-11-22T22:37:05"
+    },
+    {
+      "unit": "E1.5",
+      "lane": "B",
+      "job_id": "72298",
+      "name": "symcomp-e1_eval",
+      "state": "COMPLETED",
+      "elapsed_s": 274,
+      "gpus": 1,
+      "gpu_hours": 0.07611111111111112,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:25:29",
+      "end": "2026-11-22T22:30:03"
+    },
+    {
+      "unit": "E1.6",
+      "lane": "A",
+      "job_id": "72299",
+      "name": "symcomp-e1_algebra",
+      "state": "COMPLETED",
+      "elapsed_s": 10,
+      "gpus": 1,
+      "gpu_hours": 0.002777777777777778,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:37:05",
+      "end": "2026-11-22T22:37:15"
+    },
+    {
+      "unit": "E1.6",
+      "lane": "cpu",
+      "job_id": "72300",
+      "name": "symcomp-e1_analyze",
+      "state": "COMPLETED",
+      "elapsed_s": 38,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:37:15",
+      "end": "2026-11-22T22:37:53"
     }
   ],
-  "total_gpu_hours": 0.5594444444444444
+  "total_gpu_hours": 0.8161111111111111
 }
