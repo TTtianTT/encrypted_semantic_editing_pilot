@@ -1,0 +1,145 @@
+{
+  "decision": "fail",
+  "a_geometry": {
+    "time7_E_iso": 0.3512797223838309,
+    "time7_E_iso_null_q05": 0.0932706988696028,
+    "time7_E_iso_null_quantile": 0.8055555555555556,
+    "time7_E_iso_pass": false,
+    "time7_R2": 0.4192349596234223,
+    "time7_R2_null_q95": 0.5822436738975854,
+    "time7_R2_null_quantile": 0.857936507936508,
+    "time7_R2_pass": false,
+    "segment_E_iso": {
+      "mean": 0.004940419932668327,
+      "ci95": [
+        0.004280711101829026,
+        0.0057050567862068765
+      ],
+      "n": 152
+    },
+    "person_E_iso": {
+      "mean": 0.023318346278364037,
+      "ci95": [
+        0.022085754759077075,
+        0.024638146114099264
+      ],
+      "n": 152
+    },
+    "segment_minus_person": {
+      "diff": -0.01837792634569571,
+      "ci95": [
+        -0.01986913449767157,
+        -0.01695154964782114
+      ],
+      "ci_excludes_0_below": true
+    },
+    "segment_lt_person_pass": true,
+    "pass": false
+  },
+  "b_curvature": {
+    "pooled_cos": {
+      "mean": -0.35416012875640684,
+      "ci95": [
+        -0.36680729656850464,
+        -0.34166784497094116
+      ],
+      "n": 160
+    },
+    "token_cos": {
+      "mean": -0.3319340444746762,
+      "ci95": [
+        -0.33646623238571494,
+        -0.327366680193438
+      ],
+      "n": 160,
+      "aligned_worlds": 160
+    },
+    "pass_": true
+  },
+  "c_group_law": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "e_inv_C1": 4.159698822028627,
+        "e_inv_C3": 0.19992573101762895,
+        "ISO_C1": 0.3347274004421808,
+        "ISO_C3": 0.48269774877348737,
+        "e_inv_C3_lt_C1": true,
+        "ISO_C3_lt_C1": false,
+        "both_directions_C3_lt_C1": true
+      },
+      {
+        "seed": 43,
+        "e_inv_C1": 4.279897500820724,
+        "e_inv_C3": 0.18943483689028673,
+        "ISO_C1": 0.302885349202309,
+        "ISO_C3": 0.48272395481151575,
+        "e_inv_C3_lt_C1": true,
+        "ISO_C3_lt_C1": false,
+        "both_directions_C3_lt_C1": true
+      },
+      {
+        "seed": 44,
+        "e_inv_C1": 4.209403519173286,
+        "e_inv_C3": 0.1931173573197377,
+        "ISO_C1": 0.3216557690065055,
+        "ISO_C3": 0.4781225325433631,
+        "e_inv_C3_lt_C1": true,
+        "ISO_C3_lt_C1": false,
+        "both_directions_C3_lt_C1": true
+      },
+      {
+        "seed": 45,
+        "e_inv_C1": 4.398876165136542,
+        "e_inv_C3": 0.20619351329091407,
+        "ISO_C1": 0.3004573176563789,
+        "ISO_C3": 0.4897418673070758,
+        "e_inv_C3_lt_C1": true,
+        "ISO_C3_lt_C1": false,
+        "both_directions_C3_lt_C1": true
+      },
+      {
+        "seed": 46,
+        "e_inv_C1": 4.1912578279349315,
+        "e_inv_C3": 0.18030740396440204,
+        "ISO_C1": 0.3364164377804506,
+        "ISO_C3": 0.49438388809037503,
+        "e_inv_C3_lt_C1": true,
+        "ISO_C3_lt_C1": false,
+        "both_directions_C3_lt_C1": true
+      }
+    ],
+    "e_inv_RRR16": 0.17469599313976217,
+    "RRR16_lt_all_C1": true,
+    "e_inv_C3_lt_C1_all_seeds": true,
+    "ISO_C3_lt_C1_count": 0,
+    "pass": false
+  },
+  "metric_selftest": {
+    "cyclic_Z7": {
+      "E_iso": 1.7564616237683366e-05,
+      "below_q05": true,
+      "R2": 0.9999993233476697,
+      "R2_above_q95": true
+    },
+    "open_toeplitz7": {
+      "E_iso": 2.3083850817841377e-05,
+      "below_q05": true,
+      "R2": 0.9999952972751339,
+      "R2_above_q95": true
+    },
+    "random": {
+      "E_iso": 0.12158177322043251,
+      "null_frac_le": 0.9404761904761905,
+      "R2_null_frac_ge": 0.28293650793650793
+    },
+    "pass": true
+  },
+  "rule": "(a) and ((b) or (c)); e_inv = mean of world-mean e_inv(T- o T+) and e_inv(T+ o T-)",
+  "seconds": 22.62396740913391,
+  "inputs": {
+    "e0_geometry.json": "cb2268d795ebfa63e53b92fae43356c608830c37e39579e2879c29d928db1bac",
+    "e0_operators.json": "aa5e60f420202e3ee32b30f08e5a9284c6f5ad4c4c05ff0108a140ecd3f2e517",
+    "e0_writes.json": "bf0c8df45847635abf8bedb916702c34b27af595c4f83aeba4ea736e423be2d5"
+  }
+}
