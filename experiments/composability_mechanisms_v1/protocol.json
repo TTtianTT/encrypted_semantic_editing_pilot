@@ -1,0 +1,3444 @@
+{
+  "locked": true,
+  "created_utc": "2026-11-22T15:12:44Z",
+  "version": 1,
+  "plan": "PLAN.md",
+  "domains": {
+    "v1": [
+      "weekday",
+      "month",
+      "compass",
+      "egoside",
+      "daysago"
+    ],
+    "s1b": [
+      "pron3",
+      "name3",
+      "bind3"
+    ]
+  },
+  "confirm": {
+    "v1": "confirm2 (160 new worlds per domain)",
+    "s1b": "confirm (160)"
+  },
+  "s1a": {
+    "maps": {
+      "weekday": {
+        "scrmax": {
+          "cycle": [
+            0,
+            1,
+            6,
+            5,
+            2,
+            3,
+            4
+          ],
+          "E_iso": 0.1379678335030164
+        },
+        "scrmed": {
+          "cycle": [
+            0,
+            1,
+            2,
+            5,
+            3,
+            4,
+            6
+          ],
+          "E_iso": 0.08888434626256575
+        }
+      },
+      "month": {
+        "scrmax": {
+          "cycle": [
+            0,
+            5,
+            6,
+            8,
+            9,
+            2,
+            3,
+            1,
+            7,
+            4,
+            10,
+            11
+          ],
+          "E_iso": 0.20221854259089134
+        },
+        "scrmed": {
+          "cycle": [
+            0,
+            9,
+            10,
+            7,
+            4,
+            1,
+            8,
+            5,
+            6,
+            11,
+            3,
+            2
+          ],
+          "E_iso": 0.13398762796016647
+        }
+      },
+      "compass": {
+        "scrmax": {
+          "cycle": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "E_iso": 0.043173832864402406
+        },
+        "scrmed": {
+          "cycle": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "E_iso": 0.04216535598813906
+        }
+      },
+      "egoside": {
+        "scrmax": {
+          "cycle": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "E_iso": 0.1806835512317421
+        },
+        "scrmed": {
+          "cycle": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "E_iso": 0.1752784300407617
+        }
+      },
+      "daysago": {
+        "scrmax": {
+          "path": [
+            6,
+            5,
+            7,
+            2,
+            3,
+            8,
+            9,
+            4
+          ],
+          "E_iso": 0.13538152677804127
+        },
+        "scrmed": {
+          "path": [
+            7,
+            3,
+            8,
+            6,
+            5,
+            9,
+            2,
+            4
+          ],
+          "E_iso": 0.08981778732116455
+        }
+      }
+    },
+    "natural_E_iso": {
+      "weekday": 0.044169705766225684,
+      "month": 0.07750265308824988,
+      "compass": 0.002296129062210877,
+      "egoside": 0.0023692992633347143,
+      "daysago": 0.0209353298882611
+    },
+    "selection_rule": "S1a map selection (CPU, before the lock; v1 train+dev, template 0 pooled states only).\nCyclic domains: every directed N-cycle (N <= 7) or 2000 random ones (N = 12, seed 3101); daysago: 2000 random path orders\n(excluding the natural order and its reverse). sigma_max = largest E_iso; sigma_med = median (lower median; ties -> lexicographically\nsmallest). For Z4, sigma_med is dropped when it equals the natural cycle (either direction) or sigma_max.",
+    "omitted_scrmed": []
+  },
+  "rrr": {
+    "ridge_grid": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "inner_split_seed": 3101,
+    "inner_fit": 80,
+    "inner_val": 16,
+    "primary_rank": 16,
+    "template": 0
+  },
+  "fits": [
+    {
+      "domain": "weekday",
+      "map": "natural",
+      "ranks": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "weekday",
+      "map": "scrmax",
+      "ranks": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "weekday",
+      "map": "scrmed",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "month",
+      "map": "natural",
+      "ranks": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "month",
+      "map": "scrmax",
+      "ranks": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "month",
+      "map": "scrmed",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "compass",
+      "map": "natural",
+      "ranks": [
+        2,
+        3,
+        4,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "compass",
+      "map": "scrmax",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "compass",
+      "map": "scrmed",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "egoside",
+      "map": "natural",
+      "ranks": [
+        2,
+        3,
+        4,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "egoside",
+      "map": "scrmax",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "egoside",
+      "map": "scrmed",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "daysago",
+      "map": "natural",
+      "ranks": [
+        6,
+        7,
+        8,
+        10,
+        12,
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "daysago",
+      "map": "scrmax",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "daysago",
+      "map": "scrmed",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "pron3",
+      "map": "natural",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "name3",
+      "map": "natural",
+      "ranks": [
+        16,
+        32
+      ]
+    },
+    {
+      "domain": "bind3",
+      "map": "natural",
+      "ranks": [
+        16,
+        32
+      ]
+    }
+  ],
+  "s2": {
+    "grids": {
+      "weekday": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "month": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        16
+      ],
+      "compass": [
+        2,
+        3,
+        4
+      ],
+      "egoside": [
+        2,
+        3,
+        4
+      ],
+      "daysago": [
+        6,
+        7,
+        8,
+        10,
+        12,
+        16
+      ]
+    },
+    "scrmax_grid_domains": [
+      "weekday",
+      "month"
+    ],
+    "modes": {
+      "weekday": [
+        4,
+        5,
+        16
+      ],
+      "month": [
+        8,
+        9,
+        10,
+        16
+      ],
+      "compass": [
+        2,
+        16
+      ],
+      "egoside": [
+        2,
+        16
+      ]
+    }
+  },
+  "training": {
+    "groups": [
+      "C1",
+      "C3"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "updates": 600,
+    "batch": 8,
+    "microbatch": 2,
+    "lr": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0,
+    "clip": 1.0,
+    "l2_weight": 1.0,
+    "l2_scale": "per domain and op: mean train canonical write token MSE",
+    "rank": 16
+  },
+  "chains": {
+    "weekday": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 14
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 14
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 14
+        }
+      },
+      "scrmax": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 14
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 14
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 14
+        }
+      },
+      "scrmed": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 14
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 14
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 14
+        }
+      }
+    },
+    "month": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 24
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 24
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 24
+        }
+      },
+      "scrmax": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 24
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 24
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 24
+        }
+      },
+      "scrmed": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 24
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 24
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 24
+        }
+      }
+    },
+    "compass": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      },
+      "scrmax": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      },
+      "scrmed": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      }
+    },
+    "egoside": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      },
+      "scrmax": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      },
+      "scrmed": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 8
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 8
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 8
+        }
+      }
+    },
+    "daysago": {
+      "natural": {
+        "plus_from_path_start": {
+          "start": 2,
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 7
+        },
+        "minus_from_path_end": {
+          "start": 9,
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 7
+        },
+        "alternating_from_path_4th": {
+          "start": 5,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 10
+        }
+      },
+      "scrmax": {
+        "plus_from_path_start": {
+          "start": 6,
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 7
+        },
+        "minus_from_path_end": {
+          "start": 4,
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 7
+        },
+        "alternating_from_path_4th": {
+          "start": 2,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 10
+        }
+      },
+      "scrmed": {
+        "plus_from_path_start": {
+          "start": 7,
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 7
+        },
+        "minus_from_path_end": {
+          "start": 4,
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 7
+        },
+        "alternating_from_path_4th": {
+          "start": 6,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 10
+        }
+      }
+    },
+    "pron3": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 30
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 6
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 6
+        }
+      }
+    },
+    "name3": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 30
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 6
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 6
+        }
+      }
+    },
+    "bind3": {
+      "natural": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ],
+          "short_len": 30
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ],
+          "short_len": 6
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ],
+          "short_len": 6
+        }
+      }
+    }
+  },
+  "methods": {
+    "weekday": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR4",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 4,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR5",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 5,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR6",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 6,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR7",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 7,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR8",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 8,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR4",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 4,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR5",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 5,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR6",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 6,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR7",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 7,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR8",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 8,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      }
+    ],
+    "month": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR8",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 8,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR9",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 9,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR10",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 10,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR11",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 11,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR12",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 12,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR14",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 14,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR8",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 8,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR9",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 9,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR10",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 10,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR11",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 11,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR12",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 12,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR14",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 14,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      }
+    ],
+    "compass": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR2",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 2,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR3",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 3,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR4",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 4,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      }
+    ],
+    "egoside": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR2",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 2,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR3",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 3,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR4",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 4,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      }
+    ],
+    "daysago": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR6",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 6,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR7",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 7,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR8",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 8,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR10",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 10,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR12",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 12,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmax",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR16",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "scrmed",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "short",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      }
+    ],
+    "pron3": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s42",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s43",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s44",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      }
+    ],
+    "name3": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s42",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s43",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s44",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      }
+    ],
+    "bind3": [
+      {
+        "name": "RRR16",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 16,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "RRR32",
+        "map": "natural",
+        "kind": "RRR",
+        "rank": 32,
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "C1_s42",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s43",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C1_s44",
+        "map": "natural",
+        "kind": "C1",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s42",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 42,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s43",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 43,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "C3_s44",
+        "map": "natural",
+        "kind": "C3",
+        "seed": 44,
+        "paths": "full",
+        "single_templates": [
+          0
+        ]
+      },
+      {
+        "name": "reencode",
+        "map": "natural",
+        "kind": "reencode",
+        "paths": "full",
+        "single_templates": [
+          0,
+          3
+        ]
+      }
+    ]
+  },
+  "lanes": {
+    "A": [
+      "weekday",
+      "month",
+      "daysago"
+    ],
+    "B": [
+      "compass",
+      "egoside",
+      "pron3",
+      "name3",
+      "bind3"
+    ]
+  },
+  "success": "sym2_evaluator.score(...)[\"success\"]",
+  "statistical_unit": "world",
+  "proportion_ci": "Wilson 95%",
+  "bootstrap": {
+    "reps": 2000,
+    "seed": 3101
+  },
+  "definitions": {
+    "one_way_R2N": "R at step 2N of plus_from_start (cyclic); R_7 of plus_from_path_start (daysago)",
+    "R10N": "R at step 10N of plus_from_start (cyclic)",
+    "R6_s1b": "R at step 6 of plus_from_start (S1b)",
+    "kappa_u": "appendix A, |lambda| >= 0.9, plus operator A_Q",
+    "G": "max_{k<=10N} ||A_Q^k||_2",
+    "single": "success over all legal single transitions (template 0) x 160 worlds",
+    "probe": "torch multinomial logistic regression, standardized slot vectors, C in {0.01,0.1,1,10} by 5-fold world CV (accuracy); see DEVIATIONS #1",
+    "writes": "W(x) = M * (T(E(x)) - E(x)), plus operator, token level"
+  },
+  "predictions": {
+    "G2_0": {
+      "rule": "natural RRR-16 one-way R_2N >= 0.95 in all five v1 domains AND C1 R_2 <= 0.20 for every domain x seed; otherwise stop"
+    },
+    "A1": {
+      "quantity": "egoside scrmax RRR-16 one-way R_2N",
+      "H_symN": "<= 0.50",
+      "H_slot": ">= 0.95"
+    },
+    "A2": {
+      "quantity": "RRR-16 one-way R_2N for every scrmax/scrmed map",
+      "H_slot": "all >= 0.95",
+      "H_symN": "Spearman rho(E_iso, R_2N) over all maps incl. natural <= -0.5 AND min R_2N < 0.95"
+    },
+    "A3": {
+      "quantity": "R_10N(natural) - R_10N(scrmax), RRR-16, four cyclic domains",
+      "H_slot": "all <= 0.05",
+      "H_symN": ">= 0.20 in at least 2 of 4"
+    },
+    "Q1": {
+      "rule": "H-slot if A1, A2, A3 all H-slot; H-sym-N if A1 H-sym-N and at least one other domain scrmax RRR-16 R_2N <= 0.50; else partial"
+    },
+    "A4": {
+      "quantity": "max phase deviation of |lambda|>=0.9 eigenvalues, RRR-16 plus, natural and scrmax, cyclic domains",
+      "expected": "< 2 deg (both hypotheses)"
+    },
+    "A5": {
+      "quantity": "kappa_u(scrmax)/kappa_u(natural), RRR-16 plus, cyclic domains",
+      "expected": "> 1 (both hypotheses)"
+    },
+    "B1": {
+      "quantity": "pron3 and name3 RRR-16 one-way R_6",
+      "expected": ">= 0.95 (both hypotheses)"
+    },
+    "B2": {
+      "quantity": "bind3 RRR-16 one-way R_6",
+      "H_bind": "<= 0.50",
+      "H_geom": ">= 0.95"
+    },
+    "B3": {
+      "quantity": "C1 R_2 for pron3, name3, bind3, every seed",
+      "expected": "<= 0.20 (both hypotheses)"
+    },
+    "B4": {
+      "quantity": "slot-predictability dev R2(bind3) - min(pron3, name3)",
+      "H_bind": "<= -0.30",
+      "H_geom": "|.| < 0.10",
+      "note": "measured before the lock on train+dev (as the plan specifies); value recorded below; not prospective",
+      "pre_lock_value": {
+        "delta": -0.544251661717616,
+        "dev_R2": {
+          "pron3": 0.9967500740358984,
+          "name3": 0.9909494416639036,
+          "bind3": 0.4466977799462877
+        },
+        "note": "Observed before the lock (train+dev only, as the plan specifies); B4 is therefore not prospective."
+      }
+    },
+    "Q2": {
+      "rule": "H-bind if B2 meets H-bind; H-geom if B2 meets H-geom; else neither"
+    },
+    "R1": {
+      "rule": "for each natural cyclic domain (weekday N=7, month 12, compass 4, egoside 4): r* = smallest grid rank with one-way R_2N >= 0.95 at it and all larger grid ranks; pass if N-2 <= r* <= N and the largest grid rank below r* (if any) has R_2N <= 0.20; R1 passes if all four pass"
+    },
+    "R2": {
+      "rule": "natural single-step success >= 0.95 at month rank 8 and weekday rank 4"
+    },
+    "R3": {
+      "rule": "single(natural) - single(scrmax) >= 0.20 at r = N-2 for weekday (5) and month (10); r*(scrmax) also reported"
+    },
+    "R4": {
+      "rule": "exploratory: harmonics present in the unit block at each rank"
+    },
+    "R5": {
+      "rule": "exploratory: first-failure transitions for daysago low ranks (boundary entry?)"
+    },
+    "M1": {
+      "quantity": "mean pairwise cosine of C1 writes across source states (world mean)",
+      "H_instr": ">= 0.90",
+      "H_approx": "<= 0.60"
+    },
+    "M2": {
+      "quantity": "cosine(C1 write, canonical write), per-world mean over sources, median over worlds",
+      "H_instr": "|.| <= 0.20",
+      "H_approx": ">= 0.50"
+    },
+    "M3": {
+      "quantity": "probe readout on C1 first-step slot",
+      "H_instr": "source >= 0.80 and target <= 0.20",
+      "H_approx": "target >= 0.80",
+      "admissible_if": "probe dev accuracy on canonical encodings >= 0.99"
+    },
+    "M4": {
+      "quantity": "same-world write transplant success",
+      "H_instr": ">= 0.80",
+      "H_approx": "<= 0.20"
+    },
+    "M_aggregation": "each M statistic is computed per (domain, C1 seed) cell (15 cells); the hypothesis test uses the median over cells; all cells reported",
+    "Q4": {
+      "rule": "the hypothesis met by the majority of M1-M4 (ties -> mixed)"
+    },
+    "M5_M7": "exploratory"
+  },
+  "stop_rules": [
+    "G2-0 fail -> stop and debug the pipeline",
+    "8 GPU h -> report; 10 GPU h -> stop",
+    "same job fails twice for unknown reason -> stop",
+    "leakage -> stop"
+  ],
+  "sources": {
+    "symutil.py": "0a50e30cce36c8012be2e1bd8ef5635b8a0e397c4bb994044ef6d27a60025832",
+    "sym2_semantics.py": "38d4b4288832d2f386a2a7aedaa3f18d8a9007e9dd98d1d161141c09e5f27000",
+    "sym2_evaluator.py": "51e8e1c131bc94eb6eb52fa3256ac0d33df95b2c86b01430f4963a3705bc9534",
+    "d_encode.py": "90369e68415af5afad8e8b5df15fcaa95b42d55ef4b1855044b822ee89f4d1f2",
+    "fit_rrr.py": "d537a09915c2c91a7d19fd674909b1404676429423f1f178c80eafc45a4a1382",
+    "train.py": "704d0e26e6cc585c3b14e6b3da5fd588b1026fbe85f2de5b7c9bb86e3a4e1062",
+    "eval_chains.py": "692dd1262d990518fac2cd6e54b99e7a2646a061af7dc4251e9d5413ffee3958",
+    "algebra.py": "03a05247c18d305ee947219cff8af25f4f0f1775cbfc12e1f52968de27b60480",
+    "s2_modes.py": "f2d854ddc763b01cb382becabd000c6a8f92ccba60137baa53cf1ebb8e028cdf",
+    "s3_mechanism.py": "a7122f7ca15ff22cb2251f4a50742f03293e5377141a1899c63a265cddc6e730",
+    "analyze.py": "9a441f2849f711f4a1e21b252b393928ab1479b6bed74b775f00f250adfb8672",
+    "job_gpu.slurm": "501c3b22bdf077278b5a204f953ad1e32be2b70c838b9429234d268816b9c018",
+    "job_cpu.slurm": "fb5942b85565f5180e57de84e9982469b6d9260e361b6470fd0a28cf611e9336"
+  },
+  "data": {
+    "experiments/composability_mechanisms_v1/data/weekday/worlds.jsonl": "c8540cb26a1137c0bcc06069245e1e23e23cf2bffd805f6e3c9503097b893511",
+    "experiments/composability_mechanisms_v1/data/month/worlds.jsonl": "d3e8cac24e13191d2298b82181369de96daa5c13627c9234c40db8960ae099a5",
+    "experiments/composability_mechanisms_v1/data/compass/worlds.jsonl": "f8594c4841aabd73520da5352a6e5c0563904d153c2da6336c9b5f5b0a474e4f",
+    "experiments/composability_mechanisms_v1/data/egoside/worlds.jsonl": "1a047d1ba37895e25ae5af707aacbd51d9dd76aee4308522bffe5eff824c009b",
+    "experiments/composability_mechanisms_v1/data/daysago/worlds.jsonl": "b6f69f66c7f7a1b17634d0b265a2ff9b4c45f7f04e67b8b625779b24e78ef3db",
+    "experiments/composability_mechanisms_v1/data/pron3/worlds.jsonl": "29b9b2945fcacc909aa44f3346710f5decfce5e3c7d41805ad2e35abbfee02a9",
+    "experiments/composability_mechanisms_v1/data/name3/worlds.jsonl": "66132e61f63840417e1d54c5325e25d3c59aa9c9e3c1c9f94a0abf4e0a0c701c",
+    "experiments/composability_mechanisms_v1/data/bind3/worlds.jsonl": "ae8ca5b644faa8f033f3c9b588cdd91a1ca73b50c0e873981b9581da22ec041f",
+    "experiments/composability_mechanisms_v1/data/audit.json": "d0c1b6ca4d47162ff771cb746bc2697d62dc816ca7568e3389112b3f5cd68606",
+    "experiments/composability_mechanisms_v1/data/slot_positions.json": "617435b366f01d9e468d640653153a1e89c28c9291a5f4c0296481d2806d8cea",
+    "experiments/composability_mechanisms_v1/data/manifest.json": "f57f816d0f7f8bec1daea0c89078bc5796b5e4be896b1a998035d6551b6c74d5",
+    "experiments/composability_mechanisms_v1/results/s1a_selection.json": "b63ff86e91986a1ba9ec11d93fe1f06e06769a3f6f21242bb1f41bb80f356110",
+    "experiments/composability_mechanisms_v1/results/s1b_geometry.json": "cd049cf6820e725f0de211f606368d6291d93cedd3d307f9a752d1ce42622952",
+    "experiments/composability_mechanisms_v1/inputs_manifest.json": "ab5c55e04e6765b31837daf715c4e5e518a5442332e710b5a1543ba9e51bab69",
+    "experiments/composability_mechanisms_v1/PLAN.md": "315bd63d77408ad98eb551446d0c8826e0a58bb9f926fdb117229348f7f74df2"
+  }
+}
