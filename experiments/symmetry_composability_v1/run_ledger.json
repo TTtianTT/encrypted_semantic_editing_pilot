@@ -195,7 +195,37 @@
       "node": "node01",
       "start": "2026-11-22T22:07:36",
       "end": "2026-11-22T22:08:39"
+    },
+    {
+      "unit": "E1.2",
+      "lane": "A",
+      "job_id": "72286",
+      "name": "symcomp-e1_encode",
+      "state": "COMPLETED",
+      "elapsed_s": 46,
+      "gpus": 1,
+      "gpu_hours": 0.012777777777777779,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:08:01",
+      "end": "2026-11-22T22:08:47"
+    },
+    {
+      "unit": "E1.2",
+      "lane": "cpu",
+      "job_id": "72287",
+      "name": "symcomp-e1_geometry",
+      "state": "COMPLETED",
+      "elapsed_s": 77,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:08:47",
+      "end": "2026-11-22T22:10:04"
     }
   ],
-  "total_gpu_hours": 0.12777777777777777
+  "total_gpu_hours": 0.14055555555555554
 }
