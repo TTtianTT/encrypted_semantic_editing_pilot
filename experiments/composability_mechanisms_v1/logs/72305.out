@@ -1,0 +1,16 @@
+weekday {'worlds': 160, 'splits': {'confirm2': 160}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm2': 0}, 'slot_positions': {'0': 7, '3': None}, 'pass': False}
+month {'worlds': 160, 'splits': {'confirm2': 160}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm2': 0}, 'slot_positions': {'0': 7, '3': None}, 'pass': False}
+compass {'worlds': 160, 'splits': {'confirm2': 160}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 0, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm2': 0}, 'slot_positions': {'0': 11, '3': 16}, 'pass': True}
+egoside {'worlds': 160, 'splits': {'confirm2': 160}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 0, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm2': 0}, 'slot_positions': {'0': 11, '3': 16}, 'pass': True}
+daysago {'worlds': 160, 'splits': {'confirm2': 160}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm2': 0}, 'slot_positions': {'0': 6, '3': None}, 'pass': False}
+pron3 {'worlds': 288, 'splits': {'confirm': 160, 'dev': 32, 'train': 96}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {'confirm&dev': 0, 'confirm&train': 0, 'dev&train': 0}, 'history_overlap': {'confirm': 0, 'dev': 0, 'train': 0}, 'slot_positions': {'0': 15, '3': None}, 'pass': False}
+name3 {'worlds': 288, 'splits': {'confirm': 160, 'dev': 32, 'train': 96}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {'confirm&dev': 0, 'confirm&train': 0, 'dev&train': 0}, 'history_overlap': {'confirm': 0, 'dev': 0, 'train': 0}, 'slot_positions': {'0': 15, '3': None}, 'pass': False}
+bind3 {'worlds': 288, 'splits': {'confirm': 160, 'dev': 32, 'train': 96}, 'gold_failures': 0, 'mask_failures': 0, 'slot_failures': 1, 'negative_control_failures': 0, 'duplicate_texts': 0, 'split_key_overlap': {'confirm&dev': 0, 'confirm&train': 0, 'dev&train': 0}, 'history_overlap': {'confirm': 0, 'dev': 0, 'train': 0}, 'slot_positions': {'0': 15, '3': None}, 'pass': False}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v1/d_audit.py", line 65, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v1/d_audit.py", line 61, in main
+    assert ok_all, 'D audit failed; fix templates first'
+           ^^^^^^
+AssertionError: D audit failed; fix templates first
+srun: error: node01: task 0: Exited with exit code 1

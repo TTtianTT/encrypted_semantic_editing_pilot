@@ -1,0 +1,66 @@
+{
+  "budget_gpu_hours": 10,
+  "jobs": [
+    {
+      "unit": "P0",
+      "lane": "cpu",
+      "job_id": "72303",
+      "name": "compmech-p0_preflight",
+      "state": "COMPLETED",
+      "elapsed_s": 6,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:06:20",
+      "end": "2026-11-22T23:06:26"
+    },
+    {
+      "unit": "D",
+      "lane": "cpu",
+      "job_id": "72304",
+      "name": "compmech-d_make_data",
+      "state": "COMPLETED",
+      "elapsed_s": 3,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:06:26",
+      "end": "2026-11-22T23:06:29"
+    },
+    {
+      "unit": "D",
+      "lane": "cpu",
+      "job_id": "72305",
+      "name": "compmech-d_audit",
+      "state": "FAILED",
+      "elapsed_s": 28,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:06:29",
+      "end": "2026-11-22T23:06:57"
+    },
+    {
+      "unit": "D",
+      "lane": "cpu",
+      "job_id": "72306",
+      "name": "compmech-d_audit",
+      "state": "COMPLETED",
+      "elapsed_s": 22,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:07:08",
+      "end": "2026-11-22T23:07:30"
+    }
+  ],
+  "total_gpu_hours": 0
+}

@@ -1,0 +1,128 @@
+{
+  "seed": 2026112301,
+  "seed_rule": "random.Random(seed + index in V1_DOMAINS + S1B_DOMAINS)",
+  "counts": {
+    "weekday": {
+      "confirm2": 160
+    },
+    "month": {
+      "confirm2": 160
+    },
+    "compass": {
+      "confirm2": 160
+    },
+    "egoside": {
+      "confirm2": 160
+    },
+    "daysago": {
+      "confirm2": 160
+    },
+    "pron3": {
+      "confirm": 160,
+      "dev": 32,
+      "train": 96
+    },
+    "name3": {
+      "confirm": 160,
+      "dev": 32,
+      "train": 96
+    },
+    "bind3": {
+      "confirm": 160,
+      "dev": 32,
+      "train": 96
+    }
+  },
+  "core_key": "(people, object, color, quantity, status)",
+  "history_files": {
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": {
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": {
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/worlds.jsonl": {
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/worlds.jsonl": {
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "worlds": 152
+    },
+    "experiments/canonical_confirmation_v1/data/person_eval.jsonl": {
+      "sha256": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+      "worlds": 80
+    },
+    "experiments/canonical_confirmation_v1/data/person_train.jsonl": {
+      "sha256": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+      "worlds": 96
+    },
+    "experiments/canonical_confirmation_v1/data/time_eval.jsonl": {
+      "sha256": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_confirm.jsonl": {
+      "sha256": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_dev.jsonl": {
+      "sha256": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+      "worlds": 80
+    },
+    "experiments/manifold_controls_v1/data/time_confirm.jsonl": {
+      "sha256": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+      "worlds": 160
+    },
+    "experiments/operator_residual_v2/train_worlds.jsonl": {
+      "sha256": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+      "worlds": 96
+    },
+    "experiments/operator_residual_v2/eval_worlds.jsonl": {
+      "sha256": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+      "worlds": 80
+    },
+    "experiments/symmetry_composability_v1/data/weekday/worlds.jsonl": {
+      "sha256": "e21014549bb47bad07dbc2b87c34ea2b3a70e41ed53415d8471f36f2e71aed97",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/month/worlds.jsonl": {
+      "sha256": "c51be787afc165df0920b714883b098e4a05077d41783914c35d4393a9cd6d98",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/compass/worlds.jsonl": {
+      "sha256": "0d56e456c5f3b6cd328d847023e593499b1bc848f5b070004086706c6b3ff5aa",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/egoside/worlds.jsonl": {
+      "sha256": "6c9ce7997fe00db7db4e6f54f5fa158d94916471a1efcc6422c9e163f1820bfe",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/daysago/worlds.jsonl": {
+      "sha256": "c5a4565b3c659e62bfb4e8c9e85225714bf44442a296c64022a6f131facc2fa7",
+      "worlds": 288
+    }
+  },
+  "history_keys": 2765,
+  "files": {
+    "weekday/worlds.jsonl": "c8540cb26a1137c0bcc06069245e1e23e23cf2bffd805f6e3c9503097b893511",
+    "weekday/renders.jsonl": "cebeff168b830ee280e3c31b607eece95675654b041392815127b67846631b4b",
+    "month/worlds.jsonl": "d3e8cac24e13191d2298b82181369de96daa5c13627c9234c40db8960ae099a5",
+    "month/renders.jsonl": "32ae05a786c541754ac56700341f48c2d10d264cfa85bce7aabe9ca9611bc5d0",
+    "compass/worlds.jsonl": "f8594c4841aabd73520da5352a6e5c0563904d153c2da6336c9b5f5b0a474e4f",
+    "compass/renders.jsonl": "faf7ef404d6dfad775534b48045d60520a7fbd2b93b576040030ab8f73d3f3d3",
+    "egoside/worlds.jsonl": "1a047d1ba37895e25ae5af707aacbd51d9dd76aee4308522bffe5eff824c009b",
+    "egoside/renders.jsonl": "d0af1a3066a3ec2ee150bc2b4f2dfd6766e96b72bb8d427e8989b6de61d6eae2",
+    "daysago/worlds.jsonl": "b6f69f66c7f7a1b17634d0b265a2ff9b4c45f7f04e67b8b625779b24e78ef3db",
+    "daysago/renders.jsonl": "0b1b0e7e445edbb6ee1e9691840374ce94a5aea3598daa64b54801aaaa3629e5",
+    "pron3/worlds.jsonl": "29b9b2945fcacc909aa44f3346710f5decfce5e3c7d41805ad2e35abbfee02a9",
+    "pron3/renders.jsonl": "b59ce90bc3ac8368317e419a1966b00eacfd81303da90c49e9bf9982484b841b",
+    "name3/worlds.jsonl": "66132e61f63840417e1d54c5325e25d3c59aa9c9e3c1c9f94a0abf4e0a0c701c",
+    "name3/renders.jsonl": "5f7d0dce955d1ff19c648d6c86b25c03fb11e223e8d1a04335db96d9590589d3",
+    "bind3/worlds.jsonl": "ae8ca5b644faa8f033f3c9b588cdd91a1ca73b50c0e873981b9581da22ec041f",
+    "bind3/renders.jsonl": "a54743e38c992edb3ce4935064c6c6ca85a11999524c513e059ac094c8635aaf"
+  },
+  "sym2_semantics_sha256": "38d4b4288832d2f386a2a7aedaa3f18d8a9007e9dd98d1d161141c09e5f27000",
+  "seconds": 0.47916626930236816
+}

@@ -1,0 +1,306 @@
+{
+  "domains": {
+    "weekday": {
+      "worlds": 160,
+      "splits": {
+        "confirm2": 160
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm2": 0
+      },
+      "slot_positions": {
+        "0": 7,
+        "3": null,
+        "3_positions": [
+          10,
+          11
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "The ticket event is scheduled for Monday. Its status is cancelled. The ticket is blue. There are 9 copies.",
+        "t3": "Carol noted that the ticket event is scheduled for Monday, and David agreed. Its status is cancelled. The ticket is blue. There are 9 copies."
+      },
+      "pass": true
+    },
+    "month": {
+      "worlds": 160,
+      "splits": {
+        "confirm2": 160
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm2": 0
+      },
+      "slot_positions": {
+        "0": 7,
+        "3": null,
+        "3_positions": [
+          10,
+          11
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "The ticket event is scheduled for January. Its status is planned. The ticket is black. There are 3 copies.",
+        "t3": "Emma noted that the ticket event is scheduled for January, and Alice agreed. Its status is planned. The ticket is black. There are 3 copies."
+      },
+      "pass": true
+    },
+    "compass": {
+      "worlds": 160,
+      "splits": {
+        "confirm2": 160
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm2": 0
+      },
+      "slot_positions": {
+        "0": 11,
+        "3": null,
+        "3_positions": [
+          16
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "In Carol's report, the ticket is on the north side. The ticket is red. There are 2 copies.",
+        "t3": "According to Carol's report, which Alice checked, the ticket lies on the north side. The ticket is red. There are 2 copies."
+      },
+      "pass": true
+    },
+    "egoside": {
+      "worlds": 160,
+      "splits": {
+        "confirm2": 160
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm2": 0
+      },
+      "slot_positions": {
+        "0": 11,
+        "3": null,
+        "3_positions": [
+          16
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "In Henry's report, the cup is on the front side. The cup is green. There are 2 copies.",
+        "t3": "According to Henry's report, which Emma checked, the cup lies on the front side. The cup is green. There are 2 copies."
+      },
+      "pass": true
+    },
+    "daysago": {
+      "worlds": 160,
+      "splits": {
+        "confirm2": 160
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm2": 0
+      },
+      "slot_positions": {
+        "0": 6,
+        "3": null,
+        "3_positions": [
+          9,
+          10
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "The ticket event is dated two days ago. Its status is cancelled. The ticket is black. There is 1 copy.",
+        "t3": "Alice noted that the ticket event is dated two days ago, and Frank agreed. Its status is cancelled. The ticket is black. There is 1 copy."
+      },
+      "pass": true
+    },
+    "pron3": {
+      "worlds": 288,
+      "splits": {
+        "confirm": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm&dev": 0,
+        "confirm&train": 0,
+        "dev&train": 0
+      },
+      "history_overlap": {
+        "confirm": 0,
+        "dev": 0,
+        "train": 0
+      },
+      "slot_positions": {
+        "0": 15,
+        "3": null,
+        "3_positions": [
+          14,
+          15
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "Participants: Henry, Emma, Grace. The book was sent to me. The book is red. There are 8 copies.",
+        "t3": "Henry, Emma and Grace took part, and the book went to me. The book is red. There are 8 copies."
+      },
+      "pass": true
+    },
+    "name3": {
+      "worlds": 288,
+      "splits": {
+        "confirm": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm&dev": 0,
+        "confirm&train": 0,
+        "dev&train": 0
+      },
+      "history_overlap": {
+        "confirm": 0,
+        "dev": 0,
+        "train": 0
+      },
+      "slot_positions": {
+        "0": 15,
+        "3": null,
+        "3_positions": [
+          14,
+          15
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "Participants: Grace, Emma, Bob. The book was sent to Daniel. The book is white. There are 9 copies.",
+        "t3": "Grace, Emma and Bob took part, and the book went to Daniel. The book is white. There are 9 copies."
+      },
+      "pass": true
+    },
+    "bind3": {
+      "worlds": 288,
+      "splits": {
+        "confirm": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "gold_failures": 0,
+      "mask_failures": 0,
+      "slot_failures": 0,
+      "negative_control_failures": 0,
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm&dev": 0,
+        "confirm&train": 0,
+        "dev&train": 0
+      },
+      "history_overlap": {
+        "confirm": 0,
+        "dev": 0,
+        "train": 0
+      },
+      "slot_positions": {
+        "0": 15,
+        "3": null,
+        "3_positions": [
+          14,
+          15
+        ]
+      },
+      "examples": {
+        "gold": [],
+        "mask": [],
+        "slot": [],
+        "neg": []
+      },
+      "sample": {
+        "t0": "Participants: Alice, Emma, Henry. The ticket was sent to Alice. The ticket is white. There are 8 copies.",
+        "t3": "Alice, Emma and Henry took part, and the ticket went to Alice. The ticket is white. There are 8 copies."
+      },
+      "pass": true
+    }
+  },
+  "pass": true,
+  "seconds": 3.8052473068237305,
+  "sources": {
+    "sym2_semantics.py": "38d4b4288832d2f386a2a7aedaa3f18d8a9007e9dd98d1d161141c09e5f27000",
+    "sym2_evaluator.py": "51e8e1c131bc94eb6eb52fa3256ac0d33df95b2c86b01430f4963a3705bc9534",
+    "d_make_data.py": "e5603ec46b0a2fbcdde929864dda10f7966d80bdb268fe3df4eab3fc2a71abab",
+    "d_audit.py": "f6310604d820918df2db32c6b9f85448bae082bb11c4c8e3e07e612ae5816001"
+  }
+}
