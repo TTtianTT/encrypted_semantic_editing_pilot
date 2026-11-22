@@ -1,0 +1,2006 @@
+{
+  "locked": true,
+  "created_utc": "2026-11-22T18:19:35Z",
+  "version": 1,
+  "plan": "PLAN.md (predictions, thresholds and rules copied below; PLAN text is authoritative)",
+  "v2_amendment": "experiments/composability_mechanisms_v1/AMENDMENT_01.md",
+  "backbones": {
+    "bart": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "t5gemma": "google/t5gemma-2b-2b-ul2-it@6a196a58ce2786cd139a1217a85d1f7b9984e330 (bf16)"
+  },
+  "maps": {
+    "weekday": {
+      "scrmax": [
+        0,
+        1,
+        6,
+        5,
+        2,
+        3,
+        4
+      ],
+      "skip2": [
+        0,
+        2,
+        4,
+        6,
+        1,
+        3,
+        5
+      ]
+    },
+    "month": {
+      "scrmax": [
+        0,
+        5,
+        6,
+        8,
+        9,
+        2,
+        3,
+        1,
+        7,
+        4,
+        10,
+        11
+      ]
+    },
+    "compass": {
+      "scrmax": [
+        0,
+        3,
+        1,
+        2
+      ]
+    }
+  },
+  "bind3fix_people": [
+    "Alice",
+    "Bob",
+    "Carol"
+  ],
+  "data_seed": 2026112320,
+  "editor_seeds": [
+    42,
+    43,
+    44
+  ],
+  "gates": {
+    "bart": {
+      "GR_B": {
+        "pron3": {
+          "n": 384,
+          "k": 384,
+          "rate": 1.0,
+          "ci95": [
+            0.9900952857583228,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "name3": {
+          "n": 384,
+          "k": 384,
+          "rate": 1.0,
+          "ci95": [
+            0.9900952857583228,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "bind3": {
+          "n": 384,
+          "k": 384,
+          "rate": 1.0,
+          "ci95": [
+            0.9900952857583228,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "bind3fix": {
+          "n": 384,
+          "k": 384,
+          "rate": 1.0,
+          "ci95": [
+            0.9900952857583228,
+            0.9999999999999999
+          ],
+          "pass_": true
+        }
+      },
+      "GA_B": {
+        "pron3": {
+          "n": 192,
+          "k": 192,
+          "rate": 1.0,
+          "ci95": [
+            0.980384853933246,
+            1.0
+          ],
+          "ridge": {
+            "plus_16": 0.001,
+            "minus_16": 0.001
+          },
+          "pass_": true
+        },
+        "name3": {
+          "n": 192,
+          "k": 192,
+          "rate": 1.0,
+          "ci95": [
+            0.980384853933246,
+            1.0
+          ],
+          "ridge": {
+            "plus_16": 0.001,
+            "minus_16": 0.001
+          },
+          "pass_": true
+        }
+      },
+      "B_status": "go",
+      "B_domains": [
+        "pron3",
+        "name3",
+        "bind3",
+        "bind3fix"
+      ],
+      "B4p": {
+        "pron3": {
+          "lambda_": 0.01,
+          "dev_R2": 0.9945849987111774,
+          "train_R2": 0.9992616467630605
+        },
+        "name3": {
+          "lambda_": 0.01,
+          "dev_R2": 0.9878825399365663,
+          "train_R2": 0.9983652604391624
+        },
+        "bind3": {
+          "lambda_": 1.0,
+          "dev_R2": 0.4918594962392264,
+          "train_R2": 0.6535004853432097
+        },
+        "bind3fix": {
+          "lambda_": 0.001,
+          "dev_R2": 0.9997413581805458,
+          "train_R2": 0.9999406854243112
+        }
+      },
+      "B4p_delta": -0.49602304369733985
+    },
+    "t5": {
+      "GR_T": {
+        "weekday": {
+          "n": 896,
+          "k": 896,
+          "rate": 1.0,
+          "ci95": [
+            0.9957309604008149,
+            1.0
+          ],
+          "pass_": true
+        },
+        "month": {
+          "n": 1536,
+          "k": 1536,
+          "rate": 1.0,
+          "ci95": [
+            0.9975052893928209,
+            1.0
+          ],
+          "pass_": true
+        },
+        "compass": {
+          "n": 512,
+          "k": 512,
+          "rate": 1.0,
+          "ci95": [
+            0.9925530242771171,
+            0.9999999999999999
+          ],
+          "pass_": true
+        }
+      },
+      "GA_T": {
+        "weekday": {
+          "n": 448,
+          "k": 448,
+          "rate": 1.0,
+          "ci95": [
+            0.9914982152573595,
+            0.9999999999999998
+          ],
+          "ridge": {
+            "plus_16": 0.001,
+            "minus_16": 0.001
+          },
+          "pass_": true
+        },
+        "month": {
+          "n": 768,
+          "k": 768,
+          "rate": 1.0,
+          "ci95": [
+            0.9950229949728752,
+            1.0
+          ],
+          "ridge": {
+            "plus_16": 0.001,
+            "minus_16": 0.001
+          },
+          "pass_": true
+        },
+        "compass": {
+          "n": 256,
+          "k": 256,
+          "rate": 1.0,
+          "ci95": [
+            0.9852161435741286,
+            0.9999999999999999
+          ],
+          "ridge": {
+            "plus_16": 0.001,
+            "minus_16": 0.001
+          },
+          "pass_": true
+        }
+      },
+      "T_status": "go",
+      "T_domains": [
+        "weekday",
+        "month",
+        "compass"
+      ],
+      "T_rrr_domains": [
+        "weekday",
+        "month",
+        "compass"
+      ]
+    },
+    "excluded": {
+      "B": [],
+      "T": [],
+      "T_rrr": []
+    }
+  },
+  "amplitudes": {
+    "bart": {
+      "weekday": {
+        "1": {
+          "dim": 2,
+          "a": 1.8331441223318885,
+          "s": 1.5902824096457495
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.2178680011257357,
+          "s": 1.9030886865380883
+        },
+        "3": {
+          "dim": 2,
+          "a": 1.0301612578491952,
+          "s": 2.007369271214238
+        }
+      },
+      "month": {
+        "1": {
+          "dim": 2,
+          "a": 1.7393408431388855,
+          "s": 0.9116949913746085
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.16883892604518,
+          "s": 1.1719183468959915
+        },
+        "3": {
+          "dim": 2,
+          "a": 0.8299267273238587,
+          "s": 1.1614483346802826
+        },
+        "4": {
+          "dim": 2,
+          "a": 0.9788227973652791,
+          "s": 1.6777675761590372
+        },
+        "5": {
+          "dim": 2,
+          "a": 0.7522255051925488,
+          "s": 1.4372267978621656
+        },
+        "6": {
+          "dim": 1,
+          "a": 0.5641380445920353,
+          "s": 1.1282760891840704
+        }
+      },
+      "compass": {
+        "1": {
+          "dim": 2,
+          "a": 1.4283219462516585,
+          "s": 2.0200401597463027
+        },
+        "2": {
+          "dim": 1,
+          "a": 1.1785632332849028,
+          "s": 2.3571264665698055
+        }
+      },
+      "egoside": {
+        "1": {
+          "dim": 2,
+          "a": 1.781437677480461,
+          "s": 2.5189774603340553
+        },
+        "2": {
+          "dim": 1,
+          "a": 2.217995735299029,
+          "s": 4.435991470598059
+        }
+      }
+    },
+    "t5": {
+      "weekday": {
+        "1": {
+          "dim": 2,
+          "a": 24.605618881805313,
+          "s": 21.450887982858553
+        },
+        "2": {
+          "dim": 2,
+          "a": 18.197162975600467,
+          "s": 28.351007038149586
+        },
+        "3": {
+          "dim": 2,
+          "a": 16.351348957603978,
+          "s": 31.870421203848405
+        }
+      },
+      "month": {
+        "1": {
+          "dim": 2,
+          "a": 23.75907550373826,
+          "s": 12.475159587041162
+        },
+        "2": {
+          "dim": 2,
+          "a": 17.677130192130587,
+          "s": 17.707907952819014
+        },
+        "3": {
+          "dim": 2,
+          "a": 13.747516182416673,
+          "s": 19.411042731764983
+        },
+        "4": {
+          "dim": 2,
+          "a": 14.265149393490168,
+          "s": 24.663744240785963
+        },
+        "5": {
+          "dim": 2,
+          "a": 12.687232121854086,
+          "s": 24.44649509469819
+        },
+        "6": {
+          "dim": 1,
+          "a": 9.7239020214898,
+          "s": 19.447804042979598
+        }
+      },
+      "compass": {
+        "1": {
+          "dim": 2,
+          "a": 23.851831007971832,
+          "s": 33.735368643868945
+        },
+        "2": {
+          "dim": 1,
+          "a": 26.981747688310154,
+          "s": 53.9634953766203
+        }
+      }
+    }
+  },
+  "calib": {
+    "bart": {
+      "weekday": {
+        "models": {
+          "full": {
+            "lam": [
+              0.9225235911816703,
+              1.7040061078488407,
+              2.1407689952586697
+            ],
+            "nll": 0.3001732150278672,
+            "probe_accuracy": 0.8771081349206349,
+            "omega": [
+              0.13909952011863558,
+              0.359715007314293,
+              0.5011854725670714
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.5980852647474567,
+              0.5980852647474567,
+              0.5980852647474567
+            ],
+            "nll": 0.580973710187635,
+            "probe_accuracy": 0.7575644841269841,
+            "omega": [
+              0.2529909203140892,
+              0.3541964417577652,
+              0.39281263792814547
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.3306813781466929,
+              0.0,
+              0.0
+            ],
+            "nll": 1.2984281911967506,
+            "probe_accuracy": 0.6184275793650794,
+            "omega": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.14285714285714285,
+              "minus": 0.14285714285714285,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 0.14285714285714285,
+              "minus": 0.14285714285714285,
+              "alt": 0.33035714285714285
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2,
+              3
+            ],
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2,
+            3
+          ],
+          "dim": 6,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          }
+        ],
+        "mean_step_dist": [
+          2.593194182188742,
+          3.6305656779218354,
+          4.02638737430116
+        ],
+        "planes_sha256": "c409ce67b6568c4beda90435db311f68a58ba66e01c3c63a4299e66d16dfa3a7"
+      },
+      "month": {
+        "models": {
+          "full": {
+            "lam": [
+              1.7840297384156165,
+              2.198754450136351,
+              2.097666230430646,
+              3.99695369809937,
+              5.326550389825765,
+              4.158226562366934
+            ],
+            "nll": 0.03204501986177647,
+            "probe_accuracy": 0.9866437815656566,
+            "omega": [
+              0.04329665837122521,
+              0.08583944537955089,
+              0.08479283008436109,
+              0.3245159260693399,
+              0.314232333509472,
+              0.14732280658605082
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294
+            ],
+            "nll": 0.16905093931301368,
+            "probe_accuracy": 0.949514678030303,
+            "omega": [
+              0.08687826455750977,
+              0.13975553565771603,
+              0.1447043516253034,
+              0.2906469337423185,
+              0.2111852967824411,
+              0.12682961763471115
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.7434652784369109,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.3833483478004416,
+            "probe_accuracy": 0.844302398989899,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0026041666666666665,
+              "minus": 0.0026041666666666665,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 0.84375,
+              "minus": 0.84375,
+              "alt": 0.921875
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2,
+              4,
+              5
+            ],
+            "frozen": [
+              3,
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "dim": 8,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "mean_step_dist": [
+          0.8673013473484649,
+          1.3951724863830295,
+          1.4445762673900375,
+          2.9015137275278726,
+          2.1082522006220725,
+          1.2661336965986532
+        ],
+        "planes_sha256": "75443d334409b096635c2408ea7938667375e8aec2779785adaa6b75e860f786"
+      },
+      "compass": {
+        "models": {
+          "full": {
+            "lam": [
+              3.931164246879534,
+              3.3222081417487854
+            ],
+            "nll": 0.4965725383266513,
+            "probe_accuracy": 0.78515625,
+            "omega": [
+              0.4652691773117351,
+              0.5347308226882649
+            ]
+          },
+          "equal": {
+            "lam": [
+              1.9106668264895506,
+              1.9106668264895506
+            ],
+            "nll": 0.5195644094490913,
+            "probe_accuracy": 0.78515625,
+            "omega": [
+              0.4237364724705595,
+              0.5762635275294404
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.19428636684318132,
+              0.0
+            ],
+            "nll": 1.240774455371117,
+            "probe_accuracy": 0.3684895833333333,
+            "omega": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.5078125
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2
+            ],
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2
+          ],
+          "dim": 3,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 1
+          }
+        ],
+        "mean_step_dist": [
+          4.073940085788819,
+          5.540384737458179
+        ],
+        "planes_sha256": "b0ae534cf75f2725de82173efec2564b096956c726529630cbcf547f8528030a"
+      },
+      "egoside": {
+        "models": {
+          "full": {
+            "lam": [
+              1.772555050681826,
+              0.8349178542637777
+            ],
+            "nll": 0.10794081320822296,
+            "probe_accuracy": 0.9889322916666666,
+            "omega": [
+              0.4118977625717254,
+              0.5881022374282746
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.8095423820629633,
+              0.8095423820629633
+            ],
+            "nll": 0.21792002491612217,
+            "probe_accuracy": 0.9889322916666666,
+            "omega": [
+              0.24806303486686038,
+              0.7519369651331396
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.15357200442797997,
+              0.0
+            ],
+            "nll": 1.1640513359621003,
+            "probe_accuracy": 0.3444010416666667,
+            "omega": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.5
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2
+            ],
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2
+          ],
+          "dim": 3,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 1
+          }
+        ],
+        "mean_step_dist": [
+          6.5319303728899225,
+          19.799805737634244
+        ],
+        "planes_sha256": "8812694eb77bfe384e20ea1b0e9bbf32c9687ba268cacbabd58b0a3487a48e8f"
+      }
+    },
+    "t5": {
+      "weekday": {
+        "models": {
+          "full": {
+            "lam": [
+              0.010947349637692557,
+              0.013736459476991283,
+              0.01437747912596195
+            ],
+            "nll": 0.1864651716709287,
+            "probe_accuracy": 0.9264632936507936,
+            "omega": [
+              0.16662405639017827,
+              0.3631198094668011,
+              0.47025613414302064
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.006500965141749625,
+              0.006500965141749625,
+              0.006500965141749625
+            ],
+            "nll": 0.27846019518789766,
+            "probe_accuracy": 0.8818204365079365,
+            "omega": [
+              0.20467811901731978,
+              0.35548218063663783,
+              0.43983970034604236
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.0024246988355142093,
+              0.0,
+              0.0
+            ],
+            "nll": 1.1137717935397569,
+            "probe_accuracy": 0.6938244047619048,
+            "omega": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.6428571428571429,
+              "minus": 0.6428571428571429,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 0.2857142857142857,
+              "minus": 0.2857142857142857,
+              "alt": 0.42857142857142855
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2,
+              3
+            ],
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2,
+            3
+          ],
+          "dim": 6,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          }
+        ],
+        "mean_step_dist": [
+          467.8435473744448,
+          812.5443267503096,
+          1005.3647486793282
+        ],
+        "planes_sha256": "3c487c3092239dbc805ac13a345a88ac94f63dd88f60e49166a2d96b717e1087"
+      },
+      "month": {
+        "models": {
+          "full": {
+            "lam": [
+              0.004648028926470428,
+              0.00706678550022886,
+              0.008943485329832097,
+              0.010638587358962679,
+              0.006977452784350144,
+              0.014383544921527222
+            ],
+            "nll": 0.022256026453870384,
+            "probe_accuracy": 0.9889125631313131,
+            "omega": [
+              0.035087674643690024,
+              0.10110064976079795,
+              0.15137343169575943,
+              0.2876377158197772,
+              0.1846891102810208,
+              0.24011141779895448
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445
+            ],
+            "nll": 0.1432871846881812,
+            "probe_accuracy": 0.9566366792929293,
+            "omega": [
+              0.06926833891260634,
+              0.1312747033460956,
+              0.15530729863359513,
+              0.24809092319565643,
+              0.2428809152938491,
+              0.15317782061819754
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.003057417765266895,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.55564097975138,
+            "probe_accuracy": 0.8391335227272727,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.578125,
+              "minus": 0.578125,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              3,
+              4,
+              6
+            ],
+            "frozen": [
+              2,
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "dim": 7,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "mean_step_dist": [
+          170.32877921575718,
+          322.8005798011391,
+          381.896014756938,
+          610.0481799591106,
+          597.236925935264,
+          376.6596918362009
+        ],
+        "planes_sha256": "b37feebf5c73a05329060ad302aa055aa908d90d134b594f3c70bc04b615e4fa"
+      },
+      "compass": {
+        "models": {
+          "full": {
+            "lam": [
+              0.03656751426605539,
+              0.02310383797633104
+            ],
+            "nll": 0.006711291242627555,
+            "probe_accuracy": 0.9986979166666666,
+            "omega": [
+              0.3847304242380726,
+              0.6152695757619274
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.03656761671543859,
+              0.03656761671543859
+            ],
+            "nll": 0.006711335135590659,
+            "probe_accuracy": 0.9986979166666666,
+            "omega": [
+              0.2831927688157157,
+              0.7168072311842844
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.0007508633550875609,
+              0.0
+            ],
+            "nll": 1.2136192573625812,
+            "probe_accuracy": 0.3333333333333333,
+            "omega": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.5
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_all": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "E_{1}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "E_Kstar": {
+            "K": [
+              1,
+              2
+            ],
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          }
+        },
+        "Kstar": {
+          "K": [
+            1,
+            2
+          ],
+          "dim": 3,
+          "R_hat": {
+            "plus": 1.0,
+            "minus": 1.0,
+            "alt": 1.0
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 1
+          }
+        ],
+        "mean_step_dist": [
+          1156.495762807019,
+          2927.2799905194897
+        ],
+        "planes_sha256": "c19f57e9f125f5120a9ae28a4b8e5db5e0c2a45f118bf02446192d9f14e14acd"
+      }
+    }
+  },
+  "categories": "composable >= 0.90; fail <= 0.20; otherwise partial (observed and derived alike)",
+  "paths": "plus / minus / alternating, 2N steps each, from the world start (H, T, N); B: plus 30, minus 6, alt 6 from the world start; A: month as H, daysago plus from two (7), minus from nine (7), alternating from five (10)",
+  "predictions": {
+    "G3_0": "RRR-16 natural one-way R_2N >= 0.95 (daysago R_7) in all five domains AND v1 C1 R_2 <= 0.20 for 5 domains x 3 seeds; otherwise stop",
+    "HS1": "F{1} one-way plus R_2N <= 0.20 in all 4 cyclic domains (shared prediction)",
+    "HS2": "F{1} alternating R_2N: frozen-plane >= 0.80, H-drift <= 0.20 (weekday, month)",
+    "HS3": "F{1} one-way plus: frozen-plane A_N >= 0.80 and A_ceil(N/2) <= 0.30; H-drift A_N <= 0.30 (weekday, month)",
+    "frozen_plane_rule": "HS1 pass and HS2, HS3 match the frozen-plane expectation in both weekday and month",
+    "HS4": "F_not1 one-way plus R_2N category per domain (4). H-fund: all >= 0.90; H-complete: all <= 0.20; H-vote: locked derived category (calib.bart.<d>.derived.F_not1.category.plus). Count matches per hypothesis; the unique hypothesis with 4/4 wins; domains where H-fund and H-vote predict the same category are flagged \"not discriminating\"",
+    "HS5": "single-plane freeze F{j}, j >= 2, one-way plus R_2N category (weekday 2, month 5, compass 1, egoside 1 = 9 cells). H-fund: all composable; H-complete: all fail; H-vote: locked categories. A hypothesis passes with >= 7/9 matches",
+    "HS6": "domains with dim(K*) < N-1: E_K* R_2N >= 0.90 on all three paths AND RRR-dim(K*) one-way R_2N <= 0.20; gate: E_all >= 0.90 on all three paths else the domain is not evaluable; pass if >= 75% of evaluable applicable domains hold",
+    "HV1": "conflict conditions (F_S with S non-empty, E_K with K not all planes; 3 paths; 4 domains): per world and step, model argmax == parsed decoded state, parsable outputs only. Pass: full-model agreement >= 0.85 and >= each control (equal, fundamental-only) + 0.05; if a control is already >= 0.95: \"not discriminating\"",
+    "Q5": "frozen-plane established if HS1-HS3 pass; H-vote if HS4 and HS5 match H-vote and HV1 passes; H-fund if HS4 and HS5 match H-fund and the fitted model is not better than fundamental-only in HV1; H-complete if HS4 and HS5 match H-complete; else mixed",
+    "B1p": "pron3 and name3 RRR-16 one-way R_6 >= 0.95 (all hypotheses)",
+    "B2p": "bind3 max(RRR-16, RRR-32) one-way R_6: H-bind <= 0.50, H-geom >= 0.95, H-list <= 0.50",
+    "B2bp": "bind3fix max(RRR-16, RRR-32) one-way R_6: H-bind >= 0.95, H-geom >= 0.95, H-list <= 0.50",
+    "B3p": "C1 R_2 <= 0.20 for every domain x seed (all hypotheses)",
+    "B4p": "slot R2(bind3) - min(pron3, name3, bind3fix): H-bind <= -0.30, H-geom |.| < 0.10; measured before the lock (value in gates.bart.B4p_delta), not prospective",
+    "Q2p": "B1p fail -> not decidable; else (B2p, B2bp): (<=0.50, >=0.95) H-bind; (>=0.95, >=0.95) H-geom; (<=0.50, <=0.50) H-list; else mixed",
+    "N_admission": "dev single >= 0.90 after 600 updates, else one retrain with 2400 updates; still failing -> \"cannot learn\", excluded from N1-N3",
+    "N1": "sigma_max maps: median M1 over admitted (map, seed) cells <= 0.60 (both hypotheses); M1 >= 0.90 -> \"unexplained\"",
+    "N2": "per sigma_max map, seed-median C1 one-way R_2: H-state if >= 0.50 for >= 2 of 3 maps; H-token if <= 0.20 for >= 2 of 3 maps",
+    "N3": "probe on the C1 first-step state, median over admitted sigma_max cells: H-state if target >= 0.50; H-token if source >= 0.80",
+    "Q6": "conclude only when N2 and N3 support the same hypothesis; else mixed",
+    "T0": "per T domain: max(RRR-16, RRR-32) natural one-way R_2N >= 0.95; otherwise T3, T5, T6 not evaluable in that domain",
+    "T1": "C1 R_1 >= 0.90 and R_2 <= 0.20 for every domain x seed (v2 S5: B3 direction)",
+    "T2": "C1 medians over (domain, seed): M1 >= 0.90, |M2| <= 0.20, M3 source >= 0.80 -> H-instr; M1 <= 0.60 or M2 >= 0.50 or target >= 0.80 -> H-approx; else neither",
+    "T3": "per evaluable domain: r* = smallest grid rank with one-way R_2N >= 0.95 at it and all larger grid ranks; pass if N-2 <= r* <= N and the largest grid rank below r* has R_2N <= 0.20; T3 passes if all evaluable domains pass (v2 S5: R1)",
+    "T4": "single-step success >= 0.95 at r = N-2 (weekday 5, month 10) (v2 S5: R2)",
+    "T5": "weekday and month: sigma_max max(RRR-16, RRR-32) one-way R_2N >= 0.95 and RRR-16 R_10N(natural) - R_10N(sigma_max) <= 0.05 (v2 S5: A1-A3)",
+    "T6": "on T5Gemma with its own calibration: HS1 and HS2 hold, HV1 passes, and the HS4 winner equals BART's HS4 winner",
+    "S5_original": "\"A1-A3, R1-R2, B3 的方向与 BART 一致\" (v2 PLAN section 9), concretised as T1, T3-T5",
+    "A_H_weight": "lambda = 10: seed-median month one-way R_24 >= 0.90 and seed-median daysago one-way R_7 >= 0.90",
+    "A_H_conflict": "H-weight fails AND the RRR-initialised C3 drifts: its seed-median DRIFT > DRIFT of v2 RRR-16 and its seed-median one-way R (month R_24, daysago R_7) <= 0.90 in at least one domain",
+    "A3": "12 month C3 editors (v1 lambda=1 x3, lambda=3 x3, lambda=10 x3, RRR-init x3): count where (one-way R_12 >= 0.90) == (k=1 in the unit block); pass if >= 10/12",
+    "exploratory": [
+      "X1-X4",
+      "R16-slot",
+      "offset heatmaps",
+      "s_k order vs harmonic entry order",
+      "B exploratory output types",
+      "N skip2 and natural-step writes",
+      "A DRIFT / adjacent cosine / vote-model postdiction"
+    ]
+  },
+  "stop_rules": [
+    "G3-0 fail",
+    "same job fails twice for an unknown reason",
+    "leakage",
+    "budget 14 GPU h (report at 10)"
+  ],
+  "sources": {
+    "symutil.py": "0a50e30cce36c8012be2e1bd8ef5635b8a0e397c4bb994044ef6d27a60025832",
+    "sym3_semantics.py": "9afd4b746f30f0999bd608e4bf3dd93f45e684ccd77194a09a5a2a840e9cc6f7",
+    "sym3_evaluator.py": "7263866e6063256335bd1eaa335604f82db53348eb5e3d5ceedbedf523e51934",
+    "lib3.py": "6808abec3a8200ce8b4794290b4d26c0987240c181d75480fbc39b6a4a554496",
+    "d_encode.py": "c13ece07a3ad0c2545b0f8564fee9c9ef870beddfeaf65547374ade82d499531",
+    "h_chains.py": "ab9c93e1bc9c739ac5d8c51e417dc503c24102c248a4a7eb13ffd726d696a10d",
+    "b_run.py": "b8744da61f51d424854a6f85dd59818749a9c5eed8e96c31c7a05d51f78575bf",
+    "n_run.py": "c84d909be1e8db0caacbbe084269785d3285dc84c66da8b6b506ec99b38d5ef4",
+    "t_run.py": "31c507f180dd0f63a10760835ab0d26d41270e4ea6f1df955f3f0c79ee0b71a6",
+    "a_run.py": "8267b365e12d2d7392bf8ca0da948147268ea755019c5f581baff9d40c4c387d",
+    "algebra.py": "c980a194a5a2a1e8b57327e3e3d82f906a057af94706add9353fb392d6293e8c",
+    "analyze.py": "b87210d01d8e1d2ca639a0687b6d9fa5db287b53cb0076a43a03e11b590e6435",
+    "job_gpu.slurm": "7c8b5d7c21a0df828e23fe5837de2fd0fd53887f02610631a8b32b1852d942d0",
+    "job_cpu.slurm": "43dfdd433fec616a4d58d0f1cd5913e8f93a0eb7cb3d6394f44ead30bdce04fa"
+  },
+  "data": {
+    "experiments/composability_mechanisms_v2/data/weekday/worlds.jsonl": "eeb6a07fbc7a40926b974ae19ffa11198d287e8648afd022433a30c800323770",
+    "experiments/composability_mechanisms_v2/data/month/worlds.jsonl": "c01c7bf32554f56161534582fe85bff05b37124de91eafb7ba653315f5bedac5",
+    "experiments/composability_mechanisms_v2/data/compass/worlds.jsonl": "040df318613a574ddfbd25ea156a1a80a5ebbe4725281027eb65e79ce11a926f",
+    "experiments/composability_mechanisms_v2/data/egoside/worlds.jsonl": "df057e8fcd1e4b82e055447b4191b53147a148378f17c1f7d0a5118e4f2f4c38",
+    "experiments/composability_mechanisms_v2/data/daysago/worlds.jsonl": "29eea2b0b274034f938e1a6bf7e237c2a8e03060016aa8ec8ce4763b0ff8382b",
+    "experiments/composability_mechanisms_v2/data/pron3/worlds.jsonl": "48d4961e5dcf4d4ad9dc42eb40f90f817d504ee570a93da48f726e71cdaff72d",
+    "experiments/composability_mechanisms_v2/data/name3/worlds.jsonl": "745ba509d5a54263897d4f925aa0c7199dc8743d61743d06b9d72af70ae1505d",
+    "experiments/composability_mechanisms_v2/data/bind3/worlds.jsonl": "d492ddad7aa1e815c6aac4253cb220637ce93279bbdc9db3738ee88b273f4874",
+    "experiments/composability_mechanisms_v2/data/bind3fix/worlds.jsonl": "335ae713214703c71adce66fc3039a50c39bc1eaa75ba6ff08b182ff891f235f",
+    "experiments/composability_mechanisms_v2/data/audit.json": "990e4a7e126d4867ebac5cc22e7fe07c9da4d2b48b534d1726de00dd17661e67",
+    "experiments/composability_mechanisms_v2/data/slot_positions.json": "741c66556dd520410217ae1678ccb24a22918536a18934d795a99f4e356ba8fb",
+    "experiments/composability_mechanisms_v2/data/manifest.json": "361f47b804ceb0ba94121d07e8b71a8105841d60ff589ce9a24faa7a3f138af3",
+    "experiments/composability_mechanisms_v2/results/gates_bart.json": "977dc47c358e1fa644b166a137d929237bbfb470fc66dcd30125f87b6ec289c8",
+    "experiments/composability_mechanisms_v2/results/gates_t5.json": "d0984c5d7418ded0e0c1bb4b93c2556a92d6a5bbd8e6937f6a166f6cdcbd13e7",
+    "experiments/composability_mechanisms_v2/results/calib_bart.json": "108ebf851b52bde67ef5d8a4a0bafe500f61a303d68d492b447d78ffd912bdfe",
+    "experiments/composability_mechanisms_v2/results/calib_t5.json": "b440056c2b4fb3937951524a5c815a519566e10e2d6b3b83da76581112f8c5d4",
+    "experiments/composability_mechanisms_v2/results/selftest.json": "24ceb02259150545ffc5ad961c6f343ebde02ba11b0a41e184985433ed4e7f29",
+    "experiments/composability_mechanisms_v2/results/p0_diag.json": "6c80ed7cc03415cac5d7a4e79e6e0469f095c93770a047c9947665d0d135ce97",
+    "experiments/composability_mechanisms_v2/results/x4_postdict.json": "e5889eebbcb015f72d39128021d77f1e9de3048b64946eb75665a5e7c6a0886c",
+    "experiments/composability_mechanisms_v2/inputs_manifest.json": "e2abffe3bd156d2d3f985741438e246059a7a57807ed467955dd2002013e3746",
+    "experiments/composability_mechanisms_v2/PLAN.md": "62ac3f4245109a5c260ca76f6bfb446dd9f755ba6969201a5e3064b0c855b580"
+  }
+}

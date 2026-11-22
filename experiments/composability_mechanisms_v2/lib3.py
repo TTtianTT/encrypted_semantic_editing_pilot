@@ -367,7 +367,7 @@ def token_mse(h, y, m):
 def train_editor(eng, bb, d, mp, group, seed, updates=600, l2_weight=1.0, init_rrr=None, batch=8, micro=2, lr=1e-3, clip=1.0):
     source_path(); from backend import editors
     ws = worlds3(d, 'train'); C = {s: cache3(bb, d, 'train', s) for s in S.states(d)}; t = tmpl(d); dt = mdtype(eng)
-    pool = {op: [(i, s) for s in S.states(d) for i in range(len(ws)) if _legal(d, s, op, mp)] for op in ('plus', 'minus')}
+    pool = {op: [(i, s) for s in S.states(d) for i in range(len(ws)) if legal_step(d, s, op, mp)] for op in ('plus', 'minus')}
     stack = lambda its: (torch.stack([C[s]['h'][i] for i, s in its]).cuda(), torch.stack([C[s]['m'][i] for i, s in its]).cuda())
     scale = {}
     with torch.no_grad():
@@ -397,7 +397,7 @@ def train_editor(eng, bb, d, mp, group, seed, updates=600, l2_weight=1.0, init_r
     return ed, hist, scale
 
 
-def _legal(d, s, op, mp):
+def legal_step(d, s, op, mp):
     try: S.advance(d, s, op, mp); return True
     except ValueError: return False
 
@@ -460,7 +460,7 @@ def write_metrics(eng, bb, d, mp, T, predict, split='confirm3', m4=True):
     """M1-M3 (v2 definitions) and the A.5 transplant classification for a plus operator T under mapping mp."""
     ws = worlds3(d, split); n = len(ws); st = S.states(d); N = len(st); t = tmpl(d); pos = slots(bb, d, split).to(DEV); ar = torch.arange(n, device=DEV)
     H = {s: cache3(bb, d, split, s)['h'].to(DEV) for s in st}; M = cache3(bb, d, split, st[0])['m'].to(DEV); v = M[..., None]
-    legal = [s for s in st if _legal(d, s, 'plus', mp)]; g = {s: S.advance(d, s, 'plus', mp) for s in legal}
+    legal = [s for s in st if legal_step(d, s, 'plus', mp)]; g = {s: S.advance(d, s, 'plus', mp) for s in legal}
     Wr = {s: (T(H[s], M) - H[s]) * v for s in legal}; Wc = {s: (H[g[s]] - H[s]) * v for s in legal}
     pc = torch.stack([cosrows(Wr[a], Wr[b]) for i, a in enumerate(legal) for b in legal[i + 1:]], 1).mean(1).cpu().numpy()
     cw = torch.stack([cosrows(Wr[s], Wc[s]) for s in legal], 1).mean(1).cpu().numpy()
@@ -478,7 +478,7 @@ def write_metrics(eng, bb, d, mp, T, predict, split='confirm3', m4=True):
                 if s2 == s: continue
                 for o, w in zip(dec(eng, H[s2] + Wr[s], M), ws):
                     ps, _ = Ev.parse_state(o['text'], d, S.people(w) if d in S.S1B else None)
-                    nat = S.advance(d, s2, 'plus') if _legal(d, s2, 'plus', 'natural') else None
+                    nat = S.advance(d, s2, 'plus') if legal_step(d, s2, 'plus', 'natural') else None
                     if ps == g[s2] and Ev.score(o['text'], S.gold(w, g[s2], t), w, o['ended'])['success']: c['relative'] += 1
                     elif ps == g[s]: c['absolute'] += 1
                     elif ps == s2: c['null'] += 1

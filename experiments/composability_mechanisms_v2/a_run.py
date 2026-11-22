@@ -18,7 +18,7 @@ def paths(d):
 def adjacent_cos(ed, d, split='confirm3'):
     H = {x: cache3('bart', d, split, x)['h'].to(DEV) for x in S.states(d)}; M = cache3('bart', d, split, S.states(d)[0])['m'].to(DEV); C = core()
     ws = worlds3(d, split)
-    x0 = [w['start_state'] if _legal(d, w['start_state'], 'plus', 'natural') and _legal(d, S.advance(d, w['start_state'], 'plus'), 'plus', 'natural') else S.states(d)[0] for w in ws]
+    x0 = [w['start_state'] if legal_step(d, w['start_state'], 'plus', 'natural') and legal_step(d, S.advance(d, w['start_state'], 'plus'), 'plus', 'natural') else S.states(d)[0] for w in ws]
     h = torch.stack([H[x][i] for i, x in enumerate(x0)]); h1 = ed['plus'](h, M); h2 = ed['plus'](h1, M)
     return boot_mean(cosrows(C.pool(h1 - h, M), C.pool(h2 - h1, M)).cpu().numpy())
 

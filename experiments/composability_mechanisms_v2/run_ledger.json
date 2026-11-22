@@ -255,7 +255,67 @@
       "node": "node01",
       "start": "2026-11-23T02:05:25",
       "end": "2026-11-23T02:05:35"
+    },
+    {
+      "unit": "calib",
+      "lane": "B",
+      "job_id": "72361",
+      "name": "compmech2-calib",
+      "state": "COMPLETED",
+      "elapsed_s": 489,
+      "gpus": 1,
+      "gpu_hours": 0.13583333333333333,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T02:03:09",
+      "end": "2026-11-23T02:11:18"
+    },
+    {
+      "unit": "smoke",
+      "lane": "A",
+      "job_id": "72363",
+      "name": "compmech2-smoke",
+      "state": "FAILED",
+      "elapsed_s": 85,
+      "gpus": 1,
+      "gpu_hours": 0.02361111111111111,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T02:11:18",
+      "end": "2026-11-23T02:12:43"
+    },
+    {
+      "unit": "smoke",
+      "lane": "A",
+      "job_id": "72364",
+      "name": "compmech2-smoke",
+      "state": "COMPLETED",
+      "elapsed_s": 373,
+      "gpus": 1,
+      "gpu_hours": 0.10361111111111111,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T02:12:55",
+      "end": "2026-11-23T02:19:08"
+    },
+    {
+      "unit": "L",
+      "lane": "cpu",
+      "job_id": "72365",
+      "name": "compmech2-lock",
+      "state": "COMPLETED",
+      "elapsed_s": 6,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T02:19:29",
+      "end": "2026-11-23T02:19:35"
     }
   ],
-  "total_gpu_hours": 0.13416666666666666
+  "total_gpu_hours": 0.39722222222222225
 }

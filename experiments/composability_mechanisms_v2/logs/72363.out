@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights:  49%|████▉     | 127/259 [00:00<00:00, 1264.60it/s]Loading weights:  98%|█████████▊| 254/259 [00:00<00:00, 1178.94it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 1207.98it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/smoke.py", line 78, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/smoke.py", line 52, in main
+    log['A'] = dict(alg=harmonics_of(*editor_factors('editor', sd, 'plus'), 12), adj=a_run.adjacent_cos(ed, 'month', split='dev'))
+                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/a_run.py", line 21, in adjacent_cos
+    x0 = [w['start_state'] if _legal(d, w['start_state'], 'plus', 'natural') and _legal(d, S.advance(d, w['start_state'], 'plus'), 'plus', 'natural') else S.states(d)[0] for w in ws]
+                              ^^^^^^
+NameError: name '_legal' is not defined
+srun: error: node01: task 0: Exited with exit code 1
