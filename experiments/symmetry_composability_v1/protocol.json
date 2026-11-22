@@ -1,0 +1,601 @@
+{
+  "locked": true,
+  "created_utc": "2026-11-22T14:13:08Z",
+  "version": 1,
+  "amendment": "AMENDMENT_01.md",
+  "domains": [
+    "weekday",
+    "month",
+    "compass",
+    "egoside",
+    "daysago"
+  ],
+  "groups": {
+    "weekday": "Z7",
+    "month": "Z12",
+    "compass": "Z4",
+    "egoside": "Z4",
+    "daysago": "open8"
+  },
+  "states": {
+    "weekday": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "month": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "compass": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "egoside": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "daysago": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "words": {
+    "weekday": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "month": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "compass": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "egoside": [
+      "front",
+      "right",
+      "back",
+      "left"
+    ],
+    "daysago": [
+      "two days ago",
+      "three days ago",
+      "four days ago",
+      "five days ago",
+      "six days ago",
+      "seven days ago",
+      "eight days ago",
+      "nine days ago"
+    ]
+  },
+  "templates": {
+    "fit_train": [
+      0
+    ],
+    "evaluation": [
+      0
+    ],
+    "geometry_primary": 0,
+    "geometry_secondary": 3,
+    "structural_ood": 3
+  },
+  "splits": {
+    "train": 96,
+    "dev": 32,
+    "confirm": 160,
+    "seed": 2026112201,
+    "rule": "random.Random(seed + domain index)"
+  },
+  "statistical_unit": "world",
+  "bootstrap": {
+    "reps": 2000,
+    "seed": 3101
+  },
+  "proportion_ci": "Wilson 95%",
+  "success": "sym_evaluator.score(...)[\"success\"]: ended, full-grammar consumption, target attribute, all non-target facts preserved",
+  "metrics": {
+    "E_iso": "affine-isometry equivariance error (PLAN appendix), world mean, plus map; null = shared label permutation, all perms if <=7 states else 1000 (seed 3101)",
+    "R2_G": "group-averaged R^2 of mean squared-distance matrix (cyclic distance for Z_N, |i-j| for open)",
+    "SEP": "PLAN appendix",
+    "Delta_opp": "4-state domains",
+    "R_k": "fraction of 160 confirm worlds whose first k chain steps all succeed",
+    "S6": "R_6^(1/6)",
+    "kappa_N": "per world sqrt(sum_x ||M(T+^N E_x - E_x)||^2 / sum_x ||M(T+ E_x - E_x)||^2), median over worlds",
+    "e_inv": "per world sqrt(sum_x ||M(T_inv T_first E_x - E_x)||^2 / sum_x ||M(E_gx - E_x)||^2)"
+  },
+  "rrr": {
+    "ranks": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "primary_rank": 16,
+    "ridge_grid": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "inner_split_seed": 3101,
+    "inner_fit": 80,
+    "inner_val": 16,
+    "selection": "per rank, relative ridge minimizing inner-validation token MSE; refit on all 96 train worlds; fit.py solve()"
+  },
+  "training": {
+    "groups": [
+      "C1",
+      "C3"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "updates": 600,
+    "batch": 8,
+    "microbatch": 2,
+    "lr": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0,
+    "clip": 1.0,
+    "l2_weight": 1.0,
+    "l2_scale": "per domain and op: mean train canonical write token MSE",
+    "rank": 16,
+    "checkpoint_used": 600,
+    "sampling": "op alternates plus/minus by update parity; transitions sampled uniformly with random.Random(seed)"
+  },
+  "methods": [
+    "RRR4",
+    "RRR8",
+    "RRR16",
+    "RRR32",
+    "RRR64",
+    "RRR128",
+    "C1_s42",
+    "C1_s43",
+    "C1_s44",
+    "C3_s42",
+    "C3_s43",
+    "C3_s44",
+    "reencode"
+  ],
+  "algebra_methods": [
+    "RRR16",
+    "C1_s42",
+    "C1_s43",
+    "C1_s44",
+    "C3_s42",
+    "C3_s43",
+    "C3_s44"
+  ],
+  "chains": {
+    "by_domain": {
+      "weekday": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ]
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ]
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ]
+        }
+      },
+      "month": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ]
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ]
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ]
+        }
+      },
+      "compass": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ]
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ]
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ]
+        }
+      },
+      "egoside": {
+        "plus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ]
+        },
+        "minus_from_start": {
+          "start": "world_start",
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ]
+        },
+        "alternating_from_0": {
+          "start": 0,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ]
+        }
+      },
+      "daysago": {
+        "plus_from_two": {
+          "start": 2,
+          "ops": [
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus",
+            "plus"
+          ]
+        },
+        "minus_from_nine": {
+          "start": 9,
+          "ops": [
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus",
+            "minus"
+          ]
+        },
+        "alternating_from_five": {
+          "start": 5,
+          "ops": [
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus",
+            "plus",
+            "minus"
+          ]
+        }
+      }
+    },
+    "world_start": "per-world start_state field in data/{domain}/worlds.jsonl"
+  },
+  "admission": {
+    "threshold": 0.9,
+    "measure": "dev single-step success over all legal transitions x 32 dev worlds",
+    "applies": {
+      "P1": "RRR16 weekday, month",
+      "P2": "RRR16 weekday, month",
+      "P3b": "RRR16 compass, egoside",
+      "P4": "RRR16 daysago",
+      "P5": "C3 (each seed) weekday, month",
+      "P6": "RRR16 weekday, month"
+    },
+    "rule": "if not admitted, the prediction is reported as not decidable; dev never selects rank or checkpoint"
+  },
+  "predictions": {
+    "P1": {
+      "text": "RRR-16 one-way plus chain from world start: R_N >= 0.80 for weekday (N=7) and month (N=12)",
+      "threshold": 0.8
+    },
+    "P2": {
+      "text": "RRR-16 same chain: R_2N >= 0.70 for weekday and month",
+      "threshold": 0.7
+    },
+    "P3a": {
+      "text": "E_iso(compass) < E_iso(egoside) on confirm template-0 canonical states; bootstrap CI of difference (independent world resampling) excludes 0 (upper < 0)"
+    },
+    "P3b": {
+      "text": "RRR-16 one-way plus R_8(compass) - R_8(egoside) >= 0.20 and one-sided two-proportion z test p < 0.05",
+      "min_difference": 0.2,
+      "alpha": 0.05
+    },
+    "P4": {
+      "text": "daysago RRR-16: plus from two R_7 >= 0.70 and alternating from five R_10 >= 0.70",
+      "threshold": 0.7
+    },
+    "P5": {
+      "text": "every seed: C1 one-way plus R_2 <= 0.20 in all five domains; C3 R_N >= 0.70 for weekday and month",
+      "C1_R2_max": 0.2,
+      "C3_RN_min": 0.7
+    },
+    "P6": {
+      "text": "RRR-16 median kappa_N < 0.5 for weekday and month",
+      "threshold": 0.5
+    },
+    "P7": {
+      "text": "Spearman rho between confirm E_iso and RRR-16 S6 across the five domains; report only (n = 5)"
+    }
+  },
+  "thresholds_rule": "point estimate compared with threshold; Wilson CI reported alongside",
+  "stop_rules": [
+    "G1a fail -> no editing evaluation",
+    "budget 8 GPU h -> report remaining plan; 10 GPU h -> stop",
+    "same job fails twice for unknown reason -> stop",
+    "any leakage -> stop"
+  ],
+  "lanes": {
+    "A": [
+      "weekday",
+      "month",
+      "daysago"
+    ],
+    "B": [
+      "compass",
+      "egoside"
+    ]
+  },
+  "g1a": {
+    "rule": "pass if E_iso (template 0, train+dev) of weekday or month is below its permutation-null 5% quantile",
+    "per_domain": {
+      "weekday": {
+        "E_iso": 0.044169705766225684,
+        "null_q05": 0.04732151814821904,
+        "below": true
+      },
+      "month": {
+        "E_iso": 0.07750265308824988,
+        "null_q05": 0.09446607527969013,
+        "below": true
+      }
+    },
+    "decision": "pass"
+  },
+  "sources": {
+    "symutil.py": "75026867a01b6795443934bb6a91f288151c979ae18e9324c22372c972baeee5",
+    "sym_semantics.py": "156263e1f78440d59e01e6652eb78942e5aedc233f909088afd6307a674f3429",
+    "sym_evaluator.py": "d294be0bd3dce8d0c6679744bf74c448e2540c63ccf1dec1f2b4642e6b81a4b7",
+    "e1_encode.py": "fb7fee222918956c068783018ea8bc6deb9e90429a42f3e190c7f2aeffdde9b8",
+    "e1_fit_rrr.py": "da5f89d4d46d833f560c5abe06e45c6e5cab410f7190d1704d779c4f04e043d5",
+    "e1_train.py": "4e4a7102058a62a0bdc20387b9eeeb8beec747e98f35e231f187099ad6c07467",
+    "e1_eval.py": "1f9701cb4dcc4e27acc7ce2036072c35cd6cb6b49b99277e4e9f2a4aeebcc4de",
+    "e1_algebra.py": "27b1144ea9b80c46ca13c8d0704979ecdcff8cbb5ee13dcccbc51b47e428bdf9",
+    "e1_analyze.py": "59b58ecdb8d24ac7c342cbb2ce003bd4ecb8624eed3cdcc6c88dabe3e62ec630",
+    "job_gpu.slurm": "6c70c5fc45b064e687663354bf32f5e7c6ed93d65228966f703b46412f2eb48e",
+    "job_cpu.slurm": "a211223627e2f01cf21a1e095340f733c84d5883f155430f584b06aa0eaef4ca"
+  },
+  "data": {
+    "data/weekday/worlds.jsonl": "e21014549bb47bad07dbc2b87c34ea2b3a70e41ed53415d8471f36f2e71aed97",
+    "data/month/worlds.jsonl": "c51be787afc165df0920b714883b098e4a05077d41783914c35d4393a9cd6d98",
+    "data/compass/worlds.jsonl": "0d56e456c5f3b6cd328d847023e593499b1bc848f5b070004086706c6b3ff5aa",
+    "data/egoside/worlds.jsonl": "6c9ce7997fe00db7db4e6f54f5fa158d94916471a1efcc6422c9e163f1820bfe",
+    "data/daysago/worlds.jsonl": "c5a4565b3c659e62bfb4e8c9e85225714bf44442a296c64022a6f131facc2fa7",
+    "data/manifest.json": "1e3321ffbdfc1af1fb2696b625a3702e144738c5403ff4d85646a7eab79f03f3",
+    "data/audit.json": "bae2866115ff1cc6700845158cee633b3dc6d1e10e61a6d0e9d1e723d5cba54a",
+    "results/e1_geometry.json": "4c23a241605a998295825eb724343c5a68babc88a37ac68295753ca0637becd0",
+    "results/e1_corpus.json": "7b83f108dbe27fb14b5d0abc3bd93da4dd0e010bc9dc3a4f22e0f46ce96bd94c",
+    "AMENDMENT_01.md": "44f86d08c5f1ceb37b7186c9f09d32338b0f1edf25b926c6f51b41b7cf521358",
+    "results/g0_amended_decision.json": "fa6bfe15e1dfdaab6926726fd403b731126f84da75510c614265b6a24882504c"
+  },
+  "inputs_manifest_sha256": "0712dbf16f93b90e38972854f8dc23e7bdfe99bae9fb8003010ce9b1affa15f4"
+}

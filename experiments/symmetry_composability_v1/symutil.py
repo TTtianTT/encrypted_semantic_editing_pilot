@@ -359,3 +359,58 @@ def pca_plot(ax, V, labels, title, order=None):
         for i, j in order:
             ax.annotate('', Z[j], Z[i], arrowprops=dict(arrowstyle='->', color='#999999', lw=.8))
     ax.set_title(title, fontsize=9); ax.set_xticks([]); ax.set_yticks([])
+
+
+# ---------------------------------------------------------------- E1 helpers
+LOCKED_SOURCES = ['symutil.py', 'sym_semantics.py', 'sym_evaluator.py', 'e1_encode.py', 'e1_fit_rrr.py', 'e1_train.py',
+                  'e1_eval.py', 'e1_algebra.py', 'e1_analyze.py', 'job_gpu.slurm', 'job_cpu.slurm']
+
+
+def verify_protocol():
+    """E1.4+ entrypoints: protocol must be locked and every locked source / input unchanged."""
+    p = read(ROOT / 'protocol.json'); assert p.get('locked') is True, 'protocol not locked'
+    for k, v in p['sources'].items():
+        assert sha(ROOT / k) == v, f'locked source changed: {k}'
+    for k, v in p['data'].items():
+        assert sha(ROOT / k) == v, f'locked data changed: {k}'
+    return p
+
+
+def e1_worlds(d, split):
+    return [w for w in rows(ROOT / f'data/{d}/worlds.jsonl') if w['split'] == split]
+
+
+def e1_cache(d, split, s):
+    return load(ROOT / f'local/e1_{d}_{split}_t0_s{s}.pt')
+
+
+class RRRop:
+    def __init__(self, f, dev='cuda'):
+        self.left, self.right, self.bias = (f[k].float().to(dev) for k in ('left', 'right', 'bias'))
+    def __call__(self, h, m):
+        return h + (h.float() @ self.left @ self.right + self.bias) * m[..., None]
+
+
+def e1_editor(eng, d, group, seed):
+    source_path()
+    from backend import editors
+    ed = editors(eng.d, seed); ed.load_state_dict(load(ROOT / f'local/e1_{group}_{d}_s{seed}_0600.pt')['editor'])
+    return ed.eval().requires_grad_(False)
+
+
+def e1_method(eng, d, name):
+    """Return {op: callable(h, m)} for RRR{rank}, C1_s{seed}, C3_s{seed}; None for reencode."""
+    if name == 'reencode':
+        return None
+    if name.startswith('RRR'):
+        fits = load(ROOT / f'local/e1_rrr_{d}.pt'); r = int(name[3:])
+        return {op: RRRop(fits[op, r]) for op in ('plus', 'minus')}
+    g, s = name.split('_s'); ed = e1_editor(eng, d, g, int(s))
+    return {op: ed[op] for op in ('plus', 'minus')}
+
+
+def stack_items(d, split, items, caches):
+    """items: list of (world index, state); returns h, m on cuda."""
+    import torch
+    h = torch.stack([caches[s]['h'][i] for i, s in items]).cuda(); m = torch.stack([caches[s]['m'][i] for i, s in items]).cuda()
+    return h, m
