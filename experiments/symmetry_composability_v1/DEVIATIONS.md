@@ -9,3 +9,4 @@ Every difference from PLAN.md, with time (UTC+local server clock), reason, impac
 | 3 | 2026-11-22 21:55 | E0.2 | 作业 72266 失败：B300 上 NVRTC 无法 JIT 复数 `abs`（`invalid value for --gpu-architecture`）。特征值改在 CPU 上算后重交。 | 已知环境原因，非不明失败 | 无；数值定义不变 | 前 |
 | 4 | 2026-11-22 21:59 | E0.2 | 作业 72271 手动取消：环 L = A₋A₊ 的幂范数原用 768 维全矩阵 GPU SVD，单算子约 1–2 分钟，有超 1 小时之虞。改为在 span[U₊,V₊ᵀ,U₋,V₋ᵀ]（L 在其正交补上为恒等）内精确计算，CPU float64；重交为 72274（33 秒完成）。 | 性能 | 无；数学上等价（‖Lᵏ‖ = max(1, ‖L_Qᵏ‖)，‖Lᵏ−I‖ = ‖L_Qᵏ−I‖） | 前 |
 | 5 | 2026-11-22 21:58 | E0.2 | e_inv 的单一标量取两种复合（T₋∘T₊ 与 T₊∘T₋）各自 world 均值的平均（`mean_both`），G0(c) 用它判定；两个方向分别是否满足也一并记录在 `g0_decision.json`。 | 计划未指定方向 | 解释性选择，无数据依赖 | 前 |
+| 6 | 2026-11-22 22:20 | G0 | **AMENDMENT_01**（负责人书面授权，数据驱动）：G0(a) 由 E1.2 的 G1a 代替，(c) 去掉 ISO 条款，规则改为 (b) 或 (c1∧c2)。修订后判定为 pass（`results/g0_amended_decision.json`）；原判定 fail 保持不变。 | 时间域 7 状态几何被 token 长度簇混淆；ISO 与 e\_inv 方向矛盾 | 进入 E1.0–E1.2 与 E2；E1 预测仍在看到 E1 编辑结果前锁定 | 前 |

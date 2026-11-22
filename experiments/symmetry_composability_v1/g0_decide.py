@@ -63,6 +63,14 @@ def main():
     out = dict(decision='pass' if decision else 'fail', a_geometry=a, b_curvature=b, c_group_law=c, metric_selftest=st,
                rule='(a) and ((b) or (c)); e_inv = mean of world-mean e_inv(T- o T+) and e_inv(T+ o T-)', seconds=time.time() - t0,
                inputs={k: sha(ROOT / f'results/{k}') for k in ('e0_geometry.json', 'e0_operators.json', 'e0_writes.json')})
+    if '--amended' in sys.argv:  # AMENDMENT_01: (a) -> G1a (decided in E1.2); (c3) ISO dropped; rule (b) or (c1 and c2)
+        c2 = c['e_inv_C3_lt_C1_all_seeds'] and c['RRR16_lt_all_C1']
+        dec = b['pass_'] or c2
+        dump('results/g0_amended_decision.json', dict(decision='pass' if dec else 'fail', amendment='AMENDMENT_01.md',
+             amendment_sha256=sha(ROOT / 'AMENDMENT_01.md'), rule='(b) or ((c1) and (c2)); geometry gate moved to G1a in E1.2; ISO reported only',
+             b_curvature_pass=b['pass_'], c_amended_pass=c2, original_decision=read(ROOT / 'results/g0_decision.json')['decision'],
+             original_decision_sha256=sha(ROOT / 'results/g0_decision.json'), b_curvature=b, c_group_law=c, metric_selftest=st, inputs=out['inputs']))
+        print('G0 amended', 'pass' if dec else 'fail', flush=True); return
     dump('results/g0_decision.json', out)
     print('G0', out['decision'], 'a', a['pass'], 'b', b['pass_'], 'c', c['pass'], flush=True)
 
