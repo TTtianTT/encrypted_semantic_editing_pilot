@@ -495,7 +495,82 @@
       "node": "node01",
       "start": "2026-11-23T02:28:16",
       "end": "2026-11-23T03:05:20"
+    },
+    {
+      "unit": "T",
+      "lane": "B",
+      "job_id": "72378",
+      "name": "compmech2-t_run",
+      "state": "COMPLETED",
+      "elapsed_s": 4304,
+      "gpus": 1,
+      "gpu_hours": 1.1955555555555555,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T03:05:20",
+      "end": "2026-11-23T04:17:04"
+    },
+    {
+      "unit": "T",
+      "lane": "B",
+      "job_id": "72379",
+      "name": "compmech2-t_run",
+      "state": "COMPLETED",
+      "elapsed_s": 2476,
+      "gpus": 1,
+      "gpu_hours": 0.6877777777777778,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T04:17:04",
+      "end": "2026-11-23T04:58:20"
+    },
+    {
+      "unit": "T",
+      "lane": "B",
+      "job_id": "72380",
+      "name": "compmech2-t_run",
+      "state": "COMPLETED",
+      "elapsed_s": 673,
+      "gpus": 1,
+      "gpu_hours": 0.18694444444444444,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T04:58:20",
+      "end": "2026-11-23T05:09:33"
+    },
+    {
+      "unit": "algebra",
+      "lane": "cpu",
+      "job_id": "72381",
+      "name": "compmech2-algebra",
+      "state": "COMPLETED",
+      "elapsed_s": 8,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T05:09:33",
+      "end": "2026-11-23T05:09:41"
+    },
+    {
+      "unit": "analyze",
+      "lane": "cpu",
+      "job_id": "72382",
+      "name": "compmech2-analyze",
+      "state": "COMPLETED",
+      "elapsed_s": 69,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-23T05:09:41",
+      "end": "2026-11-23T05:10:50"
     }
   ],
-  "total_gpu_hours": 1.9655555555555553
+  "total_gpu_hours": 4.035833333333333
 }
