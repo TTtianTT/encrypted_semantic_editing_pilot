@@ -1,0 +1,165 @@
+{
+  "reconstruction": [
+    {
+      "world_id": "time_0120",
+      "state": -3,
+      "text": "The book event is dated three days ago. Its status is completed. The book is green. There are 3 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0121",
+      "state": -2,
+      "text": "The ticket event is dated two days ago. Its status is cancelled. The ticket is green. There are 8 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0122",
+      "state": -1,
+      "text": "The ticket event is dated yesterday. Its status is cancelled. The ticket is red. There are 6 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0123",
+      "state": 0,
+      "text": "The parcel event is dated today. Its status is completed. The parcel is black. There are 8 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0124",
+      "state": 1,
+      "text": "The box event is dated tomorrow. Its status is completed. The box is red. There are 3 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0125",
+      "state": 2,
+      "text": "The key event is dated two days from now. Its status is planned. The key is green. There are 9 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0126",
+      "state": 3,
+      "text": "The key event is dated three days from now. Its status is cancelled. The key is white. There are 7 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0127",
+      "state": 1,
+      "text": "The ticket event is dated tomorrow. Its status is completed. The ticket is green. There are 7 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    }
+  ],
+  "rrr16_plus": [
+    {
+      "world_id": "time_0124",
+      "source": 1,
+      "target": 0,
+      "text": "The box event is dated today. Its status is completed. The box is red. There are 3 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    },
+    {
+      "world_id": "time_0127",
+      "source": 1,
+      "target": 0,
+      "text": "The ticket event is dated today. Its status is completed. The ticket is green. There are 7 copies.",
+      "score": {
+        "success": true,
+        "target": true,
+        "preserved": true,
+        "scope": true,
+        "parseable": true,
+        "grammar": true,
+        "ended": true
+      }
+    }
+  ],
+  "reconstruction_all_success": true,
+  "rrr16_plus_all_success": true,
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 646353408,
+    "wall_seconds": 7.498952395981178,
+    "job_id": "72263",
+    "step_id": "0"
+  },
+  "seconds": 50.2705614566803
+}
