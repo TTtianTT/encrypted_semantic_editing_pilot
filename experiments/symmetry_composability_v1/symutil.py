@@ -263,7 +263,7 @@ def core_matrix(U, V):
     q, s, _ = torch.linalg.svd(M, full_matrices=False)
     keep = s > s.max() * max(M.shape) * torch.finfo(torch.float64).eps
     Q = q[:, keep]
-    AQ = torch.eye(Q.shape[1], dtype=torch.float64) + (Q.T @ U) @ (V @ Q)
+    AQ = torch.eye(Q.shape[1], dtype=torch.float64, device=U.device) + (Q.T @ U) @ (V @ Q)
     return Q, AQ
 
 
@@ -271,13 +271,13 @@ def operator_stats(U, V, b, kmax=50):
     import torch
     Q, AQ = core_matrix(U, V)
     sv = torch.linalg.svdvals(AQ)
-    ev = torch.linalg.eigvals(AQ)
+    ev = torch.linalg.eigvals(AQ.cpu())  # complex kernels JIT-fail on B300 (nvrtc arch); eigvals on CPU
     nn = float(torch.linalg.norm(AQ @ AQ.T - AQ.T @ AQ) / torch.linalg.norm(AQ) ** 2)
     b = b.double(); Uq, _, _ = torch.linalg.svd(U.double(), full_matrices=False)
     r = int(torch.linalg.matrix_rank(U.double()))
     Pu = Uq[:, :r]
     drift = float(torch.linalg.norm(b - Pu @ (Pu.T @ b)) / torch.linalg.norm(b)) if float(torch.linalg.norm(b)) > 0 else None
-    growth = []; P = torch.eye(AQ.shape[0], dtype=torch.float64)
+    growth = []; P = torch.eye(AQ.shape[0], dtype=torch.float64, device=AQ.device)
     for k in range(1, kmax + 1):
         P = P @ AQ; growth.append(float(torch.linalg.matrix_norm(P, 2)))
     return dict(dim=int(Q.shape[1]), ISO=float(((sv - 1) ** 2).mean().sqrt()), sv_min=float(sv.min()), sv_max=float(sv.max()),
@@ -295,3 +295,67 @@ def editor_factors(kind, obj, op):
         f = obj
         return f['right'].T.double(), f['left'].T.double(), f['bias'].double()
     raise ValueError(kind)
+
+
+def reduce_worlds(V):
+    """Within-world de-mean, then express each world in its own <=S-dim span (isometric, so E_iso and distances are unchanged)."""
+    Vc = V - V.mean(1, keepdims=True)
+    X = np.zeros((V.shape[0], V.shape[1], V.shape[1]))
+    for w in range(V.shape[0]):
+        _, _, vt = np.linalg.svd(Vc[w], full_matrices=False)
+        X[w, :, :vt.shape[0]] = Vc[w] @ vt.T
+    return Vc, X
+
+
+def geometry_report(V, labels, pairs, kind, null=True, name=''):
+    """E_iso (+ label-permutation null), group-averaged R^2 (+ null, S>=4), SEP, Delta_opp (S==4).
+
+    V: (W, S, d) pooled states; pairs: plus map as state-index pairs; kind: 'cyclic' | 'open'.
+    Returns (summary dict, null rows for CSV, per-world E_iso array).
+    """
+    V = np.asarray(V, np.float64); W, S, _ = V.shape
+    Vc, X = reduce_worlds(V)
+    ew = e_iso(X, pairs)
+    out = dict(name=name, worlds=W, states=list(labels), kind=kind, pairs=[[labels[i], labels[j]] for i, j in pairs],
+               E_iso=boot_mean(ew), SEP=sep(Vc))
+    D = mean_sqdist(X); out['mean_sqdist'] = D.tolist()
+    key = orbit_key(kind, S)
+    out['R2_G'] = group_r2(D, key) if S >= 4 else None
+    if S == 4:
+        out['Delta_opp'] = delta_opp(D)
+    nullrows = []
+    if null:
+        perms = permutations_for(S)
+        ne = []; nr = []
+        for k, p in enumerate(perms):
+            v = float(e_iso(X, conj_pairs(pairs, p)).mean()); ne.append(v)
+            nullrows.append(dict(name=name, metric='E_iso', perm=k, value=v))
+            if S >= 4:
+                r = group_r2(D[np.ix_(p, p)], key); nr.append(r)
+                nullrows.append(dict(name=name, metric='R2_G', perm=k, value=r))
+        out['E_iso_null'] = quantile_of(out['E_iso']['mean'], ne)
+        out['E_iso_below_null_q05'] = out['E_iso']['mean'] < out['E_iso_null']['null_q05']
+        if S >= 4:
+            out['R2_G_null'] = quantile_of(out['R2_G'], nr)
+            out['R2_G_above_null_q95'] = out['R2_G'] > out['R2_G_null']['null_q95']
+    return out, nullrows, ew
+
+
+def boot_diff(a, b, seed=BOOT_SEED):
+    """Mean(a) - mean(b) for independent world samples; independent world resampling."""
+    a = np.asarray(a, float); b = np.asarray(b, float)
+    rng = np.random.default_rng(seed)
+    d = a[rng.integers(len(a), size=(BOOT_N, len(a)))].mean(1) - b[rng.integers(len(b), size=(BOOT_N, len(b)))].mean(1)
+    return dict(diff=float(a.mean() - b.mean()), ci95=np.quantile(d, [.025, .975]).tolist())
+
+
+def pca_plot(ax, V, labels, title, order=None):
+    Vc = V - V.mean(1, keepdims=True); C = Vc.mean(0)
+    C = C - C.mean(0); _, _, vt = np.linalg.svd(C, full_matrices=False); Z = C @ vt[:2].T
+    ax.plot(Z[:, 0], Z[:, 1], 'o', color='#3b6fb6')
+    for i, l in enumerate(labels):
+        ax.annotate(str(l), Z[i], textcoords='offset points', xytext=(4, 4), fontsize=8)
+    if order:
+        for i, j in order:
+            ax.annotate('', Z[j], Z[i], arrowprops=dict(arrowstyle='->', color='#999999', lw=.8))
+    ax.set_title(title, fontsize=9); ax.set_xticks([]); ax.set_yticks([])

@@ -1,2 +1,9 @@
 72262 p0_preflight cpu
 72263 p0_smoke A
+72264 e0_encode A
+72265 e0_geometry cpu
+72266 e0_operators B
+72270 e0_writes A
+72271 e0_operators B (retry after nvrtc complex-abs failure 72266)
+72271 cancelled (slow full-dim GPU SVD loop); 72274 e0_operators B retry
+72275 g0_decide cpu
