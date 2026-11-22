@@ -1,0 +1,1513 @@
+{
+  "created_utc": "2026-11-22T17:55:25Z",
+  "checks": {
+    "bart_revision": true,
+    "t5_revision": true,
+    "t5_files_sha_match": true,
+    "bart_files_sha_match": true,
+    "required_present": true,
+    "v2_local_shards_files": 17720
+  },
+  "missing": [],
+  "n_files": 214,
+  "files": [
+    {
+      "key": "four_domain/backend.py",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/backend.py",
+      "sha256": "083daec8548940e5e744e7428f4bb22b1e010cb70e133aa182f0fbf34982ca1d",
+      "bytes": 4973,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/semantics.py",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/semantics.py",
+      "sha256": "fb92114837ced81d65a54d247534ac22fc75e8437d2820147aa31326b98f5c3f",
+      "bytes": 8706,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/evaluator.py",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/evaluator.py",
+      "sha256": "00144e2c21f7e713ef72411ea9da206706b894e0c5dfa0a32dc943715c1f0f25",
+      "bytes": 15470,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/common.py",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/common.py",
+      "sha256": "98e6513df56fbd16a281e6afe5dd6e05c02709fe3b9bf0680f793f7a787aa5ac",
+      "bytes": 1222,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/config.json",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/config.json",
+      "sha256": "9bbb8adebecd7863723192b275ad929b2095dcfd6a157a6fa646e764af40452c",
+      "bytes": 1203,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/model_manifest.json",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/model_manifest.json",
+      "sha256": "fe56c72a8f02c1fcdf489eda928ea7fc401002d03f5f2c9aa479319760e22dca",
+      "bytes": 10536,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "four_domain/train.py",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/train.py",
+      "sha256": "fe8e335c9cb853309daef19d17d9969ff60af4a4c071d053e57138ce06e86726",
+      "bytes": 5611,
+      "source": "four_domain_state_coverage_v1"
+    },
+    {
+      "key": "operator_residual_v2/core.py",
+      "path": "experiments/operator_residual_v2/core.py",
+      "sha256": "8b8c1476d6bac389d7b3315d00b3f36a3036f4aaf08c849a9efb1fb3ebf6abc5",
+      "bytes": 5737,
+      "source": "operator_residual_v2"
+    },
+    {
+      "key": "cwr/fit.py",
+      "path": "experiments/canonical_write_reachability_v1/fit.py",
+      "sha256": "4174c69cae7f93b84ced16aad53cefb00280f56f92cbce77972808309b1ba880",
+      "bytes": 4036,
+      "source": "canonical_write_reachability_v1"
+    },
+    {
+      "key": "cwr/shared.py",
+      "path": "experiments/canonical_write_reachability_v1/shared.py",
+      "sha256": "23ddfee65e328cdd1c2d81235dcb5b6a1a5c5fc67ac33a336c80210e6621c7f7",
+      "bytes": 3831,
+      "source": "canonical_write_reachability_v1"
+    },
+    {
+      "key": "v1/sym_semantics.py",
+      "path": "experiments/symmetry_composability_v1/sym_semantics.py",
+      "sha256": "156263e1f78440d59e01e6652eb78942e5aedc233f909088afd6307a674f3429",
+      "bytes": 3056,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/sym_evaluator.py",
+      "path": "experiments/symmetry_composability_v1/sym_evaluator.py",
+      "sha256": "d294be0bd3dce8d0c6679744bf74c448e2540c63ccf1dec1f2b4642e6b81a4b7",
+      "bytes": 3448,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/symutil.py",
+      "path": "experiments/symmetry_composability_v1/symutil.py",
+      "sha256": "75026867a01b6795443934bb6a91f288151c979ae18e9324c22372c972baeee5",
+      "bytes": 15509,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/protocol.json",
+      "path": "experiments/symmetry_composability_v1/protocol.json",
+      "sha256": "34d0220252ed2f4de627ed2e1a19855f2fd3a3e4c92137aeae214969af0427a1",
+      "bytes": 14343,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/protocol_lock.json",
+      "path": "experiments/symmetry_composability_v1/protocol_lock.json",
+      "sha256": "5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead",
+      "bytes": 299,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/data/weekday",
+      "path": "experiments/symmetry_composability_v1/data/weekday/worlds.jsonl",
+      "sha256": "e21014549bb47bad07dbc2b87c34ea2b3a70e41ed53415d8471f36f2e71aed97",
+      "bytes": 56938,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s0.pt",
+      "sha256": "c1a4f2bddab8705a78b05a59ea8c2f71b95c722ac5589c1fe408a8078c6cfb16",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s1.pt",
+      "sha256": "b4dac82f6649bb06287ad106fcc8a6a05913c59e7b3826921bc2e36d87314a79",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s2.pt",
+      "sha256": "84a573d57df1143d5f24c9cfe3730bc218f5def127ff9798825a097170495bf4",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s3.pt",
+      "sha256": "991728ae2f43673ed974aed67712094160860d3f80a99b40efa6c58a154e029d",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s4.pt",
+      "sha256": "a353d4467bb0f87ae09b26105c73550ad7946983b3c5b53939476787a2255ae3",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s5.pt",
+      "sha256": "3cabad6848dea7b821c885c4041fa4e37fa967a8cbc555fc6617e9b435007258",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_train_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_train_t0_s6.pt",
+      "sha256": "2a8cb3bd4cf545d1d26cea820ab6393d8b19c655ee436c74dba27c2ba8e428ce",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s0.pt",
+      "sha256": "a83039925509a3e51338c3548c2249327f34e24af03cdbf38ce6e88c1d9668b5",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s1.pt",
+      "sha256": "c6e4115b42f38273b1c2a88a03e886c720960efb01108ddee831a9c5cfc01998",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s2.pt",
+      "sha256": "ff2d38fc7df3cd1dfd4c17d520356f2e5a53b712bd6d58f8fb6c74e006b0d8f0",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s3.pt",
+      "sha256": "3523c5f80cd391ca88cd61a3fab0af2520eb1039f0013cff494952405b563030",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s4.pt",
+      "sha256": "81aa1808a8de91372d222e72920e187b25c349ef44b11ce9241def26ee0d199f",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s5.pt",
+      "sha256": "5bf397125c8e2741f346acf778b53ecc6f971f2a2b53234df87febd50ef29fe2",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/weekday_dev_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_weekday_dev_t0_s6.pt",
+      "sha256": "c9e8022a92aca4d62616048ef4235ec992d55f32cfb65a4af44819e6c7116f4d",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C1/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_weekday_s42_0600.pt",
+      "sha256": "963254b5230a1b157933c3987176aa133938c7e7ab04fa6018ebee8d925d6912",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C1/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_weekday_s43_0600.pt",
+      "sha256": "853d3f3590c710a3e77bdf2289b7eb503d3199b511a2e716862e87009a08d223",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C1/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_weekday_s44_0600.pt",
+      "sha256": "5d374f9456a183a5242500fa0c437a60371a0663d0d539e4f53517ef7162cd4e",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C3/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_weekday_s42_0600.pt",
+      "sha256": "01cbef4fd0ded902e1d4fdc858ff8b0efd28c4f3a89ad58af9834c3d3e657ba2",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C3/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_weekday_s43_0600.pt",
+      "sha256": "991cc5a833110400336d605bc2c4afc5fbaea9f78144e214f074e82519c20a1e",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/weekday/C3/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_weekday_s44_0600.pt",
+      "sha256": "384099fb6605ca4c5eb334fabf2d7cd94047e522ece9b12e52525299da55d73e",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/data/month",
+      "path": "experiments/symmetry_composability_v1/data/month/worlds.jsonl",
+      "sha256": "c51be787afc165df0920b714883b098e4a05077d41783914c35d4393a9cd6d98",
+      "bytes": 55877,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s0.pt",
+      "sha256": "68e426da8c77225279dd5e5c93cb286cf3ab1d5ccd173291e6700dc9e6a9adbd",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s1.pt",
+      "sha256": "7afe62cf05b80c1dbb2b46a2be4518ed0a0bae8c38e690e29ec6ad7324374f2a",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s2.pt",
+      "sha256": "f4b0b4a6cf2080912b5ca3c52a23a50d771e3f947a0cae47bae0a150846462cb",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s3.pt",
+      "sha256": "1ee5f484a8885ec1f9fdaf678c82e6e9a9083758dee38343bffa8b1c17727e62",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s4.pt",
+      "sha256": "c16d161c5a28b84861fbab168084fe2b7d258557a0c4c2f08ac8e19a4a1c79e4",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s5.pt",
+      "sha256": "16d07eeaac788b2f0ae0e3f1da7692ee15f4a61a4bb5f020910a3b1a9fb85dba",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s6.pt",
+      "sha256": "b6665924713cf651918bf5a1f6480a84676e1278027e7b198669a6e8290f70ea",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s7",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s7.pt",
+      "sha256": "09fcd6e79a8bd4738a0711ae609a4e7c862f986379ef529c2a84a36727d7cac6",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s8",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s8.pt",
+      "sha256": "3f54bf300740fcf0b1990326f72910288f3439f740c29386a86c52e6f062939d",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s9",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s9.pt",
+      "sha256": "4ec1e3cceba02b1fd9590087dbb1c40b4df16fd792ce47ecbe7dc9981bbf2e09",
+      "bytes": 7395661,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s10",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s10.pt",
+      "sha256": "832a815ab35c5e8684ca4c041d03148b0e0f2496c966985c13274699d93d02af",
+      "bytes": 7395669,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_train_s11",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_train_t0_s11.pt",
+      "sha256": "58942e23f2235e372aca7230e7c9930ad42eb8fcb9a12dcf26dcf0dc886cf63d",
+      "bytes": 7395669,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s0.pt",
+      "sha256": "278fee59cdc01f09a7761d41b96c04020946b843360e637adf6a7454f7f2bf4c",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s1.pt",
+      "sha256": "1b1c057b20e22a4cd9e4eb8db7921732f5fe5f9275885080efcc4f580a0422ee",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s2.pt",
+      "sha256": "586f626a99dd4174165f7e8c3a9db73ad3d0163a79356bc74fa9153f25d1656d",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s3.pt",
+      "sha256": "a8ff5f7d6a6ae68be7d7f208662b507d32601bf56ac402d0a98dc28fe9765bc4",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s4.pt",
+      "sha256": "27d5d26df5e6c2fd6de363c1e0aadbef33878d1765e81fb1004bd6b34f6dbef0",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s5.pt",
+      "sha256": "2593a1232e9ee5004e1f81b8db7d858c548f897eb6d302ce4bae603cc25fa6d0",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s6.pt",
+      "sha256": "b0736cecf43fac6ef6a5ea1003107530a25265b6859ecd6fd37daf8695fcb8c8",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s7",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s7.pt",
+      "sha256": "437bdd300c8514881210c99fcae378a5c37ba1da8a8dc955712b478c9026fed8",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s8",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s8.pt",
+      "sha256": "2a3fcd6834f5da15c973e0ce9c5f580ce5deac4d3b88388da2b84deb91920919",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s9",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s9.pt",
+      "sha256": "0eb236531a55bf74125f73df37132457753df9aa5b481729ae52dfda7b208a1b",
+      "bytes": 2466557,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s10",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s10.pt",
+      "sha256": "0a6e6f4ca882782c9a266d0d51749d0dfb552ee0aaf4178f7a5cd8ab3990b746",
+      "bytes": 2466565,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/month_dev_s11",
+      "path": "experiments/symmetry_composability_v1/local/e1_month_dev_t0_s11.pt",
+      "sha256": "35911ed027701326dfb57d644224f3f775521e53c245af0a50bfa73e128f238b",
+      "bytes": 2466565,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C1/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_month_s42_0600.pt",
+      "sha256": "6667d3a78de5be038387b65cb00cc6ad361e9a99c5c9995aac960553228bc1f8",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C1/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_month_s43_0600.pt",
+      "sha256": "7b55d30d2ad6751039b044afb186a9b648d41e8111d45b7171b56769fc728c99",
+      "bytes": 662453,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C1/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_month_s44_0600.pt",
+      "sha256": "1d2ca41859a25971e0593d37c801fedb977b09a86c5bcef9d67301493da517fc",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C3/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_month_s42_0600.pt",
+      "sha256": "11cf76eb232eb2c0514c30412fb00883f4d89678eaddd3b518519ce58b9a8b63",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C3/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_month_s43_0600.pt",
+      "sha256": "14bc65a157bf34a1fff6000da2ad0eb9323282aaa9ea19a3cf4306214c0240af",
+      "bytes": 662453,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/month/C3/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_month_s44_0600.pt",
+      "sha256": "af906310323a8ded4b03bda5ba9debd4e87d02df1bda93a255ab3bfdd2010ef2",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/data/compass",
+      "path": "experiments/symmetry_composability_v1/data/compass/worlds.jsonl",
+      "sha256": "0d56e456c5f3b6cd328d847023e593499b1bc848f5b070004086706c6b3ff5aa",
+      "bytes": 56972,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_train_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_train_t0_s0.pt",
+      "sha256": "97103cf5d9ac66cf7ec959cd0de0a42adc5223146bb414e6f50f969c70986cb0",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_train_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_train_t0_s1.pt",
+      "sha256": "d5dc2079c882ae0f9a75ea3d69b9a3e0ca241e83f3144d2c40ea4775bf42a759",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_train_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_train_t0_s2.pt",
+      "sha256": "d152288e58313490b3988a8a29327d0c89e7cf912a6931f7342ff74491e4eab0",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_train_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_train_t0_s3.pt",
+      "sha256": "75842e5f48fcee415f00c85f524e0fa986c5b1a6738a4b80e79ab8948f2e7281",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_dev_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_dev_t0_s0.pt",
+      "sha256": "41459268f7c7a5da8e4112cf466459bc591788832dfb80dc410bffcabc6cab57",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_dev_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_dev_t0_s1.pt",
+      "sha256": "1392d8e4038aedcd8cac82c0b1d9d42043035483c9870052d820c96d6233bf11",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_dev_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_dev_t0_s2.pt",
+      "sha256": "7c330b9dc1ffb6f78fd5d93c16bcf7b907b2bec03b4b6c4e0fa37332f6f157b1",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/compass_dev_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_compass_dev_t0_s3.pt",
+      "sha256": "91ac99fbfc23e293dfa5bdd732d01e244caf5f415091f08243c495a1daf88ead",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C1/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_compass_s42_0600.pt",
+      "sha256": "a5aa524f642d5b473905c7901f2079d59e0cfabc6f4b32f1860bbee2f372270c",
+      "bytes": 662645,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C1/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_compass_s43_0600.pt",
+      "sha256": "dd3673f3cd19bb3b90b1046e72b0196eebebd7722fa726fca45108adc12a91aa",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C1/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_compass_s44_0600.pt",
+      "sha256": "ba62c3960bd2f7a4ab99c8df324c121f27e764de7fa732e9358af0b6acd34e85",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C3/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_compass_s42_0600.pt",
+      "sha256": "6268a58b1af6fddaf6a9147fc2ed997e711eafe106877b0e70e4c71e2c3c13b2",
+      "bytes": 662645,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C3/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_compass_s43_0600.pt",
+      "sha256": "883b58f35d94f843491e2692d08dbe5cfd66081ccfe912cd3277e390786b8c87",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/compass/C3/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_compass_s44_0600.pt",
+      "sha256": "b49e71d19e6d177dc7057e00d583670679893bbb05517f4bbb70ca1ea7d1541b",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/data/egoside",
+      "path": "experiments/symmetry_composability_v1/data/egoside/worlds.jsonl",
+      "sha256": "6c9ce7997fe00db7db4e6f54f5fa158d94916471a1efcc6422c9e163f1820bfe",
+      "bytes": 56989,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_train_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_train_t0_s0.pt",
+      "sha256": "323ae87a4f3ad6fa3da24d08cfdabd53aa528402e863e15c2e49d706bc2b89a8",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_train_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_train_t0_s1.pt",
+      "sha256": "936f3b16b57e4ba48686ba4f8abe34bfa0888b9649f8c46de45e9657683efbfc",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_train_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_train_t0_s2.pt",
+      "sha256": "c7934c1edc2b955277d2232417cafafbedd6ff5db7db4ac9aabad3fb0b22f52e",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_train_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_train_t0_s3.pt",
+      "sha256": "c29bb73a8f23a0181364eb6d506da0c0284e36efe77ea6216c5837deb212e186",
+      "bytes": 7395933,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_dev_s0",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_dev_t0_s0.pt",
+      "sha256": "97d16e22993ca7a93f9d5f88345bc31fb225c77b15cb0f6d3eaf90ccbe29ebb6",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_dev_s1",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_dev_t0_s1.pt",
+      "sha256": "398419bffc1c10707bcc934a6f3dbe959ec719c4e2a4257a29c7974646d7a00f",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_dev_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_dev_t0_s2.pt",
+      "sha256": "4a56e27ab2882d690c6022c65251272ab575ac5eece155880ed11e11653a76cc",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/egoside_dev_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_egoside_dev_t0_s3.pt",
+      "sha256": "8c53562a32133cf92c6fe5c61c5f7fed0d84be0f2763af54f0df271cca1c1cab",
+      "bytes": 2466637,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C1/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_egoside_s42_0600.pt",
+      "sha256": "578a6a3a055672ae34cc9c462d79cd56f8c05062cba931bf6ccc0620dfd469c8",
+      "bytes": 662645,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C1/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_egoside_s43_0600.pt",
+      "sha256": "228072051217b7a47eec950f4cbd25b4ed04f3289614050db7a13a2fde6bbaf8",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C1/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_egoside_s44_0600.pt",
+      "sha256": "7a6aeec06b2c10bdaa6e2e78ed570687b7933fc1e651a32085e5be6fabe30031",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C3/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_egoside_s42_0600.pt",
+      "sha256": "c4f80704e872fb2bb65eb3ce6c35c2dbf33ad77939e8879723897c31a75fdd30",
+      "bytes": 662645,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C3/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_egoside_s43_0600.pt",
+      "sha256": "e392fb27ae873d46c1fe5e44875964387b0115c5d494ee44301fc03afdd86704",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/egoside/C3/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_egoside_s44_0600.pt",
+      "sha256": "fb2ea1b078a82d9370aac67a90e1d98052ad3b564bfa45fd60bf38978c8a2e24",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/data/daysago",
+      "path": "experiments/symmetry_composability_v1/data/daysago/worlds.jsonl",
+      "sha256": "c5a4565b3c659e62bfb4e8c9e85225714bf44442a296c64022a6f131facc2fa7",
+      "bytes": 56994,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s2.pt",
+      "sha256": "c3d16e5951e3aaba89f000adc27e329bb24da1fd8c8d10cde314a783a6f05dc5",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s3.pt",
+      "sha256": "61883a20f427d393c3bdf4597e4d8b91dcd628ce14fc3f2197f3683901b8bd58",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s4.pt",
+      "sha256": "c2085f1b40f9057eba1b856b1c85b495a6c01800e58605c220d4a396937d172c",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s5.pt",
+      "sha256": "29bf7eafe2e5c94720e0de504eb38d08f2a459c606c0276ead7e9daea667e230",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s6.pt",
+      "sha256": "64f976ba108060e6505390957e58c369eaec3d81c1371c7513a07a48ae24bf13",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s7",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s7.pt",
+      "sha256": "d090c97bd70c5bb464a61d443c2b1281c1e4dd5119fc6d2f0bc958377e05ebeb",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s8",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s8.pt",
+      "sha256": "845a6b6a426ec253c9bc673daceb013707151b4d0e11b4292db033d28a201a1f",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_train_s9",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_train_t0_s9.pt",
+      "sha256": "8d0febc63555ac475f9a3f361be2a0d13e16ec6bac678018fb2f0d7882235b1c",
+      "bytes": 7691613,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s2",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s2.pt",
+      "sha256": "3465865da3b8dce9bbd3abc43c0625da9962501a46bd4ddd9f9203a1a089c8f0",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s3",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s3.pt",
+      "sha256": "9ff8b065956e6a4dff3824d9e282c15f65027547f21f64dbda236cfc43ddb01b",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s4",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s4.pt",
+      "sha256": "b01a58042cd65827abeb3104489ddfb5cc938909669aba549c5fab315c1d05fb",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s5",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s5.pt",
+      "sha256": "285569f3b7e1af9bc524c95f48433f54921217430a1282cb6723717b9aabc9e4",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s6",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s6.pt",
+      "sha256": "cd1aa134bd54616ebd78a792a5137313c9038a6933ae45aa26d22643a3c7176b",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s7",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s7.pt",
+      "sha256": "503e596fb2ee4b71aae6a2c4a34f34c9c8ebd2046f8d7ec5d5698ba3097d73cf",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s8",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s8.pt",
+      "sha256": "ef85853497ded0f0b4e747ddc3689007d488391e94481226e290586d2ed717a4",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/cache/daysago_dev_s9",
+      "path": "experiments/symmetry_composability_v1/local/e1_daysago_dev_t0_s9.pt",
+      "sha256": "d40cb46f3c577ca85b85b89253b5dfa03b3a4e24a49b8757425892b04cc4b375",
+      "bytes": 2565197,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C1/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_daysago_s42_0600.pt",
+      "sha256": "1aa5631b10fdacfc775e327bb4206241186aa4f32aafdbb8bf028d5bc7449661",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C1/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_daysago_s43_0600.pt",
+      "sha256": "7a21cbd8248f482ac8584be70af12f64c5af4cf7eab96d34bbdc443164bddcc7",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C1/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C1_daysago_s44_0600.pt",
+      "sha256": "e8ff3cfa9988fd6309aa55a273c428c2c0609443f53d337c4f0605094ba69a6a",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C3/s42",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_daysago_s42_0600.pt",
+      "sha256": "edcf57c61872030313b46b1ea6f7ac3d22658360aea9b85860b448aa5e8b8613",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C3/s43",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_daysago_s43_0600.pt",
+      "sha256": "439b3e53d7130b6bd83df4c9692c0be7d67532880bdfa531d19073ade47b299c",
+      "bytes": 662517,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v1/editor/daysago/C3/s44",
+      "path": "experiments/symmetry_composability_v1/local/e1_C3_daysago_s44_0600.pt",
+      "sha256": "a6f5192a4c49bedd515eefc66569c2dfd7b108cf3a6581bb51d35080902fe80a",
+      "bytes": 662581,
+      "source": "symmetry_composability_v1"
+    },
+    {
+      "key": "v2/protocol.json",
+      "path": "experiments/composability_mechanisms_v1/protocol.json",
+      "sha256": "ddabe9aad5b5e00f95d7f6b67bdb1a7397873ff70548051bdbacdbf03fc17617",
+      "bytes": 70905,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/protocol_lock.json",
+      "path": "experiments/composability_mechanisms_v1/protocol_lock.json",
+      "sha256": "79c2bdf55ceddb5bf2b61b9abcf58fec90a762f4be4b5821d533af317616d816",
+      "bytes": 305,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/sym2_semantics.py",
+      "path": "experiments/composability_mechanisms_v1/sym2_semantics.py",
+      "sha256": "38d4b4288832d2f386a2a7aedaa3f18d8a9007e9dd98d1d161141c09e5f27000",
+      "bytes": 3265,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/sym2_evaluator.py",
+      "path": "experiments/composability_mechanisms_v1/sym2_evaluator.py",
+      "sha256": "51e8e1c131bc94eb6eb52fa3256ac0d33df95b2c86b01430f4963a3705bc9534",
+      "bytes": 4617,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/symutil.py",
+      "path": "experiments/composability_mechanisms_v1/symutil.py",
+      "sha256": "0a50e30cce36c8012be2e1bd8ef5635b8a0e397c4bb994044ef6d27a60025832",
+      "bytes": 17782,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit_rrr.py",
+      "path": "experiments/composability_mechanisms_v1/fit_rrr.py",
+      "sha256": "d537a09915c2c91a7d19fd674909b1404676429423f1f178c80eafc45a4a1382",
+      "bytes": 3973,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/train.py",
+      "path": "experiments/composability_mechanisms_v1/train.py",
+      "sha256": "704d0e26e6cc585c3b14e6b3da5fd588b1026fbe85f2de5b7c9bb86e3a4e1062",
+      "bytes": 4076,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/eval_chains.py",
+      "path": "experiments/composability_mechanisms_v1/eval_chains.py",
+      "sha256": "692dd1262d990518fac2cd6e54b99e7a2646a061af7dc4251e9d5413ffee3958",
+      "bytes": 5170,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/algebra.py",
+      "path": "experiments/composability_mechanisms_v1/algebra.py",
+      "sha256": "03a05247c18d305ee947219cff8af25f4f0f1775cbfc12e1f52968de27b60480",
+      "bytes": 4016,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/s2_modes.py",
+      "path": "experiments/composability_mechanisms_v1/s2_modes.py",
+      "sha256": "f2d854ddc763b01cb382becabd000c6a8f92ccba60137baa53cf1ebb8e028cdf",
+      "bytes": 4100,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/s3_mechanism.py",
+      "path": "experiments/composability_mechanisms_v1/s3_mechanism.py",
+      "sha256": "a7122f7ca15ff22cb2251f4a50742f03293e5377141a1899c63a265cddc6e730",
+      "bytes": 8227,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/results/algebra.json",
+      "path": "experiments/composability_mechanisms_v1/results/algebra.json",
+      "sha256": "bfad3bba87f62b3e0d53438196bf7895bd6a8241cff65d24381f35b0ddb9b734",
+      "bytes": 595451,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/results/shards_laneA.tar.gz",
+      "path": "experiments/composability_mechanisms_v1/results/shards_laneA.tar.gz",
+      "sha256": "c56938e74a1f1d0a2a3b230f3f41cfc2a4a5e8460f14152692b3facc4e056631",
+      "bytes": 40763085,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/results/shards_laneB.tar.gz",
+      "path": "experiments/composability_mechanisms_v1/results/shards_laneB.tar.gz",
+      "sha256": "808781a4fdc331c3fd5c3329d2c28480e9d2ff06c9c462acb8d0a3de07085eb3",
+      "bytes": 25676648,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/AMENDMENT_01.md",
+      "path": "experiments/composability_mechanisms_v1/AMENDMENT_01.md",
+      "sha256": "0d8a4a59ca7f441b5ddfa545f23946c6e2becef9dfdc3b269d2f089634b58f92",
+      "bytes": 1524,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_bind3_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_bind3_natural.pt",
+      "sha256": "39e776d77fc9b37ed4f68c5e07020db722664e88cb0146cfa9bf474ca068b2f2",
+      "bytes": 634803,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_compass_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_compass_natural.pt",
+      "sha256": "cb409e0f0034a7d38c5ace87ad7124425218915a69f28f8d895223dabfcec4ea",
+      "bytes": 810553,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_compass_scrmax.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_compass_scrmax.pt",
+      "sha256": "fffeb0943c1af7d2a76c65770a7a5451a3f49333be7b394909bd67b96ec7933d",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_compass_scrmed.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_compass_scrmed.pt",
+      "sha256": "53ff606abefca2ba8f2e6e6636fa074adfdc45104ee0e2a969dc1256e79fdf52",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_daysago_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_daysago_natural.pt",
+      "sha256": "f9316195253b162774099b316bcc562727972769cb45e4e1221f2d6c0cc2f86b",
+      "bytes": 1271973,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_daysago_scrmax.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_daysago_scrmax.pt",
+      "sha256": "ee987b60ba7f981051190630fb621bf7e2dfd69060a2a61c87021dfa404b0c8a",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_daysago_scrmed.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_daysago_scrmed.pt",
+      "sha256": "96b5db4129f70eb6e83441b6c57c780304ee2a6406d25cf8b752719b10ab76fc",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_egoside_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_egoside_natural.pt",
+      "sha256": "0c2a95423b6d64c3b0742e7fab3e1ada70193694a8cd9d3bcfd2b433020fd44c",
+      "bytes": 810553,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_egoside_scrmax.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_egoside_scrmax.pt",
+      "sha256": "681efe73c4f8afe763ba4e8cf3dacc4735feab00f14f27b6cb99dd506036b64b",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_egoside_scrmed.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_egoside_scrmed.pt",
+      "sha256": "c56c40a60dc2bbd85593e5febf5cadd0637e77262d5227456d468e77c5d865d9",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_month_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_month_natural.pt",
+      "sha256": "0f2d789f5e62ce29bb18f0b6ba9c2f766937b296e89d937d9a6d392d92afdce2",
+      "bytes": 1551791,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_month_scrmax.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_month_scrmax.pt",
+      "sha256": "3627b4ab19e1622b026f85631904baf035e9699930b8080de833d82c7ad99f97",
+      "bytes": 1551737,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_month_scrmed.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_month_scrmed.pt",
+      "sha256": "4dac9ac60cf4d0386c799cfaf6f9b5c3a05f7138fed5061745668af62049f004",
+      "bytes": 634785,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_name3_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_name3_natural.pt",
+      "sha256": "9902d072988fa3fbfeba4e1b11440b714808a79d6e5d0be8deea76a4c2df7cdb",
+      "bytes": 634803,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_pron3_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_pron3_natural.pt",
+      "sha256": "7a5d6bce36e1f6950250efdc9fa7153dac8088d5d4f89f974aae99a2f7ff4957",
+      "bytes": 634803,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_weekday_natural.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_weekday_natural.pt",
+      "sha256": "c21b3f11c3f1d4824d759fe71aab1d729dd417c905771398eb29761efae518f4",
+      "bytes": 1112229,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_weekday_scrmax.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_weekday_scrmax.pt",
+      "sha256": "af68416dd6528a7343e68078294fb1dee6e55eccda231de1ad2202b857b1afda",
+      "bytes": 1112181,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/fit/rrr_weekday_scrmed.pt",
+      "path": "experiments/composability_mechanisms_v1/local/rrr_weekday_scrmed.pt",
+      "sha256": "00809ed096faafa7e3ffce77d9d29f2969d799cdd345735fe969c564b61c5fdb",
+      "bytes": 634821,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_compass_confirm2_t0_s0.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_compass_confirm2_t0_s0.pt",
+      "sha256": "6cd80073254dab5c5d4eef6f50775f2542a47fc9f78bd257ccce3244e70db044",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_compass_confirm2_t0_s1.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_compass_confirm2_t0_s1.pt",
+      "sha256": "c6d0c011818561df1ddc8d51519934e31aa191f92639375849a18db7e50e6a04",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_compass_confirm2_t0_s2.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_compass_confirm2_t0_s2.pt",
+      "sha256": "13519ab08cf864c3fa8617d78692fd35e95d206ef5c188db7dcf1d10cc27df97",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_compass_confirm2_t0_s3.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_compass_confirm2_t0_s3.pt",
+      "sha256": "7e2804648f63e2e488a57117f1b5bb5a6918012feae07e65a2f34c309f80dfdc",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s2.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s2.pt",
+      "sha256": "f19f373dabba207d7d9cc9831135b0901b8558a6c6546c10a036dfc2490011a4",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s3.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s3.pt",
+      "sha256": "c8dd254a315f59921620bb991b7e69c09a1d14dbc254e08630e40ed0a2061473",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s4.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s4.pt",
+      "sha256": "95f2fd882676d16b4eac37b6cb4723eeeba73a177f33cca0ea08dbd3842d693f",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s5.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s5.pt",
+      "sha256": "8c623fef68fdad4e79bd1cfdfdee783ace8edf87822a63f7d470dbb88c4c6e9a",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s6.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s6.pt",
+      "sha256": "c56810e9ac0a3bdb55ae8e962dc7f0dd1da970a32ced33f6739df3b31038a05a",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s7.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s7.pt",
+      "sha256": "b989111bbdc309671287678d28eaafa1794d5c3b8cf6087a96651719a596e06b",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s8.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s8.pt",
+      "sha256": "cf8262681cde65e637b04455a8276ee747e5525f4e3bd91b02f50212ff1bcef0",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_daysago_confirm2_t0_s9.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_daysago_confirm2_t0_s9.pt",
+      "sha256": "c0ba6cf22737637cfff3c696f7f2e2c308081ea8aaa40bd9f65d934adcc50020",
+      "bytes": 12818413,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_egoside_confirm2_t0_s0.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_egoside_confirm2_t0_s0.pt",
+      "sha256": "addb282637f3d7f249c2c690f58deb0eebcc61340ae19233294cfd2a90173453",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_egoside_confirm2_t0_s1.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_egoside_confirm2_t0_s1.pt",
+      "sha256": "ee221131140f1549dd1431abb2668c0203923d59010c5602ad5763525e28832c",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_egoside_confirm2_t0_s2.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_egoside_confirm2_t0_s2.pt",
+      "sha256": "b3bf46a193f6196bc5444df9109c3520e20dc83eeaa1884df8fbcd645f2457a4",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_egoside_confirm2_t0_s3.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_egoside_confirm2_t0_s3.pt",
+      "sha256": "b583a0d289e76da1d270508ed5c249ad7f3c4bb2cd0a83c5d5bc6726e9cb284f",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s0.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s0.pt",
+      "sha256": "f1c7c19d3cd6c3676c624095d22519baa0224b59f6dab554947f83d0f6feddf8",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s1.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s1.pt",
+      "sha256": "8f0e26fcf4276cce8a04dfe9f31735d89f771bee72849ac47f04ad618a6914f4",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s10.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s10.pt",
+      "sha256": "4cd39e48287dba6afece7bf923e450240d5076f0fcdd9293fd6bf6bff71003f2",
+      "bytes": 12325285,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s11.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s11.pt",
+      "sha256": "8d3c452848a848305d9209babc3f085a4964b504cb6bc80e55a673437a7728d5",
+      "bytes": 12325285,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s2.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s2.pt",
+      "sha256": "0d322bd7f0d4103d2a81e56d896066134db9058ebf05d406142dc2991f49f221",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s3.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s3.pt",
+      "sha256": "776323a412405f4848a73c45cb8154b73d1dfe0a451269dd19569fd7c292bfed",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s4.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s4.pt",
+      "sha256": "b237f26504dcea0896f6b7332aa48e755fb0821bce8f58baf8652bb4e4f8d94c",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s5.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s5.pt",
+      "sha256": "a56059537bd47ced05820da7b1ec9c1cfab53fad75f70b679673d79460cb8eaf",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s6.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s6.pt",
+      "sha256": "dc8399ec0dd68de459563585094e316c6f9fd194932809bdf51cee47fffe1a6b",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s7.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s7.pt",
+      "sha256": "76b0c68aaf1951e82217eef6e654f281e6f766846266aa2c7dd3e10d77914e85",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s8.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s8.pt",
+      "sha256": "c03d3484b3f255f0b4bd690916f93a79b5e3c367b60560da68d3fb2897b69ec4",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_month_confirm2_t0_s9.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_month_confirm2_t0_s9.pt",
+      "sha256": "527f95dd725799aa894ea69a4b9cf7eac148eac08ee6fb74b83e51e0aadd6120",
+      "bytes": 12325277,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s0.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s0.pt",
+      "sha256": "c0ec116fbe3618b6c20e308443bc5c0424c3a647a3038c5e41977dccbed1f03d",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s1.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s1.pt",
+      "sha256": "dd2941f1552c54043ccaacacbbe7291c104380deee59a661549e9896a1e2de93",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s2.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s2.pt",
+      "sha256": "fc5d0bd8122e155bff6f904be3b4bb421dfd751378934fea7c32df9f6498fb4d",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s3.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s3.pt",
+      "sha256": "d97549f8c52dd611fed71d44e854919713ef1045b86b951fc5a3b45bd0438527",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s4.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s4.pt",
+      "sha256": "4f71142f551784513d7ca93ec73e5971d292b4fda54a08b86b0fef8ae1cb5220",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s5.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s5.pt",
+      "sha256": "99f3c69d76c567a5e7f1ec2c5a57c62a4b9a27b0825841be62183763f4ef6425",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/cache/c_weekday_confirm2_t0_s6.pt",
+      "path": "experiments/composability_mechanisms_v1/local/c_weekday_confirm2_t0_s6.pt",
+      "sha256": "a989c7f6b0df62ad7575e13a3e1fc5f2102bbc4157df9ef0f55e89f4b3384823",
+      "bytes": 12325613,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/weekday",
+      "path": "experiments/composability_mechanisms_v1/data/weekday/worlds.jsonl",
+      "sha256": "c8540cb26a1137c0bcc06069245e1e23e23cf2bffd805f6e3c9503097b893511",
+      "bytes": 32478,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/month",
+      "path": "experiments/composability_mechanisms_v1/data/month/worlds.jsonl",
+      "sha256": "d3e8cac24e13191d2298b82181369de96daa5c13627c9234c40db8960ae099a5",
+      "bytes": 31846,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/compass",
+      "path": "experiments/composability_mechanisms_v1/data/compass/worlds.jsonl",
+      "sha256": "f8594c4841aabd73520da5352a6e5c0563904d153c2da6336c9b5f5b0a474e4f",
+      "bytes": 32486,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/egoside",
+      "path": "experiments/composability_mechanisms_v1/data/egoside/worlds.jsonl",
+      "sha256": "1a047d1ba37895e25ae5af707aacbd51d9dd76aee4308522bffe5eff824c009b",
+      "bytes": 32470,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/daysago",
+      "path": "experiments/composability_mechanisms_v1/data/daysago/worlds.jsonl",
+      "sha256": "b6f69f66c7f7a1b17634d0b265a2ff9b4c45f7f04e67b8b625779b24e78ef3db",
+      "bytes": 32493,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/pron3",
+      "path": "experiments/composability_mechanisms_v1/data/pron3/worlds.jsonl",
+      "sha256": "29b9b2945fcacc909aa44f3346710f5decfce5e3c7d41805ad2e35abbfee02a9",
+      "bytes": 55903,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/name3",
+      "path": "experiments/composability_mechanisms_v1/data/name3/worlds.jsonl",
+      "sha256": "66132e61f63840417e1d54c5325e25d3c59aa9c9e3c1c9f94a0abf4e0a0c701c",
+      "bytes": 55843,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "v2/data/bind3",
+      "path": "experiments/composability_mechanisms_v1/data/bind3/worlds.jsonl",
+      "sha256": "ae8ca5b644faa8f033f3c9b588cdd91a1ca73b50c0e873981b9581da22ec041f",
+      "bytes": 55891,
+      "source": "composability_mechanisms_v1"
+    },
+    {
+      "key": "history/time/worlds.jsonl",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl",
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "bytes": 53790,
+      "source": "time"
+    },
+    {
+      "key": "history/person/worlds.jsonl",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl",
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "bytes": 54438,
+      "source": "person"
+    },
+    {
+      "key": "history/space/worlds.jsonl",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/worlds.jsonl",
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "bytes": 54167,
+      "source": "space"
+    },
+    {
+      "key": "history/emotion/worlds.jsonl",
+      "path": ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/worlds.jsonl",
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "bytes": 54702,
+      "source": "emotion"
+    },
+    {
+      "key": "history/data/person_eval.jsonl",
+      "path": "experiments/canonical_confirmation_v1/data/person_eval.jsonl",
+      "sha256": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+      "bytes": 32031,
+      "source": "data"
+    },
+    {
+      "key": "history/data/person_train.jsonl",
+      "path": "experiments/canonical_confirmation_v1/data/person_train.jsonl",
+      "sha256": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+      "bytes": 34425,
+      "source": "data"
+    },
+    {
+      "key": "history/data/time_eval.jsonl",
+      "path": "experiments/canonical_confirmation_v1/data/time_eval.jsonl",
+      "sha256": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+      "bytes": 62422,
+      "source": "data"
+    },
+    {
+      "key": "history/data/person_confirm.jsonl",
+      "path": "experiments/manifold_controls_v1/data/person_confirm.jsonl",
+      "sha256": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+      "bytes": 64264,
+      "source": "data"
+    },
+    {
+      "key": "history/data/person_dev.jsonl",
+      "path": "experiments/manifold_controls_v1/data/person_dev.jsonl",
+      "sha256": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+      "bytes": 31805,
+      "source": "data"
+    },
+    {
+      "key": "history/data/time_confirm.jsonl",
+      "path": "experiments/manifold_controls_v1/data/time_confirm.jsonl",
+      "sha256": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+      "bytes": 62590,
+      "source": "data"
+    },
+    {
+      "key": "history/operator_residual_v2/train_worlds.jsonl",
+      "path": "experiments/operator_residual_v2/train_worlds.jsonl",
+      "sha256": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+      "bytes": 34024,
+      "source": "operator_residual_v2"
+    },
+    {
+      "key": "history/operator_residual_v2/eval_worlds.jsonl",
+      "path": "experiments/operator_residual_v2/eval_worlds.jsonl",
+      "sha256": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+      "bytes": 34303,
+      "source": "operator_residual_v2"
+    },
+    {
+      "key": "model/bart-base/config.json",
+      "path": "models/bart-base/config.json",
+      "sha256": "c4022c931216afcb778991477332e5312aca8be478027ee3a8bf34b7004c44e2",
+      "bytes": 1716,
+      "source": "models"
+    },
+    {
+      "key": "model/bart-base/model.safetensors",
+      "path": "models/bart-base/model.safetensors",
+      "sha256": "1bd3ac8e5b3ac71c77cf18fbcd8b113e0bfceced94c5cfbbb9a2b4bb4781190b",
+      "bytes": 557709915,
+      "source": "models"
+    },
+    {
+      "key": "model/bart-base/tokenizer.json",
+      "path": "models/bart-base/tokenizer.json",
+      "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+      "bytes": 1355863,
+      "source": "models"
+    },
+    {
+      "key": "model/bart-base/vocab.json",
+      "path": "models/bart-base/vocab.json",
+      "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+      "bytes": 898823,
+      "source": "models"
+    },
+    {
+      "key": "model/bart-base/merges.txt",
+      "path": "models/bart-base/merges.txt",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "bytes": 456318,
+      "source": "models"
+    },
+    {
+      "key": "model/bart_metadata.json",
+      "path": "models/bart_metadata.json",
+      "sha256": "44436d8d56d68b35704ab994462457152c88504739d63cf6bd8ee5335d9a8e3b",
+      "bytes": 3944,
+      "source": "models"
+    }
+  ]
+}

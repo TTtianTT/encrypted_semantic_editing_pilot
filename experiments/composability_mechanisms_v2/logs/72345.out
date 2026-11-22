@@ -1,0 +1,17 @@
+weekday {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 105, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 45, 't5_over_cap': 0, 'slot_bart': 7, 'slot_t5': 22, 'pass': False}
+month {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 312, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 45, 't5_over_cap': 0, 'slot_bart': 7, 'slot_t5': 22, 'pass': False}
+compass {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 32, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 46, 't5_over_cap': 0, 'slot_bart': 11, 'slot_t5': 27, 'pass': False}
+egoside {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 48, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 46, 't5_over_cap': 0, 'slot_bart': 11, 'slot_t5': 27, 'pass': False}
+daysago {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 168, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 46, 't5_over_cap': 0, 'slot_bart': 6, 'slot_t5': 21, 'pass': False}
+pron3 {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 47, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 'pass': True}
+name3 {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 0, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 47, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 'pass': True}
+bind3 {'worlds': 288, 'new_worlds': {'confirm3': 160}, 'failures': {}, 'duplicate_texts': 3, 'split_key_overlap': {}, 'history_overlap': {'confirm3': 0}, 't5_max_len': 47, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 'pass': False}
+bind3fix {'worlds': 288, 'new_worlds': {'confirm3': 160, 'dev': 32, 'train': 96}, 'failures': {}, 'duplicate_texts': 0, 'split_key_overlap': {'confirm3&dev': 0, 'confirm3&train': 0, 'dev&train': 0, 'oqc:confirm3&dev': 0, 'oqc:confirm3&train': 0, 'oqc:dev&train': 0}, 'history_overlap': {'confirm3': 0, 'dev': 0, 'train': 0}, 't5_max_len': 47, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 'pass': True}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/d_audit.py", line 78, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/d_audit.py", line 74, in main
+    assert res['pass'], 'D audit failed'
+           ~~~^^^^^^^^
+AssertionError: D audit failed
+srun: error: node01: task 0: Exited with exit code 1

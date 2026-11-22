@@ -1,0 +1,86 @@
+{
+ "N7": {
+  "max_principal_angle_deg": 1.0742047300768092,
+  "n_planes": [
+   3,
+   3
+  ],
+  "freeze_max_err": 1.2212453270876722e-15,
+  "plane_editor_max_err": 7.507296831585582e-07,
+  "omega_true": [
+   0.5714285714285714,
+   0.2857142857142857,
+   0.14285714285714285
+  ],
+  "omega_fit": [
+   0.5669037106874318,
+   0.2834267455615725,
+   0.14966954375099573
+  ],
+  "omega_max_abs_err": 0.006812400893852877,
+  "ideal_chain_agreement": 1.0,
+  "pass": false
+ },
+ "N12": {
+  "max_principal_angle_deg": 0.5658390173509028,
+  "n_planes": [
+   6,
+   6
+  ],
+  "freeze_max_err": 1.1102230246251565e-15,
+  "plane_editor_max_err": 5.369779890893818e-07,
+  "omega_true": [
+   0.4800000000000001,
+   0.24,
+   0.12,
+   0.08,
+   0.048,
+   0.032
+  ],
+  "omega_fit": [
+   0.47935594773085893,
+   0.24171306236809043,
+   0.11934394986656793,
+   0.07657613820971262,
+   0.04934999225033552,
+   0.0336609095744345
+  ],
+  "omega_max_abs_err": 0.0034238617902873775,
+  "ideal_chain_agreement": 0.9996858465608466,
+  "pass": true
+ },
+ "N4": {
+  "max_principal_angle_deg": 0.8251136340961277,
+  "n_planes": [
+   2,
+   2
+  ],
+  "freeze_max_err": 1.4432899320127035e-15,
+  "plane_editor_max_err": 8.560087861313872e-07,
+  "omega_true": [
+   0.6666666666666666,
+   0.3333333333333333
+  ],
+  "omega_fit": [
+   0.6605321611180931,
+   0.339467838881907
+  ],
+  "omega_max_abs_err": 0.006134505548573699,
+  "ideal_chain_agreement": 1.0,
+  "pass": true
+ },
+ "pass": false,
+ "seconds": 8.884415626525879,
+ "sources": {
+  "lib3.py": "12ee7bdc6c43ad85e2c4fb22473399804702f21f5ff89f2a2acb916181a505fd",
+  "selftest.py": "6086f5ce45a7c6b9f5f813b66e9a62f73bf79c888edef9fbdb3551ab7afbe35f"
+ }
+}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/selftest.py", line 111, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/selftest.py", line 107, in main
+    assert res['pass'], 'synthetic self-test failed'
+           ~~~^^^^^^^^
+AssertionError: synthetic self-test failed
+srun: error: node01: task 0: Exited with exit code 1

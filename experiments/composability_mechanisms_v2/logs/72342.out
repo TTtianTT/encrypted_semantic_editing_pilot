@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/p0_diag.py", line 161, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/p0_diag.py", line 85, in main
+    ch, prot = load_v2_chains(); x1 = {}
+               ^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/p0_diag.py", line 63, in load_v2_chains
+    ps, _ = Ev.parse_state(r['text'], d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/sym3_evaluator.py", line 104, in parse_state
+    vocab = _PRON if domain == 'pron3' else _FIXED if domain == 'name3' else [p.lower() for p in people]
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+srun: error: node01: task 0: Exited with exit code 1

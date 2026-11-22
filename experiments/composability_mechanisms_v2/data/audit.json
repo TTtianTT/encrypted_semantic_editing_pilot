@@ -1,0 +1,209 @@
+{
+  "domains": {
+    "weekday": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 45,
+      "t5_over_cap": 0,
+      "slot_bart": 7,
+      "slot_t5": 22,
+      "sample": "The box event is scheduled for Monday. Its status is cancelled. The box is white. There are 9 copies.",
+      "pass": true
+    },
+    "month": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 45,
+      "t5_over_cap": 0,
+      "slot_bart": 7,
+      "slot_t5": 22,
+      "sample": "The book event is scheduled for January. Its status is planned. The book is green. There are 4 copies.",
+      "pass": true
+    },
+    "compass": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 46,
+      "t5_over_cap": 0,
+      "slot_bart": 11,
+      "slot_t5": 27,
+      "sample": "In Emma's report, the parcel is on the north side. The parcel is black. There are 3 copies.",
+      "pass": true
+    },
+    "egoside": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 46,
+      "t5_over_cap": 0,
+      "slot_bart": 11,
+      "slot_t5": 27,
+      "sample": "In Emma's report, the ticket is on the front side. The ticket is white. There are 7 copies.",
+      "pass": true
+    },
+    "daysago": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 46,
+      "t5_over_cap": 0,
+      "slot_bart": 6,
+      "slot_t5": 21,
+      "sample": "The lamp event is dated two days ago. Its status is planned. The lamp is blue. There are 3 copies.",
+      "pass": true
+    },
+    "pron3": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Henry, Emma and Grace took part, and the book went to me. The book is red. There are 8 copies.",
+      "pass": true
+    },
+    "name3": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Grace, Emma and Bob took part, and the book went to Daniel. The book is white. There are 9 copies.",
+      "pass": true
+    },
+    "bind3": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_overlap": {
+        "confirm3": 0
+      },
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Alice, Emma and Henry took part, and the ticket went to Alice. The ticket is white. There are 8 copies.",
+      "pass": true
+    },
+    "bind3fix": {
+      "worlds": 288,
+      "new_worlds": {
+        "confirm3": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm3&dev": 0,
+        "confirm3&train": 0,
+        "dev&train": 0,
+        "oqc:confirm3&dev": 0,
+        "oqc:confirm3&train": 0,
+        "oqc:dev&train": 0
+      },
+      "history_overlap": {
+        "confirm3": 0,
+        "dev": 0,
+        "train": 0
+      },
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Alice, Bob and Carol took part, and the parcel went to Alice. The parcel is white. There are 2 copies.",
+      "pass": true
+    }
+  },
+  "v2_confirm2_text_reuse_report": {
+    "weekday": {
+      "confirm2_worlds_with_text_in_v1_train_dev": 15,
+      "confirm2_worlds": 160
+    },
+    "month": {
+      "confirm2_worlds_with_text_in_v1_train_dev": 18,
+      "confirm2_worlds": 160
+    },
+    "compass": {
+      "confirm2_worlds_with_text_in_v1_train_dev": 3,
+      "confirm2_worlds": 160
+    },
+    "egoside": {
+      "confirm2_worlds_with_text_in_v1_train_dev": 10,
+      "confirm2_worlds": 160
+    },
+    "daysago": {
+      "confirm2_worlds_with_text_in_v1_train_dev": 19,
+      "confirm2_worlds": 160
+    }
+  },
+  "bart_t0_slots_match_v2": true,
+  "pass": true,
+  "seconds": 8.242745399475098,
+  "sources": {
+    "sym3_semantics.py": "9afd4b746f30f0999bd608e4bf3dd93f45e684ccd77194a09a5a2a840e9cc6f7",
+    "sym3_evaluator.py": "7263866e6063256335bd1eaa335604f82db53348eb5e3d5ceedbedf523e51934",
+    "d_make_data.py": "06eab979e197b2e5519e0ea05629cc649cae0111a37baa1bfe86b79aa52ba75c",
+    "d_audit.py": "873e77219c95616495a07eb80c488baabd01db3faf1327518fc5de544a8b19fc",
+    "lib3.py": "12ee7bdc6c43ad85e2c4fb22473399804702f21f5ff89f2a2acb916181a505fd"
+  }
+}

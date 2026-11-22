@@ -1,0 +1,12 @@
+72342 p0_diag cpu
+72342 p0_diag failed (S1b shards included in X1 glob)
+72343 p0_diag retry
+72344 d_make_data cpu
+72345 d_audit cpu
+72349 selftest cpu
+72345 d_audit failed: confirm3 texts duplicated v1 texts (templates without names)
+72350 d_make_data rerun (dedupe vs all history texts)
+72351 d_audit rerun
+72352 p0_diag rerun (X2 classification by parsed month)
+72349 selftest failed (N7 plane angle 1.07 deg with W=40); 72353 selftest rerun W=96
+72354 selftest rerun (adds ideal_R equivalence check)

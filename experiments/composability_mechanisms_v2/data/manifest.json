@@ -1,0 +1,227 @@
+{
+  "seed": 2026112320,
+  "seed_rule": "random.Random(seed + index in V1_DOMAINS + S1B)",
+  "counts": {
+    "weekday": {
+      "confirm3": 160,
+      "historical_texts_excluded": 5992
+    },
+    "month": {
+      "confirm3": 160,
+      "historical_texts_excluded": 10296
+    },
+    "compass": {
+      "confirm3": 160,
+      "historical_texts_excluded": 3520
+    },
+    "egoside": {
+      "confirm3": 160,
+      "historical_texts_excluded": 3492
+    },
+    "daysago": {
+      "confirm3": 160,
+      "historical_texts_excluded": 6872
+    },
+    "pron3": {
+      "confirm3": 160,
+      "dev": 32,
+      "train": 96,
+      "historical_texts_excluded": 1728
+    },
+    "name3": {
+      "confirm3": 160,
+      "dev": 32,
+      "train": 96,
+      "historical_texts_excluded": 1728
+    },
+    "bind3": {
+      "confirm3": 160,
+      "dev": 32,
+      "train": 96,
+      "historical_texts_excluded": 1728
+    },
+    "bind3fix": {
+      "confirm3": 160,
+      "dev": 32,
+      "train": 96,
+      "historical_texts_excluded": 0
+    }
+  },
+  "bind3fix_people": [
+    "Alice",
+    "Bob",
+    "Carol"
+  ],
+  "bind3fix_seed": 2026112310,
+  "maps": {
+    "weekday": {
+      "scrmax": [
+        0,
+        1,
+        6,
+        5,
+        2,
+        3,
+        4
+      ],
+      "skip2": [
+        0,
+        2,
+        4,
+        6,
+        1,
+        3,
+        5
+      ]
+    },
+    "month": {
+      "scrmax": [
+        0,
+        5,
+        6,
+        8,
+        9,
+        2,
+        3,
+        1,
+        7,
+        4,
+        10,
+        11
+      ]
+    },
+    "compass": {
+      "scrmax": [
+        0,
+        3,
+        1,
+        2
+      ]
+    }
+  },
+  "core_key": "(people, object, color, quantity, status); bind3fix additionally unique (object, color, quantity) within domain",
+  "history_files": {
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": {
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": {
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/worlds.jsonl": {
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/worlds.jsonl": {
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "worlds": 152
+    },
+    "experiments/canonical_confirmation_v1/data/person_eval.jsonl": {
+      "sha256": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+      "worlds": 80
+    },
+    "experiments/canonical_confirmation_v1/data/person_train.jsonl": {
+      "sha256": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+      "worlds": 96
+    },
+    "experiments/canonical_confirmation_v1/data/time_eval.jsonl": {
+      "sha256": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_confirm.jsonl": {
+      "sha256": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_dev.jsonl": {
+      "sha256": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+      "worlds": 80
+    },
+    "experiments/manifold_controls_v1/data/time_confirm.jsonl": {
+      "sha256": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+      "worlds": 160
+    },
+    "experiments/operator_residual_v2/train_worlds.jsonl": {
+      "sha256": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+      "worlds": 96
+    },
+    "experiments/operator_residual_v2/eval_worlds.jsonl": {
+      "sha256": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+      "worlds": 80
+    },
+    "experiments/symmetry_composability_v1/data/weekday/worlds.jsonl": {
+      "sha256": "e21014549bb47bad07dbc2b87c34ea2b3a70e41ed53415d8471f36f2e71aed97",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/month/worlds.jsonl": {
+      "sha256": "c51be787afc165df0920b714883b098e4a05077d41783914c35d4393a9cd6d98",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/compass/worlds.jsonl": {
+      "sha256": "0d56e456c5f3b6cd328d847023e593499b1bc848f5b070004086706c6b3ff5aa",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/egoside/worlds.jsonl": {
+      "sha256": "6c9ce7997fe00db7db4e6f54f5fa158d94916471a1efcc6422c9e163f1820bfe",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/daysago/worlds.jsonl": {
+      "sha256": "c5a4565b3c659e62bfb4e8c9e85225714bf44442a296c64022a6f131facc2fa7",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/bind3/worlds.jsonl": {
+      "sha256": "ae8ca5b644faa8f033f3c9b588cdd91a1ca73b50c0e873981b9581da22ec041f",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/compass/worlds.jsonl": {
+      "sha256": "f8594c4841aabd73520da5352a6e5c0563904d153c2da6336c9b5f5b0a474e4f",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/daysago/worlds.jsonl": {
+      "sha256": "b6f69f66c7f7a1b17634d0b265a2ff9b4c45f7f04e67b8b625779b24e78ef3db",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/egoside/worlds.jsonl": {
+      "sha256": "1a047d1ba37895e25ae5af707aacbd51d9dd76aee4308522bffe5eff824c009b",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/month/worlds.jsonl": {
+      "sha256": "d3e8cac24e13191d2298b82181369de96daa5c13627c9234c40db8960ae099a5",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/name3/worlds.jsonl": {
+      "sha256": "66132e61f63840417e1d54c5325e25d3c59aa9c9e3c1c9f94a0abf4e0a0c701c",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/pron3/worlds.jsonl": {
+      "sha256": "29b9b2945fcacc909aa44f3346710f5decfce5e3c7d41805ad2e35abbfee02a9",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/weekday/worlds.jsonl": {
+      "sha256": "c8540cb26a1137c0bcc06069245e1e23e23cf2bffd805f6e3c9503097b893511",
+      "worlds": 160
+    }
+  },
+  "history_keys": 4429,
+  "files": {
+    "weekday/worlds.jsonl": "eeb6a07fbc7a40926b974ae19ffa11198d287e8648afd022433a30c800323770",
+    "weekday/renders.jsonl": "a375c587dbd6f139cee1ffca8c749b057f6dfbf8eaca2d85068b30ff1eec5172",
+    "month/worlds.jsonl": "c01c7bf32554f56161534582fe85bff05b37124de91eafb7ba653315f5bedac5",
+    "month/renders.jsonl": "5a903cf572b03cca34748a61289927666089e0b9ac58bc0ab1bdc78ea2d577d2",
+    "compass/worlds.jsonl": "040df318613a574ddfbd25ea156a1a80a5ebbe4725281027eb65e79ce11a926f",
+    "compass/renders.jsonl": "618593a07512419f6056e21d5929c1d0259c0dcfec6c0f07ccf58e30c53243d4",
+    "egoside/worlds.jsonl": "df057e8fcd1e4b82e055447b4191b53147a148378f17c1f7d0a5118e4f2f4c38",
+    "egoside/renders.jsonl": "948cebf0b1784fa142625d986e6dea9af298ff4d68b1278b38501f95d3476dbd",
+    "daysago/worlds.jsonl": "29eea2b0b274034f938e1a6bf7e237c2a8e03060016aa8ec8ce4763b0ff8382b",
+    "daysago/renders.jsonl": "22e8b917fefb148d131684d7e75dc02ca4e63b2f245793207b41924d6a7f8f70",
+    "pron3/worlds.jsonl": "48d4961e5dcf4d4ad9dc42eb40f90f817d504ee570a93da48f726e71cdaff72d",
+    "pron3/renders.jsonl": "a77605e2d641c68cb94cd6cff32e2e8629b96eff3a227babb8a010db78bc726b",
+    "name3/worlds.jsonl": "745ba509d5a54263897d4f925aa0c7199dc8743d61743d06b9d72af70ae1505d",
+    "name3/renders.jsonl": "eba03ab0a8172e2f0610e195815415b0e3822418f2ceefee38208bad156e0f53",
+    "bind3/worlds.jsonl": "d492ddad7aa1e815c6aac4253cb220637ce93279bbdc9db3738ee88b273f4874",
+    "bind3/renders.jsonl": "91e4d73f80966f9b9d22e638c3c85540d66763efc8c8df86aa2603cf2286a991",
+    "bind3fix/worlds.jsonl": "335ae713214703c71adce66fc3039a50c39bc1eaa75ba6ff08b182ff891f235f",
+    "bind3fix/renders.jsonl": "9daf03fe28cc2f8f4091396aec1047a93e4980e23dfae1b6b6ff749716d0c062"
+  },
+  "seconds": 0.5948841571807861
+}
