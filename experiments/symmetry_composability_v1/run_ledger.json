@@ -225,7 +225,37 @@
       "node": "node01",
       "start": "2026-11-22T22:08:47",
       "end": "2026-11-22T22:10:04"
+    },
+    {
+      "unit": "E2",
+      "lane": "B",
+      "job_id": "72289",
+      "name": "symcomp-e2_visibility",
+      "state": "COMPLETED",
+      "elapsed_s": 52,
+      "gpus": 1,
+      "gpu_hours": 0.014444444444444444,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:09:08",
+      "end": "2026-11-22T22:10:00"
+    },
+    {
+      "unit": "E2",
+      "lane": "cpu",
+      "job_id": "72291",
+      "name": "symcomp-e2_analyze",
+      "state": "COMPLETED",
+      "elapsed_s": 5,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T22:11:08",
+      "end": "2026-11-22T22:11:13"
     }
   ],
-  "total_gpu_hours": 0.14055555555555554
+  "total_gpu_hours": 0.155
 }
