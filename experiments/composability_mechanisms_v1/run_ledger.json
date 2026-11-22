@@ -60,7 +60,52 @@
       "node": "node01",
       "start": "2026-11-22T23:07:08",
       "end": "2026-11-22T23:07:30"
+    },
+    {
+      "unit": "D",
+      "lane": "A",
+      "job_id": "72307",
+      "name": "compmech-d_encode",
+      "state": "COMPLETED",
+      "elapsed_s": 33,
+      "gpus": 1,
+      "gpu_hours": 0.009166666666666667,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:07:42",
+      "end": "2026-11-22T23:08:15"
+    },
+    {
+      "unit": "S1a",
+      "lane": "cpu",
+      "job_id": "72308",
+      "name": "compmech-s1_select",
+      "state": "COMPLETED",
+      "elapsed_s": 50,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:07:42",
+      "end": "2026-11-22T23:08:32"
+    },
+    {
+      "unit": "S1b",
+      "lane": "cpu",
+      "job_id": "72309",
+      "name": "compmech-s1b_geometry",
+      "state": "COMPLETED",
+      "elapsed_s": 13,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-22T23:08:15",
+      "end": "2026-11-22T23:08:28"
     }
   ],
-  "total_gpu_hours": 0
+  "total_gpu_hours": 0.009166666666666667
 }
