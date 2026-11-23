@@ -42,3 +42,20 @@
 72594 smoke t5 FAILED: started 5 s after the analyze.py edit and imported the stale file (NFS attribute cache; traceback line numbers are of the old file); rerun unchanged
 72595 smoke t5 B (rerun)
 72602 lock cpu
+72603 encode_c4 bart A
+72604 g40 bart A
+72605 v_chains bart A
+72606 r_chains bart A
+72607 u_train A
+72608 u_eval A
+72609 x_train A
+72610 x_eval A
+72611 encode_c4 t5 B
+72612 g40 t5 B
+72613 v_chains t5 B
+72614 r_chains t5 B
+72615 s_long B
+72644 analyze cpu (via analyze_svg.py wrapper; afterok x_eval 72610)
+72650 analyze cpu (rerun: 72644 read a shard mid-flush, NFS lag, started same second as x_eval ended on another node)
+72651 analyze cpu (rerun 2: rows() split on \n only, DEVIATIONS post-lock #2)
+72652 report_ci cpu (descriptive CIs, DEVIATIONS post-lock #3)

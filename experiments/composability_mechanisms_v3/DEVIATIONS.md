@@ -55,3 +55,18 @@
 8. **2026-11-23，weekday/month 的标定**："沿用 v3 的标定"按字面执行：λ 与平面文件取自 v3（平面逐元素相等由断言保证），派生类别在同一 dev 上用相同程序重算。v3 的 HS 条件集合不含 F{j} 的 minus 类别以外的新内容，因此不需要额外标定。
 
 9. **2026-11-23，P3 的重算方式**：在已解码的 v1/v2 分片上，重跑各自锁定的分析脚本（`p3_rerun.py`），只去掉重复 world 的记录，并删除"160 个 world"的断言；v1 confirm 几何量在剩余 world 上重算。不重新编码或解码。以下部分依赖 confirm 编码上的 GPU 计算，只保存了汇总量，因此没有重算，在 NOTE_DEDUPE 中注明：v1 的 P6（κ_N）；v2 的 M1–M4，以及 A4、A5（这两项只依赖拟合）。
+
+## 锁定后
+
+1. **2026-11-23，图的格式（§13）**。锁定的 `analyze.py` 只把图存成 `.png`，而 §13 要求 `figs/` 下有 `*.png` 和 `*.svg`。
+   - 做法：新增不在锁定清单里的包装脚本 `analyze_svg.py`。它原样调用 `analyze.main()`，只把 matplotlib 的 `Figure.savefig` 包一层：每存一张 `.png`，同时存一份同名 `.svg`。
+   - 影响：只多出 `.svg` 文件。预测、阈值、规则和锁定源文件都没有改动，`verify_protocol4()` 的 SHA 校验照常执行。
+
+2. **2026-11-23，JSONL 读取（作业 72644、72650 失败）**。
+   - 原因：锁定的 `symutil.rows` 用 `str.splitlines()` 切行。这个方法除了 `\n`，还会在 U+2028、U+2029、`\x85` 等字符处切开。分片由 `json.dumps(ensure_ascii=False)` 写出，这些字符在字符串里不会被转义。bind3 的 Att_s44 有一条退化的解码文本（world bind3_c4_0648，第 14 步，分片 `chain_bart_bind3_natural_Att_s44_plus_from_start_096.jsonl` 第 217 行）含有 U+2029，于是一条记录被切成两段，`json.loads` 报错。第一次失败曾误判为 NFS 延迟（72644 与 x_eval 结束在同一秒启动），重跑 72650 以同样错误失败，随后查明了原因。
+   - 做法：在 `analyze_svg.py` 里把所有模块中的 `rows` 换成只按 `\n` 切行的版本（这正是 JSONL 的定义），其余解析完全一样。全部 6250 个分片中只有这一个文件含这类字符。
+   - 影响：只影响读取。没有任何记录被修改，也没有改动锁定的源文件。
+
+3. **2026-11-23，报告用置信区间（描述性）**。§13 要求预测对照表的每个观测值都给 95% CI。锁定的 `analyze.py` 对 V2a/V2b（A 的差值）和 S1（R_10N 差值）只给点值，部分成功率也只输出了比例。
+   - 做法：新增不在锁定清单里的 `report_ci.py`，在同一批 confirm4 分片上计算：成功率的 Wilson 区间（`symutil.rate`）；V2a/V2b 按 world 计算 A(1) − A(⌊N/2⌋)（或反过来）的 A.7 cluster bootstrap 区间；S1 的配对 bootstrap 区间（2000 次，seed 3101）。输出写入 `results/report_ci.json`。
+   - 影响：只补充区间。所有判定仍以锁定的 `analyze.py` 输出（`results/predictions.json`）为准，没有任何判定被重算或改动。

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze_svg.py", line 22, in <module>
+    analyze.main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py", line 298, in main
+    require_slurm(); p = verify_protocol4(); t0 = time.time(); load_chains()
+                                                               ^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py", line 17, in load_chains
+    for r in rows(f): CH.setdefault((r['backbone'], r['domain'], r['map'], r['method'], r['path']), []).append(r)
+             ^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/symutil.py", line 33, in rows
+    def rows(p): return [json.loads(s) for s in Path(p).read_text().splitlines() if s.strip()]
+                         ^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 344 (char 343)
+srun: error: node02: task 0: Exited with exit code 1
