@@ -1,0 +1,17 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 5516.72it/s]
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py:637: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, loss=float(loss), grad=float(gn)))
+X train bind3fix Tok 42 4000 1.0
+X train bind3fix Tok 43 4000 1.0
+X train bind3fix Tok 44 4000 1.0
+X train bind3fix Att 42 4000 1.0
+X train bind3fix Att 43 4000 1.0
+X train bind3fix Att 44 4000 1.0
+X train name3 Tok 42 4000 1.0
+X train name3 Tok 43 4000 1.0
+X train name3 Tok 44 4000 1.0
+X train name3 Att 42 4000 1.0
+X train name3 Att 43 4000 1.0
+X train name3 Att 44 4000 1.0
+X status go
