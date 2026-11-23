@@ -1,0 +1,103 @@
+{
+  "A7_1_decoupled": {
+    "standard_leak_by_step": [
+      3.3306690738754696e-16,
+      0.1982084293839061,
+      0.0888496062739077
+    ],
+    "decoupled_err_by_step": [
+      2.220446049250313e-16,
+      2.220446049250313e-16,
+      2.445960101127298e-16
+    ],
+    "frozen_plane_err": [
+      1.9622498903327332e-16,
+      4.691216400951888e-16,
+      7.718740494130581e-16
+    ],
+    "pass_": true
+  },
+  "A7_2_predictor": {
+    "agreement": 1.0,
+    "pass_": true
+  },
+  "A7_3_parse": {
+    "n": 33480,
+    "failures": {},
+    "pass_": true
+  },
+  "A7_4_att2": {
+    "Tok": {
+      "heldout_rel_l2": 0.6546918066448015,
+      "final_train_loss": 0.6599321365356445
+    },
+    "Att2": {
+      "heldout_rel_l2": 0.0025994977612615023,
+      "final_train_loss": 0.0019281601998955011
+    },
+    "pass_": true
+  },
+  "A7_5_unrolled_identity": {
+    "single": 7.1061906814575195,
+    "unrolled_S1": 7.1061906814575195,
+    "hand_S2": 16.857635498046875,
+    "unrolled_S2": 16.857635498046875,
+    "pass_": true
+  },
+  "A7_6_D_bootstrap": {
+    "table": {
+      "w0": {
+        "pred": true,
+        "obs": true,
+        "naive": true,
+        "D1": false
+      },
+      "w1": {
+        "pred": false,
+        "obs": true,
+        "naive": true,
+        "D1": false
+      },
+      "w2": {
+        "pred": false,
+        "obs": false,
+        "naive": false,
+        "D1": true
+      },
+      "w3": {
+        "pred": true,
+        "obs": false,
+        "naive": true,
+        "D1": false
+      }
+    },
+    "summary": {
+      "n": 4,
+      "pred_rate": 0.5,
+      "obs_rate": 0.5,
+      "pred_cat": "partial",
+      "obs_cat": "partial",
+      "cat_match": true,
+      "naive_rate": 0.75,
+      "world_agree": 0.5,
+      "D": 0.25,
+      "D_n": 4
+    },
+    "pooled": {
+      "records": 4,
+      "latent": 0.5,
+      "naive": 0.75,
+      "majority_reference": 0.5
+    },
+    "pass_": true
+  },
+  "pass": true,
+  "seconds": 20.361020803451538,
+  "sources": {
+    "lib5.py": "22a8c4e2a5c54814fc79247fe908af302aa522dad86a0b0c3e79d0a5d5ef8a0e",
+    "lcore.py": "ac03691c9130d41c526a8fb2379888b14399e3dd6d3093f85d094c2142bbbd2f",
+    "selftest.py": "3847a34587d1679da2a22f5c3dc88901b9ae1cfd4fe41f7a55efe3460d6bf26e",
+    "sym5_semantics.py": "2488b0410a29427a9558384d62e466643b983a1bfcf05bb8c9508aae6d2cdd23",
+    "sym5_evaluator.py": "86d767a7220d3883a5d88c5beec00bbadac03d25c48d241a72d73da6a060d1ed"
+  }
+}

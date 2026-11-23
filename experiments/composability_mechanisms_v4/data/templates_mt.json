@@ -1,0 +1,784 @@
+{
+  "rules": "PLAN appendix B; skeletons x domain slot phrase (d_make_data.py)",
+  "phrase": {
+    "weekday-mt": {
+      "AT": "on {X}",
+      "ATC": "On {X}",
+      "BARE": "{X}"
+    },
+    "month-mt": {
+      "AT": "in {X}",
+      "ATC": "In {X}",
+      "BARE": "{X}"
+    },
+    "hour-mt": {
+      "AT": "at {X}",
+      "ATC": "At {X}",
+      "BARE": "{X}"
+    }
+  },
+  "templates": {
+    "weekday-mt": [
+      {
+        "id": 0,
+        "skeleton": 0,
+        "structure": "declarative",
+        "text": "On {X}, the {o} event begins downtown.",
+        "has_Y": false
+      },
+      {
+        "id": 1,
+        "skeleton": 1,
+        "structure": "declarative",
+        "text": "The {o} event finally begins on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 2,
+        "skeleton": 2,
+        "structure": "declarative",
+        "text": "The {color} {o} arrives on {X}, not on {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 3,
+        "skeleton": 3,
+        "structure": "declarative",
+        "text": "We will open the {o} on {X} and close the shop early.",
+        "has_Y": false
+      },
+      {
+        "id": 4,
+        "skeleton": 4,
+        "structure": "declarative",
+        "text": "On {X}, {a} checks the {o} carefully.",
+        "has_Y": false
+      },
+      {
+        "id": 5,
+        "skeleton": 5,
+        "structure": "declarative",
+        "text": "The workshop on the {o} now starts on {X} instead of on {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 6,
+        "skeleton": 6,
+        "structure": "declarative",
+        "text": "There are {q} copies of the {o} ready on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 7,
+        "skeleton": 7,
+        "structure": "declarative",
+        "text": "The {o} sale was expected on {Y} but now happens on {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 8,
+        "skeleton": 8,
+        "structure": "reported",
+        "text": "{a} said that the {o} event starts on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 9,
+        "skeleton": 9,
+        "structure": "reported",
+        "text": "{a} said that on {X}, the {o} will be {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 10,
+        "skeleton": 10,
+        "structure": "reported",
+        "text": "On {X}, {a} said that the {color} {o} was missing.",
+        "has_Y": false
+      },
+      {
+        "id": 11,
+        "skeleton": 11,
+        "structure": "reported",
+        "text": "{a} said that the {o} moved from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 12,
+        "skeleton": 12,
+        "structure": "reported",
+        "text": "{a} said that the {q} tickets for the {o} are valid on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 13,
+        "skeleton": 13,
+        "structure": "reported",
+        "text": "{a} said that the {o} is {st} on {X}, not on {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 14,
+        "skeleton": 14,
+        "structure": "reported",
+        "text": "{a} said that on {X} the {o} costs {q} dollars.",
+        "has_Y": false
+      },
+      {
+        "id": 15,
+        "skeleton": 15,
+        "structure": "relative",
+        "text": "The {o} that {a} ordered arrives on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 16,
+        "skeleton": 16,
+        "structure": "relative",
+        "text": "The {o}, which was {st}, returns on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 17,
+        "skeleton": 17,
+        "structure": "relative",
+        "text": "On {X}, the {o} that was {color} is shown again.",
+        "has_Y": false
+      },
+      {
+        "id": 18,
+        "skeleton": 18,
+        "structure": "relative",
+        "text": "The person who found the {o} on {Y} returns it on {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 19,
+        "skeleton": 19,
+        "structure": "relative",
+        "text": "The {o} that we saw on {Y} is back on {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 20,
+        "skeleton": 20,
+        "structure": "relative",
+        "text": "The class which uses the {o} meets on {X} rather than on {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 21,
+        "skeleton": 21,
+        "structure": "relative",
+        "text": "On {X}, the {o} which {a} fixed is ready.",
+        "has_Y": false
+      },
+      {
+        "id": 22,
+        "skeleton": 22,
+        "structure": "passive",
+        "text": "The {o} is delivered on {X} by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 23,
+        "skeleton": 23,
+        "structure": "passive",
+        "text": "On {X}, the {o} was repaired by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 24,
+        "skeleton": 24,
+        "structure": "passive",
+        "text": "The {color} {o} will be collected on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 25,
+        "skeleton": 25,
+        "structure": "passive",
+        "text": "The {o} was moved by {a} from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 26,
+        "skeleton": 26,
+        "structure": "passive",
+        "text": "On {X}, {q} boxes were sent with the {o}.",
+        "has_Y": false
+      },
+      {
+        "id": 27,
+        "skeleton": 27,
+        "structure": "passive",
+        "text": "The {o} is checked on {X}, and it was approved on {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 28,
+        "skeleton": 28,
+        "structure": "passive",
+        "text": "On {X}, the {o} is cleaned and then marked {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 29,
+        "skeleton": 29,
+        "structure": "enumeration",
+        "text": "On {X}, bring the {o}, the {color} pen, and {q} cups.",
+        "has_Y": false
+      },
+      {
+        "id": 30,
+        "skeleton": 30,
+        "structure": "enumeration",
+        "text": "We need the {o}, a map, and a pencil on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 31,
+        "skeleton": 31,
+        "structure": "enumeration",
+        "text": "The list has the {o}, the {color} bag, and the report due on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 32,
+        "skeleton": 32,
+        "structure": "enumeration",
+        "text": "On {X} or on {Y}, pack the {o}, the tape, and the labels.",
+        "has_Y": true
+      },
+      {
+        "id": 33,
+        "skeleton": 33,
+        "structure": "enumeration",
+        "text": "{a} packed the {o}, {q} pens, and a note on {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 34,
+        "skeleton": 34,
+        "structure": "enumeration",
+        "text": "For the trip on {X}, take the {o}, water, and a hat.",
+        "has_Y": false
+      },
+      {
+        "id": 35,
+        "skeleton": 35,
+        "structure": "enumeration",
+        "text": "Check the {o}, the {color} lid, and the label on {X}, then again on {Y}.",
+        "has_Y": true
+      }
+    ],
+    "month-mt": [
+      {
+        "id": 0,
+        "skeleton": 0,
+        "structure": "declarative",
+        "text": "In {X}, the {o} event begins downtown.",
+        "has_Y": false
+      },
+      {
+        "id": 1,
+        "skeleton": 1,
+        "structure": "declarative",
+        "text": "The {o} event finally begins in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 2,
+        "skeleton": 2,
+        "structure": "declarative",
+        "text": "The {color} {o} arrives in {X}, not in {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 3,
+        "skeleton": 3,
+        "structure": "declarative",
+        "text": "We will open the {o} in {X} and close the shop early.",
+        "has_Y": false
+      },
+      {
+        "id": 4,
+        "skeleton": 4,
+        "structure": "declarative",
+        "text": "In {X}, {a} checks the {o} carefully.",
+        "has_Y": false
+      },
+      {
+        "id": 5,
+        "skeleton": 5,
+        "structure": "declarative",
+        "text": "The workshop on the {o} now starts in {X} instead of in {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 6,
+        "skeleton": 6,
+        "structure": "declarative",
+        "text": "There are {q} copies of the {o} ready in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 7,
+        "skeleton": 7,
+        "structure": "declarative",
+        "text": "The {o} sale was expected in {Y} but now happens in {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 8,
+        "skeleton": 8,
+        "structure": "reported",
+        "text": "{a} said that the {o} event starts in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 9,
+        "skeleton": 9,
+        "structure": "reported",
+        "text": "{a} said that in {X}, the {o} will be {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 10,
+        "skeleton": 10,
+        "structure": "reported",
+        "text": "In {X}, {a} said that the {color} {o} was missing.",
+        "has_Y": false
+      },
+      {
+        "id": 11,
+        "skeleton": 11,
+        "structure": "reported",
+        "text": "{a} said that the {o} moved from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 12,
+        "skeleton": 12,
+        "structure": "reported",
+        "text": "{a} said that the {q} tickets for the {o} are valid in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 13,
+        "skeleton": 13,
+        "structure": "reported",
+        "text": "{a} said that the {o} is {st} in {X}, not in {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 14,
+        "skeleton": 14,
+        "structure": "reported",
+        "text": "{a} said that in {X} the {o} costs {q} dollars.",
+        "has_Y": false
+      },
+      {
+        "id": 15,
+        "skeleton": 15,
+        "structure": "relative",
+        "text": "The {o} that {a} ordered arrives in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 16,
+        "skeleton": 16,
+        "structure": "relative",
+        "text": "The {o}, which was {st}, returns in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 17,
+        "skeleton": 17,
+        "structure": "relative",
+        "text": "In {X}, the {o} that was {color} is shown again.",
+        "has_Y": false
+      },
+      {
+        "id": 18,
+        "skeleton": 18,
+        "structure": "relative",
+        "text": "The person who found the {o} in {Y} returns it in {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 19,
+        "skeleton": 19,
+        "structure": "relative",
+        "text": "The {o} that we saw in {Y} is back in {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 20,
+        "skeleton": 20,
+        "structure": "relative",
+        "text": "The class which uses the {o} meets in {X} rather than in {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 21,
+        "skeleton": 21,
+        "structure": "relative",
+        "text": "In {X}, the {o} which {a} fixed is ready.",
+        "has_Y": false
+      },
+      {
+        "id": 22,
+        "skeleton": 22,
+        "structure": "passive",
+        "text": "The {o} is delivered in {X} by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 23,
+        "skeleton": 23,
+        "structure": "passive",
+        "text": "In {X}, the {o} was repaired by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 24,
+        "skeleton": 24,
+        "structure": "passive",
+        "text": "The {color} {o} will be collected in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 25,
+        "skeleton": 25,
+        "structure": "passive",
+        "text": "The {o} was moved by {a} from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 26,
+        "skeleton": 26,
+        "structure": "passive",
+        "text": "In {X}, {q} boxes were sent with the {o}.",
+        "has_Y": false
+      },
+      {
+        "id": 27,
+        "skeleton": 27,
+        "structure": "passive",
+        "text": "The {o} is checked in {X}, and it was approved in {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 28,
+        "skeleton": 28,
+        "structure": "passive",
+        "text": "In {X}, the {o} is cleaned and then marked {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 29,
+        "skeleton": 29,
+        "structure": "enumeration",
+        "text": "In {X}, bring the {o}, the {color} pen, and {q} cups.",
+        "has_Y": false
+      },
+      {
+        "id": 30,
+        "skeleton": 30,
+        "structure": "enumeration",
+        "text": "We need the {o}, a map, and a pencil in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 31,
+        "skeleton": 31,
+        "structure": "enumeration",
+        "text": "The list has the {o}, the {color} bag, and the report due in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 32,
+        "skeleton": 32,
+        "structure": "enumeration",
+        "text": "In {X} or in {Y}, pack the {o}, the tape, and the labels.",
+        "has_Y": true
+      },
+      {
+        "id": 33,
+        "skeleton": 33,
+        "structure": "enumeration",
+        "text": "{a} packed the {o}, {q} pens, and a note in {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 34,
+        "skeleton": 34,
+        "structure": "enumeration",
+        "text": "For the trip in {X}, take the {o}, water, and a hat.",
+        "has_Y": false
+      },
+      {
+        "id": 35,
+        "skeleton": 35,
+        "structure": "enumeration",
+        "text": "Check the {o}, the {color} lid, and the label in {X}, then again in {Y}.",
+        "has_Y": true
+      }
+    ],
+    "hour-mt": [
+      {
+        "id": 0,
+        "skeleton": 0,
+        "structure": "declarative",
+        "text": "At {X}, the {o} event begins downtown.",
+        "has_Y": false
+      },
+      {
+        "id": 1,
+        "skeleton": 1,
+        "structure": "declarative",
+        "text": "The {o} event finally begins at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 2,
+        "skeleton": 2,
+        "structure": "declarative",
+        "text": "The {color} {o} arrives at {X}, not at {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 3,
+        "skeleton": 3,
+        "structure": "declarative",
+        "text": "We will open the {o} at {X} and close the shop early.",
+        "has_Y": false
+      },
+      {
+        "id": 4,
+        "skeleton": 4,
+        "structure": "declarative",
+        "text": "At {X}, {a} checks the {o} carefully.",
+        "has_Y": false
+      },
+      {
+        "id": 5,
+        "skeleton": 5,
+        "structure": "declarative",
+        "text": "The workshop on the {o} now starts at {X} instead of at {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 6,
+        "skeleton": 6,
+        "structure": "declarative",
+        "text": "There are {q} copies of the {o} ready at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 7,
+        "skeleton": 7,
+        "structure": "declarative",
+        "text": "The {o} sale was expected at {Y} but now happens at {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 8,
+        "skeleton": 8,
+        "structure": "reported",
+        "text": "{a} said that the {o} event starts at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 9,
+        "skeleton": 9,
+        "structure": "reported",
+        "text": "{a} said that at {X}, the {o} will be {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 10,
+        "skeleton": 10,
+        "structure": "reported",
+        "text": "At {X}, {a} said that the {color} {o} was missing.",
+        "has_Y": false
+      },
+      {
+        "id": 11,
+        "skeleton": 11,
+        "structure": "reported",
+        "text": "{a} said that the {o} moved from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 12,
+        "skeleton": 12,
+        "structure": "reported",
+        "text": "{a} said that the {q} tickets for the {o} are valid at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 13,
+        "skeleton": 13,
+        "structure": "reported",
+        "text": "{a} said that the {o} is {st} at {X}, not at {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 14,
+        "skeleton": 14,
+        "structure": "reported",
+        "text": "{a} said that at {X} the {o} costs {q} dollars.",
+        "has_Y": false
+      },
+      {
+        "id": 15,
+        "skeleton": 15,
+        "structure": "relative",
+        "text": "The {o} that {a} ordered arrives at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 16,
+        "skeleton": 16,
+        "structure": "relative",
+        "text": "The {o}, which was {st}, returns at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 17,
+        "skeleton": 17,
+        "structure": "relative",
+        "text": "At {X}, the {o} that was {color} is shown again.",
+        "has_Y": false
+      },
+      {
+        "id": 18,
+        "skeleton": 18,
+        "structure": "relative",
+        "text": "The person who found the {o} at {Y} returns it at {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 19,
+        "skeleton": 19,
+        "structure": "relative",
+        "text": "The {o} that we saw at {Y} is back at {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 20,
+        "skeleton": 20,
+        "structure": "relative",
+        "text": "The class which uses the {o} meets at {X} rather than at {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 21,
+        "skeleton": 21,
+        "structure": "relative",
+        "text": "At {X}, the {o} which {a} fixed is ready.",
+        "has_Y": false
+      },
+      {
+        "id": 22,
+        "skeleton": 22,
+        "structure": "passive",
+        "text": "The {o} is delivered at {X} by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 23,
+        "skeleton": 23,
+        "structure": "passive",
+        "text": "At {X}, the {o} was repaired by {a}.",
+        "has_Y": false
+      },
+      {
+        "id": 24,
+        "skeleton": 24,
+        "structure": "passive",
+        "text": "The {color} {o} will be collected at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 25,
+        "skeleton": 25,
+        "structure": "passive",
+        "text": "The {o} was moved by {a} from {Y} to {X}.",
+        "has_Y": true
+      },
+      {
+        "id": 26,
+        "skeleton": 26,
+        "structure": "passive",
+        "text": "At {X}, {q} boxes were sent with the {o}.",
+        "has_Y": false
+      },
+      {
+        "id": 27,
+        "skeleton": 27,
+        "structure": "passive",
+        "text": "The {o} is checked at {X}, and it was approved at {Y}.",
+        "has_Y": true
+      },
+      {
+        "id": 28,
+        "skeleton": 28,
+        "structure": "passive",
+        "text": "At {X}, the {o} is cleaned and then marked {st}.",
+        "has_Y": false
+      },
+      {
+        "id": 29,
+        "skeleton": 29,
+        "structure": "enumeration",
+        "text": "At {X}, bring the {o}, the {color} pen, and {q} cups.",
+        "has_Y": false
+      },
+      {
+        "id": 30,
+        "skeleton": 30,
+        "structure": "enumeration",
+        "text": "We need the {o}, a map, and a pencil at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 31,
+        "skeleton": 31,
+        "structure": "enumeration",
+        "text": "The list has the {o}, the {color} bag, and the report due at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 32,
+        "skeleton": 32,
+        "structure": "enumeration",
+        "text": "At {X} or at {Y}, pack the {o}, the tape, and the labels.",
+        "has_Y": true
+      },
+      {
+        "id": 33,
+        "skeleton": 33,
+        "structure": "enumeration",
+        "text": "{a} packed the {o}, {q} pens, and a note at {X}.",
+        "has_Y": false
+      },
+      {
+        "id": 34,
+        "skeleton": 34,
+        "structure": "enumeration",
+        "text": "For the trip at {X}, take the {o}, water, and a hat.",
+        "has_Y": false
+      },
+      {
+        "id": 35,
+        "skeleton": 35,
+        "structure": "enumeration",
+        "text": "Check the {o}, the {color} lid, and the label at {X}, then again at {Y}.",
+        "has_Y": true
+      }
+    ]
+  }
+}

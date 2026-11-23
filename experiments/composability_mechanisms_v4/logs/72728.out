@@ -1,0 +1,17 @@
+A7_1_decoupled {'standard_leak_by_step': [3.3306690738754696e-16, 0.1982084293839061, 0.0888496062739077], 'decoupled_err_by_step': [2.220446049250313e-16, 2.220446049250313e-16, 2.445960101127298e-16], 'frozen_plane_err': [1.9622498903327332e-16, 4.691216400951888e-16, 7.718740494130581e-16], 'pass_': True}
+A7_2_predictor {'agreement': 1.0, 'pass_': True}
+A7_3_parse {'n': 33480, 'failures': {}, 'pass_': True}
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/lib5.py:969: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, path=pk, S=S_, loss=float(loss), grad=float(gn)))
+A7_4_att2 {'Tok': {'heldout_rel_l2': 0.6546918066448015, 'final_train_loss': 0.6599321365356445}, 'Att2': {'heldout_rel_l2': 0.0025994977612615023, 'final_train_loss': 0.0019281601998955011}, 'pass_': True}
+A7_5_unrolled_identity {'single': 7.1061906814575195, 'unrolled_S1': 7.1061906814575195, 'pass_': True}
+A7_6_D_bootstrap {'pooled': {'records': 4, 'latent': 0.5, 'naive': 0.75, 'majority_reference': 0.5}, 'pass_': False}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/selftest.py", line 141, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/selftest.py", line 136, in main
+    dump('results/selftest.json', res); assert res['pass'], 'self-test failed'
+                                               ~~~^^^^^^^^
+AssertionError: self-test failed
+srun: error: node02: task 0: Exited with exit code 1

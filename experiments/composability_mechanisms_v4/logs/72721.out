@@ -1,0 +1,21 @@
+weekday {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 7, 'slot_t5': 22, 't0_slot_matches_v4': True, 'pass': True}
+month {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 7, 'slot_t5': 22, 't0_slot_matches_v4': True, 'pass': True}
+compass {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 11, 'slot_t5': 27, 't0_slot_matches_v4': True, 'pass': True}
+hour {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 6, 'slot_t5': 21, 't0_slot_matches_v4': True, 'pass': True}
+compass8 {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 11, 'slot_t5': 27, 't0_slot_matches_v4': True, 'pass': True}
+season {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 7, 'slot_t5': 22, 't0_slot_matches_v4': True, 'pass': True}
+bind3 {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 't0_slot_matches_v4': None, 'pass': True}
+name3 {'worlds': 160, 'fresh': 160, 'reused_from_v4_confirm4': 0, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 't0_slot_matches_v4': None, 'pass': True}
+bind3fix {'worlds': 71, 'fresh': 0, 'reused_from_v4_confirm4': 71, 'failures': {}, 'duplicate_texts': 0, 'history_key_overlap': 0, 'history_text_hits_fresh': 0, 't5_over_cap': 0, 'slot_bart': 'per-world', 'slot_t5': 'per-world', 't0_slot_matches_v4': None, 'pass': True}
+template rules {'weekday-mt': (True, 11, 15, [], []), 'month-mt': (True, 11, 15, [], []), 'hour-mt': (False, 15, 9, [], [])}
+weekday-mt {'worlds': {'train': 192, 'dev': 48, 'confirm5': 160}, 'failures': {}, 'history_key_overlap': 0, 'history_text_hits': 0, 'distractor_ne_start': True, 't5_max_len': 40, 't5_over_cap': 0, 'GT_fail': {'bart': {8: {}, 9: {}, 11: {}, 12: {}, 13: {}, 14: {}, 33: {}}, 't5': {}}, 'pass': True}
+month-mt {'worlds': {'train': 192, 'dev': 48, 'confirm5': 160}, 'failures': {}, 'history_key_overlap': 0, 'history_text_hits': 0, 'distractor_ne_start': True, 't5_max_len': 40, 't5_over_cap': 0, 'GT_fail': {'bart': {8: {}, 9: {}, 11: {}, 12: {}, 13: {}, 14: {}, 33: {}}, 't5': {}}, 'pass': True}
+hour-mt {'worlds': {'train': 192, 'dev': 48, 'confirm5': 160}, 'failures': {}, 'history_key_overlap': 0, 'history_text_hits': 0, 'distractor_ne_start': True, 't5_max_len': 46, 't5_over_cap': 0, 'GT_fail': {'bart': {8: {}, 9: {}, 11: {}, 12: {}, 13: {}, 14: {}, 33: {}}, 't5': {}}, 'pass': True}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/d_audit.py", line 154, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/d_audit.py", line 150, in main
+    assert res['pass'], 'D audit failed'
+           ~~~^^^^^^^^
+AssertionError: D audit failed
+srun: error: node02: task 0: Exited with exit code 1

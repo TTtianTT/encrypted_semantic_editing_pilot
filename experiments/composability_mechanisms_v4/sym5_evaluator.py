@@ -122,3 +122,63 @@ def parse_state(text, domain, people=None):
         w = hits[0]
     if w not in vocab: return None, w
     return (_DAYS[w] if domain == 'daysago' else vocab.index(w)), w
+
+
+# ---------------------------------------------------------------- v5 multi-template domains (PLAN appendix A.6)
+import json as _json
+from functools import lru_cache as _lru
+from pathlib import Path as _Path
+
+_MT = ('weekday-mt', 'month-mt', 'hour-mt')
+_MT_WORDS = {'weekday-mt': 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday'.split(),
+             'month-mt': 'January February March April May June July August September October November December'.split(),
+             'hour-mt': 'one two three four five six seven eight nine ten eleven twelve'.split()}
+
+
+@_lru(None)
+def _mt_templates():
+    return _json.loads((_Path(__file__).resolve().parent / 'data/templates_mt.json').read_text())['templates']
+
+
+def ws_norm(text):
+    """A.6: strip leading/trailing whitespace and collapse runs of whitespace to one space (case-sensitive)."""
+    return re.sub(r'\s+', ' ', text.strip())
+
+
+@_lru(None)
+def _mt_regex(domain, template_id, fields_key):
+    sent = '\x00SLOT\x00'; f = dict(fields_key, X=sent)
+    filled = ws_norm(_mt_templates()[domain][template_id]['text'].format(**f))
+    return re.compile(re.escape(filled).replace(re.escape(sent), '(?P<x>' + '|'.join(_MT_WORDS[domain]) + ')'))
+
+
+def mt_score(text, gold, ended=True):
+    """Success: whitespace-normalised exact match with the gold text (case-sensitive) and the output ended."""
+    exact = ws_norm(text) == ws_norm(gold['text'])
+    st = mt_parse_state(text, gold['domain'], gold['template_id'], gold['fields'])[0]
+    target = st == gold['state']
+    return dict(success=bool(ended and exact), target=bool(target), preserved=st is not None, scope=bool(exact),
+                parseable=st is not None, grammar=bool(exact), ended=bool(ended))
+
+
+def mt_parse_state(text, domain, template_id, fields):
+    """A.6: the template's regex (non-slot parts filled with this world's values, escaped; slot = disjunction of the domain's state
+    words); full match on the whitespace-normalised text -> (state index, word), else (None, None)."""
+    key = tuple(sorted((k, v) for k, v in fields.items() if k != 'X'))
+    m = _mt_regex(domain, template_id, key).fullmatch(ws_norm(text))
+    if not m: return None, None
+    return _MT_WORDS[domain].index(m['x']), m['x']
+
+
+_score_v4, _parse_state_v4 = score, parse_state
+
+
+def score(text, gold, world, ended=True):
+    if gold['domain'] in _MT: return mt_score(text, gold, ended)
+    return _score_v4(text, gold, world, ended)
+
+
+def parse_state(text, domain, people=None, gold=None):
+    """v4 parser; multi-template domains need the world's gold (template_id and fields)."""
+    if domain in _MT: return mt_parse_state(text, domain, gold['template_id'], gold['fields'])
+    return _parse_state_v4(text, domain, people)
