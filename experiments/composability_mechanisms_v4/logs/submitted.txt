@@ -1,2 +1,33 @@
 72714 p_posthoc cpu (P1)
 72715 p_posthoc cpu (P1 rerun: definitions incl. F_empty pooling, hour V3 cells, per-step readout)
+72718 p_coupling cpu (P0 manifest + P2)
+72719 d_make_data cpu
+72720 d_make_data cpu (rerun: multi-template within-batch dedupe relaxed; 72719 cancelled, unsatisfiable)
+72721 d_audit cpu
+72722 selftest cpu (afterok 72721)
+72723 gates_mt bart A (afterok 72721)
+72724 gates_mt t5 B (afterok 72721)
+72726 d_make_data cpu (rerun: hour slot phrase, rule 4)
+72727 d_audit cpu (afterok 72726)
+72728 selftest cpu
+72729 gates_mt bart A
+72730 gates_mt t5 B
+72731 d_assign cpu (afterok 72729 72730)
+72732 selftest cpu (rerun: fixed A.7.6 expected value; A.7.5 now tests unrolled_l2_loss)
+72733 enc A (afterok 72731)
+72734 gates A (afterok 72733)
+72735 calib A (afterok 72734)
+72736 trainL A (afterok 72735)
+72737 trainN A (afterok 72736)
+72738 trainB A (afterok 72737)
+72739 sim A (afterok 72738)
+72740 smoke A (afterok 72739)
+72741 simdev A (afterok 72740)
+72742 enc B (afterok 72731)
+72743 gates B (afterok 72742)
+72744 calib B (afterok 72743)
+72745 trainL B (afterok 72744)
+72746 trainN B (afterok 72745)
+72747 sim B (afterok 72746)
+72748 smoke B (afterok 72747)
+72749 simdev B (afterok 72748)

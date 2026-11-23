@@ -1,0 +1,540 @@
+{
+  "operators": {
+    "bart/weekday": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.0018856265065742906,
+        "plus/2": 0.1501174302589188,
+        "plus/3": 0.17755584153141046,
+        "minus/1": 0.0018315978670700574,
+        "minus/2": 0.14126575681929238,
+        "minus/3": 0.16154042763484927
+      }
+    },
+    "bart/month": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.0024723757386975035,
+        "plus/2": 0.06315764505767323,
+        "plus/3": 0.10457275778670379,
+        "plus/4": 0.22069565737977423,
+        "plus/5": 0.3961253935897258,
+        "plus/6": 0.3778759901600845,
+        "minus/1": 0.0020869522911943937,
+        "minus/2": 0.06829096738514796,
+        "minus/3": 0.11631068961066461,
+        "minus/4": 0.21220627343032006,
+        "minus/5": 0.4013207842223638,
+        "minus/6": 0.3538866414292154
+      }
+    },
+    "bart/hour": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.019219379753745987,
+        "plus/2": 0.24654657649285025,
+        "plus/3": 0.38820375524176676,
+        "plus/4": 0.315025152295324,
+        "plus/5": 0.6375129300046429,
+        "plus/6": 0.4969309657157711,
+        "minus/1": 0.0300607161966363,
+        "minus/2": 0.23202881798550262,
+        "minus/3": 0.3621002184475302,
+        "minus/4": 0.286318045372406,
+        "minus/5": 0.5451500763674091,
+        "minus/6": 0.46293869515152614
+      }
+    },
+    "bart/compass8": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.007264229737468637,
+        "plus/2": 0.11410113376046195,
+        "plus/3": 0.08639142952375935,
+        "plus/4": 0.19474969342919307,
+        "minus/1": 0.007503002448901289,
+        "minus/2": 0.11551269747674883,
+        "minus/3": 0.08417505246577224,
+        "minus/4": 0.21788605523799734
+      }
+    },
+    "bart/season": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.006588340117034238,
+        "plus/2": 0.23538054366229652,
+        "minus/1": 0.006479363353686334,
+        "minus/2": 0.2098515633198007
+      }
+    },
+    "t5/weekday": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.016855164705292473,
+        "plus/2": 0.1467236232067734,
+        "plus/3": 0.23563291587805488,
+        "minus/1": 0.016559327301249756,
+        "minus/2": 0.16172622111863022,
+        "minus/3": 0.25050715390603046
+      }
+    },
+    "t5/month": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.03764674484201961,
+        "plus/2": 0.11097016150924832,
+        "plus/3": 0.15964498051160828,
+        "plus/4": 0.1707306149658179,
+        "plus/5": 0.29231594239770686,
+        "plus/6": 0.42086078237658603,
+        "minus/1": 0.037188403688747367,
+        "minus/2": 0.11271838811595243,
+        "minus/3": 0.1601675693557666,
+        "minus/4": 0.17317351768331535,
+        "minus/5": 0.3018187505797271,
+        "minus/6": 0.39599459377707613
+      }
+    },
+    "t5/hour": {
+      "rank": 32,
+      "leak": {
+        "plus/1": 0.06390543349563053,
+        "plus/2": 0.2886226851904425,
+        "plus/3": 0.24168717039634993,
+        "plus/4": 0.3173935392520116,
+        "plus/5": 0.4397233782171311,
+        "plus/6": 0.26669616312021927,
+        "minus/1": 0.06564137623873516,
+        "minus/2": 0.29017096083583765,
+        "minus/3": 0.2615743192597764,
+        "minus/4": 0.35706526891404805,
+        "minus/5": 0.38769913949303314,
+        "minus/6": 0.3199301747502916
+      }
+    },
+    "t5/compass8": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.07739599309206907,
+        "plus/2": 0.10814828851034039,
+        "plus/3": 0.4613260714957115,
+        "plus/4": 0.06226578554510683,
+        "minus/1": 0.08314350393750039,
+        "minus/2": 0.09397228804682409,
+        "minus/3": 0.46999258862075266,
+        "minus/4": 0.06000831186569553
+      }
+    },
+    "t5/season": {
+      "rank": 16,
+      "leak": {
+        "plus/1": 0.031079579651533632,
+        "plus/2": 0.15665249558732114,
+        "minus/1": 0.03191280013899619,
+        "minus/2": 0.12817680306615933
+      }
+    }
+  },
+  "pairs": [
+    {
+      "backbone": "bart",
+      "domain": "weekday",
+      "plane": 1,
+      "leak_plus": 0.0018856265065742906,
+      "leak_minus": 0.0018315978670700574,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "weekday",
+      "plane": 2,
+      "leak_plus": 0.1501174302589188,
+      "leak_minus": 0.14126575681929238,
+      "harm_plus": 0.85,
+      "harm_minus": 0.90625
+    },
+    {
+      "backbone": "bart",
+      "domain": "weekday",
+      "plane": 3,
+      "leak_plus": 0.17755584153141046,
+      "leak_minus": 0.16154042763484927,
+      "harm_plus": 0.8625,
+      "harm_minus": 0.7
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 1,
+      "leak_plus": 0.0024723757386975035,
+      "leak_minus": 0.0020869522911943937,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 2,
+      "leak_plus": 0.06315764505767323,
+      "leak_minus": 0.06829096738514796,
+      "harm_plus": 0.0,
+      "harm_minus": 0.012499999999999956
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 3,
+      "leak_plus": 0.10457275778670379,
+      "leak_minus": 0.11631068961066461,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 4,
+      "leak_plus": 0.22069565737977423,
+      "leak_minus": 0.21220627343032006,
+      "harm_plus": 0.41874999999999996,
+      "harm_minus": 0.44999999999999996
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 5,
+      "leak_plus": 0.3961253935897258,
+      "leak_minus": 0.4013207842223638,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "month",
+      "plane": 6,
+      "leak_plus": 0.3778759901600845,
+      "leak_minus": 0.3538866414292154,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 1,
+      "leak_plus": 0.019219379753745987,
+      "leak_minus": 0.0300607161966363,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 2,
+      "leak_plus": 0.24654657649285025,
+      "leak_minus": 0.23202881798550262,
+      "harm_plus": 0.8,
+      "harm_minus": 0.3375
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 3,
+      "leak_plus": 0.38820375524176676,
+      "leak_minus": 0.3621002184475302,
+      "harm_plus": 0.65,
+      "harm_minus": 0.48750000000000004
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 4,
+      "leak_plus": 0.315025152295324,
+      "leak_minus": 0.286318045372406,
+      "harm_plus": 0.81875,
+      "harm_minus": 0.21875
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 5,
+      "leak_plus": 0.6375129300046429,
+      "leak_minus": 0.5451500763674091,
+      "harm_plus": 0.925,
+      "harm_minus": 0.475
+    },
+    {
+      "backbone": "bart",
+      "domain": "hour",
+      "plane": 6,
+      "leak_plus": 0.4969309657157711,
+      "leak_minus": 0.46293869515152614,
+      "harm_plus": 0.26875000000000004,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "compass8",
+      "plane": 1,
+      "leak_plus": 0.007264229737468637,
+      "leak_minus": 0.007503002448901289,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "compass8",
+      "plane": 2,
+      "leak_plus": 0.11410113376046195,
+      "leak_minus": 0.11551269747674883,
+      "harm_plus": 0.9875,
+      "harm_minus": 0.90625
+    },
+    {
+      "backbone": "bart",
+      "domain": "compass8",
+      "plane": 3,
+      "leak_plus": 0.08639142952375935,
+      "leak_minus": 0.08417505246577224,
+      "harm_plus": 0.0,
+      "harm_minus": 0.06874999999999998
+    },
+    {
+      "backbone": "bart",
+      "domain": "compass8",
+      "plane": 4,
+      "leak_plus": 0.19474969342919307,
+      "leak_minus": 0.21788605523799734,
+      "harm_plus": 0.65,
+      "harm_minus": 0.625
+    },
+    {
+      "backbone": "bart",
+      "domain": "season",
+      "plane": 1,
+      "leak_plus": 0.006588340117034238,
+      "leak_minus": 0.006479363353686334,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "bart",
+      "domain": "season",
+      "plane": 2,
+      "leak_plus": 0.23538054366229652,
+      "leak_minus": 0.2098515633198007,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "weekday",
+      "plane": 1,
+      "leak_plus": 0.016855164705292473,
+      "leak_minus": 0.016559327301249756,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "weekday",
+      "plane": 2,
+      "leak_plus": 0.1467236232067734,
+      "leak_minus": 0.16172622111863022,
+      "harm_plus": 0.68125,
+      "harm_minus": 0.73125
+    },
+    {
+      "backbone": "t5",
+      "domain": "weekday",
+      "plane": 3,
+      "leak_plus": 0.23563291587805488,
+      "leak_minus": 0.25050715390603046,
+      "harm_plus": 0.65,
+      "harm_minus": 0.6625
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 1,
+      "leak_plus": 0.03764674484201961,
+      "leak_minus": 0.037188403688747367,
+      "harm_plus": 1.0,
+      "harm_minus": 0.96875
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 2,
+      "leak_plus": 0.11097016150924832,
+      "leak_minus": 0.11271838811595243,
+      "harm_plus": 0.03125,
+      "harm_minus": 0.0625
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 3,
+      "leak_plus": 0.15964498051160828,
+      "leak_minus": 0.1601675693557666,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 4,
+      "leak_plus": 0.1707306149658179,
+      "leak_minus": 0.17317351768331535,
+      "harm_plus": 0.17500000000000004,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 5,
+      "leak_plus": 0.29231594239770686,
+      "leak_minus": 0.3018187505797271,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "month",
+      "plane": 6,
+      "leak_plus": 0.42086078237658603,
+      "leak_minus": 0.39599459377707613,
+      "harm_plus": 0.0,
+      "harm_minus": 0.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 1,
+      "leak_plus": 0.06390543349563053,
+      "leak_minus": 0.06564137623873516,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 2,
+      "leak_plus": 0.2886226851904425,
+      "leak_minus": 0.29017096083583765,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 3,
+      "leak_plus": 0.24168717039634993,
+      "leak_minus": 0.2615743192597764,
+      "harm_plus": 0.9,
+      "harm_minus": 0.95
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 4,
+      "leak_plus": 0.3173935392520116,
+      "leak_minus": 0.35706526891404805,
+      "harm_plus": 0.66875,
+      "harm_minus": 0.8
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 5,
+      "leak_plus": 0.4397233782171311,
+      "leak_minus": 0.38769913949303314,
+      "harm_plus": 0.5375,
+      "harm_minus": 0.98125
+    },
+    {
+      "backbone": "t5",
+      "domain": "hour",
+      "plane": 6,
+      "leak_plus": 0.26669616312021927,
+      "leak_minus": 0.3199301747502916,
+      "harm_plus": 0.38125,
+      "harm_minus": 0.9375
+    },
+    {
+      "backbone": "t5",
+      "domain": "compass8",
+      "plane": 1,
+      "leak_plus": 0.07739599309206907,
+      "leak_minus": 0.08314350393750039,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "compass8",
+      "plane": 2,
+      "leak_plus": 0.10814828851034039,
+      "leak_minus": 0.09397228804682409,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "compass8",
+      "plane": 3,
+      "leak_plus": 0.4613260714957115,
+      "leak_minus": 0.46999258862075266,
+      "harm_plus": 0.0,
+      "harm_minus": 0.29374999999999996
+    },
+    {
+      "backbone": "t5",
+      "domain": "compass8",
+      "plane": 4,
+      "leak_plus": 0.06226578554510683,
+      "leak_minus": 0.06000831186569553,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "season",
+      "plane": 1,
+      "leak_plus": 0.031079579651533632,
+      "leak_minus": 0.03191280013899619,
+      "harm_plus": 1.0,
+      "harm_minus": 1.0
+    },
+    {
+      "backbone": "t5",
+      "domain": "season",
+      "plane": 2,
+      "leak_plus": 0.15665249558732114,
+      "leak_minus": 0.12817680306615933,
+      "harm_plus": 1.0,
+      "harm_minus": 0.93125
+    }
+  ],
+  "spearman": {
+    "all": {
+      "n": 42,
+      "plus": -0.4938821813467304,
+      "minus": -0.5723199092456042
+    },
+    "j>=2": {
+      "n": 32,
+      "plus": -0.11253665689149558,
+      "minus": -0.20491202346041054
+    },
+    "bart": {
+      "n": 21,
+      "plus": -0.4246753246753247,
+      "minus": -0.5844155844155844
+    },
+    "t5": {
+      "n": 21,
+      "plus": -0.6428571428571428,
+      "minus": -0.525974025974026
+    }
+  }
+}
