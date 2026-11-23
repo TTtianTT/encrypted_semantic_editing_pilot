@@ -1,0 +1,132 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:   1%|          | 6/732 [00:00<00:12, 58.78it/s]Loading weights:  17%|█▋        | 127/732 [00:00<00:00, 728.73it/s]Loading weights:  32%|███▏      | 232/732 [00:00<00:00, 864.60it/s]Loading weights:  44%|████▎     | 319/732 [00:00<00:01, 386.66it/s]Loading weights:  52%|█████▏    | 380/732 [00:00<00:00, 398.63it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 819.54it/s]
+V t5 weekday F_empty
+V t5 weekday F_{1}
+V t5 weekday F_not1
+V t5 weekday F_{2}
+V t5 weekday F_{3}
+V t5 month F_empty
+V t5 month F_{1}
+V t5 month F_not1
+V t5 month F_{2}
+V t5 month F_{3}
+V t5 month F_{4}
+V t5 month F_{5}
+V t5 month F_{6}
+V t5 hour F_empty
+V t5 hour F_{1}
+V t5 hour F_not1
+V t5 hour F_{2}
+V t5 hour F_{3}
+V t5 hour F_{4}
+V t5 hour F_{5}
+V t5 hour F_{6}
+V t5 compass8 F_empty
+V t5 compass8 F_{1}
+V t5 compass8 F_not1
+V t5 compass8 F_{2}
+V t5 compass8 F_{3}
+V t5 compass8 F_{4}
+V t5 season F_empty
+V t5 season F_{1}
+V t5 season F_not1
+R t5 weekday RRR 5
+R t5 weekday RRR 6
+R t5 weekday RRR 7
+R t5 weekday RRR 9
+R t5 weekday FF 5
+R t5 weekday FF 6
+R t5 weekday FF 7
+R t5 weekday FF 9
+S weekday natural
+S weekday scrmax
+S month natural
+S month scrmax
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py:253: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  axs[i][0].set_ylabel('vote share (locked λ, dev distances)'); axs[i][0].legend(fontsize=6)
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py:277: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  axs[0].legend(fontsize=7); fig.tight_layout(); fig.savefig(ROOT / 'figs/u_Rt.png', dpi=140); plt.close(fig)
+{
+ "g40": {
+  "base": {
+   "weekday": 1.0,
+   "month": 1.0,
+   "hour": 1.0,
+   "compass8": 1.0,
+   "season": 1.0
+  },
+  "C1": {},
+  "V_post": [
+   "weekday",
+   "month",
+   "hour",
+   "compass8",
+   "season"
+  ],
+  "pass_": true
+ },
+ "V_domains": [
+  "weekday",
+  "month",
+  "hour",
+  "compass8",
+  "season"
+ ],
+ "R_domains": [
+  "weekday"
+ ],
+ "tables_rows": 1806,
+ "V": {
+  "Q9": {
+   "verdict": "mixed",
+   "V3_beats_both_or_not_evaluable": false,
+   "V4": [
+    "not evaluable",
+    "H-ms holds"
+   ]
+  },
+  "V1": "H-ms",
+  "V2a": "H-ms",
+  "V2b": "mixed",
+  "V3": {
+   "vs_fund": "no winner",
+   "vs_flat": "no winner"
+  },
+  "V4": {
+   "bart": "not evaluable",
+   "t5": "H-ms holds"
+  },
+  "V0": false
+ },
+ "R": {
+  "verdict": "not evaluable (locked: fewer than 3 scorable cells)",
+  "cells": 16
+ },
+ "S": {
+  "verdict": "not decidable (no evaluable domain)",
+  "evaluable": []
+ },
+ "figures": [
+  "r_rank.png",
+  "u_Rt.png",
+  "v_curves_bart.png",
+  "v_curves_t5.png",
+  "v_vote_share.png",
+  "x_Rk.png"
+ ],
+ "pass": true,
+ "seconds": 1685.1800055503845,
+ "resources": {
+  "model": "t5gemma",
+  "dimension": 2304,
+  "backbone_parameters": 5596853760,
+  "parameters_per_operator": 76032,
+  "total_editor_parameters": 152064,
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "visible_devices": "0",
+  "allocated_gpu_count": 1,
+  "peak_allocated_bytes": 12029237248,
+  "wall_seconds": 1670.9731874339632,
+  "job_id": "72595",
+  "step_id": "0"
+ }
+}
