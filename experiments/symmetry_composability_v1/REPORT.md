@@ -1,5 +1,7 @@
 # symmetry_composability_v1 报告
 
+> 去重说明：confirm world 与历史渲染文本的重叠检查及去重后的重算见 [`NOTE_DEDUPE.md`](NOTE_DEDUPE.md)（全部判定不变）。
+
 分支 `experiment/symmetry-composability-v1`。E0、E2 是探索性结果；E1 是前瞻预注册检验，协议锁定于提交 `b9419d4`（`protocol.json` SHA256 `34d02202…`），锁定前没有任何 confirm world 的编码或解码（`e1_lock.py` 断言）。
 
 ## 1. 结论
