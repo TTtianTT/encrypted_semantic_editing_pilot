@@ -1,0 +1,116 @@
+{
+ "summary": {
+  "n_cells_nonempty": 150,
+  "cat_latent": 131,
+  "cat_ideal": 92,
+  "per_backbone_all180": {
+   "bart": {
+    "records": 14400,
+    "latent": 0.9327777777777778,
+    "naive": 0.7063194444444445,
+    "majority_reference": 0.8963888888888889,
+    "latent_minus_naive": {
+     "diff": 0.22645833333333332,
+     "ci95": [
+      0.21902598809230997,
+      0.2345577242689571
+     ],
+     "a": 0.9327777777777778,
+     "b": 0.7063194444444445
+    }
+   },
+   "t5": {
+    "records": 14400,
+    "latent": 0.934375,
+    "naive": 0.6532638888888889,
+    "majority_reference": 0.9054166666666666,
+    "latent_minus_naive": {
+     "diff": 0.2811111111111111,
+     "ci95": [
+      0.27089294176823353,
+      0.29148402262396356
+     ],
+     "a": 0.934375,
+     "b": 0.6532638888888889
+    }
+   }
+  },
+  "per_backbone_nonempty150": {
+   "bart": {
+    "records": 12000,
+    "latent": 0.9193333333333333,
+    "naive": 0.6475833333333333,
+    "majority_reference": 0.8756666666666667,
+    "latent_minus_naive": {
+     "diff": 0.27175000000000005,
+     "ci95": [
+      0.2628864939330131,
+      0.281198326402465
+     ],
+     "a": 0.9193333333333333,
+     "b": 0.6475833333333333
+    }
+   },
+   "t5": {
+    "records": 12000,
+    "latent": 0.9229166666666667,
+    "naive": 0.5855833333333333,
+    "majority_reference": 0.8881666666666667,
+    "latent_minus_naive": {
+     "diff": 0.3373333333333334,
+     "ci95": [
+      0.32534100757685186,
+      0.3494546324986866
+     ],
+     "a": 0.9229166666666667,
+     "b": 0.5855833333333333
+    }
+   }
+  },
+  "hour_v3cells": {
+   "cells": 20,
+   "ideal_wrong": 19
+  },
+  "hour_all": {
+   "cells": 42,
+   "ideal_wrong": 31
+  },
+  "hour_step_readout": {
+   "bart": {
+    "nonempty": 0.9413501743241064,
+    "incl_empty": 0.9486848247337625
+   },
+   "t5": {
+    "nonempty": 0.9116170737479293,
+    "incl_empty": 0.9227040510658693
+   }
+  },
+  "hour_world_agree": {
+   "bart": 0.8986979166666667,
+   "t5": 0.8549479166666667
+  }
+ },
+ "check": {
+  "cells": true,
+  "cat_latent": true,
+  "cat_ideal": true,
+  "world": {
+   "bart": true,
+   "t5": true
+  },
+  "naive": {
+   "bart": true,
+   "t5": true
+  },
+  "majority": {
+   "bart": true,
+   "t5": true
+  },
+  "hour_ideal": true,
+  "hour_readout": {
+   "bart": true,
+   "t5": true
+  }
+ },
+ "reproduced": true
+}

@@ -1,0 +1,73 @@
+{
+ "summary": {
+  "n_cells": 150,
+  "cat_latent": 131,
+  "cat_ideal": 92,
+  "per_backbone": {
+   "bart": {
+    "records": 12000,
+    "latent": 0.9193333333333333,
+    "naive": 0.6475833333333333,
+    "majority_reference": 0.8756666666666667,
+    "latent_minus_naive": {
+     "diff": 0.27175000000000005,
+     "ci95": [
+      0.2628864939330131,
+      0.281198326402465
+     ],
+     "a": 0.9193333333333333,
+     "b": 0.6475833333333333
+    }
+   },
+   "t5": {
+    "records": 12000,
+    "latent": 0.9229166666666667,
+    "naive": 0.5855833333333333,
+    "majority_reference": 0.8881666666666667,
+    "latent_minus_naive": {
+     "diff": 0.3373333333333334,
+     "ci95": [
+      0.32534100757685186,
+      0.3494546324986866
+     ],
+     "a": 0.9229166666666667,
+     "b": 0.5855833333333333
+    }
+   }
+  },
+  "hour": {
+   "bart": {
+    "cells": 21,
+    "ideal_wrong": 16,
+    "world_agree": 0.8842261904761904
+   },
+   "t5": {
+    "cells": 21,
+    "ideal_wrong": 15,
+    "world_agree": 0.8351190476190476
+   }
+  },
+  "hour_both": {
+   "cells": 42,
+   "ideal_wrong": 31
+  }
+ },
+ "check": {
+  "cells": true,
+  "cat_latent": true,
+  "cat_ideal": true,
+  "world": {
+   "bart": false,
+   "t5": false
+  },
+  "naive": {
+   "bart": false,
+   "t5": false
+  },
+  "majority": {
+   "bart": false,
+   "t5": false
+  }
+ },
+ "reproduced": false
+}
