@@ -1,0 +1,31 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 3887.69it/s]
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v4/lib5.py:976: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, path=pk, S=S_, loss=float(loss), grad=float(gn)))
+B train Tok name3 42 4000 1.0
+B train Tok name3 43 4000 1.0
+B train Tok name3 44 4000 1.0
+B train Att1 name3 42 4000 1.0
+B train Att1 name3 43 4000 1.0
+B train Att1 name3 44 4000 1.0
+B train Att2 name3 42 4000 1.0
+B train Att2 name3 43 4000 1.0
+B train Att2 name3 44 4000 1.0
+B train Tok bind3fix 42 4000 1.0
+B train Tok bind3fix 43 4000 1.0
+B train Tok bind3fix 44 4000 1.0
+B train Att1 bind3fix 42 4000 1.0
+B train Att1 bind3fix 43 4000 1.0
+B train Att1 bind3fix 44 4000 1.0
+B train Att2 bind3fix 42 4000 1.0
+B train Att2 bind3fix 43 4000 1.0
+B train Att2 bind3fix 44 4000 1.0
+B train Tok bind3 42 4000 0.1927
+B train Tok bind3 43 4000 0.2214
+B train Tok bind3 44 4000 0.2005
+B train Att1 bind3 42 4000 0.8854
+B train Att1 bind3 43 4000 0.9531
+B train Att1 bind3 44 4000 0.974
+B train Att2 bind3 42 4000 0.8021
+B train Att2 bind3 43 4000 0.8151
+B train Att2 bind3 44 4000 0.7839
