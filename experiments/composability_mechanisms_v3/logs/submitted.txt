@@ -1,0 +1,38 @@
+72552 d_make_data cpu
+72553 d_audit cpu (after 72552)
+72554 selftest cpu
+72555 p_diag cpu
+72553 d_audit FAILED: bind3fix confirm4 core-key overlap with history (4); generator fixed (status re-picked)
+72555 p_diag FAILED: slots() lacked egoside (v4 slot table); fallback to v3 table
+72556 d_make_data cpu (rerun)
+72557 d_audit cpu (after 72556)
+72558 p_diag cpu (after 72557)
+72559 p_c3 A
+72560 p_transplant bart A
+72561 p_dyn bart A
+72562 p_transplant t5 B
+72563 p_dyn t5 B
+72558 p_diag FAILED: egoside sigma_max table missing in sym4 MAPS (added from v2 protocol); P GPU jobs 72559-72563 cancelled (dependency failed)
+72564 p_diag cpu (rerun)
+72565 p_c3 A
+72566 p_transplant bart A
+72567 p_dyn bart A
+72568 p_transplant t5 B
+72569 p_dyn t5 B
+72570 encode_pre bart A
+72571 gates bart A
+72572 calib bart A
+72573 prelock_fits bart A
+72574 encode_pre t5 B
+72575 gates t5 B
+72576 calib t5 B
+72577 prelock_fits t5 B
+72564 p_diag FAILED: p3_rerun used mod._jsonable (underscore names not star-exported); fixed
+72578 p_diag cpu (rerun); 72565 and 72568 dependency updated to afterok:72578
+72578 p_diag FAILED: comparison extractor assumed rate dicts for v2 R2 (floats); fixed with a generic rounding helper
+72581 p_diag cpu (rerun); 72565 and 72568 dependency updated
+72582 d_audit cpu (rerun on final lib4/sym4)
+72583 selftest cpu (rerun on final lib4)
+72584 smoke bart A (after 72573)
+72585 smoke t5 B (after 72577)
+72587 p_diag cpu (rerun: dedupe table broken down by source)

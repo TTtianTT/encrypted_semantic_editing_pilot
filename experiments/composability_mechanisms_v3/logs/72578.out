@@ -1,0 +1,67 @@
+P0 {'n_files': 716, 'bytes': 6013780282, 'checks': {'bart_revision': True, 't5_revision': True, 't5_files_sha_match': True, 'bart_files_sha_match': True, 'required_present': True}}
+P4 {
+ "all": {
+  "n": 81,
+  "composable": 48,
+  "accuracy_all_planes": 0.7283950617283951,
+  "accuracy_k1_unit": 0.8765432098765432,
+  "auc_all_planes_binary": 0.7708333333333334,
+  "auc_k1_unit_binary": 0.853219696969697,
+  "auc_neg_max_eps": 0.672979797979798,
+  "auc_neg_eps1": 0.7512626262626263
+ },
+ "rrr": {
+  "n": 69,
+  "composable": 45,
+  "accuracy_all_planes": 0.7246376811594203,
+  "accuracy_k1_unit": 0.9855072463768116,
+  "auc_all_planes_binary": 0.7888888888888889,
+  "auc_k1_unit_binary": 0.9888888888888889,
+  "auc_neg_max_eps": 0.7287037037037037,
+  "auc_neg_eps1": 0.7916666666666666
+ },
+ "C3": {
+  "n": 12,
+  "composable": 3,
+  "accuracy_all_planes": 0.75,
+  "accuracy_k1_unit": 0.25,
+  "auc_all_planes_binary": 0.5,
+  "auc_k1_unit_binary": 0.5,
+  "auc_neg_max_eps": 0.0,
+  "auc_neg_eps1": 0.7777777777777778
+ },
+ "bart": {
+  "n": 56,
+  "composable": 31,
+  "accuracy_all_planes": 0.7321428571428571,
+  "accuracy_k1_unit": 0.8392857142857143,
+  "auc_all_planes_binary": 0.7580645161290323,
+  "auc_k1_unit_binary": 0.82,
+  "auc_neg_max_eps": 0.6374193548387097,
+  "auc_neg_eps1": 0.7625806451612903
+ },
+ "t5": {
+  "n": 25,
+  "composable": 17,
+  "accuracy_all_planes": 0.72,
+  "accuracy_k1_unit": 0.96,
+  "auc_all_planes_binary": 0.7941176470588235,
+  "auc_k1_unit_binary": 0.9705882352941176,
+  "auc_neg_max_eps": 0.7352941176470589,
+  "auc_neg_eps1": 0.7058823529411765
+ }
+}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 280, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 275, in main
+    res['P3'] = p3(); print('P3', {e: [(c['item'], c['verdict_changed']) for c in v['comparison']] for e, v in res['P3'].items()}, flush=True)
+                ^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 242, in p3
+    vo, vd = verdicts(orig, exp), verdicts(cap[key], exp)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 227, in verdicts
+    elif k == 'R2': num = {d: round(x['rate'], 4) for d, x in o.items()}
+                                    ~^^^^^^^^
+TypeError: 'float' object is not subscriptable
+srun: error: node02: task 0: Exited with exit code 1

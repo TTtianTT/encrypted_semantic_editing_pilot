@@ -1,0 +1,186 @@
+{
+  "N7": {
+    "max_principal_angle_deg": 0.6004671700209933,
+    "n_planes": [
+      3,
+      3
+    ],
+    "freeze_max_err": 1.3322676295501878e-15,
+    "plane_editor_max_err": 9.656433187574973e-07,
+    "omega_true": [
+      0.5714285714285714,
+      0.2857142857142857,
+      0.14285714285714285
+    ],
+    "omega_fit": [
+      0.5704819171939799,
+      0.2853036117065554,
+      0.14421447109946467
+    ],
+    "omega_max_abs_err": 0.0013573282423218203,
+    "ideal_chain_agreement": 1.0,
+    "ideal_R_vs_bruteforce_max_diff": 0.0,
+    "pass": true
+  },
+  "N12": {
+    "max_principal_angle_deg": 0.3454813343250787,
+    "n_planes": [
+      6,
+      6
+    ],
+    "freeze_max_err": 1.1102230246251565e-15,
+    "plane_editor_max_err": 6.980317537799962e-07,
+    "omega_true": [
+      0.4800000000000001,
+      0.24,
+      0.11999999999999998,
+      0.08,
+      0.048,
+      0.032
+    ],
+    "omega_fit": [
+      0.47868952106780716,
+      0.24010057916604297,
+      0.12076555562707973,
+      0.08255872028714552,
+      0.047989659858594456,
+      0.029895963993330155
+    ],
+    "omega_max_abs_err": 0.002558720287145516,
+    "ideal_chain_agreement": 0.9993248456790124,
+    "ideal_R_vs_bruteforce_max_diff": 0.0,
+    "pass": true
+  },
+  "N4": {
+    "max_principal_angle_deg": 0.5395824068808198,
+    "n_planes": [
+      2,
+      2
+    ],
+    "freeze_max_err": 1.4432899320127035e-15,
+    "plane_editor_max_err": 8.560087861313872e-07,
+    "omega_true": [
+      0.6666666666666666,
+      0.3333333333333333
+    ],
+    "omega_fit": [
+      0.6634652581879495,
+      0.33653474181205034
+    ],
+    "omega_max_abs_err": 0.0032014084787170827,
+    "ideal_chain_agreement": 1.0,
+    "ideal_R_vs_bruteforce_max_diff": 0.0,
+    "pass": true
+  },
+  "A8_1_eps": {
+    "N7": {
+      "max_recovery_err": 4.884981308350689e-15,
+      "frozen_plane": 3,
+      "frozen_eps": 1.949855824363647,
+      "frozen_eps_expected": 1.9498558243636475,
+      "pass_": true
+    },
+    "N12": {
+      "max_recovery_err": 2.4868995751603507e-14,
+      "frozen_plane": 6,
+      "frozen_eps": 1.9999999999999998,
+      "frozen_eps_expected": 2.0,
+      "pass_": true
+    },
+    "N8": {
+      "max_recovery_err": 2.220446049250313e-15,
+      "frozen_plane": 4,
+      "frozen_eps": 2.0,
+      "frozen_eps_expected": 2.0,
+      "pass_": true
+    },
+    "N4": {
+      "max_recovery_err": 1.3322676295501878e-15,
+      "frozen_plane": 2,
+      "frozen_eps": 2.0,
+      "frozen_eps_expected": 2.0,
+      "pass_": true
+    }
+  },
+  "A8_2_ff": {
+    "s_k": {
+      "1": 0.5176380902050415,
+      "2": 0.8800000000000002,
+      "3": 1.0748023074035524,
+      "4": 1.1085125168440815,
+      "5": 1.0045628593406313,
+      "6": 0.7999999999999999
+    },
+    "s1_smallest": true,
+    "eps1_rrr9": 2.0,
+    "eps1_ff9": 1.631586134863576e-07,
+    "eps_ff9": {
+      "1": 1.631586134863576e-07,
+      "2": 2.0000000000000093,
+      "3": 1.072705276061778e-06,
+      "4": 1.8249807269562785e-06,
+      "5": 2.894836584571672e-06,
+      "6": 2.878961707697414e-06
+    },
+    "ff11_equals_rrr11_maxdiff": 2.222610415159032e-08,
+    "pass_": true
+  },
+  "A8_3_unrolled": {
+    "max_loss_diff": 0.0,
+    "targets": {
+      "plus": [
+        6,
+        0,
+        1
+      ],
+      "minus": [
+        4,
+        3,
+        2
+      ],
+      "alt": [
+        6,
+        5,
+        6
+      ]
+    },
+    "pass_": true
+  },
+  "A8_4_attention": {
+    "Tok-L2": {
+      "heldout_rel_l2": 0.6541764837208882,
+      "final_train_loss": 0.6677940487861633
+    },
+    "Att-L2": {
+      "heldout_rel_l2": 0.0024793027430739666,
+      "final_train_loss": 0.002576129510998726
+    },
+    "pass_": true
+  },
+  "A8_5_scoring": {
+    "A": {
+      "0": 0.5,
+      "1": 1.0,
+      "2": 0.0
+    },
+    "disc": {
+      "cells": [
+        "b",
+        "c",
+        "e"
+      ],
+      "n": 3,
+      "match_H": 1.0,
+      "match_H2": 0.0,
+      "verdict": "H wins"
+    },
+    "boot_max_diff": 2.220446049250313e-16,
+    "pass_": true
+  },
+  "pass": true,
+  "seconds": 39.48088622093201,
+  "sources": {
+    "lib4.py": "dd9fa362be1dcbb08b33c219d7c114184e9694345ca774b8a5de882d4707ffe3",
+    "selftest.py": "b9f4ddcc9d8da10d519ea34676d21ffe84c415d8c65b547ee77a969291d7c02e"
+  }
+}

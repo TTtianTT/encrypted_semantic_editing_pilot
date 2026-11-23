@@ -1,0 +1,264 @@
+{
+  "domains": {
+    "weekday": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 45,
+      "t5_over_cap": 0,
+      "slot_bart": 7,
+      "slot_t5": 22,
+      "sample": "The box event is scheduled for Monday. Its status is cancelled. The box is white. There are 9 copies.",
+      "pass": true
+    },
+    "month": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 45,
+      "t5_over_cap": 0,
+      "slot_bart": 7,
+      "slot_t5": 22,
+      "sample": "The book event is scheduled for January. Its status is planned. The book is green. There are 4 copies.",
+      "pass": true
+    },
+    "compass": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {},
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 46,
+      "t5_over_cap": 0,
+      "slot_bart": 11,
+      "slot_t5": 27,
+      "sample": "In Emma's report, the parcel is on the north side. The parcel is black. There are 3 copies.",
+      "pass": true
+    },
+    "hour": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": 6,
+      "slot_t5": 21,
+      "sample": "The key event starts at one o'clock. Its status is completed. The key is blue. There are 4 copies.",
+      "pass": true
+    },
+    "compass8": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 46,
+      "t5_over_cap": 0,
+      "slot_bart": 11,
+      "slot_t5": 27,
+      "sample": "In Frank's report, the key is on the north side. The key is white. There are 2 copies.",
+      "pass": true
+    },
+    "season": {
+      "worlds": {
+        "train": 96,
+        "dev": 32,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160,
+        "dev": 32,
+        "train": 96
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 45,
+      "t5_over_cap": 0,
+      "slot_bart": 7,
+      "slot_t5": 22,
+      "sample": "The book event is held in spring. Its status is planned. The book is white. There are 5 copies.",
+      "pass": true
+    },
+    "bind3": {
+      "worlds": {
+        "train": 480,
+        "dev": 64,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160,
+        "dev": 64,
+        "train": 480
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Alice, Grace and Frank took part, and the parcel went to Alice. The parcel is white. There are 2 copies.",
+      "pass": true
+    },
+    "name3": {
+      "worlds": {
+        "train": 480,
+        "dev": 64,
+        "confirm4": 160
+      },
+      "new_worlds": {
+        "confirm4": 160,
+        "dev": 64,
+        "train": 480
+      },
+      "reused_worlds": 0,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Frank, Carol and Emma took part, and the book went to Daniel. The book is green. There are 7 copies.",
+      "pass": true
+    },
+    "bind3fix": {
+      "worlds": {
+        "train": 224,
+        "dev": 64,
+        "confirm4": 71
+      },
+      "new_worlds": {
+        "confirm4": 71,
+        "dev": 64,
+        "train": 224
+      },
+      "reused_worlds": 288,
+      "failures": {},
+      "duplicate_texts": 0,
+      "split_key_overlap": {
+        "confirm4&dev": 0,
+        "confirm4&train": 0,
+        "dev&train": 0,
+        "oqc:confirm4&dev": 0,
+        "oqc:confirm4&train": 0,
+        "oqc:dev&train": 0
+      },
+      "history_key_overlap": 0,
+      "history_text_hits_fresh_worlds": 0,
+      "confirm4_vs_reused_text_overlap": 0,
+      "t5_max_len": 47,
+      "t5_over_cap": 0,
+      "slot_bart": "per-world",
+      "slot_t5": "per-world",
+      "sample": "Alice, Bob and Carol took part, and the parcel went to Alice. The parcel is white. There are 2 copies.",
+      "pass": true
+    }
+  },
+  "cross_domain_duplicate_new_texts": 0,
+  "t0_slots_match_v3": {
+    "bart": true,
+    "t5": true
+  },
+  "pass": true,
+  "seconds": 11.357102870941162,
+  "sources": {
+    "sym4_semantics.py": "1fb078ed77027660025b83a5569fb63798747a5c3e756f2fd4e4ad38d2f0a6ce",
+    "sym4_evaluator.py": "0f2016873473e3e9fe987534b8e59713f7232eded9abcefa4d3a0db7c5e772d7",
+    "d_make_data.py": "29749dbc6be47c39dd103f3f1ed9f462cc629794e52dde047b1898a142a3644a",
+    "d_audit.py": "73abe7a5cf088e94bb86ff9b7e57d890dbd8af736abb06b75b03822d9e3b3b32",
+    "lib4.py": "dd9fa362be1dcbb08b33c219d7c114184e9694345ca774b8a5de882d4707ffe3"
+  }
+}

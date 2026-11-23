@@ -1,0 +1,24 @@
+P0 {'n_files': 716, 'bytes': 6013780282, 'checks': {'bart_revision': True, 't5_revision': True, 't5_files_sha_match': True, 'bart_files_sha_match': True, 'required_present': True}}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 280, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 274, in main
+    p1, p4 = p1_p4(); res['P1'] = p1; res['P4'] = p4; print('P4', json.dumps(p4['summary'], indent=1), flush=True)
+             ^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 127, in p1_p4
+    e = op_plane_errors(kind, obj, 'plus', bb, d, mp); N = len(S.states(d))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 461, in op_plane_errors
+    return plane_errors(U, V, planes(bb, d, mp), ideal_maps(bb, d, mp, op), N)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 436, in ideal_maps
+    return ideal_from_cbar(cbar_of(slot_matrix(bb, d, 'train'))[cycle_order(d, mp)], planes(bb, d, mp), op)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 91, in slot_matrix
+    pos = slots(bb, d, split); ar = torch.arange(len(pos))
+          ^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 85, in slots
+    sp = read(f)[bb][d]; ws = worlds4(d, split)
+         ~~~~~~~~~~~^^^
+KeyError: 'egoside'
+srun: error: node02: task 0: Exited with exit code 1

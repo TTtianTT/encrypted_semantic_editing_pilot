@@ -1,0 +1,27 @@
+P0 {'n_files': 716, 'bytes': 6013780282, 'checks': {'bart_revision': True, 't5_revision': True, 't5_files_sha_match': True, 'bart_files_sha_match': True, 'required_present': True}}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 280, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 274, in main
+    p1, p4 = p1_p4(); res['P1'] = p1; res['P4'] = p4; print('P4', json.dumps(p4['summary'], indent=1), flush=True)
+             ^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/p_diag.py", line 127, in p1_p4
+    e = op_plane_errors(kind, obj, 'plus', bb, d, mp); N = len(S.states(d))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 464, in op_plane_errors
+    return plane_errors(U, V, planes(bb, d, mp), ideal_maps(bb, d, mp, op), N)
+                              ^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 151, in planes
+    order = cycle_order(d, mp)
+            ^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 142, in cycle_order
+    while len(out) < len(st): out.append(S.advance(d, out[-1], 'plus', mp))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/sym4_semantics.py", line 37, in advance
+    return S3.advance(domain, current, operation, mapping)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v2/sym3_semantics.py", line 35, in advance
+    cyc = MAPS[domain][mapping]; i = cyc.index(current)
+          ~~~~^^^^^^^^
+KeyError: 'egoside'
+srun: error: node02: task 0: Exited with exit code 1
