@@ -1,0 +1,5753 @@
+{
+  "locked": true,
+  "created_utc": "2026-11-23T10:10:52Z",
+  "version": 1,
+  "plan": "PLAN.md (predictions, thresholds and rules copied below verbatim; PLAN text is authoritative)",
+  "backbones": {
+    "bart": "aadd2ab0ae0c8268c7c9693540e9904811f36177",
+    "t5gemma": "google/t5gemma-2b-2b-ul2-it@6a196a58ce2786cd139a1217a85d1f7b9984e330 (bf16)"
+  },
+  "maps": {
+    "weekday": {
+      "scrmax": [
+        0,
+        1,
+        6,
+        5,
+        2,
+        3,
+        4
+      ],
+      "skip2": [
+        0,
+        2,
+        4,
+        6,
+        1,
+        3,
+        5
+      ]
+    },
+    "month": {
+      "scrmax": [
+        0,
+        5,
+        6,
+        8,
+        9,
+        2,
+        3,
+        1,
+        7,
+        4,
+        10,
+        11
+      ]
+    },
+    "compass": {
+      "scrmax": [
+        0,
+        3,
+        1,
+        2
+      ]
+    },
+    "egoside": {
+      "scrmax": [
+        0,
+        1,
+        3,
+        2
+      ]
+    }
+  },
+  "bind3fix_people": [
+    "Alice",
+    "Bob",
+    "Carol"
+  ],
+  "data_seed": 2026112330,
+  "data_counts": {
+    "weekday": {
+      "train": 0,
+      "dev": 0,
+      "confirm4": 160
+    },
+    "month": {
+      "train": 0,
+      "dev": 0,
+      "confirm4": 160
+    },
+    "compass": {
+      "train": 0,
+      "dev": 0,
+      "confirm4": 160
+    },
+    "hour": {
+      "train": 96,
+      "dev": 32,
+      "confirm4": 160
+    },
+    "compass8": {
+      "train": 96,
+      "dev": 32,
+      "confirm4": 160
+    },
+    "season": {
+      "train": 96,
+      "dev": 32,
+      "confirm4": 160
+    },
+    "bind3": {
+      "train": 480,
+      "dev": 64,
+      "confirm4": 160
+    },
+    "name3": {
+      "train": 480,
+      "dev": 64,
+      "confirm4": 160
+    },
+    "bind3fix": {
+      "train": 224,
+      "dev": 64,
+      "confirm4": 71
+    }
+  },
+  "editor_seeds": [
+    42,
+    43,
+    44
+  ],
+  "world_seeds": {
+    "v4": "random.Random(seed + index in ALL) with seed 2026112330",
+    "v1_train_dev": "symmetry_composability_v1/data/manifest.json",
+    "v3_bind3fix_reuse": "composability_mechanisms_v2/data/manifest.json"
+  },
+  "predictions": {
+    "G4_0": "每个保留的（骨干，V 的域），基算子在 confirm4 上单向 R_2N ≥ 0.95；v1 的 C1 在 weekday、month、compass 上 R_2 ≤ 0.20。新域不通过，该域退出；旧域不通过，停止并排查管线。",
+    "V0": "新域，两个骨干：s_1 最小（全部新域）；a_1 在 N ≥ 7 的新域中最大。全部成立为通过。",
+    "V1": "F{1}：N ≥ 7 的域 × 两个骨干（至多 8 格）。H-ms：单向 plus R_2N ≤ 0.20，且交替 R_2N ≥ 0.80；H-fund：单向与交替都 ≤ 0.20；H-flat：单向与交替都 ≤ 0.20。除至多 1 格外都符合某一假设，即判为该假设。",
+    "V2a": "F{1} 的 plus：A(1) − A(⌊N/2⌋)（附录 A.1），同上 8 格。H-ms ≥ 0.50；H-fund ≤ 0.10（A(1) 约为 0）；H-flat ≤ 0.10（处处约为 0）。判定同 V1。",
+    "V2b": "F¬1 的 plus：A(⌊N/2⌋) − A(1)，同上 8 格。H-ms ≥ 0.25；H-fund ≤ 0.10（处处约为 1）；H-flat ≤ 0.10（处处约为 0）。判定同 V1。",
+    "V3": "单平面冻结 F{j}（j ≥ 2）的类别：plus 与 minus × 五个域 × 两个骨干。H-ms：锁定的派生类别；H-fund：\"可组合\"；H-flat：\"失败\"。按附录 A.6，H-ms 分别与 H-fund、H-flat 比较；每个比较至少 4 个可计分格子，否则不可评。",
+    "V4": "冲突条件（S 非空的 F_S）下逐 world、逐步的一致率（真实潜变量，只计可解析输出），每个骨干。H-ms：拟合 ≥ 0.85；拟合 − 等权的 95% CI 下界 > 0；拟合 − 只用基频的 CI 下界 > 0.10。H-fund：只用基频 ≥ 拟合。拟合 − 等权的 CI 含 0 时判为 H-equal。",
+    "Q9": "V1、V2a、V2b 都符合 H-ms，V3 胜过两个对手（或不可评），且 V4 在两个骨干上都成立：判为 H-ms。V1–V3 同上，但 V4 中拟合 − 等权的 CI 在至少一个骨干上含 0：判为 H-equal。V1、V2a、V2b 符合 H-fund 或 H-flat：判为相应假设。其他情况如实报告为混合。",
+    "R1": "可计分格子，plus：FF-r 的 R_2N，以及 ΔR = R_2N(FF-r) − R_2N(RRR-r)。H-alloc：FF-r ≥ 0.90，且 ΔR ≥ 0.20；H-capacity：ΔR ≤ 0.05。≥ 75% 的可计分格子符合哪一方，就判为哪一方；否则为混合。可计分格子少于 3 格时，R1 在锁定时标为不可评。",
+    "U1": "C1-U4 的单向 plus R_2N（每个域取 seed 中位数）。H-state：≥ 0.90（至少 2/3 个域）；H-shortcut：≤ 0.20（至少 2/3 个域）。",
+    "U2": "C1-U4 在第 1 步状态上的探针读出。H-state：读出目标 ≥ 0.80；H-shortcut：读出源 ≥ 0.80。",
+    "U1b": "C1-UN：同 U1。",
+    "Q11": "U1 与 U2 同向才下结论，否则为混合。",
+    "X1": "name3、bind3fix：Att-L2 的单向 R_6（seed 中位数）。H-arch ≥ 0.95；H-deep ≥ 0.95。X1 是正对照，两种假设的预期相同。X1 不通过时，X2 不可评。",
+    "X2": "bind3：Att-L2 与 Tok-L2 的单向 R_6（seed 中位数）。H-arch：Att-L2 ≥ 0.90，且 Tok-L2 ≤ 0.20；H-deep：Att-L2 ≤ 0.50。",
+    "S1": "T5Gemma，weekday 与 month，自然映射与 σ_max，RRR-32，单向 plus 走 10N 步。门槛：两种映射在 RRR-32 上的 R_2N 都 ≥ 0.95，否则该域不可评。R_10N(自然) − R_10N(σ_max)：H-slot 两个域都 ≤ 0.05；H-longsym 至少一个域 ≥ 0.20。"
+  },
+  "operational": {
+    "categories": "composable >= 0.90; fail <= 0.20; otherwise partial (observed R_2N and derived R-hat_2N alike)",
+    "paths": "V, R, U: plus / minus / alternating (plus first), 2N steps from the world start; X: plus 30, minus 6, alternating 6 from the world start; S: plus 10N",
+    "V1_V2_cells": "cells = (backbone, domain) with N >= 7 among the domains kept after G4-0; H-fund and H-flat make the same V1/V2 predictions, so a V1/V2 match for either is reported as \"H-fund/H-flat\" and V3 separates them",
+    "V2_A": "A(m~) per appendix A.1 from the per-step success A_t (non-cumulative) over t = 1..2N of the one-way plus path; season (N = 4): floor(N/2) = 2",
+    "V3_season": "for N = 4 F{2} is F{not 1}; its chain is the F{not 1} chain",
+    "V4_records": "F{1}, F{not 1} and every F{j} (j >= 2) on all three paths and all V domains of the backbone; per (world, step) with a parsable decoded state; agreement = argmax of the model == decoded state; cluster bootstrap over worlds (A.7); a model \"wins\" a comparison by the CI rule only",
+    "V4_verdict": "per backbone: \"H-ms holds\" iff fitted >= 0.85 and CI(fit - equal) lower > 0 and CI(fit - fund) lower > 0.10; \"H-fund\" iff fund >= fit; \"H-equal\" iff CI(fit - equal) contains 0; otherwise \"neither\"",
+    "Q9_V3": "V3 \"beats both or not evaluable\": for each of the two comparisons (H-ms vs H-fund, H-ms vs H-flat) the A.6 result is \"H wins\" or \"not evaluable\"",
+    "R1_obs": "plus path R_2N on confirm4 of FF-r and RRR-r in the locked scorable cells",
+    "U_cannot_learn": "a (variant, domain, seed) that fails admission after the 2400-update retrain is \"cannot learn\": it enters the U1/U1b seed median with R_2N = 0 and is excluded from U2 (no admitted editor to probe); the probe readout is the v3 M3 probe (train canonical slots)",
+    "U2_pool": "median over admitted C1-U4 (domain, seed) cells of the step-1 readout fractions",
+    "U1b_domains": "C1-UN has two domains; \"at least 2/3 of the domains\" means both",
+    "X_median": "seed median of one-way plus trajectory success R_6 on confirm4",
+    "S1_not_evaluable": "a domain failing the gate is not evaluable; H-slot needs every domain evaluable and <= 0.05; H-longsym needs >= 0.20 in at least one evaluable domain; otherwise mixed (or not decidable if no domain is evaluable)"
+  },
+  "gates": {
+    "bart": {
+      "GR": {
+        "weekday": {
+          "n": 896,
+          "k": 896,
+          "rate": 1.0,
+          "ci95": [
+            0.9957309604008149,
+            1.0
+          ],
+          "pass_": true
+        },
+        "month": {
+          "n": 1536,
+          "k": 1536,
+          "rate": 1.0,
+          "ci95": [
+            0.9975052893928209,
+            1.0
+          ],
+          "pass_": true
+        },
+        "hour": {
+          "n": 1536,
+          "k": 1536,
+          "rate": 1.0,
+          "ci95": [
+            0.9975052893928209,
+            1.0
+          ],
+          "pass_": true
+        },
+        "compass8": {
+          "n": 1024,
+          "k": 1024,
+          "rate": 1.0,
+          "ci95": [
+            0.9962625959599825,
+            1.0
+          ],
+          "pass_": true
+        },
+        "season": {
+          "n": 512,
+          "k": 512,
+          "rate": 1.0,
+          "ci95": [
+            0.9925530242771171,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "compass": {
+          "n": 512,
+          "k": 512,
+          "rate": 1.0,
+          "ci95": [
+            0.9925530242771171,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "bind3": {
+          "n": 1632,
+          "k": 1632,
+          "rate": 1.0,
+          "ci95": [
+            0.9976516924669071,
+            0.9999999999999999
+          ],
+          "pass_": true
+        },
+        "bind3fix": {
+          "n": 864,
+          "k": 864,
+          "rate": 1.0,
+          "ci95": [
+            0.9955735477008505,
+            1.0
+          ],
+          "pass_": true
+        },
+        "name3": {
+          "n": 1632,
+          "k": 1632,
+          "rate": 1.0,
+          "ci95": [
+            0.9976516924669071,
+            0.9999999999999999
+          ],
+          "pass_": true
+        }
+      },
+      "GT": {
+        "weekday": {
+          "failures": {},
+          "pass_": true
+        },
+        "month": {
+          "failures": {},
+          "pass_": true
+        },
+        "hour": {
+          "failures": {},
+          "pass_": true
+        },
+        "compass8": {
+          "failures": {},
+          "pass_": true
+        },
+        "season": {
+          "failures": {},
+          "pass_": true
+        },
+        "compass": {
+          "failures": {},
+          "pass_": true
+        },
+        "bind3": {
+          "failures": {},
+          "pass_": true
+        },
+        "bind3fix": {
+          "failures": {},
+          "pass_": true
+        },
+        "name3": {
+          "failures": {},
+          "pass_": true
+        }
+      },
+      "GB": {
+        "weekday": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.0001,
+            "plus_32": 0.0001,
+            "minus_16": 0.0001,
+            "minus_32": 0.0001
+          },
+          "base_rank": 16,
+          "fits_sha256": "4b767298bddb50d36c538f6f2b09354c89d3c0d0a7ae0cc0d809a21197f2af23"
+        },
+        "month": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.0001,
+            "plus_32": 0.001,
+            "minus_16": 0.001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "16d7dc2b7cb8530124c2b8fa15cef8a32b2880ae2bdee13a34494ad24ac07375"
+        },
+        "hour": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.0001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "1967382192f252b2374c54bcce951c6ca6edc2f44e45b05168c5cdcda8be45f3"
+        },
+        "compass8": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.0001,
+            "plus_32": 0.0001,
+            "minus_16": 0.0001,
+            "minus_32": 0.0001
+          },
+          "base_rank": 16,
+          "fits_sha256": "4ef33f460697ad0f00d92b1fc2766cacad1c8c41423800169ed1f221866de175"
+        },
+        "season": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.0001,
+            "plus_32": 0.0001,
+            "minus_16": 0.0001,
+            "minus_32": 0.0001
+          },
+          "base_rank": 16,
+          "fits_sha256": "77c9bb7dbfe627583bfac3e42cb9e834b3aad422a05e3ee5e6e1aac702fe9c64"
+        }
+      },
+      "V_domains": [
+        "weekday",
+        "month",
+        "hour",
+        "compass8",
+        "season"
+      ],
+      "R_domains": [
+        "weekday",
+        "month",
+        "hour",
+        "compass8"
+      ],
+      "excluded": {
+        "V": [],
+        "other": []
+      },
+      "new_domains_passing": [
+        "hour",
+        "compass8",
+        "season"
+      ],
+      "X_ok": {
+        "bind3": true,
+        "bind3fix": true,
+        "name3": true
+      },
+      "compass_ok": true
+    },
+    "t5": {
+      "GR": {
+        "weekday": {
+          "n": 896,
+          "k": 896,
+          "rate": 1.0,
+          "ci95": [
+            0.9957309604008149,
+            1.0
+          ],
+          "pass_": true
+        },
+        "month": {
+          "n": 1536,
+          "k": 1536,
+          "rate": 1.0,
+          "ci95": [
+            0.9975052893928209,
+            1.0
+          ],
+          "pass_": true
+        },
+        "hour": {
+          "n": 1536,
+          "k": 1536,
+          "rate": 1.0,
+          "ci95": [
+            0.9975052893928209,
+            1.0
+          ],
+          "pass_": true
+        },
+        "compass8": {
+          "n": 1024,
+          "k": 1024,
+          "rate": 1.0,
+          "ci95": [
+            0.9962625959599825,
+            1.0
+          ],
+          "pass_": true
+        },
+        "season": {
+          "n": 512,
+          "k": 512,
+          "rate": 1.0,
+          "ci95": [
+            0.9925530242771171,
+            0.9999999999999999
+          ],
+          "pass_": true
+        }
+      },
+      "GT": {
+        "weekday": {
+          "failures": {},
+          "pass_": true
+        },
+        "month": {
+          "failures": {},
+          "pass_": true
+        },
+        "hour": {
+          "failures": {},
+          "pass_": true
+        },
+        "compass8": {
+          "failures": {},
+          "pass_": true
+        },
+        "season": {
+          "failures": {},
+          "pass_": true
+        }
+      },
+      "GB": {
+        "weekday": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "042ec1a3ae8b0dbe968b174d0a36d1e1e0b1408d5855aaece05d604fdefd8a57"
+        },
+        "month": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "909821b254e40e80659e9c3153263cb47f2ba52a9f2f1f2b2f35bf9aed277f54"
+        },
+        "hour": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 16,
+              "rate": 0.5,
+              "ci95": [
+                0.33630882869327483,
+                0.6636911713067252
+              ]
+            },
+            "32": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.001,
+            "minus_32": 0.001
+          },
+          "base_rank": 32,
+          "fits_sha256": "1f1fab0222acf9606ca524b401e45ea8dc4706c928960c809e6433fe85316a81"
+        },
+        "compass8": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.0001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "051c63834d60bfe38b9154f2af233be5df391d2c8229f649b4a20e6dd543226f"
+        },
+        "season": {
+          "dev_R2N": {
+            "16": {
+              "n": 32,
+              "k": 32,
+              "rate": 1.0,
+              "ci95": [
+                0.8928208017449293,
+                1.0
+              ]
+            }
+          },
+          "ridge": {
+            "plus_16": 0.001,
+            "plus_32": 0.001,
+            "minus_16": 0.001,
+            "minus_32": 0.001
+          },
+          "base_rank": 16,
+          "fits_sha256": "3748a152a4eadd2aa9e74c30c74a6eb602f6542e5736ca17ae5853ee6b455884"
+        }
+      },
+      "V_domains": [
+        "weekday",
+        "month",
+        "hour",
+        "compass8",
+        "season"
+      ],
+      "R_domains": [
+        "weekday",
+        "month",
+        "hour",
+        "compass8"
+      ],
+      "excluded": {
+        "V": [],
+        "other": []
+      },
+      "new_domains_passing": [
+        "hour",
+        "compass8",
+        "season"
+      ]
+    }
+  },
+  "V0_amplitudes": {
+    "bart": {
+      "weekday": {
+        "1": {
+          "dim": 2,
+          "a": 1.8331441223318885,
+          "s": 1.5902824096457495
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.2178680011257357,
+          "s": 1.9030886865380883
+        },
+        "3": {
+          "dim": 2,
+          "a": 1.0301612578491952,
+          "s": 2.007369271214238
+        }
+      },
+      "month": {
+        "1": {
+          "dim": 2,
+          "a": 1.7393408431388855,
+          "s": 0.9116949913746085
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.16883892604518,
+          "s": 1.1719183468959915
+        },
+        "3": {
+          "dim": 2,
+          "a": 0.8299267273238587,
+          "s": 1.1614483346802826
+        },
+        "4": {
+          "dim": 2,
+          "a": 0.9788227973652791,
+          "s": 1.6777675761590372
+        },
+        "5": {
+          "dim": 2,
+          "a": 0.7522255051925488,
+          "s": 1.4372267978621656
+        },
+        "6": {
+          "dim": 1,
+          "a": 0.5641380445920353,
+          "s": 1.1282760891840704
+        }
+      },
+      "hour": {
+        "1": {
+          "dim": 2,
+          "a": 1.5915468212749289,
+          "s": 0.8327936576034276
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.138925558799222,
+          "s": 1.1427825622448975
+        },
+        "3": {
+          "dim": 2,
+          "a": 0.9882041575935078,
+          "s": 1.3885783725873024
+        },
+        "4": {
+          "dim": 2,
+          "a": 0.9042850681196534,
+          "s": 1.5395806836761752
+        },
+        "5": {
+          "dim": 2,
+          "a": 0.8958263692474342,
+          "s": 1.72720389192391
+        },
+        "6": {
+          "dim": 1,
+          "a": 0.6398235673517637,
+          "s": 1.2796471347035274
+        }
+      },
+      "compass8": {
+        "1": {
+          "dim": 2,
+          "a": 1.1512840205414343,
+          "s": 0.8967612117636397
+        },
+        "2": {
+          "dim": 2,
+          "a": 1.0243737306872198,
+          "s": 1.448862540049203
+        },
+        "3": {
+          "dim": 2,
+          "a": 0.8567515493583727,
+          "s": 1.5778847494325159
+        },
+        "4": {
+          "dim": 1,
+          "a": 1.0152563054187145,
+          "s": 2.030512610837429
+        }
+      },
+      "season": {
+        "1": {
+          "dim": 2,
+          "a": 1.9203456758459951,
+          "s": 2.7098807008929686
+        },
+        "2": {
+          "dim": 1,
+          "a": 1.446222993411107,
+          "s": 2.8924459868222137
+        }
+      }
+    },
+    "t5": {
+      "weekday": {
+        "1": {
+          "dim": 2,
+          "a": 24.605618881805313,
+          "s": 21.450887982858553
+        },
+        "2": {
+          "dim": 2,
+          "a": 18.197162975600467,
+          "s": 28.351007038149586
+        },
+        "3": {
+          "dim": 2,
+          "a": 16.351348957603978,
+          "s": 31.870421203848405
+        }
+      },
+      "month": {
+        "1": {
+          "dim": 2,
+          "a": 23.75907550373826,
+          "s": 12.475159587041162
+        },
+        "2": {
+          "dim": 2,
+          "a": 17.677130192130587,
+          "s": 17.707907952819014
+        },
+        "3": {
+          "dim": 2,
+          "a": 13.747516182416673,
+          "s": 19.411042731764983
+        },
+        "4": {
+          "dim": 2,
+          "a": 14.265149393490168,
+          "s": 24.663744240785963
+        },
+        "5": {
+          "dim": 2,
+          "a": 12.687232121854086,
+          "s": 24.44649509469819
+        },
+        "6": {
+          "dim": 1,
+          "a": 9.7239020214898,
+          "s": 19.447804042979598
+        }
+      },
+      "hour": {
+        "1": {
+          "dim": 2,
+          "a": 28.007437803790854,
+          "s": 14.958433681023605
+        },
+        "2": {
+          "dim": 2,
+          "a": 18.047167218516655,
+          "s": 18.094673612693036
+        },
+        "3": {
+          "dim": 2,
+          "a": 16.699580804988862,
+          "s": 23.355157766178863
+        },
+        "4": {
+          "dim": 2,
+          "a": 14.98345372259859,
+          "s": 25.605030193860323
+        },
+        "5": {
+          "dim": 2,
+          "a": 13.750210850185246,
+          "s": 26.230630645148047
+        },
+        "6": {
+          "dim": 1,
+          "a": 11.526014873820216,
+          "s": 23.052029747640436
+        }
+      },
+      "compass8": {
+        "1": {
+          "dim": 2,
+          "a": 23.474341380058867,
+          "s": 18.542477959064144
+        },
+        "2": {
+          "dim": 2,
+          "a": 22.464035284060003,
+          "s": 31.74783489589286
+        },
+        "3": {
+          "dim": 2,
+          "a": 11.967552283693404,
+          "s": 21.978352059089488
+        },
+        "4": {
+          "dim": 1,
+          "a": 29.82917163898059,
+          "s": 59.65834327796117
+        }
+      },
+      "season": {
+        "1": {
+          "dim": 2,
+          "a": 34.00611941837719,
+          "s": 48.1203739228026
+        },
+        "2": {
+          "dim": 1,
+          "a": 25.898859086340487,
+          "s": 51.79771817268098
+        }
+      }
+    }
+  },
+  "calib": {
+    "bart": {
+      "weekday": {
+        "models": {
+          "full": {
+            "lam": [
+              0.9225235911816703,
+              1.7040061078488407,
+              2.1407689952586697
+            ],
+            "nll": 0.3001732150278672,
+            "probe_accuracy": 0.8771081349206349,
+            "omega": [
+              0.13909952011863558,
+              0.359715007314293,
+              0.5011854725670714
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.5980852647474567,
+              0.5980852647474567,
+              0.5980852647474567
+            ],
+            "nll": 0.580973710187635,
+            "probe_accuracy": 0.7575644841269841,
+            "omega": [
+              0.2529909203140892,
+              0.3541964417577652,
+              0.39281263792814547
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.3306813781466929,
+              0.0,
+              0.0
+            ],
+            "nll": 1.2984281911967506,
+            "probe_accuracy": 0.6184275793650794,
+            "omega": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.14285714285714285,
+              "minus": 0.14285714285714285,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 0.14285714285714285,
+              "minus": 0.14285714285714285,
+              "alt": 0.33035714285714285
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          }
+        ],
+        "planes_sha256": "c409ce67b6568c4beda90435db311f68a58ba66e01c3c63a4299e66d16dfa3a7",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              0.8571428571428571,
+              0.0,
+              0.0,
+              0.875,
+              1.0,
+              1.0,
+              1.0,
+              0.8571428571428571,
+              0.0,
+              0.0,
+              0.875,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              0.875,
+              0.0,
+              0.0,
+              0.8571428571428571,
+              1.0,
+              1.0,
+              1.0,
+              0.875,
+              0.0,
+              0.0,
+              0.8571428571428571,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.9598214285714286,
+              1.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.9598214285714286,
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              1.0,
+              0.9598214285714286,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              1.0,
+              0.9598214285714286,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "v3 calibration reused (composability_mechanisms_v2/results/calib_bart.json)"
+      },
+      "month": {
+        "models": {
+          "full": {
+            "lam": [
+              1.7840297384156165,
+              2.198754450136351,
+              2.097666230430646,
+              3.99695369809937,
+              5.326550389825765,
+              4.158226562366934
+            ],
+            "nll": 0.03204501986177647,
+            "probe_accuracy": 0.9866437815656566,
+            "omega": [
+              0.04329665837122521,
+              0.08583944537955089,
+              0.08479283008436109,
+              0.3245159260693399,
+              0.314232333509472,
+              0.14732280658605082
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294,
+              0.8625936359309294
+            ],
+            "nll": 0.16905093931301368,
+            "probe_accuracy": 0.949514678030303,
+            "omega": [
+              0.08687826455750977,
+              0.13975553565771603,
+              0.1447043516253034,
+              0.2906469337423185,
+              0.2111852967824411,
+              0.12682961763471115
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.7434652784369109,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.3833483478004416,
+            "probe_accuracy": 0.844302398989899,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0026041666666666665,
+              "minus": 0.0026041666666666665,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 0.84375,
+              "minus": 0.84375,
+              "alt": 0.921875
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "75443d334409b096635c2408ea7938667375e8aec2779785adaa6b75e860f786",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.3203125,
+              0.0390625,
+              0.4661458333333333,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.3203125,
+              0.0390625,
+              0.4661458333333333,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.4661458333333333,
+              0.0390625,
+              0.3203125,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.4661458333333333,
+              0.0390625,
+              0.3203125,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.033854166666666664,
+              0.9583333333333334,
+              0.026041666666666668,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.033854166666666664,
+              0.9583333333333334,
+              0.026041666666666668,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.026041666666666668,
+              0.9583333333333334,
+              0.033854166666666664,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.026041666666666668,
+              0.9583333333333334,
+              0.033854166666666664,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "v3 calibration reused (composability_mechanisms_v2/results/calib_bart.json)"
+      },
+      "hour": {
+        "models": {
+          "full": {
+            "lam": [
+              1.0789864778488953,
+              1.7918310795317205,
+              2.0247070676403944,
+              2.1583895731352096,
+              2.0085955657772216,
+              1.2532740319823266
+            ],
+            "nll": 0.032884182259727654,
+            "probe_accuracy": 0.9887152777777778,
+            "omega": [
+              0.04701986547415003,
+              0.1207414293577871,
+              0.19591944222504287,
+              0.25623288105848246,
+              0.28361952325280154,
+              0.09646685863173608
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.9041048411973319,
+              0.9041048411973319,
+              0.9041048411973319,
+              0.9041048411973319,
+              0.9041048411973319,
+              0.9041048411973319
+            ],
+            "nll": 0.1552760423735636,
+            "probe_accuracy": 0.9504813762626263,
+            "omega": [
+              0.08001563575580774,
+              0.12372820932598574,
+              0.1776743833568025,
+              0.21797892449800296,
+              0.2592704987134047,
+              0.1413323483499964
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.6097430798321033,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.6080607059152872,
+            "probe_accuracy": 0.8369436553030303,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.484375,
+              "minus": 0.484375,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "af2a5119f2e39d375157a00828c0693e66387c910231b75e15f9888b9f335646",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              1.0,
+              1.0,
+              0.9401041666666666,
+              0.7552083333333334,
+              0.6744791666666666,
+              0.8385416666666666,
+              0.9166666666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9401041666666666,
+              0.7552083333333334,
+              0.6744791666666666,
+              0.8385416666666666,
+              0.9166666666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              1.0,
+              1.0,
+              0.9166666666666666,
+              0.8385416666666666,
+              0.6744791666666666,
+              0.7552083333333334,
+              0.9401041666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9166666666666666,
+              0.8385416666666666,
+              0.6744791666666666,
+              0.7552083333333334,
+              0.9401041666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.16145833333333334,
+              0.015625,
+              0.16145833333333334,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.16145833333333334,
+              0.015625,
+              0.16145833333333334,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.16145833333333334,
+              0.015625,
+              0.16145833333333334,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.16145833333333334,
+              0.015625,
+              0.16145833333333334,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      },
+      "compass8": {
+        "models": {
+          "full": {
+            "lam": [
+              1.779610585944503,
+              2.2694949219001352,
+              1.6659047889965304,
+              1.8869660753749877
+            ],
+            "nll": 0.19343756664325648,
+            "probe_accuracy": 0.9312918526785714,
+            "omega": [
+              0.07962616705441695,
+              0.2624532367329855,
+              0.22954093356747673,
+              0.42837966264512095
+            ]
+          },
+          "equal": {
+            "lam": [
+              1.8274284011454145,
+              1.8274284011454145,
+              1.8274284011454145,
+              1.8274284011454145
+            ],
+            "nll": 0.20799725185545234,
+            "probe_accuracy": 0.9240373883928571,
+            "omega": [
+              0.08519418368668008,
+              0.2201921507584959,
+              0.262354841257747,
+              0.43225882429707696
+            ]
+          },
+          "fund": {
+            "lam": [
+              1.109152357323337,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.2605058946618102,
+            "probe_accuracy": 0.7031947544642857,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0234375,
+              "minus": 0.0234375,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 0.99609375,
+              "minus": 0.99609375,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "7afd04e1e953fafe902ba52f4e18e0103cd5be14ca8b818961f5cadaf40d32d4",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              1.0,
+              0.20703125,
+              0.0,
+              0.20703125,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.20703125,
+              0.0,
+              0.20703125,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              1.0,
+              0.20703125,
+              0.0,
+              0.20703125,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.20703125,
+              0.0,
+              0.20703125,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      },
+      "season": {
+        "models": {
+          "full": {
+            "lam": [
+              0.8008298061445592,
+              0.8546507187014738
+            ],
+            "nll": 0.42121832466970527,
+            "probe_accuracy": 0.7565104166666666,
+            "omega": [
+              0.45572690725269427,
+              0.5442730927473057
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.8565536947582151,
+              0.8565536947582151
+            ],
+            "nll": 0.4272244258685212,
+            "probe_accuracy": 0.7565104166666666,
+            "omega": [
+              0.47190139444003354,
+              0.5280986055599666
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.1481110485834737,
+              0.0
+            ],
+            "nll": 1.1201044502763464,
+            "probe_accuracy": 0.4205729166666667,
+            "omega": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.75
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0703125
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0703125
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "5cc3e403edf68df6ed8c7cc8ed0cf356c9d5430da733f38fe4e95ce5400f41e9",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              0.75,
+              0.0,
+              0.25,
+              1.0,
+              0.75,
+              0.0,
+              0.25,
+              1.0
+            ],
+            "minus": [
+              0.25,
+              0.0,
+              0.75,
+              1.0,
+              0.25,
+              0.0,
+              0.75,
+              1.0
+            ],
+            "alt": [
+              0.75,
+              1.0,
+              0.75,
+              1.0,
+              0.75,
+              1.0,
+              0.75,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0703125,
+              1.0,
+              0.0,
+              1.0,
+              0.0703125,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              1.0,
+              0.0703125,
+              1.0,
+              0.0,
+              1.0,
+              0.0703125,
+              1.0
+            ],
+            "alt": [
+              0.0703125,
+              1.0,
+              0.0703125,
+              1.0,
+              0.0703125,
+              1.0,
+              0.0703125,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      }
+    },
+    "t5": {
+      "weekday": {
+        "models": {
+          "full": {
+            "lam": [
+              0.010947349637692557,
+              0.013736459476991283,
+              0.01437747912596195
+            ],
+            "nll": 0.1864651716709287,
+            "probe_accuracy": 0.9264632936507936,
+            "omega": [
+              0.16662405639017827,
+              0.3631198094668011,
+              0.47025613414302064
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.006500965141749625,
+              0.006500965141749625,
+              0.006500965141749625
+            ],
+            "nll": 0.27846019518789766,
+            "probe_accuracy": 0.8818204365079365,
+            "omega": [
+              0.20467811901731978,
+              0.35548218063663783,
+              0.43983970034604236
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.0024246988355142093,
+              0.0,
+              0.0
+            ],
+            "nll": 1.1137717935397569,
+            "probe_accuracy": 0.6938244047619048,
+            "omega": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.6428571428571429,
+              "minus": 0.6428571428571429,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 0.2857142857142857,
+              "minus": 0.2857142857142857,
+              "alt": 0.42857142857142855
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          }
+        ],
+        "planes_sha256": "3c487c3092239dbc805ac13a345a88ac94f63dd88f60e49166a2d96b717e1087",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              0.7142857142857143,
+              0.0,
+              0.0,
+              0.59375,
+              1.0,
+              1.0,
+              1.0,
+              0.7142857142857143,
+              0.0,
+              0.0,
+              0.59375,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              0.59375,
+              0.0,
+              0.0,
+              0.7142857142857143,
+              1.0,
+              1.0,
+              1.0,
+              0.59375,
+              0.0,
+              0.0,
+              0.7142857142857143,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.9642857142857143,
+              1.0,
+              0.004464285714285714,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.9642857142857143,
+              1.0,
+              0.004464285714285714,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.004464285714285714,
+              1.0,
+              0.9642857142857143,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.004464285714285714,
+              1.0,
+              0.9642857142857143,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "v3 calibration reused (composability_mechanisms_v2/results/calib_t5.json)"
+      },
+      "month": {
+        "models": {
+          "full": {
+            "lam": [
+              0.004648028926470428,
+              0.00706678550022886,
+              0.008943485329832097,
+              0.010638587358962679,
+              0.006977452784350144,
+              0.014383544921527222
+            ],
+            "nll": 0.022256026453870384,
+            "probe_accuracy": 0.9889125631313131,
+            "omega": [
+              0.035087674643690024,
+              0.10110064976079795,
+              0.15137343169575943,
+              0.2876377158197772,
+              0.1846891102810208,
+              0.24011141779895448
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445,
+              0.004013535751166445
+            ],
+            "nll": 0.1432871846881812,
+            "probe_accuracy": 0.9566366792929293,
+            "omega": [
+              0.06926833891260634,
+              0.1312747033460956,
+              0.15530729863359513,
+              0.24809092319565643,
+              0.2428809152938491,
+              0.15317782061819754
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.003057417765266895,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.55564097975138,
+            "probe_accuracy": 0.8391335227272727,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.578125,
+              "minus": 0.578125,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "b37feebf5c73a05329060ad302aa055aa908d90d134b594f3c70bc04b615e4fa",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.8932291666666666,
+              0.625,
+              0.9192708333333334,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.8932291666666666,
+              0.625,
+              0.9192708333333334,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9192708333333334,
+              0.625,
+              0.8932291666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9192708333333334,
+              0.625,
+              0.8932291666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.375,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "v3 calibration reused (composability_mechanisms_v2/results/calib_t5.json)"
+      },
+      "hour": {
+        "models": {
+          "full": {
+            "lam": [
+              0.004193941971931869,
+              0.005412577403688455,
+              0.005128875477340736,
+              0.007095044744401237,
+              0.0075889399041642255,
+              0.007867625073457616
+            ],
+            "nll": 0.05453673024239936,
+            "probe_accuracy": 0.9816721906565656,
+            "omega": [
+              0.05595130002873748,
+              0.09407215591394275,
+              0.14735529181307663,
+              0.23610255532323252,
+              0.26180923451310306,
+              0.20470946240790752
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.003855606119051373,
+              0.003855606119051373,
+              0.003855606119051373,
+              0.003855606119051373,
+              0.003855606119051373,
+              0.003855606119051373
+            ],
+            "nll": 0.1379517699710561,
+            "probe_accuracy": 0.96060211489899,
+            "omega": [
+              0.08705546496623848,
+              0.1134136302202511,
+              0.18747866683336029,
+              0.2171469949451836,
+              0.225118985006171,
+              0.1697862580287955
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.0026971241439611654,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.4516687077866408,
+            "probe_accuracy": 0.84799163510101,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.005208333333333333,
+              "minus": 0.005208333333333333,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{5}": {
+            "frozen": [
+              5
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{6}": {
+            "frozen": [
+              6
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 2
+          },
+          {
+            "k": 5,
+            "dim": 2
+          },
+          {
+            "k": 6,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "2402b909adbe21513a30d98122757298b5bb159d5ea87a4159906465f5e9ca25",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              1.0,
+              0.9947916666666666,
+              0.8619791666666666,
+              0.4973958333333333,
+              0.359375,
+              0.4895833333333333,
+              0.84375,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9947916666666666,
+              0.8619791666666666,
+              0.4973958333333333,
+              0.359375,
+              0.4895833333333333,
+              0.84375,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              1.0,
+              1.0,
+              0.84375,
+              0.4895833333333333,
+              0.359375,
+              0.4973958333333333,
+              0.8619791666666666,
+              0.9947916666666666,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.84375,
+              0.4895833333333333,
+              0.359375,
+              0.4973958333333333,
+              0.8619791666666666,
+              0.9947916666666666,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.0,
+              0.0,
+              0.010416666666666666,
+              0.0,
+              0.5989583333333334,
+              0.018229166666666668,
+              0.0026041666666666665,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.010416666666666666,
+              0.0,
+              0.5989583333333334,
+              0.018229166666666668,
+              0.0026041666666666665,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.0,
+              0.0,
+              0.0026041666666666665,
+              0.018229166666666668,
+              0.5989583333333334,
+              0.0,
+              0.010416666666666666,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0026041666666666665,
+              0.018229166666666668,
+              0.5989583333333334,
+              0.0,
+              0.010416666666666666,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      },
+      "compass8": {
+        "models": {
+          "full": {
+            "lam": [
+              0.0060904933668752955,
+              0.005786712509448667,
+              0.004302431224812789,
+              0.0028318831620123483
+            ],
+            "nll": 0.2002557584026318,
+            "probe_accuracy": 0.9144934629098791,
+            "omega": [
+              0.10627193854280122,
+              0.29153420098056915,
+              0.10532982060626332,
+              0.49686403987036626
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.002311501462391671,
+              0.002311501462391671,
+              0.002311501462391671,
+              0.002311501462391671
+            ],
+            "nll": 0.38986629377128323,
+            "probe_accuracy": 0.9001608054254352,
+            "omega": [
+              0.06516497905055608,
+              0.18815065559390629,
+              0.09142933047353567,
+              0.655255034882002
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.003472244529415726,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nll": 1.0839962437202733,
+            "probe_accuracy": 0.6745438019995805,
+            "omega": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "composable"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.5,
+              "minus": 0.5,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "partial",
+              "minus": "partial",
+              "alt": "composable"
+            }
+          },
+          "F_{3}": {
+            "frozen": [
+              3
+            ],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{4}": {
+            "frozen": [
+              4
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.28125
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2,
+              3,
+              4
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.0
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "fail"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 2
+          },
+          {
+            "k": 3,
+            "dim": 2
+          },
+          {
+            "k": 4,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "a8869a837d39a179f310ecbe620b2c2d101a9ecfdb449027e5bb22b724e85fa0",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              1.0,
+              0.6171875,
+              0.0,
+              0.0,
+              0.0,
+              0.62109375,
+              1.0,
+              1.0,
+              1.0,
+              0.6171875,
+              0.0,
+              0.0,
+              0.0,
+              0.62109375,
+              1.0,
+              1.0
+            ],
+            "minus": [
+              1.0,
+              0.62109375,
+              0.0,
+              0.0,
+              0.0,
+              0.6171875,
+              1.0,
+              1.0,
+              1.0,
+              0.62109375,
+              0.0,
+              0.0,
+              0.0,
+              0.6171875,
+              1.0,
+              1.0
+            ],
+            "alt": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0
+            ],
+            "minus": [
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0,
+              0.0,
+              0.375,
+              0.0,
+              1.0
+            ],
+            "alt": [
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      },
+      "season": {
+        "models": {
+          "full": {
+            "lam": [
+              0.007768146644577469,
+              0.006934319351597085
+            ],
+            "nll": 0.2910377752382997,
+            "probe_accuracy": 0.857421875,
+            "omega": [
+              0.49302003983807324,
+              0.5069799601619267
+            ]
+          },
+          "equal": {
+            "lam": [
+              0.004529181543780124,
+              0.004529181543780124
+            ],
+            "nll": 0.37711096220700563,
+            "probe_accuracy": 0.8463541666666666,
+            "omega": [
+              0.4646912787076314,
+              0.5353087212923686
+            ]
+          },
+          "fund": {
+            "lam": [
+              0.000526058113287779,
+              0.0
+            ],
+            "nll": 1.0771631266120576,
+            "probe_accuracy": 0.4798177083333333,
+            "omega": [
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "derived": {
+          "F_empty": {
+            "frozen": [],
+            "R_hat": {
+              "plus": 1.0,
+              "minus": 1.0,
+              "alt": 1.0
+            },
+            "category": {
+              "plus": "composable",
+              "minus": "composable",
+              "alt": "composable"
+            }
+          },
+          "F_{1}": {
+            "frozen": [
+              1
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.453125
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_{2}": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.2109375
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          },
+          "F_not1": {
+            "frozen": [
+              2
+            ],
+            "R_hat": {
+              "plus": 0.0,
+              "minus": 0.0,
+              "alt": 0.2109375
+            },
+            "category": {
+              "plus": "fail",
+              "minus": "fail",
+              "alt": "partial"
+            }
+          }
+        },
+        "planes": [
+          {
+            "k": 1,
+            "dim": 2
+          },
+          {
+            "k": 2,
+            "dim": 1
+          }
+        ],
+        "planes_sha256": "78ff96a66c034363362005a0e9ae6731c75f116bc2a73a01566e44d8382c7eda",
+        "ideal_At": {
+          "F_{1}": {
+            "plus": [
+              0.453125,
+              0.0,
+              0.375,
+              1.0,
+              0.453125,
+              0.0,
+              0.375,
+              1.0
+            ],
+            "minus": [
+              0.375,
+              0.0,
+              0.453125,
+              1.0,
+              0.375,
+              0.0,
+              0.453125,
+              1.0
+            ],
+            "alt": [
+              0.453125,
+              1.0,
+              0.453125,
+              1.0,
+              0.453125,
+              1.0,
+              0.453125,
+              1.0
+            ]
+          },
+          "F_not1": {
+            "plus": [
+              0.2109375,
+              1.0,
+              0.15625,
+              1.0,
+              0.2109375,
+              1.0,
+              0.15625,
+              1.0
+            ],
+            "minus": [
+              0.15625,
+              1.0,
+              0.2109375,
+              1.0,
+              0.15625,
+              1.0,
+              0.2109375,
+              1.0
+            ],
+            "alt": [
+              0.2109375,
+              1.0,
+              0.2109375,
+              1.0,
+              0.2109375,
+              1.0,
+              0.2109375,
+              1.0
+            ]
+          }
+        },
+        "source": "calibrated here (v3 procedure)"
+      }
+    }
+  },
+  "V3_precheck": {
+    "cells_H_ms": {
+      "bart/weekday/F_{2}/plus": "fail",
+      "bart/weekday/F_{2}/minus": "fail",
+      "bart/weekday/F_{3}/plus": "fail",
+      "bart/weekday/F_{3}/minus": "fail",
+      "bart/month/F_{2}/plus": "composable",
+      "bart/month/F_{2}/minus": "composable",
+      "bart/month/F_{3}/plus": "composable",
+      "bart/month/F_{3}/minus": "composable",
+      "bart/month/F_{4}/plus": "partial",
+      "bart/month/F_{4}/minus": "partial",
+      "bart/month/F_{5}/plus": "composable",
+      "bart/month/F_{5}/minus": "composable",
+      "bart/month/F_{6}/plus": "composable",
+      "bart/month/F_{6}/minus": "composable",
+      "bart/hour/F_{2}/plus": "composable",
+      "bart/hour/F_{2}/minus": "composable",
+      "bart/hour/F_{3}/plus": "composable",
+      "bart/hour/F_{3}/minus": "composable",
+      "bart/hour/F_{4}/plus": "composable",
+      "bart/hour/F_{4}/minus": "composable",
+      "bart/hour/F_{5}/plus": "composable",
+      "bart/hour/F_{5}/minus": "composable",
+      "bart/hour/F_{6}/plus": "composable",
+      "bart/hour/F_{6}/minus": "composable",
+      "bart/compass8/F_{2}/plus": "fail",
+      "bart/compass8/F_{2}/minus": "fail",
+      "bart/compass8/F_{3}/plus": "composable",
+      "bart/compass8/F_{3}/minus": "composable",
+      "bart/compass8/F_{4}/plus": "composable",
+      "bart/compass8/F_{4}/minus": "composable",
+      "bart/season/F_{2}/plus": "fail",
+      "bart/season/F_{2}/minus": "fail",
+      "t5/weekday/F_{2}/plus": "partial",
+      "t5/weekday/F_{2}/minus": "partial",
+      "t5/weekday/F_{3}/plus": "partial",
+      "t5/weekday/F_{3}/minus": "partial",
+      "t5/month/F_{2}/plus": "composable",
+      "t5/month/F_{2}/minus": "composable",
+      "t5/month/F_{3}/plus": "composable",
+      "t5/month/F_{3}/minus": "composable",
+      "t5/month/F_{4}/plus": "composable",
+      "t5/month/F_{4}/minus": "composable",
+      "t5/month/F_{5}/plus": "composable",
+      "t5/month/F_{5}/minus": "composable",
+      "t5/month/F_{6}/plus": "composable",
+      "t5/month/F_{6}/minus": "composable",
+      "t5/hour/F_{2}/plus": "composable",
+      "t5/hour/F_{2}/minus": "composable",
+      "t5/hour/F_{3}/plus": "composable",
+      "t5/hour/F_{3}/minus": "composable",
+      "t5/hour/F_{4}/plus": "composable",
+      "t5/hour/F_{4}/minus": "composable",
+      "t5/hour/F_{5}/plus": "composable",
+      "t5/hour/F_{5}/minus": "composable",
+      "t5/hour/F_{6}/plus": "composable",
+      "t5/hour/F_{6}/minus": "composable",
+      "t5/compass8/F_{2}/plus": "partial",
+      "t5/compass8/F_{2}/minus": "partial",
+      "t5/compass8/F_{3}/plus": "composable",
+      "t5/compass8/F_{3}/minus": "composable",
+      "t5/compass8/F_{4}/plus": "fail",
+      "t5/compass8/F_{4}/minus": "fail",
+      "t5/season/F_{2}/plus": "fail",
+      "t5/season/F_{2}/minus": "fail"
+    },
+    "scorable_vs_fund": [
+      "bart/weekday/F_{2}/plus",
+      "bart/weekday/F_{2}/minus",
+      "bart/weekday/F_{3}/plus",
+      "bart/weekday/F_{3}/minus",
+      "bart/month/F_{4}/plus",
+      "bart/month/F_{4}/minus",
+      "bart/compass8/F_{2}/plus",
+      "bart/compass8/F_{2}/minus",
+      "bart/season/F_{2}/plus",
+      "bart/season/F_{2}/minus",
+      "t5/weekday/F_{2}/plus",
+      "t5/weekday/F_{2}/minus",
+      "t5/weekday/F_{3}/plus",
+      "t5/weekday/F_{3}/minus",
+      "t5/compass8/F_{2}/plus",
+      "t5/compass8/F_{2}/minus",
+      "t5/compass8/F_{4}/plus",
+      "t5/compass8/F_{4}/minus",
+      "t5/season/F_{2}/plus",
+      "t5/season/F_{2}/minus"
+    ],
+    "scorable_vs_flat": [
+      "bart/month/F_{2}/plus",
+      "bart/month/F_{2}/minus",
+      "bart/month/F_{3}/plus",
+      "bart/month/F_{3}/minus",
+      "bart/month/F_{4}/plus",
+      "bart/month/F_{4}/minus",
+      "bart/month/F_{5}/plus",
+      "bart/month/F_{5}/minus",
+      "bart/month/F_{6}/plus",
+      "bart/month/F_{6}/minus",
+      "bart/hour/F_{2}/plus",
+      "bart/hour/F_{2}/minus",
+      "bart/hour/F_{3}/plus",
+      "bart/hour/F_{3}/minus",
+      "bart/hour/F_{4}/plus",
+      "bart/hour/F_{4}/minus",
+      "bart/hour/F_{5}/plus",
+      "bart/hour/F_{5}/minus",
+      "bart/hour/F_{6}/plus",
+      "bart/hour/F_{6}/minus",
+      "bart/compass8/F_{3}/plus",
+      "bart/compass8/F_{3}/minus",
+      "bart/compass8/F_{4}/plus",
+      "bart/compass8/F_{4}/minus",
+      "t5/weekday/F_{2}/plus",
+      "t5/weekday/F_{2}/minus",
+      "t5/weekday/F_{3}/plus",
+      "t5/weekday/F_{3}/minus",
+      "t5/month/F_{2}/plus",
+      "t5/month/F_{2}/minus",
+      "t5/month/F_{3}/plus",
+      "t5/month/F_{3}/minus",
+      "t5/month/F_{4}/plus",
+      "t5/month/F_{4}/minus",
+      "t5/month/F_{5}/plus",
+      "t5/month/F_{5}/minus",
+      "t5/month/F_{6}/plus",
+      "t5/month/F_{6}/minus",
+      "t5/hour/F_{2}/plus",
+      "t5/hour/F_{2}/minus",
+      "t5/hour/F_{3}/plus",
+      "t5/hour/F_{3}/minus",
+      "t5/hour/F_{4}/plus",
+      "t5/hour/F_{4}/minus",
+      "t5/hour/F_{5}/plus",
+      "t5/hour/F_{5}/minus",
+      "t5/hour/F_{6}/plus",
+      "t5/hour/F_{6}/minus",
+      "t5/compass8/F_{2}/plus",
+      "t5/compass8/F_{2}/minus",
+      "t5/compass8/F_{3}/plus",
+      "t5/compass8/F_{3}/minus"
+    ],
+    "min_cells": 4,
+    "vs_fund_evaluable": true,
+    "vs_flat_evaluable": true,
+    "verdict_at_lock": {
+      "vs_fund": "evaluable",
+      "vs_flat": "evaluable"
+    }
+  },
+  "R_precheck": {
+    "cells": {
+      "bart/weekday/r3": {
+        "domain": "weekday",
+        "rank": 3,
+        "N": 7,
+        "eps_RRR": {
+          "1": 1.9145615528789588,
+          "2": 1.247155523922251,
+          "3": 0.8503360105000625
+        },
+        "eps_FF": {
+          "1": 0.1597822067806042,
+          "2": 1.8966404988063839,
+          "3": 1.0617943295121353
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          },
+          "FF": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 0.6986607142857143,
+          "FF": 0.21651785714285715
+        },
+        "scorable": false
+      },
+      "bart/weekday/r4": {
+        "domain": "weekday",
+        "rank": 4,
+        "N": 7,
+        "eps_RRR": {
+          "1": 1.896812003162625,
+          "2": 0.7281751178943459,
+          "3": 0.6682691394379929
+        },
+        "eps_FF": {
+          "1": 0.15978220677924054,
+          "2": 1.263705784829135,
+          "3": 1.0371113308955546
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          },
+          "FF": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 0.7142857142857143
+        },
+        "scorable": false
+      },
+      "bart/weekday/r5": {
+        "domain": "weekday",
+        "rank": 5,
+        "N": 7,
+        "eps_RRR": {
+          "1": 1.496049255673789,
+          "2": 0.5026916659369944,
+          "3": 0.5231632979715576
+        },
+        "eps_FF": {
+          "1": 0.1597822067783295,
+          "2": 1.2188397724403999,
+          "3": 0.6065569420436403
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          },
+          "FF": {
+            "plus_3": 0.0001,
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "minus_3": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 0.9330357142857143
+        },
+        "scorable": false
+      },
+      "bart/month/r8": {
+        "domain": "month",
+        "rank": 8,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.952397415454286,
+          "2": 0.8264302876125974,
+          "3": 1.3024488617760637,
+          "4": 1.0675740650887524,
+          "5": 1.001761603178471,
+          "6": 0.820432005084557
+        },
+        "eps_FF": {
+          "1": 0.27111536809767933,
+          "2": 1.4663171250391962,
+          "3": 1.432558684034005,
+          "4": 1.0384221870887445,
+          "5": 1.0112062139082056,
+          "6": 0.9777200065657399
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/month/r9": {
+        "domain": "month",
+        "rank": 9,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.8865983722526292,
+          "2": 0.629807018808525,
+          "3": 1.4527381137300195,
+          "4": 0.9973022293574326,
+          "5": 0.9261993861228166,
+          "6": 0.3757962719142368
+        },
+        "eps_FF": {
+          "1": 0.2711153680966334,
+          "2": 0.9118551808745536,
+          "3": 1.4208057442840578,
+          "4": 1.0372316516287332,
+          "5": 1.0057216259553259,
+          "6": 0.74322257674374
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/month/r10": {
+        "domain": "month",
+        "rank": 10,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.6381618208158817,
+          "2": 0.4092912165515948,
+          "3": 1.9021180166774834,
+          "4": 1.0173396273783333,
+          "5": 0.9299674185822732,
+          "6": 0.24113334185876778
+        },
+        "eps_FF": {
+          "1": 0.2711153681016187,
+          "2": 0.43703810902687207,
+          "3": 1.3235668410899153,
+          "4": 1.0824494359683396,
+          "5": 1.002892507306587,
+          "6": 0.30606342501824013
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          3,
+          4,
+          5
+        ],
+        "S_RRR": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/hour/r8": {
+        "domain": "hour",
+        "rank": 8,
+        "N": 12,
+        "eps_RRR": {
+          "1": 2.9855551933816993,
+          "2": 1.5023249218581567,
+          "3": 3.699337398173967,
+          "4": 2.526369636130825,
+          "5": 0.987621302425275,
+          "6": 0.8168396495099659
+        },
+        "eps_FF": {
+          "1": 2.740448829609938,
+          "2": 1.8299606308369705,
+          "3": 1.317697619539529,
+          "4": 1.1284470023122553,
+          "5": 1.0010101157054148,
+          "6": 0.998940875983266
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/hour/r9": {
+        "domain": "hour",
+        "rank": 9,
+        "N": 12,
+        "eps_RRR": {
+          "1": 2.994894025602729,
+          "2": 2.2929141942426874,
+          "3": 4.0011586576672284,
+          "4": 3.0625504228708325,
+          "5": 0.5566638892700105,
+          "6": 0.7052202194656405
+        },
+        "eps_FF": {
+          "1": 2.7404488295170246,
+          "2": 1.8171740441833917,
+          "3": 1.6172051112760684,
+          "4": 2.6188642935809896,
+          "5": 0.9908590861364338,
+          "6": 0.8815690774670408
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/hour/r10": {
+        "domain": "hour",
+        "rank": 10,
+        "N": 12,
+        "eps_RRR": {
+          "1": 2.9891918519168788,
+          "2": 2.296018754789459,
+          "3": 3.991083584794014,
+          "4": 3.062484807215721,
+          "5": 0.5355655151962575,
+          "6": 0.702032565290001
+        },
+        "eps_FF": {
+          "1": 2.7404488294802287,
+          "2": 1.457793781033275,
+          "3": 3.494255133099712,
+          "4": 2.787674416386728,
+          "5": 0.9875610927426689,
+          "6": 0.725062668749322
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_8": 0.0001,
+            "plus_9": 0.0001,
+            "plus_10": 0.0001,
+            "minus_8": 0.0001,
+            "minus_9": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "bart/compass8/r4": {
+        "domain": "compass8",
+        "rank": 4,
+        "N": 8,
+        "eps_RRR": {
+          "1": 2.170198631300816,
+          "2": 1.3746931887279046,
+          "3": 0.8197117304999391,
+          "4": 0.2373797510202723
+        },
+        "eps_FF": {
+          "1": 0.3225314105912964,
+          "2": 1.4668709614213404,
+          "3": 1.3767121658628678,
+          "4": 0.4337268428474138
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.5703125
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          },
+          "FF": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 0.6796875
+        },
+        "scorable": false
+      },
+      "bart/compass8/r5": {
+        "domain": "compass8",
+        "rank": 5,
+        "N": 8,
+        "eps_RRR": {
+          "1": 2.1569808565165944,
+          "2": 1.3691271370463662,
+          "3": 0.38507622777053047,
+          "4": 0.16740390227638102
+        },
+        "eps_FF": {
+          "1": 0.3225314105877625,
+          "2": 1.3842916280126625,
+          "3": 1.12958270749473,
+          "4": 0.41350813486234217
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.5703125
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          },
+          "FF": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 0.99609375
+        },
+        "scorable": false
+      },
+      "bart/compass8/r6": {
+        "domain": "compass8",
+        "rank": 6,
+        "N": 8,
+        "eps_RRR": {
+          "1": 2.103243039222743,
+          "2": 0.25892808269424933,
+          "3": 0.2312693609943789,
+          "4": 0.09120235371104957
+        },
+        "eps_FF": {
+          "1": 0.3225314105833425,
+          "2": 1.372101978616146,
+          "3": 0.8222371625304361,
+          "4": 0.16805907304761292
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.5703125
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          },
+          "FF": {
+            "plus_4": 0.0001,
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "minus_4": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/weekday/r5": {
+        "domain": "weekday",
+        "rank": 5,
+        "N": 7,
+        "eps_RRR": {
+          "1": 1.5902575492800324,
+          "2": 0.8074466085503188,
+          "3": 0.21416980109902442
+        },
+        "eps_FF": {
+          "1": 0.24953390492810448,
+          "2": 1.177951112292426,
+          "3": 0.9845651429770967
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          },
+          "FF": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 0.9977678571428571
+        },
+        "scorable": false
+      },
+      "t5/weekday/r6": {
+        "domain": "weekday",
+        "rank": 6,
+        "N": 7,
+        "eps_RRR": {
+          "1": 0.25655473279154306,
+          "2": 0.39220496049455056,
+          "3": 0.09585216676351634
+        },
+        "eps_FF": {
+          "1": 0.24953390493557728,
+          "2": 0.394770921755681,
+          "3": 0.09661464342734631
+        },
+        "RRR_missing_fundamental": false,
+        "S_FF": [],
+        "S_RRR": [],
+        "FF_pred_R_hat": {
+          "plus": 1.0,
+          "minus": 1.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "composable",
+        "ridge": {
+          "RRR": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          },
+          "FF": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/weekday/r7": {
+        "domain": "weekday",
+        "rank": 7,
+        "N": 7,
+        "eps_RRR": {
+          "1": 0.2552432726401527,
+          "2": 0.3907410181498722,
+          "3": 0.07989005632491424
+        },
+        "eps_FF": {
+          "1": 0.24953390493554414,
+          "2": 0.39310069934061453,
+          "3": 0.07971453784706266
+        },
+        "RRR_missing_fundamental": false,
+        "S_FF": [],
+        "S_RRR": [],
+        "FF_pred_R_hat": {
+          "plus": 1.0,
+          "minus": 1.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "composable",
+        "ridge": {
+          "RRR": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          },
+          "FF": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/weekday/r9": {
+        "domain": "weekday",
+        "rank": 9,
+        "N": 7,
+        "eps_RRR": {
+          "1": 0.25239301228424055,
+          "2": 0.38768864766387007,
+          "3": 0.06360511642694826
+        },
+        "eps_FF": {
+          "1": 0.24953390493544042,
+          "2": 0.3873841212828356,
+          "3": 0.06298053577445334
+        },
+        "RRR_missing_fundamental": false,
+        "S_FF": [],
+        "S_RRR": [],
+        "FF_pred_R_hat": {
+          "plus": 1.0,
+          "minus": 1.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "composable",
+        "ridge": {
+          "RRR": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          },
+          "FF": {
+            "plus_5": 0.0001,
+            "plus_6": 0.0001,
+            "plus_7": 0.0001,
+            "plus_9": 0.0001,
+            "minus_5": 0.0001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_9": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/month/r10": {
+        "domain": "month",
+        "rank": 10,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.8602748675280436,
+          "2": 0.6941283016073383,
+          "3": 0.6007435356232288,
+          "4": 0.4020428588313187,
+          "5": 0.4833504696355285,
+          "6": 0.6328158688875867
+        },
+        "eps_FF": {
+          "1": 0.5794117543251012,
+          "2": 1.4138654895758034,
+          "3": 1.20013877554062,
+          "4": 0.6535601456750807,
+          "5": 0.9323393295216074,
+          "6": 0.7977360270459289
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/month/r11": {
+        "domain": "month",
+        "rank": 11,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.3877113223161925,
+          "2": 0.6569780289776874,
+          "3": 0.5933564139490775,
+          "4": 0.40005245190987315,
+          "5": 0.4643812478797626,
+          "6": 0.5671949816585348
+        },
+        "eps_FF": {
+          "1": 0.5794117543170407,
+          "2": 0.6626740479910148,
+          "3": 0.5848898207102537,
+          "4": 0.3921105650285111,
+          "5": 0.4636939445827283,
+          "6": 0.4494737398458378
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/month/r12": {
+        "domain": "month",
+        "rank": 12,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.3566599452285386,
+          "2": 0.6543073696287538,
+          "3": 0.5890834457646302,
+          "4": 0.38843551871697035,
+          "5": 0.4596946524740577,
+          "6": 0.5600419969972381
+        },
+        "eps_FF": {
+          "1": 0.5794117543198974,
+          "2": 0.6617078573054767,
+          "3": 0.5832058088956323,
+          "4": 0.3827184924987007,
+          "5": 0.4568196181237305,
+          "6": 0.43769454588128076
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/month/r14": {
+        "domain": "month",
+        "rank": 14,
+        "N": 12,
+        "eps_RRR": {
+          "1": 0.5584489900509173,
+          "2": 0.661715614625448,
+          "3": 0.5795785135227326,
+          "4": 0.37060168199189436,
+          "5": 0.42662590084440566,
+          "6": 0.41189106611099036
+        },
+        "eps_FF": {
+          "1": 0.5794117543210486,
+          "2": 0.6616695034567132,
+          "3": 0.5774860919527908,
+          "4": 0.370998177980999,
+          "5": 0.42707845240144277,
+          "6": 0.3975472834307009
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/hour/r10": {
+        "domain": "hour",
+        "rank": 10,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.9985017971317156,
+          "2": 1.433829115005706,
+          "3": 1.3514668417697884,
+          "4": 1.0851342720274781,
+          "5": 0.9816989284532711,
+          "6": 0.8472640367536679
+        },
+        "eps_FF": {
+          "1": 1.2900272258273004,
+          "2": 1.828680111628176,
+          "3": 1.2237987759288713,
+          "4": 1.0734465523714782,
+          "5": 0.9837839006075014,
+          "6": 0.8224919105062913
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/hour/r11": {
+        "domain": "hour",
+        "rank": 11,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.954988958673379,
+          "2": 1.3834255998183376,
+          "3": 2.3052441311650895,
+          "4": 1.0117251714679456,
+          "5": 0.9238674067165341,
+          "6": 0.7863349974822422
+        },
+        "eps_FF": {
+          "1": 1.2900272258166867,
+          "2": 1.7883420583893166,
+          "3": 1.2375869060684848,
+          "4": 1.0766437703161067,
+          "5": 0.9683208509645287,
+          "6": 0.8152076920975491
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/hour/r12": {
+        "domain": "hour",
+        "rank": 12,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.8849788198085755,
+          "2": 1.3829832544982636,
+          "3": 2.455932740445953,
+          "4": 1.0094276734488894,
+          "5": 0.9013812893107304,
+          "6": 0.7872757980659435
+        },
+        "eps_FF": {
+          "1": 1.2900272258717105,
+          "2": 1.4750534046129644,
+          "3": 1.566622499039032,
+          "4": 1.075571044602014,
+          "5": 0.9719951312916348,
+          "6": 0.8142988284019574
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/hour/r14": {
+        "domain": "hour",
+        "rank": 14,
+        "N": 12,
+        "eps_RRR": {
+          "1": 1.9162406372769385,
+          "2": 1.7021862821872318,
+          "3": 2.5399966119352984,
+          "4": 0.9992776055097449,
+          "5": 0.8882636010403581,
+          "6": 0.7592496302304729
+        },
+        "eps_FF": {
+          "1": 1.2900272260371235,
+          "2": 1.723159728838151,
+          "3": 2.5875584814786805,
+          "4": 1.0023759944196275,
+          "5": 0.8731004983920913,
+          "6": 0.7719345361982133
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          },
+          "FF": {
+            "plus_10": 0.001,
+            "plus_11": 0.001,
+            "plus_12": 0.001,
+            "plus_14": 0.001,
+            "minus_10": 0.001,
+            "minus_11": 0.001,
+            "minus_12": 0.001,
+            "minus_14": 0.001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/compass8/r6": {
+        "domain": "compass8",
+        "rank": 6,
+        "N": 8,
+        "eps_RRR": {
+          "1": 1.9497061442218073,
+          "2": 1.4376506478181061,
+          "3": 1.2202017558080542,
+          "4": 0.07582459458522817
+        },
+        "eps_FF": {
+          "1": 0.5337203005654483,
+          "2": 1.438254898266043,
+          "3": 1.9440355338636017,
+          "4": 0.12719152626376717
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.3046875
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_6": 0.001,
+            "plus_7": 0.0001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_6": 0.0001,
+            "plus_7": 0.001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 0.939453125,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/compass8/r7": {
+        "domain": "compass8",
+        "rank": 7,
+        "N": 8,
+        "eps_RRR": {
+          "1": 1.9447048572042083,
+          "2": 1.3231821872725076,
+          "3": 1.2190091705137698,
+          "4": 0.06068524673586795
+        },
+        "eps_FF": {
+          "1": 0.5171023923294477,
+          "2": 1.4337295695392778,
+          "3": 1.9313045224638767,
+          "4": 0.13975341613046777
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          2,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.3046875
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_6": 0.001,
+            "plus_7": 0.0001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_6": 0.0001,
+            "plus_7": 0.001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/compass8/r8": {
+        "domain": "compass8",
+        "rank": 8,
+        "N": 8,
+        "eps_RRR": {
+          "1": 1.9390923061299719,
+          "2": 0.34126466892851964,
+          "3": 1.2107697069503647,
+          "4": 0.069991867441342
+        },
+        "eps_FF": {
+          "1": 0.5171023923268787,
+          "2": 1.3768936203477538,
+          "3": 1.265057374493399,
+          "4": 0.07666449818429688
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          2,
+          3
+        ],
+        "S_RRR": [
+          1,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 0.3046875
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_6": 0.001,
+            "plus_7": 0.0001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_6": 0.0001,
+            "plus_7": 0.001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      },
+      "t5/compass8/r10": {
+        "domain": "compass8",
+        "rank": 10,
+        "N": 8,
+        "eps_RRR": {
+          "1": 1.8235861206358919,
+          "2": 0.30879456950089434,
+          "3": 1.0632406749033987,
+          "4": 0.044976664518715626
+        },
+        "eps_FF": {
+          "1": 0.5171023923204899,
+          "2": 0.37431403069352565,
+          "3": 1.1313334160335324,
+          "4": 0.06135260838982426
+        },
+        "RRR_missing_fundamental": true,
+        "S_FF": [
+          1,
+          3
+        ],
+        "S_RRR": [
+          1,
+          3
+        ],
+        "FF_pred_R_hat": {
+          "plus": 0.0,
+          "minus": 0.0,
+          "alt": 1.0
+        },
+        "FF_pred_category": "fail",
+        "ridge": {
+          "RRR": {
+            "plus_6": 0.001,
+            "plus_7": 0.0001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          },
+          "FF": {
+            "plus_6": 0.0001,
+            "plus_7": 0.001,
+            "plus_8": 0.001,
+            "plus_10": 0.001,
+            "minus_6": 0.0001,
+            "minus_7": 0.0001,
+            "minus_8": 0.0001,
+            "minus_10": 0.0001
+          }
+        },
+        "dev_single": {
+          "RRR": 1.0,
+          "FF": 1.0
+        },
+        "scorable": false
+      }
+    },
+    "scorable_cells": [],
+    "evaluable": false,
+    "min_cells": 3,
+    "verdict_at_lock": "not evaluable (fewer than 3 scorable cells)"
+  },
+  "S_fits": {
+    "weekday/natural": {
+      "ridge": {
+        "plus_32": 0.001,
+        "minus_32": 0.001
+      },
+      "sha256": "6c88436cf9de2432f1594495112f24abb995c446f85c954d42a3a09d64ca9ff9",
+      "dev_single": 1.0
+    },
+    "weekday/scrmax": {
+      "ridge": {
+        "plus_32": 0.001,
+        "minus_32": 0.001
+      },
+      "sha256": "5a1de3ba3cd0c9f31e198be6c1341160d20764c0c141685afcb678f60e6e9864",
+      "dev_single": 1.0
+    },
+    "month/natural": {
+      "ridge": {
+        "plus_32": 0.001,
+        "minus_32": 0.001
+      },
+      "sha256": "22e0bbcff3edb3b9a3699a3d62e694ad04dee6352a09844f901d8869a1463d35",
+      "dev_single": 1.0
+    },
+    "month/scrmax": {
+      "ridge": {
+        "plus_32": 0.001,
+        "minus_32": 0.001
+      },
+      "sha256": "4135c16a68591dd758810c165fe49366898739ce01333d9af8edba9cf759d525",
+      "dev_single": 1.0
+    }
+  },
+  "stop_rules": [
+    "G4-0 old domain or C1 fails",
+    "same job fails twice for an unknown reason",
+    "leakage",
+    "budget 16 GPU h (report at 12)"
+  ],
+  "sources": {
+    "symutil.py": "0a50e30cce36c8012be2e1bd8ef5635b8a0e397c4bb994044ef6d27a60025832",
+    "sym4_semantics.py": "1fb078ed77027660025b83a5569fb63798747a5c3e756f2fd4e4ad38d2f0a6ce",
+    "sym4_evaluator.py": "0f2016873473e3e9fe987534b8e59713f7232eded9abcefa4d3a0db7c5e772d7",
+    "lib4.py": "dd9fa362be1dcbb08b33c219d7c114184e9694345ca774b8a5de882d4707ffe3",
+    "d_encode.py": "c9e42141916dd80acdeab9cb67a3e8a015d796b4d16284ee97e72762341cd701",
+    "g40.py": "687cdab39acd2d02c403048056e3c5dbbf253ce435a92705d02fb276436b6462",
+    "v_chains.py": "1eea7a303b8e94f97d08b038ad7c7cb06b1765cc7c7e898066e5b1fe2296af7d",
+    "r_chains.py": "45b8c90e5b4a21b2f5be68bcda897368d5b00e9af8c4b5850fa1377d5e141b5a",
+    "u_run.py": "3ee6e12dfd87ff3b821a386542077d3b0a62adb2f9db97dbe781cd3c0be7b553",
+    "x_run.py": "c65f03a720b15b578e955d3d881994c4bc7e7510f6660530a535f36cb38dc74a",
+    "s_long.py": "69c9940a161a48cd3d6a32861e0d1c603e6d2bee12b7ca21e8e3970920da6f75",
+    "analyze.py": "38085a3587e1ea140c89e8f297a8769c992dd3e777f25d4a6ba5f66406cc96c4",
+    "job_gpu.slurm": "a7ccd1ba52adbeabb768089c648afab707dfce90e91e0a319d9e4dd80d71e198",
+    "job_cpu.slurm": "81498c4098a9a925e3c3a4407cc09ab485a1ac1a099d924213d38fa7cec970da"
+  },
+  "data": {
+    "experiments/composability_mechanisms_v3/data/audit.json": "64e6f7670d98b8f2495525133da39eecb1e576e1c5a963805c3f3d046da1f68b",
+    "experiments/composability_mechanisms_v3/data/slot_positions.json": "2f4fe6840506babe518169a58e43f461dd37f37ea9fbdbebaae464a1c127e0e8",
+    "experiments/composability_mechanisms_v3/data/manifest.json": "fd953a4782923c5e5cbe1c5b74587e40e24d6f34fdb832e62eaf4e6fdc56107c",
+    "experiments/composability_mechanisms_v3/results/gates_bart.json": "d9231af82cde1e42af71f9997b37a51e4f79c7d48d1c8b64a5cb0a372531f8c8",
+    "experiments/composability_mechanisms_v3/results/gates_t5.json": "6e3b7997a48fa0b270bf79d607c0da69dc699c4c62edc75bc8686a16918a5d40",
+    "experiments/composability_mechanisms_v3/results/calib_bart.json": "9c168ccd5338ed89a23fd2e35f7589b16c93eeac9b77f66f9d7d17fcaf031996",
+    "experiments/composability_mechanisms_v3/results/calib_t5.json": "4c245c2ad58f209e79b26a82ed0a0c69cda02443f300ec6d43ebdd922a863680",
+    "experiments/composability_mechanisms_v3/results/prelock_bart.json": "ad0b19a3e81f9f40f36dd92f1e30edffcb2a2b3bbf14032747694c426819ba83",
+    "experiments/composability_mechanisms_v3/results/prelock_t5.json": "136b710e39cdecb4b0a9d585d36e9a4734ce83c2f9f75616da2db24dd5433844",
+    "experiments/composability_mechanisms_v3/results/selftest.json": "b2841d618e22db356b522910ab1dc90f13e987a98fe68e9eb0832fba5d15ad97",
+    "experiments/composability_mechanisms_v3/results/smoke_bart.json": "8adb64ff82a8b6cafc485b59b0f075b6da65087466a7fc494ba9640b47d6542a",
+    "experiments/composability_mechanisms_v3/results/smoke_t5.json": "ca8491212d3b897477e85a5a7681bb982de5a7612005e8d3c217947aad68c434",
+    "experiments/composability_mechanisms_v3/results/patch/p_diag.json": "ac0ce3388fca352549651cb152081e6ca3ff9c3dc1625dfb773021cea8abf073",
+    "experiments/composability_mechanisms_v3/inputs_manifest.json": "5be3d085e453ff7ba1cf153b35ab2e070a436cc48a38dab2f7a9dd3613594b71",
+    "experiments/composability_mechanisms_v3/PLAN.md": "b699c85077325f42b78235c0dc6a75b238e243ffefece536ad2dfc22b5d09b80",
+    "experiments/composability_mechanisms_v3/data/weekday/worlds.jsonl": "83041d827ddf566b86ceb90b980ff799f6a322654b86e829b1010a191f633563",
+    "experiments/composability_mechanisms_v3/data/month/worlds.jsonl": "fbeccd3a87b788376b463c8a7e42d676a23b062c7c206d2af86a3f153b62725b",
+    "experiments/composability_mechanisms_v3/data/compass/worlds.jsonl": "744218fa02873adccac1934571f5107b46a8ae8475b3666547f6871d49fed4a8",
+    "experiments/composability_mechanisms_v3/data/hour/worlds.jsonl": "c365c2d1c3557b1dbf76286c30445bd6def235c921b42f7ecb5b9ebacf0cdd67",
+    "experiments/composability_mechanisms_v3/data/compass8/worlds.jsonl": "ad9fa8138710182a3d9ce279eb686b39ad827f022c5672d8387567bd9b5f68a1",
+    "experiments/composability_mechanisms_v3/data/season/worlds.jsonl": "ca92283a9d04adef104213d42e82179f231ef0b07b7baf4bdb50cc530b81412a",
+    "experiments/composability_mechanisms_v3/data/bind3/worlds.jsonl": "ddb0e5b6d4436a981e8faa6ce01a7fefbb7046063ee47994311808e07a367f52",
+    "experiments/composability_mechanisms_v3/data/name3/worlds.jsonl": "425a92307270867d27c786825ba38772074265174ed517530c53524e6638c929",
+    "experiments/composability_mechanisms_v3/data/bind3fix/worlds.jsonl": "707493c6fd8397c3d7d373f4119a66d77ffd26b255df3cf510e83dc06bc736a2"
+  }
+}
