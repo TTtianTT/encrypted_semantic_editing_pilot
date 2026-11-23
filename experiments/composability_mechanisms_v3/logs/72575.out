@@ -1,0 +1,77 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  39%|███▊      | 282/732 [00:00<00:00, 2807.85it/s]Loading weights:  77%|███████▋  | 563/732 [00:00<00:00, 1723.04it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 1706.83it/s]
+GB t5 weekday {16: 1.0} base 16
+GB t5 month {16: 1.0} base 16
+GB t5 hour {16: 0.5, 32: 1.0} base 32
+GB t5 compass8 {16: 1.0} base 16
+GB t5 season {16: 1.0} base 16
+{
+ "GR": {
+  "weekday": {
+   "n": 896,
+   "k": 896,
+   "rate": 1.0,
+   "ci95": [
+    0.9957309604008149,
+    1.0
+   ],
+   "pass_": true
+  },
+  "month": {
+   "n": 1536,
+   "k": 1536,
+   "rate": 1.0,
+   "ci95": [
+    0.9975052893928209,
+    1.0
+   ],
+   "pass_": true
+  },
+  "hour": {
+   "n": 1536,
+   "k": 1536,
+   "rate": 1.0,
+   "ci95": [
+    0.9975052893928209,
+    1.0
+   ],
+   "pass_": true
+  },
+  "compass8": {
+   "n": 1024,
+   "k": 1024,
+   "rate": 1.0,
+   "ci95": [
+    0.9962625959599825,
+    1.0
+   ],
+   "pass_": true
+  },
+  "season": {
+   "n": 512,
+   "k": 512,
+   "rate": 1.0,
+   "ci95": [
+    0.9925530242771171,
+    0.9999999999999999
+   ],
+   "pass_": true
+  }
+ },
+ "V_domains": [
+  "weekday",
+  "month",
+  "hour",
+  "compass8",
+  "season"
+ ],
+ "R_domains": [
+  "weekday",
+  "month",
+  "hour",
+  "compass8"
+ ],
+ "excluded": {
+  "V": [],
+  "other": []
+ }
+}

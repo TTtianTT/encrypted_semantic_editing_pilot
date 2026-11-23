@@ -36,3 +36,8 @@
 72584 smoke bart A (after 72573)
 72585 smoke t5 B (after 72577)
 72587 p_diag cpu (rerun: dedupe table broken down by source)
+72589 p_dyn t5 B (rerun: E_K* first-to-exceed restricted to edited planes; after smoke t5)
+72585 smoke t5 FAILED: analyze.R_at asserted on chains truncated by the smoke test (step 2N absent); R_at now returns None for absent steps
+72594 smoke t5 B (rerun, after 72589)
+72594 smoke t5 FAILED: started 5 s after the analyze.py edit and imported the stale file (NFS attribute cache; traceback line numbers are of the old file); rerun unchanged
+72595 smoke t5 B (rerun)

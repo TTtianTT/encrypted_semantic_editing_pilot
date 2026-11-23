@@ -1,0 +1,60 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  81%|████████  | 591/732 [00:00<00:00, 5894.98it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 5911.12it/s]
+V t5 weekday F_empty
+V t5 weekday F_{1}
+V t5 weekday F_not1
+V t5 weekday F_{2}
+V t5 weekday F_{3}
+V t5 month F_empty
+V t5 month F_{1}
+V t5 month F_not1
+V t5 month F_{2}
+V t5 month F_{3}
+V t5 month F_{4}
+V t5 month F_{5}
+V t5 month F_{6}
+V t5 hour F_empty
+V t5 hour F_{1}
+V t5 hour F_not1
+V t5 hour F_{2}
+V t5 hour F_{3}
+V t5 hour F_{4}
+V t5 hour F_{5}
+V t5 hour F_{6}
+V t5 compass8 F_empty
+V t5 compass8 F_{1}
+V t5 compass8 F_not1
+V t5 compass8 F_{2}
+V t5 compass8 F_{3}
+V t5 compass8 F_{4}
+V t5 season F_empty
+V t5 season F_{1}
+V t5 season F_not1
+R t5 weekday RRR 5
+R t5 weekday RRR 6
+R t5 weekday RRR 7
+R t5 weekday RRR 9
+R t5 weekday FF 5
+R t5 weekday FF 6
+R t5 weekday FF 7
+R t5 weekday FF 9
+S weekday natural
+S weekday scrmax
+S month natural
+S month scrmax
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/smoke.py", line 81, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/smoke.py", line 56, in main
+    V = analyze.v_unit(p, G); R = analyze.r_unit(p, G)
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py", line 132, in r_unit
+    if d not in g40[bb]['V_domains_post']: continue
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py", line 27, in R_at
+    if not rs or max(r['step'] for r in rs) < k: return None          # chain absent or shorter than k (smoke test truncates)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py", line 805, in chain_rate
+    ok = {r['world_id']: r['trajectory_success'] for r in rs if r['step'] == k}; assert len(ok) == len(ws), (bb, d, mp, method, path, k)
+                                                                                        ^^^^^^^^^^^^^^^^^^
+AssertionError: ('t5', 'weekday', 'natural', 'RRR5', 'plus_from_start', 14)
+srun: error: node02: task 0: Exited with exit code 1

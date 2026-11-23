@@ -24,7 +24,8 @@ def recs(bb, d, method, path, mp='natural'):
 
 def R_at(bb, d, method, path, k, mp='natural'):
     rs = recs(bb, d, method, path, mp)
-    return chain_rate(bb, d, mp, method, path, k, recs=rs) if rs else None
+    if not rs or max(r['step'] for r in rs) < k: return None          # chain absent or shorter than k (smoke test truncates)
+    return chain_rate(bb, d, mp, method, path, k, recs=rs)
 
 
 def rv(x): return None if x is None else x['rate']

@@ -1,0 +1,21 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  64%|██████▍   | 467/732 [00:00<00:00, 4669.21it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 4740.87it/s]
+R pre t5 weekday 5 miss1 True S_FF [2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 0.9977678571428571}
+R pre t5 weekday 6 miss1 False S_FF [] cat composable scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 weekday 7 miss1 False S_FF [] cat composable scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 weekday 9 miss1 False S_FF [] cat composable scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 month 10 miss1 True S_FF [1, 2, 3, 4, 5, 6] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 month 11 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 month 12 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 month 14 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 hour 10 miss1 True S_FF [1, 2, 3, 4, 5, 6] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 hour 11 miss1 True S_FF [1, 2, 3, 4, 5, 6] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 hour 12 miss1 True S_FF [1, 2, 3, 4, 5, 6] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 hour 14 miss1 True S_FF [1, 2, 3, 4, 5, 6] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 compass8 6 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 0.939453125, 'FF': 1.0}
+R pre t5 compass8 7 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 compass8 8 miss1 True S_FF [1, 2, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+R pre t5 compass8 10 miss1 True S_FF [1, 3] cat fail scorable False dev {'RRR': 1.0, 'FF': 1.0}
+S fit weekday natural {'ridge': {'plus_32': 0.001, 'minus_32': 0.001}, 'sha256': '6c88436cf9de2432f1594495112f24abb995c446f85c954d42a3a09d64ca9ff9', 'dev_single': 1.0}
+S fit weekday scrmax {'ridge': {'plus_32': 0.001, 'minus_32': 0.001}, 'sha256': '5a1de3ba3cd0c9f31e198be6c1341160d20764c0c141685afcb678f60e6e9864', 'dev_single': 1.0}
+S fit month natural {'ridge': {'plus_32': 0.001, 'minus_32': 0.001}, 'sha256': '22e0bbcff3edb3b9a3699a3d62e694ad04dee6352a09844f901d8869a1463d35', 'dev_single': 1.0}
+S fit month scrmax {'ridge': {'plus_32': 0.001, 'minus_32': 0.001}, 'sha256': '4135c16a68591dd758810c165fe49366898739ce01333d9af8edba9cf759d525', 'dev_single': 1.0}

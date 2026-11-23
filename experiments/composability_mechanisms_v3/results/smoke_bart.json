@@ -1,0 +1,189 @@
+{
+  "g40": {
+    "base": {
+      "weekday": 1.0,
+      "month": 1.0,
+      "hour": 1.0,
+      "compass8": 1.0,
+      "season": 1.0
+    },
+    "C1": {
+      "weekday/s42": 0.0,
+      "weekday/s43": 0.0,
+      "weekday/s44": 0.0,
+      "month/s42": 0.0,
+      "month/s43": 0.0,
+      "month/s44": 0.0,
+      "compass/s42": 0.0,
+      "compass/s43": 0.0,
+      "compass/s44": 0.0
+    },
+    "V_post": [
+      "weekday",
+      "month",
+      "hour",
+      "compass8",
+      "season"
+    ],
+    "pass_": true
+  },
+  "V_domains": [
+    "weekday",
+    "month",
+    "hour",
+    "compass8",
+    "season"
+  ],
+  "R_domains": [
+    "weekday"
+  ],
+  "A8_3_ce_identity": {
+    "max_abs_diff": 0.0,
+    "pass_": true
+  },
+  "U_train": {
+    "C1U4/weekday/s42": {
+      "updates": 4,
+      "admitted": false,
+      "status": "cannot learn"
+    },
+    "C1UN/weekday/s42": {
+      "updates": 4,
+      "admitted": false,
+      "status": "cannot learn"
+    },
+    "C3U4/month/s42": {
+      "updates": 4,
+      "admitted": false,
+      "status": "cannot learn"
+    }
+  },
+  "X_train": {
+    "name3/RRR32": {
+      "ridge": {
+        "plus_32": 0.001,
+        "minus_32": 0.001
+      }
+    },
+    "name3/Tok/s42/u4": {
+      "dev_single": {
+        "n": 384,
+        "k": 0,
+        "rate": 0.0,
+        "ci95": [
+          8.673617379884035e-19,
+          0.009904714241677031
+        ]
+      },
+      "admitted": false
+    },
+    "name3/Tok/s42": {
+      "updates": 4,
+      "admitted": false
+    },
+    "name3/Att/s42/u4": {
+      "dev_single": {
+        "n": 384,
+        "k": 0,
+        "rate": 0.0,
+        "ci95": [
+          8.673617379884035e-19,
+          0.009904714241677031
+        ]
+      },
+      "admitted": false
+    },
+    "name3/Att/s42": {
+      "updates": 4,
+      "admitted": false
+    },
+    "x_status": "stopped"
+  },
+  "X_attention_name3": {
+    "current": 0.03731383121339604,
+    "next": 0.0372862780544286,
+    "prev": 0.037427899097868554,
+    "other": 0.8879719916343068
+  },
+  "tables_rows": 2718,
+  "V": {
+    "Q9": {
+      "verdict": "mixed",
+      "V3_beats_both_or_not_evaluable": false,
+      "V4": [
+        "H-ms holds",
+        "not evaluable"
+      ]
+    },
+    "V1": "H-ms",
+    "V2a": "H-ms",
+    "V2b": "H-ms",
+    "V3": {
+      "vs_fund": "no winner",
+      "vs_flat": "no winner"
+    },
+    "V4": {
+      "bart": "H-ms holds",
+      "t5": "not evaluable"
+    },
+    "V0": true
+  },
+  "R": {
+    "verdict": "not evaluable (locked: fewer than 3 scorable cells)",
+    "cells": 12
+  },
+  "U": {
+    "U1": "H-shortcut",
+    "U2": "not evaluable (no admitted C1-U4 editor)",
+    "Q11": "mixed"
+  },
+  "X": {
+    "X1": false,
+    "X2": "not evaluable (X1 failed or missing)",
+    "Q12": "not evaluable (X1 failed or missing)"
+  },
+  "figures": [
+    "r_rank.png",
+    "u_Rt.png",
+    "v_curves_bart.png",
+    "v_vote_share.png",
+    "x_Rk.png"
+  ],
+  "pass": true,
+  "sources": {
+    "symutil.py": "0a50e30cce36c8012be2e1bd8ef5635b8a0e397c4bb994044ef6d27a60025832",
+    "sym4_semantics.py": "1fb078ed77027660025b83a5569fb63798747a5c3e756f2fd4e4ad38d2f0a6ce",
+    "sym4_evaluator.py": "0f2016873473e3e9fe987534b8e59713f7232eded9abcefa4d3a0db7c5e772d7",
+    "lib4.py": "dd9fa362be1dcbb08b33c219d7c114184e9694345ca774b8a5de882d4707ffe3",
+    "d_encode.py": "c9e42141916dd80acdeab9cb67a3e8a015d796b4d16284ee97e72762341cd701",
+    "g40.py": "687cdab39acd2d02c403048056e3c5dbbf253ce435a92705d02fb276436b6462",
+    "v_chains.py": "1eea7a303b8e94f97d08b038ad7c7cb06b1765cc7c7e898066e5b1fe2296af7d",
+    "r_chains.py": "45b8c90e5b4a21b2f5be68bcda897368d5b00e9af8c4b5850fa1377d5e141b5a",
+    "u_run.py": "3ee6e12dfd87ff3b821a386542077d3b0a62adb2f9db97dbe781cd3c0be7b553",
+    "x_run.py": "c65f03a720b15b578e955d3d881994c4bc7e7510f6660530a535f36cb38dc74a",
+    "s_long.py": "69c9940a161a48cd3d6a32861e0d1c603e6d2bee12b7ca21e8e3970920da6f75",
+    "analyze.py": "38085a3587e1ea140c89e8f297a8769c992dd3e777f25d4a6ba5f66406cc96c4",
+    "job_gpu.slurm": "a7ccd1ba52adbeabb768089c648afab707dfce90e91e0a319d9e4dd80d71e198",
+    "job_cpu.slurm": "81498c4098a9a925e3c3a4407cc09ab485a1ac1a099d924213d38fa7cec970da",
+    "lock.py": "4b6b6b75361defb386c398e5e800710f92e9b86839555f1ea6ff357687519d0c",
+    "smoke.py": "459cb31f32d646c94e81a4707eab3863786754ee1e2df80f4d4e0517f38b347b",
+    "gates.py": "a785c15d5eb370e7ba03412c8428c3794187d79ba68921f81b29a6c43b439418",
+    "calib.py": "841d23ff5953b7f6428ccdb67b858ad22c7baca98144834d896bacb5ef501a01",
+    "prelock_fits.py": "b7d35701630338bd8b40d728075703d585495df336cac643216f6715c29164ad"
+  },
+  "seconds": 585.0544621944427,
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 835014144,
+    "wall_seconds": 563.2533246399835,
+    "job_id": "72584",
+    "step_id": "0"
+  }
+}

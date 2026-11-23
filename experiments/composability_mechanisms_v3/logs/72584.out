@@ -1,0 +1,230 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 4921.87it/s]
+V bart weekday F_empty
+V bart weekday F_{1}
+V bart weekday F_not1
+V bart weekday F_{2}
+V bart weekday F_{3}
+V bart month F_empty
+V bart month F_{1}
+V bart month F_not1
+V bart month F_{2}
+V bart month F_{3}
+V bart month F_{4}
+V bart month F_{5}
+V bart month F_{6}
+V bart hour F_empty
+V bart hour F_{1}
+V bart hour F_not1
+V bart hour F_{2}
+V bart hour F_{3}
+V bart hour F_{4}
+V bart hour F_{5}
+V bart hour F_{6}
+V bart compass8 F_empty
+V bart compass8 F_{1}
+V bart compass8 F_not1
+V bart compass8 F_{2}
+V bart compass8 F_{3}
+V bart compass8 F_{4}
+V bart season F_empty
+V bart season F_{1}
+V bart season F_not1
+R bart weekday RRR 3
+R bart weekday RRR 4
+R bart weekday RRR 5
+R bart weekday FF 3
+R bart weekday FF 4
+R bart weekday FF 5
+U train C1U4 weekday 42 4 0.0
+U train C1UN weekday 42 4 0.0
+U train C3U4 month 42 4 0.0
+U eval weekday C1v1_s42 M1 0.99 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval weekday C1v1_s43 M1 0.995 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval weekday C1v1_s44 M1 0.998 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval month C1v1_s42 M1 0.995 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval month P2C3_s42 M1 -0.069 M3 {'source': 0.0, 'target': 1.0, 'other': 0.0}
+U eval month C1v1_s43 M1 0.997 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval month P2C3_s43 M1 -0.068 M3 {'source': 0.0, 'target': 1.0, 'other': 0.0}
+U eval month C1v1_s44 M1 0.997 M3 {'source': 1.0, 'target': 0.0, 'other': 0.0}
+U eval month P2C3_s44 M1 -0.068 M3 {'source': 0.0, 'target': 1.0, 'other': 0.0}
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/lib4.py:637: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, loss=float(loss), grad=float(gn)))
+X train name3 Tok 42 4 0.0
+X train name3 Att 42 4 0.0
+X eval name3 RRR32
+X eval name3 reencode
+X eval name3 Tok_s42
+X eval name3 Att_s42
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py:253: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  axs[i][0].set_ylabel('vote share (locked λ, dev distances)'); axs[i][0].legend(fontsize=6)
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v3/analyze.py:288: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  axs[0].legend(fontsize=7)
+{
+ "g40": {
+  "base": {
+   "weekday": 1.0,
+   "month": 1.0,
+   "hour": 1.0,
+   "compass8": 1.0,
+   "season": 1.0
+  },
+  "C1": {
+   "weekday/s42": 0.0,
+   "weekday/s43": 0.0,
+   "weekday/s44": 0.0,
+   "month/s42": 0.0,
+   "month/s43": 0.0,
+   "month/s44": 0.0,
+   "compass/s42": 0.0,
+   "compass/s43": 0.0,
+   "compass/s44": 0.0
+  },
+  "V_post": [
+   "weekday",
+   "month",
+   "hour",
+   "compass8",
+   "season"
+  ],
+  "pass_": true
+ },
+ "V_domains": [
+  "weekday",
+  "month",
+  "hour",
+  "compass8",
+  "season"
+ ],
+ "R_domains": [
+  "weekday"
+ ],
+ "A8_3_ce_identity": {
+  "max_abs_diff": 0.0,
+  "pass_": true
+ },
+ "U_train": {
+  "C1U4/weekday/s42": {
+   "updates": 4,
+   "admitted": false,
+   "status": "cannot learn"
+  },
+  "C1UN/weekday/s42": {
+   "updates": 4,
+   "admitted": false,
+   "status": "cannot learn"
+  },
+  "C3U4/month/s42": {
+   "updates": 4,
+   "admitted": false,
+   "status": "cannot learn"
+  }
+ },
+ "X_train": {
+  "name3/RRR32": {
+   "ridge": {
+    "plus_32": 0.001,
+    "minus_32": 0.001
+   }
+  },
+  "name3/Tok/s42/u4": {
+   "dev_single": {
+    "n": 384,
+    "k": 0,
+    "rate": 0.0,
+    "ci95": [
+     8.673617379884035e-19,
+     0.009904714241677031
+    ]
+   },
+   "admitted": false
+  },
+  "name3/Tok/s42": {
+   "updates": 4,
+   "admitted": false
+  },
+  "name3/Att/s42/u4": {
+   "dev_single": {
+    "n": 384,
+    "k": 0,
+    "rate": 0.0,
+    "ci95": [
+     8.673617379884035e-19,
+     0.009904714241677031
+    ]
+   },
+   "admitted": false
+  },
+  "name3/Att/s42": {
+   "updates": 4,
+   "admitted": false
+  },
+  "x_status": "stopped"
+ },
+ "X_attention_name3": {
+  "current": 0.03731383121339604,
+  "next": 0.0372862780544286,
+  "prev": 0.037427899097868554,
+  "other": 0.8879719916343068
+ },
+ "tables_rows": 2718,
+ "V": {
+  "Q9": {
+   "verdict": "mixed",
+   "V3_beats_both_or_not_evaluable": false,
+   "V4": [
+    "H-ms holds",
+    "not evaluable"
+   ]
+  },
+  "V1": "H-ms",
+  "V2a": "H-ms",
+  "V2b": "H-ms",
+  "V3": {
+   "vs_fund": "no winner",
+   "vs_flat": "no winner"
+  },
+  "V4": {
+   "bart": "H-ms holds",
+   "t5": "not evaluable"
+  },
+  "V0": true
+ },
+ "R": {
+  "verdict": "not evaluable (locked: fewer than 3 scorable cells)",
+  "cells": 12
+ },
+ "U": {
+  "U1": "H-shortcut",
+  "U2": "not evaluable (no admitted C1-U4 editor)",
+  "Q11": "mixed"
+ },
+ "X": {
+  "X1": false,
+  "X2": "not evaluable (X1 failed or missing)",
+  "Q12": "not evaluable (X1 failed or missing)"
+ },
+ "figures": [
+  "r_rank.png",
+  "u_Rt.png",
+  "v_curves_bart.png",
+  "v_vote_share.png",
+  "x_Rk.png"
+ ],
+ "pass": true,
+ "seconds": 585.0544621944427,
+ "resources": {
+  "model": "bart",
+  "dimension": 768,
+  "backbone_parameters": 139420416,
+  "parameters_per_operator": 25344,
+  "total_editor_parameters": 50688,
+  "gpu": "NVIDIA B300 SXM6 AC",
+  "visible_devices": "0",
+  "allocated_gpu_count": 1,
+  "peak_allocated_bytes": 835014144,
+  "wall_seconds": 563.2533246399835,
+  "job_id": "72584",
+  "step_id": "0"
+ }
+}
