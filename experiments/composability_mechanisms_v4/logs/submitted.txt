@@ -35,3 +35,11 @@
 72761 dbg_gb bart A (GB investigation, dev only)
 72762 analyze --smoke cpu (pre-lock)
 72764 lock cpu
+72765 g50 bart A (post-lock)
+72766 l_chains bart A (afterok 72765)
+72767 d_chains bart A (afterok 72766)
+72768 b_run bart A (afterok 72767)
+72769 g50 t5 B (post-lock)
+72770 l_chains t5 B (afterok 72769)
+72771 d_chains t5 B (afterok 72770)
+72772 analyze cpu (afterok 72768 72771)
