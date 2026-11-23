@@ -1,5 +1,7 @@
 # composability_mechanisms_v1 报告（核心部分 S1–S3）
 
+> 去重说明：confirm2/confirm world 与历史渲染文本的重叠检查及去重后的重算见 [`NOTE_DEDUPE.md`](NOTE_DEDUPE.md)（全部判定不变）。
+
 分支 `experiment/composability-mechanisms-v1`。协议锁定于提交 `e2fa258`（`protocol.json` SHA256 `ddabe9aa…`），锁定前没有任何 confirm2 或 S1b confirm 的编码、解码（`lock.py` 断言）。B4 按计划在锁定前用 train+dev 测得，不是前瞻性结果。可选部分 S4、S5 尚未执行，见 §7。
 
 ## 1. 结论
