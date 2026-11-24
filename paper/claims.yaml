@@ -25,6 +25,7 @@ claims:
     experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
     experiments/composability_mechanisms_v4/results/g50_bart.json: faff3076c0c02667f59451c9cd69d463684ed941b57a7ce9a4a8a4015bba1291
     experiments/composability_mechanisms_v4/results/g50_t5.json: 625819057f2a955c09493d28f31d7b5d7b6322ef54076b7c25d442913d90c8e4
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
     experiments/symmetry_composability_v1/results/e1_predictions.json: e6b52547920eb343658cd0ea0a96b2a7f785777126ab82ae2b5e913a0565e2c5
   numbers:
   - macro: CLoneVoneCOneRtwoMax
@@ -54,6 +55,13 @@ claims:
     source: derived:v5_g50_base_min
     path: null
     note: v5 G5-0, base operator plus R_2N, min over 10 (backbone, domain)
+    pending: false
+  - macro: CLoneVfiveCOneRoneMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v5_c1v1_r1_min
+    path: null
+    note: v5 L, BART C1v1 cells (one-way paths), min step-1 decoded success
     pending: false
 - id: CL2
   zh: CE 编辑器写的是指令，不是状态
