@@ -1189,6 +1189,7 @@ def fit_lam_ctx(Dslot, Dctx, y, lam_slot, grid=None):
         else: lo = a
     lam = grid[i] if vals[i] <= nll((lo + hi) / 2) else (lo + hi) / 2
     p = torch.softmax(base, -1); grad0 = float((Dctx.gather(1, y[:, None])[:, 0] - (p * Dctx).sum(-1)).mean())
+    if grad0 >= 0: lam = 0.0      # the NLL is convex in lam_ctx (linear logits): dNLL/dlam >= 0 at 0 makes 0 the exact MLE (DEVIATIONS #13)
     return dict(lam_ctx=lam, nll=nll(lam), nll_slot_only=nll(0.0), dnll_dlam_at_0=grad0, boundary_mle=lam == 0.0, grid_min_index=i)
 
 
