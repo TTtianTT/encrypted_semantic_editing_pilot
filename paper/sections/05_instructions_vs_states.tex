@@ -13,7 +13,9 @@ outputs the target.
 \paragraph{Exploratory: relative or absolute instructions.}\claim{CL2b}
 Exploratory analyses suggest that where the decoder natively performs the operation (weekday and month on BART; all three tested
 domains on T5Gemma) the instruction is relative, and otherwise (scrambled maps, skip-two) it pushes towards a target token.
-\TODO{exploratory numbers (v3 N, v4 P5).}
+In a transplant analysis (fourth round) the write of a BART C1 editor, moved to another source state, still produced the relative
+target in \CLtwobRelWeekday{} (weekday) and \CLtwobRelMonth{} (month) of the cases, but at most \CLtwobRelOtherMax{} on compass,
+egoside and days-ago; on T5Gemma at least \CLtwobRelTfiveMin{} on every domain.
 
 \paragraph{Unrolled CE learns a step-counting shortcut.}\claim{CL3}
 Training CE editors along chains of up to four steps does not make them compose: they are almost exact inside the training horizon and
@@ -24,4 +26,6 @@ For compass ($N=4$) the horizon is exactly one turn of the cycle, so $\Rk{N}$ is
 \paragraph{State supervision makes the editors compose.}\claim{CL4}
 Adding the canonical $L_2$ term to the unrolled objective (C3-U4) yields composable editors on both backbones (T5Gemma C3-U4
 $\Rk{2N}\ge$ \CLfourTfiveCThreeUfour{}). With one-step training, composability depends on how far training has converged towards the
-canonical write (exploratory: \TODO{v5 BART month C3 / L2 by training length}).
+canonical write (exploratory): one-step C3 on weekday composes after 600 updates but not after 450 (seed-median one-way
+$\Rk{2N}$ \CLfourWeekSixHundred{} against \CLfourWeekFourFifty{}), while on month it needs 1200 (\CLfourMonthTwelveHundred{} against
+\CLfourMonthNineHundred{} after 900).

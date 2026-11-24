@@ -137,8 +137,38 @@ claims:
   figures: []
   lock_commits:
     v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
-  evidence: {}
-  numbers: []
+  evidence:
+    experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json: b0ab228dfb144f98f3db5eb0dff36134629e041018f0c41b61a9f9d7d5a156ec
+    experiments/composability_mechanisms_v3/results/patch/p5_transplant_t5.json: 5d7eb97b8ad63ce2b22e41463937e886138654dfe809e1070336ba6434962ed9
+  numbers:
+  - macro: CLtwobRelWeekday
+    value: 0.8328869047619047
+    text: '0.83'
+    source: experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json
+    path: weekday~1median/classes/relative
+    note: v4 P5 transplant, BART, fraction relative
+    pending: false
+  - macro: CLtwobRelMonth
+    value: 0.9402935606060606
+    text: '0.94'
+    source: experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json
+    path: month~1median/classes/relative
+    note: null
+    pending: false
+  - macro: CLtwobRelOtherMax
+    value: 0.16979166666666667
+    text: '0.17'
+    source: derived:v4_p5_bart_other_rel_max
+    path: null
+    note: 'BART compass, egoside, daysago: largest relative fraction'
+    pending: false
+  - macro: CLtwobRelTfiveMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v4_p5_t5_rel_min
+    path: null
+    note: null
+    pending: false
 - id: CL3
   zh: 只用解码器监督，展开训练只学到计步捷径
   en: Unrolled training with decoder supervision only learns a step-counting shortcut.
@@ -182,6 +212,7 @@ claims:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
   numbers:
   - macro: CLfourTfiveCThreeUfour
     value: 1.0
@@ -189,6 +220,35 @@ claims:
     source: derived:v5_l4_c3u4_min
     path: null
     note: v5 L4, T5Gemma C3-U4 R_2N (min of seeds)
+    pending: false
+  - macro: CLfourWeekFourFifty
+    value: 0.0625
+    text: '0.06'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/weekday~1C3n450
+    note: 'v6 C exploratory: one-step C3, seed-median one-way plus R_2N by training
+      length'
+    pending: false
+  - macro: CLfourWeekSixHundred
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/weekday~1C3n600
+    note: null
+    pending: false
+  - macro: CLfourMonthNineHundred
+    value: 0.35
+    text: '0.35'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n900
+    note: null
+    pending: false
+  - macro: CLfourMonthTwelveHundred
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n1200
+    note: null
     pending: false
 - id: CL5
   zh: 低秩编辑的秩阈值，以及冻结平面的特征

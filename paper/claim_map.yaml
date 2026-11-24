@@ -43,7 +43,11 @@ claims:
     en: Where the decoder natively performs the operation the write is relative; otherwise it is the target token.
     nature: exploratory
     predictions: [v3/N2, v3/N3]
-    numbers: []
+    numbers:
+      - {macro: CLtwobRelWeekday, file: experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json, path: weekday~1median/classes/relative, fmt: '{:.2f}', note: 'v4 P5 transplant, BART, fraction relative'}
+      - {macro: CLtwobRelMonth, file: experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json, path: month~1median/classes/relative, fmt: '{:.2f}'}
+      - {macro: CLtwobRelOtherMax, derived: v4_p5_bart_other_rel_max, fmt: '{:.2f}', note: 'BART compass, egoside, daysago: largest relative fraction'}
+      - {macro: CLtwobRelTfiveMin, derived: v4_p5_t5_rel_min, fmt: '{:.2f}'}
   - id: CL3
     zh: 只用解码器监督，展开训练只学到计步捷径
     en: Unrolled training with decoder supervision only learns a step-counting shortcut.
@@ -60,6 +64,10 @@ claims:
     predictions: [v5/L4]
     numbers:
       - {macro: CLfourTfiveCThreeUfour, derived: v5_l4_c3u4_min, fmt: '{:.2f}', note: 'v5 L4, T5Gemma C3-U4 R_2N (min of seeds)'}
+      - {macro: CLfourWeekFourFifty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/new_C3_plus_R2N_by_updates/weekday~1C3n450, fmt: '{:.2f}', note: 'v6 C exploratory: one-step C3, seed-median one-way plus R_2N by training length'}
+      - {macro: CLfourWeekSixHundred, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/new_C3_plus_R2N_by_updates/weekday~1C3n600, fmt: '{:.2f}'}
+      - {macro: CLfourMonthNineHundred, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n900, fmt: '{:.2f}'}
+      - {macro: CLfourMonthTwelveHundred, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n1200, fmt: '{:.2f}'}
   - id: CL5
     zh: 低秩编辑的秩阈值，以及冻结平面的特征
     en: Rank threshold r* = N - 1 and the frozen-plane signatures.
