@@ -29,7 +29,7 @@ def sha(p):
 
 
 def get(obj, path):
-    for k in str(path).split('/'):
+    for k in (s.replace('~1', '/') for s in str(path).split('/')):        # '~1' escapes a '/' inside a key (JSON-pointer style)
         obj = obj[int(k)] if isinstance(obj, list) else obj[k]
     return obj
 

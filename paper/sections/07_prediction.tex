@@ -8,7 +8,8 @@ the fifth round this predictor agrees with the observed chain outcome for \CLeig
 success (lower bounds of the 95\% CI of the difference \CLeightDiffLoBart{} and \CLeightDiffLoTfive{}); it predicts the cell
 category correctly for \CLeightCatBart{} and \CLeightCatTfive{} of the cells (Figure~\ref{fig:fig6}). Editors trained in that round,
 whose behaviour was unknown when the predictions were locked, are predicted equally well (\CLeightNewBart{} and \CLeightNewTfive{}).
-A per-cell majority reference, which uses the observed outcomes, is reported in Appendix~\ref{app:protocol} \TODO{v6 P1b}.
+A per-cell majority reference, which uses the observed outcomes and is therefore not a predictor, reaches \CLeightMajBart{} and
+\CLeightMajTfive{} on the same cells (exploratory post-hoc computation).
 
 \paragraph{Exploratory: an equal-weight readout suffices.}\claim{CL8b}
 Replacing the fitted plane weights by equal weights barely changes the agreement (\CLeightbEqualBart{} and \CLeightbEqualTfive{}), so the
@@ -22,8 +23,21 @@ $D\le\Dlo$. $D$ effectively detects whether the slot moved at step 1.
 \paragraph{Failure modes.}\claim{CL12}
 Predictions from idealized slot codes fail where chains drift. Decoupling the frozen plane from the dynamics by an oracle raises
 one-way success in \CLtwelveUp{} of the \CLtwelveC{} cells where the standard freeze departs from the idealized prediction, but returns
-the idealized category in only a minority \TODO{macro}; the explanation by accumulated drift and readout margin is exploratory. Not yet
-converged state editors are over-predicted \TODO{v6 C}.
+the idealized category in only \CLtwelveIdealPct{}\% of them; the explanation by accumulated drift and readout margin is exploratory.
+
+\paragraph{Known limitation: unconverged editors.}\claim{CL12}
+State-supervised editors trained for few updates (dev canonical $L_2$ more than 20\% above that of RRR-16, the preregistered criterion) are
+over-predicted: in the sixth round the slot readout agrees with the observed chain outcome for \CLtwelveCtOneAgree{} of the worlds of
+the \CLtwelveCtOneCells{} cells of such editors (category accuracy \CLtwelveCtOneCat{}), against \CLtwelveCtTwoAgree{} on a
+reference set of closed-form operators, surgeries and longer-trained editors. The $L_2$ criterion itself is coarse: some editors it
+calls unconverged compose perfectly. We tested whether the context
+positions carry the missing information by adding a context term to the readout, with its weight calibrated on dev probes that swap the
+state of the context against the slot. In all \CLtwelveProbesWeekday{} (weekday) and \CLtwelveProbesMonth{} (month) probes the decoder
+followed the slot, so the calibrated weight is zero and the two readouts coincide; the preregistered test therefore decides for the
+slot-only readout by construction. Exploratory: among worlds predicted successful by the slot readout, the maximal drift of the context
+from the canonical states separates observed failures only weakly for unconverged editors (AUC \CLtwelveDriftAucCtOne{}) and in the
+opposite direction for the others (AUC \CLtwelveDriftAucCtTwo{}). We keep the slot-only predictor and report the over-prediction of
+unconverged editors as a known limitation.
 
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig5.pdf}
 \caption{(a) Unrolled CE editors are exact inside their training horizon and collapse after it. (b) Step-1 disagreement $D$ against

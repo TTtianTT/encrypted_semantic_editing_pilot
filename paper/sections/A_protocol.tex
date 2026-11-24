@@ -40,8 +40,10 @@ F$\neg$1 freezes high-vote planes there; the test therefore had no discriminatin
 \item v4, R1 (Q10): the scorable cells had to satisfy three conditions at the lock, and none did, so the test was not evaluable.
 \item v5, Q18: the multi-template base-operator gate removed every domain (the full-sequence closed-form operator did not compose on
 dev), so the unit was not evaluable; v6 replaced it with slot-centred operators.
-\item v6, Q19: \TODO{v6: the context-readout calibration put $\lambda_{\mathrm{ctx}}$ at the boundary $0$, which makes the test degenerate
-by construction (to be cited from the v6 protocol after the merge).}
+\item v6, Q19: the context term of the readout was to be weighted by a calibration on probes that swap the context state against the
+slot state. The decoder always followed the slot, so the calibrated weight was exactly zero and both readouts were identical: the test
+decided for the slot-only readout by construction. The criterion that defined ``unconverged'' editors (dev $L_2$ relative to RRR-16)
+also classified some perfectly composable editors as unconverged.
 \end{itemize}
 
 \paragraph{All predictions.}

@@ -35,5 +35,11 @@ reused where the plan allowed; the multi-template base-operator gate removed the
 reproduction of the earlier analysis fixed the aggregation level of each reported number.
 
 \paragraph{v6.}
-\TODO{v6: thirteen pre-lock entries (template coverage after deduplication, self-test criteria and optimiser, context calibration at
-the boundary, identical editors in the context unit, \dots) and any post-lock amendment; to be summarised after the merge.}
+Thirteen entries, all before the lock. Text-level deduplication against all earlier renders exhausted the held-out templates with few
+fields, so the multi-template conclusions rest on the templates with more fields (Appendix~\ref{app:data}). The synthetic self-test of
+the binding editors was rebuilt (the first construction was unsolvable), its one-layer criterion was set at the provable one-layer floor,
+and it needed a larger learning rate and batch than the plan to learn the two-hop lookup; the real binding editors kept the planned
+settings. The context calibration fell on the boundary (Appendix~\ref{app:protocol}); a first lock was discarded before commit because
+a floating-point tie had moved the weight off zero. Editors trained with the same seed and batch sequence as an earlier round turned out
+bit-identical to it, so some cells of the context unit are duplicates (listed in the analysis). After the lock, AMENDMENT~01 only added
+descriptive Wilson intervals for the report; no locked verdict changed.

@@ -20,4 +20,8 @@ weekday-mt, month-mt and hour-mt render the state inside one of $36$ domain-inde
 ``in X'' and ``at X o'clock''). Templates were frozen before any model run and could only be removed: those whose state word was not a single token at a constant slot position, or that failed the reconstruction gate on train and dev, were dropped, leaving $29$; they are split,
 stratified by the presence of a distractor word, into $20$ training and $9$ held-out templates. Each world uses one template; the
 multi-template domains have $192$ train, $48$ dev and $160$ confirmation worlds, the confirmation worlds all on held-out templates.
-\TODO{v6: per-template world counts of confirm6 after deduplication (DEVIATIONS of v6, item 1).}
+In the sixth round the confirmation worlds were deduplicated against every earlier render of the domain, including the fifth round's
+multi-template confirmation set, and filled the held-out templates in turn. Templates whose only field besides the state is the object ran out of fresh
+texts: \CLfourteenTmplWeekday{} (weekday), \CLfourteenTmplMonth{} (month) and \CLfourteenTmplHour{} (hour) held-out templates carry at
+least ten worlds each, while \CLfourteenTmplSparse{} templates carry at most \CLfourteenTmplSparseMax{} worlds. The multi-template
+results therefore speak for templates with several fields.

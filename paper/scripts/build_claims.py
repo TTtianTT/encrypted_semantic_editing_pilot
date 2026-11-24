@@ -14,6 +14,7 @@ P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
 V5 = 'experiments/composability_mechanisms_v4'
 V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
 V3GATES = [f'experiments/composability_mechanisms_v2/results/gates_{b}.json' for b in ('bart', 't5')]
+V6AUD = 'experiments/composability_mechanisms_v5/data/audit.json'
 
 
 def _v3_sk():
@@ -24,6 +25,11 @@ def _v3_sk():
 def _v3_amp():
     """v3 pre-lock gate files: per-plane amplitude a_k and one-step change s_k of the canonical slot code, per backbone / domain."""
     return {f'{b}/{d}': v for f in V3GATES for b in [f.split('_')[-1][:-5]] for d, v in read(f)['amplitudes'].items()}
+
+
+def _v6_tmpl(d, k):
+    """v6 confirm6: number of held-out templates of a multi-template domain with at least k worlds after deduplication."""
+    return sum(1 for n in read(V6AUD)['domains'][d]['templates'].values() if n >= k)
 
 
 def _ce_slot_stays(key):
@@ -56,6 +62,11 @@ DERIVED = {
     'v3_a_cells': (lambda: len(_v3_amp()), V3GATES),
     'v34_a1_largest_total': (lambda: DERIVED['v3_a1_largest'][0]() + DERIVED['v4_v0_a1_largest'][0](), V3GATES + [P['v4']]),
     'v34_a_cells_total': (lambda: DERIVED['v3_a_cells'][0]() + DERIVED['v4_v0_a1_evaluable'][0](), V3GATES + [P['v4']]),
+    'v6_tmpl_used_weekday': (lambda: _v6_tmpl('weekday-mt', 10), [V6AUD]),
+    'v6_tmpl_used_month': (lambda: _v6_tmpl('month-mt', 10), [V6AUD]),
+    'v6_tmpl_used_hour': (lambda: _v6_tmpl('hour-mt', 10), [V6AUD]),
+    'v6_tmpl_sparse': (lambda: sum(len(read(V6AUD)['domains'][d]['templates']) - _v6_tmpl(d, 10) for d in ('weekday-mt', 'month-mt', 'hour-mt')), [V6AUD]),
+    'v6_tmpl_sparse_max_worlds': (lambda: max(n for d in ('weekday-mt', 'month-mt', 'hour-mt') for n in read(V6AUD)['domains'][d]['templates'].values() if n < 10), [V6AUD]),
     'v5_l3_state_cells': (lambda: sum(1 for v in get(read(P['v5']), 'L/L3/cells').values() if v['family'] != 'CE' and v['D'] is not None), [P['v5']]),
     'v5_f_rrr_max': (lambda: max(v['RRR'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),
     'v5_f_ff_min': (lambda: min(v['FF'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),
@@ -76,6 +87,7 @@ def main():
             try:
                 if 'derived' in n: fn, fs = DERIVED[n['derived']]; v = fn(); files.update(fs); src = f"derived:{n['derived']}"
                 else: v = get(read(n['file']), n['path']); files.add(n['file'])
+                if 'scale' in n: v = v * n['scale']
                 txt = n['fmt'].format(v); pend = False
             except (FileNotFoundError, KeyError):
                 if not n.get('pending'): raise

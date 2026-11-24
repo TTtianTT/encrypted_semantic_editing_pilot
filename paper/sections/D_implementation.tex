@@ -41,7 +41,9 @@ The naive control predicts composability from decoded success at step $1$; the p
 Tok-U is token-wise with rank $32$. Att1-U adds one attention head ($d_a = 64$, $W_o$ zero-initialised, so training starts at Tok-U);
 Att2-U uses two heads. The two-layer editor Att2L of v6 stacks two such layers, each with zero-initialised output, on top of a rank-$32$
 token-wise term. The oracle-routing editor OR (diagnostic only) writes the value of the next listed participant into the slot.
-\TODO{v6: training lengths of the K editors and the self-test caveat (DEVIATIONS of v6, item 9).}
+In the sixth round all binding editors are trained with the unrolled $L_2$ objective (AdamW, learning rate $10^{-3}$, batch $16$):
+OR-U4 and Att2L-U4 on unrolls of up to four steps for $4000$ updates, Att2L-U8 and Att1-U8 on unrolls of up to eight steps for
+$8000$ updates; admission required dev single-step success of at least $95\%$ on name3 and bind3fix.
 
 \paragraph{Compute.}
 All jobs ran on single NVIDIA B300 GPUs through Slurm, at most two at a time. \TODO{GPU hours per round from the run ledgers, as macros.}

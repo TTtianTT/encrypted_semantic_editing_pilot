@@ -5,7 +5,7 @@ lock_commits:
   v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
   v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
   v5: 8667c907769e475f78d46f593266efa46aac9dd6
-  v6: null
+  v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
 claims:
 - id: CL1
   zh: 单步解码正确 ≠ 可组合
@@ -404,6 +404,7 @@ claims:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+    experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json: 7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546
   numbers:
   - macro: CLeightAgreeBart
     value: 0.9223251028806584
@@ -475,6 +476,20 @@ claims:
     path: L/per_backbone/t5/L1/latent_minus_naive/ci95/0
     note: null
     pending: false
+  - macro: CLeightMajBart
+    value: 0.8890174897119342
+    text: '0.889'
+    source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
+    path: P1b/report/bart
+    note: 'v6 P1b (exploratory): per-cell majority reference, report scope'
+    pending: false
+  - macro: CLeightMajTfive
+    value: 0.9090174129353233
+    text: '0.909'
+    source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
+    path: P1b/report/t5
+    note: null
+    pending: false
 - id: CL8b
   zh: 等权读出也够用，不需要解码器标定
   en: An equal-weight readout suffices (no decoder calibration).
@@ -483,23 +498,24 @@ claims:
   - v6/P1a
   figures: []
   lock_commits:
-    v6: null
-  evidence: {}
+    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+  evidence:
+    experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json: 7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546
   numbers:
   - macro: CLeightbEqualBart
-    value: null
-    text: null
+    value: 0.8969184027777778
+    text: '0.897'
     source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
     path: P1a/all_nonCE/bart/equal/world
     note: null
-    pending: true
+    pending: false
   - macro: CLeightbEqualTfive
-    value: null
-    text: null
+    value: 0.9451388888888889
+    text: '0.945'
     source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
     path: P1a/all_nonCE/t5/equal/world
     note: null
-    pending: true
+    pending: false
 - id: CL9
   zh: 第 1 步分歧率可以识别指令捷径
   en: Step-1 disagreement detects instruction shortcuts.
@@ -618,12 +634,17 @@ claims:
   - v4/V2b
   - v5/D1
   - v5/D2
+  - v6/CT1
+  - v6/CT2
   figures: []
   lock_commits:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
+    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+    experiments/composability_mechanisms_v5/results/calib_ctx_bart.json: feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502
+    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
   numbers:
   - macro: CLtwelveUp
     value: 43
@@ -639,18 +660,90 @@ claims:
     path: null
     note: null
     pending: false
+  - macro: CLtwelveIdealPct
+    value: 31.03448275862069
+    text: '31'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: D/D1/frac_coupling
+    note: percent of the D1 cells that return the idealized category
+    pending: false
+  - macro: CLtwelveCtOneCells
+    value: 117
+    text: '117'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/CT1/cells
+    note: null
+    pending: false
+  - macro: CLtwelveCtOneCat
+    value: 0.7521367521367521
+    text: '0.75'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/CT1/category_slot
+    note: null
+    pending: false
+  - macro: CLtwelveCtOneAgree
+    value: 0.8388888888888889
+    text: '0.84'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/CT1/agree_slot
+    note: null
+    pending: false
+  - macro: CLtwelveCtTwoAgree
+    value: 0.9745323129251701
+    text: '0.975'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/CT2/agree_slot
+    note: null
+    pending: false
+  - macro: CLtwelveProbesWeekday
+    value: 2688
+    text: '2688'
+    source: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json
+    path: domains/weekday/probes
+    note: null
+    pending: false
+  - macro: CLtwelveProbesMonth
+    value: 8448
+    text: '8448'
+    source: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json
+    path: domains/month/probes
+    note: null
+    pending: false
+  - macro: CLtwelveDriftAucCtOne
+    value: 0.6244579226445269
+    text: '0.62'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT1/auc
+    note: exploratory
+    pending: false
+  - macro: CLtwelveDriftAucCtTwo
+    value: 0.21248432907906364
+    text: '0.21'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT2/auc
+    note: exploratory
+    pending: false
 - id: CL13
-  zh: 绑定类编辑
-  en: Binding edits.
-  nature: partial; pending v6 K
+  zh: 绑定类编辑：训练视野足够长时，两层注意力编辑器在 bind3 上闭合
+  en: Binding edits close on bind3 with a two-layer attention editor trained on long
+    enough unrolls; shorter horizons decay after them.
+  nature: confirmed (v6 K2, H-closure); v6 K1 H-unrepresentable by rule (oracle decays
+    past its S<=4 horizon), K3 and K4 mixed
   predictions:
   - v5/B2
   - v5/B3
-  figures: []
+  - v6/K1
+  - v6/K2
+  - v6/K3
+  - v6/K4
+  figures:
+  - figS2
   lock_commits:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
+    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
   numbers:
   - macro: CLthirteenBtwo
     value: 0.8
@@ -666,16 +759,225 @@ claims:
     path: B/B3/TokU
     note: null
     pending: false
+  - macro: CLthirteenAttTwoLEightThirty
+    value: 0.99375
+    text: '0.99'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K2/max_R30
+    note: null
+    pending: false
+  - macro: CLthirteenAttTwoLFourThirty
+    value: 0.1625
+    text: '0.16'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/table/bind3~1Att2LU4/R30
+    note: null
+    pending: false
+  - macro: CLthirteenOrEight
+    value: 0.96875
+    text: '0.97'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/table/bind3~1ORU4/R8
+    note: null
+    pending: false
+  - macro: CLthirteenOrTwelve
+    value: 0.30625
+    text: '0.31'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/table/bind3~1ORU4/R12
+    note: null
+    pending: false
+  - macro: CLthirteenOrThirty
+    value: 0.0
+    text: '0.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K1/R30
+    note: null
+    pending: false
+  - macro: CLthirteenAttOneEightEight
+    value: 0.8625
+    text: '0.86'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K3/R8
+    note: null
+    pending: false
+  - macro: CLthirteenAttOneEightTwelve
+    value: 0.7375
+    text: '0.74'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K3/R12
+    note: null
+    pending: false
+  - macro: CLthirteenAttOneEightThirty
+    value: 0.0375
+    text: '0.04'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K3/R30
+    note: null
+    pending: false
+  - macro: CLthirteenFixAttTwoLFour
+    value: 0.18309859154929578
+    text: '0.18'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: K/K4/R30/bind3fix~1Att2LU4
+    note: null
+    pending: false
 - id: CL14
-  zh: 多句式语境
-  en: Multi-template contexts.
-  nature: pending v6 M
+  zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）
+  en: Slot-centred operators compose on unseen templates; the prediction and freeze
+    tests hold only in part.
+  nature: mixed (v6 Q18'); M1 H-general, M5 holds, M3 and M4 not met
   predictions:
   - v6/M1
+  - v6/M2
   - v6/M3
   - v6/M4
-  figures: []
+  - v6/M5
+  figures:
+  - figS1
   lock_commits:
-    v6: null
-  evidence: {}
-  numbers: []
+    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+  evidence:
+    experiments/composability_mechanisms_v5/data/audit.json: 1da238362e72a00f0f0560aa55f1ddf9fce4a91f06762cea2b5c73c0b82b8f57
+    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
+  numbers:
+  - macro: CLfourteenBaseWeekday
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M1/bart~1weekday-mt
+    note: null
+    pending: false
+  - macro: CLfourteenBaseMonth
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M1/bart~1month-mt
+    note: null
+    pending: false
+  - macro: CLfourteenBaseHour
+    value: 0.98125
+    text: '0.98'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M1/bart~1hour-mt
+    note: null
+    pending: false
+  - macro: CLfourteenBaseTfive
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M1/t5~1month-mt
+    note: null
+    pending: false
+  - macro: CLfourteenAgreeBart
+    value: 0.9309722222222222
+    text: '0.931'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/bart/agreement
+    note: null
+    pending: false
+  - macro: CLfourteenNaiveBart
+    value: 0.7276388888888888
+    text: '0.728'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/bart/naive
+    note: null
+    pending: false
+  - macro: CLfourteenDiffLoBart
+    value: 0.19442633167016327
+    text: '0.194'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/bart/latent_minus_naive/ci95/0
+    note: null
+    pending: false
+  - macro: CLfourteenCatBart
+    value: 0.9666666666666667
+    text: '0.97'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/bart/category_accuracy
+    note: null
+    pending: false
+  - macro: CLfourteenAgreeTfive
+    value: 0.8674479166666667
+    text: '0.867'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/t5/agreement
+    note: null
+    pending: false
+  - macro: CLfourteenCatTfive
+    value: 0.75
+    text: '0.75'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M4/t5/category_accuracy
+    note: null
+    pending: false
+  - macro: CLfourteenFoneAltWeekday
+    value: 0.78125
+    text: '0.78'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M3/bart~1weekday-mt/alt
+    note: null
+    pending: false
+  - macro: CLfourteenFoneAltMonth
+    value: 0.84375
+    text: '0.84'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M3/bart~1month-mt/alt
+    note: null
+    pending: false
+  - macro: CLfourteenConeRoneWeekday
+    value: 0.65
+    text: '0.65'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M2/bart~1weekday-mt/R1
+    note: null
+    pending: false
+  - macro: CLfourteenConeRoneHour
+    value: 0.775
+    text: '0.78'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M2/bart~1hour-mt/R1
+    note: null
+    pending: false
+  - macro: CLfourteenConeRoneTfive
+    value: 0.99375
+    text: '0.99'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: M/M2/t5~1month-mt/R1
+    note: null
+    pending: false
+  - macro: CLfourteenTmplWeekday
+    value: 8
+    text: '8'
+    source: derived:v6_tmpl_used_weekday
+    path: null
+    note: held-out templates with >= 10 confirm6 worlds
+    pending: false
+  - macro: CLfourteenTmplMonth
+    value: 7
+    text: '7'
+    source: derived:v6_tmpl_used_month
+    path: null
+    note: null
+    pending: false
+  - macro: CLfourteenTmplHour
+    value: 8
+    text: '8'
+    source: derived:v6_tmpl_used_hour
+    path: null
+    note: null
+    pending: false
+  - macro: CLfourteenTmplSparse
+    value: 4
+    text: '4'
+    source: derived:v6_tmpl_sparse
+    path: null
+    note: null
+    pending: false
+  - macro: CLfourteenTmplSparseMax
+    value: 2
+    text: '2'
+    source: derived:v6_tmpl_sparse_max_worlds
+    path: null
+    note: null
+    pending: false

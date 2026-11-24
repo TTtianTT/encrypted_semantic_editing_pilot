@@ -1,3 +1,40 @@
 \section{Scope}\label{sec:scope}
-% CL11 CL13 CL14
-\TODO{W6 draft (CL11, CL13, CL14: \TODO{v6}); two backbones only; synthetic domains.}
+% CL11 CL13 CL14 (draft by Claude Code following PLAN B11; the lead revises)
+\paragraph{Symmetry is not necessary.}\claim{CL11}
+Composability does not require the states to be laid out symmetrically. Scrambling the order of the state words, so that the encoder's
+cycle no longer matches the operation, still gives composable closed-form operators in \CLelevenScrComposable{} of
+\CLelevenScrTotal{} cells; what changes is the rank needed (for scrambled month $r^\star = \CLelevenRstarScrMonth{}$ instead of
+$N-1$). At the rank threshold, long natural chains are not more stable than scrambled ones (difference in $\Rk{10N}$ of
+\CLelevenMonthDiff{} on month).
+
+\paragraph{Unseen templates.}\claim{CL14}
+All results above use a fixed sentence template. In the sixth round we evaluated on held-out templates never seen when fitting or
+training. A closed-form operator restricted to the slot position composes on them: one-way $\Rk{2N}$ is \CLfourteenBaseWeekday{},
+\CLfourteenBaseMonth{} and \CLfourteenBaseHour{} on BART (weekday, month, hour) and \CLfourteenBaseTfive{} on T5Gemma (month; Figure~\ref{fig:figS1}), whereas
+the full-sequence operator of the previous round failed on the training templates already. The latent predictor still works on BART
+(agreement \CLfourteenAgreeBart{} against \CLfourteenNaiveBart{} for the naive prediction, lower CI bound of the difference
+\CLfourteenDiffLoBart{}, category accuracy \CLfourteenCatBart{}). The preregistered overall verdict is nevertheless mixed, for two
+reasons. On T5Gemma the predictor over-estimates several cells (category accuracy \CLfourteenCatTfive{}, agreement
+\CLfourteenAgreeTfive{}). And on held-out templates alternating chains are weaker than one-way chains, already for the unfrozen
+operator, so the frozen-fundamental test misses its alternating threshold on weekday (\CLfourteenFoneAltWeekday{}) while passing on
+month (\CLfourteenFoneAltMonth{}). Trained CE editors generalise less: the full-sequence C1 succeeds in one step on only
+\CLfourteenConeRoneWeekday{}--\CLfourteenConeRoneHour{} of held-out BART worlds (T5Gemma \CLfourteenConeRoneTfive{}) and fails at
+step 2 everywhere.
+
+\paragraph{Binding.}\claim{CL13}
+Binding domains, where the slot must point to the next of three listed participants, were the hardest case in earlier rounds: the best
+attention editor reached $\Rk{6} = \CLthirteenBtwo{}$ and a token-wise editor \CLthirteenTokU{}. With a two-layer attention editor
+trained with multi-step canonical supervision on unrolls of up to eight steps, binding edits compose: median $\Rk{30} =
+\CLthirteenAttTwoLEightThirty{}$ on bind3 (Figure~\ref{fig:figS2}). The same editor trained on unrolls of up to four steps reaches only
+\CLthirteenAttTwoLFourThirty{}, and a one-layer editor trained on eight-step unrolls decays after its horizon ($\Rk{8} =
+\CLthirteenAttOneEightEight{}$, $\Rk{12} = \CLthirteenAttOneEightTwelve{}$, $\Rk{30} = \CLthirteenAttOneEightThirty{}$). An editor
+with oracle routing to the next participant, a diagnostic, decays in the same way after its four-step training horizon ($\Rk{8} =
+\CLthirteenOrEight{}$, $\Rk{12} = \CLthirteenOrTwelve{}$, $\Rk{30} = \CLthirteenOrThirty{}$); by the preregistered rule this
+counts against representability, but together with the two-layer result the decay reads as a horizon effect. Stability is not
+uniform: on the reused bind3fix worlds the four-step two-layer editor reaches only \CLthirteenFixAttTwoLFour{}. How the two-layer
+editor implements the lookup is open: its second layer puts almost no attention on the participant positions (exploratory).
+
+\paragraph{Other limits.}
+Two frozen encoder--decoder backbones; synthetic domains with single-token states; greedy decoding.
+\TODO{lead: discussion of what transfers to decoder-only models and natural text.}
+

@@ -39,7 +39,7 @@ def seed_median(ch, bb, d, stem, path, field='R', seeds=(42, 43, 44)):
 
 
 def finish(fig, name, inputs):
-    fig.tight_layout(); fig.savefig(FIG / f'{name}.pdf'); plt.close(fig)
+    fig.tight_layout(); fig.savefig(FIG / f'{name}.pdf', bbox_inches='tight'); plt.close(fig)
     m = FIG / 'manifest.json'; man = json.loads(m.read_text()) if m.exists() else {}
     man[name] = dict(script=f'paper/figs/make_{name}.py', inputs={f: sha(f) for f in inputs}); m.write_text(json.dumps(man, indent=1))
     print('wrote', name, flush=True)

@@ -14,6 +14,8 @@ SCRIPT=figs/make_fig3.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig4.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig5.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig6.py sbatch --parsable --export=ALL paper/job_cpu.slurm
+SCRIPT=figs/make_figS1.py sbatch --parsable --export=ALL paper/job_cpu.slurm
+SCRIPT=figs/make_figS2.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=scripts/reproduce_md.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=check.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 ```
@@ -29,7 +31,7 @@ Then compile `paper/main.tex` (pdflatex, bibtex, pdflatex x2).
 | v3 | `078b1e820c7749f139028d4e2a35c381ad635b5c` |
 | v4 | `51a7579c6634dbfc62c73cfbe3035392db8d4efd` |
 | v5 | `8667c907769e475f78d46f593266efa46aac9dd6` |
-| v6 | not locked yet |
+| v6 | `85f6bd332a3ede6f1dee347c968cd163a62fd5f9` |
 
 ## Figures
 
@@ -42,6 +44,8 @@ Then compile `paper/main.tex` (pdflatex, bibtex, pdflatex x2).
 | fig5 | `SCRIPT=figs/make_fig5.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v3/results/chains.csv` | `a88a88e90a9f3f3387eb64ea8e647df66f9b6af5f733ee9f94eddf3ce461a534` |
 |  |  | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | fig6 | `SCRIPT=figs/make_fig6.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+| figS1 | `SCRIPT=figs/make_figS1.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v5/results/chains.csv` | `99dcb7d9c384c917ac5b4ccc8fafe67690976fd14efb969d9ea5278a5ac51d5f` |
+| figS2 | `SCRIPT=figs/make_figS2.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v5/results/chains.csv` | `99dcb7d9c384c917ac5b4ccc8fafe67690976fd14efb969d9ea5278a5ac51d5f` |
 
 ## Tables
 
@@ -54,6 +58,7 @@ Then compile `paper/main.tex` (pdflatex, bibtex, pdflatex x2).
 | v3 | `experiments/composability_mechanisms_v2/results/predictions.json` | `e6081f3ed02ff80ec28448e7b890c4ddc6d268029cb58d9633db7393fec4fbed` |
 | v4 | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
 | v5 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+| v6 | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 
 ## Numbers (`generated/numbers.tex`)
 
@@ -81,11 +86,18 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 |  | `experiments/composability_mechanisms_v2/results/gates_t5.json` | `d0984c5d7418ded0e0c1bb4b93c2556a92d6a5bbd8e6937f6a166f6cdcbd13e7` |
 |  | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
 | CL8 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+|  | `experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json` | `7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546` |
+| CL8b | `experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json` | `7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546` |
 | CL9 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | CL10 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | CL11 | `experiments/composability_mechanisms_v1/results/predictions.json` | `dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf` |
 |  | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
 | CL12 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+|  | `experiments/composability_mechanisms_v5/results/calib_ctx_bart.json` | `feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502` |
+|  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 | CL13 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+|  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
+| CL14 | `experiments/composability_mechanisms_v5/data/audit.json` | `1da238362e72a00f0f0560aa55f1ddf9fce4a91f06762cea2b5c73c0b82b8f57` |
+|  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 
-Pending macros (rendered as `\TODO{v6}` until v6 is merged): CLeightbEqualBart, CLeightbEqualTfive.
+Pending macros (rendered as `\TODO{v6}` until v6 is merged): none.

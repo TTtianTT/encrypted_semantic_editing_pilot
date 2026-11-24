@@ -10,7 +10,7 @@ rounds:
   v3: {dir: experiments/composability_mechanisms_v2, predictions: results/predictions.json}
   v4: {dir: experiments/composability_mechanisms_v3, predictions: results/predictions.json}
   v5: {dir: experiments/composability_mechanisms_v4, predictions: results/predictions.json}
-  v6: {dir: experiments/composability_mechanisms_v5, predictions: results/predictions.json, pending: true}
+  v6: {dir: experiments/composability_mechanisms_v5, predictions: results/predictions.json}
 
 claims:
   - id: CL1
@@ -120,14 +120,16 @@ claims:
       - {macro: CLeightNewTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/new/t5/L1/latent, fmt: '{:.3f}'}
       - {macro: CLeightDiffLoBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L1/latent_minus_naive/ci95/0, fmt: '{:.3f}'}
       - {macro: CLeightDiffLoTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/t5/L1/latent_minus_naive/ci95/0, fmt: '{:.3f}'}
+      - {macro: CLeightMajBart, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1b/report/bart, fmt: '{:.3f}', note: 'v6 P1b (exploratory): per-cell majority reference, report scope'}
+      - {macro: CLeightMajTfive, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1b/report/t5, fmt: '{:.3f}'}
   - id: CL8b
     zh: 等权读出也够用，不需要解码器标定
     en: An equal-weight readout suffices (no decoder calibration).
     nature: exploratory
     predictions: [v6/P1a]
     numbers:
-      - {macro: CLeightbEqualBart, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/bart/equal/world, fmt: '{:.3f}', pending: v6}
-      - {macro: CLeightbEqualTfive, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/t5/equal/world, fmt: '{:.3f}', pending: v6}
+      - {macro: CLeightbEqualBart, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/bart/equal/world, fmt: '{:.3f}'}
+      - {macro: CLeightbEqualTfive, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/t5/equal/world, fmt: '{:.3f}'}
   - id: CL9
     zh: 第 1 步分歧率可以识别指令捷径
     en: Step-1 disagreement detects instruction shortcuts.
@@ -161,21 +163,61 @@ claims:
     zh: 理想化预测会失败，原因是累积漂移加读出余量
     en: Idealized predictions fail through accumulated drift and readout margin.
     nature: phenomenon confirmed; explanation exploratory
-    predictions: [v4/V3, v4/V2b, v5/D1, v5/D2]
+    predictions: [v4/V3, v4/V2b, v5/D1, v5/D2, v6/CT1, v6/CT2]
     numbers:
       - {macro: CLtwelveUp, derived: v5_d_up, fmt: '{:d}'}
       - {macro: CLtwelveC, derived: v5_d_c, fmt: '{:d}'}
+      - {macro: CLtwelveIdealPct, file: experiments/composability_mechanisms_v4/results/predictions.json, path: D/D1/frac_coupling, fmt: '{:.0f}', scale: 100, note: 'percent of the D1 cells that return the idealized category'}
+      - {macro: CLtwelveCtOneCells, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/CT1/cells, fmt: '{:d}'}
+      - {macro: CLtwelveCtOneCat, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/CT1/category_slot, fmt: '{:.2f}'}
+      - {macro: CLtwelveCtOneAgree, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/CT1/agree_slot, fmt: '{:.2f}'}
+      - {macro: CLtwelveCtTwoAgree, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/CT2/agree_slot, fmt: '{:.3f}'}
+      - {macro: CLtwelveProbesWeekday, file: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json, path: domains/weekday/probes, fmt: '{:d}'}
+      - {macro: CLtwelveProbesMonth, file: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json, path: domains/month/probes, fmt: '{:d}'}
+      - {macro: CLtwelveDriftAucCtOne, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT1/auc, fmt: '{:.2f}', note: exploratory}
+      - {macro: CLtwelveDriftAucCtTwo, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT2/auc, fmt: '{:.2f}', note: exploratory}
   - id: CL13
-    zh: 绑定类编辑
-    en: Binding edits.
-    nature: partial; pending v6 K
-    predictions: [v5/B2, v5/B3]
+    zh: 绑定类编辑：训练视野足够长时，两层注意力编辑器在 bind3 上闭合
+    en: Binding edits close on bind3 with a two-layer attention editor trained on long enough unrolls; shorter horizons decay after them.
+    nature: confirmed (v6 K2, H-closure); v6 K1 H-unrepresentable by rule (oracle decays past its S<=4 horizon), K3 and K4 mixed
+    predictions: [v5/B2, v5/B3, v6/K1, v6/K2, v6/K3, v6/K4]
+    figures: [figS2]
     numbers:
       - {macro: CLthirteenBtwo, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B2/max, fmt: '{:.2f}'}
       - {macro: CLthirteenTokU, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B3/TokU, fmt: '{:.2f}'}
+      - {macro: CLthirteenAttTwoLEightThirty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K2/max_R30, fmt: '{:.2f}'}
+      - {macro: CLthirteenAttTwoLFourThirty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/table/bind3~1Att2LU4/R30, fmt: '{:.2f}'}
+      - {macro: CLthirteenOrEight, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/table/bind3~1ORU4/R8, fmt: '{:.2f}'}
+      - {macro: CLthirteenOrTwelve, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/table/bind3~1ORU4/R12, fmt: '{:.2f}'}
+      - {macro: CLthirteenOrThirty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K1/R30, fmt: '{:.2f}'}
+      - {macro: CLthirteenAttOneEightEight, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K3/R8, fmt: '{:.2f}'}
+      - {macro: CLthirteenAttOneEightTwelve, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K3/R12, fmt: '{:.2f}'}
+      - {macro: CLthirteenAttOneEightThirty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K3/R30, fmt: '{:.2f}'}
+      - {macro: CLthirteenFixAttTwoLFour, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K4/R30/bind3fix~1Att2LU4, fmt: '{:.2f}'}
   - id: CL14
-    zh: 多句式语境
-    en: Multi-template contexts.
-    nature: pending v6 M
-    predictions: [v6/M1, v6/M3, v6/M4]
-    numbers: []
+    zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）
+    en: Slot-centred operators compose on unseen templates; the prediction and freeze tests hold only in part.
+    nature: mixed (v6 Q18'); M1 H-general, M5 holds, M3 and M4 not met
+    predictions: [v6/M1, v6/M2, v6/M3, v6/M4, v6/M5]
+    figures: [figS1]
+    numbers:
+      - {macro: CLfourteenBaseWeekday, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M1/bart~1weekday-mt, fmt: '{:.2f}'}
+      - {macro: CLfourteenBaseMonth, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M1/bart~1month-mt, fmt: '{:.2f}'}
+      - {macro: CLfourteenBaseHour, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M1/bart~1hour-mt, fmt: '{:.2f}'}
+      - {macro: CLfourteenBaseTfive, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M1/t5~1month-mt, fmt: '{:.2f}'}
+      - {macro: CLfourteenAgreeBart, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/bart/agreement, fmt: '{:.3f}'}
+      - {macro: CLfourteenNaiveBart, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/bart/naive, fmt: '{:.3f}'}
+      - {macro: CLfourteenDiffLoBart, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/bart/latent_minus_naive/ci95/0, fmt: '{:.3f}'}
+      - {macro: CLfourteenCatBart, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/bart/category_accuracy, fmt: '{:.2f}'}
+      - {macro: CLfourteenAgreeTfive, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/t5/agreement, fmt: '{:.3f}'}
+      - {macro: CLfourteenCatTfive, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M4/t5/category_accuracy, fmt: '{:.2f}'}
+      - {macro: CLfourteenFoneAltWeekday, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M3/bart~1weekday-mt/alt, fmt: '{:.2f}'}
+      - {macro: CLfourteenFoneAltMonth, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M3/bart~1month-mt/alt, fmt: '{:.2f}'}
+      - {macro: CLfourteenConeRoneWeekday, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M2/bart~1weekday-mt/R1, fmt: '{:.2f}'}
+      - {macro: CLfourteenConeRoneHour, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M2/bart~1hour-mt/R1, fmt: '{:.2f}'}
+      - {macro: CLfourteenConeRoneTfive, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M2/t5~1month-mt/R1, fmt: '{:.2f}'}
+      - {macro: CLfourteenTmplWeekday, derived: v6_tmpl_used_weekday, fmt: '{:d}', note: 'held-out templates with >= 10 confirm6 worlds'}
+      - {macro: CLfourteenTmplMonth, derived: v6_tmpl_used_month, fmt: '{:d}'}
+      - {macro: CLfourteenTmplHour, derived: v6_tmpl_used_hour, fmt: '{:d}'}
+      - {macro: CLfourteenTmplSparse, derived: v6_tmpl_sparse, fmt: '{:d}'}
+      - {macro: CLfourteenTmplSparseMax, derived: v6_tmpl_sparse_max_worlds, fmt: '{:d}'}

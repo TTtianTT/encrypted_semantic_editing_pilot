@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 94, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 78, in main
+    else: v = get(read(n['file']), n['path']); files.add(n['file'])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/common.py", line 33, in get
+    obj = obj[int(k)] if isinstance(obj, list) else obj[k]
+                                                    ~~~^^^
+KeyError: 'bind3'
+srun: error: Jupyter: task 0: Exited with exit code 1
