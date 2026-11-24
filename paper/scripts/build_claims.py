@@ -7,7 +7,7 @@ import yaml
 from common import *
 
 LOCK = {r: f'experiments/{d}/protocol_lock.json' for r, d in (('v1', 'symmetry_composability_v1'), ('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'),
-                                                             ('v4', 'composability_mechanisms_v3'), ('v5', 'composability_mechanisms_v4'), ('v6', 'composability_mechanisms_v5'))}
+                                                             ('v4', 'composability_mechanisms_v3'), ('v5', 'composability_mechanisms_v4'), ('v6', 'composability_mechanisms_v5'), ('v7', 'composability_mechanisms_v6'))}
 P = {r: f'experiments/{d}/results/predictions.json' for r, d in (('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'), ('v4', 'composability_mechanisms_v3'),
                                                                 ('v5', 'composability_mechanisms_v4'))}
 P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
