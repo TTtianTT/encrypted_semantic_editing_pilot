@@ -1,0 +1,11 @@
+weekday-mt {'found': 208, 'confirm7': 160, 'dev7ho': 48, 'tries': 167031, 'template_counts': {'0': 0, '10': 84, '18': 17, '21': 29, '22': 30, '24': 3, '27': 18, '31': 8, '32': 19}, 'template_counts_confirm7': {'0': 0, '10': 62, '18': 15, '21': 23, '22': 26, '24': 3, '27': 15, '31': 6, '32': 10}, 'exhausted_at': {'0': 7, '24': 27, '31': 62, '27': 116, '18': 119, '32': 124, '21': 154, '22': 154}}
+month-mt {'found': 170, 'confirm7': 122, 'dev7ho': 48, 'tries': 188231, 'template_counts': {'1': 0, '7': 51, '16': 0, '17': 0, '20': 48, '23': 18, '27': 53, '28': 0, '30': 0}, 'template_counts_confirm7': {'1': 0, '7': 35, '16': 0, '17': 0, '20': 35, '23': 11, '27': 41, '28': 0, '30': 0}, 'exhausted_at': {'30': 1, '17': 3, '28': 3, '1': 4, '16': 4, '23': 73, '20': 162, '7': 168, '27': 170}}
+hour-mt {'found': 208, 'confirm7': 160, 'dev7ho': 48, 'tries': 83908, 'template_counts': {'3': 0, '20': 31, '21': 23, '22': 25, '24': 2, '25': 31, '26': 32, '29': 33, '32': 31}, 'template_counts_confirm7': {'3': 0, '20': 21, '21': 16, '22': 23, '24': 2, '25': 26, '26': 23, '29': 25, '32': 24}, 'exhausted_at': {'3': 0, '24': 19, '21': 172, '22': 175}}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/d_make_data.py", line 138, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/d_make_data.py", line 96, in main
+    else: assert tries < 10 ** 7, f'{d}: cannot find enough fresh worlds'
+                 ^^^^^^^^^^^^^^^
+AssertionError: weekday: cannot find enough fresh worlds
+srun: error: node01: task 0: Exited with exit code 1
