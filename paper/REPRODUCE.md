@@ -40,7 +40,10 @@ Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic
 | --- | --- | --- | --- |
 | fig1 | `SCRIPT=figs/make_fig1.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/chains.csv` | `c77032924c273fcf9a2755fce97837e32746b2ae7d1cbdae95130fd080d84055` |
 | fig2 | `SCRIPT=figs/make_fig2.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/chains.csv` | `c77032924c273fcf9a2755fce97837e32746b2ae7d1cbdae95130fd080d84055` |
-| fig3 | `SCRIPT=figs/make_fig3.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
+| fig3 | `SCRIPT=figs/make_fig3.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v2/results/gates_bart.json` | `977dc47c358e1fa644b166a137d929237bbfb470fc66dcd30125f87b6ec289c8` |
+|  |  | `experiments/composability_mechanisms_v2/results/gates_t5.json` | `d0984c5d7418ded0e0c1bb4b93c2556a92d6a5bbd8e6937f6a166f6cdcbd13e7` |
+|  |  | `experiments/composability_mechanisms_v3/protocol.json` | `b5f9b0f2e66774f4a37510b38afdc5743f93707723538eee6f1e10bd7f2618c3` |
+|  |  | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
 | fig4 | `SCRIPT=figs/make_fig4.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | fig5 | `SCRIPT=figs/make_fig5.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v3/results/chains.csv` | `a88a88e90a9f3f3387eb64ea8e647df66f9b6af5f733ee9f94eddf3ce461a534` |
 |  |  | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
