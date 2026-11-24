@@ -300,7 +300,7 @@ class PlaneEd:
 
 # ---------------------------------------------------------------- chains
 def files(kind, bb, d, mp, method, tag, n):
-    import lib6
+    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     return [lib6.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
 
 
@@ -823,7 +823,7 @@ def verify_protocol6():
 
 def chain_records(bb, d, mp, method, path):
     out = []
-    import lib6
+    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     for f in sorted(lib6.SHARDS.glob(f'chain_{bb}_{d}_{mp}_{method}_{path}_*.jsonl')): out += rows(f)
     return out
 
@@ -1441,7 +1441,8 @@ class SlotRRRinv:
 
 def slot_map(op, hs):
     """The slot part of an S-RRR operator (float64)."""
-    return hs.double() + hs.double() @ op.left.double() @ op.right.double() + op.bias.double()
+    dev = op.left.device; x = hs.double().to(dev)
+    return (x + x @ op.left.double() @ op.right.double() + op.bias.double()).to(hs.device)
 
 
 def first_order_errors(man, opP, opM, d):

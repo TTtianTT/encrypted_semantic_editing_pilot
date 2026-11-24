@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  30%|██▉       | 219/732 [00:00<00:00, 2187.54it/s]Loading weights:  60%|█████▉    | 438/732 [00:00<00:00, 1435.60it/s]Loading weights:  82%|████████▏ | 597/732 [00:00<00:00, 1240.90it/s]Loading weights: 100%|█████████▉| 730/732 [00:00<00:00, 1201.98it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 1295.79it/s]
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 213/732 [00:00<00:00, 2123.68it/s]Loading weights:  58%|█████▊    | 426/732 [00:00<00:00, 1444.86it/s]Loading weights:  80%|███████▉  | 583/732 [00:00<00:00, 1331.36it/s]Loading weights:  99%|█████████▉| 723/732 [00:00<00:00, 1149.76it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 1282.41it/s]
+R smoke ('month-mt', 'F_empty', 'alt') 2
+{"smoke": {"case": {"n": 2, "median_change_PROJ": 5.286624541949, "median_change_PUSH": 2.5559521518094197, "SNAP": 1.0, "PROJ": 0.5, "PUSH": 0.5, "SNAP+CTX": 1.0}}}
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  75%|███████▌  | 549/732 [00:00<00:00, 5463.41it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 5592.43it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/smoke.py", line 37, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/smoke.py", line 28, in main
+    sys.argv = [mod] + args; __import__(mod).main(); res['steps'][mod] = 'ok'; torch.cuda.empty_cache()
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/a_cycle.py", line 25, in main
+    e = first_order_errors(man, T['plus'], T['minus'], d)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 1451, in first_order_errors
+    eP = torch.stack([off(slot_map(opP, Cw[:, x])) - off(Cw[:, (x + 1) % N]) for x in range(N)], 1)
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 1444, in slot_map
+    return hs.double() + hs.double() @ op.left.double() @ op.right.double() + op.bias.double()
+                         ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+RuntimeError: Expected all tensors to be on the same device, but got mat2 is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA_mm)
+srun: error: node02: task 0: Exited with exit code 1

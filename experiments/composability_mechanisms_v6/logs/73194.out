@@ -1,0 +1,16 @@
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 164/732 [00:00<00:00, 1634.84it/s]Loading weights:  45%|████▍     | 328/732 [00:00<00:00, 1121.98it/s]Loading weights:  61%|██████▏   | 450/732 [00:00<00:00, 1015.00it/s]Loading weights:  76%|███████▌  | 557/732 [00:00<00:00, 940.00it/s] Loading weights:  90%|█████████ | 659/732 [00:00<00:00, 961.94it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 1018.21it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/smoke.py", line 37, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/smoke.py", line 22, in main
+    run_chain(eng, bb, d, 'natural', name, ops, f'{path}_from_start', 'world_start', ol, split='dev', model=vote_model(bb, d))
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 317, in run_chain
+    ws = worlds5(d, split); n = len(ws); fs = files('chain', bb, d, mp, method, name, n)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 303, in files
+    import lib6
+ModuleNotFoundError: No module named 'lib6'
+srun: error: node02: task 0: Exited with exit code 1

@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/selftest.py", line 91, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/selftest.py", line 77, in main
+    abl = Att2LAblated(e, 'drop')(h, mk_); ref = h + (e.b + e.u(e.v(h))) * mk_[..., None]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 1464, in forward
+    e = self.mod; z0, z, a1, a2 = e.layers(h, m); base = e.b + e.u(e.v(z0))
+                                  ^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 1218, in layers
+    z0 = h.float(); a1 = _masked_softmax(self.q1(z0) @ self.k1(z0).transpose(-1, -2) / np.sqrt(self.dk), m)
+                                         ^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: expected m1 and m2 to have the same dtype, but got: float != double
+srun: error: node01: task 0: Exited with exit code 1

@@ -1,0 +1,40 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 6397.30it/s]
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 6043.83it/s]
+R smoke ('weekday', 'C3n300_s42', 'alt') 4
+R smoke ('weekday', 'C3n300_s42', 'minus') 3
+R smoke ('weekday', 'C3n300_s42', 'plus') 2
+R smoke ('weekday', 'C3n300_s43', 'plus') 3
+{"smoke": {"case": {"n": 12, "median_change_PROJ": 0.21699614140868645, "median_change_PUSH": 0.6034375852017451, "SNAP": 0.5, "PROJ": 0.08333333333333333, "PUSH": 0.5, "CTX": 0.75, "SNAP+CTX": 1.0}}}
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 6117.55it/s]
+A smoke bart weekday-mt {'cond': 26.28201274139262, 'inverse_rel_err': 2.0663421197282047e-15, 'precheck_pass': True}
+A smoke bart month-mt {'cond': 25.116894105647926, 'inverse_rel_err': 2.0381820488664707e-15, 'precheck_pass': True}
+A smoke bart hour-mt {'cond': 36.78190737507473, 'inverse_rel_err': 2.849213446360619e-15, 'precheck_pass': True}
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 7164.41it/s]
+K smoke bind3 Att2LU8_s42 {'bind3/Att2LU8_s42/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s43 {'bind3/Att2LU8_s43/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s44 {'bind3/Att2LU8_s44/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s45 {'bind3/Att2LU8_s45/plus': {'R6': 0.984375}}
+K smoke bind3 Att2LU8_s46 {'bind3/Att2LU8_s46/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s47 {'bind3/Att2LU8_s47/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s48 {'bind3/Att2LU8_s48/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU8_s49 {'bind3/Att2LU8_s49/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s42 {'bind3/Att2LU4_s42/plus': {'R6': 0.953125}}
+K smoke bind3 Att2LU4_s43 {'bind3/Att2LU4_s43/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s44 {'bind3/Att2LU4_s44/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s45 {'bind3/Att2LU4_s45/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s46 {'bind3/Att2LU4_s46/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s47 {'bind3/Att2LU4_s47/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s48 {'bind3/Att2LU4_s48/plus': {'R6': 1.0}}
+K smoke bind3 Att2LU4_s49 {'bind3/Att2LU4_s49/plus': {'R6': 1.0}}
+K smoke bind3 Att1U8_s42 {'bind3/Att1U8_s42/plus': {'R6': 0.734375}}
+K smoke bind3 Att1U8_s43 {'bind3/Att1U8_s43/plus': {'R6': 0.921875}}
+K smoke bind3 Att1U8_s44 {'bind3/Att1U8_s44/plus': {'R6': 0.96875}}
+K smoke bind3 Att1U8_s45 {'bind3/Att1U8_s45/plus': {'R6': 0.75}}
+K smoke bind3 Att1U8_s46 {'bind3/Att1U8_s46/plus': {'R6': 0.9375}}
+K smoke bind3 Att1U8_s47 {'bind3/Att1U8_s47/plus': {'R6': 0.96875}}
+K smoke bind3 Att1U8_s48 {'bind3/Att1U8_s48/plus': {'R6': 1.0}}
+K smoke bind3 Att1U8_s49 {'bind3/Att1U8_s49/plus': {'R6': 0.859375}}
+K smoke bind3 ORU8_s42 {'bind3/ORU8_s42/plus': {'R6': 1.0}}
+K smoke bind3 ORU8_s43 {'bind3/ORU8_s43/plus': {'R6': 1.0}}
+K smoke bind3 ORU8_s44 {'bind3/ORU8_s44/plus': {'R6': 1.0}}
+{"steps": {"u_dev_chains": {"cells": 5, "argmax_mismatches": 0}, "r_repair": "ok", "a_cycle": "ok", "k_chains": "ok"}, "pass": true, "seconds": 108.86630344390869}

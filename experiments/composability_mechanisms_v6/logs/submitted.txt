@@ -10,3 +10,37 @@
 73144 d_audit cpu
 73146 d_make_data cpu (rerun: template-0 weekday/month reuse confirm6)
 73147 d_audit cpu
+73148 d_encode bart A
+73149 d_encode t5 B
+73150 train_new C bart A
+73151 train_new K bart A (afterok 73150)
+73153 prep_fits t5 B
+73154 selftest cpu
+73155 selftest cpu (rerun: calib_u written)
+73156 selftest cpu (rerun: float32 ablation check)
+73158 selftest cpu (rerun: A9.3 single-step synthetic, A9.5 error orientation)
+73159 devchains bart A (afterok 73150); 73151 trainK now afterok 73159
+73160 devchains t5 B (afterok 73153)
+73161 seed_registry cpu (historical only; rerun after training)
+73183 calib_u bart cpu
+73184 a_cycle precheck bart cpu
+73185 a_cycle precheck t5 cpu
+73186 calib_u t5 cpu
+73187 simulate t5 B
+73188 r_repair precheck t5 B (afterok 73187)
+73189 simulate dev t5 B (afterok 73188)
+73190 simulate bart A (afterok 73151)
+73191 r_repair precheck bart A (afterok 73190)
+73192 k_chains precheck A (afterok 73191)
+73193 simulate dev bart A (afterok 73192)
+73194 smoke t5 B (afterok 73189)
+73195 smoke bart A (afterok 73193)
+73204 smoke t5 B (rerun: lib7 shard helpers imported lib6)
+73205 smoke t5 B (rerun: slot_map device)
+73212 k_chains precheck A (rerun: decode_chain vote model only when needed)
+73213 simulate dev bart A
+73214 smoke bart A
+73215 seed_registry cpu (final)
+73216 analyze --smoke cpu
+73217 analyze --smoke cpu (rerun: dev7ho cells vs dev shards)
+73218 analyze --smoke cpu (rerun: R on smoke files)
