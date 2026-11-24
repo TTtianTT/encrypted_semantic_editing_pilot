@@ -1,0 +1,36 @@
+{
+  "budget_gpu_hours": 12,
+  "jobs": [
+    {
+      "unit": "P",
+      "lane": "A",
+      "job_id": "73137",
+      "name": "compmech6-A-p4",
+      "state": "COMPLETED",
+      "elapsed_s": 42,
+      "gpus": 1,
+      "gpu_hours": 0.011666666666666667,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-24T20:20:48",
+      "end": "2026-11-24T20:21:30"
+    },
+    {
+      "unit": "P",
+      "lane": "B",
+      "job_id": "73138",
+      "name": "compmech6-B-p4",
+      "state": "COMPLETED",
+      "elapsed_s": 40,
+      "gpus": 1,
+      "gpu_hours": 0.011111111111111112,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node02",
+      "start": "2026-11-24T20:20:48",
+      "end": "2026-11-24T20:21:28"
+    }
+  ],
+  "total_gpu_hours": 0.02277777777777778
+}
