@@ -1,0 +1,170 @@
+# claim_map.yaml — maintained by the lead (PLAN A5, appendix B). Initial draft by Claude Code from PLAN A2; the lead owns and edits it.
+# Each claim: id, nature (confirmed / exploratory / partial / pending), predictions (round/id of locked predictions), figures, and
+# numbers: macro (LaTeX name, letters only), file (repo-relative) + path (JSON path, '/'-separated; list indices as integers) or
+# derived (a named computation in scripts/build_claims.py), fmt (python format), note.
+# build_claims.py resolves every number from the locked results and writes claims.yaml and generated/numbers.tex.
+
+rounds:
+  v1: {dir: experiments/symmetry_composability_v1, predictions: results/e1_predictions.json}
+  v2: {dir: experiments/composability_mechanisms_v1, predictions: results/predictions.json}
+  v3: {dir: experiments/composability_mechanisms_v2, predictions: results/predictions.json}
+  v4: {dir: experiments/composability_mechanisms_v3, predictions: results/predictions.json}
+  v5: {dir: experiments/composability_mechanisms_v4, predictions: results/predictions.json}
+  v6: {dir: experiments/composability_mechanisms_v5, predictions: results/predictions.json, pending: true}
+
+claims:
+  - id: CL1
+    zh: 单步解码正确 ≠ 可组合
+    en: A latent edit that decodes correctly in one step need not compose.
+    nature: confirmed
+    predictions: [v1/P5, v2/G2_0, v5/G5_0]
+    figures: [fig1]
+    numbers:
+      - {macro: CLoneVoneCOneRtwoMax, derived: v1_c1_r2_max, fmt: '{:.2f}', note: 'v1 C1, max over domains x seeds of R_2'}
+      - {macro: CLoneVtwoRRRRtwoNMin, derived: v2_g20_rrr16_min, fmt: '{:.2f}', note: 'v2 G2-0, min over domains of RRR-16 R_2N'}
+      - {macro: CLoneVfiveCOneRtwoMax, derived: v5_g50_c1_max, fmt: '{:.2f}', note: 'v5 G5-0, v1 C1 R_2 (BART weekday/month x 3 seeds), max'}
+      - {macro: CLoneVfiveBaseMin, derived: v5_g50_base_min, fmt: '{:.2f}', note: 'v5 G5-0, base operator plus R_2N, min over 10 (backbone, domain)'}
+  - id: CL2
+    zh: CE 编辑器写的是指令，不是状态
+    en: Decoder-trained (CE) editors write instructions, not states.
+    nature: confirmed
+    predictions: [v2/M1, v2/M2, v2/M3, v5/L3b]
+    figures: [fig5]
+    numbers:
+      - {macro: CLtwoWriteCosSource, file: experiments/composability_mechanisms_v1/results/predictions.json, path: M1/median, fmt: '{:.3f}', note: 'median cosine of writes across source states'}
+      - {macro: CLtwoWriteCosCanon, file: experiments/composability_mechanisms_v1/results/predictions.json, path: M2/median, fmt: '{:.3f}', note: 'median cosine with the canonical write'}
+      - {macro: CLtwoProbeSource, file: experiments/composability_mechanisms_v1/results/predictions.json, path: M3/median_source, fmt: '{:.2f}'}
+      - {macro: CLtwoCECells, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/L3/L3b/n, fmt: '{:d}'}
+      - {macro: CLtwoSlotStaysBart, derived: v5_ce_slot_stays_bart, fmt: '{:d}', note: 'worlds (of 160) whose step-1 slot readout equals the start, BART weekday C1v1_s42 plus'}
+      - {macro: CLtwoSlotStaysTfive, derived: v5_ce_slot_stays_t5, fmt: '{:d}', note: 'same, T5Gemma month C1U4n_s42 plus'}
+  - id: CL2b
+    zh: 解码器原生会做的运算写相对指令，否则写目标 token
+    en: Where the decoder natively performs the operation the write is relative; otherwise it is the target token.
+    nature: exploratory
+    predictions: [v3/N2, v3/N3]
+    numbers: []
+  - id: CL3
+    zh: 只用解码器监督，展开训练只学到计步捷径
+    en: Unrolled training with decoder supervision only learns a step-counting shortcut.
+    nature: confirmed
+    predictions: [v4/U1, v4/U1b, v4/U2, v5/L4]
+    figures: [fig5]
+    numbers:
+      - {macro: CLthreeUoneMedianMax, derived: v4_u1_median_max, fmt: '{:.2f}', note: 'v4 U1, max over domains of the seed-median R_2N of C1-U4'}
+      - {macro: CLthreeTfiveCOneUfour, derived: v5_l4_c1u4_max, fmt: '{:.2f}', note: 'v5 L4, T5Gemma C1-U4 R_2N (max of seeds)'}
+  - id: CL4
+    zh: 加上状态监督就可组合
+    en: Adding state supervision makes the editors compose.
+    nature: confirmed (C3-U4); exploratory (training length)
+    predictions: [v5/L4]
+    numbers:
+      - {macro: CLfourTfiveCThreeUfour, derived: v5_l4_c3u4_min, fmt: '{:.2f}', note: 'v5 L4, T5Gemma C3-U4 R_2N (min of seeds)'}
+  - id: CL5
+    zh: 低秩编辑的秩阈值，以及冻结平面的特征
+    en: Rank threshold r* = N - 1 and the frozen-plane signatures.
+    nature: confirmed
+    predictions: [v2/R1, v2/R2, v3/HS1, v3/HS2, v3/HS3, v4/V1, v4/V2a]
+    figures: [fig2]
+    numbers:
+      - {macro: CLfiveRstarSharp, derived: v2_r1_sharp_count, fmt: '{:d}', note: 'domains with r* = N - 1 (sharp)'}
+      - {macro: CLfiveVoneN, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V1/n, fmt: '{:d}'}
+      - {macro: CLfiveVtwoaN, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V2a/n, fmt: '{:d}'}
+  - id: CL6
+    zh: 读出是多尺度的最近状态
+    en: The readout is a multi-scale nearest state.
+    nature: confirmed; multi-scale reading exploratory
+    predictions: [v3/HV1, v4/V4]
+    figures: [fig3]
+    numbers:
+      - {macro: CLsixFullBart, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/bart/agreement/full, fmt: '{:.3f}'}
+      - {macro: CLsixFullTfive, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/t5/agreement/full, fmt: '{:.3f}'}
+      - {macro: CLsixEqualBart, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/bart/agreement/equal, fmt: '{:.3f}'}
+      - {macro: CLsixEqualTfive, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/t5/agreement/equal, fmt: '{:.3f}'}
+      - {macro: CLsixFundBart, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/bart/agreement/fund, fmt: '{:.3f}'}
+      - {macro: CLsixFundTfive, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V4/t5/agreement/fund, fmt: '{:.3f}'}
+  - id: CL7
+    zh: 谱：基频的一步变化最小
+    en: Spectrum - the fundamental changes least per step.
+    nature: confirmed (s_1); partial (a_1)
+    predictions: [v4/V0]
+    figures: [fig3]
+    numbers:
+      - {macro: CLsevenSoneSmallest, derived: v4_v0_s1_smallest, fmt: '{:d}'}
+      - {macro: CLsevenAoneLargest, derived: v4_v0_a1_largest, fmt: '{:d}'}
+      - {macro: CLsevenCells, derived: v4_v0_cells, fmt: '{:d}'}
+  - id: CL8
+    zh: 不解码就能预测可组合性
+    en: Composability can be predicted from latents alone.
+    nature: confirmed
+    predictions: [v5/L1, v5/L2]
+    figures: [fig6]
+    numbers:
+      - {macro: CLeightAgreeBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L1/latent, fmt: '{:.3f}'}
+      - {macro: CLeightAgreeTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/t5/L1/latent, fmt: '{:.3f}'}
+      - {macro: CLeightNaiveBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L1/naive, fmt: '{:.3f}'}
+      - {macro: CLeightNaiveTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/t5/L1/naive, fmt: '{:.3f}'}
+      - {macro: CLeightCatBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L2/accuracy, fmt: '{:.3f}'}
+      - {macro: CLeightCatTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/t5/L2/accuracy, fmt: '{:.3f}'}
+      - {macro: CLeightNewBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/new/bart/L1/latent, fmt: '{:.3f}'}
+      - {macro: CLeightNewTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/new/t5/L1/latent, fmt: '{:.3f}'}
+      - {macro: CLeightDiffLoBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L1/latent_minus_naive/ci95/0, fmt: '{:.3f}'}
+      - {macro: CLeightDiffLoTfive, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/t5/L1/latent_minus_naive/ci95/0, fmt: '{:.3f}'}
+  - id: CL8b
+    zh: 等权读出也够用，不需要解码器标定
+    en: An equal-weight readout suffices (no decoder calibration).
+    nature: exploratory
+    predictions: [v6/P1a]
+    numbers:
+      - {macro: CLeightbEqualBart, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/bart/equal/world, fmt: '{:.3f}', pending: v6}
+      - {macro: CLeightbEqualTfive, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/t5/equal/world, fmt: '{:.3f}', pending: v6}
+  - id: CL9
+    zh: 第 1 步分歧率可以识别指令捷径
+    en: Step-1 disagreement detects instruction shortcuts.
+    nature: confirmed
+    predictions: [v5/L3a, v5/L3b, v5/L3c]
+    figures: [fig5]
+    numbers:
+      - {macro: CLnineCE, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/L3/L3a/n, fmt: '{:d}'}
+      - {macro: CLnineState, derived: v5_l3_state_cells, fmt: '{:d}'}
+  - id: CL10
+    zh: 基频优先的秩分配
+    en: Fundamental-first rank allocation.
+    nature: confirmed (T5Gemma)
+    predictions: [v5/F1]
+    figures: [fig4]
+    numbers:
+      - {macro: CLtenCells, file: experiments/composability_mechanisms_v4/results/predictions.json, path: F/Q16/n, fmt: '{:d}'}
+      - {macro: CLtenRRRMax, derived: v5_f_rrr_max, fmt: '{:.2f}'}
+      - {macro: CLtenFFMin, derived: v5_f_ff_min, fmt: '{:.2f}'}
+  - id: CL11
+    zh: 对称不是必要条件
+    en: Symmetry is not necessary.
+    nature: confirmed
+    predictions: [v2/A1, v2/A2, v2/A3, v2/R3, v4/S1]
+    numbers:
+      - {macro: CLelevenScrComposable, derived: v2_a2_scrambled_composable, fmt: '{:d}'}
+      - {macro: CLelevenScrTotal, derived: v2_a2_scrambled_total, fmt: '{:d}'}
+      - {macro: CLelevenMonthDiff, file: experiments/composability_mechanisms_v3/results/predictions.json, path: S/month/diff, fmt: '{:.2f}'}
+      - {macro: CLelevenRstarScrMonth, file: experiments/composability_mechanisms_v1/results/predictions.json, path: R3/r_star_scrmax/month, fmt: '{:d}'}
+  - id: CL12
+    zh: 理想化预测会失败，原因是累积漂移加读出余量
+    en: Idealized predictions fail through accumulated drift and readout margin.
+    nature: phenomenon confirmed; explanation exploratory
+    predictions: [v4/V3, v4/V2b, v5/D1, v5/D2]
+    numbers:
+      - {macro: CLtwelveUp, derived: v5_d_up, fmt: '{:d}'}
+      - {macro: CLtwelveC, derived: v5_d_c, fmt: '{:d}'}
+  - id: CL13
+    zh: 绑定类编辑
+    en: Binding edits.
+    nature: partial; pending v6 K
+    predictions: [v5/B2, v5/B3]
+    numbers:
+      - {macro: CLthirteenBtwo, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B2/max, fmt: '{:.2f}'}
+      - {macro: CLthirteenTokU, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B3/TokU, fmt: '{:.2f}'}
+  - id: CL14
+    zh: 多句式语境
+    en: Multi-template contexts.
+    nature: pending v6 M
+    predictions: [v6/M1, v6/M3, v6/M4]
+    numbers: []

@@ -1,0 +1,606 @@
+generated_by: paper/scripts/build_claims.py
+lock_commits:
+  v1: b9419d4e469f08b51bda2d64ce9cc9db6ac3c6b1
+  v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
+  v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
+  v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+  v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  v6: null
+claims:
+- id: CL1
+  zh: 单步解码正确 ≠ 可组合
+  en: A latent edit that decodes correctly in one step need not compose.
+  nature: confirmed
+  predictions:
+  - v1/P5
+  - v2/G2_0
+  - v5/G5_0
+  figures:
+  - fig1
+  lock_commits:
+    v1: b9419d4e469f08b51bda2d64ce9cc9db6ac3c6b1
+    v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
+    experiments/composability_mechanisms_v4/results/g50_bart.json: faff3076c0c02667f59451c9cd69d463684ed941b57a7ce9a4a8a4015bba1291
+    experiments/composability_mechanisms_v4/results/g50_t5.json: 625819057f2a955c09493d28f31d7b5d7b6322ef54076b7c25d442913d90c8e4
+    experiments/symmetry_composability_v1/results/e1_predictions.json: e6b52547920eb343658cd0ea0a96b2a7f785777126ab82ae2b5e913a0565e2c5
+  numbers:
+  - macro: CLoneVoneCOneRtwoMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v1_c1_r2_max
+    path: null
+    note: v1 C1, max over domains x seeds of R_2
+    pending: false
+  - macro: CLoneVtwoRRRRtwoNMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v2_g20_rrr16_min
+    path: null
+    note: v2 G2-0, min over domains of RRR-16 R_2N
+    pending: false
+  - macro: CLoneVfiveCOneRtwoMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v5_g50_c1_max
+    path: null
+    note: v5 G5-0, v1 C1 R_2 (BART weekday/month x 3 seeds), max
+    pending: false
+  - macro: CLoneVfiveBaseMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v5_g50_base_min
+    path: null
+    note: v5 G5-0, base operator plus R_2N, min over 10 (backbone, domain)
+    pending: false
+- id: CL2
+  zh: CE 编辑器写的是指令，不是状态
+  en: Decoder-trained (CE) editors write instructions, not states.
+  nature: confirmed
+  predictions:
+  - v2/M1
+  - v2/M2
+  - v2/M3
+  - v5/L3b
+  figures:
+  - fig5
+  lock_commits:
+    v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+    experiments/composability_mechanisms_v4/results/simulate_bart.json.gz: 9cc2c01c5889c0f3aa08558004310e980dcc6dcc26d56a5933de89b9bf28e8c3
+    experiments/composability_mechanisms_v4/results/simulate_t5.json.gz: ea04de442bf0ec6c91045099f1ec324407af5e6c2aa5ae7a6b49c7bf55ce0d94
+  numbers:
+  - macro: CLtwoWriteCosSource
+    value: 0.9860134456192842
+    text: '0.986'
+    source: experiments/composability_mechanisms_v1/results/predictions.json
+    path: M1/median
+    note: median cosine of writes across source states
+    pending: false
+  - macro: CLtwoWriteCosCanon
+    value: 0.003100846715991091
+    text: '0.003'
+    source: experiments/composability_mechanisms_v1/results/predictions.json
+    path: M2/median
+    note: median cosine with the canonical write
+    pending: false
+  - macro: CLtwoProbeSource
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v1/results/predictions.json
+    path: M3/median_source
+    note: null
+    pending: false
+  - macro: CLtwoCECells
+    value: 66
+    text: '66'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/L3/L3b/n
+    note: null
+    pending: false
+  - macro: CLtwoSlotStaysBart
+    value: 160
+    text: '160'
+    source: derived:v5_ce_slot_stays_bart
+    path: null
+    note: worlds (of 160) whose step-1 slot readout equals the start, BART weekday
+      C1v1_s42 plus
+    pending: false
+  - macro: CLtwoSlotStaysTfive
+    value: 160
+    text: '160'
+    source: derived:v5_ce_slot_stays_t5
+    path: null
+    note: same, T5Gemma month C1U4n_s42 plus
+    pending: false
+- id: CL2b
+  zh: 解码器原生会做的运算写相对指令，否则写目标 token
+  en: Where the decoder natively performs the operation the write is relative; otherwise
+    it is the target token.
+  nature: exploratory
+  predictions:
+  - v3/N2
+  - v3/N3
+  figures: []
+  lock_commits:
+    v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
+  evidence: {}
+  numbers: []
+- id: CL3
+  zh: 只用解码器监督，展开训练只学到计步捷径
+  en: Unrolled training with decoder supervision only learns a step-counting shortcut.
+  nature: confirmed
+  predictions:
+  - v4/U1
+  - v4/U1b
+  - v4/U2
+  - v5/L4
+  figures:
+  - fig5
+  lock_commits:
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLthreeUoneMedianMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v4_u1_median_max
+    path: null
+    note: v4 U1, max over domains of the seed-median R_2N of C1-U4
+    pending: false
+  - macro: CLthreeTfiveCOneUfour
+    value: 0.0
+    text: '0.00'
+    source: derived:v5_l4_c1u4_max
+    path: null
+    note: v5 L4, T5Gemma C1-U4 R_2N (max of seeds)
+    pending: false
+- id: CL4
+  zh: 加上状态监督就可组合
+  en: Adding state supervision makes the editors compose.
+  nature: confirmed (C3-U4); exploratory (training length)
+  predictions:
+  - v5/L4
+  figures: []
+  lock_commits:
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLfourTfiveCThreeUfour
+    value: 1.0
+    text: '1.00'
+    source: derived:v5_l4_c3u4_min
+    path: null
+    note: v5 L4, T5Gemma C3-U4 R_2N (min of seeds)
+    pending: false
+- id: CL5
+  zh: 低秩编辑的秩阈值，以及冻结平面的特征
+  en: Rank threshold r* = N - 1 and the frozen-plane signatures.
+  nature: confirmed
+  predictions:
+  - v2/R1
+  - v2/R2
+  - v3/HS1
+  - v3/HS2
+  - v3/HS3
+  - v4/V1
+  - v4/V2a
+  figures:
+  - fig2
+  lock_commits:
+    v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
+    v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+  evidence:
+    experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
+    experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
+  numbers:
+  - macro: CLfiveRstarSharp
+    value: 4
+    text: '4'
+    source: derived:v2_r1_sharp_count
+    path: null
+    note: domains with r* = N - 1 (sharp)
+    pending: false
+  - macro: CLfiveVoneN
+    value: 8
+    text: '8'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V1/n
+    note: null
+    pending: false
+  - macro: CLfiveVtwoaN
+    value: 8
+    text: '8'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V2a/n
+    note: null
+    pending: false
+- id: CL6
+  zh: 读出是多尺度的最近状态
+  en: The readout is a multi-scale nearest state.
+  nature: confirmed; multi-scale reading exploratory
+  predictions:
+  - v3/HV1
+  - v4/V4
+  figures:
+  - fig3
+  lock_commits:
+    v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+  evidence:
+    experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
+  numbers:
+  - macro: CLsixFullBart
+    value: 0.944873010584587
+    text: '0.945'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/bart/agreement/full
+    note: null
+    pending: false
+  - macro: CLsixFullTfive
+    value: 0.9374202662785222
+    text: '0.937'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/t5/agreement/full
+    note: null
+    pending: false
+  - macro: CLsixEqualBart
+    value: 0.9130039211666111
+    text: '0.913'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/bart/agreement/equal
+    note: null
+    pending: false
+  - macro: CLsixEqualTfive
+    value: 0.9184596943362301
+    text: '0.918'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/t5/agreement/equal
+    note: null
+    pending: false
+  - macro: CLsixFundBart
+    value: 0.5551013608754709
+    text: '0.555'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/bart/agreement/fund
+    note: null
+    pending: false
+  - macro: CLsixFundTfive
+    value: 0.5255832869557772
+    text: '0.526'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: V/V4/t5/agreement/fund
+    note: null
+    pending: false
+- id: CL7
+  zh: 谱：基频的一步变化最小
+  en: Spectrum - the fundamental changes least per step.
+  nature: confirmed (s_1); partial (a_1)
+  predictions:
+  - v4/V0
+  figures:
+  - fig3
+  lock_commits:
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+  evidence:
+    experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
+  numbers:
+  - macro: CLsevenSoneSmallest
+    value: 6
+    text: '6'
+    source: derived:v4_v0_s1_smallest
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenAoneLargest
+    value: 3
+    text: '3'
+    source: derived:v4_v0_a1_largest
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenCells
+    value: 6
+    text: '6'
+    source: derived:v4_v0_cells
+    path: null
+    note: null
+    pending: false
+- id: CL8
+  zh: 不解码就能预测可组合性
+  en: Composability can be predicted from latents alone.
+  nature: confirmed
+  predictions:
+  - v5/L1
+  - v5/L2
+  figures:
+  - fig6
+  lock_commits:
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLeightAgreeBart
+    value: 0.9223251028806584
+    text: '0.922'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/bart/L1/latent
+    note: null
+    pending: false
+  - macro: CLeightAgreeTfive
+    value: 0.9593283582089552
+    text: '0.959'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/t5/L1/latent
+    note: null
+    pending: false
+  - macro: CLeightNaiveBart
+    value: 0.5828703703703704
+    text: '0.583'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/bart/L1/naive
+    note: null
+    pending: false
+  - macro: CLeightNaiveTfive
+    value: 0.6389925373134329
+    text: '0.639'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/t5/L1/naive
+    note: null
+    pending: false
+  - macro: CLeightCatBart
+    value: 0.8888888888888888
+    text: '0.889'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/bart/L2/accuracy
+    note: null
+    pending: false
+  - macro: CLeightCatTfive
+    value: 0.9154228855721394
+    text: '0.915'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/t5/L2/accuracy
+    note: null
+    pending: false
+  - macro: CLeightNewBart
+    value: 0.981712962962963
+    text: '0.982'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/new/bart/L1/latent
+    note: null
+    pending: false
+  - macro: CLeightNewTfive
+    value: 0.9755208333333333
+    text: '0.976'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/new/t5/L1/latent
+    note: null
+    pending: false
+  - macro: CLeightDiffLoBart
+    value: 0.33185797595094685
+    text: '0.332'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/bart/L1/latent_minus_naive/ci95/0
+    note: null
+    pending: false
+  - macro: CLeightDiffLoTfive
+    value: 0.30722336828018465
+    text: '0.307'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/per_backbone/t5/L1/latent_minus_naive/ci95/0
+    note: null
+    pending: false
+- id: CL8b
+  zh: 等权读出也够用，不需要解码器标定
+  en: An equal-weight readout suffices (no decoder calibration).
+  nature: exploratory
+  predictions:
+  - v6/P1a
+  figures: []
+  lock_commits:
+    v6: null
+  evidence: {}
+  numbers:
+  - macro: CLeightbEqualBart
+    value: null
+    text: null
+    source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
+    path: P1a/all_nonCE/bart/equal/world
+    note: null
+    pending: true
+  - macro: CLeightbEqualTfive
+    value: null
+    text: null
+    source: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json
+    path: P1a/all_nonCE/t5/equal/world
+    note: null
+    pending: true
+- id: CL9
+  zh: 第 1 步分歧率可以识别指令捷径
+  en: Step-1 disagreement detects instruction shortcuts.
+  nature: confirmed
+  predictions:
+  - v5/L3a
+  - v5/L3b
+  - v5/L3c
+  figures:
+  - fig5
+  lock_commits:
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLnineCE
+    value: 66
+    text: '66'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: L/L3/L3a/n
+    note: null
+    pending: false
+  - macro: CLnineState
+    value: 82
+    text: '82'
+    source: derived:v5_l3_state_cells
+    path: null
+    note: null
+    pending: false
+- id: CL10
+  zh: 基频优先的秩分配
+  en: Fundamental-first rank allocation.
+  nature: confirmed (T5Gemma)
+  predictions:
+  - v5/F1
+  figures:
+  - fig4
+  lock_commits:
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLtenCells
+    value: 4
+    text: '4'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: F/Q16/n
+    note: null
+    pending: false
+  - macro: CLtenRRRMax
+    value: 0.6125
+    text: '0.61'
+    source: derived:v5_f_rrr_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtenFFMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v5_f_ff_min
+    path: null
+    note: null
+    pending: false
+- id: CL11
+  zh: 对称不是必要条件
+  en: Symmetry is not necessary.
+  nature: confirmed
+  predictions:
+  - v2/A1
+  - v2/A2
+  - v2/A3
+  - v2/R3
+  - v4/S1
+  figures: []
+  lock_commits:
+    v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+  evidence:
+    experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
+    experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
+  numbers:
+  - macro: CLelevenScrComposable
+    value: 10
+    text: '10'
+    source: derived:v2_a2_scrambled_composable
+    path: null
+    note: null
+    pending: false
+  - macro: CLelevenScrTotal
+    value: 10
+    text: '10'
+    source: derived:v2_a2_scrambled_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLelevenMonthDiff
+    value: -0.13124999999999998
+    text: '-0.13'
+    source: experiments/composability_mechanisms_v3/results/predictions.json
+    path: S/month/diff
+    note: null
+    pending: false
+  - macro: CLelevenRstarScrMonth
+    value: 16
+    text: '16'
+    source: experiments/composability_mechanisms_v1/results/predictions.json
+    path: R3/r_star_scrmax/month
+    note: null
+    pending: false
+- id: CL12
+  zh: 理想化预测会失败，原因是累积漂移加读出余量
+  en: Idealized predictions fail through accumulated drift and readout margin.
+  nature: phenomenon confirmed; explanation exploratory
+  predictions:
+  - v4/V3
+  - v4/V2b
+  - v5/D1
+  - v5/D2
+  figures: []
+  lock_commits:
+    v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLtwelveUp
+    value: 43
+    text: '43'
+    source: derived:v5_d_up
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwelveC
+    value: 58
+    text: '58'
+    source: derived:v5_d_c
+    path: null
+    note: null
+    pending: false
+- id: CL13
+  zh: 绑定类编辑
+  en: Binding edits.
+  nature: partial; pending v6 K
+  predictions:
+  - v5/B2
+  - v5/B3
+  figures: []
+  lock_commits:
+    v5: 8667c907769e475f78d46f593266efa46aac9dd6
+  evidence:
+    experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
+  numbers:
+  - macro: CLthirteenBtwo
+    value: 0.8
+    text: '0.80'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: B/B2/max
+    note: null
+    pending: false
+  - macro: CLthirteenTokU
+    value: 0.0
+    text: '0.00'
+    source: experiments/composability_mechanisms_v4/results/predictions.json
+    path: B/B3/TokU
+    note: null
+    pending: false
+- id: CL14
+  zh: 多句式语境
+  en: Multi-template contexts.
+  nature: pending v6 M
+  predictions:
+  - v6/M1
+  - v6/M3
+  - v6/M4
+  figures: []
+  lock_commits:
+    v6: null
+  evidence: {}
+  numbers: []
