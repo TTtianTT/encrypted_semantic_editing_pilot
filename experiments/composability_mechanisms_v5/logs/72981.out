@@ -1,0 +1,7 @@
+1 {'srrr_plus': 0.00047027898140211775, 'srrr_minus': 0.0004702811893105224, 'eall_plus': 1.5553057569984766e-15, 'eall_minus': 1.571906505330249e-15, 'planes': 3, 'pass': True}
+2 {'true': 0.8, 'fitted': 0.7823928556084037, 'err': 0.017607144391596385, 'pass_': True}
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/lib6.py:1305: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, path=pk, S=S_, loss=float(loss), grad=float(gn)))
+3-4 {'optimiser': {'updates': 20000, 'lr': 0.003, 'batch': 64}, 'Att2L': {'heldout_rel_l2': 0.036076352621118225, 'train_last': 0.0010886257514357567}, 'Att1': {'heldout_rel_l2': 0.27052629987398785, 'train_last': 0.26134344935417175}, 'Tok': {'heldout_rel_l2': 0.8935476938883463, 'train_last': 0.8695828914642334}, 'OR': {'heldout_rel_l2': 0.003440460655838251, 'train_last': 0.0044254520907998085}, 'pass': True}
+5 {'Att2L': 0.0, 'OR': 0.0, 'pass': True}

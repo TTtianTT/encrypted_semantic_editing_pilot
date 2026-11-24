@@ -1,0 +1,468 @@
+{
+  "seed": 2026112402,
+  "rule": "stratified by has_Y, 2:1 (round(2n/3) train), >= 8 held-out",
+  "users": {
+    "weekday-mt": [
+      "bart"
+    ],
+    "month-mt": [
+      "bart",
+      "t5"
+    ],
+    "hour-mt": [
+      "bart"
+    ]
+  },
+  "split": {
+    "weekday-mt": {
+      "kept": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34,
+        35
+      ],
+      "removed": {
+        "8": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "9": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "11": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "12": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "13": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "14": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "33": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        }
+      },
+      "train": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        15,
+        16,
+        17,
+        19,
+        20,
+        23,
+        25,
+        26,
+        28,
+        29,
+        30,
+        34,
+        35
+      ],
+      "held_out": [
+        0,
+        10,
+        18,
+        21,
+        22,
+        24,
+        27,
+        31,
+        32
+      ],
+      "in_N": true,
+      "held_out_with_Y": [
+        18,
+        27,
+        32
+      ],
+      "train_with_Y": [
+        2,
+        5,
+        7,
+        19,
+        20,
+        25,
+        35
+      ]
+    },
+    "month-mt": {
+      "kept": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34,
+        35
+      ],
+      "removed": {
+        "8": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 1.0
+          }
+        },
+        "9": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 1.0
+          }
+        },
+        "11": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 1.0
+          }
+        },
+        "12": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 1.0
+          }
+        },
+        "13": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 0.9947916666666666
+          }
+        },
+        "14": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 0.9864583333333333
+          }
+        },
+        "33": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          },
+          "t5": {
+            "GT": true,
+            "GR": 1.0
+          }
+        }
+      },
+      "train": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        15,
+        18,
+        19,
+        21,
+        22,
+        24,
+        25,
+        26,
+        29,
+        31,
+        32,
+        34,
+        35
+      ],
+      "held_out": [
+        1,
+        7,
+        16,
+        17,
+        20,
+        23,
+        27,
+        28,
+        30
+      ],
+      "in_N": true,
+      "held_out_with_Y": [
+        7,
+        20,
+        27
+      ],
+      "train_with_Y": [
+        2,
+        5,
+        18,
+        19,
+        25,
+        32,
+        35
+      ]
+    },
+    "hour-mt": {
+      "kept": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34,
+        35
+      ],
+      "removed": {
+        "8": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "9": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "11": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "12": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "13": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "14": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        },
+        "33": {
+          "bart": {
+            "GT": false,
+            "GR": null
+          }
+        }
+      },
+      "train": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        10,
+        15,
+        16,
+        17,
+        18,
+        19,
+        23,
+        27,
+        28,
+        30,
+        31,
+        34,
+        35
+      ],
+      "held_out": [
+        3,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        29,
+        32
+      ],
+      "in_N": true,
+      "held_out_with_Y": [
+        20,
+        25,
+        32
+      ],
+      "train_with_Y": [
+        2,
+        5,
+        7,
+        18,
+        19,
+        27,
+        35
+      ]
+    }
+  },
+  "counts": {
+    "weekday-mt": {
+      "templates": {
+        "kept": 29,
+        "train": 20,
+        "held_out": 9
+      },
+      "worlds": {
+        "train": 192,
+        "dev": 48,
+        "confirm5": 160
+      }
+    },
+    "month-mt": {
+      "templates": {
+        "kept": 29,
+        "train": 20,
+        "held_out": 9
+      },
+      "worlds": {
+        "train": 192,
+        "dev": 48,
+        "confirm5": 160
+      }
+    },
+    "hour-mt": {
+      "templates": {
+        "kept": 29,
+        "train": 20,
+        "held_out": 9
+      },
+      "worlds": {
+        "train": 192,
+        "dev": 48,
+        "confirm5": 160
+      }
+    }
+  },
+  "templates_mt_sha256": "d94524dd639222668b7b407e0f80159d5c89d8b15c4ef1c417004e29ed0722ab",
+  "files": {
+    "weekday-mt/worlds.jsonl": "0d0f224358cb901035e6bba61cf8e9cf78d6514c22ba2ebd9d93151679073e2e",
+    "weekday-mt/renders.jsonl": "ac94a0cf61e26b70e441a38d08604a18e9a545b2b44c76118275ea6dd63c6a1e",
+    "month-mt/worlds.jsonl": "aae7f43c07059eb572b458b017d3132dde9d5725e1ebe97477d2002904356fc8",
+    "month-mt/renders.jsonl": "68f97dc896ad1278105e718d37f82975b2ec5409ad41a3ac125a0242863faecb",
+    "hour-mt/worlds.jsonl": "d81e6ef04d0c34b7d5817c490c07656a134923cede3164ea34047cd690ac0f1b",
+    "hour-mt/renders.jsonl": "1160346e3425f33570c18f58983dad7bffb5f8605675966955329b38170bf28b"
+  }
+}

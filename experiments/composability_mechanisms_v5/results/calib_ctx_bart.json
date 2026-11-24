@@ -1,0 +1,110 @@
+{
+  "backbone": "bart",
+  "domains": {
+    "weekday": {
+      "N": 7,
+      "ctx_dim": 6,
+      "explained_variance": [
+        0.14208755138891793,
+        0.08086804480549217,
+        0.06356799585512037,
+        0.05180955742840896,
+        0.043986767033115465,
+        0.0415975641041709
+      ],
+      "probes": 2688,
+      "parsable": 2688,
+      "outcomes": {
+        "ctx_swap": {
+          "n": 1344,
+          "unparsable": 0,
+          "slot_state": 1344,
+          "context_state": 0,
+          "other": 0
+        },
+        "slot_swap": {
+          "n": 1344,
+          "unparsable": 0,
+          "slot_state": 1344,
+          "context_state": 0,
+          "other": 0
+        }
+      },
+      "probe_accuracy_slot_only": 1.0,
+      "probe_accuracy_slot_ctx": 1.0,
+      "lam_slot_full": [
+        0.9225235911816703,
+        1.7040061078488407,
+        2.1407689952586697
+      ],
+      "ctx_sha256": "8e6f18281d76f4be3bed416c3082539e7f58554b4eafa779dc55b0e91d3ebd04",
+      "lam_ctx": 0.0015488498085604616,
+      "nll": 1.9079295412323615e-07,
+      "nll_slot_only": 1.9079205725282602e-07
+    },
+    "month": {
+      "N": 12,
+      "ctx_dim": 11,
+      "explained_variance": [
+        0.1491145948993881,
+        0.10050299540810288,
+        0.0884233482276209,
+        0.06838350234002857,
+        0.03552617868834038,
+        0.03326555380523945,
+        0.029906777224070293,
+        0.0276789231576672,
+        0.023653135287848164,
+        0.02200679940149257,
+        0.020229060661452008
+      ],
+      "probes": 8448,
+      "parsable": 8448,
+      "outcomes": {
+        "ctx_swap": {
+          "n": 4224,
+          "unparsable": 0,
+          "slot_state": 4224,
+          "context_state": 0,
+          "other": 0
+        },
+        "slot_swap": {
+          "n": 4224,
+          "unparsable": 0,
+          "slot_state": 4224,
+          "context_state": 0,
+          "other": 0
+        }
+      },
+      "probe_accuracy_slot_only": 1.0,
+      "probe_accuracy_slot_ctx": 1.0,
+      "lam_slot_full": [
+        1.7840297384156165,
+        2.198754450136351,
+        2.097666230430646,
+        3.99695369809937,
+        5.326550389825765,
+        4.158226562366934
+      ],
+      "ctx_sha256": "8012eb4402f14f9bc47c3bd54fcc0c749b6f492e15b714198291d23d7139845b",
+      "lam_ctx": 28.936548859072143,
+      "nll": 1.767403037894497e-13,
+      "nll_slot_only": 1.2753282226566937e-13
+    }
+  },
+  "resources": {
+    "model": "bart",
+    "dimension": 768,
+    "backbone_parameters": 139420416,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 1282739200,
+    "wall_seconds": 16.478176350996364,
+    "job_id": "72965",
+    "step_id": "0"
+  },
+  "seconds": 28.97500228881836
+}

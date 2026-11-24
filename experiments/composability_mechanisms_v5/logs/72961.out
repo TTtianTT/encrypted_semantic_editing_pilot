@@ -1,0 +1,6 @@
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/lib6.py:1305: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if (k + 1) % 50 == 0 or k == 0: hist.append(dict(step=k + 1, path=pk, S=S_, loss=float(loss), grad=float(gn)))
+40000 0.001 42 heldout 0.2745 curve [(1, 1.0), (3300, 0.3079), (6600, 0.3002), (9900, 0.2892), (13200, 0.2819), (16500, 0.2396), (19800, 0.2774), (23100, 0.2649), (26400, 0.2582), (29700, 0.3218), (33000, 0.3009), (36300, 0.3363), (39600, 0.2754)] 140 s
+20000 0.003 42 heldout 0.1897 curve [(1, 1.0), (1650, 0.3347), (3300, 0.3779), (4950, 0.319), (6600, 0.3503), (8250, 0.3304), (9900, 0.3324), (11550, 0.3057), (13200, 0.2967), (14850, 0.3112), (16500, 0.258), (18150, 0.2441), (19800, 0.3036)] 69 s
+40000 0.001 43 heldout 0.2795 curve [(1, 1.0), (3300, 0.2971), (6600, 0.2782), (9900, 0.2731), (13200, 0.2489), (16500, 0.3319), (19800, 0.2887), (23100, 0.2974), (26400, 0.245), (29700, 0.2575), (33000, 0.2936), (36300, 0.2335), (39600, 0.2713)] 139 s
