@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 83, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 67, in main
+    if 'derived' in n: fn, fs = DERIVED[n['derived']]; v = fn(); files.update(fs); src = f"derived:{n['derived']}"
+                                                           ^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 45, in <lambda>
+    'v3_sk_s1_smallest': (lambda: sum(1 for v in _v3_sk().values() if min(v['s_k'], key=lambda k: v['s_k'][k]) == '1'), [V3ALG]),
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/.paper-worktree/paper/scripts/build_claims.py", line 45, in <genexpr>
+    'v3_sk_s1_smallest': (lambda: sum(1 for v in _v3_sk().values() if min(v['s_k'], key=lambda k: v['s_k'][k]) == '1'), [V3ALG]),
+                                                                          ~^^^^^^^
+KeyError: 's_k'
+srun: error: Jupyter: task 0: Exited with exit code 1

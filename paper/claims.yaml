@@ -301,6 +301,7 @@ claims:
   lock_commits:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
   evidence:
+    experiments/composability_mechanisms_v2/results/algebra.json: 1c5ec88456e84a48bdd9d4c73a80050c119258cb0cd749632e1b8b99aa74134d
     experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
   numbers:
   - macro: CLsevenSoneSmallest
@@ -321,6 +322,41 @@ claims:
     value: 6
     text: '6'
     source: derived:v4_v0_cells
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenAoneEvaluable
+    value: 4
+    text: '4'
+    source: derived:v4_v0_a1_evaluable
+    path: null
+    note: a_1 test defined for N >= 7 only
+    pending: false
+  - macro: CLsevenSoneSmallestVthree
+    value: 7
+    text: '7'
+    source: derived:v3_sk_s1_smallest
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenCellsVthree
+    value: 7
+    text: '7'
+    source: derived:v3_sk_cells
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenSoneSmallestAll
+    value: 13
+    text: '13'
+    source: derived:v34_s1_smallest_total
+    path: null
+    note: PLAN CL7 "13/13" = v3 7/7 (exploratory) + v4 V0 6/6 (confirmatory)
+    pending: false
+  - macro: CLsevenCellsAll
+    value: 13
+    text: '13'
+    source: derived:v34_cells_total
     path: null
     note: null
     pending: false

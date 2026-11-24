@@ -12,6 +12,12 @@ P = {r: f'experiments/{d}/results/predictions.json' for r, d in (('v2', 'composa
                                                                 ('v5', 'composability_mechanisms_v4'))}
 P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
 V5 = 'experiments/composability_mechanisms_v4'
+V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
+
+
+def _v3_sk():
+    """v3 exploratory analysis _s_k_vs_entry_order: per-plane update energy s_k of the full-rank operator, per backbone / domain."""
+    a = read(V3ALG)['_s_k_vs_entry_order']; return {k: v for k, v in a.items() if isinstance(v, dict) and 's_k' in v}
 
 
 def _ce_slot_stays(key):
@@ -35,6 +41,11 @@ DERIVED = {
     'v4_v0_s1_smallest': (lambda: sum(1 for v in get(read(P['v4']), 'V/V0/cells').values() if v['s1_smallest']), [P['v4']]),
     'v4_v0_a1_largest': (lambda: sum(1 for v in get(read(P['v4']), 'V/V0/cells').values() if v['a1_largest']), [P['v4']]),
     'v4_v0_cells': (lambda: len(get(read(P['v4']), 'V/V0/cells')), [P['v4']]),
+    'v4_v0_a1_evaluable': (lambda: sum(1 for v in get(read(P['v4']), 'V/V0/cells').values() if v['a1_largest'] is not None), [P['v4']]),
+    'v3_sk_s1_smallest': (lambda: sum(1 for v in _v3_sk().values() if min(v['s_k'], key=lambda k: v['s_k'][k]) == '1'), [V3ALG]),
+    'v3_sk_cells': (lambda: len(_v3_sk()), [V3ALG]),
+    'v34_s1_smallest_total': (lambda: DERIVED['v3_sk_s1_smallest'][0]() + DERIVED['v4_v0_s1_smallest'][0](), [V3ALG, P['v4']]),
+    'v34_cells_total': (lambda: DERIVED['v3_sk_cells'][0]() + DERIVED['v4_v0_cells'][0](), [V3ALG, P['v4']]),
     'v5_l3_state_cells': (lambda: sum(1 for v in get(read(P['v5']), 'L/L3/cells').values() if v['family'] != 'CE' and v['D'] is not None), [P['v5']]),
     'v5_f_rrr_max': (lambda: max(v['RRR'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),
     'v5_f_ff_min': (lambda: min(v['FF'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),

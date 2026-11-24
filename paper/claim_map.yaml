@@ -88,11 +88,17 @@ claims:
     en: Spectrum - the fundamental changes least per step.
     nature: confirmed (s_1); partial (a_1)
     predictions: [v4/V0]
+    exploratory_sources: [v3 algebra.json _s_k_vs_entry_order (7 backbone x domain cells, exploratory in v3)]
     figures: [fig3]
     numbers:
       - {macro: CLsevenSoneSmallest, derived: v4_v0_s1_smallest, fmt: '{:d}'}
       - {macro: CLsevenAoneLargest, derived: v4_v0_a1_largest, fmt: '{:d}'}
       - {macro: CLsevenCells, derived: v4_v0_cells, fmt: '{:d}'}
+      - {macro: CLsevenAoneEvaluable, derived: v4_v0_a1_evaluable, fmt: '{:d}', note: 'a_1 test defined for N >= 7 only'}
+      - {macro: CLsevenSoneSmallestVthree, derived: v3_sk_s1_smallest, fmt: '{:d}'}
+      - {macro: CLsevenCellsVthree, derived: v3_sk_cells, fmt: '{:d}'}
+      - {macro: CLsevenSoneSmallestAll, derived: v34_s1_smallest_total, fmt: '{:d}', note: 'PLAN CL7 "13/13" = v3 7/7 (exploratory) + v4 V0 6/6 (confirmatory)'}
+      - {macro: CLsevenCellsAll, derived: v34_cells_total, fmt: '{:d}'}
   - id: CL8
     zh: 不解码就能预测可组合性
     en: Composability can be predicted from latents alone.
