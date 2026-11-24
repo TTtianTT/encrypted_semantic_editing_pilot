@@ -3,6 +3,8 @@ The latent predictions are the locked simulation files (results/simulate_<bb>.js
 chains are compared with them (consistency). Outputs: results/predictions.json, results/paper_export.json, results/chains.csv,
 figs/*.png and *.svg. --smoke: every unit on the dev smoke shards (local/smoke) with the dev simulations (no verdict is meaningful)."""
 import gzip
+import hashlib
+import json
 import time
 from collections import defaultdict
 import lib6
@@ -11,6 +13,7 @@ import lcore
 
 FIGS = ROOT / 'figs'
 SM = False
+HZ = lambda N: 3 if SM else 2 * N                   # C-unit horizon; smoke chains have 3 steps (dev check of the code path only)
 
 
 def load_sims(bbs, sdir):
@@ -109,7 +112,7 @@ def m_unit(p, sims, bbs):
                     out['M5']['cells'][key] = dict(family=c['family'], D=s_['D'], R2N=s_['obs_rate'], holds=ok)
                 if c['method'].startswith('SC3U4'): out['exploratory']['SC3U4'][key] = s_['obs_rate']
                 if c['method'] in ('RRR16full', 'F_empty'): out['exploratory']['reference'][key] = s_['obs_rate']
-            ws = {w['world_id']: w for w in worlds5(d, CONFIRM)}; tm = S.mt_templates()[d]; byY = defaultdict(list); keep = []
+            ws = {w['world_id']: w for w in worlds5(d, 'dev' if SM else CONFIRM)}; tm = S.mt_templates()[d]; byY = defaultdict(list); keep = []
             for r in recs(bb, d, 'F_empty', 'plus'):
                 w = ws[r['world_id']]
                 if r['step'] == 2 * N: byY[tm[w['template_id']]['has_Y']].append(r['trajectory_success'])
@@ -144,8 +147,8 @@ def c_unit(p, sims):
     for key, c in p['simulate']['bart']['cells'].items():
         if c['unit'] != 'C': continue
         rs, mm = merged('C', 'bart', c['domain'], c['method'], c['path'], sims); out['mismatches'] += mm; N = len(S.states(c['domain']))
-        if not rs or steps_of(rs) < 2 * N: continue
-        ts = lcore.world_table(rs, 2 * N, 'argmax_locked_full'); tc = lcore.world_table(rs, 2 * N, 'argmax_locked_ctx')
+        if not rs or steps_of(rs) < HZ(N): continue
+        ts = lcore.world_table(rs, HZ(N), 'argmax_locked_full'); tc = lcore.world_table(rs, HZ(N), 'argmax_locked_ctx')
         ss, sc = lcore.cell_summary(ts), lcore.cell_summary(tc); r = recs_set[c['set']]
         for w in ts: r['w'].append(w); r['slot'].append(float(ts[w]['pred'] == ts[w]['obs'])); r['ctx'].append(float(tc[w]['pred'] == tc[w]['obs']))
         r['cat_slot'].append(ss['cat_match']); r['cat_ctx'].append(sc['cat_match'])
@@ -179,14 +182,19 @@ def c_unit(p, sims):
     for key, c in out['cells'].items():
         _, _, d, m, path = key.split('/'); sim = sims.get(f'C/bart/{d}/{m}/{path}')
         if not sim or 'ctx_drift' not in sim: continue
-        rs, _ = merged('C', 'bart', d, m, path, sims); N = len(S.states(d)); t = lcore.world_table(rs, 2 * N, 'argmax_locked_full'); idx = {w: i for i, w in enumerate(sim['world_ids'])}
+        rs, _ = merged('C', 'bart', d, m, path, sims); N = len(S.states(d)); t = lcore.world_table(rs, HZ(N), 'argmax_locked_full'); idx = {w: i for i, w in enumerate(sim['world_ids'])}
         for w, x in t.items():
-            if x['pred']: drift[c['set']][0].append(max(sim['ctx_drift'][idx[w]][:2 * N])); drift[c['set']][1].append(not x['obs'])
+            if x['pred']: drift[c['set']][0].append(max(sim['ctx_drift'][idx[w]][:HZ(N)])); drift[c['set']][1].append(not x['obs'])
     def auc(s, y):
         s, y = np.array(s), np.array(y, bool)
         if y.all() or not y.any(): return None
         r = np.argsort(np.argsort(s)) + 1.0; return float((r[y].sum() - y.sum() * (y.sum() + 1) / 2) / (y.sum() * (~y).sum()))
     out['exploratory']['ctx_drift_auc_failure_among_slot_predicted_success'] = {k: dict(n=len(v[0]), failures=int(np.sum(v[1])), auc=auc(*v)) for k, v in drift.items()}
+    groups = defaultdict(list)                                 # DEVIATIONS #11: identical latent trajectories incl. the continuous drift (same editor weights)
+    for key in out['cells']:
+        _, _, d, m, path = key.split('/'); sim = sims.get(f'C/bart/{d}/{m}/{path}')
+        if sim: groups[hashlib.sha256(json.dumps([d, path, sim['states'], sim['argmax'], sim.get('ctx_drift')], sort_keys=True).encode()).hexdigest()].append(key)
+    out['exploratory']['identical_cells'] = sorted(sorted(v) for v in groups.values() if len(v) > 1)
     return out
 
 

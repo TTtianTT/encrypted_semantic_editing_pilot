@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/analyze.py", line 342, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/analyze.py", line 329, in main
+    M = m_unit(p, sims, bbs); C = c_unit(p, sims); K = k_unit(p)
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/analyze.py", line 116, in m_unit
+    w = ws[r['world_id']]
+        ~~^^^^^^^^^^^^^^^
+KeyError: 'weekday-mt_v5_0192'
+srun: error: Jupyter: task 0: Exited with exit code 1

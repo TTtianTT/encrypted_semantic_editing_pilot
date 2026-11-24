@@ -32,3 +32,9 @@
 72984 smoke bart A (afterok 72983)
 72985 simdev bart A (afterok 72984)
 72986 calib_ctx bart A (rerun: exact boundary-aware MLE of lam_ctx; afterok 72982); 72983 simulate now afterok 72986
+73046 selftest cpu (rerun with final lib6: exact lam_ctx fit)
+73047 analyze --smoke cpu
+73048 analyze --smoke cpu (rerun: dev summaries moved to local/smoke; simulate --out now resolved to an absolute path)
+73049 analyze --smoke cpu (rerun: dev worlds in smoke mode)
+73053 analyze --smoke cpu (rerun: C unit on the 3-step smoke horizon)
+73054 analyze --smoke cpu (rerun: identical-cell signature includes ctx drift)

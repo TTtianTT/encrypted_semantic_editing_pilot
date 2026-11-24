@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/analyze.py", line 335, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/analyze.py", line 317, in main
+    p['simulate'] = {b: read(ROOT / f'local/smoke/simulate_{b}_summary.json') for b in bbs}; p['predictions'] = lock.PREDICTIONS
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/symutil.py", line 32, in read
+    def read(p): return json.loads(Path(p).read_text())
+                                   ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/local/smoke/simulate_bart_summary.json'
+srun: error: Jupyter: task 0: Exited with exit code 1

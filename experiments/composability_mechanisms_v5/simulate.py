@@ -27,7 +27,7 @@ def pred_summary(sim, N, path):
 
 def main():
     require_slurm(); bb = sys.argv[sys.argv.index('--backbone') + 1]; split = sys.argv[sys.argv.index('--split') + 1] if '--split' in sys.argv else CONFIRM
-    outdir = Path(sys.argv[sys.argv.index('--out') + 1]) if '--out' in sys.argv else ROOT / 'results'; t0 = time.time(); eng = engine5(bb)
+    outdir = Path(sys.argv[sys.argv.index('--out') + 1]).resolve() if '--out' in sys.argv else ROOT / 'results'; t0 = time.time(); eng = engine5(bb)
     gates = read(ROOT / f'results/gates_{bb}.json'); sims = {}; summ = {}
     units = [('M', [(d, n, o, f, None) for d, n, o, f in m_cells(eng, bb, gates, split)])]
     if bb == 'bart': units.append(('C', [(d, n, o, 'state', st) for d, n, o, st in c_cells(eng, split)]))
