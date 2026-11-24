@@ -1,0 +1,51 @@
+{
+  "A8_1_slot_ops": {
+    "srrr_plus": 0.00047027898140211775,
+    "srrr_minus": 0.0004702811893105224,
+    "eall_plus": 1.5116327943043008e-15,
+    "eall_minus": 1.571906505330249e-15,
+    "planes": 3,
+    "pass": true
+  },
+  "A8_2_ctx": {
+    "true": 0.8,
+    "fitted": 0.7823928070135395,
+    "err": 0.017607192986460518,
+    "pass_": true
+  },
+  "A8_3_4_K": {
+    "optimiser": {
+      "updates": 20000,
+      "lr": 0.003,
+      "batch": 64
+    },
+    "Att2L": {
+      "heldout_rel_l2": 0.036076352621118225,
+      "train_last": 0.0010886257514357567
+    },
+    "Att1": {
+      "heldout_rel_l2": 0.27052629987398785,
+      "train_last": 0.26134344935417175
+    },
+    "Tok": {
+      "heldout_rel_l2": 0.8935476938883463,
+      "train_last": 0.8695828914642334
+    },
+    "OR": {
+      "heldout_rel_l2": 0.003440460655838251,
+      "train_last": 0.0044254520907998085
+    },
+    "pass": true
+  },
+  "A8_5_unrolled": {
+    "Att2L": 0.0,
+    "OR": 0.0,
+    "pass": true
+  },
+  "pass": true,
+  "seconds": 362.1136620044708,
+  "sources": {
+    "lib6.py": "5a007fd550859631e7a42ef9d1af4af3b3f60c12a1bf667e51974a3ce187f151",
+    "selftest.py": "034519632daa3ec0add4fb1acae66c42ad6e8615cf72a0a329278e1d6a5cfdb9"
+  }
+}

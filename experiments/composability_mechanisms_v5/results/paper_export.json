@@ -1,0 +1,319 @@
+[
+  {
+    "id": "v6/M1",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "基算子的单向 plus R_2N，每个（骨干，域）。H-general：≥ 0.90；H-template：≤ 0.50。",
+    "quantity": "base plus R_2N per (backbone, domain)",
+    "observed": {
+      "bart/weekday-mt": 1.0,
+      "bart/month-mt": 1.0,
+      "bart/hour-mt": 0.98125,
+      "t5/month-mt": 1.0
+    },
+    "ci95": null,
+    "n_evaluable": 4,
+    "verdict": "H-general",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/M2",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "C1：R_1、R_2、D（seed 中位数）。H-general：R_1 ≥ 0.90、R_2 ≤ 0.20、D ≥ 0.8；H-template：R_1 ≤ 0.50。",
+    "quantity": "C1 seed medians R_1, R_2, D",
+    "observed": {
+      "bart/weekday-mt": {
+        "R1": 0.65,
+        "R2": 0.0,
+        "D": 0.8524590163934426,
+        "cls": "neither"
+      },
+      "bart/month-mt": {
+        "R1": 0.73125,
+        "R2": 0.0,
+        "D": 1.0,
+        "cls": "neither"
+      },
+      "bart/hour-mt": {
+        "R1": 0.775,
+        "R2": 0.0,
+        "D": 0.8543046357615894,
+        "cls": "neither"
+      },
+      "t5/month-mt": {
+        "R1": 0.99375,
+        "R2": 0.0,
+        "D": 1.0,
+        "cls": "H-general"
+      }
+    },
+    "ci95": null,
+    "n_evaluable": 4,
+    "verdict": "neither",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/M3",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "F{1}：单向 plus R_2N ≤ 0.20，交替 R_2N ≥ 0.80，且 A(1) − A(⌊N/2⌋) ≥ 0.50。H-general：全部可评格子成立。",
+    "quantity": "F{1} plus / alt R_2N, A(1) - A(N/2)",
+    "observed": {
+      "bart/weekday-mt": {
+        "plus": 0.0,
+        "alt": 0.78125,
+        "A1_minus_Ahalf": 0.996875,
+        "holds": false
+      },
+      "bart/month-mt": {
+        "plus": 0.0375,
+        "alt": 0.84375,
+        "A1_minus_Ahalf": 0.83125,
+        "holds": true
+      },
+      "bart/hour-mt": {
+        "excluded_at_lock": true,
+        "precheck": {
+          "pred_plus_R2N": 0.25625,
+          "pred_alt_R2N": 0.45,
+          "pred_A1_minus_Ahalf": 0.296875,
+          "sides": {
+            "plus_R2N_le_020": false,
+            "alt_R2N_ge_080": false,
+            "A1_minus_Ahalf_ge_050": false
+          },
+          "included": false
+        }
+      },
+      "t5/month-mt": {
+        "excluded_at_lock": true,
+        "precheck": {
+          "pred_plus_R2N": 0.29375,
+          "pred_alt_R2N": 0.85625,
+          "pred_A1_minus_Ahalf": 0.55,
+          "sides": {
+            "plus_R2N_le_020": false,
+            "alt_R2N_ge_080": true,
+            "A1_minus_Ahalf_ge_050": true
+          },
+          "included": false
+        }
+      }
+    },
+    "ci95": null,
+    "n_evaluable": 2,
+    "verdict": false,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/M4",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "状态监督类（基算子、手术、槽位 C3-U4）的潜空间预测。H-general：逐 world 一致率 ≥ 0.85，且相对朴素判断的提升 CI 下界 > 0；类别准确率 ≥ 0.80。H-template：一致率 < 0.75。",
+    "quantity": "bart: per-world agreement / category accuracy",
+    "observed": {
+      "agreement": 0.9309722222222222,
+      "naive": 0.7276388888888888,
+      "category": 0.9666666666666667
+    },
+    "ci95": [
+      0.19442633167016327,
+      0.2128030601462402
+    ],
+    "n_evaluable": 90,
+    "verdict": true,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/M4",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "状态监督类（基算子、手术、槽位 C3-U4）的潜空间预测。H-general：逐 world 一致率 ≥ 0.85，且相对朴素判断的提升 CI 下界 > 0；类别准确率 ≥ 0.80。H-template：一致率 < 0.75。",
+    "quantity": "t5: per-world agreement / category accuracy",
+    "observed": {
+      "agreement": 0.8674479166666667,
+      "naive": 0.7033854166666667,
+      "category": 0.75
+    },
+    "ci95": [
+      0.15077473958333332,
+      0.17708984375
+    ],
+    "n_evaluable": 24,
+    "verdict": false,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/M5",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "D 探测：CE 格子 D ≥ 0.5 且 R_2N ≤ 0.20；状态监督格子 D ≤ 0.20。H-general：≥ 90% 的格子成立。",
+    "quantity": "fraction of M editor cells meeting the D rule",
+    "observed": 1.0,
+    "ci95": null,
+    "n_evaluable": 42,
+    "verdict": true,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/Q18prime",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "M1、M3、M4 都成立为 H-general；M1 在至少 2/3 个 BART 域上符合 H-template，则为 H-template；其他为混合。若预检后 M3 没有可评格子，按 M1 与 M4 判定，并在报告中注明。",
+    "quantity": "verdict",
+    "observed": "mixed",
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "mixed",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/CT1",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "未收敛 C3 系格子：槽位+上下文预测器的类别准确率，以及逐 world 一致率相对只看槽位的提升。H-context：类别 ≥ 0.80，且提升的 CI 下界 > 0；H-slot：提升的 CI 含 0。",
+    "quantity": "ctx - slot per-world agreement; ctx category accuracy",
+    "observed": {
+      "agree_slot": 0.8388888888888889,
+      "agree_ctx": 0.8388888888888889,
+      "category_ctx": 0.7521367521367521,
+      "diff": 0.0
+    },
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "n_evaluable": 117,
+    "verdict": false,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/CT2",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "非劣检验集：槽位+上下文 − 只看槽位的逐 world 一致率。H-context：下降 ≤ 0.01，且 CI 下界 > −0.02。",
+    "quantity": "ctx - slot per-world agreement; ctx category accuracy",
+    "observed": {
+      "agree_slot": 0.9745323129251701,
+      "agree_ctx": 0.9745323129251701,
+      "category_ctx": 0.9727891156462585,
+      "diff": 0.0
+    },
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "n_evaluable": 147,
+    "verdict": true,
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/Q19",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "CT1 与 CT2 都成立为 H-context。",
+    "quantity": "verdict",
+    "observed": "H-slot",
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "H-slot",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/K1",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "OR-U4 的单向 R_30（bind3，seed 中位数）。H-representable：≥ 0.90；H-unrepresentable：≤ 0.50。",
+    "quantity": "K1",
+    "observed": {
+      "R30": 0.0
+    },
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "H-unrepresentable",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/K2",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "max(Att2L-U4, Att2L-U8) 的单向 R_30。H-closure：≥ 0.90；H-horizon：Att2L-U4 的 R_8 ≤ 0.50，且 Att2L-U8 的 R_12 ≤ 0.50。",
+    "quantity": "K2",
+    "observed": {
+      "max_R30": 0.99375,
+      "Att2LU4_R8": 1.0,
+      "Att2LU8_R12": 1.0
+    },
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "H-closure",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/K3",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "Att1-U8：R_8 与 R_12。H-horizon：R_8 ≥ 0.70 且 R_12 ≤ 0.50；H-closure：R_30 ≥ 0.90。",
+    "quantity": "K3",
+    "observed": {
+      "R8": 0.8625,
+      "R12": 0.7375,
+      "R30": 0.0375
+    },
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "mixed",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  },
+  {
+    "id": "v6/K4",
+    "plan": "v6",
+    "experiment": "composability_mechanisms_v5",
+    "prediction": "name3、bind3fix 上各编辑器的 R_30。≥ 0.95（稳定性）；对立 ≤ 0.50。",
+    "quantity": "K4",
+    "observed": {
+      "R30": {
+        "name3/Att2LU4": 1.0,
+        "name3/Att2LU8": 0.99375,
+        "name3/Att1U8": 1.0,
+        "bind3fix/ORU4": 0.5774647887323944,
+        "bind3fix/Att2LU4": 0.18309859154929578,
+        "bind3fix/Att2LU8": 1.0,
+        "bind3fix/Att1U8": 1.0
+      }
+    },
+    "ci95": null,
+    "n_evaluable": null,
+    "verdict": "mixed",
+    "kind": "confirmatory",
+    "lock_commit": "85f6bd332a3ede6f1dee347c968cd163a62fd5f9",
+    "source": "experiments/composability_mechanisms_v5/results/predictions.json"
+  }
+]

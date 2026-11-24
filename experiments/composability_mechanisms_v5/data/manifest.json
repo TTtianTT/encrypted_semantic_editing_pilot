@@ -1,0 +1,749 @@
+{
+  "seed": 2026112501,
+  "seed_rule": "random.Random(seed + index in ALL)",
+  "all": [
+    "weekday-mt",
+    "month-mt",
+    "hour-mt",
+    "weekday",
+    "month",
+    "bind3",
+    "name3",
+    "bind3fix"
+  ],
+  "plan": {
+    "weekday-mt": 160,
+    "month-mt": 160,
+    "hour-mt": 160,
+    "weekday": 160,
+    "month": 160,
+    "bind3": 160,
+    "name3": 160,
+    "bind3fix": null
+  },
+  "counts": {
+    "weekday-mt": {
+      "confirm6": 160,
+      "tries": 20935,
+      "template_counts": {
+        "0": 1,
+        "10": 20,
+        "18": 20,
+        "21": 20,
+        "22": 19,
+        "24": 20,
+        "27": 20,
+        "31": 20,
+        "32": 20
+      },
+      "exhausted_at": {
+        "0": 15
+      }
+    },
+    "month-mt": {
+      "confirm6": 160,
+      "tries": 103894,
+      "template_counts": {
+        "1": 1,
+        "7": 28,
+        "16": 13,
+        "17": 23,
+        "20": 26,
+        "23": 26,
+        "27": 28,
+        "28": 13,
+        "30": 2
+      },
+      "exhausted_at": {
+        "1": 11,
+        "30": 26,
+        "28": 92,
+        "16": 99,
+        "17": 147
+      }
+    },
+    "hour-mt": {
+      "confirm6": 160,
+      "tries": 21049,
+      "template_counts": {
+        "3": 1,
+        "20": 20,
+        "21": 20,
+        "22": 20,
+        "24": 20,
+        "25": 19,
+        "26": 20,
+        "29": 20,
+        "32": 20
+      },
+      "exhausted_at": {
+        "3": 16
+      }
+    },
+    "weekday": {
+      "confirm6": 160,
+      "tries": 1922
+    },
+    "month": {
+      "confirm6": 160,
+      "tries": 1774
+    },
+    "bind3": {
+      "confirm6": 160,
+      "tries": 165
+    },
+    "name3": {
+      "confirm6": 160,
+      "tries": 166
+    },
+    "bind3fix": {
+      "confirm6": 71,
+      "fresh": 0,
+      "reused_from_v5_confirm5": 71
+    }
+  },
+  "templates_mt_sha256": "d94524dd639222668b7b407e0f80159d5c89d8b15c4ef1c417004e29ed0722ab",
+  "templates_split_sha256": "6ca31cf49ce7bdd6cc5379caff3867c1352407f3e848c1f2071d776067ce0eb5",
+  "core_key": "(people, object, color, quantity, status)",
+  "history_world_files": {
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": {
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": {
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/worlds.jsonl": {
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "worlds": 152
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/worlds.jsonl": {
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "worlds": 152
+    },
+    "experiments/canonical_confirmation_v1/data/person_eval.jsonl": {
+      "sha256": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+      "worlds": 80
+    },
+    "experiments/canonical_confirmation_v1/data/person_train.jsonl": {
+      "sha256": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+      "worlds": 96
+    },
+    "experiments/canonical_confirmation_v1/data/time_eval.jsonl": {
+      "sha256": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_confirm.jsonl": {
+      "sha256": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+      "worlds": 160
+    },
+    "experiments/manifold_controls_v1/data/person_dev.jsonl": {
+      "sha256": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+      "worlds": 80
+    },
+    "experiments/manifold_controls_v1/data/time_confirm.jsonl": {
+      "sha256": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+      "worlds": 160
+    },
+    "experiments/operator_residual_v2/train_worlds.jsonl": {
+      "sha256": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+      "worlds": 96
+    },
+    "experiments/operator_residual_v2/eval_worlds.jsonl": {
+      "sha256": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+      "worlds": 80
+    },
+    "experiments/symmetry_composability_v1/data/compass/worlds.jsonl": {
+      "sha256": "0d56e456c5f3b6cd328d847023e593499b1bc848f5b070004086706c6b3ff5aa",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/daysago/worlds.jsonl": {
+      "sha256": "c5a4565b3c659e62bfb4e8c9e85225714bf44442a296c64022a6f131facc2fa7",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/egoside/worlds.jsonl": {
+      "sha256": "6c9ce7997fe00db7db4e6f54f5fa158d94916471a1efcc6422c9e163f1820bfe",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/month/worlds.jsonl": {
+      "sha256": "c51be787afc165df0920b714883b098e4a05077d41783914c35d4393a9cd6d98",
+      "worlds": 288
+    },
+    "experiments/symmetry_composability_v1/data/weekday/worlds.jsonl": {
+      "sha256": "e21014549bb47bad07dbc2b87c34ea2b3a70e41ed53415d8471f36f2e71aed97",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/bind3/worlds.jsonl": {
+      "sha256": "ae8ca5b644faa8f033f3c9b588cdd91a1ca73b50c0e873981b9581da22ec041f",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/compass/worlds.jsonl": {
+      "sha256": "f8594c4841aabd73520da5352a6e5c0563904d153c2da6336c9b5f5b0a474e4f",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/daysago/worlds.jsonl": {
+      "sha256": "b6f69f66c7f7a1b17634d0b265a2ff9b4c45f7f04e67b8b625779b24e78ef3db",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/egoside/worlds.jsonl": {
+      "sha256": "1a047d1ba37895e25ae5af707aacbd51d9dd76aee4308522bffe5eff824c009b",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/month/worlds.jsonl": {
+      "sha256": "d3e8cac24e13191d2298b82181369de96daa5c13627c9234c40db8960ae099a5",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v1/data/name3/worlds.jsonl": {
+      "sha256": "66132e61f63840417e1d54c5325e25d3c59aa9c9e3c1c9f94a0abf4e0a0c701c",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/pron3/worlds.jsonl": {
+      "sha256": "29b9b2945fcacc909aa44f3346710f5decfce5e3c7d41805ad2e35abbfee02a9",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v1/data/weekday/worlds.jsonl": {
+      "sha256": "c8540cb26a1137c0bcc06069245e1e23e23cf2bffd805f6e3c9503097b893511",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/bind3/worlds.jsonl": {
+      "sha256": "d492ddad7aa1e815c6aac4253cb220637ce93279bbdc9db3738ee88b273f4874",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/bind3fix/worlds.jsonl": {
+      "sha256": "335ae713214703c71adce66fc3039a50c39bc1eaa75ba6ff08b182ff891f235f",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v2/data/compass/worlds.jsonl": {
+      "sha256": "040df318613a574ddfbd25ea156a1a80a5ebbe4725281027eb65e79ce11a926f",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/daysago/worlds.jsonl": {
+      "sha256": "29eea2b0b274034f938e1a6bf7e237c2a8e03060016aa8ec8ce4763b0ff8382b",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/egoside/worlds.jsonl": {
+      "sha256": "df057e8fcd1e4b82e055447b4191b53147a148378f17c1f7d0a5118e4f2f4c38",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/month/worlds.jsonl": {
+      "sha256": "c01c7bf32554f56161534582fe85bff05b37124de91eafb7ba653315f5bedac5",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/name3/worlds.jsonl": {
+      "sha256": "745ba509d5a54263897d4f925aa0c7199dc8743d61743d06b9d72af70ae1505d",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/pron3/worlds.jsonl": {
+      "sha256": "48d4961e5dcf4d4ad9dc42eb40f90f817d504ee570a93da48f726e71cdaff72d",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v2/data/weekday/worlds.jsonl": {
+      "sha256": "eeb6a07fbc7a40926b974ae19ffa11198d287e8648afd022433a30c800323770",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v3/data/bind3/worlds.jsonl": {
+      "sha256": "ddb0e5b6d4436a981e8faa6ce01a7fefbb7046063ee47994311808e07a367f52",
+      "worlds": 704
+    },
+    "experiments/composability_mechanisms_v3/data/bind3fix/worlds.jsonl": {
+      "sha256": "707493c6fd8397c3d7d373f4119a66d77ffd26b255df3cf510e83dc06bc736a2",
+      "worlds": 359
+    },
+    "experiments/composability_mechanisms_v3/data/compass/worlds.jsonl": {
+      "sha256": "744218fa02873adccac1934571f5107b46a8ae8475b3666547f6871d49fed4a8",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v3/data/compass8/worlds.jsonl": {
+      "sha256": "ad9fa8138710182a3d9ce279eb686b39ad827f022c5672d8387567bd9b5f68a1",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v3/data/hour/worlds.jsonl": {
+      "sha256": "c365c2d1c3557b1dbf76286c30445bd6def235c921b42f7ecb5b9ebacf0cdd67",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v3/data/month/worlds.jsonl": {
+      "sha256": "fbeccd3a87b788376b463c8a7e42d676a23b062c7c206d2af86a3f153b62725b",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v3/data/name3/worlds.jsonl": {
+      "sha256": "425a92307270867d27c786825ba38772074265174ed517530c53524e6638c929",
+      "worlds": 704
+    },
+    "experiments/composability_mechanisms_v3/data/season/worlds.jsonl": {
+      "sha256": "ca92283a9d04adef104213d42e82179f231ef0b07b7baf4bdb50cc530b81412a",
+      "worlds": 288
+    },
+    "experiments/composability_mechanisms_v3/data/weekday/worlds.jsonl": {
+      "sha256": "83041d827ddf566b86ceb90b980ff799f6a322654b86e829b1010a191f633563",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/bind3/worlds.jsonl": {
+      "sha256": "35badef034b9827181595377a25937e2fea0228c205211aa1661730422e9cc3d",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/bind3fix/worlds.jsonl": {
+      "sha256": "ab1ced96b5329bd1870da3de7621ed4178ea6187c986d7818ebc1b27b7456631",
+      "worlds": 71
+    },
+    "experiments/composability_mechanisms_v4/data/compass/worlds.jsonl": {
+      "sha256": "7c93d11d7b96f443c50a54de17821ad81d5390fd537b9dc5c659ec191ebcbd9c",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/compass8/worlds.jsonl": {
+      "sha256": "f4d48caba103130a30cb300039df94652c8d7938d31b73c9db9b1f089018b7a4",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/hour/worlds.jsonl": {
+      "sha256": "5aeb73bbdde170f5c4c97fa501c3ed16763b2ef920b7a25d65127644c77f9893",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/hour-mt/worlds.jsonl": {
+      "sha256": "d81e6ef04d0c34b7d5817c490c07656a134923cede3164ea34047cd690ac0f1b",
+      "worlds": 400
+    },
+    "experiments/composability_mechanisms_v4/data/month/worlds.jsonl": {
+      "sha256": "13f19d4bb374502511bb68c7d18c5d4fbbaf04fa2126b1052e465540c556e09a",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/month-mt/worlds.jsonl": {
+      "sha256": "aae7f43c07059eb572b458b017d3132dde9d5725e1ebe97477d2002904356fc8",
+      "worlds": 400
+    },
+    "experiments/composability_mechanisms_v4/data/name3/worlds.jsonl": {
+      "sha256": "84b9ac3b648bfd7e090d0dd980bd8061da57c1bc3fbc0b04674fd7cc05554587",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/season/worlds.jsonl": {
+      "sha256": "2f21518f97f5f4a71566d0bda0639e143c2ab81a101b1ba213c614e6f67815ed",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/weekday/worlds.jsonl": {
+      "sha256": "199d3eef749f92ff5aaedb9f227d9e0e5dcea5311263ad875190a9c0aafd5b79",
+      "worlds": 160
+    },
+    "experiments/composability_mechanisms_v4/data/weekday-mt/worlds.jsonl": {
+      "sha256": "0d0f224358cb901035e6bba61cf8e9cf78d6514c22ba2ebd9d93151679073e2e",
+      "worlds": 400
+    }
+  },
+  "history_text_files": {
+    "experiments/symmetry_composability_v1/data/compass/renders.jsonl": {
+      "sha256": "f4dee3d302beb7734bc4c089e410490b807838b4e8c6ef0ecb0d306f2eff89a2",
+      "new_texts": 2304
+    },
+    "experiments/symmetry_composability_v1/data/daysago/renders.jsonl": {
+      "sha256": "de19fcec264b28e9e740f6b2388ce64306558049ac541825e42f6b4716874284",
+      "new_texts": 4608
+    },
+    "experiments/symmetry_composability_v1/data/egoside/renders.jsonl": {
+      "sha256": "2b0c78c4d91e49b4f7041eeec9ff62cac6deb7abc26532db53c35ac98affa80c",
+      "new_texts": 2304
+    },
+    "experiments/symmetry_composability_v1/data/month/renders.jsonl": {
+      "sha256": "dd8935c0fecd6a2e6c0d3810bbae4352f09c8ec5b579286c2c26e5e723b59769",
+      "new_texts": 6912
+    },
+    "experiments/symmetry_composability_v1/data/weekday/renders.jsonl": {
+      "sha256": "9265b63ed804556574a47e3cd712ec723e6afcce54f91c5b64a38fb4c6436170",
+      "new_texts": 4032
+    },
+    "experiments/composability_mechanisms_v1/data/bind3/renders.jsonl": {
+      "sha256": "a54743e38c992edb3ce4935064c6c6ca85a11999524c513e059ac094c8635aaf",
+      "new_texts": 1728
+    },
+    "experiments/composability_mechanisms_v1/data/compass/renders.jsonl": {
+      "sha256": "faf7ef404d6dfad775534b48045d60520a7fbd2b93b576040030ab8f73d3f3d3",
+      "new_texts": 1216
+    },
+    "experiments/composability_mechanisms_v1/data/daysago/renders.jsonl": {
+      "sha256": "0b1b0e7e445edbb6ee1e9691840374ce94a5aea3598daa64b54801aaaa3629e5",
+      "new_texts": 2264
+    },
+    "experiments/composability_mechanisms_v1/data/egoside/renders.jsonl": {
+      "sha256": "d0af1a3066a3ec2ee150bc2b4f2dfd6766e96b72bb8d427e8989b6de61d6eae2",
+      "new_texts": 1188
+    },
+    "experiments/composability_mechanisms_v1/data/month/renders.jsonl": {
+      "sha256": "32ae05a786c541754ac56700341f48c2d10d264cfa85bce7aabe9ca9611bc5d0",
+      "new_texts": 3384
+    },
+    "experiments/composability_mechanisms_v1/data/name3/renders.jsonl": {
+      "sha256": "5f7d0dce955d1ff19c648d6c86b25c03fb11e223e8d1a04335db96d9590589d3",
+      "new_texts": 1728
+    },
+    "experiments/composability_mechanisms_v1/data/pron3/renders.jsonl": {
+      "sha256": "b59ce90bc3ac8368317e419a1966b00eacfd81303da90c49e9bf9982484b841b",
+      "new_texts": 1728
+    },
+    "experiments/composability_mechanisms_v1/data/weekday/renders.jsonl": {
+      "sha256": "cebeff168b830ee280e3c31b607eece95675654b041392815127b67846631b4b",
+      "new_texts": 1960
+    },
+    "experiments/composability_mechanisms_v2/data/bind3/renders.jsonl": {
+      "sha256": "91e4d73f80966f9b9d22e638c3c85540d66763efc8c8df86aa2603cf2286a991",
+      "new_texts": 480
+    },
+    "experiments/composability_mechanisms_v2/data/bind3fix/renders.jsonl": {
+      "sha256": "9daf03fe28cc2f8f4091396aec1047a93e4980e23dfae1b6b6ff749716d0c062",
+      "new_texts": 864
+    },
+    "experiments/composability_mechanisms_v2/data/compass/renders.jsonl": {
+      "sha256": "618593a07512419f6056e21d5929c1d0259c0dcfec6c0f07ccf58e30c53243d4",
+      "new_texts": 640
+    },
+    "experiments/composability_mechanisms_v2/data/daysago/renders.jsonl": {
+      "sha256": "22e8b917fefb148d131684d7e75dc02ca4e63b2f245793207b41924d6a7f8f70",
+      "new_texts": 1280
+    },
+    "experiments/composability_mechanisms_v2/data/egoside/renders.jsonl": {
+      "sha256": "948cebf0b1784fa142625d986e6dea9af298ff4d68b1278b38501f95d3476dbd",
+      "new_texts": 640
+    },
+    "experiments/composability_mechanisms_v2/data/month/renders.jsonl": {
+      "sha256": "5a903cf572b03cca34748a61289927666089e0b9ac58bc0ab1bdc78ea2d577d2",
+      "new_texts": 1920
+    },
+    "experiments/composability_mechanisms_v2/data/name3/renders.jsonl": {
+      "sha256": "eba03ab0a8172e2f0610e195815415b0e3822418f2ceefee38208bad156e0f53",
+      "new_texts": 480
+    },
+    "experiments/composability_mechanisms_v2/data/pron3/renders.jsonl": {
+      "sha256": "a77605e2d641c68cb94cd6cff32e2e8629b96eff3a227babb8a010db78bc726b",
+      "new_texts": 480
+    },
+    "experiments/composability_mechanisms_v2/data/weekday/renders.jsonl": {
+      "sha256": "a375c587dbd6f139cee1ffca8c749b057f6dfbf8eaca2d85068b30ff1eec5172",
+      "new_texts": 1120
+    },
+    "experiments/composability_mechanisms_v3/data/bind3/renders.jsonl": {
+      "sha256": "751b1410691ce013b121849dbb8da19c3eca8b500cff4081d8194b4986ca97a4",
+      "new_texts": 2112
+    },
+    "experiments/composability_mechanisms_v3/data/bind3fix/renders.jsonl": {
+      "sha256": "4926b2d85200520ace290988ec52180f397fd344d733f748263d67459974d7dc",
+      "new_texts": 213
+    },
+    "experiments/composability_mechanisms_v3/data/compass/renders.jsonl": {
+      "sha256": "f99ed7876344547e9210480a18484b851698f1ce405a5170b9ccec92b7c6ac37",
+      "new_texts": 640
+    },
+    "experiments/composability_mechanisms_v3/data/compass8/renders.jsonl": {
+      "sha256": "f99ef18b18ea3ce3797c909c0895e8d6b01e6ce10cbb2a596ec283030cd11633",
+      "new_texts": 2304
+    },
+    "experiments/composability_mechanisms_v3/data/hour/renders.jsonl": {
+      "sha256": "6caceb2811bd6d59999f644732165f8e42104defd605f30e22b00c4af02b73ff",
+      "new_texts": 3456
+    },
+    "experiments/composability_mechanisms_v3/data/month/renders.jsonl": {
+      "sha256": "37b8db9aa638ec7a540ea44fa77ddcc401032d3049eed7e334ee241805cf6238",
+      "new_texts": 1920
+    },
+    "experiments/composability_mechanisms_v3/data/name3/renders.jsonl": {
+      "sha256": "e05536032f0fa329b55e750527992932398ce5e9b5faa25d17de872c0ff0fb02",
+      "new_texts": 2112
+    },
+    "experiments/composability_mechanisms_v3/data/season/renders.jsonl": {
+      "sha256": "8ef12ff5fe86ffb519275598c563adc4e2bc5c61dbdcbd15fc0557ad1587dad5",
+      "new_texts": 1152
+    },
+    "experiments/composability_mechanisms_v3/data/weekday/renders.jsonl": {
+      "sha256": "340df78ee01cc569b55bbca66e440bd3e08f057e0d3ec130bba8804460396f3e",
+      "new_texts": 1120
+    },
+    "experiments/composability_mechanisms_v4/data/bind3/renders.jsonl": {
+      "sha256": "7efb2bb475479fdcb07fcf7806308dc3bcccda72256c34511023b7bdf8b1ccb5",
+      "new_texts": 480
+    },
+    "experiments/composability_mechanisms_v4/data/bind3fix/renders.jsonl": {
+      "sha256": "0fe7ed5464330a389a07a4b27c23330cb7aab90c939b5f6564dbe45b1f534ada",
+      "new_texts": 0
+    },
+    "experiments/composability_mechanisms_v4/data/compass/renders.jsonl": {
+      "sha256": "9bacb09d51c66e27fc5e38535f7b3488f3a9a412d5801b6b83e6dba2f9a4fafd",
+      "new_texts": 640
+    },
+    "experiments/composability_mechanisms_v4/data/compass8/renders.jsonl": {
+      "sha256": "f8ca6f7e169df13e841d2bd33d5c0b650c2914d97b983bb56cf5c7b4b8349c39",
+      "new_texts": 1280
+    },
+    "experiments/composability_mechanisms_v4/data/hour/renders.jsonl": {
+      "sha256": "8897aeca0cc5e15e02d0187551c285664ccb487da199bf1dbe8af94826d3acd0",
+      "new_texts": 1920
+    },
+    "experiments/composability_mechanisms_v4/data/hour-mt/renders.jsonl": {
+      "sha256": "1160346e3425f33570c18f58983dad7bffb5f8605675966955329b38170bf28b",
+      "new_texts": 4128
+    },
+    "experiments/composability_mechanisms_v4/data/month/renders.jsonl": {
+      "sha256": "e835767fc3960e70185927626f79f4acaff01a3dd079249145df4bcfbf4d0366",
+      "new_texts": 1920
+    },
+    "experiments/composability_mechanisms_v4/data/month-mt/renders.jsonl": {
+      "sha256": "68f97dc896ad1278105e718d37f82975b2ec5409ad41a3ac125a0242863faecb",
+      "new_texts": 3936
+    },
+    "experiments/composability_mechanisms_v4/data/name3/renders.jsonl": {
+      "sha256": "945f7d486760a540c55a835b08979f5b4a2041da566aa98937c0f39623275096",
+      "new_texts": 480
+    },
+    "experiments/composability_mechanisms_v4/data/season/renders.jsonl": {
+      "sha256": "a232a0f7c65446b2a8b48a61d33e1b3540c99ffebb381dcaae7acc63abb68210",
+      "new_texts": 640
+    },
+    "experiments/composability_mechanisms_v4/data/weekday/renders.jsonl": {
+      "sha256": "93b0febfdb7bcb7f34f52d1760cc2319771c6274c21c8ec46e458f8d9cffdef4",
+      "new_texts": 1120
+    },
+    "experiments/composability_mechanisms_v4/data/weekday-mt/renders.jsonl": {
+      "sha256": "ac94a0cf61e26b70e441a38d08604a18e9a545b2b44c76118275ea6dd63c6a1e",
+      "new_texts": 2366
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/audit.jsonl": {
+      "sha256": "8f465edf0cfa410a46fa9f9c910fa982323ba0a2d713d225bfbfae0f12fd9747",
+      "new_texts": 140
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/dev_challenge.jsonl": {
+      "sha256": "736084518364fb3054ec13b18d71eeb1942441237a85250bffb6f3a7d873376b",
+      "new_texts": 300
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/dev_core.jsonl": {
+      "sha256": "311315c5065835fbee7c4283378cb7e900ea71aabd857feb4e69503589309729",
+      "new_texts": 200
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/dev_expression.jsonl": {
+      "sha256": "30d21cb7efbe4803416ace1cabf02f9f8809760dc98f37fddf7feb53e7ffc7c6",
+      "new_texts": 100
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/dev_symbol.jsonl": {
+      "sha256": "0be25ba8f5b7b827aebe81e5d4836ffebaa3b6ddd0c8a05ab5fa7ea05aaf5b47",
+      "new_texts": 100
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/test_challenge.jsonl": {
+      "sha256": "935b47d958cf537f82522d5593d44d107ce81e49956f3e2f0d1946a4241e7f26",
+      "new_texts": 480
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/test_core.jsonl": {
+      "sha256": "d133862215528db785d835b4f06f0b30941583dcf5254b833cfdf33a2d3735d1",
+      "new_texts": 320
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/test_expression.jsonl": {
+      "sha256": "fee4ce7f0efd4c06cedd6efdaa7e680eee142a8fbdd5fba88904fe886709380f",
+      "new_texts": 160
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/test_symbol.jsonl": {
+      "sha256": "a4b2107fafdc3ed8a23b2679f53f9d9848d3d9efad74790434b1700dc8384244",
+      "new_texts": 160
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/train_core.jsonl": {
+      "sha256": "562877b31cf9477c37acad04161d49a822f474020e6f386ed8a82a9afbf0a95b",
+      "new_texts": 960
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/train_symbol.jsonl": {
+      "sha256": "83b1eea186de9c4635d0cca3a7453b9d2e2a8986a4f82bb23d30ab0b3d3d74ef",
+      "new_texts": 480
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/emotion/worlds.jsonl": {
+      "sha256": "be1e552e2c2bf3a8e727a804049c1b4e890fd56ede178e1c06bba9615ff251f3",
+      "new_texts": 0
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/audit.jsonl": {
+      "sha256": "c7f452d727ab9b912e2a570d36ac9b9c3c11ed59ae6c3f1ec016ad7b8b46dc63",
+      "new_texts": 96
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/dev_challenge.jsonl": {
+      "sha256": "461425338be856ca747e35370f88ae7df32bf2373fcd1ca7b239074e61fa98dc",
+      "new_texts": 240
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/dev_core.jsonl": {
+      "sha256": "68c57a2d93275c3b3b7e74cde4c949592137746e0933f668a56c398e5f9d88ce",
+      "new_texts": 120
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/dev_expression.jsonl": {
+      "sha256": "3fef247009d26ed281ab545a304f5efd7fcd8dcfffb6cb9f9653a0b3edcd8197",
+      "new_texts": 60
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/dev_symbol.jsonl": {
+      "sha256": "942230c066f57d67940497dec931caec44083dd79dfecf78d59f03bb2c64f72e",
+      "new_texts": 60
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/test_challenge.jsonl": {
+      "sha256": "4047c588cfb0fb9016fbf251d61915c8bf0fa0d6c304e2b107cdaa248419338a",
+      "new_texts": 384
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/test_core.jsonl": {
+      "sha256": "e68557d23a4e4d51acd2a4260e8a679764f1142a8725a57bd3e22b3a0c854e56",
+      "new_texts": 192
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/test_expression.jsonl": {
+      "sha256": "38c99bb4ac80f34b80e3f2329026237a7f6acc4d1d39fce8d9ba24a87e6722b4",
+      "new_texts": 96
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/test_symbol.jsonl": {
+      "sha256": "df3d685db712e384177005502755ece1089e1815356a7bc56228c055592ce469",
+      "new_texts": 96
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/train_core.jsonl": {
+      "sha256": "6dda5841a389e83580fc1188e871a5651f22013e6802145745f9afa22106cf77",
+      "new_texts": 576
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/train_symbol.jsonl": {
+      "sha256": "b801c2a5f6d88bef127fde92ed16cf45cea33b47d9ad327723ee075a99c0e72b",
+      "new_texts": 288
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/person/worlds.jsonl": {
+      "sha256": "aade5cfceb92f1ecdda3de6197aa04fa069ccdb93f11507f5113dc643c6c1681",
+      "new_texts": 0
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/audit.jsonl": {
+      "sha256": "be0e102bd0a0b0fb1b31a719beb56f33b1d40ed21bdf0cd7d6bddf9b41192404",
+      "new_texts": 112
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/dev_challenge.jsonl": {
+      "sha256": "40d8908d3b70d55bd30515820ef0d21b3ffaf6ae1fc2bcee672cff2771303763",
+      "new_texts": 240
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/dev_core.jsonl": {
+      "sha256": "253ed356c24d2ade30787d209d8a8f621c04937d071ba103495b5507c24c51bc",
+      "new_texts": 160
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/dev_expression.jsonl": {
+      "sha256": "d67b24a54d22f3aaafaf2fedc62b7ed0e3ace771157a4f481c15767c535a9833",
+      "new_texts": 80
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/dev_symbol.jsonl": {
+      "sha256": "96912e928aa8e3d8b2f71adb6f1cbb5de81061f27a1e823816d837123911c6a1",
+      "new_texts": 80
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/test_challenge.jsonl": {
+      "sha256": "3862c38e57b1ac3b572795dd2161c4b0bc7776eee8b0ea70ff0f9f16745260b8",
+      "new_texts": 384
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/test_core.jsonl": {
+      "sha256": "0da981b2dc0f0a21c2c2f144d296d1d4758c30bf624b26ed82081d67542a7cef",
+      "new_texts": 256
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/test_expression.jsonl": {
+      "sha256": "16d042db94a2bc1b1466450f479bac3594eefbeebe6ac2cc479f756e0493b4cd",
+      "new_texts": 128
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/test_symbol.jsonl": {
+      "sha256": "1fc0d1264cdd7e1b3c7a94d9a75716d380a46d65da201137dc87b05cdf30d739",
+      "new_texts": 128
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/train_core.jsonl": {
+      "sha256": "ec95703f2f8cc1597084f6d4af73a75954467f183f32212dcda92a7ed920cc6f",
+      "new_texts": 768
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/train_symbol.jsonl": {
+      "sha256": "5c392951ce71596649b4ff25c2ae8535446350fe561fdd60fb57feb721072ffe",
+      "new_texts": 384
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/space/worlds.jsonl": {
+      "sha256": "a1620536a4b81fa47ec889dbed648427d422ee7efed9cd0ba9ad4c854d066383",
+      "new_texts": 0
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/audit.jsonl": {
+      "sha256": "775a5ae7234fc7b7af01c07f5d3673bbea0898b6564598dfc56fd61fbfc9a596",
+      "new_texts": 192
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/dev_challenge.jsonl": {
+      "sha256": "51c01e67804b7edb321a970db058d9404a4f732744f0492c7b2b3c01fc804fe0",
+      "new_texts": 420
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/dev_core.jsonl": {
+      "sha256": "4d75f77ccde5e820c8175068384bc106529c5f4764f2ac4b0d0f6a3122095037",
+      "new_texts": 268
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/dev_expression.jsonl": {
+      "sha256": "52a21534c2642ffffd78077cadeae1006e38561649e004e8500d8b30766b1106",
+      "new_texts": 140
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/dev_symbol.jsonl": {
+      "sha256": "c98244e051b4835100410e6286caa920c06493d5730a34b05fa0c87e79b91931",
+      "new_texts": 140
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/test_challenge.jsonl": {
+      "sha256": "f0ad03f9d6f28c5656c1bb1ebc268a4925653675bf8608d09455f5450e324d9f",
+      "new_texts": 672
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/test_core.jsonl": {
+      "sha256": "c6f6fb4ec3ef2083964ed4ba78c488ad9c78bec27325a7d338b6f1a95860e2dc",
+      "new_texts": 418
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/test_expression.jsonl": {
+      "sha256": "543c807cefa422e0007efb32a8ccc91c29bae36ac822bb92b5bca933c5a537b4",
+      "new_texts": 224
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/test_symbol.jsonl": {
+      "sha256": "3454ed333bf544093d2a06da566cb8fda35bdecc4ca02c9907606ff8d137d16b",
+      "new_texts": 224
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/train_core.jsonl": {
+      "sha256": "59db92a98eb3d3974546f9c050a483db4ce165aa163599ec8fabfd8d830245ef",
+      "new_texts": 1236
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/train_symbol.jsonl": {
+      "sha256": "3895aba817172e5186e4fced2068f688af24a60573276790fa9513db917675b3",
+      "new_texts": 672
+    },
+    ".four-domain-worktree/experiments/four_domain_state_coverage_v1/data/time/worlds.jsonl": {
+      "sha256": "0957c075b6036ba6c65ffa54d681d10d25adc0692b13f5f67c9ddb43436a23d3",
+      "new_texts": 0
+    },
+    "experiments/canonical_confirmation_v1/data/person_eval.jsonl": {
+      "sha256": "621fa7405c2458f2d0edf9c0d28a9e8eb112693545a712d133c759a58b932a75",
+      "new_texts": 0
+    },
+    "experiments/canonical_confirmation_v1/data/person_train.jsonl": {
+      "sha256": "1ec258cfae42f5821bbd5fec1367e44e22bb4e09f533dae211293fe9fe88b822",
+      "new_texts": 0
+    },
+    "experiments/canonical_confirmation_v1/data/time_eval.jsonl": {
+      "sha256": "6224fbf04bad74de0e1c8120616667c4ddee603c834fcac117ac26e128b5755d",
+      "new_texts": 0
+    },
+    "experiments/manifold_controls_v1/data/person_confirm.jsonl": {
+      "sha256": "650e535da0a1ad70bc2efe4c24f46fed1ac4be5ed5b24fb4e5b15cef893ae64d",
+      "new_texts": 0
+    },
+    "experiments/manifold_controls_v1/data/person_dev.jsonl": {
+      "sha256": "296c88c710e92bb2457a8a4634cbc4e6dd9dfba3f68101980973877eae686413",
+      "new_texts": 0
+    },
+    "experiments/manifold_controls_v1/data/time_confirm.jsonl": {
+      "sha256": "c92fdfbd9a3abb5c8610a437ccd88664b2aa20a4e6b43bbe330e013ddce0a9a8",
+      "new_texts": 0
+    },
+    "experiments/operator_residual_v2/train_worlds.jsonl": {
+      "sha256": "fb89bf131b67f396e3b06c49d2128008cabda9bb2d7de97a8ee9671b5bdbbd52",
+      "new_texts": 0
+    },
+    "experiments/operator_residual_v2/eval_worlds.jsonl": {
+      "sha256": "7442c0e5a255b7e9f7ba52a04748107f57795fe2b89eb2011d6c13abba016f76",
+      "new_texts": 0
+    }
+  },
+  "history_keys": 11300,
+  "history_texts": 90133,
+  "files": {
+    "weekday-mt/worlds.jsonl": "b78ce798e0a1368727e5c3526cf866461a9d6e14a4b3b9b519622d62a012a5a2",
+    "weekday-mt/renders.jsonl": "21f3f485af05414d4db25980d30f96ca230e257d7f9c801020e65253ddf4ee35",
+    "month-mt/worlds.jsonl": "705a848e7275873144244ab034283c2af6ef948602349249d0b5ecd4f44079d6",
+    "month-mt/renders.jsonl": "9f9a271cf79e28807076fc130a430dd138167d9566e479b154491a33bc574fcd",
+    "hour-mt/worlds.jsonl": "04e0404ba43a44cbd1383d98aa71c56cd8892ec3570f9fdb566fe29f0d9bf433",
+    "hour-mt/renders.jsonl": "432267b4f68664a7d64d908ecc0945e2e726505329e85f26db2d58c16792d861",
+    "weekday/worlds.jsonl": "d18ab48496f63d5db2a047f857905220ed2dffc5183f201e3e55e49ac60fb5d2",
+    "weekday/renders.jsonl": "701023a3a52f501a3ccbe212c28582cf31e7aeabb100c1347618d9230602cb0a",
+    "month/worlds.jsonl": "bf5b69d41ecdd0d890dc9f41a3b446b892b07d6e0e8c0ed2f5fd7c13c65c0aae",
+    "month/renders.jsonl": "dadf5419b4424502ee9b85a61b599bc1e269c81c9106d103707f6483c5b3bc2d",
+    "bind3/worlds.jsonl": "acf844276bbbed62a5aae8726738c87c34846cd5bd978a6e56709432c7573b35",
+    "bind3/renders.jsonl": "b86ece0f3559a98bc28aa51a84418528b7336f7b06f5359b3192d18e40ea7ae5",
+    "name3/worlds.jsonl": "bcdefcfb0f787f1ff9146ff19a2aa8caa76ddb6adc5121df19ee4de15f45dea4",
+    "name3/renders.jsonl": "657dbf856d70c52f627c561c78422d41c61ec09fa287baca0f03e440fe518bde",
+    "bind3fix/worlds.jsonl": "a101f3b46cbbe2f857a3e7b37868a9fe6b2dd71d1b34c969c3e756141fc7b573",
+    "bind3fix/renders.jsonl": "4aff7fe9f206657fac6c173d51085f8da513b9c4f592ac0298124491338769b8"
+  },
+  "seconds": 3.0472123622894287
+}

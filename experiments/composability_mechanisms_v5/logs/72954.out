@@ -1,0 +1,16 @@
+1 {'srrr_plus': 0.00047027898140211775, 'srrr_minus': 0.0004702811893105224, 'eall_plus': 1.5531178897446558e-15, 'eall_minus': 1.571906505330249e-15, 'planes': 3, 'pass': True}
+2 {'true': 0.8, 'fitted': 0.7823928556084037, 'err': 0.017607144391596385, 'pass_': True}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/selftest.py", line 105, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/selftest.py", line 98, in main
+    res['A8_3_4_K'] = t_k(); print('3-4', res['A8_3_4_K'], flush=True)
+                      ^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/selftest.py", line 75, in t_k
+    tr = pointer2(512, list(range(0, 24)), 1); te = pointer2(256, list(range(24, 36)), 2); out = {}
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v5/selftest.py", line 59, in pointer2
+    for p_ in range(3): h[:, p_] = Pc[:, p_] + names[:, lists[:, p_]].T
+                                               ~~~~~^^^^^^^^^^^^^^^^^
+IndexError: index 24 is out of bounds for dimension 0 with size 12
+srun: error: node01: task 0: Exited with exit code 1
