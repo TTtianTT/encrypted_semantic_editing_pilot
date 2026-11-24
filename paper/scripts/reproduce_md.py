@@ -23,7 +23,7 @@ def main():
           '## Order', '', '```bash']
     for s in ('scripts/build_claims.py', 'scripts/predictions_table.py', *[f'figs/make_{k}.py' for k in sorted(figs)], 'scripts/reproduce_md.py', 'check.py'):
         L.append(SB.format(s=s))
-    L += ['```', '', 'Then compile `paper/main.tex` (pdflatex, bibtex, pdflatex x2).', '', '## Lock commits of the experiment rounds', '',
+    L += ['```', '', 'Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic 0.17.0 from conda-forge, installed with micromamba under /dataset1/zailong/envs/tectonic; it runs bibtex itself).', '', '## Lock commits of the experiment rounds', '',
           '| round | lock commit |', '| --- | --- |']
     L += [f'| {r} | `{c}` |' if c else f'| {r} | not locked yet |' for r, c in claims['lock_commits'].items()]
     L += ['', '## Figures', '', '| figure | command | input | SHA256 |', '| --- | --- | --- | --- |']

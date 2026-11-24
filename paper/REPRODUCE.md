@@ -20,7 +20,7 @@ SCRIPT=scripts/reproduce_md.py sbatch --parsable --export=ALL paper/job_cpu.slur
 SCRIPT=check.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 ```
 
-Then compile `paper/main.tex` (pdflatex, bibtex, pdflatex x2).
+Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic 0.17.0 from conda-forge, installed with micromamba under /dataset1/zailong/envs/tectonic; it runs bibtex itself).
 
 ## Lock commits of the experiment rounds
 
