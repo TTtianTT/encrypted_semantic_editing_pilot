@@ -1,0 +1,57 @@
+{
+  "mode": "run",
+  "backbone": "t5",
+  "cells": {
+    "t5/month-mt": {
+      "cond": 6.1592260890346395,
+      "inverse_rel_err": 1.2227512733717638e-15,
+      "precheck_pass": true,
+      "A2": {
+        "cycle_sum_ratio_median": 0.26059734388452366,
+        "alt_contrast_median": 0.21958227336317854,
+        "eP_rel_median": 0.36961575520384127,
+        "eM_rel_median": 0.3689126065440856,
+        "worlds": 122
+      },
+      "A3_Pinv": {
+        "n": 122,
+        "k": 0,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.030526178389012868
+        ]
+      },
+      "A3_PPinv": {
+        "n": 122,
+        "k": 122,
+        "rate": 1.0,
+        "ci95": [
+          0.969473821610987,
+          1.0
+        ]
+      },
+      "A2_train_template_dev": {
+        "cycle_sum_ratio_median": 0.08355503498187929,
+        "alt_contrast_median": 0.10358904027504424,
+        "eP_rel_median": 0.2656176974917095,
+        "eM_rel_median": 0.26457234160795573
+      }
+    }
+  },
+  "seconds": 183.09874963760376,
+  "resources": {
+    "model": "t5gemma",
+    "dimension": 2304,
+    "backbone_parameters": 5596853760,
+    "parameters_per_operator": 76032,
+    "total_editor_parameters": 152064,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 14276799488,
+    "wall_seconds": 162.62788997299504,
+    "job_id": "73229",
+    "step_id": "0"
+  }
+}
