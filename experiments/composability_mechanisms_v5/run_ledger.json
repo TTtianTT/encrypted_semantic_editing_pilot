@@ -330,7 +330,67 @@
       "node": "node01",
       "start": "2026-11-24T17:53:54",
       "end": "2026-11-24T17:54:43"
+    },
+    {
+      "unit": "L",
+      "lane": "-",
+      "job_id": "73055",
+      "name": "compmech5-cpu",
+      "state": "COMPLETED",
+      "elapsed_s": 5,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "defq",
+      "node": "Jupyter",
+      "start": "2026-11-24T17:49:19",
+      "end": "2026-11-24T17:49:24"
+    },
+    {
+      "unit": "L",
+      "lane": "-",
+      "job_id": "73061",
+      "name": "compmech5-cpu",
+      "state": "COMPLETED",
+      "elapsed_s": 5,
+      "gpus": 0,
+      "gpu_hours": 0,
+      "alloc_tres": "billing=4,cpu=4,node=1",
+      "partition": "defq",
+      "node": "Jupyter",
+      "start": "2026-11-24T17:56:49",
+      "end": "2026-11-24T17:56:54"
+    },
+    {
+      "unit": "G60",
+      "lane": "A",
+      "job_id": "73062",
+      "name": "compmech5-A-g60",
+      "state": "COMPLETED",
+      "elapsed_s": 55,
+      "gpus": 1,
+      "gpu_hours": 0.015277777777777777,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-24T17:57:13",
+      "end": "2026-11-24T17:58:08"
+    },
+    {
+      "unit": "G60",
+      "lane": "B",
+      "job_id": "73066",
+      "name": "compmech5-B-g60",
+      "state": "COMPLETED",
+      "elapsed_s": 45,
+      "gpus": 1,
+      "gpu_hours": 0.0125,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node02",
+      "start": "2026-11-24T17:57:14",
+      "end": "2026-11-24T17:57:59"
     }
   ],
-  "total_gpu_hours": 2.519722222222222
+  "total_gpu_hours": 2.5475000000000003
 }
