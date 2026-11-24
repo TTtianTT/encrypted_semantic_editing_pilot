@@ -15,6 +15,7 @@ V5 = 'experiments/composability_mechanisms_v4'
 V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
 V3GATES = [f'experiments/composability_mechanisms_v2/results/gates_{b}.json' for b in ('bart', 't5')]
 V6AUD = 'experiments/composability_mechanisms_v5/data/audit.json'
+V7P = 'experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json'
 
 
 def _v3_sk():
@@ -30,6 +31,11 @@ def _v3_amp():
 def _v6_tmpl(d, k):
     """v6 confirm6: number of held-out templates of a multi-template domain with at least k worlds after deduplication."""
     return sum(1 for n in read(V6AUD)['domains'][d]['templates'].values() if n >= k)
+
+
+def _p2_rb(field):
+    """v7 P2: BART month under-trained state editors (v1 C3, v3 C3-l3 / C3-l10, v4 P2b, v6 C3n900), one-way paths."""
+    return [v[field] for k, v in read(V7P)['P2'].items() if k.startswith('v6C/bart/month/') and k.split('/')[3] in ('C3v1', 'C3l3v3', 'C3l10v3', 'P2b', 'C3n900') and k.rsplit('/', 1)[1] in ('plus', 'minus')]
 
 
 def _ce_slot_stays(key):
@@ -62,6 +68,15 @@ DERIVED = {
     'v3_a_cells': (lambda: len(_v3_amp()), V3GATES),
     'v34_a1_largest_total': (lambda: DERIVED['v3_a1_largest'][0]() + DERIVED['v4_v0_a1_largest'][0](), V3GATES + [P['v4']]),
     'v34_a_cells_total': (lambda: DERIVED['v3_a_cells'][0]() + DERIVED['v4_v0_a1_evaluable'][0](), V3GATES + [P['v4']]),
+    'v7_p1_precfail_min': (lambda: min(v['prec_pred_fail'] for k, v in read(V7P)['P1_by_domain'].items() if not k.endswith('/all')), [V7P]),
+    'v7_p1_precfail_max': (lambda: max(v['prec_pred_fail'] for k, v in read(V7P)['P1_by_domain'].items() if not k.endswith('/all')), [V7P]),
+    'v7_p1_over_total': (lambda: sum(v['over'] for k, v in read(V7P)['P1_by_domain'].items() if k.endswith('/all')), [V7P]),
+    'v7_p1_under_total': (lambda: sum(v['under'] for k, v in read(V7P)['P1_by_domain'].items() if k.endswith('/all')), [V7P]),
+    'v7_p2_prev_min': (lambda: 100 * min(_p2_rb('prev')), [V7P]),
+    'v7_p2_prev_max': (lambda: 100 * max(_p2_rb('prev')), [V7P]),
+    'v7_p2_start_min': (lambda: 100 * min(v['start'] for k, v in read(V7P)['P2'].items() if k.startswith('v6M/') and '/F_{1}/' in k and k.rsplit('/', 1)[1] in ('plus', 'minus')), [V7P]),
+    'v7_p2_start_max': (lambda: 100 * max(v['start'] for k, v in read(V7P)['P2'].items() if k.startswith('v6M/') and '/F_{1}/' in k and k.rsplit('/', 1)[1] in ('plus', 'minus')), [V7P]),
+    'v6_probes_total': (lambda: sum(read('experiments/composability_mechanisms_v5/results/calib_ctx_bart.json')['domains'][d]['probes'] for d in ('weekday', 'month')), ['experiments/composability_mechanisms_v5/results/calib_ctx_bart.json']),
     'v6_tmpl_used_weekday': (lambda: _v6_tmpl('weekday-mt', 10), [V6AUD]),
     'v6_tmpl_used_month': (lambda: _v6_tmpl('month-mt', 10), [V6AUD]),
     'v6_tmpl_used_hour': (lambda: _v6_tmpl('hour-mt', 10), [V6AUD]),

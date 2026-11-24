@@ -626,25 +626,21 @@ claims:
     note: null
     pending: false
 - id: CL12
-  zh: 理想化预测会失败，原因是累积漂移加读出余量
-  en: Idealized predictions fail through accumulated drift and readout margin.
+  zh: 理想化预测会失败，必须模拟真实动力学
+  en: Predictions from idealized slot codes fail; the predictor must simulate the
+    actual latent dynamics.
   nature: phenomenon confirmed; explanation exploratory
   predictions:
   - v4/V3
   - v4/V2b
   - v5/D1
   - v5/D2
-  - v6/CT1
-  - v6/CT2
   figures: []
   lock_commits:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
-    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
-    experiments/composability_mechanisms_v5/results/calib_ctx_bart.json: feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502
-    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
   numbers:
   - macro: CLtwelveUp
     value: 43
@@ -667,56 +663,158 @@ claims:
     path: D/D1/frac_coupling
     note: percent of the D1 cells that return the idealized category
     pending: false
-  - macro: CLtwelveCtOneCells
+- id: CL15
+  zh: 预测器错误的结构（v6 的探索性结果；v7 之后按 U、R 的判定改写）
+  en: Where the latent predictor errs - a predicted failure is reliable, errors are
+    mostly over-estimates of three kinds, and the decoder reads the state from the
+    slot only.
+  nature: exploratory (v7 P post-hoc on v5 / v6 shards); to be rewritten after v7
+    U and R
+  predictions:
+  - v6/CT1
+  - v6/CT2
+  figures: []
+  lock_commits:
+    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+  evidence:
+    experiments/composability_mechanisms_v5/results/calib_ctx_bart.json: feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502
+    experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
+    experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json: 68b49be5115e76b66d657b7a17d26fe0c223ad376ac4f078561ab861758d2140
+  numbers:
+  - macro: CLfifteenPrecFailMin
+    value: 0.9062629614267939
+    text: '0.91'
+    source: derived:v7_p1_precfail_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenPrecFailMax
+    value: 0.984144960362401
+    text: '0.98'
+    source: derived:v7_p1_precfail_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenOver
+    value: 6601
+    text: 6,601
+    source: derived:v7_p1_over_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenUnder
+    value: 2656
+    text: 2,656
+    source: derived:v7_p1_under_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenTfiveOver
+    value: 482
+    text: '482'
+    source: experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json
+    path: P1_by_domain/v6M~1t5~1month-mt/over
+    note: null
+    pending: false
+  - macro: CLfifteenTfiveUnder
+    value: 27
+    text: '27'
+    source: experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json
+    path: P1_by_domain/v6M~1t5~1month-mt/under
+    note: null
+    pending: false
+  - macro: CLfifteenPrevMin
+    value: 64.94464944649447
+    text: '65'
+    source: derived:v7_p2_prev_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenPrevMax
+    value: 100.0
+    text: '100'
+    source: derived:v7_p2_prev_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenStartMin
+    value: 14.285714285714285
+    text: '14'
+    source: derived:v7_p2_start_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenStartMax
+    value: 63.888888888888886
+    text: '64'
+    source: derived:v7_p2_start_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenUnparsable
+    value: 60.86956521739131
+    text: '61'
+    source: experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json
+    path: P2/v6M~1t5~1month-mt~1F_empty~1alt/unparsable
+    note: null
+    pending: false
+  - macro: CLfifteenProbes
+    value: 11136
+    text: 11,136
+    source: derived:v6_probes_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLfifteenCtOneCells
     value: 117
     text: '117'
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: C/CT1/cells
     note: null
     pending: false
-  - macro: CLtwelveCtOneCat
+  - macro: CLfifteenCtOneCat
     value: 0.7521367521367521
     text: '0.75'
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: C/CT1/category_slot
     note: null
     pending: false
-  - macro: CLtwelveCtOneAgree
+  - macro: CLfifteenCtOneAgree
     value: 0.8388888888888889
     text: '0.84'
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: C/CT1/agree_slot
     note: null
     pending: false
-  - macro: CLtwelveCtTwoAgree
+  - macro: CLfifteenCtTwoAgree
     value: 0.9745323129251701
     text: '0.975'
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: C/CT2/agree_slot
     note: null
     pending: false
-  - macro: CLtwelveProbesWeekday
-    value: 2688
-    text: '2688'
-    source: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json
-    path: domains/weekday/probes
+  - macro: CLfifteenWeekdaySixHundred
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/weekday~1C3n600
+    note: one-way plus R_2N, seed median
+    pending: false
+  - macro: CLfifteenMonthNineHundred
+    value: 0.35
+    text: '0.35'
+    source: experiments/composability_mechanisms_v5/results/predictions.json
+    path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n900
     note: null
     pending: false
-  - macro: CLtwelveProbesMonth
-    value: 8448
-    text: '8448'
-    source: experiments/composability_mechanisms_v5/results/calib_ctx_bart.json
-    path: domains/month/probes
-    note: null
-    pending: false
-  - macro: CLtwelveDriftAucCtOne
+  - macro: CLfifteenDriftAucCtOne
     value: 0.6244579226445269
     text: '0.62'
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT1/auc
     note: exploratory
     pending: false
-  - macro: CLtwelveDriftAucCtTwo
+  - macro: CLfifteenDriftAucCtTwo
     value: 0.21248432907906364
     text: '0.21'
     source: experiments/composability_mechanisms_v5/results/predictions.json
@@ -724,9 +822,11 @@ claims:
     note: exploratory
     pending: false
 - id: CL13
-  zh: 绑定类编辑：训练视野足够长时，两层注意力编辑器在 bind3 上闭合
-  en: Binding edits close on bind3 with a two-layer attention editor trained on long
-    enough unrolls; shorter horizons decay after them.
+  zh: 两层、8 步展开的注意力编辑器在 bind3 上组合 30 步（测过的最长链；三个 seed 为 1.00 / 0.97 / 0.99）；4 步展开或单层的编辑器在
+    8–12 步后衰减
+  en: A two-layer attention editor trained on 8-step unrolls composes binding edits
+    for 30 steps on bind3 (the longest chain tested); 4-step or one-layer editors
+    decay after 8-12 steps.
   nature: confirmed (v6 K2, H-closure); v6 K1 H-unrepresentable by rule (oracle decays
     past its S<=4 horizon), K3 and K4 mixed
   predictions:
@@ -744,6 +844,7 @@ claims:
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
     experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
+    experiments/composability_mechanisms_v5/results/report_ci.json: 27f5c3952bd31a5d1d583082414212af1a4e4c703f2d672d74fc64b6f90e741b
   numbers:
   - macro: CLthirteenBtwo
     value: 0.8
@@ -821,6 +922,34 @@ claims:
     source: experiments/composability_mechanisms_v5/results/predictions.json
     path: K/K4/R30/bind3fix~1Att2LU4
     note: null
+    pending: false
+  - macro: CLthirteenSeedA
+    value: 1.0
+    text: '1.00'
+    source: experiments/composability_mechanisms_v5/results/report_ci.json
+    path: bart~1bind3~1Att2LU8_s42~1plus~1R30/rate
+    note: v6 AMENDMENT_01 descriptive per-seed rate
+    pending: false
+  - macro: CLthirteenSeedB
+    value: 0.96875
+    text: '0.97'
+    source: experiments/composability_mechanisms_v5/results/report_ci.json
+    path: bart~1bind3~1Att2LU8_s43~1plus~1R30/rate
+    note: null
+    pending: false
+  - macro: CLthirteenSeedC
+    value: 0.99375
+    text: '0.99'
+    source: experiments/composability_mechanisms_v5/results/report_ci.json
+    path: bart~1bind3~1Att2LU8_s44~1plus~1R30/rate
+    note: null
+    pending: false
+  - macro: CLthirteenNameSeedB
+    value: 0.49375
+    text: '0.49'
+    source: experiments/composability_mechanisms_v5/results/report_ci.json
+    path: bart~1name3~1Att2LU8_s43~1plus~1R30/rate
+    note: name3 Att2L-U8 seed 43
     pending: false
 - id: CL14
   zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）

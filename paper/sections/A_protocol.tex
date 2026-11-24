@@ -40,10 +40,20 @@ F$\neg$1 freezes high-vote planes there; the test therefore had no discriminatin
 \item v4, R1 (Q10): the scorable cells had to satisfy three conditions at the lock, and none did, so the test was not evaluable.
 \item v5, Q18: the multi-template base-operator gate removed every domain (the full-sequence closed-form operator did not compose on
 dev), so the unit was not evaluable; v6 replaced it with slot-centred operators.
-\item v6, Q19: the context term of the readout was to be weighted by a calibration on probes that swap the context state against the
-slot state. The decoder always followed the slot, so the calibrated weight was exactly zero and both readouts were identical: the test
-decided for the slot-only readout by construction. The criterion that defined ``unconverged'' editors (dev $L_2$ relative to RRR-16)
-also classified some perfectly composable editors as unconverged.
+\item v6, Q19: the context term of the readout was weighted by a calibration on probes that swap the context state against the slot
+state. The decoder always followed the slot, so the calibrated weight was exactly zero and both readouts were identical: the test
+decided for the slot-only readout by construction.
+\item v6, grouping: the plan listed some editors as ``converged'' that its own numerical criterion (dev $L_2$ relative to RRR-16)
+called unconverged, and the criterion also called perfectly composable editors unconverged; the listed membership was used.
+\item v6, K1: the oracle-routing diagnostic was trained on a shorter unroll horizon than the editor it was meant to diagnose, so its
+failure confounds routing with horizon.
+\item v6, M3: the alternating threshold of the frozen-fundamental test was absolute, although the unfrozen operator was itself below
+it on unseen templates; it should have been relative to the unfrozen operator.
+\item v6, seeds: new editors reused the seeds and batch sequence of an earlier round, so one new editor was bit-identical to a v1 editor
+and some cells were duplicates.
+\item The seventh round adds the corresponding design rules (discriminability pre-checks, relative thresholds, a seed registry,
+horizon-matched diagnostics, validated grouping, duplicate detection before any interval).
+
 \end{itemize}
 
 \paragraph{All predictions.}

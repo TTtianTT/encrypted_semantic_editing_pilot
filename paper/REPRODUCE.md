@@ -93,10 +93,12 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 | CL11 | `experiments/composability_mechanisms_v1/results/predictions.json` | `dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf` |
 |  | `experiments/composability_mechanisms_v3/results/predictions.json` | `c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545` |
 | CL12 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
-|  | `experiments/composability_mechanisms_v5/results/calib_ctx_bart.json` | `feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502` |
+| CL15 | `experiments/composability_mechanisms_v5/results/calib_ctx_bart.json` | `feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502` |
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
+|  | `experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json` | `68b49be5115e76b66d657b7a17d26fe0c223ad376ac4f078561ab861758d2140` |
 | CL13 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
+|  | `experiments/composability_mechanisms_v5/results/report_ci.json` | `27f5c3952bd31a5d1d583082414212af1a4e4c703f2d672d74fc64b6f90e741b` |
 | CL14 | `experiments/composability_mechanisms_v5/data/audit.json` | `1da238362e72a00f0f0560aa55f1ddf9fce4a91f06762cea2b5c73c0b82b8f57` |
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 

@@ -19,20 +19,29 @@ reasons. On T5Gemma the predictor over-estimates several cells (category accurac
 operator, so the frozen-fundamental test misses its alternating threshold on weekday (\CLfourteenFoneAltWeekday{}) while passing on
 month (\CLfourteenFoneAltMonth{}). Trained CE editors generalise less: the full-sequence C1 succeeds in one step on only
 \CLfourteenConeRoneWeekday{}--\CLfourteenConeRoneHour{} of held-out BART worlds (T5Gemma \CLfourteenConeRoneTfive{}) and fails at
-step 2 everywhere.
+step 2 everywhere. Three qualifications apply. First, text-level deduplication against all earlier renders exhausted the held-out
+templates with few fields, so these results speak for templates with several fields (\CLfourteenTmplSparse{} sparse templates carry at
+most \CLfourteenTmplSparseMax{} worlds; Appendix~\ref{app:data}). Second, when T5Gemma's alternating chains fail on unseen templates the
+output is mostly corrupted rather than a wrong state (\CLfifteenUnparsable{}\% unparsable; Section~\ref{sec:prediction}). Third, the
+frozen-fundamental test used an absolute alternating threshold although the unfrozen operator itself was below it; a threshold relative
+to the unfrozen operator would have been the right design (Appendix~\ref{app:protocol}).
 
 \paragraph{Binding.}\claim{CL13}
 Binding domains, where the slot must point to the next of three listed participants, were the hardest case in earlier rounds: the best
 attention editor reached $\Rk{6} = \CLthirteenBtwo{}$ and a token-wise editor \CLthirteenTokU{}. With a two-layer attention editor
-trained with multi-step canonical supervision on unrolls of up to eight steps, binding edits compose: median $\Rk{30} =
-\CLthirteenAttTwoLEightThirty{}$ on bind3 (Figure~\ref{fig:figS2}). The same editor trained on unrolls of up to four steps reaches only
+trained with multi-step canonical supervision on unrolls of up to eight steps, binding edits compose for 30 steps, the longest chain
+tested: $\Rk{30} = \CLthirteenSeedA{}$, \CLthirteenSeedB{} and \CLthirteenSeedC{} for the three seeds on bind3
+(Figure~\ref{fig:figS2}). The same editor trained on unrolls of up to four steps reaches only
 \CLthirteenAttTwoLFourThirty{}, and a one-layer editor trained on eight-step unrolls decays after its horizon ($\Rk{8} =
 \CLthirteenAttOneEightEight{}$, $\Rk{12} = \CLthirteenAttOneEightTwelve{}$, $\Rk{30} = \CLthirteenAttOneEightThirty{}$). An editor
 with oracle routing to the next participant, a diagnostic, decays in the same way after its four-step training horizon ($\Rk{8} =
 \CLthirteenOrEight{}$, $\Rk{12} = \CLthirteenOrTwelve{}$, $\Rk{30} = \CLthirteenOrThirty{}$); by the preregistered rule this
-counts against representability, but together with the two-layer result the decay reads as a horizon effect. Stability is not
-uniform: on the reused bind3fix worlds the four-step two-layer editor reaches only \CLthirteenFixAttTwoLFour{}. How the two-layer
-editor implements the lookup is open: its second layer puts almost no attention on the participant positions (exploratory).
+counts against representability, but the oracle was trained on a shorter horizon than the two-layer editor, so routing and training
+horizon are confounded in this comparison; a horizon-matched oracle is tested in the seventh round. Stability is not uniform: on name3
+one seed of the eight-step two-layer editor reaches only \CLthirteenNameSeedB{}, and on the reused bind3fix worlds the four-step
+two-layer editor reaches only \CLthirteenFixAttTwoLFour{}. How the two-layer editor implements the lookup is unknown: its second layer
+puts almost no attention on the participant positions (exploratory). \TODO{v7: 100-step chains, eight seeds, horizon-matched oracle,
+layer-2 ablation.}
 
 \paragraph{Other limits.}
 Two frozen encoder--decoder backbones; synthetic domains with single-token states; greedy decoding.

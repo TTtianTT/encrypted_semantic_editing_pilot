@@ -1,5 +1,5 @@
 \section{Predicting composability without decoding}\label{sec:prediction}
-% CL8 CL8b CL9 CL12
+% CL8 CL8b CL9 CL12 CL15
 \paragraph{Latent predictor.}\claim{CL8}
 Given an operator or editor and a path, we run the chain on encoder states only and read the slot after every step with the locked vote
 model; a world is predicted successful if the readout equals the gold state at every step. No decoding is involved. On fresh worlds of
@@ -25,19 +25,26 @@ Predictions from idealized slot codes fail where chains drift. Decoupling the fr
 one-way success in \CLtwelveUp{} of the \CLtwelveC{} cells where the standard freeze departs from the idealized prediction, but returns
 the idealized category in only \CLtwelveIdealPct{}\% of them; the explanation by accumulated drift and readout margin is exploratory.
 
-\paragraph{Known limitation: unconverged editors.}\claim{CL12}
-State-supervised editors trained for few updates (dev canonical $L_2$ more than 20\% above that of RRR-16, the preregistered criterion) are
-over-predicted: in the sixth round the slot readout agrees with the observed chain outcome for \CLtwelveCtOneAgree{} of the worlds of
-the \CLtwelveCtOneCells{} cells of such editors (category accuracy \CLtwelveCtOneCat{}), against \CLtwelveCtTwoAgree{} on a
-reference set of closed-form operators, surgeries and longer-trained editors. The $L_2$ criterion itself is coarse: some editors it
-calls unconverged compose perfectly. We tested whether the context
-positions carry the missing information by adding a context term to the readout, with its weight calibrated on dev probes that swap the
-state of the context against the slot. In all \CLtwelveProbesWeekday{} (weekday) and \CLtwelveProbesMonth{} (month) probes the decoder
-followed the slot, so the calibrated weight is zero and the two readouts coincide; the preregistered test therefore decides for the
-slot-only readout by construction. Exploratory: among worlds predicted successful by the slot readout, the maximal drift of the context
-from the canonical states separates observed failures only weakly for unconverged editors (AUC \CLtwelveDriftAucCtOne{}) and in the
-opposite direction for the others (AUC \CLtwelveDriftAucCtTwo{}). We keep the slot-only predictor and report the over-prediction of
-unconverged editors as a known limitation.
+\paragraph{Where the predictor errs (exploratory).}\claim{CL15}
+A post-hoc analysis of all state-supervised cells of the fifth and sixth rounds shows a clear structure in the errors. A predicted failure
+is reliable: given that the predictor says a chain will fail, it fails in \CLfifteenPrecFailMin{}--\CLfifteenPrecFailMax{} of the worlds,
+depending on backbone and domain. The errors are mostly over-estimates (\CLfifteenOver{} worlds predicted to compose that did not,
+against \CLfifteenUnder{} the other way round); the imbalance is largest on unseen templates with T5Gemma (\CLfifteenTfiveOver{} against
+\CLfifteenTfiveUnder{}). Where the slot still reads correctly but decoding fails, the first failure takes one of three forms. With
+state-supervised editors trained for few updates, the decoder stays at the previous state (\CLfifteenPrevMin{}--\CLfifteenPrevMax{}\%
+of such failures on one-way paths, BART month). With the fundamental frozen on unseen templates, it falls back to the start state
+(\CLfifteenStartMin{}--\CLfifteenStartMax{}\%). With T5Gemma's alternating chains on unseen templates, the output is corrupted
+(\CLfifteenUnparsable{}\% unparsable). We also asked whether clean state information in the context could explain the misses. In all
+\CLfifteenProbes{} dev probes that put one state in the slot and another in the context, the decoder followed the slot, so a context
+term calibrated on these probes receives weight zero and cannot change any prediction; on clean inputs the decoder reads the state
+from the slot only. On the cells of editors trained for few updates the slot readout agrees with the observed outcome for
+\CLfifteenCtOneAgree{} of the worlds (category accuracy \CLfifteenCtOneCat{}, \CLfifteenCtOneCells{} cells), against
+\CLfifteenCtTwoAgree{} on a reference set of closed-form operators, surgeries and longer-trained editors. We do not use ``unconverged''
+as a category: the preregistered criterion (dev canonical $L_2$ more than 20\% above that of RRR-16) does not separate composable from
+non-composable editors; C3 with 600 updates composes on weekday (median one-way $\Rk{2N} = \CLfifteenWeekdaySixHundred{}$) while C3 with
+900 updates does not on month ($\CLfifteenMonthNineHundred{}$), and both are ``unconverged'' by the criterion. The drift of the context
+away from the canonical states separates the failures only weakly (AUC \CLfifteenDriftAucCtOne{}; \CLfifteenDriftAucCtTwo{} on the
+reference set). \TODO{v7: rewrite with the preregistered U (margin and off-manifold checks) and R (repair) results.}
 
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig5.pdf}
 \caption{(a) Unrolled CE editors are exact inside their training horizon and collapse after it. (b) Step-1 disagreement $D$ against
