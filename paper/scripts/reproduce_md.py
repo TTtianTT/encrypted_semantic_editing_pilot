@@ -21,7 +21,7 @@ def main():
           'All computation runs through Slurm (`sbatch` + `srun`); the login node only runs git and file edits. Every script below is CPU-only',
           'and reads locked experiment results; none writes into `experiments/`. Run from the repository root of branch `paper/composability`.', '',
           '## Order', '', '```bash']
-    for s in ('scripts/build_claims.py', 'scripts/predictions_table.py', *[f'figs/make_{k}.py' for k in sorted(figs)], 'scripts/reproduce_md.py', 'check.py'):
+    for s in ('scripts/build_claims.py', 'scripts/predictions_table.py', 'scripts/table1.py', *[f'figs/make_{k}.py' for k in sorted(figs)], 'scripts/reproduce_md.py', 'check.py'):
         L.append(SB.format(s=s))
     L += ['```', '', 'Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic 0.17.0 from conda-forge, installed with micromamba under /dataset1/zailong/envs/tectonic; it runs bibtex itself).', '', '## Lock commits of the experiment rounds', '',
           '| round | lock commit |', '| --- | --- |']
@@ -35,6 +35,11 @@ def main():
     for r, d, f in pt.ROUNDS:
         p = f'experiments/{d}/{f}'
         if (REPO / p).exists(): L.append(f'| {r} | `{p}` | {h(p)} |')
+    tm = PAPER / "generated/tables/manifest.json"
+    if tm.exists():
+        for k, v in sorted(json.loads(tm.read_text()).items()):
+            for i, (f, s) in enumerate(sorted(v["inputs"].items())):
+                L.append(f"| {k if i == 0 else ''} | `{f}` | {h(f, s)} |")
     L += ['', '## Numbers (`generated/numbers.tex`)', '', f"Command: `{SB.format(s='scripts/build_claims.py')}`. Evidence files per claim (hash at build time):", '',
           '| claim | file | SHA256 |', '| --- | --- | --- |']
     for c in claims['claims']:
