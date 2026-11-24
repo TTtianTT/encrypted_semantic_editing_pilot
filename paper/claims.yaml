@@ -302,6 +302,8 @@ claims:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
   evidence:
     experiments/composability_mechanisms_v2/results/algebra.json: 1c5ec88456e84a48bdd9d4c73a80050c119258cb0cd749632e1b8b99aa74134d
+    experiments/composability_mechanisms_v2/results/gates_bart.json: 977dc47c358e1fa644b166a137d929237bbfb470fc66dcd30125f87b6ec289c8
+    experiments/composability_mechanisms_v2/results/gates_t5.json: d0984c5d7418ded0e0c1bb4b93c2556a92d6a5bbd8e6937f6a166f6cdcbd13e7
     experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
   numbers:
   - macro: CLsevenSoneSmallest
@@ -357,6 +359,35 @@ claims:
     value: 13
     text: '13'
     source: derived:v34_cells_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenAoneLargestVthree
+    value: 5
+    text: '5'
+    source: derived:v3_a1_largest
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenACellsVthree
+    value: 7
+    text: '7'
+    source: derived:v3_a_cells
+    path: null
+    note: null
+    pending: false
+  - macro: CLsevenAoneLargestAll
+    value: 8
+    text: '8'
+    source: derived:v34_a1_largest_total
+    path: null
+    note: 'v3 exceptions: Z4 parity modes (bart egoside, t5 compass); v4 exception:
+      t5 compass8 k=4'
+    pending: false
+  - macro: CLsevenACellsAll
+    value: 11
+    text: '11'
+    source: derived:v34_a_cells_total
     path: null
     note: null
     pending: false

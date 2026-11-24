@@ -13,11 +13,17 @@ P = {r: f'experiments/{d}/results/predictions.json' for r, d in (('v2', 'composa
 P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
 V5 = 'experiments/composability_mechanisms_v4'
 V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
+V3GATES = [f'experiments/composability_mechanisms_v2/results/gates_{b}.json' for b in ('bart', 't5')]
 
 
 def _v3_sk():
     """v3 exploratory analysis _s_k_vs_entry_order: per-plane update energy s_k of the full-rank operator, per backbone / domain."""
     a = read(V3ALG)['_s_k_vs_entry_order']; return {k: v for k, v in a.items() if isinstance(v, dict) and 's_k' in v}
+
+
+def _v3_amp():
+    """v3 pre-lock gate files: per-plane amplitude a_k and one-step change s_k of the canonical slot code, per backbone / domain."""
+    return {f'{b}/{d}': v for f in V3GATES for b in [f.split('_')[-1][:-5]] for d, v in read(f)['amplitudes'].items()}
 
 
 def _ce_slot_stays(key):
@@ -46,6 +52,10 @@ DERIVED = {
     'v3_sk_cells': (lambda: len(_v3_sk()), [V3ALG]),
     'v34_s1_smallest_total': (lambda: DERIVED['v3_sk_s1_smallest'][0]() + DERIVED['v4_v0_s1_smallest'][0](), [V3ALG, P['v4']]),
     'v34_cells_total': (lambda: DERIVED['v3_sk_cells'][0]() + DERIVED['v4_v0_cells'][0](), [V3ALG, P['v4']]),
+    'v3_a1_largest': (lambda: sum(1 for v in _v3_amp().values() if max(v, key=lambda k: v[k]['a']) == '1'), V3GATES),
+    'v3_a_cells': (lambda: len(_v3_amp()), V3GATES),
+    'v34_a1_largest_total': (lambda: DERIVED['v3_a1_largest'][0]() + DERIVED['v4_v0_a1_largest'][0](), V3GATES + [P['v4']]),
+    'v34_a_cells_total': (lambda: DERIVED['v3_a_cells'][0]() + DERIVED['v4_v0_a1_evaluable'][0](), V3GATES + [P['v4']]),
     'v5_l3_state_cells': (lambda: sum(1 for v in get(read(P['v5']), 'L/L3/cells').values() if v['family'] != 'CE' and v['D'] is not None), [P['v5']]),
     'v5_f_rrr_max': (lambda: max(v['RRR'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),
     'v5_f_ff_min': (lambda: min(v['FF'] for v in get(read(P['v5']), 'F/cells').values()), [P['v5']]),
