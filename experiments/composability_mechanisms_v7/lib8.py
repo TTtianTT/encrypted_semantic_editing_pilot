@@ -1,4 +1,7 @@
-"""Shared v6 machinery (composability_mechanisms_v5). Copied from v5 lib5.py (backbones, caches, slots, harmonic planes, vote model,
+"""Shared v8 machinery (composability_mechanisms_v7). Copied from v7 lib7.py (which extends v6 lib6.py); v8 changes: split routing
+(confirm8 and dev8 here; confirm7 and dev7ho in composability_mechanisms_v6), and the v8 sections at the end of this file (engines for new
+backbones, natural text, decoder-only interface, E1, E2). v6 docstring follows:
+Shared v6 machinery (composability_mechanisms_v5). Copied from v5 lib5.py (backbones, caches, slots, harmonic planes, vote model,
 surgery, chain runner, RRR / FF fitting, single-step and unrolled training, token / attention editors, decoupled freeze, latent
 predictor, unrolled L2) and extended for PLAN v6 (paper/PLAN.md, B line): confirm6 (encoding allowed before the lock, decoding only
 after), slot-centred operators for the multi-template domains (S-RRR-r, E_all; appendix A.1, A.2), the slot editor C3-U4, the context
@@ -18,6 +21,7 @@ V3DIR = EXP / 'composability_mechanisms_v2'            # the v3 experiment
 V4DIR = EXP / 'composability_mechanisms_v3'            # the v4 experiment
 V5DIR = EXP / 'composability_mechanisms_v4'            # the v5 experiment
 V6DIR = EXP / 'composability_mechanisms_v5'            # the v6 experiment (confirm6, v6 editors, slot operators, calibrations)
+V7DIR = EXP / 'composability_mechanisms_v6'            # the v7 experiment (confirm7, dev7ho, v7 editors, U calibration)
 BB_NAME = {'bart': 'bart', 't5': 't5gemma'}
 L_DOMAINS = dict(bart=['weekday', 'month', 'compass', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
 D_DOMAINS = dict(bart=['weekday', 'month', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
@@ -29,8 +33,9 @@ T5_OLD = ['weekday', 'month', 'compass']                # T5Gemma train/dev cach
 M_DOMAINS = MT_DOMAINS                                  # v6 unit M
 C_DOMAINS = ['weekday', 'month']                        # v6 unit C (BART, template 0)
 K_DOMAINS = ['bind3', 'name3', 'bind3fix']              # v6 unit K (BART, template 3)
-CONFIRM = 'confirm7'
-NEW_SPLITS = (CONFIRM, 'dev7ho')                       # v7 splits (this directory); dev7ho: held-out-template dev (calibration, pre-checks)
+CONFIRM = 'confirm8'
+NEW_SPLITS = (CONFIRM, 'dev8')                         # v8 splits (this directory)
+V7_SPLITS = ('confirm7', 'dev7ho')                     # v7 splits (composability_mechanisms_v6)
 SHARD = 16
 SHARDS = ROOT / 'results/shards'   # module attribute (patched only by the pre-lock smoke test)
 DEV = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -69,6 +74,7 @@ def wfile(d, split):
     if split == 'confirm4': return V4DIR / f'data/{d}/worlds.jsonl'
     if split in NEW_SPLITS: return ROOT / f'data/{d}/worlds.jsonl'
     if split == 'confirm6': return V6DIR / f'data/{d}/worlds.jsonl'
+    if split in V7_SPLITS: return V7DIR / f'data/{d}/worlds.jsonl'
     if split == 'confirm5' or d.endswith('-mt'): return V5DIR / f'data/{d}/worlds.jsonl'     # multi-template train / dev: v5
     if d in V1_DOMAINS: return V1 / f'data/{d}/worlds.jsonl'
     assert d in V4_DOMAINS, d
@@ -89,6 +95,7 @@ def cpath(bb, d, split, s):
     if split == 'confirm4': return V4DIR / f'local/{bb}_{d}_confirm4_t{tmpl(d)}_s{s}.pt'
     if split in NEW_SPLITS: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
     if split == 'confirm6': return V6DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
+    if split in V7_SPLITS: return V7DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
     if split == 'confirm5' or d.endswith('-mt'): return V5DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
     if bb == 'bart' and d in V1_DOMAINS: return V1 / f'local/e1_{d}_{split}_t0_s{s}.pt'
     if bb == 't5' and d in T5_OLD: return V3DIR / f'local/t5_{d}_{split}_t0_s{s}.pt'
@@ -106,6 +113,7 @@ def slots(bb, d, split):
     if split == 'confirm3': f = V3DIR / 'data/slot_positions.json'
     elif split in NEW_SPLITS: f = ROOT / 'data/slot_positions.json'
     elif split == 'confirm6': f = V6DIR / 'data/slot_positions.json'
+    elif split in V7_SPLITS: f = V7DIR / 'data/slot_positions.json'
     elif split == 'confirm5' or d.endswith('-mt'): f = V5DIR / 'data/slot_positions.json'
     else: f = V4DIR / 'data/slot_positions.json'
     tab = read(f)[bb]
@@ -1266,7 +1274,7 @@ def k_pair(kind, dim, seed):
 
 def name_positions(d, split):
     """(W, 3) token positions of the three list names (data/name_positions.json, from the BART tokenizer in d_audit.py)."""
-    tab = read((ROOT if split in NEW_SPLITS else V6DIR) / 'data/name_positions.json')[d]; return torch.tensor([tab[w['world_id']] for w in worlds5(d, split)])
+    tab = read((ROOT if split in NEW_SPLITS else V7DIR if split in V7_SPLITS else V6DIR) / 'data/name_positions.json')[d]; return torch.tensor([tab[w['world_id']] for w in worlds5(d, split)])
 
 
 def k_ops(kind, ed, pos=None, npos=None):
@@ -1430,7 +1438,7 @@ class SlotRRRinv:
     def __init__(self, op):
         L, R, b = op.left.double(), op.right.double(), op.bias.double(); Ir = torch.eye(L.shape[1], dtype=L.dtype, device=L.device)
         K = Ir + R @ L; self.cond = float(torch.linalg.cond(K)); self.Minv = torch.eye(L.shape[0], dtype=L.dtype, device=L.device) - L @ torch.linalg.solve(K, R)
-        self.bias = b; self.pos = op.pos
+        self.bias = b; self.pos = getattr(op, 'pos', None)            # RRRop (token-wise, no slot position): the slot map only
 
     def slot(self, y):
         return (y.double() - self.bias.to(y.device)) @ self.Minv.to(y.device)
@@ -1472,5 +1480,5 @@ class Att2LAblated(nn.Module):
         return (z0 + delta * m[..., None]).to(h.dtype)
 
 
-def new7_path(bb, v, d, s, upd):
-    return ROOT / f'local/n7_{bb}_{v}_{d}_s{s}_u{upd}.pt'
+def new7_path(bb, v, d, s, upd):          # v7 editors (composability_mechanisms_v6)
+    return V7DIR / f'local/n7_{bb}_{v}_{d}_s{s}_u{upd}.pt'

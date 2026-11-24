@@ -1,0 +1,15 @@
+E1 bart weekday-mt slot {'P': 0.898, 'M': 0.835, 'Pinv': 3.199}
+E1 bart month-mt slot {'P': 0.89, 'M': 0.874, 'Pinv': 4.497}
+E1 bart hour-mt slot {'P': 0.854, 'M': 0.883, 'Pinv': 3.275}
+E1 t5 month-mt slot {'P': 0.935, 'M': 0.973, 'Pinv': 1.121}
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/e1_gain.py", line 61, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/e1_gain.py", line 48, in main
+    inv = SlotRRRinv(ops['plus']); A = dict(P=lin(ops['plus']), M=lin(ops['minus']), Pinv=lin(inv))
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/lib8.py", line 1441, in __init__
+    self.bias = b; self.pos = op.pos
+                              ^^^^^^
+AttributeError: 'RRRop' object has no attribute 'pos'
+srun: error: node02: task 0: Exited with exit code 1
