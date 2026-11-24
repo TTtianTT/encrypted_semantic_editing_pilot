@@ -1,3 +1,32 @@
 \section{Predicting composability without decoding}\label{sec:prediction}
 % CL8 CL8b CL9 CL12
-\TODO{W6 draft (CL8, CL8b exploratory, CL9, CL12; context drift of non-converged editors: \TODO{v6}).}
+\paragraph{Latent predictor.}\claim{CL8}
+Given an operator or editor and a path, we run the chain on encoder states only and read the slot after every step with the locked vote
+model; a world is predicted successful if the readout equals the gold state at every step. No decoding is involved. On fresh worlds of
+the fifth round this predictor agrees with the observed chain outcome for \CLeightAgreeBart{} (BART) and \CLeightAgreeTfive{}
+(T5Gemma) of the (world, cell) pairs, against \CLeightNaiveBart{} and \CLeightNaiveTfive{} for the naive prediction from step-1
+success (lower bounds of the 95\% CI of the difference \CLeightDiffLoBart{} and \CLeightDiffLoTfive{}); it predicts the cell
+category correctly for \CLeightCatBart{} and \CLeightCatTfive{} of the cells (Figure~\ref{fig:fig6}). Editors trained in that round,
+whose behaviour was unknown when the predictions were locked, are predicted equally well (\CLeightNewBart{} and \CLeightNewTfive{}).
+A per-cell majority reference, which uses the observed outcomes, is reported in Appendix~\ref{app:protocol} \TODO{v6 P1b}.
+
+\paragraph{Exploratory: an equal-weight readout suffices.}\claim{CL8b}
+Replacing the fitted plane weights by equal weights barely changes the agreement (\CLeightbEqualBart{} and \CLeightbEqualTfive{}), so the
+predictor does not need decoder calibration.
+
+\paragraph{Step-1 disagreement detects instruction writes.}\claim{CL9}
+For trained editors, the fraction $D$ of worlds whose step-1 latent readout differs from the decoded state separates the two families
+completely (Figure~\ref{fig:fig5}b): all \CLnineCE{} CE cells have $D\ge\Dhi$ and fail, all \CLnineState{} state-supervised cells have
+$D\le\Dlo$. $D$ effectively detects whether the slot moved at step 1.
+
+\paragraph{Failure modes.}\claim{CL12}
+Predictions from idealized slot codes fail where chains drift. Decoupling the frozen plane from the dynamics by an oracle raises
+one-way success in \CLtwelveUp{} of the \CLtwelveC{} cells where the standard freeze departs from the idealized prediction, but returns
+the idealized category in only a minority \TODO{macro}; the explanation by accumulated drift and readout margin is exploratory. Not yet
+converged state editors are over-predicted \TODO{v6 C}.
+
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig5.pdf}
+\caption{(a) Unrolled CE editors are exact inside their training horizon and collapse after it. (b) Step-1 disagreement $D$ against
+one-way $\Rk{2N}$: CE and state-supervised editors are completely separated.}\label{fig:fig5}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig6.pdf}
+\caption{Latent prediction (no decoding) against observed chain success per cell, with the naive step-1 prediction.}\label{fig:fig6}\end{figure}

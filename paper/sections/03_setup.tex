@@ -1,2 +1,34 @@
 \section{Setup}\label{sec:setup}
-\TODO{W6 draft: frozen BART-base and T5Gemma; cyclic attribute and binding domains; editors (closed-form RRR, FF, C1, C3, unrolled variants, attention editors); metrics ($\Rk{k}$, $A_t$, alternating paths, revival, $D$); preregistration (lock, gates, world-level bootstrap).}
+% CL1 (definitions only)
+\paragraph{Backbones and latent edits.}
+We use two frozen encoder--decoder models, BART-base and T5Gemma (2B--2B, bf16). An input sentence $x$ is encoded into a sequence of
+encoder states $h = E(x)$; an edit is a map $T: h \mapsto h'$ applied to the encoder states, after which the frozen decoder generates
+text from $h'$. Neither the encoder nor the decoder is ever updated; only the editors are trained or fitted.
+
+\paragraph{Domains.}
+Each \emph{world} fixes the surface content of a template sentence (participants, an object, its colour, quantity and status) and an
+attribute with $N$ cyclically ordered states: weekday ($N=7$), month ($N=12$), compass and season ($N=4$), compass8 ($N=8$) and hour
+($N=12$). The operations \emph{plus} and \emph{minus} move the state by $\pm1 \bmod N$. The state word is a single token in every
+template, and the encoder position that holds it is the \emph{slot}. Binding domains instead store which of three listed participants
+the attribute points to (bind3: a per-world list; bind3fix: a fixed list; name3: three fixed names outside the list).
+
+\paragraph{Editors.}
+\emph{Closed-form operators}: reduced-rank regression RRR-$r$ fitted on canonical pairs $(E(x), E(x\pm1))$ of the training worlds, and
+its fundamental-first variant FF-$r$, which reserves two of the $r$ directions for the slowest Fourier mode of the slot code
+(Section~\ref{sec:fourier}). \emph{Trained editors} are low-rank residual maps trained against the frozen decoder: C1 minimises the
+decoder cross-entropy of the target sentence after one step; C3 adds a canonical $L_2$ term pulling $T(E(x))$ towards $E(x\pm1)$;
+unrolled variants (U4) are trained along chains of up to four steps. For binding we also use token-wise and attention editors.
+
+\paragraph{Metrics.}
+A chain applies $k$ operations from the world's start state and decodes after every step. $\Rk{k}$ is the fraction of worlds whose
+decoded sentence is correct at every step $1,\dots,k$; $A_t$ is the per-step accuracy at step $t$. We use one-way chains (plus or minus,
+$2N$ steps) and alternating chains (plus, minus, \dots). A cell is \emph{composable} if its one-way $\Rk{2N}$ is high; we report the
+categories composable / partial / fail with the locked thresholds. The step-1 disagreement $D$ (Section~\ref{sec:prediction}) compares
+the latent readout of the slot with the decoded state after one step.
+
+\paragraph{Preregistration.}
+The work proceeded in six preregistered rounds. In each round the predictions, thresholds and decision rules were locked (a git commit
+recorded in every claim) before any confirmation-split output was decoded; confirmation worlds were freshly generated and text-level
+deduplicated against all earlier renders\footnote{\TODO{footnote on the v2 confirmation set (partial text overlap with v1 train/dev, NOTE\_DEDUPE).}};
+sanity gates had to pass before evaluation; confidence intervals are world-cluster bootstraps (2000 resamples). Every prediction,
+including failed, mixed and non-evaluable ones, is listed in Appendix~\ref{app:protocol}.

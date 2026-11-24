@@ -1,3 +1,39 @@
 \section{What is preserved: the Fourier code of the slot}\label{sec:fourier}
 % CL7 CL5 CL6 CL10
-\TODO{W6 draft (CL7, CL5, CL6, CL10).}
+\paragraph{Harmonic planes.}
+Averaging the canonical slot encodings over worlds and removing the per-world mean gives $N$ points $\bar c(x)$. Projecting them on the
+discrete Fourier modes of the cycle yields orthogonal \emph{harmonic planes} $B_k$ ($k=1,\dots,\lfloor N/2\rfloor$); the slot code is a
+sum of rotations, one per plane, with angle $2\pi k x/N$.
+
+\paragraph{Spectrum.}\claim{CL7}
+Per plane we measure the amplitude $a_k$ and the one-step change $s_k$ of the slot code. The fundamental ($k=1$) changes least per
+step: $s_1$ is the smallest in \CLsevenSoneSmallest{} of \CLsevenCells{} (backbone, domain) cells of the fourth round
+(\TODO{plus the third-round cells}); $a_1$ is the largest in \CLsevenAoneLargest{} of them, the exceptions being parity modes of compass
+and compass8 (Figure~\ref{fig:fig3}). We use the symmetry argument of \TODO{cite Karkada et al.} only to explain this spectrum; when
+translation symmetry is broken the ordering can change.
+
+\paragraph{Rank threshold and frozen planes.}\claim{CL5}
+Closed-form RRR composes exactly when its rank reaches $r^\star = N-1$, the number of slot dimensions spanned by all planes; the
+threshold is sharp on \CLfiveRstarSharp{} domains of the second round. Below it, least squares drops the fundamental first. Freezing
+planes by surgery reproduces the signature (Figure~\ref{fig:fig2}): with the fundamental frozen, one-way chains fail, alternating chains
+survive and one-way chains \emph{revive} at $t=N$, when the frozen fundamental is correct again; freezing every other plane gives the
+mirror image. The fourth round confirmed these signatures in all \CLfiveVoneN{} and \CLfiveVtwoaN{} locked cells.
+
+\paragraph{Multi-scale readout.}\claim{CL6}
+The decoder reads the state as a nearest neighbour that weighs the planes: a vote model fitted on plane-substitution probes agrees
+with the decoded state on \CLsixFullBart{} (BART) and \CLsixFullTfive{} (T5Gemma) of the steps of the fourth round's chains; equal
+plane weights give \CLsixEqualBart{} and \CLsixEqualTfive{}, the fundamental alone only \CLsixFundBart{} and \CLsixFundTfive{}. The
+multi-scale reading of these weights is exploratory.
+
+\paragraph{Fundamental-first rank allocation.}\claim{CL10}
+Because least squares sacrifices the fundamental first, reserving it fixes rank-deficient operators: on the \CLtenCells{} locked
+T5Gemma cells ordinary RRR-$r$ reaches one-way $\Rk{2N}$ of at most \CLtenRRRMax{}, FF-$r$ at least \CLtenFFMin{}
+(Figure~\ref{fig:fig4}); on BART the improvement is partial (exploratory).
+
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig2.pdf}
+\caption{(a) Rank-deficient RRR on BART month: one-way chains fail and revive at $t=N$, alternating chains survive. (b) Freezing the
+fundamental vs every other plane gives mirror-image curves on both backbones.}\label{fig:fig2}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig3.pdf}
+\caption{Per-plane one-step change $s_k$ and amplitude $a_k$ of the slot code. \TODO{(b) vote share by displacement.}}\label{fig:fig3}\end{figure}
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig4.pdf}
+\caption{One-way $\Rk{2N}$ of RRR-$r$ and FF-$r$ against the rank (T5Gemma confirmatory, BART exploratory).}\label{fig:fig4}\end{figure}

@@ -23,6 +23,7 @@ DERIVED = {
     'v1_c1_r2_max': (lambda: max(v['rate'] for v in get(read(P['v1']), 'predictions/P5/observed/C1_R2').values()), [P['v1']]),
     'v2_g20_rrr16_min': (lambda: min(v['rate'] for v in get(read(P['v2']), 'G2_0/RRR16_R2N').values()), [P['v2']]),
     'v5_g50_c1_max': (lambda: max(v['rate'] for v in read(f'{V5}/results/g50_bart.json')['C1'].values()), [f'{V5}/results/g50_bart.json']),
+    'v5_c1v1_r1_min': (lambda: min(v['naive_rate'] for k, v in get(read(P['v5']), 'L/cells').items() if k.split('/')[3].startswith('C1v1') and k.split('/')[4] in ('plus', 'minus')), [P['v5']]),
     'v5_g50_base_min': (lambda: min(v['rate'] for bb in ('bart', 't5') for v in read(f'{V5}/results/g50_{bb}.json')['base'].values()),
                         [f'{V5}/results/g50_bart.json', f'{V5}/results/g50_t5.json']),
     'v5_ce_slot_stays_bart': (lambda: _ce_slot_stays('L/bart/weekday/C1v1_s42/plus'), [f'{V5}/results/simulate_bart.json.gz']),

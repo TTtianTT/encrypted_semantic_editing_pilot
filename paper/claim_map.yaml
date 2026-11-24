@@ -24,6 +24,7 @@ claims:
       - {macro: CLoneVtwoRRRRtwoNMin, derived: v2_g20_rrr16_min, fmt: '{:.2f}', note: 'v2 G2-0, min over domains of RRR-16 R_2N'}
       - {macro: CLoneVfiveCOneRtwoMax, derived: v5_g50_c1_max, fmt: '{:.2f}', note: 'v5 G5-0, v1 C1 R_2 (BART weekday/month x 3 seeds), max'}
       - {macro: CLoneVfiveBaseMin, derived: v5_g50_base_min, fmt: '{:.2f}', note: 'v5 G5-0, base operator plus R_2N, min over 10 (backbone, domain)'}
+      - {macro: CLoneVfiveCOneRoneMin, derived: v5_c1v1_r1_min, fmt: '{:.2f}', note: 'v5 L, BART C1v1 cells (one-way paths), min step-1 decoded success'}
   - id: CL2
     zh: CE 编辑器写的是指令，不是状态
     en: Decoder-trained (CE) editors write instructions, not states.
