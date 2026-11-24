@@ -1,3 +1,50 @@
 \section{Preregistered protocol and all predictions}\label{app:protocol}
-\TODO{W6 draft: protocol summary; design flaws of earlier plans (e.g. v4 HS4, R1).}
+% protocol summary (all claims); design flaws of earlier plans (PLAN A6)
+\paragraph{Rounds.}
+The work consists of six preregistered rounds, labelled v1--v6 in the tables (experiment directories in Appendix~\ref{app:reproduction}).
+Each round started from a written plan, committed verbatim before any data of the round existed. The plan states the questions, the
+competing hypotheses, every prediction with its threshold and decision rule, the gates, the statistics and the stop rules.
+
+\paragraph{Pre-lock pipeline.}
+Before the lock, each round (i) generated fresh confirmation worlds, text-level deduplicated against all earlier renders of the domain,
+and audited them (gold parse, slot position, negative controls); (ii) fitted or trained every editor on train worlds only and selected
+nothing on the confirmation split; (iii) passed a reconstruction gate (re-encoding the gold sentence decodes back to it) and a synthetic
+self-test of the analysis code against planted ground truth; (iv) ran every post-lock code path once on dev worlds only (the smoke test);
+and (v) from v5 on, computed the latent predictions on the encoded confirmation worlds. Encoding the confirmation worlds before the lock
+was allowed; decoding them was not.
+
+\paragraph{Lock.}
+The lock writes \texttt{protocol.json}: the predictions verbatim, the operational rules that turn plan text into code, the SHA256 of every
+analysis source and data file, and the pre-lock results that the rules depend on (gates, calibrations, admissions, latent predictions).
+The commit that adds it is recorded in \texttt{protocol\_lock.json}; this commit is the one cited for each claim in
+\texttt{paper/claims.yaml}. Every post-lock job first verifies the hashes and refuses to run if a locked source or data file changed.
+After the lock, changes are possible only as a dated AMENDMENT (a change of what is run, decided by the project lead) or ERRATUM (a
+correction of a statement in a report); locked verdicts are never re-decided (Appendix~\ref{app:deviations}).
+
+\paragraph{Gates and statistics.}
+Every round opens its post-lock runs with a sanity gate on the confirmation worlds (G$\cdot$-0: the closed-form base operator must compose
+there); a failed gate stops the round. Confidence intervals are world-cluster bootstraps: worlds are resampled with all their records
+(all steps, paths and seeds), 2000 resamples with a fixed seed. Rates are reported with the number of worlds.
+
+\paragraph{Design flaws of earlier plans.}
+We list the tests that could not discriminate between the hypotheses they were meant to separate; their verdicts stand as locked and
+are counted in Table~\ref{tab:table2}.
+\begin{itemize}
+\item v1, P3 and P7: every added domain had a single-token state and an almost symmetric encoder geometry, and the rank-16 operator
+composed on all of them, so the rank correlation of P7 was undefined (ceiling) and P3 had no contrast.
+\item v2, S1b: the template chosen for the binding domains could not be reconstructed by BART (re-encoding rewrote object names), which
+the audit did not check; B1 and B2 were declared invalid by AMENDMENT and retested in v3 on another template with a reconstruction gate.
+The same round's N1 assumed that a high write cosine implies a near-constant write, which is false (ERRATUM of v3, item 5).
+\item v3, HS4: the vote model's locked prediction for F$\neg$1 coincided with the complete-plane hypothesis in all four domains, because
+F$\neg$1 freezes high-vote planes there; the test therefore had no discriminating power and the second-layer verdict was mixed by rule.
+\item v4, R1 (Q10): the scorable cells had to satisfy three conditions at the lock, and none did, so the test was not evaluable.
+\item v5, Q18: the multi-template base-operator gate removed every domain (the full-sequence closed-form operator did not compose on
+dev), so the unit was not evaluable; v6 replaced it with slot-centred operators.
+\item v6, Q19: \TODO{v6: the context-readout calibration put $\lambda_{\mathrm{ctx}}$ at the boundary $0$, which makes the test degenerate
+by construction (to be cited from the v6 protocol after the merge).}
+\end{itemize}
+
+\paragraph{All predictions.}
+Table~\ref{tab:predictions-all} lists every locked prediction of every round with its verdict (generated from the rounds'
+\texttt{predictions.json}; outcome classes as in Table~\ref{tab:table2}).
 \begin{small}\input{generated/tables/predictions_all.tex}\end{small}

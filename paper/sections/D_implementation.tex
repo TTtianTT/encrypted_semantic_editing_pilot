@@ -1,2 +1,47 @@
 \section{Implementation details}\label{app:implementation}
-\TODO{W6 draft.}
+% definitions for CL1-CL14; constants are design choices fixed in the plans, not results
+\paragraph{Backbones.}
+BART-base and T5Gemma 2B--2B (UL2, instruction-tuned), both loaded from pinned revisions whose file hashes are checked at the start of
+every job; T5Gemma runs in bf16, editors in float32. Encoder and decoder are frozen; decoding is greedy.
+
+\paragraph{Token-wise editors.}
+A token-wise editor adds a low-rank residual at every non-pad position $i$: $h_i' = h_i + b + UVh_i$ with $V \in \mathbb{R}^{r\times d}$
+initialised with small Gaussian entries and $U$ initialised at zero, so training starts at the identity. C1 and C3 use rank $16$, one
+editor per operation (plus, minus), AdamW with learning rate $10^{-3}$, no weight decay, gradient clipping at $1$, and $600$ updates;
+seeds $42$, $43$, $44$. C1 minimises the decoder cross-entropy of the target sentence after one step. C3 adds the canonical $L_2$ term
+$\lVert T(E(x)) - E(x\pm1)\rVert^2$ averaged over non-pad positions and divided by the mean ideal-write energy
+$\lVert E(x\pm1) - E(x)\rVert^2$ of the training worlds.
+
+\paragraph{Unrolled training.}
+In unrolled variants (U4) each update draws a path type (plus$^S$, minus$^S$, alternating) and a length $S$ uniformly from
+$\{1,\dots,4\}$, applies the editors $S$ times from cached encodings and averages the per-step loss (cross-entropy, plus the $L_2$ term
+for C3-U4); gradients flow through the whole chain and both editors are updated together. With $S=1$ the loss equals the single-step loss
+(checked to $10^{-6}$ in the self-test).
+
+\paragraph{Closed-form operators.}
+RRR-$r$ fits an ordinary least-squares map $\hat B$ from source to target encodings over all tokens of the training pairs, then projects
+it on the top $r$ right singular vectors of the fitted update. FF-$r$ (fundamental-first) differs in one respect: its output subspace is
+forced to contain the slot plane of the fundamental, $Q = \mathrm{orth}([Q_1, V_\perp])$, where $V_\perp$ are the top $r-2$ singular
+vectors of the fitted update with plane~1 removed. The slot-centred variants of v6 (S-RRR-$r$, $E_{\mathrm{all}}$) apply the same fits to
+the slot position only.
+
+\paragraph{Harmonic planes, vote model and frozen-plane surgery.}
+The canonical slot encodings are averaged over training worlds after removing each world's mean; their discrete Fourier components give
+the planes $B_k$. The vote model reads a state from a slot vector $h_s$ as
+$P(y\mid h) \propto \exp(-\sum_k \lambda_k \lVert B_k^\top(h_s - c_w(y))\rVert^2)$ with $\lambda_k \ge 0$ fitted by maximum likelihood on
+decodable dev probes; the equal-weight and fundamental-only models are its controls. Frozen-plane surgery $F_S$ applies the base
+operator and then restores the planes in $S$ to their values at the start of the chain.
+
+\paragraph{Latent prediction.}
+Given an editor and the encoded confirmation worlds, the latent predictor applies the editor along each locked path without decoding and
+reads the slot with the locked vote model at every step; a world is predicted composable if every step's readout equals the target.
+The naive control predicts composability from decoded success at step $1$; the per-cell majority class is a reference.
+
+\paragraph{Binding editors.}
+Tok-U is token-wise with rank $32$. Att1-U adds one attention head ($d_a = 64$, $W_o$ zero-initialised, so training starts at Tok-U);
+Att2-U uses two heads. The two-layer editor Att2L of v6 stacks two such layers, each with zero-initialised output, on top of a rank-$32$
+token-wise term. The oracle-routing editor OR (diagnostic only) writes the value of the next listed participant into the slot.
+\TODO{v6: training lengths of the K editors and the self-test caveat (DEVIATIONS of v6, item 9).}
+
+\paragraph{Compute.}
+All jobs ran on single NVIDIA B300 GPUs through Slurm, at most two at a time. \TODO{GPU hours per round from the run ledgers, as macros.}

@@ -1,2 +1,23 @@
 \section{Data and templates}\label{app:data}
-\TODO{W6 draft.}
+% definitions for CL1, CL13, CL14
+\paragraph{Worlds and splits.}
+A world fixes every surface field of a template sentence except the state. Each cyclic domain has $96$ train and $32$ dev worlds and,
+for every round that evaluates it, $160$ freshly generated confirmation worlds. Confirmation worlds are text-level deduplicated against
+every render of the domain in all earlier rounds and splits (since v3; Appendix~\ref{app:deviations} for v2). Every world is rendered in
+all $N$ states; a render is the gold text of a state.
+
+\paragraph{Single-template domains.}
+Template~0 is the main template for every cyclic domain; it places the state word as a single token at a fixed encoder position (the
+slot), which the audit checks per world. Template~3, which starts with a person's name, is used for the binding domains from v3 on
+because it passes the reconstruction gate on BART (Appendix~\ref{app:protocol}).
+
+\paragraph{Binding domains.}
+bind3 lists three participants per world and the attribute points to one of them; bind3fix uses a fixed list; name3 stores one of three
+fixed names that are not in the list, and so needs no routing.
+
+\paragraph{Multi-template domains (v5, v6).}
+weekday-mt, month-mt and hour-mt render the state inside one of $36$ domain-independent sentence skeletons (the slot phrase is ``on X'',
+``in X'' and ``at X o'clock''). Templates were frozen before any model run and could only be removed: those whose state word was not a single token at a constant slot position, or that failed the reconstruction gate on train and dev, were dropped, leaving $29$; they are split,
+stratified by the presence of a distractor word, into $20$ training and $9$ held-out templates. Each world uses one template; the
+multi-template domains have $192$ train, $48$ dev and $160$ confirmation worlds, the confirmation worlds all on held-out templates.
+\TODO{v6: per-template world counts of confirm6 after deduplication (DEVIATIONS of v6, item 1).}

@@ -1,2 +1,39 @@
 \section{Deviations}\label{app:deviations}
-\TODO{W6 draft: per round, from DEVIATIONS.md, AMENDMENT and ERRATUM files.}
+% per round, from DEVIATIONS.md, AMENDMENT_*.md and ERRATUM_*.md of each experiment directory
+Each experiment directory holds a \texttt{DEVIATIONS.md} with every difference from its plan (dated, with reason and impact, and marked
+as before or after the lock), and, where needed, an \texttt{AMENDMENT} (a change of what is run, decided by the project lead) or an
+\texttt{ERRATUM} (a correction of a report statement). None changes a locked verdict. We summarise those that matter for interpretation.
+
+\paragraph{v1.}
+AMENDMENT~01 changed the opening geometry gate after its results were seen (data-driven): the time-domain geometry was confounded by the
+token length of the state phrases, so the geometry test moved to the single-token weekday and month domains, and one condition whose
+direction contradicted the others was dropped. All confirmatory predictions of v1 were still locked before any editing result. Other
+deviations are numerical (eigenvalues on CPU) or bookkeeping.
+
+\paragraph{v2.}
+After the lock, the binding template was found not to be reconstructible by BART (Appendix~\ref{app:protocol}); AMENDMENT~01 declared the
+two affected predictions invalid, kept the others, and moved the retest and two optional units to v3. The v3 audit later found that
+part of v2's confirmation worlds rendered to texts already present in v1's train or dev split, because v2 deduplicated only within its
+own confirmation set (\TODO{lead: footnote in Section~\ref{sec:setup}; v2's closed-form results are at ceiling, so the impact is likely
+small}).
+
+\paragraph{v3.}
+Before the lock: the confirmation generator was changed to deduplicate against all historical renders, and a dev-only smoke test was
+added. After the report, ERRATUM~01 corrected five statements: a long-chain effect on the scrambled T5Gemma mapping was a rank-threshold
+effect; the fundamental's vote share depends on the displacement (small at one step, dominant at large ones); only ``$s_1$ is smallest''
+holds in every cell, not an ordering of all $s_k$; the trained-editor failure was under-training rather than an unreachable solution; and
+a premise of N1 was wrong.
+
+\paragraph{v4.}
+Operational definitions were written into the protocol before the lock without changing thresholds; the re-analysis of v1/v2 removed the
+duplicated worlds found in v3. After the lock: figure formats, a JSONL reader fix (two failed jobs rerun unchanged) and descriptive
+confidence intervals added to the report.
+
+\paragraph{v5.}
+Before the lock: the confirmation worlds of the multi-template domains were deduplicated at the text level; v4 gates and fits were
+reused where the plan allowed; the multi-template base-operator gate removed the whole unit (Q18 not evaluable). The post-hoc
+reproduction of the earlier analysis fixed the aggregation level of each reported number.
+
+\paragraph{v6.}
+\TODO{v6: thirteen pre-lock entries (template coverage after deduplication, self-test criteria and optimiser, context calibration at
+the boundary, identical editors in the context unit, \dots) and any post-lock amendment; to be summarised after the merge.}
