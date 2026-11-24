@@ -15,3 +15,24 @@
 | sreenivasan2011grid | 检索核实 | Nature Neuroscience 14(10)，2011；页码待复核 DOI |
 | fiete2008grid | 检索核实 | J. Neurosci. 28(27):6858–6871，2008 |
 | lewis2020bart、meng2022rome、meng2023memit、li2023iti、zou2023repe、turner2023actadd、nanda2023grokking、zhong2023clock、gurnee2024space、park2024linear、geirhos2020shortcut | 待复核 DOI | 广为引用的论文，题名、年份与会议依据标准书目知识录入，本会话未逐条检索 |
+
+## 2026-11-24，第二次核实（PLAN v7 A1.6）
+上表中"待复核 DOI"的 11 条已逐条用网络检索核实：
+
+| key | 核实结果 |
+| --- | --- |
+| lewis2020bart | ACL 2020，页 7871–7880，DOI 10.18653/v1/2020.acl-main.703（ACL Anthology） |
+| geirhos2020shortcut | Nature Machine Intelligence 2(11):665–673，DOI 10.1038/s42256-020-00257-z |
+| sreenivasan2011grid | Nature Neuroscience 14(10):1330–1337，DOI 10.1038/nn.2901 |
+| fiete2008grid | J. Neurosci. 28(27):6858–6871，DOI 10.1523/JNEUROSCI.5684-07.2008 |
+| meng2022rome | NeurIPS 2022（NeurIPS 35），arXiv 2202.05262；会议论文集页码未在检索中确认，未填写 |
+| meng2023memit | ICLR 2023（口头报告），arXiv 2210.07229 |
+| li2023iti | NeurIPS 2023（NeurIPS 36，spotlight），arXiv 2306.03341 |
+| zou2023repe | arXiv 2310.01405 |
+| turner2023actadd | arXiv 2308.10248；当前版本（v5）作者为 7 人，含 Juan J. Vazquez，已按 v5 的顺序更正 |
+| nanda2023grokking | ICLR 2023（口头报告），arXiv 2301.05217 |
+| zhong2023clock | NeurIPS 2023（NeurIPS 36，口头报告），arXiv 2306.17844 |
+| gurnee2024space | ICLR 2024，arXiv 2310.02207 |
+| park2024linear | ICML 2024，PMLR 235:39643–39666 |
+
+仍需复核：storan2026group 的完整作者表；wurgaft2026manifold 的合作者全表；meng2022rome 的页码。
