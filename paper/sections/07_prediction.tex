@@ -44,7 +44,22 @@ as a category: the preregistered criterion (dev canonical $L_2$ more than 20\% a
 non-composable editors; C3 with 600 updates composes on weekday (median one-way $\Rk{2N} = \CLfifteenWeekdaySixHundred{}$) while C3 with
 900 updates does not on month ($\CLfifteenMonthNineHundred{}$), and both are ``unconverged'' by the criterion. The drift of the context
 away from the canonical states separates the failures only weakly (AUC \CLfifteenDriftAucCtOne{}; \CLfifteenDriftAucCtTwo{} on the
-reference set). \TODO{v7: rewrite with the preregistered U (margin and off-manifold checks) and R (repair) results.}
+reference set).
+
+\paragraph{Why the predictor over-estimates (seventh round).}\claim{CL15}
+We tested two explanations prospectively. First, adding margin and off-manifold checks to the readout does not help: on dev chains no
+threshold in the preregistered grid raised agreement on either backbone, so the checked predictor reduces to the slot readout (its
+tests became exploratory before the lock; on unseen templates with T5Gemma the agreement stays at \CLfifteenUFtwoAgree{}). Second, we
+repaired the latent at the first failing step and decoded once. For editors trained for few updates, placing the slot at the correct
+in-plane position while keeping its off-manifold part (PUSH) restores decoding in \CLfifteenRBPush{} of the cases taken from the sixth
+round and \CLfifteenRFourBPush{} of new cases from new seeds; removing only the off-manifold part (PROJ) restores
+\CLfifteenRBProj{} and \CLfifteenRFourBProj{}, and restoring only the context (CTX) restores \CLfifteenRBCtx{} and
+\CLfifteenRFourBCtx{}. The editors under-write the state; because the context repair helps much more on the new cases, the
+preregistered rule classifies the result as unstable. An exploratory reading: when the slot is written ambiguously, the context sways
+the decoder; when the slot is clean, the decoder reads it alone (all \CLfifteenProbes{} probes). On T5Gemma's alternating chains on
+unseen templates both components matter (PROJ \CLfifteenRAProj{} and \CLfifteenRFourAProj{}, PUSH \CLfifteenRAPush{} and
+\CLfifteenRFourAPush{} on the original and the replication cases), and this mixed verdict replicated. The repairs leave normal steps
+almost intact, but the context repair keeps \CLfifteenRThreeCtx{} of them, just below the preregistered bound.
 
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig5.pdf}
 \caption{(a) Unrolled CE editors are exact inside their training horizon and collapse after it. (b) Step-1 disagreement $D$ against

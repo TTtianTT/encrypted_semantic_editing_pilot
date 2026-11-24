@@ -1,5 +1,5 @@
 \section{Scope}\label{sec:scope}
-% CL11 CL13 CL14 (draft by Claude Code following PLAN B11; the lead revises)
+% CL11 CL13 CL14 CL16 (draft by Claude Code following PLAN v6 B11 and the stage-2 instructions; the lead revises)
 \paragraph{Symmetry is not necessary.}\claim{CL11}
 Composability does not require the states to be laid out symmetrically. Scrambling the order of the state words, so that the encoder's
 cycle no longer matches the operation, still gives composable closed-form operators in \CLelevenScrComposable{} of
@@ -26,22 +26,32 @@ output is mostly corrupted rather than a wrong state (\CLfifteenUnparsable{}\% u
 frozen-fundamental test used an absolute alternating threshold although the unfrozen operator itself was below it; a threshold relative
 to the unfrozen operator would have been the right design (Appendix~\ref{app:protocol}).
 
+\paragraph{Alternating chains on unseen templates.}\claim{CL16}
+The seventh round asked why alternating chains are weaker on unseen templates. On BART-base the failures of the unfrozen operator are
+in-plane: restoring the slot's in-plane position alone repairs \CLfifteenRAbartPush{} of them (secondary prediction). The latent
+trajectories show where the error goes: on all \CLsixteenCombos{} (backbone, domain) combinations the off-manifold part of the slot falls
+within one one-way cycle ($\rho(N)/\rho(1)$ between \CLsixteenNOneMin{} and \CLsixteenNOneMax{}), whereas on alternating chains it
+accumulates to \CLsixteenAltMin{}--\CLsixteenAltMax{} times the one-way value after $2N$ steps. A first-order account in which one-way
+errors cancel over a cycle (Proposition~4, Appendix~\ref{app:theory}) fits the training templates (cycle-sum ratio
+\CLsixteenCycDevMin{}--\CLsixteenCycDevMax{}, exploratory) but not the held-out ones (\CLsixteenCycMin{}--\CLsixteenCycMax{}), so we
+keep it as an unconfirmed explanation. Pairing the operator with its exact inverse does not help: used as the minus operator, the
+inverse fails from the first steps ($\Rk{2N} = \CLsixteenInvMax{}$ on every combination). \TODO{E1 (v8): whether the fitted operators
+contract and the exact inverse expands off-manifold directions.}
+
 \paragraph{Binding.}\claim{CL13}
 Binding domains, where the slot must point to the next of three listed participants, were the hardest case in earlier rounds: the best
-attention editor reached $\Rk{6} = \CLthirteenBtwo{}$ and a token-wise editor \CLthirteenTokU{}. With a two-layer attention editor
-trained with multi-step canonical supervision on unrolls of up to eight steps, binding edits compose for 30 steps, the longest chain
-tested: $\Rk{30} = \CLthirteenSeedA{}$, \CLthirteenSeedB{} and \CLthirteenSeedC{} for the three seeds on bind3
-(Figure~\ref{fig:figS2}). The same editor trained on unrolls of up to four steps reaches only
-\CLthirteenAttTwoLFourThirty{}, and a one-layer editor trained on eight-step unrolls decays after its horizon ($\Rk{8} =
-\CLthirteenAttOneEightEight{}$, $\Rk{12} = \CLthirteenAttOneEightTwelve{}$, $\Rk{30} = \CLthirteenAttOneEightThirty{}$). An editor
-with oracle routing to the next participant, a diagnostic, decays in the same way after its four-step training horizon ($\Rk{8} =
-\CLthirteenOrEight{}$, $\Rk{12} = \CLthirteenOrTwelve{}$, $\Rk{30} = \CLthirteenOrThirty{}$); by the preregistered rule this
-counts against representability, but the oracle was trained on a shorter horizon than the two-layer editor, so routing and training
-horizon are confounded in this comparison; a horizon-matched oracle is tested in the seventh round. Stability is not uniform: on name3
-one seed of the eight-step two-layer editor reaches only \CLthirteenNameSeedB{}, and on the reused bind3fix worlds the four-step
-two-layer editor reaches only \CLthirteenFixAttTwoLFour{}. How the two-layer editor implements the lookup is unknown: its second layer
-puts almost no attention on the participant positions (exploratory). \TODO{v7: 100-step chains, eight seeds, horizon-matched oracle,
-layer-2 ablation.}
+attention editor reached $\Rk{6} = \CLthirteenBtwo{}$ and a token-wise editor \CLthirteenTokU{}. A two-layer attention editor trained
+with multi-step canonical supervision on unrolls of up to eight steps survives 30 steps on \CLthirteenSurvivors{} of eight seeds
+(at least 90\% of worlds correct through step 30), but every seed decays by 100 steps ($\Rk{100} \le \CLthirteenHundredMax{}$; Figure~\ref{fig:figS2}). The result we
+reported after the sixth round, three seeds at $\Rk{30}$ of \CLthirteenSeedA{}, \CLthirteenSeedB{} and \CLthirteenSeedC{}, did not
+replicate on new seeds (Appendix~\ref{app:protocol}). An oracle-routing editor trained on the same eight-step horizon also decays
+(median $\Rk{30} = \CLthirteenOrEightThirty{}$), so the failure is not only a matter of learning the route. The write error grows
+steadily: the distance between the slot and the clean encoding of the gold state is about \CLthirteenDistTen{} slot radii after 10
+steps, \CLthirteenDistThirtyLo{}--\CLthirteenDistThirtyHi{} after 30 and \CLthirteenDistHundredLo{}--\CLthirteenDistHundredHi{} after
+100 for the seeds that survive 30 steps (exploratory). The lookup itself happens in the first layer: in \CLthirteenLayerOneCount{} of
+eight seeds the slot attends to the next listed name with weight \CLthirteenLayerOneLo{}--\CLthirteenLayerOneHi{} (exploratory). We read
+the bottleneck as write fidelity rather than routing, an interpretation that E2 (v8) tests. Stability also varies across domains: on
+name3 one sixth-round seed reaches only \CLthirteenNameSeedB{}.
 
 \paragraph{Other limits.}
 Two frozen encoder--decoder backbones; synthetic domains with single-token states; greedy decoding.

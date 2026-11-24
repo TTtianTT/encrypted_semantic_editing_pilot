@@ -1,0 +1,34 @@
+\section{Theory}\label{app:theory}
+% Propositions 1-4 (PLAN v7 A3). Statements corrected by the numerical checks of the seventh round (unit T); proofs are written by the
+% lead and Claude in conversation (PLAN v7 A2/A3) and are pending.
+\paragraph{Setting and assumptions.}
+An ideal harmonic code places the centred slot encoding of state $x$ in orthogonal planes, $c(x) = \mu + \sum_k a_k
+(\cos(2\pi k x/N)\,u_k + \sin(2\pi k x/N)\,v_k)$, with the Nyquist plane $k=N/2$ one-dimensional. Noise is isotropic and
+errors are treated to first order. Each statement below says where it matches the data and where it does not.
+
+\paragraph{Proposition 1 (rank threshold).} A residual linear operator that maps every $c(x)$ exactly onto $c(x+1)$ has rank at least
+the dimension of the span of the centred code, $N-1$ when every harmonic is present. On ideal codes the minimal exact rank of
+closed-form RRR equals this dimension in \CLtheoryPoneHolds{} of \CLtheoryPoneCases{} settings, including codes with missing
+harmonics. Exactness is the right notion: under a nearest-state readout a chain can compose at a lower rank when the dropped plane
+carries little readout weight. \TODO{proof (lead + Claude).}
+
+\paragraph{Proposition 2 (least squares drops the slowest plane per dimension).} When rank is scarce, reduced-rank regression keeps
+the planes with the largest one-step energy per dimension, $4a_k^2\sin^2(\pi k/N)/\dim_k$. Ranking per dimension matches the planes kept
+by the fitted operator at \CLtheoryPtwoDim{} of \CLtheoryPtwoRanks{} ranks on ideal codes; ranking per plane, as first stated in the
+plan, matches \CLtheoryPtwoPlane{}, all differences coming from the one-dimensional Nyquist plane. If amplitudes do not fall too fast
+with $k$, the fundamental is dropped first. On real encodings (exploratory) the most degraded plane of a rank-deficient RRR is the
+fundamental in \CLtheoryTtwoAWorst{} of \CLtheoryTtwoARanks{} (backbone, domain, rank) cells. \TODO{proof.}
+
+\paragraph{Proposition 3 (freeze signatures).} Under the weighted nearest-state readout, with the fundamental frozen a chain succeeds
+at small displacements and fails near half a turn when the frozen plane's weighted distance dominates; it revives at $t=N$, and
+alternating chains keep the outcome of step one. Freezing all other planes fails at step one when their weighted one-step distance
+exceeds that of the fundamental. The closed-form penalty equals the vector readout, and revival and alternation hold, in all
+\CLtheoryPthreeTrials{} random configurations; with the measured amplitudes and the locked plane weights, the predicted success by
+displacement matches the observed frozen-fundamental chains at \CLtheoryTtwoBAgree{} of \CLtheoryTtwoBN{} points (exploratory).
+\TODO{proof.}
+
+\paragraph{Proposition 4 (one-cycle cancellation; not confirmed).} If the off-manifold error of a step is linear in the centred code,
+the errors of one full one-way cycle sum to zero while alternating paths accumulate them in pairs. The statement holds exactly on
+ideal codes, but its preregistered tests on held-out templates were mixed (Section~\ref{sec:scope}): alternating chains do drift off the
+manifold far more than one-way chains, but the first-order errors do not cancel over a cycle there. It remains an unconfirmed
+explanation. \TODO{proof.}

@@ -17,8 +17,11 @@ compass8 on T5Gemma (Figure~\ref{fig:fig3}). We use the symmetry argument of \ci
 translation symmetry is broken the ordering can change.
 
 \paragraph{Rank threshold and frozen planes.}\claim{CL5}
-Closed-form RRR composes exactly when its rank reaches $r^\star = N-1$, the number of slot dimensions spanned by all planes; the
-threshold is sharp on \CLfiveRstarSharp{} domains of the second round. Below it, least squares drops the fundamental first. Freezing
+Closed-form RRR maps every state code exactly onto the next once its rank reaches the dimension of the centred code, $r^\star = N-1$
+when all harmonics are present (Proposition~1, Appendix~\ref{app:theory}); under the readout a chain can still compose below this
+rank when the dropped plane carries little vote weight. The threshold is sharp on \CLfiveRstarSharp{} domains of the second round.
+Below it, least squares keeps the planes with the largest one-step energy per dimension (Proposition~2); because the fundamental changes
+least, it is dropped first. Freezing
 planes by surgery reproduces the signature (Figure~\ref{fig:fig2}): with the fundamental frozen, one-way chains fail, alternating chains
 survive and one-way chains \emph{revive} at $t=N$, when the frozen fundamental is correct again; freezing every other plane gives the
 mirror image. The fourth round confirmed these signatures in all \CLfiveVoneN{} and \CLfiveVtwoaN{} locked cells.

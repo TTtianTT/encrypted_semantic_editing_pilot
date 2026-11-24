@@ -17,7 +17,9 @@ the attribute points to (bind3: a per-world list; bind3fix: a fixed list; name3:
 its fundamental-first variant FF-$r$, which reserves two of the $r$ directions for the slowest Fourier mode of the slot code
 (Section~\ref{sec:fourier}). \emph{Trained editors} are low-rank residual maps trained against the frozen decoder: C1 minimises the
 decoder cross-entropy of the target sentence after one step; C3 adds a canonical $L_2$ term pulling $T(E(x))$ towards $E(x\pm1)$;
-unrolled variants (U4) are trained along chains of up to four steps. For binding we also use token-wise and attention editors.
+unrolled variants (U4) are trained along chains of up to four steps. C1, C3, C3-U4 and RRR-$r$ are all low-rank affine residual maps
+applied to every token, $h_i \mapsto h_i + U V h_i + b$; they differ only in how they are fitted. For binding we also use token-wise and
+attention editors.
 
 \paragraph{Metrics.}
 A chain applies $k$ operations from the world's start state and decodes after every step. $\Rk{k}$ is the fraction of worlds whose

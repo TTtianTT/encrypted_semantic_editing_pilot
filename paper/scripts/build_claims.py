@@ -4,6 +4,7 @@ records its evidence files (SHA256), the lock commit of every round it cites, an
 (v6 not merged yet) become \\TODO{v6} macros."""
 import sys
 import yaml
+import numpy as np
 from common import *
 
 LOCK = {r: f'experiments/{d}/protocol_lock.json' for r, d in (('v1', 'symmetry_composability_v1'), ('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'),
@@ -16,6 +17,8 @@ V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
 V3GATES = [f'experiments/composability_mechanisms_v2/results/gates_{b}.json' for b in ('bart', 't5')]
 V6AUD = 'experiments/composability_mechanisms_v5/data/audit.json'
 V7P = 'experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json'
+V7R = 'experiments/composability_mechanisms_v6/results/predictions.json'
+VT = 'experiments/composability_mechanisms_v6/results/theory/t_theory.json'
 P5B = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json'; P5T = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_t5.json'
 V3AUD = 'experiments/composability_mechanisms_v2/data/audit.json'
 ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5']
@@ -39,6 +42,15 @@ def _v6_tmpl(d, k):
 def _p2_rb(field):
     """v7 P2: BART month under-trained state editors (v1 C3, v3 C3-l3 / C3-l10, v4 P2b, v6 C3n900), one-way paths."""
     return [v[field] for k, v in read(V7P)['P2'].items() if k.startswith('v6C/bart/month/') and k.split('/')[3] in ('C3v1', 'C3l3v3', 'C3l10v3', 'P2b', 'C3n900') and k.rsplit('/', 1)[1] in ('plus', 'minus')]
+
+
+def _k7_surv():
+    """v7 K: Att2L-U8 seeds whose bind3 one-way R_30 >= 0.90 on confirm7."""
+    return [int(s) for s, v in read(V7R)['K']['table']['bind3/Att2LU8/R30'].items() if v >= .90]
+
+
+def _k7_cont(s):
+    return read(V7R)['K']['exploratory'][f'contraction/Att2LU8_s{s}']
 
 
 def _ce_slot_stays(key):
@@ -71,6 +83,33 @@ DERIVED = {
     'v3_a_cells': (lambda: len(_v3_amp()), V3GATES),
     'v34_a1_largest_total': (lambda: DERIVED['v3_a1_largest'][0]() + DERIVED['v4_v0_a1_largest'][0](), V3GATES + [P['v4']]),
     'v34_a_cells_total': (lambda: DERIVED['v3_a_cells'][0]() + DERIVED['v4_v0_a1_evaluable'][0](), V3GATES + [P['v4']]),
+    't1_p1_holds': (lambda: sum(x['holds'] for x in read(VT)['T1_1']), [VT]),
+    't1_p1_cases': (lambda: len(read(VT)['T1_1']), [VT]),
+    't2b_agree': (lambda: sum(v['agree'] for v in read(VT)['T2']['b'].values()), [VT]),
+    't2b_n': (lambda: sum(v['n'] for v in read(VT)['T2']['b'].values()), [VT]),
+    't2a_worst': (lambda: sum(v['worst_is_predicted'] for k, v in read(VT)['T2']['a'].items() if k.endswith('per_dim')), [VT]),
+    't2a_ranks': (lambda: sum(v['ranks'] for k, v in read(VT)['T2']['a'].items() if k.endswith('per_dim')), [VT]),
+    'v7_a1_n1_min': (lambda: min(v['plus_N_over_1'] for v in read(V7R)['A']['A1'].values()), [V7R]),
+    'v7_a1_n1_max': (lambda: max(v['plus_N_over_1'] for v in read(V7R)['A']['A1'].values()), [V7R]),
+    'v7_a1_alt_min': (lambda: min(v['alt_over_plus_2N'] for v in read(V7R)['A']['A1'].values()), [V7R]),
+    'v7_a1_alt_max': (lambda: max(v['alt_over_plus_2N'] for v in read(V7R)['A']['A1'].values()), [V7R]),
+    'v7_a2_cyc_min': (lambda: min(v['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
+    'v7_a2_cyc_max': (lambda: max(v['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
+    'v7_a2_dev_min': (lambda: min(v['train_template_dev']['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
+    'v7_a2_dev_max': (lambda: max(v['train_template_dev']['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
+    'v7_a3_max': (lambda: max(v['R2N']['rate'] for v in read(V7R)['A']['A3'].values()), [V7R]),
+    'v7_a_combos': (lambda: len(read(V7R)['A']['A1']), [V7R]),
+    'v7_k_survivors': (lambda: len(_k7_surv()), [V7R]),
+    'v7_k_dist10_med': (lambda: float(np.median([_k7_cont(s)[9] for s in range(42, 50)])), [V7R]),
+    'v7_k_dist30_min': (lambda: min(_k7_cont(s)[29] for s in _k7_surv()), [V7R]),
+    'v7_k_dist30_max': (lambda: max(_k7_cont(s)[29] for s in _k7_surv()), [V7R]),
+    'v7_k_dist100_min': (lambda: min(_k7_cont(s)[99] for s in _k7_surv()), [V7R]),
+    'v7_k_dist100_max': (lambda: max(_k7_cont(s)[99] for s in _k7_surv()), [V7R]),
+    'v7_k_l1next_min': (lambda: min(read(V7R)['K']['exploratory'][f'attention/Att2LU8_s{s}']['layer1']['next'] for s in _k7_surv()), [V7R]),
+    'v7_k_l1next_count': (lambda: sum(1 for k, v in read(V7R)['K']['exploratory'].items() if k.startswith('attention/Att2LU8_') and v['layer1']['next'] >= .85), [V7R]),
+    'v7_k_l1next_max': (lambda: max(read(V7R)['K']['exploratory'][f'attention/Att2LU8_s{s}']['layer1']['next'] for s in _k7_surv()), [V7R]),
+    'v7_k5_r100_max': (lambda: max(read(V7R)['K']['table']['bind3/Att2LU8/R100'].values()), [V7R]),
+    'rounds_locked': (lambda: sum(1 for f in LOCK.values() if (REPO / f).exists()), list(LOCK.values())),
     'v4_p5_t5_rel_min': (lambda: min(v['classes']['relative'] for k, v in read(P5T).items() if k.endswith('/median')), [P5T]),
     'v4_p5_bart_other_rel_max': (lambda: max(v['classes']['relative'] for k, v in read(P5B).items() if k.endswith('/median') and k.split('/')[0] not in ('weekday', 'month')), [P5B]),
     'v2_reuse_min_pct': (lambda: 100 * min(v['confirm2_worlds_with_text_in_v1_train_dev'] / v['confirm2_worlds'] for v in read(V3AUD)['v2_confirm2_text_reuse_report'].values()), [V3AUD]),

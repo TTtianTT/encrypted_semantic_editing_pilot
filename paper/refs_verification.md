@@ -36,3 +36,10 @@
 | park2024linear | ICML 2024，PMLR 235:39643–39666 |
 
 仍需复核：storan2026group 的完整作者表；wurgaft2026manifold 的合作者全表；meng2022rome 的页码。
+
+## 2026-11-25，阶段 2 新增
+| key | 核实 |
+| --- | --- |
+| chen2022thex | 元数据由负责人核实（Findings of ACL 2022，pp. 3510–3520，DOI 10.18653/v1/2022.findings-acl.277） |
+| fu2026c2c | 元数据由负责人核实（ICLR 2026） |
+| hao2024coconut | 负责人核实 arXiv:2412.06769；Claude 检索发现 arXiv 记录注明 "Accepted to COLM 2025"，按指令改为会议版本（键名不变） |

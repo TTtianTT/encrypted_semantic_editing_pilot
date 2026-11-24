@@ -48,13 +48,21 @@
  "figS2": {
   "script": "paper/figs/make_figS2.py",
   "inputs": {
-   "experiments/composability_mechanisms_v5/results/chains.csv": "99dcb7d9c384c917ac5b4ccc8fafe67690976fd14efb969d9ea5278a5ac51d5f"
+   "experiments/composability_mechanisms_v6/results/shards_bart_bind3.tar.xz": "8fe875a1a0b1fb03cac9bdbfe6d50f1ea816b2de53ae696ee0d06716ca8bde3e",
+   "experiments/composability_mechanisms_v6/results/shards_bart_name3.tar.xz": "7dd8733c8a390224b227fab28f7e07e6804ddf5ab061896036bc9b9ad9921947",
+   "experiments/composability_mechanisms_v6/results/shards_bart_bind3fix.tar.xz": "cd55be77c137cd3e3386a442d69fe05faa3a6b2e219d6dcee24ea769e516db08"
   }
  },
  "figC1": {
   "script": "paper/figs/make_figC1.py",
   "inputs": {
    "experiments/composability_mechanisms_v4/results/chains.csv": "c77032924c273fcf9a2755fce97837e32746b2ae7d1cbdae95130fd080d84055"
+  }
+ },
+ "figS3": {
+  "script": "paper/figs/make_figS3.py",
+  "inputs": {
+   "experiments/composability_mechanisms_v6/results/predictions.json": "d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01"
   }
  }
 }

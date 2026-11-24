@@ -180,8 +180,8 @@ claims:
   - id: CL15
     zh: 预测器错误的结构（v6 的探索性结果；v7 之后按 U、R 的判定改写）
     en: Where the latent predictor errs - a predicted failure is reliable, errors are mostly over-estimates of three kinds, and the decoder reads the state from the slot only.
-    nature: exploratory (v7 P post-hoc on v5 / v6 shards); to be rewritten after v7 U and R
-    predictions: [v6/CT1, v6/CT2]
+    nature: decided (v7 R2 H-inspan but R4-B unstable; R1 mixed, replicated; R3 failed narrowly); U1/U2 exploratory (pre-check), Q21 H-nofix; P post-hoc exploratory
+    predictions: [v6/CT1, v6/CT2, v7/R0, v7/R1, v7/R2, v7/R3, v7/R4, v7/U3, v7/Q21]
     numbers:
       - {macro: CLfifteenPrecFailMin, derived: v7_p1_precfail_min, fmt: '{:.2f}'}
       - {macro: CLfifteenPrecFailMax, derived: v7_p1_precfail_max, fmt: '{:.2f}'}
@@ -203,12 +203,25 @@ claims:
       - {macro: CLfifteenMonthNineHundred, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/new_C3_plus_R2N_by_updates/month~1C3n900, fmt: '{:.2f}'}
       - {macro: CLfifteenDriftAucCtOne, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT1/auc, fmt: '{:.2f}', note: exploratory}
       - {macro: CLfifteenDriftAucCtTwo, file: experiments/composability_mechanisms_v5/results/predictions.json, path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT2/auc, fmt: '{:.2f}', note: exploratory}
+      - {macro: CLfifteenRBPush, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R2/pooled/PUSH/rate, fmt: '{:.2f}', note: 'v7 R2, pooled R-B cases (v6 editors)'}
+      - {macro: CLfifteenRBProj, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R2/pooled/PROJ/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRBCtx, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R2/pooled/CTX/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRFourBPush, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R4/B/pooled/PUSH/rate, fmt: '{:.2f}', note: 'v7 R4-B, new-seed C3 cases'}
+      - {macro: CLfifteenRFourBProj, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R4/B/pooled/PROJ/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRFourBCtx, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R4/B/pooled/CTX/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRAProj, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/groups/run~1R-A-t5~1case/PROJ/rate, fmt: '{:.2f}', note: 'v7 R1, T5Gemma held-out alternating'}
+      - {macro: CLfifteenRAPush, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/groups/run~1R-A-t5~1case/PUSH/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRFourAProj, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/groups/r4~1R4-A-t5~1case/PROJ/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRFourAPush, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/groups/r4~1R4-A-t5~1case/PUSH/rate, fmt: '{:.2f}'}
+      - {macro: CLfifteenRThreeCtx, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/R3/rates/CTX/rate, fmt: '{:.3f}', note: 'v7 R3 control steps kept by CTX'}
+      - {macro: CLfifteenRAbartPush, file: experiments/composability_mechanisms_v6/results/predictions.json, path: R/groups/run~1R-A-bart~1case/PUSH/rate, fmt: '{:.2f}', note: 'v7 R-A BART (secondary)'}
+      - {macro: CLfifteenUFtwoAgree, file: experiments/composability_mechanisms_v6/results/predictions.json, path: U/families/F2/agree/slot, fmt: '{:.2f}', note: 'v7 U: U equals slot-only'}
   - id: CL13
-    zh: 两层、8 步展开的注意力编辑器在 bind3 上组合 30 步（测过的最长链；三个 seed 为 1.00 / 0.97 / 0.99）；4 步展开或单层的编辑器在 8–12 步后衰减
-    en: A two-layer attention editor trained on 8-step unrolls composes binding edits for 30 steps on bind3 (the longest chain tested); 4-step or one-layer editors decay after 8-12 steps.
-    nature: confirmed (v6 K2, H-closure); v6 K1 H-unrepresentable by rule (oracle decays past its S<=4 horizon), K3 and K4 mixed
-    predictions: [v5/B2, v5/B3, v6/K1, v6/K2, v6/K3, v6/K4]
-    figures: [figS2]
+    zh: 绑定类编辑：两层、8 步展开的编辑器在 8 个 seed 中有 5 个撑过 30 步，100 步时全部衰减；视野对齐的 oracle 也衰减；v6 的 K2 在新 seed 上没有复现
+    en: Binding edits do not compose over long chains - a two-layer editor trained on 8-step unrolls survives 30 steps on 5 of 8 seeds and decays on all by 100 steps; a horizon-matched oracle-routing editor decays too.
+    nature: decided (v7 K5 H-slow-decay, K7 H-unrepresentable; K6 mixed); v6 K2 (H-closure) did not replicate on new seeds; mechanism exploratory
+    predictions: [v5/B2, v5/B3, v6/K1, v6/K2, v6/K3, v6/K4, v7/K5, v7/K6, v7/K7]
+    figures: [figS2, figS3]
     numbers:
       - {macro: CLthirteenBtwo, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B2/max, fmt: '{:.2f}'}
       - {macro: CLthirteenTokU, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B3/TokU, fmt: '{:.2f}'}
@@ -225,6 +238,17 @@ claims:
       - {macro: CLthirteenSeedB, file: experiments/composability_mechanisms_v5/results/report_ci.json, path: bart~1bind3~1Att2LU8_s43~1plus~1R30/rate, fmt: '{:.2f}'}
       - {macro: CLthirteenSeedC, file: experiments/composability_mechanisms_v5/results/report_ci.json, path: bart~1bind3~1Att2LU8_s44~1plus~1R30/rate, fmt: '{:.2f}'}
       - {macro: CLthirteenNameSeedB, file: experiments/composability_mechanisms_v5/results/report_ci.json, path: bart~1name3~1Att2LU8_s43~1plus~1R30/rate, fmt: '{:.2f}', note: 'name3 Att2L-U8 seed 43'}
+      - {macro: CLthirteenHundredMax, derived: v7_k5_r100_max, fmt: '{:.2f}', note: 'v7 K5: max R_100 of Att2L-U8 over the 8 seeds'}
+      - {macro: CLthirteenSurvivors, derived: v7_k_survivors, fmt: '{:d}', note: 'Att2L-U8 seeds with R_30 >= 0.90 (v7, of 8)'}
+      - {macro: CLthirteenOrEightThirty, file: experiments/composability_mechanisms_v6/results/predictions.json, path: K/K7/median, fmt: '{:.2f}', note: 'v7 K7 horizon-matched OR-U8 median R_30'}
+      - {macro: CLthirteenDistTen, derived: v7_k_dist10_med, fmt: '{:.1f}', note: 'exploratory: median over 8 seeds of the slot distance to the clean gold encoding over R_w at step 10'}
+      - {macro: CLthirteenDistThirtyLo, derived: v7_k_dist30_min, fmt: '{:.1f}', note: 'over the seeds that survive 30 steps'}
+      - {macro: CLthirteenDistThirtyHi, derived: v7_k_dist30_max, fmt: '{:.1f}'}
+      - {macro: CLthirteenDistHundredLo, derived: v7_k_dist100_min, fmt: '{:.1f}'}
+      - {macro: CLthirteenDistHundredHi, derived: v7_k_dist100_max, fmt: '{:.1f}'}
+      - {macro: CLthirteenLayerOneLo, derived: v7_k_l1next_min, fmt: '{:.2f}', note: 'exploratory: layer-1 attention of the slot on the next name, over the seeds that survive 30 steps'}
+      - {macro: CLthirteenLayerOneCount, derived: v7_k_l1next_count, fmt: '{:d}', note: 'seeds (of 8) with layer-1 attention >= 0.85 on the next name; seed 45 puts none on any name'}
+      - {macro: CLthirteenLayerOneHi, derived: v7_k_l1next_max, fmt: '{:.2f}'}
   - id: CL14
     zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）
     en: Slot-centred operators compose on unseen templates; the prediction and freeze tests hold only in part.
@@ -267,3 +291,36 @@ claims:
       - {macro: CLmetaGpuVfive, file: experiments/composability_mechanisms_v4/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVsix, file: experiments/composability_mechanisms_v5/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuTotal, derived: gpu_total, fmt: '{:.1f}'}
+      - {macro: CLmetaRounds, derived: rounds_locked, fmt: '{:d}', note: 'preregistered rounds with a lock commit; regenerate after v8'}
+  - id: CL16
+    zh: 未见句式上交替链离开干净流形；一阶抵消（命题 4）未获确认
+    en: On held-out templates alternating chains drift off the clean manifold while one-way chains do not; first-order one-cycle cancellation (proposition 4) is not confirmed and the exact inverse is not a usable minus operator.
+    nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an unconfirmed explanation
+    predictions: [v7/A1, v7/A2, v7/A3]
+    numbers:
+      - {macro: CLsixteenNOneMin, derived: v7_a1_n1_min, fmt: '{:.2f}', note: 'rho(plus, N) / rho(plus, 1)'}
+      - {macro: CLsixteenNOneMax, derived: v7_a1_n1_max, fmt: '{:.2f}'}
+      - {macro: CLsixteenAltMin, derived: v7_a1_alt_min, fmt: '{:.1f}', note: 'rho(alt, 2N) / rho(plus, 2N)'}
+      - {macro: CLsixteenAltMax, derived: v7_a1_alt_max, fmt: '{:.0f}'}
+      - {macro: CLsixteenCycMin, derived: v7_a2_cyc_min, fmt: '{:.2f}', note: 'A2 cycle-sum ratio, held-out templates'}
+      - {macro: CLsixteenCycMax, derived: v7_a2_cyc_max, fmt: '{:.2f}'}
+      - {macro: CLsixteenCycDevMin, derived: v7_a2_dev_min, fmt: '{:.2f}', note: 'exploratory: training-template dev'}
+      - {macro: CLsixteenCycDevMax, derived: v7_a2_dev_max, fmt: '{:.2f}'}
+      - {macro: CLsixteenInvMax, derived: v7_a3_max, fmt: '{:.2f}', note: 'A3: one-way minus R_2N with P^-1'}
+      - {macro: CLsixteenCombos, derived: v7_a_combos, fmt: '{:d}'}
+  - id: THEORY
+    zh: 命题 1–4 的数值核对（v7 T 单元；T1 为已知答案的核对，T2 为探索性）
+    en: Numerical checks of propositions 1-4 (v7 unit T).
+    nature: numerical check (T1); exploratory (T2)
+    predictions: []
+    numbers:
+      - {macro: CLtheoryPoneHolds, derived: t1_p1_holds, fmt: '{:d}'}
+      - {macro: CLtheoryPoneCases, derived: t1_p1_cases, fmt: '{:d}'}
+      - {macro: CLtheoryPtwoDim, file: experiments/composability_mechanisms_v6/results/theory/t_theory.json, path: T1_holds/prop2_per_dim, fmt: '{:d}'}
+      - {macro: CLtheoryPtwoPlane, file: experiments/composability_mechanisms_v6/results/theory/t_theory.json, path: T1_holds/prop2_per_plane, fmt: '{:d}'}
+      - {macro: CLtheoryPtwoRanks, file: experiments/composability_mechanisms_v6/results/theory/t_theory.json, path: T1_holds/prop2_ranks, fmt: '{:d}'}
+      - {macro: CLtheoryPthreeTrials, file: experiments/composability_mechanisms_v6/results/theory/t_theory.json, path: T1_3/trials, fmt: '{:d}'}
+      - {macro: CLtheoryTtwoBAgree, derived: t2b_agree, fmt: '{:d}'}
+      - {macro: CLtheoryTtwoBN, derived: t2b_n, fmt: '{:d}'}
+      - {macro: CLtheoryTtwoAWorst, derived: t2a_worst, fmt: '{:d}'}
+      - {macro: CLtheoryTtwoARanks, derived: t2a_ranks, fmt: '{:d}'}

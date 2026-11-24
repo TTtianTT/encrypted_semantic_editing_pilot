@@ -6,6 +6,7 @@ lock_commits:
   v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
   v5: 8667c907769e475f78d46f593266efa46aac9dd6
   v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+  v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
 claims:
 - id: CL1
   zh: 单步解码正确 ≠ 可组合
@@ -728,18 +729,27 @@ claims:
   en: Where the latent predictor errs - a predicted failure is reliable, errors are
     mostly over-estimates of three kinds, and the decoder reads the state from the
     slot only.
-  nature: exploratory (v7 P post-hoc on v5 / v6 shards); to be rewritten after v7
-    U and R
+  nature: decided (v7 R2 H-inspan but R4-B unstable; R1 mixed, replicated; R3 failed
+    narrowly); U1/U2 exploratory (pre-check), Q21 H-nofix; P post-hoc exploratory
   predictions:
   - v6/CT1
   - v6/CT2
+  - v7/R0
+  - v7/R1
+  - v7/R2
+  - v7/R3
+  - v7/R4
+  - v7/U3
+  - v7/Q21
   figures: []
   lock_commits:
     v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+    v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
   evidence:
     experiments/composability_mechanisms_v5/results/calib_ctx_bart.json: feb7c26725720ada1a57240c5374b5cee7dba75c084d8a3860ff024154c48502
     experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
     experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json: 68b49be5115e76b66d657b7a17d26fe0c223ad376ac4f078561ab861758d2140
+    experiments/composability_mechanisms_v6/results/predictions.json: d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01
   numbers:
   - macro: CLfifteenPrecFailMin
     value: 0.9062629614267939
@@ -881,14 +891,105 @@ claims:
     path: C/exploratory/ctx_drift_auc_failure_among_slot_predicted_success/CT2/auc
     note: exploratory
     pending: false
+  - macro: CLfifteenRBPush
+    value: 0.98
+    text: '0.98'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R2/pooled/PUSH/rate
+    note: v7 R2, pooled R-B cases (v6 editors)
+    pending: false
+  - macro: CLfifteenRBProj
+    value: 0.264
+    text: '0.26'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R2/pooled/PROJ/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRBCtx
+    value: 0.202
+    text: '0.20'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R2/pooled/CTX/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRFourBPush
+    value: 0.9466666666666667
+    text: '0.95'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R4/B/pooled/PUSH/rate
+    note: v7 R4-B, new-seed C3 cases
+    pending: false
+  - macro: CLfifteenRFourBProj
+    value: 0.28
+    text: '0.28'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R4/B/pooled/PROJ/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRFourBCtx
+    value: 0.53
+    text: '0.53'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R4/B/pooled/CTX/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRAProj
+    value: 0.6376811594202898
+    text: '0.64'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/groups/run~1R-A-t5~1case/PROJ/rate
+    note: v7 R1, T5Gemma held-out alternating
+    pending: false
+  - macro: CLfifteenRAPush
+    value: 0.4492753623188406
+    text: '0.45'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/groups/run~1R-A-t5~1case/PUSH/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRFourAProj
+    value: 0.6666666666666666
+    text: '0.67'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/groups/r4~1R4-A-t5~1case/PROJ/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRFourAPush
+    value: 0.4523809523809524
+    text: '0.45'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/groups/r4~1R4-A-t5~1case/PUSH/rate
+    note: null
+    pending: false
+  - macro: CLfifteenRThreeCtx
+    value: 0.968
+    text: '0.968'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/R3/rates/CTX/rate
+    note: v7 R3 control steps kept by CTX
+    pending: false
+  - macro: CLfifteenRAbartPush
+    value: 0.9821428571428571
+    text: '0.98'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: R/groups/run~1R-A-bart~1case/PUSH/rate
+    note: v7 R-A BART (secondary)
+    pending: false
+  - macro: CLfifteenUFtwoAgree
+    value: 0.8084016393442623
+    text: '0.81'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: U/families/F2/agree/slot
+    note: 'v7 U: U equals slot-only'
+    pending: false
 - id: CL13
-  zh: 两层、8 步展开的注意力编辑器在 bind3 上组合 30 步（测过的最长链；三个 seed 为 1.00 / 0.97 / 0.99）；4 步展开或单层的编辑器在
-    8–12 步后衰减
-  en: A two-layer attention editor trained on 8-step unrolls composes binding edits
-    for 30 steps on bind3 (the longest chain tested); 4-step or one-layer editors
-    decay after 8-12 steps.
-  nature: confirmed (v6 K2, H-closure); v6 K1 H-unrepresentable by rule (oracle decays
-    past its S<=4 horizon), K3 and K4 mixed
+  zh: 绑定类编辑：两层、8 步展开的编辑器在 8 个 seed 中有 5 个撑过 30 步，100 步时全部衰减；视野对齐的 oracle 也衰减；v6 的
+    K2 在新 seed 上没有复现
+  en: Binding edits do not compose over long chains - a two-layer editor trained on
+    8-step unrolls survives 30 steps on 5 of 8 seeds and decays on all by 100 steps;
+    a horizon-matched oracle-routing editor decays too.
+  nature: decided (v7 K5 H-slow-decay, K7 H-unrepresentable; K6 mixed); v6 K2 (H-closure)
+    did not replicate on new seeds; mechanism exploratory
   predictions:
   - v5/B2
   - v5/B3
@@ -896,15 +997,21 @@ claims:
   - v6/K2
   - v6/K3
   - v6/K4
+  - v7/K5
+  - v7/K6
+  - v7/K7
   figures:
   - figS2
+  - figS3
   lock_commits:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
     v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+    v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
     experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
     experiments/composability_mechanisms_v5/results/report_ci.json: 27f5c3952bd31a5d1d583082414212af1a4e4c703f2d672d74fc64b6f90e741b
+    experiments/composability_mechanisms_v6/results/predictions.json: d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01
   numbers:
   - macro: CLthirteenBtwo
     value: 0.8
@@ -1010,6 +1117,86 @@ claims:
     source: experiments/composability_mechanisms_v5/results/report_ci.json
     path: bart~1name3~1Att2LU8_s43~1plus~1R30/rate
     note: name3 Att2L-U8 seed 43
+    pending: false
+  - macro: CLthirteenHundredMax
+    value: 0.0625
+    text: '0.06'
+    source: derived:v7_k5_r100_max
+    path: null
+    note: 'v7 K5: max R_100 of Att2L-U8 over the 8 seeds'
+    pending: false
+  - macro: CLthirteenSurvivors
+    value: 5
+    text: '5'
+    source: derived:v7_k_survivors
+    path: null
+    note: Att2L-U8 seeds with R_30 >= 0.90 (v7, of 8)
+    pending: false
+  - macro: CLthirteenOrEightThirty
+    value: 0.0375
+    text: '0.04'
+    source: experiments/composability_mechanisms_v6/results/predictions.json
+    path: K/K7/median
+    note: v7 K7 horizon-matched OR-U8 median R_30
+    pending: false
+  - macro: CLthirteenDistTen
+    value: 0.31748229849806997
+    text: '0.3'
+    source: derived:v7_k_dist10_med
+    path: null
+    note: 'exploratory: median over 8 seeds of the slot distance to the clean gold
+      encoding over R_w at step 10'
+    pending: false
+  - macro: CLthirteenDistThirtyLo
+    value: 0.37915527456034065
+    text: '0.4'
+    source: derived:v7_k_dist30_min
+    path: null
+    note: over the seeds that survive 30 steps
+    pending: false
+  - macro: CLthirteenDistThirtyHi
+    value: 0.5560062903506545
+    text: '0.6'
+    source: derived:v7_k_dist30_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenDistHundredLo
+    value: 1.4159594054763252
+    text: '1.4'
+    source: derived:v7_k_dist100_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenDistHundredHi
+    value: 2.667534582585786
+    text: '2.7'
+    source: derived:v7_k_dist100_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenLayerOneLo
+    value: 0.8920245926732302
+    text: '0.89'
+    source: derived:v7_k_l1next_min
+    path: null
+    note: 'exploratory: layer-1 attention of the slot on the next name, over the seeds
+      that survive 30 steps'
+    pending: false
+  - macro: CLthirteenLayerOneCount
+    value: 7
+    text: '7'
+    source: derived:v7_k_l1next_count
+    path: null
+    note: seeds (of 8) with layer-1 attention >= 0.85 on the next name; seed 45 puts
+      none on any name
+    pending: false
+  - macro: CLthirteenLayerOneHi
+    value: 0.9999212422718604
+    text: '1.00'
+    source: derived:v7_k_l1next_max
+    path: null
+    note: null
     pending: false
 - id: CL14
   zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）
@@ -1178,12 +1365,19 @@ claims:
   figures: []
   lock_commits: {}
   evidence:
+    experiments/composability_mechanisms_v1/protocol_lock.json: 79c2bdf55ceddb5bf2b61b9abcf58fec90a762f4be4b5821d533af317616d816
     experiments/composability_mechanisms_v1/run_ledger.json: 48151b48196ccaedda5e22f6b03af2bb4fa1f58ba487faf479372882bf0b4e67
     experiments/composability_mechanisms_v2/data/audit.json: 990e4a7e126d4867ebac5cc22e7fe07c9da4d2b48b534d1726de00dd17661e67
+    experiments/composability_mechanisms_v2/protocol_lock.json: 243843c87ada9ad4bbda95a7d173a0da51a579d1532bab77cc030c6f0b176c65
     experiments/composability_mechanisms_v2/run_ledger.json: 53e504b1155b7cc9a542cf9f3c035e605a0d1f94d3fa640da802d9ca363878e4
+    experiments/composability_mechanisms_v3/protocol_lock.json: 5ebcaa1e3ad9c529d6bccf2355c12a4297fa310ceb836e01d75aab4607de14f1
     experiments/composability_mechanisms_v3/run_ledger.json: 807dcba8c119b915a0c9e052b3e3cb4211025185b8c03fff284bc3390ea47a42
+    experiments/composability_mechanisms_v4/protocol_lock.json: 8c97ff7a57b4094e91f9a4985ae513b9e846fb7f777da38e1885668a6b2e378e
     experiments/composability_mechanisms_v4/run_ledger.json: f1f99d112f76ae860c8ce4a81eb8189362c1d40c2525abf43ca81f2ecf52b427
+    experiments/composability_mechanisms_v5/protocol_lock.json: 04b9b677fc497b0ae232174ddae2570796486e2154b3127994ed3a33d42c3cc4
     experiments/composability_mechanisms_v5/run_ledger.json: 5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546
+    experiments/composability_mechanisms_v6/protocol_lock.json: 8b2bbae2206663cdedfc21c5d668c8fe827125e8570b0c33e6a11c5f2b5462c3
+    experiments/symmetry_composability_v1/protocol_lock.json: 5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead
     experiments/symmetry_composability_v1/run_ledger.json: 50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f
   numbers:
   - macro: CLmetaReuseMin
@@ -1247,6 +1441,180 @@ claims:
     value: 22.795277777777777
     text: '22.8'
     source: derived:gpu_total
+    path: null
+    note: null
+    pending: false
+  - macro: CLmetaRounds
+    value: 7
+    text: '7'
+    source: derived:rounds_locked
+    path: null
+    note: preregistered rounds with a lock commit; regenerate after v8
+    pending: false
+- id: CL16
+  zh: 未见句式上交替链离开干净流形；一阶抵消（命题 4）未获确认
+  en: On held-out templates alternating chains drift off the clean manifold while
+    one-way chains do not; first-order one-cycle cancellation (proposition 4) is not
+    confirmed and the exact inverse is not a usable minus operator.
+  nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an
+    unconfirmed explanation
+  predictions:
+  - v7/A1
+  - v7/A2
+  - v7/A3
+  figures: []
+  lock_commits:
+    v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
+  evidence:
+    experiments/composability_mechanisms_v6/results/predictions.json: d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01
+  numbers:
+  - macro: CLsixteenNOneMin
+    value: 0.31359117754822335
+    text: '0.31'
+    source: derived:v7_a1_n1_min
+    path: null
+    note: rho(plus, N) / rho(plus, 1)
+    pending: false
+  - macro: CLsixteenNOneMax
+    value: 0.7129035339999902
+    text: '0.71'
+    source: derived:v7_a1_n1_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLsixteenAltMin
+    value: 4.503846764073791
+    text: '4.5'
+    source: derived:v7_a1_alt_min
+    path: null
+    note: rho(alt, 2N) / rho(plus, 2N)
+    pending: false
+  - macro: CLsixteenAltMax
+    value: 58.278029774879315
+    text: '58'
+    source: derived:v7_a1_alt_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLsixteenCycMin
+    value: 0.26059734388452366
+    text: '0.26'
+    source: derived:v7_a2_cyc_min
+    path: null
+    note: A2 cycle-sum ratio, held-out templates
+    pending: false
+  - macro: CLsixteenCycMax
+    value: 0.6556482797321557
+    text: '0.66'
+    source: derived:v7_a2_cyc_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLsixteenCycDevMin
+    value: 0.08355503498187929
+    text: '0.08'
+    source: derived:v7_a2_dev_min
+    path: null
+    note: 'exploratory: training-template dev'
+    pending: false
+  - macro: CLsixteenCycDevMax
+    value: 0.13966975195605635
+    text: '0.14'
+    source: derived:v7_a2_dev_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLsixteenInvMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v7_a3_max
+    path: null
+    note: 'A3: one-way minus R_2N with P^-1'
+    pending: false
+  - macro: CLsixteenCombos
+    value: 4
+    text: '4'
+    source: derived:v7_a_combos
+    path: null
+    note: null
+    pending: false
+- id: THEORY
+  zh: 命题 1–4 的数值核对（v7 T 单元；T1 为已知答案的核对，T2 为探索性）
+  en: Numerical checks of propositions 1-4 (v7 unit T).
+  nature: numerical check (T1); exploratory (T2)
+  predictions: []
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v6/results/theory/t_theory.json: 15a61ef6d419d462df1ea822e87992fa2ff09578777e15b888009d2b2b7647f5
+  numbers:
+  - macro: CLtheoryPoneHolds
+    value: 9
+    text: '9'
+    source: derived:t1_p1_holds
+    path: null
+    note: null
+    pending: false
+  - macro: CLtheoryPoneCases
+    value: 9
+    text: '9'
+    source: derived:t1_p1_cases
+    path: null
+    note: null
+    pending: false
+  - macro: CLtheoryPtwoDim
+    value: 58
+    text: '58'
+    source: experiments/composability_mechanisms_v6/results/theory/t_theory.json
+    path: T1_holds/prop2_per_dim
+    note: null
+    pending: false
+  - macro: CLtheoryPtwoPlane
+    value: 49
+    text: '49'
+    source: experiments/composability_mechanisms_v6/results/theory/t_theory.json
+    path: T1_holds/prop2_per_plane
+    note: null
+    pending: false
+  - macro: CLtheoryPtwoRanks
+    value: 58
+    text: '58'
+    source: experiments/composability_mechanisms_v6/results/theory/t_theory.json
+    path: T1_holds/prop2_ranks
+    note: null
+    pending: false
+  - macro: CLtheoryPthreeTrials
+    value: 300
+    text: '300'
+    source: experiments/composability_mechanisms_v6/results/theory/t_theory.json
+    path: T1_3/trials
+    note: null
+    pending: false
+  - macro: CLtheoryTtwoBAgree
+    value: 44
+    text: '44'
+    source: derived:t2b_agree
+    path: null
+    note: null
+    pending: false
+  - macro: CLtheoryTtwoBN
+    value: 52
+    text: '52'
+    source: derived:t2b_n
+    path: null
+    note: null
+    pending: false
+  - macro: CLtheoryTtwoAWorst
+    value: 17
+    text: '17'
+    source: derived:t2a_worst
+    path: null
+    note: null
+    pending: false
+  - macro: CLtheoryTtwoARanks
+    value: 28
+    text: '28'
+    source: derived:t2a_ranks
     path: null
     note: null
     pending: false

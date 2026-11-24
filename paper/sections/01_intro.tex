@@ -1,2 +1,89 @@
-\section{Introduction}
-\TODO{lead + Claude (PLAN v7 A2): problem, why one correct decoding step is not enough, four contributions, Figure~1. Motivation decided 2026-11-24 (DECISIONS.md): pipelines whose intermediate states are never decoded; encryption is one example only; no "encrypted" in the title.}
+\section{Introduction}\label{sec:intro}
+% Draft by the lead and Claude (PLAN v7, A2), 2026-11-25.
+% Rules: numbers only through macros; every claim below maps to a locked prediction (CL ids in the comments);
+% nothing exploratory (CL15, the K-unit mechanism, Proposition 4) is stated here.
+% New macros needed: \CLthirteenHundredMax (max R_100 of Att2L-U8 over the 8 seeds, v7 K5) and \CLmetaRounds (number of
+% preregistered rounds; generate from the current value now and regenerate after v8).
+% New bib keys needed: chen2022thex, fu2026c2c, hao2024coconut (metadata in STAGE2_INSTRUCTIONS.md).
+
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig1.pdf}
+\caption{\textbf{Decodable is not composable.} (a) Two rank-16 affine edits of the same encoder states both decode correctly after
+one step. The decoder-trained edit (top) writes an instruction and leaves the slot at the source state, so the second edit fails; the
+state-writing edit (bottom) moves the slot and composes. Intermediate states are decoded here only to score the chain; a pipeline
+that passes latents on never decodes them. (b) BART-base, month, one-way plus chains: the one-step decoder-trained editor C1 fails
+from the second step; the closed-form RRR-16 and the state-supervised unrolled C3-U4 compose.}\label{fig:fig1}
+\end{figure}
+
+Methods that edit a model's internal representations, rather than its inputs or weights, are usually judged by a single round
+trip: apply the edit once, decode, and check that the output changed as intended~\citep{turner2023actadd,zou2023repe,li2023iti}.
+A growing number of systems, however, pass latent states on without decoding them: computation on encrypted
+representations~\citep{chen2022thex}, models that exchange key--value caches instead of text~\citep{fu2026c2c}, and reasoning carried
+out in a continuous latent space~\citep{hao2024coconut}. In such pipelines an edited state is edited again or handed to another
+component, and no one inspects the states in between. What matters there is not whether one edit decodes correctly but whether edits
+\emph{compose}: applying an edit $k$ times should move the underlying variable by $k$ steps.
+
+We study when latent edits compose in a setting where composition can be measured exactly. Each input sentence to a frozen
+encoder--decoder model (BART-base or T5Gemma 2B--2B) contains a \emph{slot}, a word that takes one of $N$ cyclically ordered states
+such as a weekday or a month. An edit maps the encoder states so that the decoder produces the same sentence with the state moved by
+one; a chain applies the edit repeatedly, and we decode after every step only to score it. All editors in our main experiments are
+rank-limited affine maps of the encoder states, so differences between them come from how they are fitted, not from what they can
+represent.
+
+\paragraph{Decodable is not composable.}
+\claim{CL1}\claim{CL2}\claim{CL3}\claim{CL4}%
+An editor trained through the decoder to produce the target sentence after one step is correct on every confirmation world after that
+step (step-1 success \CLoneVfiveCOneRoneMin{} on BART-base), yet after the second step no world is correct
+($\Rk{2}=\CLoneVfiveCOneRtwoMax$). A closed-form operator of the same rank, fitted only to pairs of encoder states, composes for $2N$
+steps on every backbone and domain ($\Rk{2N}\ge\CLoneVfiveBaseMin$; Figure~\ref{fig:fig1}). The difference lies in what the edits
+write. The decoder-trained editor writes an \emph{instruction} that the decoder executes, not the target \emph{state}: it writes nearly
+the same vector whatever the source state (median cosine \CLtwoWriteCosSource), that vector is orthogonal to the change between the
+canonical encodings (\CLtwoWriteCosCanon), and a linear probe still reads the source state from the edited latent
+(\CLtwoProbeSource). Training through longer chains does not remove this shortcut but replaces it with a step counter that fails just
+past the training horizon; adding a target for the state itself makes the editors compose (Section~\ref{sec:instructions}).
+% CL1, CL2, CL3, CL4
+
+\paragraph{What a composable edit must preserve.}
+\claim{CL5}\claim{CL7}\claim{CL10}%
+The slot encodes its state as a Fourier code: the centred state representations lie in a few harmonic planes, as found for cyclic
+features in language models~\citep{engels2025notall,karkada2026symmetries}. A chain stays correct only while the edit carries these
+planes along. The slowest plane, the fundamental, fixes the global position of the state but changes least from one state to the
+next: it has the smallest one-step energy in \CLsevenSoneSmallestAll{} of \CLsevenCellsAll{} backbone--domain combinations. Least
+squares therefore drops it first when rank is scarce, and the result is a failure pattern we predicted before each confirmation run:
+with the fundamental frozen, one-way chains fail as the displacement grows, alternating chains survive, and chains recover after $N$
+steps. Reserving rank for the fundamental makes rank-deficient operators compose on T5Gemma (one-way $\Rk{2N}$ from at most
+\CLtenRRRMax{} to \CLtenFFMin{} in all \CLtenCells{} evaluable cells) and helps only partly on BART-base (Section~\ref{sec:fourier}).
+% CL5, CL7, CL10
+
+\paragraph{Predicting composability without decoding.}
+\claim{CL8}\claim{CL9}%
+Because composability is a property of the latent trajectory, it can be predicted without running the decoder. We apply the edit to
+encoder states only and, after every step, read the slot by comparing its harmonic coordinates with those of the clean encodings of
+each candidate state. On fresh worlds this readout agrees with the decoded chains for \CLeightAgreeBart{} (BART-base) and
+\CLeightAgreeTfive{} (T5Gemma) of worlds, against \CLeightNaiveBart{} and \CLeightNaiveTfive{} for the naive rule that a chain
+succeeds whenever its first step decodes. A single comparison at step~1, between this readout and the decoded state, separates
+instruction writes from state writes in all \CLnineCE{} decoder-trained and \CLnineState{} state-supervised cells.
+Section~\ref{sec:prediction} also reports where the predictor errs.
+% CL8, CL9
+
+\paragraph{Scope.}
+\claim{CL13}\claim{CL14}%
+Slot-centred operators fitted on one set of templates also compose on held-out templates (one-way $\Rk{2N}$ between
+\CLfourteenBaseHour{} and \CLfourteenBaseMonth{}), although the predictor is less accurate there on T5Gemma.
+\TODO{v8: natural text and scale, one sentence each, worded by the locked verdicts.}
+The findings do not extend to edits that must look content up elsewhere in the sentence: for binding edits, which move a pointer to
+the next listed participant, none of the editors we trained composes over 100 steps ($\Rk{100}\le\CLthirteenHundredMax$), including
+one given oracle routing (Section~\ref{sec:scope}).
+% CL13, CL14
+
+\paragraph{Contributions.}
+\begin{itemize}
+\item We show that one correct decoding step does not imply composability, and trace the gap to editors that write instructions for
+the decoder instead of states (Sections~\ref{sec:phenomenon}--\ref{sec:instructions}).
+\item We identify what composable low-rank edits must preserve---the harmonic planes of the slot's Fourier code, including the
+fundamental that least squares drops first---and derive the rank bound and the freeze signatures this implies
+(Section~\ref{sec:fourier}).
+\item We predict composability without running the decoder, and give a one-step test that detects instruction writes
+(Section~\ref{sec:prediction}).
+\item Every result comes from \CLmetaRounds{} preregistered rounds; Appendix~\ref{app:protocol} lists every locked prediction,
+including those that failed.
+\end{itemize}
