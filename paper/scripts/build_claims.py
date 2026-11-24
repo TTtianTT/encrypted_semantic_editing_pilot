@@ -16,6 +16,8 @@ V3ALG = 'experiments/composability_mechanisms_v2/results/algebra.json'
 V3GATES = [f'experiments/composability_mechanisms_v2/results/gates_{b}.json' for b in ('bart', 't5')]
 V6AUD = 'experiments/composability_mechanisms_v5/data/audit.json'
 V7P = 'experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json'
+V3AUD = 'experiments/composability_mechanisms_v2/data/audit.json'
+ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5']
 
 
 def _v3_sk():
@@ -68,6 +70,9 @@ DERIVED = {
     'v3_a_cells': (lambda: len(_v3_amp()), V3GATES),
     'v34_a1_largest_total': (lambda: DERIVED['v3_a1_largest'][0]() + DERIVED['v4_v0_a1_largest'][0](), V3GATES + [P['v4']]),
     'v34_a_cells_total': (lambda: DERIVED['v3_a_cells'][0]() + DERIVED['v4_v0_a1_evaluable'][0](), V3GATES + [P['v4']]),
+    'v2_reuse_min_pct': (lambda: 100 * min(v['confirm2_worlds_with_text_in_v1_train_dev'] / v['confirm2_worlds'] for v in read(V3AUD)['v2_confirm2_text_reuse_report'].values()), [V3AUD]),
+    'v2_reuse_max_pct': (lambda: 100 * max(v['confirm2_worlds_with_text_in_v1_train_dev'] / v['confirm2_worlds'] for v in read(V3AUD)['v2_confirm2_text_reuse_report'].values()), [V3AUD]),
+    'gpu_total': (lambda: sum(read(f'experiments/{d}/run_ledger.json')['total_gpu_hours'] for d in ROUND_DIRS), [f'experiments/{d}/run_ledger.json' for d in ROUND_DIRS]),
     'v7_p1_precfail_min': (lambda: min(v['prec_pred_fail'] for k, v in read(V7P)['P1_by_domain'].items() if not k.endswith('/all')), [V7P]),
     'v7_p1_precfail_max': (lambda: max(v['prec_pred_fail'] for k, v in read(V7P)['P1_by_domain'].items() if not k.endswith('/all')), [V7P]),
     'v7_p1_over_total': (lambda: sum(v['over'] for k, v in read(V7P)['P1_by_domain'].items() if k.endswith('/all')), [V7P]),

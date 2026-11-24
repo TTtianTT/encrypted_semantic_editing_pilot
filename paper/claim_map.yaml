@@ -243,3 +243,18 @@ claims:
       - {macro: CLfourteenTmplHour, derived: v6_tmpl_used_hour, fmt: '{:d}'}
       - {macro: CLfourteenTmplSparse, derived: v6_tmpl_sparse, fmt: '{:d}'}
       - {macro: CLfourteenTmplSparseMax, derived: v6_tmpl_sparse_max_worlds, fmt: '{:d}'}
+  - id: META
+    zh: 记账与数据说明（不是主张）
+    en: Bookkeeping numbers (compute, data notes); not a claim.
+    nature: bookkeeping
+    predictions: []
+    numbers:
+      - {macro: CLmetaReuseMin, derived: v2_reuse_min_pct, fmt: '{:.0f}', note: 'v2 confirm2 worlds whose text appears in v1 train/dev, percent, min over domains (v3 audit)'}
+      - {macro: CLmetaReuseMax, derived: v2_reuse_max_pct, fmt: '{:.0f}'}
+      - {macro: CLmetaGpuVone, file: experiments/symmetry_composability_v1/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVtwo, file: experiments/composability_mechanisms_v1/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVthree, file: experiments/composability_mechanisms_v2/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVfour, file: experiments/composability_mechanisms_v3/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVfive, file: experiments/composability_mechanisms_v4/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVsix, file: experiments/composability_mechanisms_v5/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuTotal, derived: gpu_total, fmt: '{:.1f}'}

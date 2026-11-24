@@ -1110,3 +1110,83 @@ claims:
     path: null
     note: null
     pending: false
+- id: META
+  zh: 记账与数据说明（不是主张）
+  en: Bookkeeping numbers (compute, data notes); not a claim.
+  nature: bookkeeping
+  predictions: []
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v1/run_ledger.json: 48151b48196ccaedda5e22f6b03af2bb4fa1f58ba487faf479372882bf0b4e67
+    experiments/composability_mechanisms_v2/data/audit.json: 990e4a7e126d4867ebac5cc22e7fe07c9da4d2b48b534d1726de00dd17661e67
+    experiments/composability_mechanisms_v2/run_ledger.json: 53e504b1155b7cc9a542cf9f3c035e605a0d1f94d3fa640da802d9ca363878e4
+    experiments/composability_mechanisms_v3/run_ledger.json: 807dcba8c119b915a0c9e052b3e3cb4211025185b8c03fff284bc3390ea47a42
+    experiments/composability_mechanisms_v4/run_ledger.json: f1f99d112f76ae860c8ce4a81eb8189362c1d40c2525abf43ca81f2ecf52b427
+    experiments/composability_mechanisms_v5/run_ledger.json: 5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546
+    experiments/symmetry_composability_v1/run_ledger.json: 50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f
+  numbers:
+  - macro: CLmetaReuseMin
+    value: 1.875
+    text: '2'
+    source: derived:v2_reuse_min_pct
+    path: null
+    note: v2 confirm2 worlds whose text appears in v1 train/dev, percent, min over
+      domains (v3 audit)
+    pending: false
+  - macro: CLmetaReuseMax
+    value: 11.875
+    text: '12'
+    source: derived:v2_reuse_max_pct
+    path: null
+    note: null
+    pending: false
+  - macro: CLmetaGpuVone
+    value: 0.8161111111111111
+    text: '0.8'
+    source: experiments/symmetry_composability_v1/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuVtwo
+    value: 0.9549999999999998
+    text: '1.0'
+    source: experiments/composability_mechanisms_v1/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuVthree
+    value: 4.035833333333333
+    text: '4.0'
+    source: experiments/composability_mechanisms_v2/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuVfour
+    value: 6.857777777777779
+    text: '6.9'
+    source: experiments/composability_mechanisms_v3/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuVfive
+    value: 6.455555555555556
+    text: '6.5'
+    source: experiments/composability_mechanisms_v4/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuVsix
+    value: 3.6750000000000003
+    text: '3.7'
+    source: experiments/composability_mechanisms_v5/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
+  - macro: CLmetaGpuTotal
+    value: 22.795277777777777
+    text: '22.8'
+    source: derived:gpu_total
+    path: null
+    note: null
+    pending: false
