@@ -15,6 +15,7 @@ SCRIPT=figs/make_fig3.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig4.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig5.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_fig6.py sbatch --parsable --export=ALL paper/job_cpu.slurm
+SCRIPT=figs/make_figC1.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_figS1.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=figs/make_figS2.py sbatch --parsable --export=ALL paper/job_cpu.slurm
 SCRIPT=scripts/reproduce_md.py sbatch --parsable --export=ALL paper/job_cpu.slurm
@@ -48,6 +49,7 @@ Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic
 | fig5 | `SCRIPT=figs/make_fig5.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v3/results/chains.csv` | `a88a88e90a9f3f3387eb64ea8e647df66f9b6af5f733ee9f94eddf3ce461a534` |
 |  |  | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | fig6 | `SCRIPT=figs/make_fig6.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
+| figC1 | `SCRIPT=figs/make_figC1.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v4/results/chains.csv` | `c77032924c273fcf9a2755fce97837e32746b2ae7d1cbdae95130fd080d84055` |
 | figS1 | `SCRIPT=figs/make_figS1.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v5/results/chains.csv` | `99dcb7d9c384c917ac5b4ccc8fafe67690976fd14efb969d9ea5278a5ac51d5f` |
 | figS2 | `SCRIPT=figs/make_figS2.py sbatch --parsable --export=ALL paper/job_cpu.slurm` | `experiments/composability_mechanisms_v5/results/chains.csv` | `99dcb7d9c384c917ac5b4ccc8fafe67690976fd14efb969d9ea5278a5ac51d5f` |
 
