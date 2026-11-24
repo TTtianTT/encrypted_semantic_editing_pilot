@@ -17,6 +17,7 @@ V2DIR = EXP / 'composability_mechanisms_v1'            # the v2 experiment
 V3DIR = EXP / 'composability_mechanisms_v2'            # the v3 experiment
 V4DIR = EXP / 'composability_mechanisms_v3'            # the v4 experiment
 V5DIR = EXP / 'composability_mechanisms_v4'            # the v5 experiment
+V6DIR = EXP / 'composability_mechanisms_v5'            # the v6 experiment (confirm6, v6 editors, slot operators, calibrations)
 BB_NAME = {'bart': 'bart', 't5': 't5gemma'}
 L_DOMAINS = dict(bart=['weekday', 'month', 'compass', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
 D_DOMAINS = dict(bart=['weekday', 'month', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
@@ -28,7 +29,8 @@ T5_OLD = ['weekday', 'month', 'compass']                # T5Gemma train/dev cach
 M_DOMAINS = MT_DOMAINS                                  # v6 unit M
 C_DOMAINS = ['weekday', 'month']                        # v6 unit C (BART, template 0)
 K_DOMAINS = ['bind3', 'name3', 'bind3fix']              # v6 unit K (BART, template 3)
-CONFIRM = 'confirm6'
+CONFIRM = 'confirm7'
+NEW_SPLITS = (CONFIRM, 'dev7ho')                       # v7 splits (this directory); dev7ho: held-out-template dev (calibration, pre-checks)
 SHARD = 16
 SHARDS = ROOT / 'results/shards'   # module attribute (patched only by the pre-lock smoke test)
 DEV = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -65,7 +67,8 @@ def tmpl_tag(d):
 def wfile(d, split):
     if split == 'confirm3': return V3DIR / f'data/{d}/worlds.jsonl'
     if split == 'confirm4': return V4DIR / f'data/{d}/worlds.jsonl'
-    if split == CONFIRM: return ROOT / f'data/{d}/worlds.jsonl'
+    if split in NEW_SPLITS: return ROOT / f'data/{d}/worlds.jsonl'
+    if split == 'confirm6': return V6DIR / f'data/{d}/worlds.jsonl'
     if split == 'confirm5' or d.endswith('-mt'): return V5DIR / f'data/{d}/worlds.jsonl'     # multi-template train / dev: v5
     if d in V1_DOMAINS: return V1 / f'data/{d}/worlds.jsonl'
     assert d in V4_DOMAINS, d
@@ -84,7 +87,8 @@ def worlds5(d, split):
 def cpath(bb, d, split, s):
     if split == 'confirm3': return V3DIR / f'local/{bb}_{d}_confirm3_t{tmpl(d)}_s{s}.pt'
     if split == 'confirm4': return V4DIR / f'local/{bb}_{d}_confirm4_t{tmpl(d)}_s{s}.pt'
-    if split == CONFIRM: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
+    if split in NEW_SPLITS: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
+    if split == 'confirm6': return V6DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
     if split == 'confirm5' or d.endswith('-mt'): return V5DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
     if bb == 'bart' and d in V1_DOMAINS: return V1 / f'local/e1_{d}_{split}_t0_s{s}.pt'
     if bb == 't5' and d in T5_OLD: return V3DIR / f'local/t5_{d}_{split}_t0_s{s}.pt'
@@ -100,7 +104,8 @@ def cache5(bb, d, split, s):
 def slots(bb, d, split):
     """Long tensor (W,) of attribute-slot positions (template 0: constant; template 3 and multi-template: per world)."""
     if split == 'confirm3': f = V3DIR / 'data/slot_positions.json'
-    elif split == CONFIRM: f = ROOT / 'data/slot_positions.json'
+    elif split in NEW_SPLITS: f = ROOT / 'data/slot_positions.json'
+    elif split == 'confirm6': f = V6DIR / 'data/slot_positions.json'
     elif split == 'confirm5' or d.endswith('-mt'): f = V5DIR / 'data/slot_positions.json'
     else: f = V4DIR / 'data/slot_positions.json'
     tab = read(f)[bb]
@@ -295,7 +300,7 @@ class PlaneEd:
 
 # ---------------------------------------------------------------- chains
 def files(kind, bb, d, mp, method, tag, n):
-    import lib6
+    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     return [lib6.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
 
 
@@ -818,7 +823,7 @@ def verify_protocol6():
 
 def chain_records(bb, d, mp, method, path):
     out = []
-    import lib6
+    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     for f in sorted(lib6.SHARDS.glob(f'chain_{bb}_{d}_{mp}_{method}_{path}_*.jsonl')): out += rows(f)
     return out
 
@@ -847,7 +852,7 @@ def vote_lams(bb, d):
     """Locked vote-model weights {full, equal, fund}: v3 calib (compass), v4 protocol (weekday, month, hour, compass8, season),
     this experiment's calib_mt (multi-template; locked with this protocol)."""
     if d == 'compass': m = read(V3DIR / f'results/calib_{bb}.json')['domains']['compass']['models']
-    elif d.endswith('-mt'): m = read(ROOT / f'results/calib_mt_{bb}.json')['domains'][d]['models']
+    elif d.endswith('-mt'): m = read(V6DIR / f'results/calib_mt_{bb}.json')['domains'][d]['models']      # v6 locked multi-template calibration
     else: m = read(V4DIR / 'protocol.json')['calib'][bb][d]['models']
     return {k: torch.tensor(v['lam'], dtype=torch.float64) for k, v in m.items()}
 
@@ -896,7 +901,7 @@ NEW_EDITORS = [
 
 
 def new_editor_path(bb, v, d, s, upd):
-    return ROOT / f'local/n_{bb}_{v}_{d}_s{s}_u{upd}.pt'
+    return V5DIR / f'local/n_{bb}_{v}_{d}_s{s}_u{upd}.pt'
 
 
 # ---------------------------------------------------------------- A.3 oracle decoupled freeze, A.1 latent predictor
@@ -1059,8 +1064,8 @@ def m_base_ops(bb, d, gates, pos):
     """The GM-selected base operator of a multi-template domain (S-RRR-16 / S-RRR-32 / E_all), acting on the slot at positions pos."""
     b = gates['GM'][d]['base']
     if b in ('SRRR16', 'SRRR32'):
-        f = load(ROOT / f'local/{bb}_srrr_{d}.pt'); r = int(b[4:]); return {op: SlotRRRop(f[op, r], pos) for op in ('plus', 'minus')}
-    assert b == 'Eall'; f = load(ROOT / f'local/{bb}_eall_{d}.pt')
+        f = load(V6DIR / f'local/{bb}_srrr_{d}.pt'); r = int(b[4:]); return {op: SlotRRRop(f[op, r], pos) for op in ('plus', 'minus')}
+    assert b == 'Eall'; f = load(V6DIR / f'local/{bb}_eall_{d}.pt')
     return {op: PlaneEd(f['fits'][op][0], f['fits'][op][1], f['B'], pos) for op in ('plus', 'minus')}
 
 
@@ -1164,12 +1169,12 @@ def ctx_dists(h, c, idx=None):
 
 
 def ctx_lam(bb, d):
-    return read(ROOT / 'results/calib_ctx_bart.json')['domains'][d]['lam_ctx'] if bb == 'bart' else None
+    return read(V6DIR / 'results/calib_ctx_bart.json')['domains'][d]['lam_ctx'] if bb == 'bart' else None
 
 
 def ctx_model(bb, d, split):
     """Locked slot vote model (v5/v4 lams) + the context term (Q_ctx, lam_ctx from results/calib_ctx_bart.json) for unit C."""
-    f = load(ROOT / f'local/ctx_{bb}_{d}.pt'); c = ctx_model_data(bb, d, split, f['Q']); c['lam_ctx'] = ctx_lam(bb, d)
+    f = load(V6DIR / f'local/ctx_{bb}_{d}.pt'); c = ctx_model_data(bb, d, split, f['Q']); c['lam_ctx'] = ctx_lam(bb, d)
     return dict(P=planes(bb, d), lams=vote_lams(bb, d), ctx=c)
 
 
@@ -1261,7 +1266,7 @@ def k_pair(kind, dim, seed):
 
 def name_positions(d, split):
     """(W, 3) token positions of the three list names (data/name_positions.json, from the BART tokenizer in d_audit.py)."""
-    tab = read(ROOT / 'data/name_positions.json')[d]; return torch.tensor([tab[w['world_id']] for w in worlds5(d, split)])
+    tab = read((ROOT if split in NEW_SPLITS else V6DIR) / 'data/name_positions.json')[d]; return torch.tensor([tab[w['world_id']] for w in worlds5(d, split)])
 
 
 def k_ops(kind, ed, pos=None, npos=None):
@@ -1329,4 +1334,143 @@ def k_name(kind, upd):
 
 
 def new6_path(bb, v, d, s, upd):
-    return ROOT / f'local/n6_{bb}_{v}_{d}_s{s}_u{upd}.pt'
+    return V6DIR / f'local/n6_{bb}_{v}_{d}_s{s}_u{upd}.pt'
+
+
+# ================================================================ v7 (PLAN v7, appendix A): manifold quantities, U predictor, repairs,
+# inverse pair, first-order errors, layer-2 ablations
+def manifold(bb, d, split, rel_tol=1e-6, Cw=None):
+    """A.1 per world: clean slot vectors Cw (W, N, dim, float64), centre mu (W, dim), orthonormal basis B (W, dim, N) of span{E_w(y) - mu}
+    (directions with relative singular value < rel_tol zeroed; rank <= N - 1) and radius R (W,) = median_y ||E_w(y) - mu||."""
+    Cw = slot_matrix(bb, d, split) if Cw is None else Cw.double()
+    mu = Cw.mean(1); C = Cw - mu[:, None]; _, Sv, Vh = torch.linalg.svd(C, full_matrices=False)
+    keep = (Sv > rel_tol * Sv[:, :1]).double(); B = Vh.transpose(1, 2) * keep[:, None, :]
+    return dict(Cw=Cw, mu=mu, B=B, R=C.norm(dim=-1).median(1).values, rank=keep.sum(1))
+
+
+def proj_in(man, hs):
+    """Pi_w (hs - mu): in-span component (W, dim), float64."""
+    x = hs.double() - man['mu'].to(hs.device); B = man['B'].to(hs.device)
+    return torch.einsum('wdk,wk->wd', B, torch.einsum('wdk,wd->wk', B, x))
+
+
+def rho_of(man, hs):
+    """A.3: ||(I - Pi_w)(hs - mu_w)|| / R_w."""
+    x = hs.double() - man['mu'].to(hs.device); return (x - proj_in(man, hs)).norm(dim=-1) / man['R'].to(hs.device)
+
+
+def margin_raw(hs, Cw, P, lam):
+    """A.2: S(y_hat) - max_{y != y_hat} S(y) with the locked vote scores; returns (argmax, m_raw)."""
+    sc = vote_scores(plane_dists(hs.double(), Cw.to(hs.device), [(k, B.to(hs.device)) for k, B in P]), lam.to(hs.device))
+    top = sc.topk(2, -1); return top.indices[:, 0], top.values[:, 0] - top.values[:, 1]
+
+
+def margin_scale(man, P, lam):
+    """M_w = median over the clean encodings E_w(y) of m_raw (A.2)."""
+    Cw = man['Cw']; W, N, _ = Cw.shape
+    vals = torch.stack([margin_raw(Cw[:, y], Cw, P, lam)[1] for y in range(N)], 1); return vals.median(1).values
+
+
+def latent_stats(h, pos, man, P, lam, Mw):
+    """Per world at one chain step: argmax of the fitted readout, normalised margin m, off-manifold rho."""
+    ar = torch.arange(len(h), device=h.device); hs = h[ar, pos.to(h.device)]
+    am, mr = margin_raw(hs, man['Cw'], P, lam); return am, mr / Mw.to(h.device), rho_of(man, hs)
+
+
+def simulate_chain7(bb, d, ops, oplist, model, split=CONFIRM, start='world_start', man=None):
+    """simulate_chain plus, per world and step, the normalised margin m and the off-manifold rho of the fitted readout (A.2, A.3)."""
+    ws = worlds5(d, split); n = len(ws); C = {s: cache5(bb, d, split, s) for s in S.states(d)}
+    state = [w['start_state'] for w in ws] if start == 'world_start' else [start] * n; s0 = list(state)
+    h = torch.stack([C[s]['h'][i] for i, s in enumerate(state)]).to(DEV); m = torch.stack([C[s]['m'][i] for i, s in enumerate(state)]).to(DEV)
+    pos = slots(bb, d, split).to(DEV); man = man or manifold(bb, d, split); P = model['P']; lam = model['lams']['full'].double(); Mw = margin_scale(man, P, lam)
+    states, am, mm, rr = [], [], [], []
+    for op in oplist:
+        prev = torch.tensor(state, device=DEV); state = [S.advance(d, s, op) for s in state]; h = apply_op(ops[op], h, m, prev); states.append(state)
+        a, mg, r = latent_stats(h, pos, man, P, lam, Mw); am.append(a.tolist()); mm.append([round(float(x), 6) for x in mg]); rr.append([round(float(x), 6) for x in r])
+    T_ = lambda L: [list(x) for x in zip(*L)]
+    return dict(world_ids=[w['world_id'] for w in ws], start=s0, states=T_(states), argmax=T_(am), m=T_(mm), rho=T_(rr))
+
+
+def u_predict(sim, tau_m, tau_r, steps=None):
+    """U (A.2-A.4): a step is predicted correct iff readout = gold, m >= tau_m and rho <= tau_r (None = no limit); a chain iff every step."""
+    out = []
+    for i in range(len(sim['world_ids'])):
+        ok = True
+        for t in range(steps or len(sim['states'][i])):
+            ok &= sim['argmax'][i][t] == sim['states'][i][t] and (tau_m is None or sim['m'][i][t] >= tau_m) and (tau_r is None or sim['rho'][i][t] <= tau_r)
+        out.append(bool(ok))
+    return out
+
+
+TAU_M = [None, 0., .1, .2, .3, .4, .5]                 # A.4 grid ('None' = no limit)
+TAU_R = [None, .05, .1, .2, .3, .5, .75, 1.]
+
+
+def repair_slot(kind, hs, man, g):
+    """A.5 slot repairs (float64): SNAP h <- E_w(g); PROJ h <- mu + Pi(h - mu); PUSH h <- E_w(g) + (I - Pi)(h - mu)."""
+    ar = torch.arange(len(hs), device=hs.device); Eg = man['Cw'].to(hs.device)[ar, g.to(hs.device)]; x = hs.double() - man['mu'].to(hs.device)
+    if kind == 'SNAP': return Eg
+    if kind == 'PROJ': return man['mu'].to(hs.device) + proj_in(man, hs)
+    assert kind == 'PUSH'; return Eg + (x - proj_in(man, hs))
+
+
+def repair(kind, h, m, pos, man, g, clean_g):
+    """A.5 on a full latent h (W, L, dim): SNAP / PROJ / PUSH change the slot only; CTX sets every non-slot position to the clean encoding of
+    state g (slot unchanged); SNAP+CTX is the clean encoding of g. clean_g: (h, m) of the clean encodings at g (same worlds, same order)."""
+    hg, mg = clean_g; L = min(h.shape[1], hg.shape[1]); assert not m[:, L:].any() and not mg[:, L:].any() and bool((m[:, :L] == mg[:, :L]).all())
+    ar = torch.arange(len(h), device=h.device); pos = pos.to(h.device)
+    if kind == 'SNAP+CTX': out = hg[:, :L].to(h.device, h.dtype).clone(); return out, m[:, :L]
+    out = h[:, :L].clone()
+    if kind == 'CTX': hs = out[ar, pos].clone(); out = hg[:, :L].to(h.device, h.dtype).clone(); out[ar, pos] = hs; return out, m[:, :L]
+    out[ar, pos] = repair_slot(kind, h[ar, pos], man, g).to(h.dtype); return out, m[:, :L]
+
+
+class SlotRRRinv:
+    """A.6: inverse of the S-RRR slot map y = h (I + L R) + b (row vectors): h = (y - b)(I - L (I_r + R L)^{-1} R) (Woodbury)."""
+    def __init__(self, op):
+        L, R, b = op.left.double(), op.right.double(), op.bias.double(); Ir = torch.eye(L.shape[1], dtype=L.dtype, device=L.device)
+        K = Ir + R @ L; self.cond = float(torch.linalg.cond(K)); self.Minv = torch.eye(L.shape[0], dtype=L.dtype, device=L.device) - L @ torch.linalg.solve(K, R)
+        self.bias = b; self.pos = op.pos
+
+    def slot(self, y):
+        return (y.double() - self.bias.to(y.device)) @ self.Minv.to(y.device)
+
+    def __call__(self, h, m):
+        ar = torch.arange(len(h), device=h.device); out = h.clone(); out[ar, self.pos.to(h.device)] = self.slot(h[ar, self.pos.to(h.device)]).to(h.dtype); return out
+
+
+def slot_map(op, hs):
+    """The slot part of an S-RRR operator (float64)."""
+    dev = op.left.device; x = hs.double().to(dev)
+    return (x + x @ op.left.double() @ op.right.double() + op.bias.double()).to(hs.device)
+
+
+def first_order_errors(man, opP, opM, d):
+    """A.7 on clean inputs: e_P(x) = (I - Pi)[P(E(x)) - E(x+1)], e_M(x+1) = (I - Pi)[M(E(x+1)) - E(x)]; per world the cycle-sum ratio
+    ||sum_x e_P(x)|| / sum_x ||e_P(x)|| and the alternating contrast median_x ||e_P(x) + e_M(x+1)|| / (||e_P(x)|| + ||e_M(x+1)||)."""
+    Cw = man['Cw']; W, N, _ = Cw.shape; off = lambda v: (v - man['mu']) - proj_in(man, v)
+    eP = torch.stack([off(slot_map(opP, Cw[:, x])) - off(Cw[:, (x + 1) % N]) for x in range(N)], 1)
+    eM = torch.stack([off(slot_map(opM, Cw[:, (x + 1) % N])) - off(Cw[:, x]) for x in range(N)], 1)
+    cyc = eP.sum(1).norm(dim=-1) / eP.norm(dim=-1).sum(1).clamp_min(1e-30)
+    con = ((eP + eM).norm(dim=-1) / (eP.norm(dim=-1) + eM.norm(dim=-1)).clamp_min(1e-30)).median(1).values
+    return dict(cycle_sum_ratio=cyc, alt_contrast=con, eP_norm=eP.norm(dim=-1).mean(1) / man['R'], eM_norm=eM.norm(dim=-1).mean(1) / man['R'])
+
+
+class Att2LAblated(nn.Module):
+    """A.8 layer-2 ablations without retraining: (a) 'uniform' a2 over non-pad positions, (b) 'self' a2_ii = 1, (c) 'drop' the layer-2 term."""
+    def __init__(self, mod, mode):
+        super().__init__(); self.mod, self.mode = mod, mode
+
+    def forward(self, h, m):
+        e = self.mod; z0, z, a1, a2 = e.layers(h, m); base = e.b + e.u(e.v(z0))
+        if self.mode == 'drop': delta = base
+        else:
+            L = h.shape[1]
+            if self.mode == 'uniform': a = (m.float() / m.float().sum(-1, keepdim=True))[:, None, :].expand(-1, L, -1)
+            else: assert self.mode == 'self'; a = torch.eye(L, device=h.device)[None].expand(len(h), -1, -1)
+            delta = base + e.o2(a @ e.wv2(z))
+        return (z0 + delta * m[..., None]).to(h.dtype)
+
+
+def new7_path(bb, v, d, s, upd):
+    return ROOT / f'local/n7_{bb}_{v}_{d}_s{s}_u{upd}.pt'

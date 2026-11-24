@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/analyze.py", line 209, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/analyze.py", line 185, in main
+    U, ucells = u_unit(P); R = r_unit(P); A = a_unit(P, ucells); K = k_unit(P)
+                ^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/analyze.py", line 48, in u_unit
+    st = by[w]; obs.append(bool(st[2 * N]['trajectory_success']))
+                                ~~^^^^^^^
+KeyError: 14
+srun: error: node01: task 0: Exited with exit code 1

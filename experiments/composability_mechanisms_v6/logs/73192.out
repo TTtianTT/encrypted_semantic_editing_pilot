@@ -1,0 +1,18 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 6158.86it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/k_chains.py", line 77, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/k_chains.py", line 64, in main
+    L = 30 if mode == 'precheck' else 6; ok, _, _ = decode_chain(eng, 'bart', d, ops, ['plus'] * L, split); out['cells'][f'{d}/{name}/plus'] = {f'R{L}': rate(ok)['rate']}
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/envs/peft-sft-lab/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/devchains.py", line 20, in decode_chain
+    P = planes(bb, d); lam = vote_lams(bb, d)['full'].double()
+                             ^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/lib7.py", line 856, in vote_lams
+    else: m = read(V4DIR / 'protocol.json')['calib'][bb][d]['models']
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 'bind3'
+srun: error: node01: task 0: Exited with exit code 1

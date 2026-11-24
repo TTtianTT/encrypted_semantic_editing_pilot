@@ -1,0 +1,739 @@
+[
+  {
+    "id": "v7/G7_0",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "confirm7 上的基算子单向 R_2N ≥ 0.95，范围包括：BART weekday/month 的 RRR-16、T5Gemma month 的 RRR-16，以及四个多句式组合的 S-RRR-16。name3 上 Tok-U 的 R_6 ≥ 0.95。不通过即停止排查。",
+    "observed": {
+      "bart": true,
+      "t5": true
+    },
+    "ci95": null,
+    "verdict": true,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/U1",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）F1。逐 world 一致率的提升（U − 只看槽位）CI 下界 > 0，且 U 的类别准确率 ≥ 0.85。",
+    "observed": {
+      "slot": 0.910625,
+      "U": 0.910625,
+      "U2": 0.910625,
+      "Um": 0.910625,
+      "Ur": 0.910625
+    },
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "verdict": false,
+    "kind": "exploratory (pre-check)",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/U2",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）F2。同上。",
+    "observed": {
+      "slot": 0.8084016393442623,
+      "U": 0.8084016393442623,
+      "U2": 0.8084016393442623,
+      "Um": 0.8084016393442623,
+      "Ur": 0.8084016393442623
+    },
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "verdict": false,
+    "kind": "exploratory (pre-check)",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/U3",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）NI。一致率下降 ≤ 0.01，且差值 CI 下界 > −0.02。",
+    "observed": {
+      "NI_bart": true,
+      "NI_t5": true
+    },
+    "ci95": null,
+    "verdict": true,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/U4",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（次）各族。U 预测失败的精确率 ≥ 0.90；F3 的提升；次版本阈值在 F2 上的结果。",
+    "observed": {
+      "precision": {
+        "NI_bart": 0.9543139604553625,
+        "F1s": 0.9587449933244325,
+        "F1": 0.951393005334914,
+        "F3": 0.9242018537590113,
+        "NI_t5": 0.968236277514628,
+        "F2": 0.9642105263157895
+      },
+      "F3_gain": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "a": 0.9021596858638743,
+        "b": 0.9021596858638743
+      },
+      "F2_secondary": {
+        "gain": {
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "a": 0.8084016393442623,
+          "b": 0.8084016393442623
+        },
+        "category": 0.625
+      }
+    },
+    "ci95": null,
+    "verdict": null,
+    "kind": "secondary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/Q21",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "H-fix：U1、U2、U3 都成立。部分：U3 成立，且 U1、U2 只成立一个；报告是哪一族。H-nofix：其他情形。",
+    "observed": null,
+    "ci95": null,
+    "verdict": "H-nofix",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/R0",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "全部案例。正对照：R-A 的 SNAP ≥ 0.90；R-B 的 SNAP+CTX ≥ 0.95。不满足则该族不可解释，只报告数字。",
+    "observed": {
+      "R-A-bart": true,
+      "R-A-t5": true,
+      "R-B-C3l10v3": true,
+      "R-B-C3l3v3": true,
+      "R-B-C3n900": true,
+      "R-B-C3v1": true,
+      "R-B-P2b": true
+    },
+    "ci95": null,
+    "verdict": true,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/R1",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）R-A（T5Gemma）。H-offhull：PROJ ≥ 0.70 且 PUSH ≤ 0.40；H-inspan：PUSH ≥ 0.70 且 PROJ ≤ 0.40；两者都 ≥ 0.70 为\"任一即可\"；两者都 ≤ 0.40 为\"都不是\"。",
+    "observed": {
+      "SNAP": {
+        "rate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n": 69
+      },
+      "PROJ": {
+        "rate": 0.6376811594202898,
+        "ci95": [
+          0.5217391304347826,
+          0.7536231884057971
+        ],
+        "n": 69
+      },
+      "PUSH": {
+        "rate": 0.4492753623188406,
+        "ci95": [
+          0.3333333333333333,
+          0.5652173913043478
+        ],
+        "n": 69
+      },
+      "CTX": null,
+      "SNAP+CTX": {
+        "rate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n": 69
+      }
+    },
+    "ci95": null,
+    "verdict": "mixed",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/R2",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）R-B。H-inspan：PUSH ≥ 0.70，且 PROJ、CTX ≤ 0.40；H-context：CTX ≥ 0.70 且 PUSH ≤ 0.40；H-offhull：PROJ ≥ 0.70 且 PUSH ≤ 0.40；其他为混合，报告全部修复率。",
+    "observed": {
+      "SNAP": {
+        "rate": 0.998,
+        "ci95": [
+          0.9933466116994697,
+          1.0
+        ],
+        "n": 500
+      },
+      "PROJ": {
+        "rate": 0.264,
+        "ci95": [
+          0.22362740557785324,
+          0.3028585298196949
+        ],
+        "n": 500
+      },
+      "PUSH": {
+        "rate": 0.98,
+        "ci95": [
+          0.967179880211795,
+          0.9916857063248816
+        ],
+        "n": 500
+      },
+      "CTX": {
+        "rate": 0.202,
+        "ci95": [
+          0.1683290761851572,
+          0.23541519386589807
+        ],
+        "n": 500
+      },
+      "SNAP+CTX": {
+        "rate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n": 500
+      }
+    },
+    "ci95": null,
+    "verdict": "H-inspan",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/R3",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）对照步。PROJ、PUSH、CTX 修复后仍成功的比例都 ≥ 0.97（修复本身不破坏正常输入）。",
+    "observed": {
+      "PROJ": {
+        "rate": 0.976,
+        "ci95": [
+          0.9616039065646396,
+          0.988599348534202
+        ],
+        "n": 625
+      },
+      "PUSH": {
+        "rate": 0.9904,
+        "ci95": [
+          0.9817268146665856,
+          0.9968895800933126
+        ],
+        "n": 625
+      },
+      "CTX": {
+        "rate": 0.968,
+        "ci95": [
+          0.9521829521829522,
+          0.9832635983263598
+        ],
+        "n": 500
+      }
+    },
+    "ci95": null,
+    "verdict": false,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/R4",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）复现案例。判定与 R1、R2 相同才算\"确认\"；不同则报告为\"不稳定\"。",
+    "observed": {
+      "A": {
+        "verdict": "mixed",
+        "status": "confirmed"
+      },
+      "B": {
+        "verdict": "mixed",
+        "pooled": {
+          "SNAP": {
+            "rate": 0.9533333333333334,
+            "ci95": [
+              0.9274434935607125,
+              0.9742846935129893
+            ],
+            "n": 300
+          },
+          "PROJ": {
+            "rate": 0.28,
+            "ci95": [
+              0.22147592949536704,
+              0.3355268622136737
+            ],
+            "n": 300
+          },
+          "PUSH": {
+            "rate": 0.9466666666666667,
+            "ci95": [
+              0.919091856967045,
+              0.9693877551020408
+            ],
+            "n": 300
+          },
+          "CTX": {
+            "rate": 0.53,
+            "ci95": [
+              0.4687445367132867,
+              0.5882352941176471
+            ],
+            "n": 300
+          },
+          "SNAP+CTX": {
+            "rate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 300
+          }
+        },
+        "status": "unstable"
+      }
+    },
+    "ci95": null,
+    "verdict": "confirmed",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/A1",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主，只看潜变量）F∅ 链上的离流形程度 ρ。H-cycle：交替与单向 plus 在 t = 2N 时 ρ 中位数之比 ≥ 2；单向 plus 在 t = N 与 t = 1 时之比 ≤ 1.5。4 个组合中至少 3 个成立。",
+    "observed": {
+      "bart/weekday-mt": {
+        "alt_over_plus_2N": 4.84027961025835,
+        "plus_N_over_1": 0.7129035339999902,
+        "holds": true,
+        "in_precheck": true,
+        "rho_median": {
+          "plus_t1": 0.408206,
+          "plus_tN": 0.2910115,
+          "plus_t2N": 0.3012765,
+          "alt_t2N": 1.4582625
+        }
+      },
+      "bart/month-mt": {
+        "alt_over_plus_2N": 4.503846764073791,
+        "plus_N_over_1": 0.4994489274050797,
+        "holds": true,
+        "in_precheck": true,
+        "rho_median": {
+          "plus_t1": 0.34432850000000004,
+          "plus_tN": 0.1719745,
+          "plus_t2N": 0.1733275,
+          "alt_t2N": 0.7806405
+        }
+      },
+      "bart/hour-mt": {
+        "alt_over_plus_2N": 12.410004270789289,
+        "plus_N_over_1": 0.4742449157735562,
+        "holds": true,
+        "in_precheck": true,
+        "rho_median": {
+          "plus_t1": 0.453658,
+          "plus_tN": 0.21514499999999998,
+          "plus_t2N": 0.23531950000000001,
+          "alt_t2N": 2.920316
+        }
+      },
+      "t5/month-mt": {
+        "alt_over_plus_2N": 58.278029774879315,
+        "plus_N_over_1": 0.31359117754822335,
+        "holds": true,
+        "in_precheck": true,
+        "rho_median": {
+          "plus_t1": 0.3316085,
+          "plus_tN": 0.10398950000000001,
+          "plus_t2N": 0.113317,
+          "alt_t2N": 6.6038915
+        }
+      }
+    },
+    "ci95": null,
+    "verdict": true,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/A2",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主，干净输入上的一阶误差，附录 A.7）一圈和比；交替对比。H-cycle：一圈和比的中位数 ≤ 0.25，且交替对比的中位数 ≥ 0.50。至少 3/4。",
+    "observed": {
+      "bart/weekday-mt": {
+        "cycle_sum_ratio_median": 0.6556482797321557,
+        "alt_contrast_median": 0.5629147787342184,
+        "eP_rel_median": 0.42084996727292084,
+        "eM_rel_median": 0.42490065657845677,
+        "worlds": 160,
+        "holds": false,
+        "train_template_dev": {
+          "cycle_sum_ratio_median": 0.13966975195605635,
+          "alt_contrast_median": 0.17805422698922727,
+          "eP_rel_median": 0.24826121826096667,
+          "eM_rel_median": 0.2485301808122572
+        }
+      },
+      "bart/month-mt": {
+        "cycle_sum_ratio_median": 0.48729313302245697,
+        "alt_contrast_median": 0.35299965417599594,
+        "eP_rel_median": 0.349283373969145,
+        "eM_rel_median": 0.33869647455221197,
+        "worlds": 122,
+        "holds": false,
+        "train_template_dev": {
+          "cycle_sum_ratio_median": 0.11306144354418873,
+          "alt_contrast_median": 0.17311132520067646,
+          "eP_rel_median": 0.273141140462792,
+          "eM_rel_median": 0.27468896022890565
+        }
+      },
+      "bart/hour-mt": {
+        "cycle_sum_ratio_median": 0.4145946025300851,
+        "alt_contrast_median": 0.3589153752770882,
+        "eP_rel_median": 0.5230132035471945,
+        "eM_rel_median": 0.49381163078291584,
+        "worlds": 160,
+        "holds": false,
+        "train_template_dev": {
+          "cycle_sum_ratio_median": 0.10056785331495453,
+          "alt_contrast_median": 0.1487896513447417,
+          "eP_rel_median": 0.38265115459588656,
+          "eM_rel_median": 0.37765174216744357
+        }
+      },
+      "t5/month-mt": {
+        "cycle_sum_ratio_median": 0.26059734388452366,
+        "alt_contrast_median": 0.21958227336317854,
+        "eP_rel_median": 0.36961575520384127,
+        "eM_rel_median": 0.3689126065440856,
+        "worlds": 122,
+        "holds": false,
+        "train_template_dev": {
+          "cycle_sum_ratio_median": 0.08355503498187929,
+          "alt_contrast_median": 0.10358904027504424,
+          "eP_rel_median": 0.2656176974917095,
+          "eM_rel_median": 0.26457234160795573
+        }
+      }
+    },
+    "ci95": null,
+    "verdict": false,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/A3",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）用 P⁻¹ 作 minus 算子时，单向 minus 的 R_2N。每个组合 ≥ 0.95。",
+    "observed": {
+      "bart/weekday-mt": {
+        "R2N": {
+          "n": 160,
+          "k": 0,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.02344619517150519
+          ]
+        },
+        "holds": false,
+        "in_precheck": true
+      },
+      "bart/month-mt": {
+        "R2N": {
+          "n": 122,
+          "k": 0,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.030526178389012868
+          ]
+        },
+        "holds": false,
+        "in_precheck": true
+      },
+      "bart/hour-mt": {
+        "R2N": {
+          "n": 160,
+          "k": 0,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.02344619517150519
+          ]
+        },
+        "holds": false,
+        "in_precheck": true
+      },
+      "t5/month-mt": {
+        "R2N": {
+          "n": 122,
+          "k": 0,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.030526178389012868
+          ]
+        },
+        "holds": false,
+        "in_precheck": true
+      }
+    },
+    "ci95": null,
+    "verdict": false,
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/A3b",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（次）(P, P⁻¹) 交替的 R_2N。≥ 0.95。这几乎由构造决定，只作对照。",
+    "observed": {
+      "bart/weekday-mt": {
+        "R2N": {
+          "n": 160,
+          "k": 160,
+          "rate": 1.0,
+          "ci95": [
+            0.9765538048284949,
+            1.0
+          ]
+        },
+        "holds": true
+      },
+      "bart/month-mt": {
+        "R2N": {
+          "n": 122,
+          "k": 122,
+          "rate": 1.0,
+          "ci95": [
+            0.969473821610987,
+            1.0
+          ]
+        },
+        "holds": true
+      },
+      "bart/hour-mt": {
+        "R2N": {
+          "n": 160,
+          "k": 160,
+          "rate": 1.0,
+          "ci95": [
+            0.9765538048284949,
+            1.0
+          ]
+        },
+        "holds": true
+      },
+      "t5/month-mt": {
+        "R2N": {
+          "n": 122,
+          "k": 122,
+          "rate": 1.0,
+          "ci95": [
+            0.969473821610987,
+            1.0
+          ]
+        },
+        "holds": true
+      }
+    },
+    "ci95": null,
+    "verdict": true,
+    "kind": "secondary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/Q22",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "H-cycle：A1、A2、A3 都成立。只有 A3 成立：写成\"互逆配对有效，但累积机制未确认\"。其他情形：按成立的部分报告。",
+    "observed": null,
+    "ci95": null,
+    "verdict": "parts: A1",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/K5",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）Att2L-U8 的单向 R_100。H-closed：中位数 ≥ 0.90，且 ≥ 4/5 个 seed 不低于 0.80；H-slow-decay：中位数 ≤ 0.50。",
+    "observed": {
+      "seeds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0625,
+        0.0
+      ],
+      "median": 0.0,
+      "verdict": "H-slow-decay"
+    },
+    "ci95": null,
+    "verdict": "H-slow-decay",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/K6",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）三种编辑器的 R_30。支持方：Att2L-U8 中 ≥ 0.90 的 seed 至少 4/5，且 Att2L-U4 与 Att1-U8 的中位数都 ≤ 0.50；对立方：Att2L-U8 的中位数 ≤ 0.50。",
+    "observed": {
+      "Att2LU8": [
+        0.08125,
+        0.28125,
+        0.58125,
+        1.0,
+        0.98125
+      ],
+      "Att2LU4": [
+        0.80625,
+        0.0125,
+        0.20625,
+        0.15625,
+        0.2875
+      ],
+      "Att1U8": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "verdict": "mixed"
+    },
+    "ci95": null,
+    "verdict": "mixed",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/K7",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）OR-U8 的 R_30。H-representable：中位数 ≥ 0.90；H-unrepresentable：中位数 ≤ 0.50。",
+    "observed": {
+      "seeds": [
+        0.0375,
+        0.01875,
+        0.19375
+      ],
+      "median": 0.0375,
+      "verdict": "H-unrepresentable"
+    },
+    "ci95": null,
+    "verdict": "H-unrepresentable",
+    "kind": "primary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/K8",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（主）Att2L-U8（8 个 seed）删掉第 2 层注意力项后的 R_30（附录 A.8 的 c）。H-layer2-needed：中位数 ≤ 0.50；H-layer2-redundant：中位数 ≥ 0.90。",
+    "observed": {
+      "seeds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median": 0.0,
+      "verdict": "H-layer2-needed",
+      "kind": "exploratory (decided by construction; pre-check)"
+    },
+    "ci95": null,
+    "verdict": "H-layer2-needed",
+    "kind": "exploratory (decided by construction; pre-check)",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  },
+  {
+    "id": "v7/K9",
+    "plan": "v7",
+    "experiment": "composability_mechanisms_v6",
+    "prediction": "（次）name3、bind3fix 上 Att2L-U8 的 R_30。不低于 0.95 的 seed ≥ 6/8。",
+    "observed": {
+      "seeds": {
+        "name3": [
+          1.0,
+          0.44375,
+          0.99375,
+          0.0,
+          1.0,
+          0.7375,
+          1.0,
+          1.0
+        ],
+        "bind3fix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "holds": {
+        "name3": false,
+        "bind3fix": true
+      }
+    },
+    "ci95": null,
+    "verdict": {
+      "name3": false,
+      "bind3fix": true
+    },
+    "kind": "secondary",
+    "lock_commit": "94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd"
+  }
+]

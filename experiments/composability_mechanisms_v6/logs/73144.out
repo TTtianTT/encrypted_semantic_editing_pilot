@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/d_audit.py", line 133, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/d_audit.py", line 50, in main
+    t = 3 if d in S.S1B else 0; ws = worlds(d); fails = Counter(); texts = Counter(); per = {}
+                                     ^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/d_audit.py", line 25, in worlds
+    return [w for w in rows(D / f'data/{d}/worlds.jsonl') if split is None or w['split'] == split]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/symutil.py", line 33, in rows
+    def rows(p): return [json.loads(s) for s in Path(p).read_text().split('\n') if s.strip()]   # '\n' only: splitlines() also splits on U+2028/U+2029 (v4 DEVIATIONS post-lock #2)
+                                                ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v6/data/weekday/worlds.jsonl'
+srun: error: node01: task 0: Exited with exit code 1
