@@ -1,0 +1,883 @@
+{
+  "unit": "G",
+  "backbone": "t5_ll",
+  "split": "confirm7",
+  "thresholds": {
+    "tau_m": 0.1,
+    "tau_r": 1.0
+  },
+  "cells": {
+    "weekday/F_empty/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_empty",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/F_empty/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_empty",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/F_empty/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_empty",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/F_{1}/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{1}",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/F_{1}/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{1}",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/F_{1}/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{1}",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/F_not1/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_not1",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/F_not1/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_not1",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/F_not1/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_not1",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/F_{2}/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{2}",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.125,
+      "pred_U": 0.0
+    },
+    "weekday/F_{2}/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{2}",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.325,
+      "pred_U": 0.0375
+    },
+    "weekday/F_{2}/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{2}",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.41875,
+      "pred_U": 0.24375
+    },
+    "weekday/F_{3}/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{3}",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.16875,
+      "pred_U": 0.1125
+    },
+    "weekday/F_{3}/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{3}",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.275,
+      "pred_U": 0.0
+    },
+    "weekday/F_{3}/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "F_{3}",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.35,
+      "pred_U": 0.2625
+    },
+    "weekday/RRR3/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR3",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/RRR3/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR3",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/RRR3/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR3",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.75625,
+      "pred_U": 0.525
+    },
+    "weekday/RRR4/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR4",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/RRR4/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR4",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/RRR4/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR4",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.46875,
+      "pred_U": 0.38125
+    },
+    "weekday/RRR5/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR5",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.1625,
+      "pred_U": 0.0125
+    },
+    "weekday/RRR5/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR5",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.1625,
+      "pred_U": 0.15
+    },
+    "weekday/RRR5/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR5",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR6/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR6",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR6/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR6",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR6/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR6",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR7/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR7",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR7/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR7",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/RRR7/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "RRR7",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "weekday/FF3/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF3",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/FF3/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF3",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "weekday/FF3/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF3",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.1125,
+      "pred_U": 0.05
+    },
+    "weekday/FF4/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF4",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.1125,
+      "pred_U": 0.0625
+    },
+    "weekday/FF4/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF4",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.1125,
+      "pred_U": 0.01875
+    },
+    "weekday/FF4/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF4",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.44375,
+      "pred_U": 0.40625
+    },
+    "weekday/FF5/plus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF5",
+      "path": "plus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.43125,
+      "pred_U": 0.26875
+    },
+    "weekday/FF5/minus": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF5",
+      "path": "minus",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.45,
+      "pred_U": 0.3375
+    },
+    "weekday/FF5/alt": {
+      "family": "state",
+      "domain": "weekday",
+      "method": "FF5",
+      "path": "alt",
+      "N": 7,
+      "worlds": 160,
+      "pred_slot": 0.8625,
+      "pred_U": 0.8625
+    },
+    "month/F_empty/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_empty",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month/F_empty/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_empty",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month/F_empty/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_empty",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month/F_{1}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{1}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{1}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{1}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{1}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{1}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 0.925
+    },
+    "month/F_not1/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_not1",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_not1/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_not1",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_not1/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_not1",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{2}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{2}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{2}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{2}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{2}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{2}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.8125,
+      "pred_U": 0.75625
+    },
+    "month/F_{3}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{3}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.31875,
+      "pred_U": 0.0
+    },
+    "month/F_{3}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{3}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.2375,
+      "pred_U": 0.0
+    },
+    "month/F_{3}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{3}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.4,
+      "pred_U": 0.1625
+    },
+    "month/F_{4}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{4}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{4}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{4}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{4}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{4}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.05625,
+      "pred_U": 0.0
+    },
+    "month/F_{5}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{5}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{5}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{5}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/F_{5}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{5}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.29375,
+      "pred_U": 0.0125
+    },
+    "month/F_{6}/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{6}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.29375,
+      "pred_U": 0.0
+    },
+    "month/F_{6}/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{6}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.29375,
+      "pred_U": 0.0
+    },
+    "month/F_{6}/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "F_{6}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.375,
+      "pred_U": 0.13125
+    },
+    "month/RRR8/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR8",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR8/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR8",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR8/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR8",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.50625,
+      "pred_U": 0.375
+    },
+    "month/RRR9/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR9",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR9/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR9",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR9/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR9",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.55625,
+      "pred_U": 0.25
+    },
+    "month/RRR10/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR10",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR10/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR10",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR10/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR10",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.73125,
+      "pred_U": 0.49375
+    },
+    "month/RRR11/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR11",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0375,
+      "pred_U": 0.0
+    },
+    "month/RRR11/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR11",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/RRR11/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR11",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.94375,
+      "pred_U": 0.86875
+    },
+    "month/RRR12/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR12",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 0.99375
+    },
+    "month/RRR12/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR12",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 0.9875
+    },
+    "month/RRR12/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "RRR12",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 1.0,
+      "pred_U": 0.9625
+    },
+    "month/FF8/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF8",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF8/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF8",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF8/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF8",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.35,
+      "pred_U": 0.30625
+    },
+    "month/FF9/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF9",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF9/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF9",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF9/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF9",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.65625,
+      "pred_U": 0.53125
+    },
+    "month/FF10/plus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF10",
+      "path": "plus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF10/minus": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF10",
+      "path": "minus",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month/FF10/alt": {
+      "family": "state",
+      "domain": "month",
+      "method": "FF10",
+      "path": "alt",
+      "N": 12,
+      "worlds": 160,
+      "pred_slot": 0.46875,
+      "pred_U": 0.35
+    }
+  },
+  "simulate_sha256": "befd33178fdab33382dcb9e9df534556a6bfb92405e4fd0072e37193c0684c71",
+  "seconds": 29.706192016601562
+}

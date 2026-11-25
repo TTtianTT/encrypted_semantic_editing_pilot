@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 5912.70it/s]
+D gate {'n': 1536, 'k': 1536, 'rate': 1.0, 'ci95': [0.9975052893928209, 1.0]}
+D layer 2 1.0
+D layer 4 1.0
+D layer 6 1.0
+D layer 8 1.0
+D layer 10 1.0
+D layer 12 1.0
+D layer 14 1.0
+D layer 16 1.0
+D layer 18 1.0
+D layer 20 0.9375
+D layer 22 0.0
+D layer 24 0.0
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/d_prep.py:40: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if k % 25 == 0 or k == updates - 1: hist.append(dict(step=k + 1, op=op, loss=float(loss), grad=float(gn)))
+D C1 50 1.0
+D C1 51 1.0
+D C1 52 1.0

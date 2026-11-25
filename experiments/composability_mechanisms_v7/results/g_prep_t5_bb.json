@@ -1,0 +1,216 @@
+{
+  "backbone": "t5_bb",
+  "revision": "72899bc3fc4fe37f5d1f4f92bee2f63cf7c4c9cf",
+  "domains": {
+    "weekday": {
+      "encoded_sha256": {
+        "train_s0": "fa57cd1e473b49c72f312041c07ba226d3f107b12f00d07dc2e0996756e08c12",
+        "train_s1": "4ace74d555e2a409bbcb4709d34d4a5281f4d21a1ecc688c34ebefef354299fc",
+        "train_s2": "1fbca1cd4a21ca05c6b3dff221ae6d4cb79f0833b236ffa309cc3ebb0732b4a9",
+        "train_s3": "bd5f30793fa4c36b3a6a4218bb2e5c14c38b93cbdf783e2e12757ae12a854269",
+        "train_s4": "a470de78568cd1707ce31f91a7e00ea09232f9c02d393b3fa4e2642dd5b7f1dd",
+        "train_s5": "0d297283bbc80f08735c5c66c51cb56d90254e299837dc04e16930cdf6b360d5",
+        "train_s6": "8e9a43d039c309650fbb8b7c3a47d76158677d617018f4e39a582d46dee32354",
+        "dev_s0": "23381cbcc995622637c4b7ec6892a04baa186a5f80a82d6a1c415e6a9aa9ad3e",
+        "dev_s1": "3a9e0effb87e2f1a4efcb0487796b950e9d5079b5f6f1099ad8f122e7e192019",
+        "dev_s2": "bb9168de03e42473788f10e79615348be1271bc26f951464646ff0cc7c2f054a",
+        "dev_s3": "213e7aa072b06cc33a04c93b2ededa3ef76bd5a32ece0d95af4d68fcafc55c1a",
+        "dev_s4": "ec646fe636c01dd05c1d922ed3123d7e8b30919abb62eb891e87010251cf28d2",
+        "dev_s5": "39566c29b5ded4a8784c56c08d97745a1b2934df6bef8643f1d902e1a9d47802",
+        "dev_s6": "1b67bf26b6fc1531468a507dbf0611eaece0072047e5eae0a97b6a8b7cabc634",
+        "confirm7_s0": "21004f3d09fff2b5bc784ea616c4187d86fbf532a4af8054a84bf08cd33a12b6",
+        "confirm7_s1": "584edb87c19a1b80f982c5814b9587c08ab3c66d51654451347853a7cae7b311",
+        "confirm7_s2": "6d3f474ad9831e51dfa36c1013eafc7e100fb311f2929d5aab36ba59f5c892f4",
+        "confirm7_s3": "9c3a40d6c7d30627356fb288d2f4f3ccba177fe971f972043c836a1c2f4a61fc",
+        "confirm7_s4": "89d1ff0f7d8bfaffde270504585de343936bfb26631aee6c596a3c9248f50fef",
+        "confirm7_s5": "9c6b7e6442c1fed4b86aca2b6bfd4e5828242340144e7729635a7a481faee9ed",
+        "confirm7_s6": "3c38a01675e2c35080950458289e69cfe842d9bd76708a885ed4c7944a2874b4"
+      },
+      "reconstruction": {
+        "n": 896,
+        "k": 896,
+        "rate": 1.0,
+        "ci95": [
+          0.9957309604008149,
+          1.0
+        ]
+      },
+      "gate": true,
+      "planes": [
+        {
+          "k": 1,
+          "dim": 2
+        },
+        {
+          "k": 2,
+          "dim": 2
+        },
+        {
+          "k": 3,
+          "dim": 2
+        }
+      ],
+      "planes_sha256": "e3159f47221782397ce0d5d2350708cbf25ecc52728ee48cebfa0fa2572b38e1",
+      "amplitudes": {
+        "1": {
+          "dim": 2,
+          "a": 32.6466747424581,
+          "s": 28.33277892916418
+        },
+        "2": {
+          "dim": 2,
+          "a": 24.612698701270944,
+          "s": 38.45321618930561
+        },
+        "3": {
+          "dim": 2,
+          "a": 20.251949251663863,
+          "s": 39.43304302659965
+        }
+      },
+      "rstar_pred": 6,
+      "ranks": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        16
+      ],
+      "ff_ranks": [
+        3,
+        4,
+        5
+      ],
+      "ridge": {
+        "RRR": {
+          "plus_3": 0.0001,
+          "plus_4": 0.0001,
+          "plus_5": 0.0001,
+          "plus_6": 0.0001,
+          "plus_7": 0.0001,
+          "plus_16": 0.0001,
+          "minus_3": 0.0001,
+          "minus_4": 0.0001,
+          "minus_5": 0.0001,
+          "minus_6": 0.0001,
+          "minus_7": 0.0001,
+          "minus_16": 0.0001
+        },
+        "FF": {
+          "plus_3": 0.0001,
+          "plus_4": 0.0001,
+          "plus_5": 0.0001,
+          "minus_3": 0.0001,
+          "minus_4": 0.0001,
+          "minus_5": 0.0001
+        }
+      },
+      "fits_sha256": "af64fec055884e4eaf6bbc70649bd74f8cde74dafc7c04c89fe62b858e0fb782",
+      "base_dev": {
+        "single": {
+          "n": 448,
+          "k": 448,
+          "rate": 1.0,
+          "ci95": [
+            0.9914982152573595,
+            0.9999999999999998
+          ]
+        },
+        "R1": {
+          "n": 32,
+          "k": 32,
+          "rate": 1.0,
+          "ci95": [
+            0.8928208017449293,
+            1.0
+          ]
+        },
+        "R_N": {
+          "n": 32,
+          "k": 32,
+          "rate": 1.0,
+          "ci95": [
+            0.8928208017449293,
+            1.0
+          ]
+        },
+        "R_2N": {
+          "n": 32,
+          "k": 32,
+          "rate": 1.0,
+          "ci95": [
+            0.8928208017449293,
+            1.0
+          ]
+        }
+      }
+    },
+    "month": {
+      "encoded_sha256": {
+        "train_s0": "5623e694baf2da3c042548ddf64d90ea3aee5a8a82cf7e0e75a7ba7318ca42cc",
+        "train_s1": "a7842d6f121ee367d6b691c12322cd214eecd6fe8427c7de989aa98a624ec9b4",
+        "train_s2": "bc4dc0cc46607c4bcc4674a98901205d77c4988be8b9d578d4e6b47e8ebfda67",
+        "train_s3": "32942fcd2ff76bde68afa5a13de947225602335d7fd1b490d76aced4c585b82f",
+        "train_s4": "cd2891e5610eb8145f9d76840d2b644c3924d79a76dfb508dd97551cfb864f7d",
+        "train_s5": "77aa2a526e694bbc63431692cddccb4e1f06acfa20375a0ea18bd6b333ec801d",
+        "train_s6": "b4688478c572b761dbb0217e5e80d62c6cce352c8a75b7e5896f5275ea0cf058",
+        "train_s7": "afe143be9c4ebf030b457528e09df78893d82f61c0be98f60380660d1b7bbbc6",
+        "train_s8": "287a6a16e6c6240f292f3386e97fe75189d747cdf6aa84759684df9f9b99fb18",
+        "train_s9": "7942e32d182a7fadf30f3b7a7285972f97610b0f5d7bc5f044053d702080d3ef",
+        "train_s10": "3e82ef7b140bb002c12aa51c6023272805b974b697102bd96fd7010985f26c68",
+        "train_s11": "c3971a8e1d003f7eaf4b94a628c7a5505f015d0f67f67023831d118e7fdfca8e",
+        "dev_s0": "8428a03806b701f8bafcb3353708fc031da095aa6f81e11c3759542996d3db8e",
+        "dev_s1": "46be656cb7e91bad202104fe6dc7bbeb93abb1ebd2e5eb22498653c9fa0e117a",
+        "dev_s2": "ecf67d951dd692f5d901c272e4e303f6fb5469109cd7b05fbd3aff88ce01dd26",
+        "dev_s3": "5927f1b3af4d357f8abc35d19f088b6cbcad885e8598a07d8eec9c15d79454a2",
+        "dev_s4": "4fba405c7dad785008ff30aa5c74ce7923622814ff8f849258c3cf4c032bd6ff",
+        "dev_s5": "381cce998146523f0886857dff464423dbcab563b49f1f1108fa30b4cf0a1df5",
+        "dev_s6": "8512b879d98091b6b64a024034aa1db63bd53c952a10148e036a23066368756b",
+        "dev_s7": "97ec627e71b646b23b46b5b432d4ee4d6c970f8b96a7277571b6e46c2043b811",
+        "dev_s8": "afbed4e9d46ee5088893d64912a18b464ea07325527986cd2bc38199e9e81a90",
+        "dev_s9": "fd1f44170d21506b1adb75703ae33bdd5184e98347f63c3844258839f7430b7b",
+        "dev_s10": "70d324863e58b08fd9a1ab3d79ba58154418ae7ec80fb29248059c8638ef88e5",
+        "dev_s11": "b9dfd2e199eac1bc5aeb5e5ec7399742fb0ec2c2cc8713171b87247189393f6f",
+        "confirm7_s0": "a918ee77689bc808eefe35352788c81e69fc24e194d8bcdcac4079e339a53ece",
+        "confirm7_s1": "b8d52c1d0174fecd13be597e62b15d6eb6c556ca533a70af066c2449f03c9377",
+        "confirm7_s2": "02b67ea56767b5d0feddc442d7844e7327b79caa64ebbfe11ff4416ca1b7500e",
+        "confirm7_s3": "64bb9723d432803ca9273574f44343009c916291e235ec1d9ea528a6cd6f46e4",
+        "confirm7_s4": "524735d2453a811c366e12e92f90479385e66c59d70ec7d9a2879e4df87ba33b",
+        "confirm7_s5": "de0c37a762e9c326867ca3084748a2a94cb4075b821405a1f88762505c66d6e4",
+        "confirm7_s6": "9892f4bd42d4f8a929d7c6d66019670ff8c0b00757d1936e0d3cd9c762dbf277",
+        "confirm7_s7": "bf5f237aeef9ea06164aad59bdc209c87edc55c86fc3dc04c4544cc218af5ece",
+        "confirm7_s8": "133118d7986a38b527f51ebb05e8d96a3301f7e809b27246b79d58b3d0dcc381",
+        "confirm7_s9": "690abfb40e0f6bc0bd5d551461f5c6234e326d373fb32447a786cc8b1b71a3e3",
+        "confirm7_s10": "b6e82065485c9a56f138ae5110c0a7d0b4fd16de97ae815f7b7608f3235ab0ee",
+        "confirm7_s11": "924a1b23b375427c6b49b2ebec1a37e7940dc05bb5613c91a94e98e7ef7dd3f4"
+      },
+      "reconstruction": {
+        "n": 1536,
+        "k": 1515,
+        "rate": 0.986328125,
+        "ci95": [
+          0.9791892521721536,
+          0.9910405019638323
+        ]
+      },
+      "gate": false
+    }
+  },
+  "gate": false,
+  "resources": {
+    "model": "t5gemma",
+    "dimension": 768,
+    "backbone_parameters": 591490560,
+    "parameters_per_operator": 25344,
+    "total_editor_parameters": 50688,
+    "gpu": "NVIDIA B300 SXM6 AC",
+    "visible_devices": "0",
+    "allocated_gpu_count": 1,
+    "peak_allocated_bytes": 1907423744,
+    "wall_seconds": 89.2644044990011,
+    "job_id": "73501",
+    "step_id": "0"
+  },
+  "seconds": 104.72732281684875
+}

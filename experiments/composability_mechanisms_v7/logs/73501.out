@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 5517.01it/s]
+encoded t5_bb weekday train
+encoded t5_bb weekday dev
+encoded t5_bb weekday confirm7
+gate t5_bb weekday 1.0
+base t5_bb weekday r*_pred 6 single 1.0 R_2N 1.0
+calib t5_bb weekday {'full': 0.925, 'equal': 0.917, 'fund': 0.737}
+encoded t5_bb month train
+encoded t5_bb month dev
+encoded t5_bb month confirm7
+gate t5_bb month 0.986328125

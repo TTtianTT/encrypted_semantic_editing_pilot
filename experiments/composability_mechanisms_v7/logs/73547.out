@@ -1,0 +1,8 @@
+D layer {'rule': 'median of the tied layers (lower median for an even count); secondary: shallowest and deepest tied layer (DEVIATIONS 7)', 'profile': {2: 1.0, 4: 1.0, 6: 1.0, 8: 1.0, 10: 1.0, 12: 1.0, 14: 1.0, 16: 1.0, 18: 1.0, 20: 0.9375, 22: 0.0, 24: 0.0}, 'tied': [2, 4, 6, 8, 10, 12, 14, 16, 18], 'primary': 10, 'secondary': [2, 18], 'gate': True, 'continue_': True}
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 5496.97it/s]
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/d_prep.py:40: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if k % 25 == 0 or k == updates - 1: hist.append(dict(step=k + 1, op=op, loss=float(loss), grad=float(gn)))
+D C1 10 50 1.0
+D C1 10 51 1.0
+D C1 10 52 1.0

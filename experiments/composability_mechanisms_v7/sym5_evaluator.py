@@ -1,0 +1,203 @@
+"""Independent finite-grammar parser (v4): v1 domains, S1b binding domains, and the new cyclic domains hour / compass8 / season.
+Imports no semantics module.
+
+The whole output must be consumed by one template regex (grammar); unknown attribute words are unresolved.
+Returned fields match four-domain evaluator.score: success, target, preserved, scope, parseable, grammar, ended.
+"""
+import re
+
+_VOCAB = {
+    'weekday': 'monday tuesday wednesday thursday friday saturday sunday'.split(),
+    'month': 'january february march april may june july august september october november december'.split(),
+    'compass': 'north east south west'.split(),
+    'egoside': 'front right back left'.split(),
+    'hour': 'one two three four five six seven eight nine ten eleven twelve'.split(),
+    'compass8': 'north northeast east southeast south southwest west northwest'.split(),
+    'season': 'spring summer autumn winter'.split(),
+}
+_DAYS = {'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
+_FACT = r' the (?P<obj2>[a-z]+) is (?P<color>blue|red|green|white|black)\. there (?:are (?P<qn>[2-9]) copies|is (?P<q1>1) copy)\.'
+_STATUS = r' its status is (?P<status>planned|completed|cancelled)\.'
+
+
+def normalize(text):
+    return re.sub(r'\s+', ' ', text.strip().replace('’', "'")).lower()
+
+
+_PRON = ['me', 'you', 'them']
+_FIXED = ['daniel', 'sarah', 'kevin']
+_S1B = ('pron3', 'name3', 'bind3', 'bind3fix')
+
+
+def _pattern(domain, structure):
+    if domain in _S1B:
+        core = (r'participants: (?P<p0>[a-z]+), (?P<p1>[a-z]+), (?P<p2>[a-z]+)\. the (?P<obj>[a-z]+) was sent to (?P<x>[a-z]+)\.' if structure == 0 else
+                r'(?P<p0>[a-z]+), (?P<p1>[a-z]+) and (?P<p2>[a-z]+) took part, and the (?P<obj>[a-z]+) went to (?P<x>[a-z]+)\.')
+        return core + _FACT
+    if domain in ('weekday', 'month'):
+        core = (r'the (?P<obj>[a-z]+) event is scheduled for (?P<x>[a-z]+)\.' if structure == 0 else
+                r'(?P<a>[a-z]+) noted that the (?P<obj>[a-z]+) event is scheduled for (?P<x>[a-z]+), and (?P<b>[a-z]+) agreed\.')
+        return core + _STATUS + _FACT
+    if domain == 'hour':
+        assert structure == 0
+        return r"the (?P<obj>[a-z]+) event starts at (?P<x>[a-z]+) o'clock\." + _STATUS + _FACT
+    if domain == 'season':
+        assert structure == 0
+        return r'the (?P<obj>[a-z]+) event is held in (?P<x>[a-z]+)\.' + _STATUS + _FACT
+    if domain == 'daysago':
+        core = (r'the (?P<obj>[a-z]+) event is dated (?P<x>[a-z]+) days ago\.' if structure == 0 else
+                r'(?P<a>[a-z]+) noted that the (?P<obj>[a-z]+) event is dated (?P<x>[a-z]+) days ago, and (?P<b>[a-z]+) agreed\.')
+        return core + _STATUS + _FACT
+    core = (r"in (?P<a>[a-z]+)'s report, the (?P<obj>[a-z]+) is on the (?P<x>[a-z]+) side\." if structure == 0 else
+            r"according to (?P<a>[a-z]+)'s report, which (?P<b>[a-z]+) checked, the (?P<obj>[a-z]+) lies on the (?P<x>[a-z]+) side\.")
+    return core + _FACT
+
+
+def parse(text, domain, structure):
+    t = normalize(text)
+    m = re.fullmatch(_pattern(domain, structure), t)
+    if not m:
+        return None, False
+    g = m.groupdict()
+    if domain in _S1B:
+        parts = [g['p0'], g['p1'], g['p2']]
+        vocab = _PRON if domain == 'pron3' else _FIXED if domain == 'name3' else parts
+        value = vocab.index(g['x']) if g['x'] in vocab else None
+        p = dict(value=value, word=g['x'], participants=parts, object=g['obj'], fact_object=g['obj2'], color=g['color'],
+                 quantity=int(g['qn'] or g['q1']), status=None, a=None, b=None)
+        return p, value is not None
+    if domain == 'daysago':
+        value = _DAYS.get(g['x'])
+    else:
+        value = _VOCAB[domain].index(g['x']) if g['x'] in _VOCAB[domain] else None
+    p = dict(value=value, object=g['obj'], fact_object=g['obj2'], color=g['color'], quantity=int(g['qn'] or g['q1']),
+             status=g.get('status'), a=g.get('a'), b=g.get('b'))
+    return p, value is not None
+
+
+def score(text, gold, world, ended=True):
+    d = gold['domain']; s = gold['structure']
+    p, grammar = parse(text, d, s)
+    target = preserved = False
+    if p is not None:
+        a, b = gold['people'][0].lower(), gold['people'][1].lower()
+        target = p['value'] == gold['state']
+        preserved = (p['object'] == gold['object'] and p['fact_object'] == gold['object'] and p['color'] == gold['color']
+                     and p['quantity'] == gold['quantity'])
+        if d in _S1B:
+            preserved &= p['participants'] == [x.lower() for x in gold['people']]
+            if d in ('bind3', 'bind3fix'):
+                target = p['word'] == gold['people'][gold['state']].lower()
+        elif d in ('weekday', 'month', 'daysago', 'hour', 'season'):
+            preserved &= p['status'] == gold['status']
+        if d in ('compass', 'egoside', 'compass8') or (s == 3 and d not in _S1B):
+            preserved &= p['a'] == a
+        if s == 3 and d not in _S1B:
+            preserved &= p['b'] == b
+    scope = target and preserved
+    return dict(success=bool(ended and grammar and scope), target=bool(target), preserved=bool(preserved), scope=bool(scope),
+                parseable=p is not None, grammar=bool(grammar), ended=bool(ended))
+
+
+# ---------------------------------------------------------------- A.8 decoded-state parser (v3)
+_NAMES = ['alice', 'bob', 'carol', 'david', 'emma', 'frank', 'grace', 'henry']
+_SLOT = {'weekday': r'scheduled for ([a-z]+)', 'month': r'scheduled for ([a-z]+)', 'daysago': r'dated ([a-z]+) days ago',
+         'compass': r'on the ([a-z]+) side', 'egoside': r'on the ([a-z]+) side', 'compass8': r'on the ([a-z]+) side',
+         'hour': r"starts at ([a-z]+) o'clock", 'season': r'held in ([a-z]+)'}
+
+
+def parse_state(text, domain, people=None):
+    """Find the domain's state words in the attribute phrase; exactly one -> its state index, else None.
+    Returns (state, word); for bind3/bind3fix the word is reported even when it is not in the participant list."""
+    t = normalize(text); first = t.split('. ')[0]
+    if domain in _S1B:
+        m = re.search(r'(?:went|was sent) to ([a-z]+)', first); w = m[1] if m else None
+        vocab = _PRON if domain == 'pron3' else _FIXED if domain == 'name3' else [p.lower() for p in people]
+    else:
+        m = re.search(_SLOT[domain], first); w = m[1] if m else None
+        vocab = list(_DAYS) if domain == 'daysago' else _VOCAB[domain]
+    if w is None:  # fall back: exactly one state word anywhere in the first sentence
+        hits = [v for v in vocab if re.search(r'\b' + v + r'\b', first)]
+        if len(hits) != 1: return None, None
+        w = hits[0]
+    if w not in vocab: return None, w
+    return (_DAYS[w] if domain == 'daysago' else vocab.index(w)), w
+
+
+# ---------------------------------------------------------------- v5 multi-template domains (PLAN appendix A.6)
+import json as _json
+from functools import lru_cache as _lru
+from pathlib import Path as _Path
+
+_MT = ('weekday-mt', 'month-mt', 'hour-mt')
+_MT_WORDS = {'weekday-mt': 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday'.split(),
+             'month-mt': 'January February March April May June July August September October November December'.split(),
+             'hour-mt': 'one two three four five six seven eight nine ten eleven twelve'.split()}
+
+
+@_lru(None)
+def _mt_templates():
+    return _json.loads((_Path(__file__).resolve().parent / 'data/templates_mt.json').read_text())['templates']
+
+
+def ws_norm(text):
+    """A.6: strip leading/trailing whitespace and collapse runs of whitespace to one space (case-sensitive)."""
+    return re.sub(r'\s+', ' ', text.strip())
+
+
+@_lru(None)
+def _mt_regex(domain, template_id, fields_key):
+    sent = '\x00SLOT\x00'; f = dict(fields_key, X=sent)
+    filled = ws_norm(_mt_templates()[domain][template_id]['text'].format(**f))
+    return re.compile(re.escape(filled).replace(re.escape(sent), '(?P<x>' + '|'.join(_MT_WORDS[domain]) + ')'))
+
+
+def mt_score(text, gold, ended=True):
+    """Success: whitespace-normalised exact match with the gold text (case-sensitive) and the output ended."""
+    exact = ws_norm(text) == ws_norm(gold['text'])
+    st = mt_parse_state(text, gold['domain'], gold['template_id'], gold['fields'])[0]
+    target = st == gold['state']
+    return dict(success=bool(ended and exact), target=bool(target), preserved=st is not None, scope=bool(exact),
+                parseable=st is not None, grammar=bool(exact), ended=bool(ended))
+
+
+def mt_parse_state(text, domain, template_id, fields):
+    """A.6: the template's regex (non-slot parts filled with this world's values, escaped; slot = disjunction of the domain's state
+    words); full match on the whitespace-normalised text -> (state index, word), else (None, None)."""
+    key = tuple(sorted((k, v) for k, v in fields.items() if k != 'X'))
+    m = _mt_regex(domain, template_id, key).fullmatch(ws_norm(text))
+    if not m: return None, None
+    return _MT_WORDS[domain].index(m['x']), m['x']
+
+
+_score_v4, _parse_state_v4 = score, parse_state
+
+
+def nat_parse_state(text, gold):
+    """v8 natural text: the output must be prefix + one month word + suffix (whitespace-normalised) -> (state index, word)."""
+    t, p, s = ws_norm(text), ws_norm(gold["prefix"]), ws_norm(gold["suffix"])
+    for i, w in enumerate(_NAT_WORDS):
+        if t == ws_norm(gold["prefix"] + w + gold["suffix"]): return i, w
+    return None, None
+
+
+def nat_score(text, gold, ended=True):
+    exact = ws_norm(text) == ws_norm(gold["text"]); st = nat_parse_state(text, gold)[0]
+    return dict(success=bool(ended and exact), target=st == gold["state"], preserved=st is not None, scope=bool(exact), parseable=st is not None,
+                grammar=bool(exact), ended=bool(ended))
+
+
+_NAT_WORDS = "January February March April May June July August September October November December".split()
+
+
+def score(text, gold, world, ended=True):
+    if gold["domain"] == "month-nat": return nat_score(text, gold, ended)
+    if gold["domain"] in _MT: return mt_score(text, gold, ended)
+    return _score_v4(text, gold, world, ended)
+
+
+def parse_state(text, domain, people=None, gold=None):
+    """v4 parser; multi-template domains need the world's gold (template_id and fields)."""
+    if domain == 'month-nat': return nat_parse_state(text, gold)
+    if domain in _MT: return mt_parse_state(text, domain, gold['template_id'], gold['fields'])
+    return _parse_state_v4(text, domain, people)
