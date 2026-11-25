@@ -26,3 +26,11 @@
 73429 train8 G t5_9b now after 73453
 73454 dev8 G t5_9b (lane B, after 73429)
 73458 selftest8 cpu
+73463 simulate8 --unit N --backbone bart (lane A, after 73452)
+73464 simulate8 --unit G --backbone t5_bb (lane A, after 73463)
+73465 simulate8 --unit G --backbone t5_ll (lane A, after 73464)
+73466 chains8 --unit N --backbone bart --smoke (lane A, after 73465)
+73467 simulate8 --unit N --backbone t5 (lane B, after 73454)
+73468 simulate8 --unit G --backbone t5_9b (lane B, after 73467)
+73469 chains8 --unit N --backbone t5 --smoke (lane B, after 73468)
+73470 chains8 --unit G --backbone t5_9b --smoke (lane B, after 73469)
