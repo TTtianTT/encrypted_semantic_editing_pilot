@@ -864,6 +864,7 @@ def vote_lams(bb, d):
     """Locked vote-model weights {full, equal, fund}: v3 calib (compass), v4 protocol (weekday, month, hour, compass8, season),
     this experiment's calib_mt (multi-template; locked with this protocol)."""
     if d == S.NAT: m = read(ROOT / f'results/calib_nat_{bb}.json')['domains'][d]['models']           # v8 natural text (n_prep.py; locked with this protocol)
+    elif bb in MODELS8: m = read(ROOT / f'results/calib_g_{bb}.json')['domains'][d]['models']       # v8 new backbones (g_prep.py)
     elif d == 'compass': m = read(V3DIR / f'results/calib_{bb}.json')['domains']['compass']['models']
     elif d.endswith('-mt'): m = read(V6DIR / f'results/calib_mt_{bb}.json')['domains'][d]['models']      # v6 locked multi-template calibration
     else: m = read(V4DIR / 'protocol.json')['calib'][bb][d]['models']
@@ -1244,8 +1245,10 @@ class OREditor(nn.Module):
     """A.5 (diagnostic): delta_i = b + U V h_i at every position; at the slot also W_o W_v h_src, src = position of the gold next (plus) /
     previous (minus) list name. Trained: W_v, W_o, U, V, b."""
     def __init__(self, d, rank=32, dk=64):
-        super().__init__(); self.b = nn.Parameter(torch.zeros(d)); self.v = nn.Linear(d, rank, bias=False); self.u = nn.Linear(rank, d, bias=False)
-        nn.init.normal_(self.v.weight, std=.01); nn.init.zeros_(self.u.weight); self.wv = nn.Linear(d, dk, bias=False); self.o = nn.Linear(dk, d, bias=False)
+        super().__init__(); self.b = nn.Parameter(torch.zeros(d))
+        if rank is None: self.v = nn.Identity(); self.u = nn.Linear(d, d, bias=False)               # v8 E2: full-rank UV (zero-initialised like U)
+        else: self.v = nn.Linear(d, rank, bias=False); self.u = nn.Linear(rank, d, bias=False); nn.init.normal_(self.v.weight, std=.01)
+        nn.init.zeros_(self.u.weight); self.wv = nn.Linear(d, dk, bias=False); self.o = nn.Linear(dk, d, bias=False)
         nn.init.zeros_(self.o.weight)
 
     def forward(self, h, m, pos, src):
@@ -1269,10 +1272,10 @@ class ORop:
 SIGN = {'plus': 1, 'minus': -1}
 
 
-def k_pair(kind, dim, seed):
+def k_pair(kind, dim, seed, rank=32):
     torch.manual_seed(seed)
     if kind == 'Att2L': mk = lambda: Att2LEditor(dim)
-    elif kind == 'OR': mk = lambda: OREditor(dim)
+    elif kind == 'OR': mk = lambda: OREditor(dim, rank=rank)            # rank: v8 E2 (128, None = full); default 32 as v6/v7
     else: return tokatt_pair(dim, seed, kind != 'Tok', heads=2 if kind == 'Att2' else 1)
     return nn.ModuleDict({op: mk() for op in ('plus', 'minus')}).to(DEV).float()
 
@@ -1288,7 +1291,7 @@ def k_ops(kind, ed, pos=None, npos=None):
 
 
 def k_load(path, dim):
-    c = load(path); ed = k_pair(c['kind'], dim, c['seed']); ed.load_state_dict(c['editor']); return c['kind'], ed.eval().requires_grad_(False)
+    c = load(path); ed = k_pair(c['kind'], dim, c['seed'], c.get('rank', 32)); ed.load_state_dict(c['editor']); return c['kind'], ed.eval().requires_grad_(False)
 
 
 def k_step(ed, kind, op, h, m, ctx=None, states=None):
@@ -1306,7 +1309,7 @@ def k_unrolled_loss(ed, kind, h, m, seq, ys, xs, ctx=None, states_seq=None):
     return loss / len(seq)
 
 
-def train_k(d, seed, kind, updates=4000, Sset=(1, 2, 3, 4), batch=16, lr=1e-3, clip=1.0, data=None):
+def train_k(d, seed, kind, updates=4000, Sset=(1, 2, 3, 4), batch=16, lr=1e-3, clip=1.0, data=None, rank=32):
     """A.6 / v5 A.4 unrolled L2 for the K editors (Tok, Att1, Att2, Att2L, OR): per update path type uniform over plus^S / minus^S /
     alternating, S uniform in Sset, batch 16 (world, start) from train; loss (1/S) sum_s rel_l2(h_s, E(x_s)) with E(x_{s-1}) in the
     denominator; gradient through the unrolled chain; AdamW 1e-3, clip 1. data: dict(H={s: (h, m)}, adv, pos, npos) overrides the train
@@ -1315,7 +1318,7 @@ def train_k(d, seed, kind, updates=4000, Sset=(1, 2, 3, 4), batch=16, lr=1e-3, c
         data = dict(H={s: (cache5('bart', d, 'train', s)['h'], cache5('bart', d, 'train', s)['m']) for s in S.states(d)}, adv=lambda s, op: S.advance(d, s, op))
         if kind == 'OR': data.update(pos=slots('bart', d, 'train'), npos=name_positions(d, 'train'))
     H, adv = data['H'], data['adv']; W = len(next(iter(H.values()))[0]); pool = [(i, s) for s in H for i in range(W)]; dim = next(iter(H.values()))[0].shape[-1]
-    ed = k_pair(kind, dim, seed); opt = torch.optim.AdamW(ed.parameters(), lr=lr, weight_decay=0); rng = random.Random(seed); hist = []
+    ed = k_pair(kind, dim, seed, rank); opt = torch.optim.AdamW(ed.parameters(), lr=lr, weight_decay=0); rng = random.Random(seed); hist = []
     get = lambda its: torch.stack([H[s][0][i] for i, s in its]).to(DEV).float()
     for k in range(updates):
         pk = rng.choice(('plus', 'minus', 'alt')); S_ = rng.choice(list(Sset)); seq = path_seq(pk, S_); bt = [rng.choice(pool) for _ in range(batch)]
@@ -1514,3 +1517,49 @@ def engine8(bb, cap=None):
                 decoder_start_token_id=e.model.config.decoder.bos_token_id, cache_implementation='dynamic'); e.cache = {}
     man = read(ROOT / 'data/model_manifest_v8.json'); e.revision = next(v['revision'] for v in man.values() if v.get('directory') == d)
     return e
+
+
+@torch.no_grad()
+def calib_probes(eng, bb, d, P, split='dev'):
+    """v3/v6 calibration probes (calib_mt.py procedure): per dev world, state x, plane k and shift, the slot is moved inside plane k only
+    ('single') or outside it ('complement') towards x + shift; decoded and parsed. Returns (H, meta, parsed states, Cw)."""
+    ws = worlds5(d, split); n = len(ws); N = len(S.states(d)); Cw = slot_matrix(bb, d, split); pos = slots(bb, d, split)
+    C = {s: cache5(bb, d, split, s) for s in S.states(d)}; dim = Cw.shape[-1]; H = []; meta = []; t = tmpl(d)
+    for x in S.states(d):
+        for k, B in P:
+            Pk = B @ B.T; Pc = torch.eye(dim, dtype=torch.float64) - Pk
+            for kind, Proj in (('single', Pk), ('complement', Pc)):
+                for mshift in range(1, N):
+                    y_true = (x + mshift) % N; slot = Cw[:, x] + (Cw[:, y_true] - Cw[:, x]) @ Proj
+                    for w in range(n): meta.append((w, x, k, kind, mshift)); H.append(slot[w])
+    H = torch.stack(H); out_y = []; bs = 256 if bb == 'bart' else 128
+    for lo in range(0, len(H), bs):
+        part = meta[lo:lo + bs]; hs = H[lo:lo + bs]
+        h = torch.stack([C[x]['h'][w] for w, x, *_ in part]).cuda(); m = torch.stack([C[x]['m'][w] for w, x, *_ in part]).cuda()
+        ar = torch.arange(len(part)); pp = pos[[w for w, *_ in part]]; h[ar, pp] = hs.float().cuda()
+        for o, (w, x, *_) in zip(dec(eng, h, m), part):
+            out_y.append(Ev.parse_state(o['text'], d, gold=S.gold(ws[w], x, t))[0] if d == S.NAT or d.endswith('-mt') else Ev.parse_state(o['text'], d)[0])
+    return H, meta, out_y, Cw
+
+
+def fit_calibration(bb, d, P, H, meta, ys, Cw):
+    """Vote models full / equal / fund by maximum likelihood on the parsed probes (v3 A.2; calib_mt.py)."""
+    N = len(S.states(d)); ok = [i for i, y in enumerate(ys) if y is not None]; y = torch.tensor([ys[i] for i in ok])
+    Cand = torch.stack([Cw[meta[i][0]] for i in ok]); Dm = plane_dists(H[ok], Cand, P)
+    nxt = [S.advance(d, s, 'plus') for s in S.states(d)]
+    dpair = torch.stack([((Cw[:, nxt] - Cw) @ B).square().sum(-1).reshape(-1) for _, B in P], 1)
+    lam0 = 1 / dpair.median(0).values; Ed = dpair.mean(0); models = {}
+    for mode in ('full', 'equal', 'fund'):
+        lam, nll = fit_vote(Dm, y, mode, lam0)
+        models[mode] = dict(lam=lam.tolist(), nll=nll, probe_accuracy=float((vote_scores(Dm, lam).argmax(-1) == y).double().mean()), omega=omega(lam, Ed))
+    by_type = {}
+    for (w, x, k, kind, ms), yy in zip(meta, ys):
+        c = by_type.setdefault(f'{kind}_k{k}', dict(n=0, unparsable=0, source=0, moved=0, other=0))
+        c['n'] += 1; c['unparsable' if yy is None else 'source' if yy == x else 'moved' if yy == (x + ms) % N else 'other'] += 1
+    return dict(N=N, planes=[dict(k=k, dim=B.shape[1]) for k, B in P], models=models, probes=len(ys), parsable=len(ok), probe_outcomes=by_type,
+                lambda0=lam0.tolist(), mean_step_dist=Ed.tolist())
+
+
+def rstar_pred(amp, frac=0.05):
+    """PLAN C3: r*_pred = sum of the dimensions of the planes whose amplitude a_k is at least frac of the largest."""
+    amax = max(v['a'] for v in amp.values()); return int(sum(v['dim'] for v in amp.values() if v['a'] >= frac * amax))
