@@ -35,8 +35,14 @@ accumulates to \CLsixteenAltMin{}--\CLsixteenAltMax{} times the one-way value af
 errors cancel over a cycle (Proposition~4, Appendix~\ref{app:theory}) fits the training templates (cycle-sum ratio
 \CLsixteenCycDevMin{}--\CLsixteenCycDevMax{}, exploratory) but not the held-out ones (\CLsixteenCycMin{}--\CLsixteenCycMax{}), so we
 keep it as an unconfirmed explanation. Pairing the operator with its exact inverse does not help: used as the minus operator, the
-inverse fails from the first steps ($\Rk{2N} = \CLsixteenInvMax{}$ on every combination). \TODO{E1 (v8): whether the fitted operators
-contract and the exact inverse expands off-manifold directions.}
+inverse fails from the first steps ($\Rk{2N} = \CLsixteenInvMax{}$ on every combination).
+An exploratory analysis of the operators' linear parts (eighth round, before its lock; no decoding) points to why. Along the chains, the
+fitted plus and minus operators shrink the off-manifold part of the slot at every step (median gain \CLeoneSlotPLo{}--\CLeoneSlotPHi{}
+for plus, \CLeoneSlotMLo{}--\CLeoneSlotMHi{} for minus, on all four combinations and both path types), while the exact inverse
+enlarges it (\CLeoneSlotPinvLo{}--\CLeoneSlotPinvHi{}). Least squares thus fits a slightly contracting map, which is consistent with
+the one-way decrease of $\rho$ above; inverting it turns the contraction into expansion, which is consistent with the failure of the
+exact inverse. For the template-0 RRR-16 control the plus and minus gains are close to one (\CLeoneCtlPLo{}--\CLeoneCtlPHi{} and
+\CLeoneCtlMLo{}--\CLeoneCtlMHi{}). This is an explanation, not a tested prediction.
 
 \paragraph{Binding.}\claim{CL13}
 Binding domains, where the slot must point to the next of three listed participants, were the hardest case in earlier rounds: the best

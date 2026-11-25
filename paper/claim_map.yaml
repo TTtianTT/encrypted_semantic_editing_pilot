@@ -305,9 +305,10 @@ claims:
   - id: CL16
     zh: 未见句式上交替链离开干净流形；一阶抵消（命题 4）未获确认
     en: On held-out templates alternating chains drift off the clean manifold while one-way chains do not; first-order one-cycle cancellation (proposition 4) is not confirmed and the exact inverse is not a usable minus operator.
-    nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an unconfirmed explanation
+    nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an unconfirmed explanation; v8 E1 (operator gains) exploratory
     predictions: [v7/A1]
     counter_predictions: [v7/A2, v7/A3]
+    exploratory_sources: [v8 E1 results/e1.json (CPU, before the v8 lock; plan change of 2026-11-25)]
     numbers:
       - {macro: CLsixteenNOneMin, derived: v7_a1_n1_min, fmt: '{:.2f}', note: 'rho(plus, N) / rho(plus, 1)'}
       - {macro: CLsixteenNOneMax, derived: v7_a1_n1_max, fmt: '{:.2f}'}
@@ -318,6 +319,18 @@ claims:
       - {macro: CLsixteenCycDevMin, derived: v7_a2_dev_min, fmt: '{:.2f}', note: 'exploratory: training-template dev'}
       - {macro: CLsixteenCycDevMax, derived: v7_a2_dev_max, fmt: '{:.2f}'}
       - {macro: CLsixteenInvMax, derived: v7_a3_max, fmt: '{:.2f}', note: 'A3: one-way minus R_2N with P^-1'}
+      - {macro: CLeoneSlotPLo, derived: v8_e1_slot_P_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of P over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneSlotPHi, derived: v8_e1_slot_P_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of P over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneSlotMLo, derived: v8_e1_slot_M_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of M over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneSlotMHi, derived: v8_e1_slot_M_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of M over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneSlotPinvLo, derived: v8_e1_slot_Pinv_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of Pinv over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneSlotPinvHi, derived: v8_e1_slot_Pinv_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of Pinv over the four slot-operator combinations (one-way plus and alternating F_empty chains)'}
+      - {macro: CLeoneCtlPLo, derived: v8_e1_rrr_P_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of P over the template-0 RRR-16 control'}
+      - {macro: CLeoneCtlPHi, derived: v8_e1_rrr_P_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of P over the template-0 RRR-16 control'}
+      - {macro: CLeoneCtlMLo, derived: v8_e1_rrr_M_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of M over the template-0 RRR-16 control'}
+      - {macro: CLeoneCtlMHi, derived: v8_e1_rrr_M_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of M over the template-0 RRR-16 control'}
+      - {macro: CLeoneCtlPinvLo, derived: v8_e1_rrr_Pinv_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of Pinv over the template-0 RRR-16 control'}
+      - {macro: CLeoneCtlPinvHi, derived: v8_e1_rrr_Pinv_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of Pinv over the template-0 RRR-16 control'}
       - {macro: CLsixteenCombos, derived: v7_a_combos, fmt: '{:d}'}
   - id: THEORY
     zh: 命题 1–4 的数值核对（v7 T 单元；T1 为已知答案的核对，T2 为探索性）

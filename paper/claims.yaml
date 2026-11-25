@@ -1513,18 +1513,21 @@ claims:
     one-way chains do not; first-order one-cycle cancellation (proposition 4) is not
     confirmed and the exact inverse is not a usable minus operator.
   nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an
-    unconfirmed explanation
+    unconfirmed explanation; v8 E1 (operator gains) exploratory
   predictions:
   - v7/A1
   counter_predictions:
   - v7/A2
   - v7/A3
-  exploratory_sources: []
+  exploratory_sources:
+  - v8 E1 results/e1.json (CPU
+  - before the v8 lock; plan change of 2026-11-25)
   figures: []
   lock_commits:
     v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
   evidence:
     experiments/composability_mechanisms_v6/results/predictions.json: d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01
+    experiments/composability_mechanisms_v7/results/e1.json: 6e9e952a6fbfc8d3d9940912c3d712cd0715120584147274c15f69e5437a2438
   numbers:
   - macro: CLsixteenNOneMin
     value: 0.31359117754822335
@@ -1588,6 +1591,98 @@ claims:
     source: derived:v7_a3_max
     path: null
     note: 'A3: one-way minus R_2N with P^-1'
+    pending: false
+  - macro: CLeoneSlotPLo
+    value: 0.7696422978673874
+    text: '0.77'
+    source: derived:v8_e1_slot_P_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of P over the four slot-operator combinations
+      (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneSlotPHi
+    value: 0.9347341549817714
+    text: '0.93'
+    source: derived:v8_e1_slot_P_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of P over the four slot-operator combinations
+      (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneSlotMLo
+    value: 0.7833642561448704
+    text: '0.78'
+    source: derived:v8_e1_slot_M_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of M over the four slot-operator combinations
+      (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneSlotMHi
+    value: 0.9725091016631283
+    text: '0.97'
+    source: derived:v8_e1_slot_M_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of M over the four slot-operator combinations
+      (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneSlotPinvLo
+    value: 1.1209343507048288
+    text: '1.12'
+    source: derived:v8_e1_slot_Pinv_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of Pinv over the four slot-operator
+      combinations (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneSlotPinvHi
+    value: 5.302342506870277
+    text: '5.30'
+    source: derived:v8_e1_slot_Pinv_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of Pinv over the four slot-operator
+      combinations (one-way plus and alternating F_empty chains)'
+    pending: false
+  - macro: CLeoneCtlPLo
+    value: 0.9780773123880815
+    text: '0.98'
+    source: derived:v8_e1_rrr_P_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of P over the template-0 RRR-16 control'
+    pending: false
+  - macro: CLeoneCtlPHi
+    value: 1.0036057814995916
+    text: '1.00'
+    source: derived:v8_e1_rrr_P_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of P over the template-0 RRR-16 control'
+    pending: false
+  - macro: CLeoneCtlMLo
+    value: 0.9314489474071661
+    text: '0.93'
+    source: derived:v8_e1_rrr_M_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of M over the template-0 RRR-16 control'
+    pending: false
+  - macro: CLeoneCtlMHi
+    value: 1.0053354074372147
+    text: '1.01'
+    source: derived:v8_e1_rrr_M_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of M over the template-0 RRR-16 control'
+    pending: false
+  - macro: CLeoneCtlPinvLo
+    value: 1.0256382103289408
+    text: '1.03'
+    source: derived:v8_e1_rrr_Pinv_min
+    path: null
+    note: 'v8 E1 (exploratory): min median gain of Pinv over the template-0 RRR-16
+      control'
+    pending: false
+  - macro: CLeoneCtlPinvHi
+    value: 5.1593708638426445
+    text: '5.16'
+    source: derived:v8_e1_rrr_Pinv_max
+    path: null
+    note: 'v8 E1 (exploratory): max median gain of Pinv over the template-0 RRR-16
+      control'
     pending: false
   - macro: CLsixteenCombos
     value: 4

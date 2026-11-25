@@ -138,6 +138,7 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 |  | `experiments/symmetry_composability_v1/protocol_lock.json` | `5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead` |
 |  | `experiments/symmetry_composability_v1/run_ledger.json` | `50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f` |
 | CL16 | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |
+|  | `experiments/composability_mechanisms_v7/results/e1.json` | `6e9e952a6fbfc8d3d9940912c3d712cd0715120584147274c15f69e5437a2438` |
 | THEORY | `experiments/composability_mechanisms_v6/results/theory/t_theory.json` | `15a61ef6d419d462df1ea822e87992fa2ff09578777e15b888009d2b2b7647f5` |
 
 Pending macros (rendered as `\TODO{v6}` until v6 is merged): none.

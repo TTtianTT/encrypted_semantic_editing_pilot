@@ -19,6 +19,8 @@ V6AUD = 'experiments/composability_mechanisms_v5/data/audit.json'
 V7P = 'experiments/composability_mechanisms_v6/results/patch/p_posthoc7.json'
 V7R = 'experiments/composability_mechanisms_v6/results/predictions.json'
 VT = 'experiments/composability_mechanisms_v6/results/theory/t_theory.json'
+E1 = 'experiments/composability_mechanisms_v7/results/e1.json'          # v8 E1 (exploratory, CPU, before the v8 lock; v7 confirm7 encodings only)
+_e1 = lambda kind, op, fn: fn(v[op] for k, v in read(E1)['cells'].items() if k.split('/')[2] == kind)
 P5B = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json'; P5T = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_t5.json'
 V3AUD = 'experiments/composability_mechanisms_v2/data/audit.json'
 ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5', 'composability_mechanisms_v6']
@@ -99,6 +101,18 @@ DERIVED = {
     'v7_a2_dev_min': (lambda: min(v['train_template_dev']['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
     'v7_a2_dev_max': (lambda: max(v['train_template_dev']['cycle_sum_ratio_median'] for v in read(V7R)['A']['A2'].values()), [V7R]),
     'v7_a3_max': (lambda: max(v['R2N']['rate'] for v in read(V7R)['A']['A3'].values()), [V7R]),
+    'v8_e1_slot_P_min': (lambda: _e1('slot', 'P', min), [E1]),
+    'v8_e1_slot_P_max': (lambda: _e1('slot', 'P', max), [E1]),
+    'v8_e1_slot_M_min': (lambda: _e1('slot', 'M', min), [E1]),
+    'v8_e1_slot_M_max': (lambda: _e1('slot', 'M', max), [E1]),
+    'v8_e1_slot_Pinv_min': (lambda: _e1('slot', 'Pinv', min), [E1]),
+    'v8_e1_slot_Pinv_max': (lambda: _e1('slot', 'Pinv', max), [E1]),
+    'v8_e1_rrr_P_min': (lambda: _e1('rrr', 'P', min), [E1]),
+    'v8_e1_rrr_P_max': (lambda: _e1('rrr', 'P', max), [E1]),
+    'v8_e1_rrr_M_min': (lambda: _e1('rrr', 'M', min), [E1]),
+    'v8_e1_rrr_M_max': (lambda: _e1('rrr', 'M', max), [E1]),
+    'v8_e1_rrr_Pinv_min': (lambda: _e1('rrr', 'Pinv', min), [E1]),
+    'v8_e1_rrr_Pinv_max': (lambda: _e1('rrr', 'Pinv', max), [E1]),
     'v7_a_combos': (lambda: len(read(V7R)['A']['A1']), [V7R]),
     'v7_k_survivors': (lambda: len(_k7_surv()), [V7R]),
     'v7_k_dist10_med': (lambda: float(np.median([_k7_cont(s)[9] for s in range(42, 50)])), [V7R]),
