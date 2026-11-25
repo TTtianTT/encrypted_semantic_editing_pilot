@@ -1,0 +1,21 @@
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:  14%|█▎        | 46/340 [00:00<00:00, 458.17it/s]Loading weights:  44%|████▍     | 149/340 [00:00<00:00, 785.73it/s]Loading weights:  68%|██████▊   | 231/340 [00:00<00:00, 790.74it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 846.36it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/dev8.py", line 77, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/dev8.py", line 59, in main
+    cells = n_cells(eng, bb, 'dev') if unit == 'N' else g_cells(eng, bb, 'dev'); out = {}; summ = {}; mans = {}; models = {}
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/cells8.py", line 67, in g_cells
+    gp = read(ROOT / f'results/g_prep_{bb}.json'); out = []
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/symutil.py", line 32, in read
+    def read(p): return json.loads(Path(p).read_text())
+                                   ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json'
+srun: error: node02: task 0: Exited with exit code 1

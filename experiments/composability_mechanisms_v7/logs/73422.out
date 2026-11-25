@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/1180 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 325/1180 [00:00<00:00, 3194.47it/s]Loading weights:  55%|█████▍    | 645/1180 [00:00<00:00, 1362.77it/s]Loading weights:  71%|███████   | 834/1180 [00:00<00:00, 1193.84it/s]Loading weights:  83%|████████▎ | 980/1180 [00:00<00:00, 1094.20it/s]Loading weights:  94%|█████████▎| 1104/1180 [00:00<00:00, 1067.87it/s]Loading weights: 100%|██████████| 1180/1180 [00:00<00:00, 1192.36it/s]
+encoded t5_9b weekday train
+encoded t5_9b weekday dev
+encoded t5_9b weekday confirm7
+gate t5_9b weekday 1.0
+base t5_9b weekday r*_pred 6 single 1.0 R_2N 1.0
+calib t5_9b weekday {'full': 0.899, 'equal': 0.833, 'fund': 0.671}
+encoded t5_9b month train
+encoded t5_9b month dev
+encoded t5_9b month confirm7
+gate t5_9b month 1.0
+base t5_9b month r*_pred 11 single 1.0 R_2N 1.0
+calib t5_9b month {'full': 0.992, 'equal': 0.977, 'fund': 0.839}

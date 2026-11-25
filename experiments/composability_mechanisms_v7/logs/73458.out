@@ -1,0 +1,4 @@
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/selftest8.py:43: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  chk['or_rank'] = all(torch.equal(x, y) for x, y in zip(a.state_dict().values(), b.state_dict().values())) and c['plus'].u.weight.shape == (16, 16) and float(c['plus'].u.weight.abs().sum()) == 0
+{"checks": {"n1": true, "n2": true, "editor_rule": true, "freeze_rule": true, "prediction_rule": true, "q24": true, "combine": true, "d_separation": true, "dedupe": true, "world_tab": true, "rstar_pred": true, "calibrate_u_ties": true, "nat_score": true, "or_rank": true}, "pass_": true}

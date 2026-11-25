@@ -27,3 +27,7 @@
    - 做法：`prep_models.py` 改为沿用 `data/model_manifest_v8.json` 中已固定的 revision，下载模式加入 `*.jinja`，重跑（作业 73414；73413 因作业模板设了离线模式而未下载，只覆盖了 `local/` 下的清单副本）。
    - 结果：四个模型的 revision 与第 4 条相同；只新增三个 `chat_template.jinja`（三者相同）。Gemma 2 2B 的 chat 模板在 `tokenizer_config.json` 中，无需补。`data/model_manifest_v8.json` 已更新。
    - 审计（`n_audit.py`）确认：三个新尺寸在 weekday、month 模板 0 上的 token id 与 2B-2B 完全相同，槽位恒为 22。
+6. **2026-11-25，规模阶梯的注意力内核（锁定前）**：
+   - 现象：T5Gemma B-B 的 `g_prep`（作业 73430）在 SDPA 注意力中报 `cuDNN Frontend error: No valid execution plans built`，依赖它的 L-L 与 dev8 作业（73431、73451、73452、73464、73465）随之失败。
+   - 做法：只对 B-B 与 L-L 关闭 PyTorch 的 cuDNN SDPA 后端（`torch.backends.cuda.enable_cudnn_sdp(False)`），由其余 SDPA 后端计算同一注意力；9B-9B、2B-2B 与 BART 不变（9B 的 `g_prep` 已用原设置运行，保持一致）。
+   - 重新提交阶梯链（见 `logs/submitted.txt`）。这两个尺寸此前没有任何编码或解码，不存在前后不一致。

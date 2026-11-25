@@ -1,0 +1,493 @@
+{
+  "unit": "N",
+  "backbone": "bart",
+  "split": "confirm8",
+  "thresholds": {
+    "tau_m": null,
+    "tau_r": null
+  },
+  "cells": {
+    "month-nat/nat_F_empty/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_empty",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_empty/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_empty",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_empty/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_empty",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{1}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{1}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.004166666666666667,
+      "pred_U": 0.004166666666666667
+    },
+    "month-nat/nat_F_{1}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{1}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.008333333333333333,
+      "pred_U": 0.008333333333333333
+    },
+    "month-nat/nat_F_{1}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{1}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_not1/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_not1",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/nat_F_not1/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_not1",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/nat_F_not1/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_not1",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/nat_F_{2}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{2}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.9708333333333333,
+      "pred_U": 0.9708333333333333
+    },
+    "month-nat/nat_F_{2}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{2}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.825,
+      "pred_U": 0.825
+    },
+    "month-nat/nat_F_{2}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{2}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{3}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{3}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{3}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{3}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{3}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{3}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.8,
+      "pred_U": 0.8
+    },
+    "month-nat/nat_F_{4}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{4}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.36666666666666664,
+      "pred_U": 0.36666666666666664
+    },
+    "month-nat/nat_F_{4}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{4}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.25833333333333336,
+      "pred_U": 0.25833333333333336
+    },
+    "month-nat/nat_F_{4}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{4}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.4,
+      "pred_U": 0.4
+    },
+    "month-nat/nat_F_{5}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{5}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.9875,
+      "pred_U": 0.9875
+    },
+    "month-nat/nat_F_{5}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{5}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.9458333333333333,
+      "pred_U": 0.9458333333333333
+    },
+    "month-nat/nat_F_{5}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{5}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.2916666666666667,
+      "pred_U": 0.2916666666666667
+    },
+    "month-nat/nat_F_{6}/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{6}",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{6}/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{6}",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/nat_F_{6}/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "nat_F_{6}",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.4625,
+      "pred_U": 0.4625
+    },
+    "month-nat/syn_F_empty/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "syn_F_empty",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/syn_F_empty/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "syn_F_empty",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/syn_F_empty/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "syn_F_empty",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.5708333333333333,
+      "pred_U": 0.5708333333333333
+    },
+    "month-nat/RRR16full/plus": {
+      "family": "ref",
+      "domain": "month-nat",
+      "method": "RRR16full",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/RRR16full/minus": {
+      "family": "ref",
+      "domain": "month-nat",
+      "method": "RRR16full",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/RRR16full/alt": {
+      "family": "ref",
+      "domain": "month-nat",
+      "method": "RRR16full",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s50/plus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s50",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s50/minus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s50",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s50/alt": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s50",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s51/plus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s51",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s51/minus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s51",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s51/alt": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s51",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s52/plus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s52",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s52/minus": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s52",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/C1nat_s52/alt": {
+      "family": "CE",
+      "domain": "month-nat",
+      "method": "C1nat_s52",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.0,
+      "pred_U": 0.0
+    },
+    "month-nat/SC3U4nat_s50/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s50",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s50/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s50",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s50/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s50",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.6291666666666667,
+      "pred_U": 0.6291666666666667
+    },
+    "month-nat/SC3U4nat_s51/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s51",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s51/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s51",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s51/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s51",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.5,
+      "pred_U": 0.5
+    },
+    "month-nat/SC3U4nat_s52/plus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s52",
+      "path": "plus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s52/minus": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s52",
+      "path": "minus",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 1.0,
+      "pred_U": 1.0
+    },
+    "month-nat/SC3U4nat_s52/alt": {
+      "family": "state",
+      "domain": "month-nat",
+      "method": "SC3U4nat_s52",
+      "path": "alt",
+      "N": 12,
+      "worlds": 240,
+      "pred_slot": 0.8333333333333334,
+      "pred_U": 0.8333333333333334
+    }
+  },
+  "simulate_sha256": "74ead12526b31dad64a8fae80eae80a0bfc37af5edd55ae2fc0e7c0a889323b4",
+  "seconds": 34.6803662776947
+}

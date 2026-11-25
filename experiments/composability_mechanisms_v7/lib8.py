@@ -1510,6 +1510,7 @@ def engine8(bb, cap=None):
     e = BK.Backend.__new__(BK.Backend); e.name = 't5gemma'; e.cfg = BK.read(BK.ROOT / 'config.json'); d = MODELS8[bb]
     import time as _t; e.start = _t.monotonic(); e.tok = AutoTokenizer.from_pretrained(d, local_files_only=True); e.chat = True; e.cap = cap or e.cfg['source_cap']['t5gemma']
     torch.set_num_threads(4); torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
+    if bb in ('t5_bb', 't5_ll'): torch.backends.cuda.enable_cudnn_sdp(False)      # B300: cuDNN SDPA has no execution plan for these sizes (DEVIATIONS 6)
     e.model = AutoModelForSeq2SeqLM.from_pretrained(d, local_files_only=True, dtype=torch.bfloat16, attn_implementation='sdpa').cuda().eval()
     for p in e.model.parameters(): p.requires_grad_(False)
     e.d = e.model.config.encoder.hidden_size; eos = e.model.generation_config.eos_token_id; e.eos = set(eos if isinstance(eos, list) else [eos])
