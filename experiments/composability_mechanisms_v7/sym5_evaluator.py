@@ -173,12 +173,31 @@ def mt_parse_state(text, domain, template_id, fields):
 _score_v4, _parse_state_v4 = score, parse_state
 
 
+def nat_parse_state(text, gold):
+    """v8 natural text: the output must be prefix + one month word + suffix (whitespace-normalised) -> (state index, word)."""
+    t, p, s = ws_norm(text), ws_norm(gold["prefix"]), ws_norm(gold["suffix"])
+    for i, w in enumerate(_NAT_WORDS):
+        if t == ws_norm(gold["prefix"] + w + gold["suffix"]): return i, w
+    return None, None
+
+
+def nat_score(text, gold, ended=True):
+    exact = ws_norm(text) == ws_norm(gold["text"]); st = nat_parse_state(text, gold)[0]
+    return dict(success=bool(ended and exact), target=st == gold["state"], preserved=st is not None, scope=bool(exact), parseable=st is not None,
+                grammar=bool(exact), ended=bool(ended))
+
+
+_NAT_WORDS = "January February March April May June July August September October November December".split()
+
+
 def score(text, gold, world, ended=True):
-    if gold['domain'] in _MT: return mt_score(text, gold, ended)
+    if gold["domain"] == "month-nat": return nat_score(text, gold, ended)
+    if gold["domain"] in _MT: return mt_score(text, gold, ended)
     return _score_v4(text, gold, world, ended)
 
 
 def parse_state(text, domain, people=None, gold=None):
     """v4 parser; multi-template domains need the world's gold (template_id and fields)."""
+    if domain == 'month-nat': return nat_parse_state(text, gold)
     if domain in _MT: return mt_parse_state(text, domain, gold['template_id'], gold['fields'])
     return _parse_state_v4(text, domain, people)

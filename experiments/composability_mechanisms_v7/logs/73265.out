@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/259 [00:00<?, ?it/s]Loading weights:  54%|█████▍    | 141/259 [00:00<00:00, 1283.85it/s]Loading weights: 100%|██████████| 259/259 [00:00<00:00, 1174.23it/s]
+Loading weights:   0%|          | 0/732 [00:00<?, ?it/s]Loading weights:  76%|███████▌  | 557/732 [00:00<00:00, 5547.36it/s]Loading weights: 100%|██████████| 732/732 [00:00<00:00, 5588.03it/s]
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/n_gate.py", line 51, in <module>
+    if __name__ == '__main__':
+        ^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v7/n_gate.py", line 29, in main
+    for pi, pool in enumerate(('train', 'dev', 'confirm8')):
+                                                             
+NameError: name 'Counter' is not defined
+srun: error: node01: task 0: Exited with exit code 1

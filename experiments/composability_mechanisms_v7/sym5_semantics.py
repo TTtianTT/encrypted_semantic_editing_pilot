@@ -25,12 +25,13 @@ NEW_WORDS = {
 }
 NEW = list(NEW_WORDS)
 MT = ['weekday-mt', 'month-mt', 'hour-mt']
+NAT = 'month-nat'                                       # v8 unit N: natural WikiText sentences (world = prefix + month + suffix)
 CYCLIC_ALL = ['weekday', 'month', 'compass', 'egoside'] + NEW
 TEMPLATES_MT = _HERE / 'data/templates_mt.json'
 
 
 def base(domain):
-    return domain[:-3] if domain in MT else domain
+    return domain[:-3] if domain in MT else 'month' if domain == NAT else domain
 
 
 @lru_cache(None)
@@ -79,8 +80,13 @@ def render_mt(world, current, template_id):
     return mt_templates()[world['domain']][template_id]['text'].format(**mt_fields(world, current))
 
 
+def nat_render(world, current):
+    return world["prefix"] + word("month", current) + world["suffix"]
+
+
 def gold(world, current, template=0):
-    d = world['domain']
+    d = world["domain"]
+    if d == NAT: return dict(domain=d, state=current, text=nat_render(world, current), prefix=world["prefix"], suffix=world["suffix"], structure="nat")
     if d in MT:
         tid = world['template_id']
         return dict(domain=d, state=current, template_id=tid, text=render_mt(world, current, tid), fields=mt_fields(world, current), structure='mt')
@@ -92,7 +98,8 @@ def gold(world, current, template=0):
 
 
 def render(world, current, template=0):
-    d = world['domain']
+    d = world["domain"]
+    if d == NAT: return nat_render(world, current)
     if d in MT:
         return render_mt(world, current, world['template_id'])
     if d not in NEW_WORDS:

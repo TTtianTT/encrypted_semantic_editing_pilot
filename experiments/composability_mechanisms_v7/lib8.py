@@ -1482,3 +1482,30 @@ class Att2LAblated(nn.Module):
 
 def new7_path(bb, v, d, s, upd):          # v7 editors (composability_mechanisms_v6)
     return V7DIR / f'local/n7_{bb}_{v}_{d}_s{s}_u{upd}.pt'
+
+
+# ================================================================ v8 (PLAN v7 C line): engines for the new backbones
+MODELS8 = {'t5_9b': '/dataset1/zailong/models/t5gemma-9b-9b-ul2-it', 't5_bb': '/dataset1/zailong/models/t5gemma-b-b-ul2-it',
+           't5_ll': '/dataset1/zailong/models/t5gemma-l-l-ul2-it'}
+
+
+def engine8(bb, cap=None):
+    """bart / t5 (2B-2B): the v1-v7 engines (engine5). t5_9b / t5_bb / t5_ll: the same T5Gemma wrapper as backend.Backend('t5gemma') (chat
+    template with the copy instruction, bf16, greedy decoding, fixed-length padding to the input cap), loaded from the pinned local
+    directory of data/model_manifest_v8.json. cap: input cap override (natural text)."""
+    if bb in ('bart', 't5'):
+        e = engine5(bb)
+        if cap: e.cap = cap
+        return e
+    require_slurm(); source_path(); import backend as BK
+    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+    e = BK.Backend.__new__(BK.Backend); e.name = 't5gemma'; e.cfg = BK.read(BK.ROOT / 'config.json'); d = MODELS8[bb]
+    import time as _t; e.start = _t.monotonic(); e.tok = AutoTokenizer.from_pretrained(d, local_files_only=True); e.chat = True; e.cap = cap or e.cfg['source_cap']['t5gemma']
+    torch.set_num_threads(4); torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
+    e.model = AutoModelForSeq2SeqLM.from_pretrained(d, local_files_only=True, dtype=torch.bfloat16, attn_implementation='sdpa').cuda().eval()
+    for p in e.model.parameters(): p.requires_grad_(False)
+    e.d = e.model.config.encoder.hidden_size; eos = e.model.generation_config.eos_token_id; e.eos = set(eos if isinstance(eos, list) else [eos])
+    e.kw = dict(max_new_tokens=e.cfg['max_new_tokens'], num_beams=1, do_sample=False, forced_eos_token_id=None,
+                decoder_start_token_id=e.model.config.decoder.bos_token_id, cache_implementation='dynamic'); e.cache = {}
+    man = read(ROOT / 'data/model_manifest_v8.json'); e.revision = next(v['revision'] for v in man.values() if v.get('directory') == d)
+    return e
