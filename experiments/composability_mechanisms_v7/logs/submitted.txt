@@ -43,3 +43,11 @@
 73547 d_c1 (lane A; D layer plan change, DEVIATIONS 7)
 73626 seed_registry8 cpu
 73627 lock8 cpu
+73640 chains8 --unit N --backbone bart (stage 3, lane A)
+73641 e2 --stage run (stage 3, lane A, after 73640)
+73642 d_run  (stage 3, lane A, after 73641)
+73643 chains8 --unit G --backbone t5_bb (stage 3, lane A, after 73642)
+73644 chains8 --unit G --backbone t5_ll (stage 3, lane A, after 73643)
+73645 chains8 --unit N --backbone t5 (stage 3, lane B)
+73646 chains8 --unit G --backbone t5_9b (stage 3, lane B, after 73645)
+73647 d_edge (AMENDMENT_01; lane A, after 73642; 73643 now after 73647; 73642 time limit 8 h)
