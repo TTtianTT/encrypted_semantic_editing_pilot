@@ -25,3 +25,12 @@ multi-template confirmation set, and filled the held-out templates in turn. Temp
 texts: \CLfourteenTmplWeekday{} (weekday), \CLfourteenTmplMonth{} (month) and \CLfourteenTmplHour{} (hour) held-out templates carry at
 least ten worlds each, while \CLfourteenTmplSparse{} templates carry at most \CLfourteenTmplSparseMax{} worlds. The multi-template
 results therefore speak for templates with several fields.
+
+\paragraph{Natural text (eighth round).}
+Sentences come from the raw WikiText-103 training articles, split by article into candidate pools for training, development and
+confirmation (60/15/25). A sentence is kept if it has 8--35 words, contains exactly one month word in the form ``in $\langle$month$\rangle$'',
+``in $\langle$month$\rangle$ $\langle$year$\rangle$'' or ``$\langle$month$\rangle$ $\langle$year$\rangle$'' (not May, to avoid the modal verb),
+no other month or weekday word, and no day number next to the month; the month is a single token for both backbones; and both backbones
+reconstruct the sentence exactly with each of the twelve months substituted. Every kept sentence is new with respect to all earlier
+renders and to the other kept sentences. A world is the sentence with its month position; the gold of a state is the sentence with that
+month; success is an exact match after whitespace normalisation.

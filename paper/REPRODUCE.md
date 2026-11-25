@@ -36,6 +36,7 @@ Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic
 | v5 | `8667c907769e475f78d46f593266efa46aac9dd6` |
 | v6 | `85f6bd332a3ede6f1dee347c968cd163a62fd5f9` |
 | v7 | `94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd` |
+| v8 | `a15d2140626f09fe1d87d50e0b23c2f1a62d28a8` |
 
 ## Figures
 
@@ -71,10 +72,16 @@ Then compile in a CPU job: `cd paper && tectonic --keep-logs main.tex` (tectonic
 | v5 | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 | v6 | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 | v7 | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |
+| v8 | `experiments/composability_mechanisms_v7/results/predictions.json` | `f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3` |
+| scale | `experiments/composability_mechanisms_v7/results/g_prep_t5_9b.json` | `db31c18ea4d8fecd61fb41c9929c063a81e5a685a20367f4b2e1c2eab0e44075` |
+|  | `experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json` | `a3347955a9a208527af7cd5ef61ea90a1b8f60b2e6fd642e2f53671ffea92a44` |
+|  | `experiments/composability_mechanisms_v7/results/g_prep_t5_ll.json` | `e5ef6beb23f770dd6d171d631e4fe92dc10700378c7dbf34e74ea4d1a2af6ceb` |
+|  | `experiments/composability_mechanisms_v7/results/predictions.json` | `f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3` |
 | table1 | `experiments/composability_mechanisms_v4/results/chains.csv` | `c77032924c273fcf9a2755fce97837e32746b2ae7d1cbdae95130fd080d84055` |
 |  | `experiments/composability_mechanisms_v4/results/predictions.json` | `597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957` |
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 |  | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |
+|  | `experiments/composability_mechanisms_v7/results/predictions.json` | `f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3` |
 
 ## Numbers (`generated/numbers.tex`)
 
@@ -120,6 +127,8 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 |  | `experiments/composability_mechanisms_v5/results/report_ci.json` | `27f5c3952bd31a5d1d583082414212af1a4e4c703f2d672d74fc64b6f90e741b` |
 |  | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |
+|  | `experiments/composability_mechanisms_v7/results/e2_run.json` | `24dae21e72d91ff128bf687392e7cc70b419526e3dde8384857c9e4f7d10c80d` |
+|  | `experiments/composability_mechanisms_v7/results/e2b.json` | `b6488ce16b87acc22833771efb44fb894db6233ec476a736f0dbf4ffc9c42f2d` |
 | CL14 | `experiments/composability_mechanisms_v5/data/audit.json` | `1da238362e72a00f0f0560aa55f1ddf9fce4a91f06762cea2b5c73c0b82b8f57` |
 |  | `experiments/composability_mechanisms_v5/results/predictions.json` | `f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b` |
 | META | `experiments/composability_mechanisms_v1/protocol_lock.json` | `79c2bdf55ceddb5bf2b61b9abcf58fec90a762f4be4b5821d533af317616d816` |
@@ -135,10 +144,17 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 |  | `experiments/composability_mechanisms_v5/run_ledger.json` | `5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546` |
 |  | `experiments/composability_mechanisms_v6/protocol_lock.json` | `8b2bbae2206663cdedfc21c5d668c8fe827125e8570b0c33e6a11c5f2b5462c3` |
 |  | `experiments/composability_mechanisms_v6/run_ledger.json` | `2fce713af6d52652b52bb32fa18935f1328c269ccef89cd98318aa89b4a6f066` |
+|  | `experiments/composability_mechanisms_v7/protocol_lock.json` | `87b020aa9c186780da4af7bf549e99547b0fa9339691c782191a49a4bc2f4766` |
+|  | `experiments/composability_mechanisms_v7/run_ledger.json` | `fd4931e45b22c4c4208ad1444a280cff2a0b323cb4a5b2d851891e607e3a8b03` |
 |  | `experiments/symmetry_composability_v1/protocol_lock.json` | `5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead` |
 |  | `experiments/symmetry_composability_v1/run_ledger.json` | `50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f` |
 | CL16 | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |
 |  | `experiments/composability_mechanisms_v7/results/e1.json` | `6e9e952a6fbfc8d3d9940912c3d712cd0715120584147274c15f69e5437a2438` |
+| CL17 | `experiments/composability_mechanisms_v7/results/n_gate.json` | `59f3c4281e722acbed412bde8d0f8cd882983889106b5c27ab0e6de84757fd0d` |
+|  | `experiments/composability_mechanisms_v7/results/predictions.json` | `f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3` |
+| CL18 | `experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json` | `a3347955a9a208527af7cd5ef61ea90a1b8f60b2e6fd642e2f53671ffea92a44` |
+|  | `experiments/composability_mechanisms_v7/results/predictions.json` | `f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3` |
+| CL19 | `experiments/composability_mechanisms_v7/results/d_run.json` | `01c50871456d7636c5220cdbca220243305795b724f989d9f1c8f52328f5088a` |
 | THEORY | `experiments/composability_mechanisms_v6/results/theory/t_theory.json` | `15a61ef6d419d462df1ea822e87992fa2ff09578777e15b888009d2b2b7647f5` |
 
 Pending macros (rendered as `\TODO{v6}` until v6 is merged): none.

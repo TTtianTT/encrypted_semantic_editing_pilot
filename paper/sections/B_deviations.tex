@@ -42,3 +42,19 @@ settings. The context calibration fell on the boundary (Appendix~\ref{app:protoc
 a floating-point tie had moved the weight off zero. Editors trained with the same seed and batch sequence as an earlier round turned out
 bit-identical to it, so some cells of the context unit are duplicates (listed in the analysis). After the lock, AMENDMENT~01 only added
 descriptive Wilson intervals for the report; no locked verdict changed.
+
+\paragraph{v7.}
+Before the lock, smoke and dev runs found and fixed code errors (an import of the previous round's library, a device mismatch, a vote model
+loaded for binding domains, a mismatch between dev cells and dev shards); the template-0 text space was exhausted, so the sixth round's
+confirmation set was reused for template-0 domains (text reused, recorded); the duplicate-cell detection of the post-hoc analysis was
+replaced by the sixth round's list. No change after the lock affected a verdict.
+
+\paragraph{v8.}
+Before the lock: two exploratory units were added by the project lead (the operator-gain analysis of Section~\ref{sec:scope} and the
+binding write-rank test); the template-0 sets of the sixth round were reused for the new models (first evaluation for these models);
+missing chat templates were added at the pinned model revisions; one attention kernel was switched off for the two smallest T5Gemma sizes
+because it had no execution plan on our GPUs; the decoder-only layer rule was changed by the lead from the shallowest to the median of the
+layers that tie on the single-step check (layer 2 sits just above the token embedding). After the lock: AMENDMENT~01 (exploratory parts
+are run in full; no part was in fact skipped), AMENDMENT~02 (the binding residue was re-measured on random-direction chains, because the
+first probe could not separate the previous from the current name), AMENDMENT~03 (the post-lock sanity gate G8-0, not run as a separate
+step, was computed from the same chains; it passes).

@@ -7,6 +7,7 @@ lock_commits:
   v5: 8667c907769e475f78d46f593266efa46aac9dd6
   v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
   v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
+  v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
 claims:
 - id: CL1
   zh: 单步解码正确 ≠ 可组合
@@ -1043,7 +1044,9 @@ claims:
   - v6/K3
   - v6/K4
   - v7/K6
-  exploratory_sources: []
+  exploratory_sources:
+  - v8 E2 (e2_run.json) and E2b (e2b.json
+  - AMENDMENT_02)
   figures:
   - figS2
   - figS3
@@ -1056,7 +1059,51 @@ claims:
     experiments/composability_mechanisms_v5/results/predictions.json: f3bd9155b727eafdcb23cba99aedec09b7e2d3ea91211ee43272aaa8b1fa378b
     experiments/composability_mechanisms_v5/results/report_ci.json: 27f5c3952bd31a5d1d583082414212af1a4e4c703f2d672d74fc64b6f90e741b
     experiments/composability_mechanisms_v6/results/predictions.json: d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01
+    experiments/composability_mechanisms_v7/results/e2_run.json: 24dae21e72d91ff128bf687392e7cc70b419526e3dde8384857c9e4f7d10c80d
+    experiments/composability_mechanisms_v7/results/e2b.json: b6488ce16b87acc22833771efb44fb894db6233ec476a736f0dbf4ffc9c42f2d
   numbers:
+  - macro: CLthirteenEtwoRthirtyMax
+    value: 0.0375
+    text: '0.04'
+    source: derived:v8_e2_r30_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenEtwoDistLo
+    value: 9.18698132619043
+    text: '9'
+    source: derived:v8_e2_d100_r32_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenEtwoDistHi
+    value: 18.15273028300754
+    text: '18'
+    source: derived:v8_e2_d100_r32_hi
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenEtwoDistFullLo
+    value: 63.868429542315084
+    text: '64'
+    source: derived:v8_e2_d100_full_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenEtwoDistFullHi
+    value: 107.08470355519262
+    text: '107'
+    source: derived:v8_e2_d100_full_hi
+    path: null
+    note: null
+    pending: false
+  - macro: CLthirteenEtwoDirMin
+    value: 0.99375
+    text: '0.99'
+    source: derived:v8_e2b_dir_min
+    path: null
+    note: null
+    pending: false
   - macro: CLthirteenBtwo
     value: 0.8
     text: '0.80'
@@ -1426,6 +1473,8 @@ claims:
     experiments/composability_mechanisms_v5/run_ledger.json: 5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546
     experiments/composability_mechanisms_v6/protocol_lock.json: 8b2bbae2206663cdedfc21c5d668c8fe827125e8570b0c33e6a11c5f2b5462c3
     experiments/composability_mechanisms_v6/run_ledger.json: 2fce713af6d52652b52bb32fa18935f1328c269ccef89cd98318aa89b4a6f066
+    experiments/composability_mechanisms_v7/protocol_lock.json: 87b020aa9c186780da4af7bf549e99547b0fa9339691c782191a49a4bc2f4766
+    experiments/composability_mechanisms_v7/run_ledger.json: fd4931e45b22c4c4208ad1444a280cff2a0b323cb4a5b2d851891e607e3a8b03
     experiments/symmetry_composability_v1/protocol_lock.json: 5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead
     experiments/symmetry_composability_v1/run_ledger.json: 50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f
   numbers:
@@ -1493,16 +1542,23 @@ claims:
     path: total_gpu_hours
     note: null
     pending: false
+  - macro: CLmetaGpuVeight
+    value: 13.642777777777777
+    text: '13.6'
+    source: experiments/composability_mechanisms_v7/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
   - macro: CLmetaGpuTotal
-    value: 26.97972222222222
-    text: '27.0'
+    value: 40.6225
+    text: '40.6'
     source: derived:gpu_total
     path: null
     note: null
     pending: false
   - macro: CLmetaRounds
-    value: 7
-    text: '7'
+    value: 8
+    text: '8'
     source: derived:rounds_locked
     path: null
     note: preregistered rounds with a lock commit; regenerate after v8
@@ -1688,6 +1744,344 @@ claims:
     value: 4
     text: '4'
     source: derived:v7_a_combos
+    path: null
+    note: null
+    pending: false
+- id: CL17
+  zh: 自然文本：在真实句子上，槽位算子可组合，指令捷径、冻结特征与潜空间预测都成立（v8 Q24 = H-natural）
+  en: On natural sentences the slot operator composes, and the instruction shortcut,
+    the freeze signatures and latent prediction all hold.
+  nature: decided (v8 Q24 H-natural on both backbones); N2 (zero-shot transfer) descriptive;
+    T5Gemma F{1}-plus condition dropped before the lock
+  predictions:
+  - v8/N/Q24
+  - v8/N/bart/N1
+  - v8/N/t5/N1
+  - v8/N/bart/N3
+  - v8/N/t5/N3
+  - v8/N/bart/N4
+  - v8/N/t5/N4
+  - v8/N/bart/N5
+  - v8/N/t5/N5
+  counter_predictions: []
+  exploratory_sources:
+  - v8 N2 (descriptive by the pre-lock check)
+  figures: []
+  lock_commits:
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
+  evidence:
+    experiments/composability_mechanisms_v7/results/n_gate.json: 59f3c4281e722acbed412bde8d0f8cd882983889106b5c27ab0e6de84757fd0d
+    experiments/composability_mechanisms_v7/results/predictions.json: f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3
+  numbers:
+  - macro: CLseventeenWorlds
+    value: 240
+    text: '240'
+    source: derived:v8_n_worlds
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenNoneBart
+    value: 0.9958333333333333
+    text: '1.00'
+    source: derived:v8_n1_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenNoneTfive
+    value: 0.9958333333333333
+    text: '1.00'
+    source: derived:v8_n1_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenSynBart
+    value: 1.0
+    text: '1.00'
+    source: derived:v8_n2_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenSynTfive
+    value: 0.9958333333333333
+    text: '1.00'
+    source: derived:v8_n2_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenCOneRoneMin
+    value: 0.9541666666666667
+    text: '0.95'
+    source: derived:v8_n3_r1_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenCOneRtwoMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v8_n3_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenDMin
+    value: 0.9665271966527197
+    text: '0.97'
+    source: derived:v8_n3_d_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenFoneBart
+    value: 0.0
+    text: '0.00'
+    source: derived:v8_n4_f1p_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenFoneTfive
+    value: 0.3125
+    text: '0.31'
+    source: derived:v8_n4_f1p_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenFoneAltMin
+    value: 0.9958333333333333
+    text: '1.00'
+    source: derived:v8_n4_f1a_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenFnotMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v8_n4_fn_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenAgreeBart
+    value: 0.9669444444444445
+    text: '0.967'
+    source: derived:v8_n5_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenAgreeTfive
+    value: 0.9390046296296296
+    text: '0.939'
+    source: derived:v8_n5_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenNaiveBart
+    value: 0.6527777777777778
+    text: '0.653'
+    source: derived:v8_n5_naive_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenNaiveTfive
+    value: 0.6158564814814815
+    text: '0.616'
+    source: derived:v8_n5_naive_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenMajBart
+    value: 0.9159259259259259
+    text: '0.916'
+    source: derived:v8_n5_maj_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLseventeenMajTfive
+    value: 0.9341435185185185
+    text: '0.934'
+    source: derived:v8_n5_maj_t5
+    path: null
+    note: null
+    pending: false
+- id: CL18
+  zh: 规模：T5Gemma 9B-9B 上 G1、G3–G6 复现，G2（秩阈值的下侧）在 month 上不成立（v8 Q25）
+  en: On T5Gemma 9B-9B the instruction shortcut, freeze signatures, spectrum, prediction
+    and state-supervised composition replicate; the lower side of the rank threshold
+    fails on month.
+  nature: mixed (v8 Q25 - G1, G3, G4, G5, G6 hold; G2 fails on month); ladder exploratory
+  predictions:
+  - v8/G/weekday/G1
+  - v8/G/month/G1
+  - v8/G/weekday/G2
+  - v8/G/weekday/G3
+  - v8/G/month/G3
+  - v8/G/weekday/G4
+  - v8/G/month/G4
+  - v8/G/G5
+  - v8/G/weekday/G6
+  - v8/G/month/G6
+  counter_predictions:
+  - v8/G/month/G2
+  - v8/G/Q25
+  exploratory_sources:
+  - v8 ladder (T5Gemma B-B
+  - L-L; closed form only)
+  figures: []
+  lock_commits:
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
+  evidence:
+    experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json: a3347955a9a208527af7cd5ef61ea90a1b8f60b2e6fd642e2f53671ffea92a44
+    experiments/composability_mechanisms_v7/results/predictions.json: f881a005b6b1b81b6e2e896b2cafac6132ba897f528b40c8798d5b50019a96e3
+  numbers:
+  - macro: CLeighteenCOneRtwoMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v8_g1_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenRstarWeekday
+    value: 6
+    text: '6'
+    source: derived:v8_g2_rstar_wd
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenRstarMonth
+    value: 11
+    text: '11'
+    source: derived:v8_g2_rstar_mo
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenRnineMonth
+    value: 0.61875
+    text: '0.62'
+    source: derived:v8_g2_r9_mo
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenRtenMonth
+    value: 0.16875
+    text: '0.17'
+    source: derived:v8_g2_r10_mo
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenFFnineMonth
+    value: 0.5125
+    text: '0.51'
+    source: derived:v8_g_ff9_mo
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenFFtenMonth
+    value: 0.4625
+    text: '0.46'
+    source: derived:v8_g_ff10_mo
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenCThreeMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v8_g6_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenAgree
+    value: 0.929369918699187
+    text: '0.929'
+    source: derived:v8_g5_agree
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenNaive
+    value: 0.6025914634146341
+    text: '0.603'
+    source: derived:v8_g5_naive
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenDsepCells
+    value: 24
+    text: '24'
+    source: derived:v8_g5_dsep_n
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenLLmonth
+    value: 0.85625
+    text: '0.86'
+    source: derived:v8_ll_month16
+    path: null
+    note: null
+    pending: false
+  - macro: CLeighteenBBmonthRecon
+    value: 0.986328125
+    text: '0.986'
+    source: derived:v8_bb_month_recon
+    path: null
+    note: null
+    pending: false
+- id: CL19
+  zh: decoder-only（探索性）：Gemma 2 2B 的残差流中，月份槽位有同样的秩阈值、冻结特征与谱；CE 编辑器同样写指令
+  en: In the residual stream of the decoder-only Gemma 2 2B the month slot shows the
+    same rank threshold, freeze signatures and spectrum, and a decoder-trained editor
+    again writes an instruction (exploratory).
+  nature: exploratory
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v8 unit D (d_run.json)
+  - layer rule DEVIATIONS 7
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v7/results/d_run.json: 01c50871456d7636c5220cdbca220243305795b724f989d9f1c8f52328f5088a
+  numbers:
+  - macro: CLnineteenLayer
+    value: 10
+    text: '10'
+    source: derived:v8_d_layer
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenRstar
+    value: 11
+    text: '11'
+    source: derived:v8_d_rstar
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenFonePlus
+    value: 0.06875
+    text: '0.07'
+    source: derived:v8_d_f1p
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenFoneAlt
+    value: 1.0
+    text: '1.00'
+    source: derived:v8_d_f1a
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenCOneRtwoMax
+    value: 0.06875
+    text: '0.07'
+    source: derived:v8_d_c1_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenDMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v8_d_c1_d_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLnineteenAgreeMin
+    value: 0.89375
+    text: '0.89'
+    source: derived:v8_d_agree_min
     path: null
     note: null
     pending: false

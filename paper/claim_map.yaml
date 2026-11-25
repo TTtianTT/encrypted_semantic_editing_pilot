@@ -230,7 +230,14 @@ claims:
     predictions: [v5/B3, v6/K1, v7/K5, v7/K7]
     counter_predictions: [v5/B2, v6/K2, v6/K3, v6/K4, v7/K6]
     figures: [figS2, figS3]
+    exploratory_sources: [v8 E2 (e2_run.json) and E2b (e2b.json, AMENDMENT_02)]
     numbers:
+      - {macro: CLthirteenEtwoRthirtyMax, derived: v8_e2_r30_max, fmt: '{:.2f}'}
+      - {macro: CLthirteenEtwoDistLo, derived: v8_e2_d100_r32_lo, fmt: '{:.0f}'}
+      - {macro: CLthirteenEtwoDistHi, derived: v8_e2_d100_r32_hi, fmt: '{:.0f}'}
+      - {macro: CLthirteenEtwoDistFullLo, derived: v8_e2_d100_full_lo, fmt: '{:.0f}'}
+      - {macro: CLthirteenEtwoDistFullHi, derived: v8_e2_d100_full_hi, fmt: '{:.0f}'}
+      - {macro: CLthirteenEtwoDirMin, derived: v8_e2b_dir_min, fmt: '{:.2f}'}
       - {macro: CLthirteenBtwo, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B2/max, fmt: '{:.2f}'}
       - {macro: CLthirteenTokU, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B3/TokU, fmt: '{:.2f}'}
       - {macro: CLthirteenAttTwoLEightThirty, file: experiments/composability_mechanisms_v5/results/predictions.json, path: K/K2/max_R30, fmt: '{:.2f}'}
@@ -300,6 +307,7 @@ claims:
       - {macro: CLmetaGpuVfive, file: experiments/composability_mechanisms_v4/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVsix, file: experiments/composability_mechanisms_v5/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVseven, file: experiments/composability_mechanisms_v6/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVeight, file: experiments/composability_mechanisms_v7/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuTotal, derived: gpu_total, fmt: '{:.1f}'}
       - {macro: CLmetaRounds, derived: rounds_locked, fmt: '{:d}', note: 'preregistered rounds with a lock commit; regenerate after v8'}
   - id: CL16
@@ -332,6 +340,69 @@ claims:
       - {macro: CLeoneCtlPinvLo, derived: v8_e1_rrr_Pinv_min, fmt: '{:.2f}', note: 'v8 E1 (exploratory): min median gain of Pinv over the template-0 RRR-16 control'}
       - {macro: CLeoneCtlPinvHi, derived: v8_e1_rrr_Pinv_max, fmt: '{:.2f}', note: 'v8 E1 (exploratory): max median gain of Pinv over the template-0 RRR-16 control'}
       - {macro: CLsixteenCombos, derived: v7_a_combos, fmt: '{:d}'}
+  - id: CL17
+    zh: 自然文本：在真实句子上，槽位算子可组合，指令捷径、冻结特征与潜空间预测都成立（v8 Q24 = H-natural）
+    en: On natural sentences the slot operator composes, and the instruction shortcut, the freeze signatures and latent prediction all hold.
+    nature: decided (v8 Q24 H-natural on both backbones); N2 (zero-shot transfer) descriptive; T5Gemma F{1}-plus condition dropped before the lock
+    predictions: [v8/N/Q24, v8/N/bart/N1, v8/N/t5/N1, v8/N/bart/N3, v8/N/t5/N3, v8/N/bart/N4, v8/N/t5/N4, v8/N/bart/N5, v8/N/t5/N5]
+    exploratory_sources: [v8 N2 (descriptive by the pre-lock check)]
+    figures: []
+    numbers:
+      - {macro: CLseventeenWorlds, derived: v8_n_worlds, fmt: '{:d}'}
+      - {macro: CLseventeenNoneBart, derived: v8_n1_bart, fmt: '{:.2f}'}
+      - {macro: CLseventeenNoneTfive, derived: v8_n1_t5, fmt: '{:.2f}'}
+      - {macro: CLseventeenSynBart, derived: v8_n2_bart, fmt: '{:.2f}'}
+      - {macro: CLseventeenSynTfive, derived: v8_n2_t5, fmt: '{:.2f}'}
+      - {macro: CLseventeenCOneRoneMin, derived: v8_n3_r1_min, fmt: '{:.2f}'}
+      - {macro: CLseventeenCOneRtwoMax, derived: v8_n3_r2_max, fmt: '{:.2f}'}
+      - {macro: CLseventeenDMin, derived: v8_n3_d_min, fmt: '{:.2f}'}
+      - {macro: CLseventeenFoneBart, derived: v8_n4_f1p_bart, fmt: '{:.2f}'}
+      - {macro: CLseventeenFoneTfive, derived: v8_n4_f1p_t5, fmt: '{:.2f}'}
+      - {macro: CLseventeenFoneAltMin, derived: v8_n4_f1a_min, fmt: '{:.2f}'}
+      - {macro: CLseventeenFnotMax, derived: v8_n4_fn_max, fmt: '{:.2f}'}
+      - {macro: CLseventeenAgreeBart, derived: v8_n5_bart, fmt: '{:.3f}'}
+      - {macro: CLseventeenAgreeTfive, derived: v8_n5_t5, fmt: '{:.3f}'}
+      - {macro: CLseventeenNaiveBart, derived: v8_n5_naive_bart, fmt: '{:.3f}'}
+      - {macro: CLseventeenNaiveTfive, derived: v8_n5_naive_t5, fmt: '{:.3f}'}
+      - {macro: CLseventeenMajBart, derived: v8_n5_maj_bart, fmt: '{:.3f}'}
+      - {macro: CLseventeenMajTfive, derived: v8_n5_maj_t5, fmt: '{:.3f}'}
+  - id: CL18
+    zh: 规模：T5Gemma 9B-9B 上 G1、G3–G6 复现，G2（秩阈值的下侧）在 month 上不成立（v8 Q25）
+    en: On T5Gemma 9B-9B the instruction shortcut, freeze signatures, spectrum, prediction and state-supervised composition replicate; the lower side of the rank threshold fails on month.
+    nature: mixed (v8 Q25 - G1, G3, G4, G5, G6 hold; G2 fails on month); ladder exploratory
+    predictions: [v8/G/weekday/G1, v8/G/month/G1, v8/G/weekday/G2, v8/G/weekday/G3, v8/G/month/G3, v8/G/weekday/G4, v8/G/month/G4, v8/G/G5, v8/G/weekday/G6, v8/G/month/G6]
+    counter_predictions: [v8/G/month/G2, v8/G/Q25]
+    exploratory_sources: [v8 ladder (T5Gemma B-B, L-L; closed form only)]
+    figures: []
+    numbers:
+      - {macro: CLeighteenCOneRtwoMax, derived: v8_g1_r2_max, fmt: '{:.2f}'}
+      - {macro: CLeighteenRstarWeekday, derived: v8_g2_rstar_wd, fmt: '{:d}'}
+      - {macro: CLeighteenRstarMonth, derived: v8_g2_rstar_mo, fmt: '{:d}'}
+      - {macro: CLeighteenRnineMonth, derived: v8_g2_r9_mo, fmt: '{:.2f}'}
+      - {macro: CLeighteenRtenMonth, derived: v8_g2_r10_mo, fmt: '{:.2f}'}
+      - {macro: CLeighteenFFnineMonth, derived: v8_g_ff9_mo, fmt: '{:.2f}'}
+      - {macro: CLeighteenFFtenMonth, derived: v8_g_ff10_mo, fmt: '{:.2f}'}
+      - {macro: CLeighteenCThreeMin, derived: v8_g6_min, fmt: '{:.2f}'}
+      - {macro: CLeighteenAgree, derived: v8_g5_agree, fmt: '{:.3f}'}
+      - {macro: CLeighteenNaive, derived: v8_g5_naive, fmt: '{:.3f}'}
+      - {macro: CLeighteenDsepCells, derived: v8_g5_dsep_n, fmt: '{:d}'}
+      - {macro: CLeighteenLLmonth, derived: v8_ll_month16, fmt: '{:.2f}'}
+      - {macro: CLeighteenBBmonthRecon, derived: v8_bb_month_recon, fmt: '{:.3f}'}
+  - id: CL19
+    zh: decoder-only（探索性）：Gemma 2 2B 的残差流中，月份槽位有同样的秩阈值、冻结特征与谱；CE 编辑器同样写指令
+    en: In the residual stream of the decoder-only Gemma 2 2B the month slot shows the same rank threshold, freeze signatures and spectrum, and a decoder-trained editor again writes an instruction (exploratory).
+    nature: exploratory
+    predictions: []
+    exploratory_sources: [v8 unit D (d_run.json), layer rule DEVIATIONS 7]
+    figures: []
+    numbers:
+      - {macro: CLnineteenLayer, derived: v8_d_layer, fmt: '{:d}'}
+      - {macro: CLnineteenRstar, derived: v8_d_rstar, fmt: '{:d}'}
+      - {macro: CLnineteenFonePlus, derived: v8_d_f1p, fmt: '{:.2f}'}
+      - {macro: CLnineteenFoneAlt, derived: v8_d_f1a, fmt: '{:.2f}'}
+      - {macro: CLnineteenCOneRtwoMax, derived: v8_d_c1_r2_max, fmt: '{:.2f}'}
+      - {macro: CLnineteenDMin, derived: v8_d_c1_d_min, fmt: '{:.2f}'}
+      - {macro: CLnineteenAgreeMin, derived: v8_d_agree_min, fmt: '{:.2f}'}
   - id: THEORY
     zh: 命题 1–4 的数值核对（v7 T 单元；T1 为已知答案的核对，T2 为探索性）
     en: Numerical checks of propositions 1-4 (v7 unit T).

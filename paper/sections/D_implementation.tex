@@ -45,7 +45,17 @@ In the sixth round all binding editors are trained with the unrolled $L_2$ objec
 OR-U4 and Att2L-U4 on unrolls of up to four steps for $4000$ updates, Att2L-U8 and Att1-U8 on unrolls of up to eight steps for
 $8000$ updates; admission required dev single-step success of at least $95\%$ on name3 and bind3fix.
 
+
+\paragraph{Eighth round.}
+T5Gemma 9B-9B, L-L and B-B (UL2, instruction-tuned) use the same wrapper as T5Gemma 2B-2B and are pinned to fixed revisions. Rank grids
+are $r \in \{N-4,\dots,N, 16\}$ plus the predicted threshold and two below it, with FF-$r$ for the rank-deficient $r$. New editors use
+seeds 50--52 (C1: 600 updates; C3-U4: 1200 updates, $S \le 4$); all were admitted at their first length. For the decoder-only model
+(Gemma 2 2B, instruction-tuned) the chat prompt asks the model to repeat the sentence; the latent is the residual stream after layer
+$\ell$ at the month token of the prompt; an edit replaces that vector during the prefill and every later position is recomputed from layer
+$\ell+1$; generation is greedy and success is an exact repeat of the target sentence. Layer $\ell$ is the median of the layers whose
+single-step success with S-RRR-16 is maximal on dev (layers 2--18 tie; later layers degrade and the last two fail). The decoder-trained
+slot editor is trained through the upper layers with teacher-forced generation (600 updates, seeds 50--52).
 \paragraph{Compute.}
 All jobs ran on single NVIDIA B300 GPUs through Slurm, at most two at a time. GPU hours per round (run ledgers): \CLmetaGpuVone{},
-\CLmetaGpuVtwo{}, \CLmetaGpuVthree{}, \CLmetaGpuVfour{}, \CLmetaGpuVfive{}, \CLmetaGpuVsix{} and \CLmetaGpuVseven{} for the first to the seventh round, \CLmetaGpuTotal{} in
+\CLmetaGpuVtwo{}, \CLmetaGpuVthree{}, \CLmetaGpuVfour{}, \CLmetaGpuVfive{}, \CLmetaGpuVsix{}, \CLmetaGpuVseven{} and \CLmetaGpuVeight{} for the first to the eighth round, \CLmetaGpuTotal{} in
 total.

@@ -8,7 +8,8 @@ import numpy as np
 from common import *
 
 LOCK = {r: f'experiments/{d}/protocol_lock.json' for r, d in (('v1', 'symmetry_composability_v1'), ('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'),
-                                                             ('v4', 'composability_mechanisms_v3'), ('v5', 'composability_mechanisms_v4'), ('v6', 'composability_mechanisms_v5'), ('v7', 'composability_mechanisms_v6'))}
+                                                             ('v4', 'composability_mechanisms_v3'), ('v5', 'composability_mechanisms_v4'), ('v6', 'composability_mechanisms_v5'), ('v7', 'composability_mechanisms_v6'),
+                                                             ('v8', 'composability_mechanisms_v7'))}
 P = {r: f'experiments/{d}/results/predictions.json' for r, d in (('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'), ('v4', 'composability_mechanisms_v3'),
                                                                 ('v5', 'composability_mechanisms_v4'))}
 P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
@@ -21,9 +22,13 @@ V7R = 'experiments/composability_mechanisms_v6/results/predictions.json'
 VT = 'experiments/composability_mechanisms_v6/results/theory/t_theory.json'
 E1 = 'experiments/composability_mechanisms_v7/results/e1.json'          # v8 E1 (exploratory, CPU, before the v8 lock; v7 confirm7 encodings only)
 _e1 = lambda kind, op, fn: fn(v[op] for k, v in read(E1)['cells'].items() if k.split('/')[2] == kind)
+P8 = 'experiments/composability_mechanisms_v7/results/predictions.json'; D8 = 'experiments/composability_mechanisms_v7/results/d_run.json'
+E28 = 'experiments/composability_mechanisms_v7/results/e2_run.json'; E2B = 'experiments/composability_mechanisms_v7/results/e2b.json'; N8G = 'experiments/composability_mechanisms_v7/results/n_gate.json'
+_n8 = lambda bb: read(P8)['N']['per_backbone'][bb]
+_g8c = lambda k: read(P8)['G']['cells'][k]['obs_rate']
 P5B = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json'; P5T = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_t5.json'
 V3AUD = 'experiments/composability_mechanisms_v2/data/audit.json'
-ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5', 'composability_mechanisms_v6']
+ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5', 'composability_mechanisms_v6', 'composability_mechanisms_v7']
 
 
 def _v3_sk():
@@ -113,6 +118,38 @@ DERIVED = {
     'v8_e1_rrr_M_max': (lambda: _e1('rrr', 'M', max), [E1]),
     'v8_e1_rrr_Pinv_min': (lambda: _e1('rrr', 'Pinv', min), [E1]),
     'v8_e1_rrr_Pinv_max': (lambda: _e1('rrr', 'Pinv', max), [E1]),
+    'v8_n1_bart': (lambda: _n8('bart')['N1']['R2N'], [P8]), 'v8_n1_t5': (lambda: _n8('t5')['N1']['R2N'], [P8]),
+    'v8_n2_bart': (lambda: _n8('bart')['N2']['R2N'], [P8]), 'v8_n2_t5': (lambda: _n8('t5')['N2']['R2N'], [P8]),
+    'v8_n3_r1_min': (lambda: min(_n8(b)['N3']['R1'] for b in ('bart', 't5')), [P8]), 'v8_n3_r2_max': (lambda: max(_n8(b)['N3']['R2'] for b in ('bart', 't5')), [P8]),
+    'v8_n3_d_min': (lambda: min(_n8(b)['N3']['D'] for b in ('bart', 't5')), [P8]),
+    'v8_n4_f1p_bart': (lambda: _n8('bart')['N4']['observed']['F1_plus'], [P8]), 'v8_n4_f1p_t5': (lambda: _n8('t5')['N4']['observed']['F1_plus'], [P8]),
+    'v8_n4_f1a_min': (lambda: min(_n8(b)['N4']['observed']['F1_alt'] for b in ('bart', 't5')), [P8]),
+    'v8_n4_fn_max': (lambda: max(_n8(b)['N4']['observed']['Fnot1_plus'] for b in ('bart', 't5')), [P8]),
+    'v8_n5_bart': (lambda: _n8('bart')['N5']['latent'], [P8]), 'v8_n5_t5': (lambda: _n8('t5')['N5']['latent'], [P8]),
+    'v8_n5_naive_bart': (lambda: _n8('bart')['N5']['naive'], [P8]), 'v8_n5_naive_t5': (lambda: _n8('t5')['N5']['naive'], [P8]),
+    'v8_n5_maj_bart': (lambda: _n8('bart')['N5']['majority_reference'], [P8]), 'v8_n5_maj_t5': (lambda: _n8('t5')['N5']['majority_reference'], [P8]),
+    'v8_n_worlds': (lambda: read(N8G)['pools']['confirm8']['kept'], [N8G]),
+    'v8_g1_r2_max': (lambda: max(v['G1']['R2'] for v in read(P8)['G']['domains'].values()), [P8]),
+    'v8_g2_rstar_wd': (lambda: read(P8)['G']['domains']['weekday']['G2']['rstar_pred'], [P8]), 'v8_g2_rstar_mo': (lambda: read(P8)['G']['domains']['month']['G2']['rstar_pred'], [P8]),
+    'v8_g2_r9_mo': (lambda: _g8c('month/RRR9/plus'), [P8]), 'v8_g2_r10_mo': (lambda: _g8c('month/RRR10/plus'), [P8]),
+    'v8_g_ff9_mo': (lambda: _g8c('month/FF9/plus'), [P8]), 'v8_g_ff10_mo': (lambda: _g8c('month/FF10/plus'), [P8]),
+    'v8_g6_min': (lambda: min(v['G6']['R2N'] for v in read(P8)['G']['domains'].values()), [P8]),
+    'v8_g5_agree': (lambda: read(P8)['G']['G5']['prediction']['latent'], [P8]), 'v8_g5_naive': (lambda: read(P8)['G']['G5']['prediction']['naive'], [P8]),
+    'v8_g5_dsep_n': (lambda: read(P8)['G']['G5']['D_separation']['n'], [P8]),
+    'v8_ll_month16': (lambda: read(P8)['ladder']['t5_ll']['cells']['month/F_empty/plus']['obs_rate'], [P8]),
+    'v8_bb_month_recon': (lambda: read('experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json')['domains']['month']['reconstruction']['rate'], ['experiments/composability_mechanisms_v7/results/g_prep_t5_bb.json']),
+    'v8_d_layer': (lambda: read(D8)['primary'], [D8]),
+    'v8_d_rstar': (lambda: min(int(k[4:].split('/')[0]) for k, v in read(D8)['layer10']['cells'].items() if k.startswith('SRRR') and v['R2N'] >= .95), [D8]),
+    'v8_d_f1p': (lambda: read(D8)['layer10']['cells']['F_{1}/plus']['R2N'], [D8]), 'v8_d_f1a': (lambda: read(D8)['layer10']['cells']['F_{1}/alt']['R2N'], [D8]),
+    'v8_d_c1_r2_max': (lambda: max(v['R2'] for k, v in read(D8)['layer10']['cells'].items() if k.startswith('C1_')), [D8]),
+    'v8_d_c1_d_min': (lambda: min(v['D'] for k, v in read(D8)['layer10']['cells'].items() if k.startswith('C1_')), [D8]),
+    'v8_d_agree_min': (lambda: min(v['agree'] for k, v in read(D8)['layer10']['cells'].items() if not k.startswith('C1_')), [D8]),
+    'v8_e2_r30_max': (lambda: max(v['R30'] for v in read(E28)['_summary'].values()), [E28]),
+    'v8_e2_d100_r32_lo': (lambda: min(read(E28)[f'OR32/s{s}']['distance'][99] for s in (42, 43, 44)), [E28]),
+    'v8_e2_d100_r32_hi': (lambda: max(read(E28)[f'OR32/s{s}']['distance'][99] for s in (42, 43, 44)), [E28]),
+    'v8_e2_d100_full_lo': (lambda: min(read(E28)[f'ORfull/s{s}']['distance'][99] for s in (42, 43, 44)), [E28]),
+    'v8_e2_d100_full_hi': (lambda: max(read(E28)[f'ORfull/s{s}']['distance'][99] for s in (42, 43, 44)), [E28]),
+    'v8_e2b_dir_min': (lambda: min(v['direction_1-8'] for v in read(E2B)['_summary'].values()), [E2B]),
     'v7_a_combos': (lambda: len(read(V7R)['A']['A1']), [V7R]),
     'v7_k_survivors': (lambda: len(_k7_surv()), [V7R]),
     'v7_k_dist10_med': (lambda: float(np.median([_k7_cont(s)[9] for s in range(42, 50)])), [V7R]),

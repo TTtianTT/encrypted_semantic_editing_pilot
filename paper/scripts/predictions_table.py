@@ -9,7 +9,7 @@ from common import *
 ROUNDS = [('v1', 'symmetry_composability_v1', 'results/e1_predictions.json'), ('v2', 'composability_mechanisms_v1', 'results/predictions.json'),
           ('v3', 'composability_mechanisms_v2', 'results/predictions.json'), ('v4', 'composability_mechanisms_v3', 'results/predictions.json'),
           ('v5', 'composability_mechanisms_v4', 'results/predictions.json'), ('v6', 'composability_mechanisms_v5', 'results/predictions.json'),
-          ('v7', 'composability_mechanisms_v6', 'results/predictions.json')]
+          ('v7', 'composability_mechanisms_v6', 'results/predictions.json'), ('v8', 'composability_mechanisms_v7', 'results/predictions.json')]
 GATES = {'v4': [('G4_0', 'g40')], 'v5': [('G5_0', 'g50')], 'v6': [('G6_0', 'g60')]}
 NOTES = {('v6', 'K/K2'): '(not replicated in v7)', ('v6', 'K/Q17prime'): '(K2 not replicated in v7)'}
 SKIP = {'cells', 'table', 'observed', 'S2_table', 'S3_cells', 'verdicts', 'per_seed', 'exploratory', 'lock', 'admission', 'confirm_geometry', 'consistency', 'g60'}
@@ -46,6 +46,30 @@ def v7_rows(d):
     return out
 
 
+
+
+def v8_rows(d):
+    """v8: N1-N5 and Q24 per backbone, Q24 overall; G1-G4, G6 per domain, G5, Q25; conditions dropped by the pre-lock checks and N2 (descriptive)
+    are their own class ('demoted'); G8_0 is the post-lock sanity gate computed from the same chains (AMENDMENT_03)."""
+    p = read(f"experiments/{d}/results/predictions.json"); pr = read(f"experiments/{d}/protocol.json"); out = []
+    tf = lambda v: 'confirmed' if v is True else 'failed' if v is False else 'not evaluable'
+    for bb, r in p['N']['per_backbone'].items():
+        out.append(dict(id=f'N/{bb}/N1', verdict=r['N1']['verdict'], outcome={'holds': 'confirmed', 'opposing': 'failed'}.get(r['N1']['verdict'], 'mixed')))
+        out.append(dict(id=f'N/{bb}/N2 (descriptive)', verdict=r['N2']['verdict'], outcome='demoted'))
+        for k in ('N3', 'N4', 'N5'): out.append(dict(id=f'N/{bb}/{k}', verdict=r[k]['holds'], outcome=tf(r[k]['holds'])))
+        out.append(dict(id=f'N/{bb}/Q24', verdict=r['Q24'], outcome='mixed' if r['Q24'] == 'mixed' else 'decided'))
+    out.append(dict(id='N/Q24', verdict=p['N']['Q24'], outcome='mixed' if p['N']['Q24'].startswith('mixed') else 'decided'))
+    for dm, r in p['G']['domains'].items():
+        for k in ('G1', 'G2', 'G3', 'G4', 'G6'): out.append(dict(id=f'G/{dm}/{k}', verdict=r[k]['holds'], outcome=tf(r[k]['holds'])))
+    out.append(dict(id='G/G5', verdict=p['G']['G5']['holds'], outcome=tf(p['G']['G5']['holds'])))
+    q = p['G']['Q25']; out.append(dict(id='G/Q25', verdict=q if isinstance(q, str) else 'not holding: ' + ', '.join(q['not_holding']), outcome='decided' if isinstance(q, str) else 'mixed'))
+    for dm in pr['demotions']:
+        if dm.startswith(('N4/', 'G3/')): out.append(dict(id=dm.split(':')[0], verdict='dropped before the lock', outcome='demoted'))
+    g = [p['N']['per_backbone'][bb]['N1']['R2N'] for bb in ('bart', 't5')] + [p['G']['cells'][f'{dm}/F_empty/plus']['obs_rate'] for dm in ('weekday', 'month')]
+    out.append(dict(id='G8_0 (post-lock gate, AMENDMENT_03)', verdict=min(g) >= .95, outcome=tf(min(g) >= .95)))
+    return out
+
+
 def walk(node, path, out):
     if isinstance(node, dict):
         if path and (any(k in node for k in ("verdict", "pass_", "holds")) or isinstance(node.get("frozen"), bool) or "winner" in node): out.append((path, node))
@@ -64,8 +88,8 @@ def main():
         p = REPO / 'experiments' / d / f
         if not p.exists(): continue
         lock = read(f"experiments/{d}/protocol_lock.json")["lock_commit"][:7]
-        if r == "v7":                                   # one entry per locked prediction (paper_export), with its kind
-            for e in v7_rows(d): rows_.append(dict(round=r, experiment=d, lock=lock, **e))
+        if r in ("v7", "v8"):                           # one entry per locked prediction, with its kind
+            for e in (v7_rows if r == "v7" else v8_rows)(d): rows_.append(dict(round=r, experiment=d, lock=lock, **e))
             continue
         found = []; walk(read(p), "", found)
         for path, node in found:
