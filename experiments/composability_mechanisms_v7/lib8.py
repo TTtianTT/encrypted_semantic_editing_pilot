@@ -62,14 +62,16 @@ def dec(eng, h, m):
 
 # ---------------------------------------------------------------- worlds, caches, slots
 def tmpl(d):
+    if d == S.NAT: return 'nat'
     return 3 if d in S.S1B else 'mt' if d.endswith('-mt') else 0
 
 
 def tmpl_tag(d):
-    return {3: 't3', 0: 't0', 'mt': 'tmt'}[tmpl(d)]
+    return {3: 't3', 0: 't0', 'mt': 'tmt', 'nat': 'tnat'}[tmpl(d)]
 
 
 def wfile(d, split):
+    if d == S.NAT: return ROOT / f'data/{d}/worlds.jsonl'                       # v8 natural text: every split here
     if split == 'confirm3': return V3DIR / f'data/{d}/worlds.jsonl'
     if split == 'confirm4': return V4DIR / f'data/{d}/worlds.jsonl'
     if split in NEW_SPLITS: return ROOT / f'data/{d}/worlds.jsonl'
@@ -91,6 +93,7 @@ def worlds5(d, split):
 
 
 def cpath(bb, d, split, s):
+    if d == S.NAT or bb in MODELS8: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'      # v8: natural text, new backbones
     if split == 'confirm3': return V3DIR / f'local/{bb}_{d}_confirm3_t{tmpl(d)}_s{s}.pt'
     if split == 'confirm4': return V4DIR / f'local/{bb}_{d}_confirm4_t{tmpl(d)}_s{s}.pt'
     if split in NEW_SPLITS: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
@@ -110,7 +113,8 @@ def cache5(bb, d, split, s):
 
 def slots(bb, d, split):
     """Long tensor (W,) of attribute-slot positions (template 0: constant; template 3 and multi-template: per world)."""
-    if split == 'confirm3': f = V3DIR / 'data/slot_positions.json'
+    if d == S.NAT or bb in MODELS8: f = ROOT / 'data/slot_positions.json'
+    elif split == 'confirm3': f = V3DIR / 'data/slot_positions.json'
     elif split in NEW_SPLITS: f = ROOT / 'data/slot_positions.json'
     elif split == 'confirm6': f = V6DIR / 'data/slot_positions.json'
     elif split in V7_SPLITS: f = V7DIR / 'data/slot_positions.json'
@@ -859,7 +863,8 @@ def base_ops(bb, d, gates=None):
 def vote_lams(bb, d):
     """Locked vote-model weights {full, equal, fund}: v3 calib (compass), v4 protocol (weekday, month, hour, compass8, season),
     this experiment's calib_mt (multi-template; locked with this protocol)."""
-    if d == 'compass': m = read(V3DIR / f'results/calib_{bb}.json')['domains']['compass']['models']
+    if d == S.NAT: m = read(ROOT / f'results/calib_nat_{bb}.json')['domains'][d]['models']           # v8 natural text (n_prep.py; locked with this protocol)
+    elif d == 'compass': m = read(V3DIR / f'results/calib_{bb}.json')['domains']['compass']['models']
     elif d.endswith('-mt'): m = read(V6DIR / f'results/calib_mt_{bb}.json')['domains'][d]['models']      # v6 locked multi-template calibration
     else: m = read(V4DIR / 'protocol.json')['calib'][bb][d]['models']
     return {k: torch.tensor(v['lam'], dtype=torch.float64) for k, v in m.items()}

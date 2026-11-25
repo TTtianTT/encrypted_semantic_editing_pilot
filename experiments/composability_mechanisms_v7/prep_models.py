@@ -25,12 +25,15 @@ def sha(p):
 
 def main():
     api = HfApi(); man = {}
+    pinned = {}
+    for f in (HERE / 'data/model_manifest_v8.json', HERE / 'local/model_manifest_v8.json'):
+        if f.exists(): pinned = {v['model_id']: v['revision'] for v in json.loads(f.read_text()).values() if 'revision' in v}; break
     for unit, cands in WANT:
         for rid in cands:
-            try: info = api.model_info(rid)
+            try: info = api.model_info(rid, revision=pinned.get(rid))       # a pinned revision (earlier run) is kept; the 2026-11-25 rerun only adds chat_template.jinja
             except Exception as e: print('missing', rid, type(e).__name__, flush=True); continue
             t0 = time.time(); d = OUT / rid.split('/')[1]
-            snapshot_download(rid, revision=info.sha, local_dir=d, allow_patterns=['*.json', '*.safetensors', '*.model', '*.txt', 'tokenizer*'])
+            snapshot_download(rid, revision=info.sha, local_dir=d, allow_patterns=['*.json', '*.safetensors', '*.model', '*.txt', 'tokenizer*', '*.jinja'])
             files = {str(p.relative_to(d)): dict(sha256=sha(p), bytes=p.stat().st_size) for p in sorted(d.rglob('*')) if p.is_file() and '.cache' not in p.parts}
             man[unit] = dict(model_id=rid, revision=info.sha, directory=str(d), fallback=rid != cands[0], files=files, seconds=time.time() - t0)
             print('downloaded', unit, rid, info.sha, f'{sum(v["bytes"] for v in files.values()) / 1e9:.1f} GB', flush=True); break

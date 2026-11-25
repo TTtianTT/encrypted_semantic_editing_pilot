@@ -22,3 +22,8 @@
      - `google/gemma-2-2b-it`（299a8560…）。
    - 三个 T5Gemma 尺寸都有 UL2-IT 版本，没有用 prefixLM 的替代。
    - 每个文件的 SHA256 记录在 `local/model_manifest_v8.json`；该清单会复制到 `data/` 中入库。
+5. **2026-11-25，模型下载补漏（锁定前）**：
+   - 原因：`prep_models.py` 的下载模式没有包含 `*.jinja`，T5Gemma 9B-9B、B-B、L-L 缺少 `chat_template.jinja`，分词器无法套用 chat 模板（2B-2B 的目录里有这个文件）。
+   - 做法：`prep_models.py` 改为沿用 `data/model_manifest_v8.json` 中已固定的 revision，下载模式加入 `*.jinja`，重跑（作业 73414；73413 因作业模板设了离线模式而未下载，只覆盖了 `local/` 下的清单副本）。
+   - 结果：四个模型的 revision 与第 4 条相同；只新增三个 `chat_template.jinja`（三者相同）。Gemma 2 2B 的 chat 模板在 `tokenizer_config.json` 中，无需补。`data/model_manifest_v8.json` 已更新。
+   - 审计（`n_audit.py`）确认：三个新尺寸在 weekday、month 模板 0 上的 token id 与 2B-2B 完全相同，槽位恒为 22。
