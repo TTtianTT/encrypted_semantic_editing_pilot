@@ -21,7 +21,7 @@ PREDICTIONS = {
     'G6': 'C3-U4 的 R_2N（seed 中位数）≥ 0.95。',
     'Q25': 'G1–G6 全部成立，记为"在 9B-9B 上复现"；不成立的项逐条报告，不合并成一个结论。',
     'ladder': '（探索性）T5Gemma B-B 与 L-L UL2-IT：只做闭式算子（秩阈值、冻结特征、谱与潜空间预测）；重建闸门不过的尺寸跳过；与 BART-base、2B-2B、9B-9B 合成一张表。',
-    'D': '（探索性）Gemma 2 2B：继续的前提为重建 ≥ 0.99 且所选层上 S-RRR-16 的单步 ≥ 0.90；测量秩阈值、冻结特征、谱、潜空间读出与解码的一致率、CE 槽位编辑器的 R_1、R_2 与 D。',
+    'D': '（探索性）Gemma 2 2B：继续的前提为重建 ≥ 0.99 且所选层上 S-RRR-16 的单步 ≥ 0.90（选层规则按 DEVIATIONS 7：并列层的中位数为主层，两端并列层只做闭式测量）；测量秩阈值、冻结特征、谱、潜空间读出与解码的一致率、CE 槽位编辑器的 R_1、R_2 与 D。',
     'E1': '（探索性）g_P、g_M < 1 且 g_{P⁻¹} > 1：支持"拟合出的算子在离流形方向上收缩，精确逆放大"；否则写为"未解释"。（已在锁定前完成，results/e1.json，只用 v7 已解码的 confirm7 编码与拟合，不解码。）',
     'E2': '（探索性）秩升高后衰减明显变慢、旧名字残留下降：支持写入保真度的解读；否则 §9 写为"未解释"。',
 }
@@ -56,7 +56,7 @@ OPERATIONAL = {
     'paper': 'PLAN v7 C6 maps every outcome (including mixed) to the paper text; title rule of the stage-2 decision 1.3.',
 }
 LOCKED8 = ['symutil.py', 'sym5_semantics.py', 'sym5_evaluator.py', 'lib8.py', 'lcore.py', 'cells8.py', 'chains8.py', 'analyze8.py', 'simulate8.py', 'dev8.py',
-           'dlib.py', 'd_run.py', 'e2.py', 'e1_gain.py', 'selftest8.py', 'job_gpu.slurm', 'job_cpu.slurm']
+           'dlib.py', 'd_prep.py', 'd_c1.py', 'd_run.py', 'e2.py', 'e1_gain.py', 'selftest8.py', 'job_gpu.slurm', 'job_cpu.slurm']
 NB = ['bart', 't5']; GB = ['t5_9b', 't5_bb', 't5_ll']
 
 
@@ -69,7 +69,7 @@ def main():
                gates_nat={bb: read(ROOT / f'results/gates_nat_{bb}.json') for bb in NB}, calib_nat={bb: read(ROOT / f'results/calib_nat_{bb}.json') for bb in NB},
                g_prep={bb: read(ROOT / f'results/g_prep_{bb}.json') for bb in GB}, calib_g={bb: read(ROOT / f'results/calib_g_{bb}.json') for bb in GB if (ROOT / f'results/calib_g_{bb}.json').exists()},
                train8={f'{bb}_{p}': read(ROOT / f'results/train8_{bb}_{p}.json') for bb, p in (('bart', 'N'), ('t5', 'N'), ('t5_9b', 'G'))},
-               e1=read(ROOT / 'results/e1.json')['reading'], e2_train=read(ROOT / 'results/e2_train.json'), d_prep=read(ROOT / 'results/d_prep.json'),
+               e1=read(ROOT / 'results/e1.json')['reading'], e2_train=read(ROOT / 'results/e2_train.json'), d_prep=read(ROOT / 'results/d_prep.json'), d_layer=read(ROOT / 'results/d_layer.json'),
                dev8={f'{u}_{bb}': read(ROOT / f'results/dev8_{u}_{bb}_summary.json') for u, bbs in (('N', NB), ('G', GB)) for bb in bbs},
                simulate8={f'{u}_{bb}': read(ROOT / f'results/simulate8_{u}_{bb}_summary.json') for u, bbs in (('N', NB), ('G', GB)) for bb in bbs},
                smoke={f'{u}_{bb}': read(ROOT / f'local/smoke/chains8_{u}_{bb}_complete.json')['pass_'] for u, bb in (('N', 'bart'), ('N', 't5'), ('G', 't5_9b'))})

@@ -25,8 +25,9 @@ def new8():
         m = re.match(r'n8_(bart|t5_9b|t5)_(C1|C3U4|SC3U4)_([\w-]+)_s(\d+)_u\d+', f.stem); E.append(entry(m[2], m[1], m[3], m[4], f))
     for f in sorted((ROOT / 'local').glob('e2_*_bind3_s*_u8000.pt')):
         m = re.match(r'e2_(OR128|ORfull)_bind3_s(\d+)', f.stem); E.append(entry(f'OR-U unrolled L2|S={tuple(range(1, 9))}|{m[1]}', 'bart', 'bind3', m[2], f))
-    for f in sorted((ROOT / 'local').glob('d_C1_s*.pt')):
-        m = re.match(r'd_C1_s(\d+)', f.stem); E.append(entry('CE slot (decoder-only, layer-l latent)', 'gemma2_2b', 'month', m[1], f))
+    for f in sorted((ROOT / 'local').glob('d_C1_*s*.pt')):
+        m = re.match(r'd_C1_(?:l(\d+)_)?s(\d+)', f.stem); lay = m[1] or '2'                  # d_C1_s* = the unused layer-2 editors of d_prep.py
+        E.append(entry(f'CE slot (decoder-only, layer-{lay} latent)', 'gemma2_2b', 'month', m[2], f))
     return E
 
 
