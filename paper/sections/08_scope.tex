@@ -1,6 +1,6 @@
 \section{Scope}\label{sec:scope}
 % CL11 CL13 CL14 CL16 (draft by Claude Code following PLAN v6 B11 and the stage-2 instructions; the lead revises)
-\paragraph{Symmetry is not necessary.}\claim{CL11}
+\paragraph{A translation-symmetric ordering of the state words is not necessary.}\claim{CL11}
 Composability does not require the states to be laid out symmetrically. Scrambling the order of the state words, so that the encoder's
 cycle no longer matches the operation, still gives composable closed-form operators in \CLelevenScrComposable{} of
 \CLelevenScrTotal{} cells; what changes is the rank needed (for scrambled month $r^\star = \CLelevenRstarScrMonth{}$ instead of
@@ -55,5 +55,18 @@ name3 one sixth-round seed reaches only \CLthirteenNameSeedB{}.
 
 \paragraph{Other limits.}
 Two frozen encoder--decoder backbones; synthetic domains with single-token states; greedy decoding.
+The contrast of Section~\ref{sec:phenomenon} is between fitting objectives: a one-step decoder objective does not ask the edited latent to
+stay among encodings, and the closed-form operator is fitted on encodings, so the failure of C1 is the expected baseline; what the
+experiments add is what the CE editors write instead (Section~\ref{sec:instructions}) and which structure a state write must carry
+(Section~\ref{sec:fourier}). We did not compare with mean-difference steering vectors, intervention methods such as ReFT, longer or
+randomised unrolling horizons, or full-rank and nonlinear editors.
+Any $N$ centred points decompose into harmonic planes; the content of the Fourier account is which planes carry the state and how
+the editors treat them, and a scrambled state order composes at a different rank (CL11), so the account describes these domains rather
+than a requirement of every composable edit. Trained-editor results rest on three seeds (eight for binding, where the three-seed result
+of the sixth round did not replicate).
+The latent predictor's vote weights are calibrated on decoded dev probes, and the one-step test decodes the first step; neither
+decodes the confirmation chains whose outcome they predict. Part of the predictor's agreement is at the level of cells: a reference that
+predicts each cell's majority outcome, which needs the decoded outcomes, reaches \CLeightMajBart{} and \CLeightMajTfive{} (exploratory).
+\TODO{lead: decide which missing baselines of review round 1 (REVIEW\_LOG.md) to run as exploratory analyses.}
 \TODO{lead: discussion of what transfers to decoder-only models and natural text.}
 

@@ -18,7 +18,8 @@ claims:
     zh: 单步解码正确 ≠ 可组合
     en: A latent edit that decodes correctly in one step need not compose.
     nature: confirmed
-    predictions: [v1/P5, v2/G2_0, v5/G5_0]
+    predictions: [v2/G2_0, v5/G5_0, v5/L3b]
+    counter_predictions: [v1/P5]
     figures: [fig1]
     numbers:
       - {macro: CLoneVoneCOneRtwoMax, derived: v1_c1_r2_max, fmt: '{:.2f}', note: 'v1 C1, max over domains x seeds of R_2'}
@@ -77,6 +78,7 @@ claims:
     figures: [fig2]
     numbers:
       - {macro: CLfiveRstarSharp, derived: v2_r1_sharp_count, fmt: '{:d}', note: 'domains with r* = N - 1 (sharp)'}
+      - {macro: CLfiveRstarDomains, derived: v2_r1_domains, fmt: '{:d}', note: 'domains tested in v2 R1'}
       - {macro: CLfiveVoneN, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V1/n, fmt: '{:d}'}
       - {macro: CLfiveVtwoaN, file: experiments/composability_mechanisms_v3/results/predictions.json, path: V/V2a/n, fmt: '{:d}'}
   - id: CL6
@@ -95,8 +97,9 @@ claims:
   - id: CL7
     zh: 谱：基频的一步变化最小
     en: Spectrum - the fundamental changes least per step.
-    nature: confirmed (s_1); partial (a_1)
-    predictions: [v4/V0]
+    nature: partial - s_1 smallest in every cell (13 of 13; 6 from the locked fourth-round cells, 7 exploratory), but the locked V0 test, which also required a_1 largest, failed
+    predictions: []
+    counter_predictions: [v4/V0]
     exploratory_sources: [v3 algebra.json _s_k_vs_entry_order and v3 gates_<bb>.json amplitudes (7 backbone x domain cells, not a v3 prediction); v3 ERRATUM_01 section 3]
     figures: [fig3]
     numbers:
@@ -135,7 +138,8 @@ claims:
     zh: 等权读出也够用，不需要解码器标定
     en: An equal-weight readout suffices (no decoder calibration).
     nature: exploratory
-    predictions: [v6/P1a]
+    predictions: []
+    exploratory_sources: [v6 P1a post-hoc]
     numbers:
       - {macro: CLeightbEqualBart, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/bart/equal/world, fmt: '{:.3f}'}
       - {macro: CLeightbEqualTfive, file: experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json, path: P1a/all_nonCE/t5/equal/world, fmt: '{:.3f}'}
@@ -152,7 +156,7 @@ claims:
     zh: 基频优先的秩分配
     en: Fundamental-first rank allocation.
     nature: confirmed (T5Gemma)
-    predictions: [v5/F1]
+    predictions: [v5/Q16]
     figures: [fig4]
     numbers:
       - {macro: CLtenCells, file: experiments/composability_mechanisms_v4/results/predictions.json, path: F/Q16/n, fmt: '{:d}'}
@@ -162,7 +166,8 @@ claims:
     zh: 对称不是必要条件
     en: Symmetry is not necessary.
     nature: confirmed
-    predictions: [v2/A1, v2/A2, v2/A3, v2/R3, v4/S1]
+    predictions: [v2/A1, v2/A2, v2/A3, v4/S1]
+    counter_predictions: [v2/R3]
     numbers:
       - {macro: CLelevenScrComposable, derived: v2_a2_scrambled_composable, fmt: '{:d}'}
       - {macro: CLelevenScrTotal, derived: v2_a2_scrambled_total, fmt: '{:d}'}
@@ -172,7 +177,8 @@ claims:
     zh: 理想化预测会失败，必须模拟真实动力学
     en: Predictions from idealized slot codes fail; the predictor must simulate the actual latent dynamics.
     nature: phenomenon confirmed; explanation exploratory
-    predictions: [v4/V3, v4/V2b, v5/D1, v5/D2]
+    predictions: [v4/V3, v5/D2]
+    counter_predictions: [v4/V2b, v5/D1]
     numbers:
       - {macro: CLtwelveUp, derived: v5_d_up, fmt: '{:d}'}
       - {macro: CLtwelveC, derived: v5_d_c, fmt: '{:d}'}
@@ -181,7 +187,8 @@ claims:
     zh: 预测器错误的结构（v6 的探索性结果；v7 之后按 U、R 的判定改写）
     en: Where the latent predictor errs - a predicted failure is reliable, errors are mostly over-estimates of three kinds, and the decoder reads the state from the slot only.
     nature: decided (v7 R2 H-inspan but R4-B unstable; R1 mixed, replicated; R3 failed narrowly); U1/U2 exploratory (pre-check), Q21 H-nofix; P post-hoc exploratory
-    predictions: [v6/CT1, v6/CT2, v7/R0, v7/R1, v7/R2, v7/R3, v7/R4, v7/U3, v7/Q21]
+    predictions: [v6/CT2, v7/R0, v7/R2, v7/U3, v7/Q21]
+    counter_predictions: [v6/CT1, v7/R1, v7/R3, v7/R4]
     numbers:
       - {macro: CLfifteenPrecFailMin, derived: v7_p1_precfail_min, fmt: '{:.2f}'}
       - {macro: CLfifteenPrecFailMax, derived: v7_p1_precfail_max, fmt: '{:.2f}'}
@@ -220,7 +227,8 @@ claims:
     zh: 绑定类编辑：两层、8 步展开的编辑器在 8 个 seed 中有 5 个撑过 30 步，100 步时全部衰减；视野对齐的 oracle 也衰减；v6 的 K2 在新 seed 上没有复现
     en: Binding edits do not compose over long chains - a two-layer editor trained on 8-step unrolls survives 30 steps on 5 of 8 seeds and decays on all by 100 steps; a horizon-matched oracle-routing editor decays too.
     nature: decided (v7 K5 H-slow-decay, K7 H-unrepresentable; K6 mixed); v6 K2 (H-closure) did not replicate on new seeds; mechanism exploratory
-    predictions: [v5/B2, v5/B3, v6/K1, v6/K2, v6/K3, v6/K4, v7/K5, v7/K6, v7/K7]
+    predictions: [v5/B3, v6/K1, v7/K5, v7/K7]
+    counter_predictions: [v5/B2, v6/K2, v6/K3, v6/K4, v7/K6]
     figures: [figS2, figS3]
     numbers:
       - {macro: CLthirteenBtwo, file: experiments/composability_mechanisms_v4/results/predictions.json, path: B/B2/max, fmt: '{:.2f}'}
@@ -253,7 +261,8 @@ claims:
     zh: 多句式语境：以槽位为中心的算子在未见句式上可组合（Q18′ 按规则为混合）
     en: Slot-centred operators compose on unseen templates; the prediction and freeze tests hold only in part.
     nature: mixed (v6 Q18'); M1 H-general, M5 holds, M3 and M4 not met
-    predictions: [v6/M1, v6/M2, v6/M3, v6/M4, v6/M5]
+    predictions: [v6/M1, v6/M5]
+    counter_predictions: [v6/M2, v6/M3, v6/M4]
     figures: [figS1]
     numbers:
       - {macro: CLfourteenBaseWeekday, file: experiments/composability_mechanisms_v5/results/predictions.json, path: M/M1/bart~1weekday-mt, fmt: '{:.2f}'}
@@ -290,13 +299,15 @@ claims:
       - {macro: CLmetaGpuVfour, file: experiments/composability_mechanisms_v3/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVfive, file: experiments/composability_mechanisms_v4/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVsix, file: experiments/composability_mechanisms_v5/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVseven, file: experiments/composability_mechanisms_v6/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuTotal, derived: gpu_total, fmt: '{:.1f}'}
       - {macro: CLmetaRounds, derived: rounds_locked, fmt: '{:d}', note: 'preregistered rounds with a lock commit; regenerate after v8'}
   - id: CL16
     zh: 未见句式上交替链离开干净流形；一阶抵消（命题 4）未获确认
     en: On held-out templates alternating chains drift off the clean manifold while one-way chains do not; first-order one-cycle cancellation (proposition 4) is not confirmed and the exact inverse is not a usable minus operator.
     nature: A1 confirmed; A2 and A3 failed (v7 Q22 'only A1'); proposition 4 stays an unconfirmed explanation
-    predictions: [v7/A1, v7/A2, v7/A3]
+    predictions: [v7/A1]
+    counter_predictions: [v7/A2, v7/A3]
     numbers:
       - {macro: CLsixteenNOneMin, derived: v7_a1_n1_min, fmt: '{:.2f}', note: 'rho(plus, N) / rho(plus, 1)'}
       - {macro: CLsixteenNOneMax, derived: v7_a1_n1_max, fmt: '{:.2f}'}

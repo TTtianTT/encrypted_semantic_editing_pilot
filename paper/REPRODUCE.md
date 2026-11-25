@@ -134,6 +134,7 @@ Command: `SCRIPT=scripts/build_claims.py sbatch --parsable --export=ALL paper/jo
 |  | `experiments/composability_mechanisms_v5/protocol_lock.json` | `04b9b677fc497b0ae232174ddae2570796486e2154b3127994ed3a33d42c3cc4` |
 |  | `experiments/composability_mechanisms_v5/run_ledger.json` | `5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546` |
 |  | `experiments/composability_mechanisms_v6/protocol_lock.json` | `8b2bbae2206663cdedfc21c5d668c8fe827125e8570b0c33e6a11c5f2b5462c3` |
+|  | `experiments/composability_mechanisms_v6/run_ledger.json` | `2fce713af6d52652b52bb32fa18935f1328c269ccef89cd98318aa89b4a6f066` |
 |  | `experiments/symmetry_composability_v1/protocol_lock.json` | `5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead` |
 |  | `experiments/symmetry_composability_v1/run_ledger.json` | `50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f` |
 | CL16 | `experiments/composability_mechanisms_v6/results/predictions.json` | `d160bd40dc928c8e949ccc06af4a85390a856fb87e53a11ca7441693dc392f01` |

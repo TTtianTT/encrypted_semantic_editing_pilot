@@ -7,7 +7,7 @@ the fifth round this predictor agrees with the observed chain outcome for \CLeig
 (T5Gemma) of the (world, cell) pairs, against \CLeightNaiveBart{} and \CLeightNaiveTfive{} for the naive prediction from step-1
 success (lower bounds of the 95\% CI of the difference \CLeightDiffLoBart{} and \CLeightDiffLoTfive{}); it predicts the cell
 category correctly for \CLeightCatBart{} and \CLeightCatTfive{} of the cells (Figure~\ref{fig:fig6}). Editors trained in that round,
-whose behaviour was unknown when the predictions were locked, are predicted equally well (\CLeightNewBart{} and \CLeightNewTfive{}).
+whose behaviour was unknown when the predictions were locked, are predicted at least as well (\CLeightNewBart{} and \CLeightNewTfive{}).
 A per-cell majority reference, which uses the observed outcomes and is therefore not a predictor, reaches \CLeightMajBart{} and
 \CLeightMajTfive{} on the same cells (exploratory post-hoc computation).
 
@@ -36,7 +36,7 @@ of such failures on one-way paths, BART month). With the fundamental frozen on u
 (\CLfifteenStartMin{}--\CLfifteenStartMax{}\%). With T5Gemma's alternating chains on unseen templates, the output is corrupted
 (\CLfifteenUnparsable{}\% unparsable). We also asked whether clean state information in the context could explain the misses. In all
 \CLfifteenProbes{} dev probes that put one state in the slot and another in the context, the decoder followed the slot, so a context
-term calibrated on these probes receives weight zero and cannot change any prediction; on clean inputs the decoder reads the state
+term calibrated on these probes receives weight zero and cannot change any prediction; in these probes the decoder reads the state
 from the slot only. On the cells of editors trained for few updates the slot readout agrees with the observed outcome for
 \CLfifteenCtOneAgree{} of the worlds (category accuracy \CLfifteenCtOneCat{}, \CLfifteenCtOneCells{} cells), against
 \CLfifteenCtTwoAgree{} on a reference set of closed-form operators, surgeries and longer-trained editors. We do not use ``unconverged''
@@ -54,9 +54,10 @@ repaired the latent at the first failing step and decoded once. For editors trai
 in-plane position while keeping its off-manifold part (PUSH) restores decoding in \CLfifteenRBPush{} of the cases taken from the sixth
 round and \CLfifteenRFourBPush{} of new cases from new seeds; removing only the off-manifold part (PROJ) restores
 \CLfifteenRBProj{} and \CLfifteenRFourBProj{}, and restoring only the context (CTX) restores \CLfifteenRBCtx{} and
-\CLfifteenRFourBCtx{}. The editors under-write the state; because the context repair helps much more on the new cases, the
+\CLfifteenRFourBCtx{}. This is consistent with under-writing the state, but because the context repair helps much more on the new cases, the
 preregistered rule classifies the result as unstable. An exploratory reading: when the slot is written ambiguously, the context sways
-the decoder; when the slot is clean, the decoder reads it alone (all \CLfifteenProbes{} probes). On T5Gemma's alternating chains on
+the decoder; when the slot is clean, the decoder reads it alone (in all \CLfifteenProbes{} context-swap probes on dev). These repairs are
+diagnostics that use the gold state; they do not yield a better predictor. On T5Gemma's alternating chains on
 unseen templates both components matter (PROJ \CLfifteenRAProj{} and \CLfifteenRFourAProj{}, PUSH \CLfifteenRAPush{} and
 \CLfifteenRFourAPush{} on the original and the replication cases), and this mixed verdict replicated. The repairs leave normal steps
 almost intact, but the context repair keeps \CLfifteenRThreeCtx{} of them, just below the preregistered bound.

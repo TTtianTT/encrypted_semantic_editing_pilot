@@ -1,14 +1,16 @@
 \section{What is written: instructions versus states}\label{sec:instructions}
 % CL2 CL2b CL3 CL4
 \paragraph{CE editors write instructions.}\claim{CL2}
-The writes of C1 editors are nearly identical across source states (median cosine \CLtwoWriteCosSource{} between writes from
-different sources) and nearly orthogonal to the canonical write $E(x\pm1)-E(x)$ (median cosine \CLtwoWriteCosCanon{}); a linear probe
-on the edited slot still reads the \emph{source} state (median accuracy \CLtwoProbeSource{}). The edited latent therefore does not
-encode the target state; it encodes an instruction that the decoder executes once. A second application adds the same instruction to a
-latent that is no longer a canonical encoding, and the chain breaks. The fifth round confirms the signature on all
-\CLtwoCECells{} CE cells: after one step the latent readout of the slot is still the start state (for example in
-\CLtwoSlotStaysBart{} of 160 worlds for BART weekday C1 and \CLtwoSlotStaysTfive{} of 160 for T5Gemma month C1-U4), while the decoder
-outputs the target.
+The writes of C1 editors are highly similar across source states (median cosine \CLtwoWriteCosSource{} between writes from
+different sources), although a high cosine still leaves a source-specific component (third-round erratum, Appendix~\ref{app:deviations});
+they are unaligned with the canonical write $E(x\pm1)-E(x)$ (median cosine \CLtwoWriteCosCanon{}, of the order expected for unrelated
+directions), and a linear probe on the edited slot still reads the \emph{source} state (median accuracy \CLtwoProbeSource{}). Taken
+together, the edited slot keeps the source state and the edit does not move it towards the target encoding: the editor writes an
+instruction that the decoder executes once. (We did not train a probe for the target state.) A second application adds the same instruction to a
+latent that is no longer a canonical encoding, and the chain breaks. The fifth round's locked test on all \CLtwoCECells{} CE cells found a step-1 disagreement between the slot readout and the decoded
+state in at least half of the worlds of every cell (Section~\ref{sec:prediction}); in the two editors we inspected, the slot readout
+after one step is still the start state in \CLtwoSlotStaysBart{} of 160 worlds (BART weekday C1) and \CLtwoSlotStaysTfive{} of 160
+(T5Gemma month C1-U4), while the decoder outputs the target.
 
 \paragraph{Exploratory: relative or absolute instructions.}\claim{CL2b}
 Exploratory analyses suggest that where the decoder natively performs the operation (weekday and month on BART; all three tested
@@ -26,6 +28,7 @@ For compass ($N=4$) the horizon is exactly one turn of the cycle, so $\Rk{N}$ is
 \paragraph{State supervision makes the editors compose.}\claim{CL4}
 Adding the canonical $L_2$ term to the unrolled objective (C3-U4) yields composable editors on both backbones (T5Gemma C3-U4
 $\Rk{2N}\ge$ \CLfourTfiveCThreeUfour{}). With one-step training, composability depends on how far training has converged towards the
-canonical write (exploratory): one-step C3 on weekday composes after 600 updates but not after 450 (seed-median one-way
+canonical write (exploratory). The default one-step C3 of 600 updates is therefore not guaranteed to
+compose: one-step C3 on weekday composes after 600 updates but not after 450 (seed-median one-way
 $\Rk{2N}$ \CLfourWeekSixHundred{} against \CLfourWeekFourFifty{}), while on month it needs 1200 (\CLfourMonthTwelveHundred{} against
 \CLfourMonthNineHundred{} after 900).

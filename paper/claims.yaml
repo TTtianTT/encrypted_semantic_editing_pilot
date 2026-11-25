@@ -13,9 +13,12 @@ claims:
   en: A latent edit that decodes correctly in one step need not compose.
   nature: confirmed
   predictions:
-  - v1/P5
   - v2/G2_0
   - v5/G5_0
+  - v5/L3b
+  counter_predictions:
+  - v1/P5
+  exploratory_sources: []
   figures:
   - fig1
   lock_commits:
@@ -73,6 +76,8 @@ claims:
   - v2/M2
   - v2/M3
   - v5/L3b
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig5
   lock_commits:
@@ -135,6 +140,8 @@ claims:
   predictions:
   - v3/N2
   - v3/N3
+  counter_predictions: []
+  exploratory_sources: []
   figures: []
   lock_commits:
     v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
@@ -179,6 +186,8 @@ claims:
   - v4/U1b
   - v4/U2
   - v5/L4
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig5
   lock_commits:
@@ -208,6 +217,8 @@ claims:
   nature: confirmed (C3-U4); exploratory (training length)
   predictions:
   - v5/L4
+  counter_predictions: []
+  exploratory_sources: []
   figures: []
   lock_commits:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
@@ -263,6 +274,8 @@ claims:
   - v3/HS3
   - v4/V1
   - v4/V2a
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig2
   lock_commits:
@@ -279,6 +292,13 @@ claims:
     source: derived:v2_r1_sharp_count
     path: null
     note: domains with r* = N - 1 (sharp)
+    pending: false
+  - macro: CLfiveRstarDomains
+    value: 4
+    text: '4'
+    source: derived:v2_r1_domains
+    path: null
+    note: domains tested in v2 R1
     pending: false
   - macro: CLfiveVoneN
     value: 8
@@ -301,6 +321,8 @@ claims:
   predictions:
   - v3/HV1
   - v4/V4
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig3
   lock_commits:
@@ -354,9 +376,16 @@ claims:
 - id: CL7
   zh: 谱：基频的一步变化最小
   en: Spectrum - the fundamental changes least per step.
-  nature: confirmed (s_1); partial (a_1)
-  predictions:
+  nature: partial - s_1 smallest in every cell (13 of 13; 6 from the locked fourth-round
+    cells, 7 exploratory), but the locked V0 test, which also required a_1 largest,
+    failed
+  predictions: []
+  counter_predictions:
   - v4/V0
+  exploratory_sources:
+  - v3 algebra.json _s_k_vs_entry_order and v3 gates_<bb>.json amplitudes (7 backbone
+    x domain cells
+  - not a v3 prediction); v3 ERRATUM_01 section 3
   figures:
   - fig3
   lock_commits:
@@ -459,6 +488,8 @@ claims:
   predictions:
   - v5/L1
   - v5/L2
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig6
   lock_commits:
@@ -555,11 +586,12 @@ claims:
   zh: 等权读出也够用，不需要解码器标定
   en: An equal-weight readout suffices (no decoder calibration).
   nature: exploratory
-  predictions:
-  - v6/P1a
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v6 P1a post-hoc
   figures: []
-  lock_commits:
-    v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
+  lock_commits: {}
   evidence:
     experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json: 7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546
   numbers:
@@ -585,6 +617,8 @@ claims:
   - v5/L3a
   - v5/L3b
   - v5/L3c
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig5
   lock_commits:
@@ -611,7 +645,9 @@ claims:
   en: Fundamental-first rank allocation.
   nature: confirmed (T5Gemma)
   predictions:
-  - v5/F1
+  - v5/Q16
+  counter_predictions: []
+  exploratory_sources: []
   figures:
   - fig4
   lock_commits:
@@ -648,8 +684,10 @@ claims:
   - v2/A1
   - v2/A2
   - v2/A3
-  - v2/R3
   - v4/S1
+  counter_predictions:
+  - v2/R3
+  exploratory_sources: []
   figures: []
   lock_commits:
     v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
@@ -693,9 +731,11 @@ claims:
   nature: phenomenon confirmed; explanation exploratory
   predictions:
   - v4/V3
+  - v5/D2
+  counter_predictions:
   - v4/V2b
   - v5/D1
-  - v5/D2
+  exploratory_sources: []
   figures: []
   lock_commits:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
@@ -732,15 +772,17 @@ claims:
   nature: decided (v7 R2 H-inspan but R4-B unstable; R1 mixed, replicated; R3 failed
     narrowly); U1/U2 exploratory (pre-check), Q21 H-nofix; P post-hoc exploratory
   predictions:
-  - v6/CT1
   - v6/CT2
   - v7/R0
-  - v7/R1
   - v7/R2
-  - v7/R3
-  - v7/R4
   - v7/U3
   - v7/Q21
+  counter_predictions:
+  - v6/CT1
+  - v7/R1
+  - v7/R3
+  - v7/R4
+  exploratory_sources: []
   figures: []
   lock_commits:
     v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
@@ -991,15 +1033,17 @@ claims:
   nature: decided (v7 K5 H-slow-decay, K7 H-unrepresentable; K6 mixed); v6 K2 (H-closure)
     did not replicate on new seeds; mechanism exploratory
   predictions:
-  - v5/B2
   - v5/B3
   - v6/K1
+  - v7/K5
+  - v7/K7
+  counter_predictions:
+  - v5/B2
   - v6/K2
   - v6/K3
   - v6/K4
-  - v7/K5
   - v7/K6
-  - v7/K7
+  exploratory_sources: []
   figures:
   - figS2
   - figS3
@@ -1205,10 +1249,12 @@ claims:
   nature: mixed (v6 Q18'); M1 H-general, M5 holds, M3 and M4 not met
   predictions:
   - v6/M1
+  - v6/M5
+  counter_predictions:
   - v6/M2
   - v6/M3
   - v6/M4
-  - v6/M5
+  exploratory_sources: []
   figures:
   - figS1
   lock_commits:
@@ -1362,6 +1408,8 @@ claims:
   en: Bookkeeping numbers (compute, data notes); not a claim.
   nature: bookkeeping
   predictions: []
+  counter_predictions: []
+  exploratory_sources: []
   figures: []
   lock_commits: {}
   evidence:
@@ -1377,6 +1425,7 @@ claims:
     experiments/composability_mechanisms_v5/protocol_lock.json: 04b9b677fc497b0ae232174ddae2570796486e2154b3127994ed3a33d42c3cc4
     experiments/composability_mechanisms_v5/run_ledger.json: 5c9463d08c6f7ebef16205f5df5ba084fe88126843e2d4b284f19e7501eaf546
     experiments/composability_mechanisms_v6/protocol_lock.json: 8b2bbae2206663cdedfc21c5d668c8fe827125e8570b0c33e6a11c5f2b5462c3
+    experiments/composability_mechanisms_v6/run_ledger.json: 2fce713af6d52652b52bb32fa18935f1328c269ccef89cd98318aa89b4a6f066
     experiments/symmetry_composability_v1/protocol_lock.json: 5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead
     experiments/symmetry_composability_v1/run_ledger.json: 50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f
   numbers:
@@ -1437,9 +1486,16 @@ claims:
     path: total_gpu_hours
     note: null
     pending: false
+  - macro: CLmetaGpuVseven
+    value: 4.184444444444444
+    text: '4.2'
+    source: experiments/composability_mechanisms_v6/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
   - macro: CLmetaGpuTotal
-    value: 22.795277777777777
-    text: '22.8'
+    value: 26.97972222222222
+    text: '27.0'
     source: derived:gpu_total
     path: null
     note: null
@@ -1460,8 +1516,10 @@ claims:
     unconfirmed explanation
   predictions:
   - v7/A1
+  counter_predictions:
   - v7/A2
   - v7/A3
+  exploratory_sources: []
   figures: []
   lock_commits:
     v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
@@ -1543,6 +1601,8 @@ claims:
   en: Numerical checks of propositions 1-4 (v7 unit T).
   nature: numerical check (T1); exploratory (T2)
   predictions: []
+  counter_predictions: []
+  exploratory_sources: []
   figures: []
   lock_commits: {}
   evidence:

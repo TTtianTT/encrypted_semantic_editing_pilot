@@ -19,7 +19,7 @@ translation symmetry is broken the ordering can change.
 \paragraph{Rank threshold and frozen planes.}\claim{CL5}
 Closed-form RRR maps every state code exactly onto the next once its rank reaches the dimension of the centred code, $r^\star = N-1$
 when all harmonics are present (Proposition~1, Appendix~\ref{app:theory}); under the readout a chain can still compose below this
-rank when the dropped plane carries little vote weight. The threshold is sharp on \CLfiveRstarSharp{} domains of the second round.
+rank when the dropped plane carries little vote weight. The threshold is sharp on \CLfiveRstarSharp{} of \CLfiveRstarDomains{} domains of the second round.
 Below it, least squares keeps the planes with the largest one-step energy per dimension (Proposition~2); because the fundamental changes
 least, it is dropped first. Freezing
 planes by surgery reproduces the signature (Figure~\ref{fig:fig2}): with the fundamental frozen, one-way chains fail, alternating chains
@@ -33,12 +33,12 @@ plane weights give \CLsixEqualBart{} and \CLsixEqualTfive{}, the fundamental alo
 multi-scale reading of these weights is exploratory.
 
 \paragraph{Fundamental-first rank allocation.}\claim{CL10}
-Because least squares sacrifices the fundamental first, reserving it fixes rank-deficient operators: on the \CLtenCells{} locked
+Because least squares sacrifices the fundamental first, reserving it repairs rank-deficient operators on T5Gemma: on the \CLtenCells{} locked
 T5Gemma cells ordinary RRR-$r$ reaches one-way $\Rk{2N}$ of at most \CLtenRRRMax{}, FF-$r$ at least \CLtenFFMin{}
 (Figure~\ref{fig:fig4}); on BART the improvement is partial (exploratory).
 
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig2.pdf}
-\caption{(a) Rank-deficient RRR on BART month: one-way chains fail and revive at $t=N$, alternating chains survive. (b) Freezing the
+\caption{(a) Rank-deficient RRR (ranks 8, 9 and 10, below $r^\star = 11$) on BART month: one-way chains fail and revive at $t=N$, alternating chains survive. (b) Freezing the
 fundamental vs every other plane gives mirror-image curves on both backbones.}\label{fig:fig2}\end{figure}
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig3.pdf}
 \caption{(a, a') Per-plane one-step change $s_k$ and amplitude $a_k$ of the slot code, each relative to its largest plane. (b) Share of the fundamental in the locked readout's distance between the codes of $x$ and $x+m$: small for one step, dominant near half a turn (cyclic-symmetric approximation, locked weights).}\label{fig:fig3}\end{figure}
