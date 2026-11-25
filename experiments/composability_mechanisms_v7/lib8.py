@@ -312,8 +312,8 @@ class PlaneEd:
 
 # ---------------------------------------------------------------- chains
 def files(kind, bb, d, mp, method, tag, n):
-    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
-    return [lib6.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
+    import lib8 as _L                                         # module attribute SHARDS (patched by smoke tests)
+    return [_L.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
 
 
 def write_shards(fs, recs):
@@ -325,7 +325,7 @@ def write_shards(fs, recs):
 def run_chain(eng, bb, d, mp, method, ops, name, start, oplist, split=CONFIRM, model=None, decode=True):
     """ops: {'plus','minus'} -> callable, or None for reencode. start: 'world_start' or a state.
     model: optional dict(P=planes, lams={name: lam}) to record vote-model argmax on the actual latent slot."""
-    if split == CONFIRM: assert lock_ok(), 'confirm6 decoding only after the lock (PLAN B1)'
+    if split == CONFIRM or (split == 'confirm7' and bb in MODELS8): assert lock_ok(), 'confirm8 (and confirm7 for the v8 backbones) decoded only after the lock'
     ws = worlds5(d, split); n = len(ws); fs = files('chain', bb, d, mp, method, name, n)
     if all(f.exists() for f in fs): return
     C = {s: cache5(bb, d, split, s) for s in S.states(d)}; t = tmpl(d); idx = torch.arange(n)
@@ -835,7 +835,7 @@ def verify_protocol6():
 
 def chain_records(bb, d, mp, method, path):
     out = []
-    import lib7 as lib6                                        # module attribute SHARDS (patched by smoke tests)
+    import lib8 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     for f in sorted(lib6.SHARDS.glob(f'chain_{bb}_{d}_{mp}_{method}_{path}_*.jsonl')): out += rows(f)
     return out
 
