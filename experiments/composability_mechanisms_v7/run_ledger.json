@@ -45,7 +45,67 @@
       "node": "node01",
       "start": "2026-11-25T15:33:28",
       "end": "2026-11-25T15:41:18"
+    },
+    {
+      "unit": "N",
+      "lane": "A",
+      "job_id": "73423",
+      "name": "compmech7-A-trainN",
+      "state": "COMPLETED",
+      "elapsed_s": 391,
+      "gpus": 1,
+      "gpu_hours": 0.10861111111111112,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-25T15:41:18",
+      "end": "2026-11-25T15:47:49"
+    },
+    {
+      "unit": "E2",
+      "lane": "A",
+      "job_id": "73424",
+      "name": "compmech7-A-e2train",
+      "state": "COMPLETED",
+      "elapsed_s": 522,
+      "gpus": 1,
+      "gpu_hours": 0.145,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-25T15:47:49",
+      "end": "2026-11-25T15:56:31"
+    },
+    {
+      "unit": "N",
+      "lane": "B",
+      "job_id": "73419",
+      "name": "compmech7-B-nprep",
+      "state": "RUNNING",
+      "elapsed_s": 1589,
+      "gpus": 1,
+      "gpu_hours": 0.4413888888888889,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-25T15:33:28",
+      "end": "Unknown"
+    },
+    {
+      "unit": "D",
+      "lane": "A",
+      "job_id": "73428",
+      "name": "compmech7-A-dprep",
+      "state": "COMPLETED",
+      "elapsed_s": 717,
+      "gpus": 1,
+      "gpu_hours": 0.19916666666666666,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-25T15:56:31",
+      "end": "2026-11-25T16:08:28"
     }
   ],
-  "total_gpu_hours": 0.23194444444444445
+  "total_gpu_hours": 1.126111111111111
 }
