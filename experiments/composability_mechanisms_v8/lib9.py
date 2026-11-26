@@ -328,7 +328,7 @@ def write_shards(fs, recs):
 def run_chain(eng, bb, d, mp, method, ops, name, start, oplist, split=CONFIRM, model=None, decode=True):
     """ops: {'plus','minus'} -> callable, or None for reencode. start: 'world_start' or a state.
     model: optional dict(P=planes, lams={name: lam}) to record vote-model argmax on the actual latent slot."""
-    if split.startswith('confirm'): assert lock_ok(), 'v9: every confirm split is decoded only after this round's lock'
+    if split.startswith('confirm'): assert lock_ok(), "v9: every confirm split is decoded only after this round's lock"
     ws = worlds5(d, split); n = len(ws); fs = files('chain', bb, d, mp, method, name, n)
     if all(f.exists() for f in fs): return
     C = {s: cache5(bb, d, split, s) for s in S.states(d)}; t = tmpl(d); idx = torch.arange(n)
@@ -522,14 +522,14 @@ def l2_scales(bb, d, mp, split='train'):
 
 
 def train_editor(eng, bb, d, mp, group, seed, updates=600, l2_weight=1.0, init_rrr=None, batch=8, micro=2, lr=1e-3, clip=1.0,
-                 log_every=1, dev_every=None, dev_fn=None, snapshots=()):
+                 log_every=1, dev_every=None, dev_fn=None, snapshots=(), kind='rank16'):
     """v3 train_editor. group: C1 (CE), C3 (CE + l2_weight * normalised L2), L2 (normalised L2 only; CE still logged every log_every)."""
     source_path(); from backend import editors
     ws = worlds5(d, 'train'); C = {s: cache5(bb, d, 'train', s) for s in S.states(d)}; t = tmpl(d); dt = mdtype(eng)
     pool = {op: [(i, s) for s in S.states(d) for i in range(len(ws)) if legal_step(d, s, op, mp)] for op in ('plus', 'minus')}
     stack = lambda its: (torch.stack([C[s]['h'][i] for i, s in its]).cuda(), torch.stack([C[s]['m'][i] for i, s in its]).cuda())
     with torch.no_grad(): scale = l2_scales(bb, d, mp)
-    ed = editors(eng.d, seed)
+    ed = make_editors(kind, eng.d, seed)                                    # v9: rank16 = the backend editor (unchanged); loreft, full, mlp
     if init_rrr is not None:
         with torch.no_grad():
             for op in ('plus', 'minus'):
@@ -594,7 +594,7 @@ def unrolled_loss(ed, ce_fn, l2_fn, h0, m, ops_seq, texts_seq, targets_seq=None,
     return ce + l2_weight * l2, ce, l2
 
 
-def train_unrolled(eng, bb, d, seed, Sset, updates=1200, l2_weight=0.0, batch=8, micro=2, lr=1e-3, clip=1.0, mp='natural'):
+def train_unrolled(eng, bb, d, seed, Sset, updates=1200, l2_weight=0.0, batch=8, micro=2, lr=1e-3, clip=1.0, mp='natural', kind='rank16'):
     """A.4: per update draw path kind uniformly from plus^S / minus^S / alternating and S uniformly from Sset; batch of 8 (world, start)
     from train; plus and minus editors trained jointly; frozen encoder/decoder."""
     source_path(); from backend import editors
@@ -604,9 +604,9 @@ def train_unrolled(eng, bb, d, seed, Sset, updates=1200, l2_weight=0.0, batch=8,
     with torch.no_grad(): scale = l2_scales(bb, d, mp)
     ce_fn = lambda h, m, texts: eng.ce(h.to(dt), m, texts)[0].mean()
     l2_fn = lambda h, y, m, op: token_mse(h, y, m).mean() / scale[op]
-    ed = editors(eng.d, seed); opt = torch.optim.AdamW(ed.parameters(), lr=lr, weight_decay=0); rng = random.Random(seed); hist = []
+    ed = make_editors(kind, eng.d, seed); opt = torch.optim.AdamW(ed.parameters(), lr=lr, weight_decay=0); rng = random.Random(seed); hist = []
     for k in range(updates):
-        kind = rng.choice(('plus', 'minus', 'alt')); S_ = rng.choice(list(Sset)); ops_seq = path_seq(kind, S_)
+        pk = rng.choice(('plus', 'minus', 'alt')); S_ = rng.choice(list(Sset)); ops_seq = path_seq(pk, S_)
         bt = [rng.choice(pool) for _ in range(batch)]; opt.zero_grad(set_to_none=True); tot = dict(ce=0., l2=0., loss=0.)
         for lo in range(0, batch, micro):
             part = bt[lo:lo + micro]; h, m = stack(part); states = [s for _, s in part]; texts = []; tg = []
@@ -618,7 +618,7 @@ def train_unrolled(eng, bb, d, seed, Sset, updates=1200, l2_weight=0.0, batch=8,
             for kk, v in (('ce', ce), ('l2', l2), ('loss', loss)): tot[kk] += float(v.detach()) * len(part) / batch
         gn = torch.nn.utils.clip_grad_norm_(ed.parameters(), clip); assert torch.isfinite(gn)
         assert all(x.grad is None for x in eng.model.parameters()); opt.step()
-        hist.append(dict(step=k + 1, kind=kind, S=S_, grad=float(gn), **tot))
+        hist.append(dict(step=k + 1, kind=pk, S=S_, grad=float(gn), **tot))
     ed.eval().requires_grad_(False)
     return ed, hist, scale
 
@@ -1567,3 +1567,48 @@ def fit_calibration(bb, d, P, H, meta, ys, Cw):
 def rstar_pred(amp, frac=0.05):
     """PLAN C3: r*_pred = sum of the dimensions of the planes whose amplitude a_k is at least frac of the largest."""
     amax = max(v['a'] for v in amp.values()); return int(sum(v['dim'] for v in amp.values() if v['a'] >= frac * amax))
+
+
+# ================================================================ v9 (PLAN v9 B2, B3): editor families with the backend Editor interface
+class LoReFTEditor(nn.Module):
+    """B2 / appendix A.2: h <- h + R^T (W h + b - R h) at every token (masked like the backend Editor); R (rank x d) with orthonormal rows
+    (torch orthogonal parametrisation); W initialised to R and b to 0, so the editor starts as the identity."""
+    def __init__(self, d, rank=16):
+        super().__init__(); from torch.nn.utils.parametrizations import orthogonal
+        self.R = orthogonal(nn.Linear(d, rank, bias=False)); self.W = nn.Linear(d, rank, bias=True)
+        with torch.no_grad(): self.W.weight.copy_(self.R.weight); self.W.bias.zero_()
+
+    def forward(self, h, m):
+        z = h.float(); Rw = self.R.weight; delta = (self.W(z) - z @ Rw.T) @ Rw
+        return (z + delta * m[..., None]).to(h.dtype)
+
+
+class FullEditor(nn.Module):
+    """B3: full-rank residual linear map h <- h + A h + b (d x d, zero-initialised)."""
+    def __init__(self, d):
+        super().__init__(); self.a = nn.Linear(d, d, bias=True); nn.init.zeros_(self.a.weight); nn.init.zeros_(self.a.bias)
+
+    def forward(self, h, m):
+        z = h.float(); return (z + self.a(z) * m[..., None]).to(h.dtype)
+
+
+class MLPEditor(nn.Module):
+    """B3: MLP residual h <- h + W2 GELU(W1 h + b1) + b2 (hidden = d; W2, b2 zero-initialised)."""
+    def __init__(self, d):
+        super().__init__(); self.w1 = nn.Linear(d, d); self.w2 = nn.Linear(d, d); nn.init.zeros_(self.w2.weight); nn.init.zeros_(self.w2.bias)
+
+    def forward(self, h, m):
+        z = h.float(); return (z + self.w2(Fn.gelu(self.w1(z))) * m[..., None]).to(h.dtype)
+
+
+def make_editors(kind, d, seed):
+    """{plus, minus} editors of a family; rank16 is exactly backend.editors (same initialisation for the same seed)."""
+    if kind == 'rank16':
+        source_path(); from backend import editors
+        return editors(d, seed)
+    torch.manual_seed(seed); mk = {'loreft': lambda: LoReFTEditor(d), 'full': lambda: FullEditor(d), 'mlp': lambda: MLPEditor(d)}[kind]
+    return nn.ModuleDict({op: mk() for op in ('plus', 'minus')}).to(DEV).float()
+
+
+def load_editor9(eng, path):
+    c = load(path); ed = make_editors(c.get('kind', 'rank16'), eng.d, c.get('seed', 42)); ed.load_state_dict(c['editor']); return ed.eval().requires_grad_(False)
