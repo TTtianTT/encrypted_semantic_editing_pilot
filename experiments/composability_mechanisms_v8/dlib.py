@@ -11,20 +11,24 @@ import sym5_semantics as S
 import sym5_evaluator as Ev
 
 GEMMA = '/dataset1/zailong/models/gemma-2-2b-it'
+DMODELS = {'gemma': dict(path=GEMMA, eot='<end_of_turn>', attn='eager'),                              # v9: model-generic interface
+           'qwen': dict(path='/dataset1/zailong/models/Qwen2.5-1.5B-Instruct', eot='<|im_end|>', attn='sdpa')}
 PROMPT = 'Repeat this sentence exactly: {}'
 
 
 class DEngine:
-    def __init__(self, max_new_tokens=64):
-        require_slurm()
+    def __init__(self, max_new_tokens=64, model='gemma'):
+        require_slurm(); cfg = DMODELS[model]; self.name = model; self.eot = cfg['eot']
         from transformers import AutoTokenizer, AutoModelForCausalLM
-        self.tok = AutoTokenizer.from_pretrained(GEMMA, local_files_only=True); self.tok.padding_side = 'left'
+        self.tok = AutoTokenizer.from_pretrained(cfg['path'], local_files_only=True); self.tok.padding_side = 'left'
+        if self.tok.pad_token_id is None: self.tok.pad_token = self.tok.eos_token
         torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
-        self.model = AutoModelForCausalLM.from_pretrained(GEMMA, local_files_only=True, dtype=torch.bfloat16, attn_implementation='eager').cuda().eval()
+        self.model = AutoModelForCausalLM.from_pretrained(cfg['path'], local_files_only=True, dtype=torch.bfloat16, attn_implementation=cfg['attn']).cuda().eval()
         for p in self.model.parameters(): p.requires_grad_(False)
         self.layers = self.model.model.layers; self.L = len(self.layers); self.d = self.model.config.hidden_size
-        self.stop = {self.tok.eos_token_id, self.tok.convert_tokens_to_ids('<end_of_turn>')}; self.max_new = max_new_tokens
-        man = read(ROOT / 'data/model_manifest_v8.json'); self.revision = man['D']['revision']
+        self.stop = {self.tok.eos_token_id, self.tok.convert_tokens_to_ids(self.eot)}; self.max_new = max_new_tokens
+        if model == 'gemma': self.revision = read(EXP / 'composability_mechanisms_v7/data/model_manifest_v8.json')['D']['revision']
+        else: self.revision = next(v['revision'] for k, v in read(ROOT / 'data/model_manifest_v9.json').items() if isinstance(v, dict) and v.get('directory') == cfg['path'])
 
     def prompt(self, text):
         return self.tok.apply_chat_template([dict(role='user', content=PROMPT.format(text))], tokenize=False, add_generation_prompt=True)
@@ -71,7 +75,7 @@ class DEngine:
 
     def ce(self, texts, targets, pos, layer, vec):
         """Teacher-forced CE of the target sentences (+ end of turn) given the prompts with the slot latent replaced by vec (grad flows to vec)."""
-        P = [self.ids(t) for t in texts]; T = [self.tok(y, add_special_tokens=False)['input_ids'] + [self.tok.convert_tokens_to_ids('<end_of_turn>')] for y in targets]
+        P = [self.ids(t) for t in texts]; T = [self.tok(y, add_special_tokens=False)['input_ids'] + [self.tok.convert_tokens_to_ids(self.eot)] for y in targets]
         n = max(len(a) + len(b) for a, b in zip(P, T)); pad = self.tok.pad_token_id
         ids = torch.full((len(P), n), pad, dtype=torch.long); am = torch.zeros((len(P), n), dtype=torch.long); lab = torch.full((len(P), n), -100, dtype=torch.long); p = []
         for i, (a, b) in enumerate(zip(P, T)):

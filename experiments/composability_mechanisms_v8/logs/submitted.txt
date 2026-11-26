@@ -14,3 +14,6 @@
 73706 train9 t5 B3 (lane B, after 73705; rerun: quote fix)
 73707 train9 t5 S (lane B, after 73706; rerun: quote fix)
 73708 train9 t5 B4 (lane B, after 73707; rerun: quote fix)
+73709 prep_do cpu (network)
+73711 do_prep gemma (lane A, after 73701)
+73712 do_prep qwen (lane A, after 73711); 73702 (train9 bart B3) now after 73712
