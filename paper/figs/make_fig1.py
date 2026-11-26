@@ -1,7 +1,7 @@
 """Figure 1. (a) Schematic (stage-2 instructions, section 3): two rows from the same encoding h0 of a sentence containing "March"; latents
 drawn as rows of token boxes with the slot highlighted and labelled with the slot readout. Top, instruction write (C1): the slot readout
 stays "Mar", an added instruction arrow sits beside the latent; h1 decodes to "April" (correct), h2 is wrong. Bottom, state write (RRR-16 /
-C3): the slot reads Mar -> Apr -> May and both decodes are correct. Intermediate decodes in dashed boxes, "decoded here only to score".
+C3-U4): the slot reads Mar -> Apr -> May and both decodes are correct. Intermediate decodes in dashed boxes, "decoded here only to score".
 (b) BART-base, month, one-way plus R_k of v1 C1 (CE), the closed-form RRR-16 and v4 C3-U4 on v5 confirm5 (v5 L cells)."""
 from matplotlib.patches import FancyArrowPatch, Rectangle
 from _style import *
@@ -43,7 +43,7 @@ def main():
     require_slurm(); ch = chains(V5); fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.6), gridspec_kw=dict(width_ratios=[1.55, 1]))
     ax = axs[0]; ax.set_xlim(-.1, 3.7); ax.set_ylim(-.95, 1.0); ax.axis('off')
     row(ax, .55, 'instruction write (C1)', ['Mar', 'Mar', 'Mar'], [('April', True), ('', False)], True)
-    row(ax, -.45, 'state write (RRR-16 / C3)', ['Mar', 'Apr', 'May'], [('April', True), ('May', True)], False)
+    row(ax, -.45, 'state write (RRR-16 / C3-U4)', ['Mar', 'Apr', 'May'], [('April', True), ('May', True)], False)
     ax.text(3.68, -.92, 'dashed: decoded here only to score', ha='right', fontsize=5.5, style='italic')
     ax.set_title('(a) same edit rank, different writes', fontsize=8)
     ax = axs[1]

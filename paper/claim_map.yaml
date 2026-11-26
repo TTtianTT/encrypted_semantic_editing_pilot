@@ -74,7 +74,7 @@ claims:
     zh: 低秩编辑的秩阈值，以及冻结平面的特征
     en: Rank threshold r* = N - 1 and the frozen-plane signatures.
     nature: confirmed
-    predictions: [v2/R1, v2/R2, v3/HS1, v3/HS2, v3/HS3, v4/V1, v4/V2a]
+    predictions: [v2/R1, v2/R2, v3/HS1, v3/HS2, v3/HS3, v4/V1, v4/V2a, v8/N/bart/N4, v8/N/t5/N4, v8/G/weekday/G3, v8/G/month/G3]
     figures: [fig2]
     numbers:
       - {macro: CLfiveRstarSharp, derived: v2_r1_sharp_count, fmt: '{:d}', note: 'domains with r* = N - 1 (sharp)'}
@@ -97,8 +97,8 @@ claims:
   - id: CL7
     zh: 谱：基频的一步变化最小
     en: Spectrum - the fundamental changes least per step.
-    nature: partial - s_1 smallest in every cell (13 of 13; 6 from the locked fourth-round cells, 7 exploratory), but the locked V0 test, which also required a_1 largest, failed
-    predictions: []
+    nature: confirmed at 9B-9B (v8 G4, both domains); s_1 smallest in every measured backbone-domain combination (13 of 13 earlier, 7 exploratory); v4 V0 failed on its a_1 condition
+    predictions: [v8/G/weekday/G4, v8/G/month/G4]
     counter_predictions: [v4/V0]
     exploratory_sources: [v3 algebra.json _s_k_vs_entry_order and v3 gates_<bb>.json amplitudes (7 backbone x domain cells, not a v3 prediction); v3 ERRATUM_01 section 3]
     figures: [fig3]
@@ -119,7 +119,7 @@ claims:
     zh: 不解码就能预测可组合性
     en: Composability can be predicted from latents alone.
     nature: confirmed
-    predictions: [v5/L1, v5/L2]
+    predictions: [v5/L1, v5/L2, v8/N/bart/N5, v8/N/t5/N5, v8/G/G5]
     figures: [fig6]
     numbers:
       - {macro: CLeightAgreeBart, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/per_backbone/bart/L1/latent, fmt: '{:.3f}'}
@@ -147,7 +147,7 @@ claims:
     zh: 第 1 步分歧率可以识别指令捷径
     en: Step-1 disagreement detects instruction shortcuts.
     nature: confirmed
-    predictions: [v5/L3a, v5/L3b, v5/L3c]
+    predictions: [v5/L3a, v5/L3b, v5/L3c, v8/G/G5]
     figures: [fig5]
     numbers:
       - {macro: CLnineCE, file: experiments/composability_mechanisms_v4/results/predictions.json, path: L/L3/L3a/n, fmt: '{:d}'}

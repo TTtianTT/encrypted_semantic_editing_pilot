@@ -478,3 +478,17 @@ The testbed is clean, the frozen-plane mechanism is genuinely predictive, and th
 - 其余主要意见已写入局限或交 lead。
 - 引言 12 处待 lead 改。
 - 需要新计算的项（M3 零基线与目标探针、M4 圆度、M5 置信区间与基线、M2 基线编辑器、M8 种子）列为待定。
+
+## 2026-11-26，引言第 2 版并入（负责人与 Claude 修订）
+
+- 原文照录，未改措辞。全部宏与引用键都能解析，无需修正。
+- 图 1(a) 下行标签已按要求改为 "state write (RRR-16 / C3-U4)"（M10）。
+- 按引言注释更新了 claim_map 的引用：
+  - CL5：+ v8 N4、G3；
+  - CL7：+ v8 G4（9B 上锁定确认），nature 改为 "confirmed at 9B-9B"，v4 V0 保留为反例；
+  - CL8：+ v8 N5、G5；
+  - CL9：+ v8 G5。
+- check.py 通过；编译 26 页。
+- **第二轮审稿前仍需完成的事项**：
+  - 贡献 2 写的是 "prove"，命题 1–3 的证明须在附录 C 完成；
+  - 第一部分第 4 条仍需注意：引言说的 "one-step energy smallest" 按平面计（v4/v8 的 s_k），命题 2 按每维能量排序，两者要在 §6 与附录 C 中对上。

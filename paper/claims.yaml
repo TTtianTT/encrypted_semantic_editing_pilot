@@ -275,6 +275,10 @@ claims:
   - v3/HS3
   - v4/V1
   - v4/V2a
+  - v8/N/bart/N4
+  - v8/N/t5/N4
+  - v8/G/weekday/G3
+  - v8/G/month/G3
   counter_predictions: []
   exploratory_sources: []
   figures:
@@ -283,6 +287,7 @@ claims:
     v2: e2fa25840b92ec5fd28381368d1445e3e11f2910
     v3: 078b1e820c7749f139028d4e2a35c381ad635b5c
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
   evidence:
     experiments/composability_mechanisms_v1/results/predictions.json: dc1cb7b07a26a093b58cb240dc1e0f990b2fa4effa62365d9a955c733bf9bcaf
     experiments/composability_mechanisms_v3/results/predictions.json: c886b125f8444626bb183f7e17d90d93a1261fd1e0c19bcb811babfa12ded545
@@ -377,10 +382,12 @@ claims:
 - id: CL7
   zh: 谱：基频的一步变化最小
   en: Spectrum - the fundamental changes least per step.
-  nature: partial - s_1 smallest in every cell (13 of 13; 6 from the locked fourth-round
-    cells, 7 exploratory), but the locked V0 test, which also required a_1 largest,
-    failed
-  predictions: []
+  nature: confirmed at 9B-9B (v8 G4, both domains); s_1 smallest in every measured
+    backbone-domain combination (13 of 13 earlier, 7 exploratory); v4 V0 failed on
+    its a_1 condition
+  predictions:
+  - v8/G/weekday/G4
+  - v8/G/month/G4
   counter_predictions:
   - v4/V0
   exploratory_sources:
@@ -391,6 +398,7 @@ claims:
   - fig3
   lock_commits:
     v4: 51a7579c6634dbfc62c73cfbe3035392db8d4efd
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
   evidence:
     experiments/composability_mechanisms_v2/results/algebra.json: 1c5ec88456e84a48bdd9d4c73a80050c119258cb0cd749632e1b8b99aa74134d
     experiments/composability_mechanisms_v2/results/gates_bart.json: 977dc47c358e1fa644b166a137d929237bbfb470fc66dcd30125f87b6ec289c8
@@ -489,12 +497,16 @@ claims:
   predictions:
   - v5/L1
   - v5/L2
+  - v8/N/bart/N5
+  - v8/N/t5/N5
+  - v8/G/G5
   counter_predictions: []
   exploratory_sources: []
   figures:
   - fig6
   lock_commits:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
     experiments/composability_mechanisms_v5/results/patch/p1_posthoc6.json: 7cf13d81571ad516694b3a96eb23202b352d1c62734bc7539f8c6fd02d128546
@@ -618,12 +630,14 @@ claims:
   - v5/L3a
   - v5/L3b
   - v5/L3c
+  - v8/G/G5
   counter_predictions: []
   exploratory_sources: []
   figures:
   - fig5
   lock_commits:
     v5: 8667c907769e475f78d46f593266efa46aac9dd6
+    v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
   evidence:
     experiments/composability_mechanisms_v4/results/predictions.json: 597fd698737c10c9ba0c850d7cf6b8ec378e5b2af6e84ac0b280777e86cd8957
   numbers:
