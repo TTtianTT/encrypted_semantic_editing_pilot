@@ -23,6 +23,7 @@ class DEngine:
         self.tok = AutoTokenizer.from_pretrained(cfg['path'], local_files_only=True); self.tok.padding_side = 'left'
         if self.tok.pad_token_id is None: self.tok.pad_token = self.tok.eos_token
         torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
+        if model == 'qwen': torch.backends.cuda.enable_cudnn_sdp(False)              # B300: cuDNN SDPA has no execution plan (DEVIATIONS 4)
         self.model = AutoModelForCausalLM.from_pretrained(cfg['path'], local_files_only=True, dtype=torch.bfloat16, attn_implementation=cfg['attn']).cuda().eval()
         for p in self.model.parameters(): p.requires_grad_(False)
         self.layers = self.model.model.layers; self.L = len(self.layers); self.d = self.model.config.hidden_size

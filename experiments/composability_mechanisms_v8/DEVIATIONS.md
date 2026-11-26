@@ -20,3 +20,8 @@
      - CE 编辑器的 R_1 不做预检：潜空间模型不建模指令式写入，CE 第 1 步的读出就是起点。
      - D 需要解码，不做预检。
      - 其余带阈值的量都做预检：B1 的 R_1 与 R_2N，B2–B4 与 S 的 R_2 / R_2N / 视野外的 R，DO1、DO2、DO5。
+4. **2026-11-26，DO 的运行环境与闸门（锁定前）**：
+   - Qwen 的 `do_prep`（作业 73712）在 SDPA 注意力中报 cuDNN "No valid execution plans built"（与 v8 DEVIATIONS 6 相同）。
+     - 做法：只对 Qwen 关闭 cuDNN 的 SDPA 后端，由其余 SDPA 后端计算同一注意力。
+     - 重跑；Qwen 此前没有任何编码或解码。
+   - Gemma 2 2B 在自然文本 month-nat 上的重建率为 0.983，低于闸门 0.99，按附录 B.2 第 7 步，该组合（Gemma，自然文本）不评测。Gemma 只剩 weekday 模板 0 一个组合。

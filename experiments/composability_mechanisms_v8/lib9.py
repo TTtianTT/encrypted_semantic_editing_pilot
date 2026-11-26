@@ -315,7 +315,7 @@ class PlaneEd:
 
 # ---------------------------------------------------------------- chains
 def files(kind, bb, d, mp, method, tag, n):
-    import lib8 as _L                                         # module attribute SHARDS (patched by smoke tests)
+    import lib9 as _L                                         # module attribute SHARDS (patched by smoke tests)
     return [_L.SHARDS / f'{kind}_{bb}_{d}_{mp}_{method}_{tag}_{lo:03d}.jsonl' for lo in range(0, n, SHARD)]
 
 
@@ -838,7 +838,7 @@ def verify_protocol6():
 
 def chain_records(bb, d, mp, method, path):
     out = []
-    import lib8 as lib6                                        # module attribute SHARDS (patched by smoke tests)
+    import lib9 as lib6                                        # module attribute SHARDS (patched by smoke tests)
     for f in sorted(lib6.SHARDS.glob(f'chain_{bb}_{d}_{mp}_{method}_{path}_*.jsonl')): out += rows(f)
     return out
 
