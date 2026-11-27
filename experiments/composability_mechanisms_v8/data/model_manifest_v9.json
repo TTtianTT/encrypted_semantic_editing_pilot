@@ -37,5 +37,164 @@
     },
     "note": "token check: 8 of 960 month-nat worlds not single-token; excluded for Qwen only (DEVIATIONS 2)"
   },
-  "DO2": "Qwen/Qwen2.5-1.5B-Instruct"
+  "DO2": "Qwen/Qwen2.5-1.5B-Instruct",
+  "allenai/OLMo-2-0425-1B-Instruct": {
+    "model_id": "allenai/OLMo-2-0425-1B-Instruct",
+    "revision": "48d788eca847d4d7548f375ad03d3c9312f6139e",
+    "directory": "/dataset1/zailong/models/OLMo-2-0425-1B-Instruct",
+    "passes_token_check": false,
+    "files": {
+      "config.json": {
+        "sha256": "0d15ebb6cb8d998513b46ef337214176a6fd59fe5f16b30387c70d5f87795a9c",
+        "bytes": 625
+      },
+      "generation_config.json": {
+        "sha256": "437b97826bb4430c205083a0986fbe31f4959cffbe445e47fb7c5192fdcb8d58",
+        "bytes": 121
+      },
+      "merges.txt": {
+        "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502",
+        "bytes": 916646
+      },
+      "model.safetensors": {
+        "sha256": "36d044c73655bb904f822915e6294ba3dae8e6e1af5e703e9d452f2d6a3a294f",
+        "bytes": 2969854224
+      },
+      "special_tokens_map.json": {
+        "sha256": "78afb564e81264029b25f9caf24bda2521d5bdaeff5cd3fdbc01d3da2e8ce2f2",
+        "bytes": 581
+      },
+      "tokenizer.json": {
+        "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca",
+        "bytes": 7137177
+      },
+      "tokenizer_config.json": {
+        "sha256": "50c412c57d832057a3d5db42064c741f751e570f7c8788f037bfb0d2dd6e5f49",
+        "bytes": 4884
+      },
+      "vocab.json": {
+        "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195",
+        "bytes": 1611056
+      }
+    },
+    "candidate_order": 0
+  },
+  "microsoft/Phi-3.5-mini-instruct": {
+    "model_id": "microsoft/Phi-3.5-mini-instruct",
+    "revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+    "directory": "/dataset1/zailong/models/Phi-3.5-mini-instruct",
+    "passes_token_check": false,
+    "files": {
+      "added_tokens.json": {
+        "sha256": "f8e5a880c6c563a126d9efacb654e105fc4b66f21e5a540f04436e9487a955fb",
+        "bytes": 306
+      },
+      "config.json": {
+        "sha256": "224de4f6a15b9d2a89695ec04b7f7ab2dd93a008a506979925e5a88cb5804974",
+        "bytes": 3451
+      },
+      "configuration_phi3.py": {
+        "sha256": "d25f57c0823fcb9753880a25e79ab562b039d6187102ac13e4ff26dd11e9a81c",
+        "bytes": 11153
+      },
+      "generation_config.json": {
+        "sha256": "71ff75d883319b53e16cbb8c7b61363a5138e3d342fc79dd96c2b1cb208d8ff8",
+        "bytes": 195
+      },
+      "model-00001-of-00002.safetensors": {
+        "sha256": "c5214cdb995ed3dd716add8d9efbfe016b76bb2f1c4c1e6c1c6a95497d7a8837",
+        "bytes": 4972489328
+      },
+      "model-00002-of-00002.safetensors": {
+        "sha256": "41246eed2b75b66526339c5d32d6f7acdefe0bd24180f97c74303f4656877344",
+        "bytes": 2669692552
+      },
+      "model.safetensors.index.json": {
+        "sha256": "6eec78ee2a442445d9d342a7cd9a763da40a49bd91d8611b7db5e9a29c90a428",
+        "bytes": 16331
+      },
+      "modeling_phi3.py": {
+        "sha256": "e737b46584be3ee907165eab54d8b18a18214acca4392a3ac9cbf37dbf9d3302",
+        "bytes": 73814
+      },
+      "sample_finetune.py": {
+        "sha256": "efb628083228e5248b7dff300e038964ea98b5c170c7544befa63b2675ae8491",
+        "bytes": 6131
+      },
+      "special_tokens_map.json": {
+        "sha256": "4e87d5e13d218af26da10a072490ebc08ccadddaef10ab0ec52b33204a49e918",
+        "bytes": 665
+      },
+      "tokenizer.json": {
+        "sha256": "9e2ae3d66819f163cdcfedba5078f3a3af8118c2712491ed60912f77886bda6f",
+        "bytes": 1844408
+      },
+      "tokenizer.model": {
+        "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+        "bytes": 499723
+      },
+      "tokenizer_config.json": {
+        "sha256": "92a6e3f894075fda19f47d8755c6ce65b2a974716307d13ae5d79196011ebb44",
+        "bytes": 3984
+      }
+    },
+    "candidate_order": 1
+  },
+  "HuggingFaceTB/SmolLM2-1.7B-Instruct": {
+    "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "revision": "31b70e2e869a7173562077fd711b654946d38674",
+    "directory": "/dataset1/zailong/models/SmolLM2-1.7B-Instruct",
+    "passes_token_check": true,
+    "files": {
+      "all_results.json": {
+        "sha256": "1908cf6a24c3d69aff2ab1d2a9c0366dc882a1fe7f91e0555f8e9df6612fac39",
+        "bytes": 785
+      },
+      "config.json": {
+        "sha256": "994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea",
+        "bytes": 908
+      },
+      "eval_results.json": {
+        "sha256": "fb82804b504f34c680f766dcb2b22da23cc7f93cd37f23186900559c8ee33109",
+        "bytes": 587
+      },
+      "generation_config.json": {
+        "sha256": "87b916edaaab66b3899b9d0dd0752727dff6666686da0504d89ae0a6e055a013",
+        "bytes": 132
+      },
+      "merges.txt": {
+        "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+        "bytes": 466391
+      },
+      "model.safetensors": {
+        "sha256": "f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8",
+        "bytes": 3422777952
+      },
+      "special_tokens_map.json": {
+        "sha256": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+        "bytes": 655
+      },
+      "tokenizer.json": {
+        "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+        "bytes": 2104556
+      },
+      "tokenizer_config.json": {
+        "sha256": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+        "bytes": 3764
+      },
+      "train_results.json": {
+        "sha256": "0a1575a24263963c53c634f6f40a3e8127e69f05c97039461f590e4ee2a91324",
+        "bytes": 232
+      },
+      "trainer_state.json": {
+        "sha256": "e33c4af76d28551752fc40189bff99ea69dba5234b1bf4857e4db136ecdd04a1",
+        "bytes": 86369
+      },
+      "vocab.json": {
+        "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79",
+        "bytes": 800662
+      }
+    },
+    "candidate_order": 2
+  }
 }

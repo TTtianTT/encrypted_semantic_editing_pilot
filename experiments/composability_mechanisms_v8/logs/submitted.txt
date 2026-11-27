@@ -24,3 +24,14 @@
 73812 selftest9 cpu
 73814 selftest9 cpu (rerun: LoReFT check at training settings)
 73816 do_prep qwen (lane A; rerun: cuDNN SDPA off, DEVIATIONS 4)
+73817 qwen output peek (diagnostic, dev only)
+73816 cancelled (Qwen gate fails: paraphrases digits and words; awaiting the lead's decision)
+73836 prep_do2 cpu (network; DEVIATIONS 5)
+73838 sim9 --backbone bart (lane A)
+73839 chains9 --backbone bart --smoke (lane A, after 73838)
+73840 do_selftest --model gemma (lane A, after 73839)
+73841 do_run --model gemma --smoke (lane A, after 73840)
+73842 sim9 --backbone t5 (lane B)
+73843 chains9 --backbone t5 --smoke (lane B, after 73842)
+73844 do_sim gemma cpu
+73836 prep_do2 cancelled during the Mistral download (disk quota exceeded); partial Mistral directory removed

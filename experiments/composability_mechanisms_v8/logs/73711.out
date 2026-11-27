@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 6477.90it/s]
+DO gate gemma weekday 1.0
+DO gate gemma month-nat 0.9833333333333333
+/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/do_prep.py:86: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if k % 25 == 0 or k == updates - 1: hist.append(dict(step=k + 1, loss=float(loss), grad=float(gn), S=len(seq)))
+DO editor gemma weekday C1 45 600 1.0 True
+DO editor gemma weekday C1 46 600 1.0 True
+DO editor gemma weekday C1 47 600 1.0 True
+DO editor gemma weekday C3U4 45 1200 1.0 True
+DO editor gemma weekday C3U4 46 1200 1.0 True
+DO editor gemma weekday C3U4 47 1200 1.0 True

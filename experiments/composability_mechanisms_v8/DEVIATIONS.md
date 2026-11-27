@@ -25,3 +25,7 @@
      - 做法：只对 Qwen 关闭 cuDNN 的 SDPA 后端，由其余 SDPA 后端计算同一注意力。
      - 重跑；Qwen 此前没有任何编码或解码。
    - Gemma 2 2B 在自然文本 month-nat 上的重建率为 0.983，低于闸门 0.99，按附录 B.2 第 7 步，该组合（Gemma，自然文本）不评测。Gemma 只剩 weekday 模板 0 一个组合。
+5. **2026-11-27，DO 第二个模型的替换与 B4 的判定（锁定前，负责人决定）**：
+   - **Qwen 的重建**：Qwen2.5-1.5B-Instruct 在重建闸门上不过（weekday 0.24、month 0.31，门槛 0.99）。原因是模型复述时会改写，例如 "3 copies" → "three copies"、"completed" → "complete"，不是接口问题。它的 `do_prep` 已取消（作业 73816）。
+   - **替换规则**：按同一提示词与同一闸门，依次尝试其他开放家族，取第一个分词与重建都过关的模型（`prep_do2.py`）。候选依次为：OLMo-2-1B-Instruct、Phi-3.5-mini-instruct、SmolLM2-1.7B-Instruct、Mistral-7B-Instruct-v0.3。
+   - **B4 的判定**：H-counter 与 H-state 只在通过准入的编辑器上判定。通过准入的编辑器不足 2 个的变体降为描述性。各变体"学不会"（准入失败）的比例作为独立结果报告，即 CE 单独学不会长视野。

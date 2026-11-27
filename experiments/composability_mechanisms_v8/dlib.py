@@ -12,22 +12,27 @@ import sym5_evaluator as Ev
 
 GEMMA = '/dataset1/zailong/models/gemma-2-2b-it'
 DMODELS = {'gemma': dict(path=GEMMA, eot='<end_of_turn>', attn='eager'),                              # v9: model-generic interface
-           'qwen': dict(path='/dataset1/zailong/models/Qwen2.5-1.5B-Instruct', eot='<|im_end|>', attn='sdpa')}
+           'qwen': dict(path='/dataset1/zailong/models/Qwen2.5-1.5B-Instruct', eot='<|im_end|>', attn='sdpa'),
+           'olmo': dict(path='/dataset1/zailong/models/OLMo-2-0425-1B-Instruct', eot=None, attn='sdpa'),               # DEVIATIONS 5 candidates
+           'phi': dict(path='/dataset1/zailong/models/Phi-3.5-mini-instruct', eot='<|end|>', attn='sdpa'),
+           'smol': dict(path='/dataset1/zailong/models/SmolLM2-1.7B-Instruct', eot='<|im_end|>', attn='sdpa'),
+           'mistral': dict(path='/dataset1/zailong/models/Mistral-7B-Instruct-v0.3', eot=None, attn='sdpa')}
 PROMPT = 'Repeat this sentence exactly: {}'
 
 
 class DEngine:
     def __init__(self, max_new_tokens=64, model='gemma'):
-        require_slurm(); cfg = DMODELS[model]; self.name = model; self.eot = cfg['eot']
+        require_slurm(); cfg = DMODELS[model]; self.name = model
         from transformers import AutoTokenizer, AutoModelForCausalLM
         self.tok = AutoTokenizer.from_pretrained(cfg['path'], local_files_only=True); self.tok.padding_side = 'left'
         if self.tok.pad_token_id is None: self.tok.pad_token = self.tok.eos_token
         torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
-        if model == 'qwen': torch.backends.cuda.enable_cudnn_sdp(False)              # B300: cuDNN SDPA has no execution plan (DEVIATIONS 4)
+        if model != 'gemma': torch.backends.cuda.enable_cudnn_sdp(False)            # B300: cuDNN SDPA has no execution plan (DEVIATIONS 4)
         self.model = AutoModelForCausalLM.from_pretrained(cfg['path'], local_files_only=True, dtype=torch.bfloat16, attn_implementation=cfg['attn']).cuda().eval()
         for p in self.model.parameters(): p.requires_grad_(False)
         self.layers = self.model.model.layers; self.L = len(self.layers); self.d = self.model.config.hidden_size
-        self.stop = {self.tok.eos_token_id, self.tok.convert_tokens_to_ids(self.eot)}; self.max_new = max_new_tokens
+        self.eot = cfg['eot'] or self.tok.eos_token; ge = self.model.generation_config.eos_token_id
+        self.stop = {self.tok.eos_token_id, self.tok.convert_tokens_to_ids(self.eot)} | set(ge if isinstance(ge, list) else [ge] if ge is not None else []); self.max_new = max_new_tokens
         if model == 'gemma': self.revision = read(EXP / 'composability_mechanisms_v7/data/model_manifest_v8.json')['D']['revision']
         else: self.revision = next(v['revision'] for k, v in read(ROOT / 'data/model_manifest_v9.json').items() if isinstance(v, dict) and v.get('directory') == cfg['path'])
 

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/train9.py", line 12, in <module>
+    from lib9 import *
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/lib9.py", line 331
+    if split.startswith('confirm'): assert lock_ok(), 'v9: every confirm split is decoded only after this round's lock'
+                                                                                                                      ^
+SyntaxError: unterminated string literal (detected at line 331)
+srun: error: node02: task 0: Exited with exit code 1

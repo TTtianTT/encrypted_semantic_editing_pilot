@@ -28,7 +28,8 @@ def new9():
 
 
 def main():
-    require_slurm(); old = read(V8D / 'seed_registry.json'); hist = old['historical'] + old['v8']; new = new9(); oh = {}
+    require_slurm(); v7 = read(EXP / 'composability_mechanisms_v6/seed_registry.json'); v8 = read(V8D / 'seed_registry.json')
+    hist = v7['historical'] + v7['v7'] + v8['v8']; new = new9(); oh = {}
     for e in hist: oh.setdefault(e['data_order_hash'], []).append(e['path'])
     clash = [dict(new=e['path'], old=oh[e['data_order_hash']]) for e in new if e['data_order_hash'] in oh]
     nd = {}

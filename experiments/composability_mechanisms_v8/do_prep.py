@@ -18,7 +18,8 @@ import time
 from lib9 import worlds5, fit_srrr_X, next_idx, gram_planes, cbar_of, slot_pair, rstar_pred, BOOT_SEED
 from dlib import *
 
-DOMS = {'gemma': ['weekday', S.NAT], 'qwen': ['weekday', 'month', S.NAT]}
+DOMS = {'gemma': ['weekday', S.NAT], 'qwen': ['weekday', 'month', S.NAT], 'olmo': ['weekday', 'month', S.NAT], 'phi': ['weekday', 'month', S.NAT],
+        'smol': ['weekday', 'month', S.NAT], 'mistral': ['weekday', 'month', S.NAT]}
 CONF = lambda d: 'confirm8' if d == S.NAT else 'confirm7'
 
 
