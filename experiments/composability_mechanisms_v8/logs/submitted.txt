@@ -35,3 +35,11 @@
 73843 chains9 --backbone t5 --smoke (lane B, after 73842)
 73844 do_sim gemma cpu
 73836 prep_do2 cancelled during the Mistral download (disk quota exceeded); partial Mistral directory removed
+73846 do_gate2 (lane A, after 73841)
+73847 do_prep smol (lane A, after 73846 ok; if the gate chooses smol)
+73848 do_selftest smol (after 73847)
+73849 do_run smol --smoke (after 73848)
+73850 do_sim smol cpu (after 73847)
+73851 enc9 t5 weekday confirm7 (lane B, after 73843)
+73852 sim9 t5 (rerun after 73851: T5 weekday confirm7 encoded)
+73853 do_sim gemma cpu (rerun: DO1b falsy-zero bug)

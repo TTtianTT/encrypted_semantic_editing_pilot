@@ -31,3 +31,30 @@ sim9 t5 dev B3 month FullC1_s47
 sim9 t5 dev B3 month MLPC1_s45
 sim9 t5 dev B3 month MLPC1_s46
 sim9 t5 dev B3 month MLPC1_s47
+sim9 t5 dev S month C1_s45
+sim9 t5 dev S month C1_s46
+sim9 t5 dev S month C1_s47
+sim9 t5 dev S month C1_s48
+sim9 t5 dev S month C1_s49
+sim9 t5 dev S month C3U4_s45
+sim9 t5 dev S month C3U4_s46
+sim9 t5 dev S month C3U4_s47
+sim9 t5 dev S month C3U4_s48
+sim9 t5 dev S month C3U4_s49
+sim9 t5 dev B5 weekday Rot
+sim9 t5 dev B5 month Rot
+sim9 t5 dev B5 month-nat Rot
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/sim9.py", line 65, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/sim9.py", line 27, in main
+    for unit, fam, d, name, ops, paths in cells9(eng, bb, split):
+                                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/cells9.py", line 101, in cells9
+    Ds = mean_diffs(bb, d); Dg = sum(Ds.values()) / len(Ds); D0 = Ds[S.states(d)[0]]; pos = slots(bb, d, sp(d))
+                                                                                            ^^^^^^^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/lib9.py", line 128, in slots
+    assert split in ('train', 'dev') and tmpl(d) == 0; tab = read(V3DIR / 'data/slot_positions.json')[bb]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+srun: error: node01: task 0: Exited with exit code 1

@@ -25,6 +25,7 @@ V5DIR = EXP / 'composability_mechanisms_v4'            # the v5 experiment
 V6DIR = EXP / 'composability_mechanisms_v5'            # the v6 experiment (confirm6, v6 editors, slot operators, calibrations)
 V7DIR = EXP / 'composability_mechanisms_v6'            # the v7 experiment (confirm7, dev7ho, v7 editors, U calibration)
 V8DIR = EXP / 'composability_mechanisms_v7'            # the v8 experiment (month-nat, confirm8, 9B / ladder caches, Gemma 2 D)
+V9_ENC = {('t5', 'weekday', 'confirm7')}                # v9: confirm7 encodings made in this directory (v7 encoded T5Gemma month only)
 BB_NAME = {'bart': 'bart', 't5': 't5gemma'}
 L_DOMAINS = dict(bart=['weekday', 'month', 'compass', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
 D_DOMAINS = dict(bart=['weekday', 'month', 'hour', 'compass8', 'season'], t5=['weekday', 'month', 'hour', 'compass8'])
@@ -97,6 +98,7 @@ def worlds5(d, split):
 
 def cpath(bb, d, split, s):
     if d == S.NAT or bb in MODELS8: return V8DIR / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'     # v8 caches (natural text, v8 backbones)
+    if (bb, d, split) in V9_ENC: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'                  # v9: T5Gemma weekday confirm7 (encoded here)
     if split == 'confirm3': return V3DIR / f'local/{bb}_{d}_confirm3_t{tmpl(d)}_s{s}.pt'
     if split == 'confirm4': return V4DIR / f'local/{bb}_{d}_confirm4_t{tmpl(d)}_s{s}.pt'
     if split in NEW_SPLITS: return ROOT / f'local/{bb}_{d}_{split}_{tmpl_tag(d)}_s{s}.pt'
@@ -117,6 +119,7 @@ def cache5(bb, d, split, s):
 def slots(bb, d, split):
     """Long tensor (W,) of attribute-slot positions (template 0: constant; template 3 and multi-template: per world)."""
     if d == S.NAT or bb in MODELS8: f = V8DIR / 'data/slot_positions.json'
+    elif (bb, d, split) in V9_ENC: f = ROOT / 'data/slot_positions.json'
     elif split == 'confirm3': f = V3DIR / 'data/slot_positions.json'
     elif split in NEW_SPLITS: f = ROOT / 'data/slot_positions.json'
     elif split == 'confirm6': f = V6DIR / 'data/slot_positions.json'

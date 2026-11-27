@@ -63,7 +63,8 @@ def main():
                     summ['cells'][key] = dict(R1=pred(sim, 1), R2=pred(sim, 2), R2N=pred(sim))
         dv = lambda name, path, k='R2N': summ['cells'].get(f'dev/{d}/{name}/{path}', {}).get(k); rp = r['rstar_pred']
         med = lambda v, k, path='plus': (lambda xs: float(np.median(xs)) if xs else None)([c[k] for kk, c in summ['cells'].items() if kk.startswith(f'dev/{d}/{v}_') and kk.endswith(f'/{path}')])
-        pc = dict(DO1a=dict(pred=dv(f'SRRR{rp}', 'plus'), keep=(dv(f'SRRR{rp}', 'plus') or 0) >= .95), DO1b=dict(pred=dv(f'SRRR{rp - 2}', 'plus'), keep=(dv(f'SRRR{rp - 2}', 'plus') or 1) <= .50),
+        a1, b1 = dv(f'SRRR{rp}', 'plus'), dv(f'SRRR{rp - 2}', 'plus')
+        pc = dict(DO1a=dict(pred=a1, keep=a1 is not None and a1 >= .95), DO1b=dict(pred=b1, keep=b1 is not None and b1 <= .50),
                   DO2_F1_plus=dict(pred=dv('F_{1}', 'plus'), keep=dv('F_{1}', 'plus') <= .20), DO2_F1_alt=dict(pred=dv('F_{1}', 'alt'), ref=dv('F_empty', 'alt'), keep=dv('F_{1}', 'alt') >= dv('F_empty', 'alt') - .10),
                   DO2_Fnot1_plus=dict(pred=dv('F_not1', 'plus'), keep=dv('F_not1', 'plus') <= .10))
         m4, m5 = med('C1', 'R2'), med('C3U4', 'R2N')
