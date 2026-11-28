@@ -1,0 +1,58 @@
+73692 train9 bart B2 (lane A)
+73693 train9 bart B3 (lane A, after 73692)
+73694 train9 bart S (lane A, after 73693)
+73695 train9 bart B4 (lane A, after 73694)
+73696 train9 t5 B2 (lane B)
+73697 train9 t5 B3 (lane B, after 73696)
+73698 train9 t5 S (lane B, after 73697)
+73699 train9 t5 B4 (lane B, after 73698)
+73701 train9 bart B2 (lane A; rerun: quote fix)
+73702 train9 bart B3 (lane A, after 73701; rerun: quote fix)
+73703 train9 bart S (lane A, after 73702; rerun: quote fix)
+73704 train9 bart B4 (lane A, after 73703; rerun: quote fix)
+73705 train9 t5 B2 (lane B; rerun: quote fix)
+73706 train9 t5 B3 (lane B, after 73705; rerun: quote fix)
+73707 train9 t5 S (lane B, after 73706; rerun: quote fix)
+73708 train9 t5 B4 (lane B, after 73707; rerun: quote fix)
+73709 prep_do cpu (network)
+73711 do_prep gemma (lane A, after 73701)
+73712 do_prep qwen (lane A, after 73711); 73702 (train9 bart B3) now after 73712
+73713 p9 a cpu
+73714 p9 b cpu
+73715 p9 c cpu
+73716 p9 d cpu
+73812 selftest9 cpu
+73814 selftest9 cpu (rerun: LoReFT check at training settings)
+73816 do_prep qwen (lane A; rerun: cuDNN SDPA off, DEVIATIONS 4)
+73817 qwen output peek (diagnostic, dev only)
+73816 cancelled (Qwen gate fails: paraphrases digits and words; awaiting the lead's decision)
+73836 prep_do2 cpu (network; DEVIATIONS 5)
+73838 sim9 --backbone bart (lane A)
+73839 chains9 --backbone bart --smoke (lane A, after 73838)
+73840 do_selftest --model gemma (lane A, after 73839)
+73841 do_run --model gemma --smoke (lane A, after 73840)
+73842 sim9 --backbone t5 (lane B)
+73843 chains9 --backbone t5 --smoke (lane B, after 73842)
+73844 do_sim gemma cpu
+73836 prep_do2 cancelled during the Mistral download (disk quota exceeded); partial Mistral directory removed
+73846 do_gate2 (lane A, after 73841)
+73847 do_prep smol (lane A, after 73846 ok; if the gate chooses smol)
+73848 do_selftest smol (after 73847)
+73849 do_run smol --smoke (after 73848)
+73850 do_sim smol cpu (after 73847)
+73851 enc9 t5 weekday confirm7 (lane B, after 73843)
+73852 sim9 t5 (rerun after 73851: T5 weekday confirm7 encoded)
+73853 do_sim gemma cpu (rerun: DO1b falsy-zero bug)
+73847-73850 cancelled: do_gate2 chose no model (SmolLM2 dev month 0.9896 < 0.99); awaiting the lead
+74093 do_prep smol (weekday only; DEVIATIONS 6)
+74094 do_selftest smol (after 74093)
+74095 do_run smol --smoke (after 74094)
+74096 do_sim smol cpu (after 74093)
+74099 selftest9 cpu (pre-lock)
+74100 seed_registry9 cpu (pre-lock)
+74101 lock9 cpu
+74102 chains9 bart (post-lock, lane A)
+74103 do_run gemma (post-lock, lane A, after 74102)
+74104 chains9 t5 (post-lock, lane B)
+74110 analyze9 cpu (post-lock)
+74111 analyze9 cpu (rerun: AMENDMENT_02)

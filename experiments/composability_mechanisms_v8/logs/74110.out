@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/analyze9.py", line 168, in <module>
+    main()
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/analyze9.py", line 160, in main
+    out = dict(B={bb: unit_b(p, bb) for bb in BBS}, DO={m: unit_do(p, m) for m in do_models}, B6={bb: read(ROOT / f'results/chains9_{bb}_complete.json')['B6'] for bb in BBS})
+                                                           ^^^^^^^^^^^^^
+  File "/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/analyze9.py", line 120, in unit_do
+    prep = read(ROOT / f'results/do_prep_{model}.json'); runs = json.load(gzip.open(ROOT / f'results/do_run_{model}.json.gz', 'rt'))
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/gzip.py", line 61, in open
+    binary_file = GzipFile(filename, gz_mode, compresslevel)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/gzip.py", line 192, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dataset1/zailong/workspace/encrypted_semantic_editing_pilot/experiments/composability_mechanisms_v8/results/do_run_smol.json.gz'
+srun: error: node01: task 0: Exited with exit code 1

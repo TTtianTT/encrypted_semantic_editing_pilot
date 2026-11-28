@@ -1,0 +1,170 @@
+{
+  "model": "gemma",
+  "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "domains": {
+    "weekday": {
+      "gate": {
+        "n": 896,
+        "k": 896,
+        "rate": 1.0,
+        "ci95": [
+          0.9957309604008149,
+          1.0
+        ]
+      },
+      "amplitudes": {
+        "1": {
+          "dim": 2,
+          "a": 28.601588651582485,
+          "s": 25.029345372360815
+        },
+        "2": {
+          "dim": 2,
+          "a": 20.691090259378036,
+          "s": 32.24480594424468
+        },
+        "3": {
+          "dim": 2,
+          "a": 17.387544987720577,
+          "s": 33.888184486701846
+        }
+      },
+      "rstar_pred": 6,
+      "ranks": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        16
+      ],
+      "latents_sha256": {
+        "train": "e0c99bf90b749331496811d4c16f4e14d78c31f33c225ce4442380aca9d7730c",
+        "dev": "169e600a9a9e7e6e2877b6935aec3d7f2608cece61d3726c2cdfde0f76f44197",
+        "confirm7": "4c3923ef418baf2963cc5be9346733292e7ccb3f349573c1769ded500c35a9c8"
+      },
+      "base_dev_single": {
+        "n": 224,
+        "k": 224,
+        "rate": 1.0,
+        "ci95": [
+          0.9831397725393022,
+          1.0
+        ]
+      },
+      "editors": {
+        "C1/s45": {
+          "updates": 600,
+          "dev": {
+            "n": 448,
+            "k": 448,
+            "rate": 1.0,
+            "ci95": [
+              0.9914982152573595,
+              0.9999999999999998
+            ]
+          },
+          "admitted": true,
+          "sha256": "6c55bdb93f4e72e9447aefd7ace39c3b5e9761b276729fc7e46177982e84673f"
+        },
+        "C1/s46": {
+          "updates": 600,
+          "dev": {
+            "n": 448,
+            "k": 448,
+            "rate": 1.0,
+            "ci95": [
+              0.9914982152573595,
+              0.9999999999999998
+            ]
+          },
+          "admitted": true,
+          "sha256": "1b6da116d7a794d8713adb461451a99302b50c6db39731608e753ba2dc0341c7"
+        },
+        "C1/s47": {
+          "updates": 600,
+          "dev": {
+            "n": 448,
+            "k": 448,
+            "rate": 1.0,
+            "ci95": [
+              0.9914982152573595,
+              0.9999999999999998
+            ]
+          },
+          "admitted": true,
+          "sha256": "d818398342be19d908809d331e0b4fa07d4f25f108581314a693a29532e2b326"
+        },
+        "C3U4/s45": {
+          "updates": 1200,
+          "dev": {
+            "n": 32,
+            "k": 32,
+            "rate": 1.0,
+            "ci95": [
+              0.8928208017449293,
+              1.0
+            ]
+          },
+          "admitted": true,
+          "sha256": "4e5cfd67be1ccab29db1bb9fd49874562b56ad88080ce9bf01a7ee1212ead432"
+        },
+        "C3U4/s46": {
+          "updates": 1200,
+          "dev": {
+            "n": 32,
+            "k": 32,
+            "rate": 1.0,
+            "ci95": [
+              0.8928208017449293,
+              1.0
+            ]
+          },
+          "admitted": true,
+          "sha256": "800be96983f23992b8bd9d82ceb007ed332b734ea90081370844055b57c657fb"
+        },
+        "C3U4/s47": {
+          "updates": 1200,
+          "dev": {
+            "n": 32,
+            "k": 32,
+            "rate": 1.0,
+            "ci95": [
+              0.8928208017449293,
+              1.0
+            ]
+          },
+          "admitted": true,
+          "sha256": "ea57206e0ffd93f1e1a3e5d1221244f7411bec942e96992ff30657323ceda5f8"
+        }
+      }
+    },
+    "month-nat": {
+      "gate": {
+        "n": 8640,
+        "k": 8496,
+        "rate": 0.9833333333333333,
+        "ci95": [
+          0.9804112055210267,
+          0.9858258593058759
+        ]
+      },
+      "skipped": "reconstruction gate"
+    }
+  },
+  "excluded": {
+    "weekday/train": 0,
+    "weekday/dev": 0,
+    "weekday/confirm7": 0,
+    "month-nat/train": 0,
+    "month-nat/dev": 0,
+    "month-nat/confirm8": 0
+  },
+  "layer_rule": "v8 rule (DEVIATIONS 7 of v8): layer 10",
+  "layer": 10,
+  "resources": {
+    "max_memory_gb": 12.88222976,
+    "device": "NVIDIA B300 SXM6 AC"
+  },
+  "seconds": 1067.2649533748627
+}
