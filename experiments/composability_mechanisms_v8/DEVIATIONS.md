@@ -29,3 +29,9 @@
    - **Qwen 的重建**：Qwen2.5-1.5B-Instruct 在重建闸门上不过（weekday 0.24、month 0.31，门槛 0.99）。原因是模型复述时会改写，例如 "3 copies" → "three copies"、"completed" → "complete"，不是接口问题。它的 `do_prep` 已取消（作业 73816）。
    - **替换规则**：按同一提示词与同一闸门，依次尝试其他开放家族，取第一个分词与重建都过关的模型（`prep_do2.py`）。候选依次为：OLMo-2-1B-Instruct、Phi-3.5-mini-instruct、SmolLM2-1.7B-Instruct、Mistral-7B-Instruct-v0.3。
    - **B4 的判定**：H-counter 与 H-state 只在通过准入的编辑器上判定。通过准入的编辑器不足 2 个的变体降为描述性。各变体"学不会"（准入失败）的比例作为独立结果报告，即 CE 单独学不会长视野。
+6. **2026-11-28，DO 第二个模型定为 SmolLM2，只做 weekday（锁定前，负责人决定）**：
+   - 候选的分词检查：OLMo-2-1B-Instruct 有 8 个 month-nat world 不是单 token；Phi-3.5-mini-instruct 的星期词不是单 token。两者都不过。Mistral-7B 的下载因磁盘配额中止，部分下载已删除。
+   - SmolLM2-1.7B-Instruct（revision 31b70e2e…）分词全部通过。dev 重建：weekday 0.991，过；month 0.9896（384 个里错 4 个），不过；自然文本 0.83，不过。`do_gate2.py` 的规则要求两个模板域都过，因此没有选出模型。
+   - 负责人决定：闸门按组合判定（与 Gemma 相同）。SmolLM2 只评测 weekday 模板 0；month 与自然文本不评测。完整闸门（train + dev）仍由 `do_prep.py` 判定。
+   - SmolLM2 的选层在 weekday dev 上做（规则不变：取并列最高的层的中位数），因为它没有 month。
+   - 由此，DO 是两个家族各一个 weekday 组合：Gemma 2 2B 与 SmolLM2-1.7B。

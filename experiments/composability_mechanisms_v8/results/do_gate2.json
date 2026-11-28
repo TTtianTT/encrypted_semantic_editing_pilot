@@ -1,0 +1,45 @@
+{
+  "screen": {
+    "olmo": {
+      "skipped": "token check"
+    },
+    "phi": {
+      "skipped": "token check"
+    },
+    "smol": {
+      "weekday": {
+        "n": 224,
+        "k": 222,
+        "rate": 0.9910714285714286,
+        "ci95": [
+          0.968035666199927,
+          0.9975480389726019
+        ]
+      },
+      "month": {
+        "n": 384,
+        "k": 380,
+        "rate": 0.9895833333333334,
+        "ci95": [
+          0.973526387281403,
+          0.995941913356955
+        ]
+      },
+      "month-nat": {
+        "n": 1440,
+        "k": 1192,
+        "rate": 0.8277777777777777,
+        "ci95": [
+          0.8074106291142569,
+          0.8464007670282554
+        ]
+      }
+    },
+    "mistral": {
+      "skipped": "token check"
+    }
+  },
+  "chosen": "smol",
+  "rule": "first candidate with dev reconstruction >= 0.99 on weekday and month template 0",
+  "lead_decision": "2026-11-28: SmolLM2 evaluated on weekday only; gate per combination (DEVIATIONS 6)"
+}

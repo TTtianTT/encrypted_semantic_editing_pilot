@@ -19,7 +19,7 @@ from lib9 import worlds5, fit_srrr_X, next_idx, gram_planes, cbar_of, slot_pair,
 from dlib import *
 
 DOMS = {'gemma': ['weekday', S.NAT], 'qwen': ['weekday', 'month', S.NAT], 'olmo': ['weekday', 'month', S.NAT], 'phi': ['weekday', 'month', S.NAT],
-        'smol': ['weekday', 'month', S.NAT], 'mistral': ['weekday', 'month', S.NAT]}
+        'smol': ['weekday'], 'mistral': ['weekday', 'month', S.NAT]}               # smol: weekday only (DEVIATIONS 6)
 CONF = lambda d: 'confirm8' if d == S.NAT else 'confirm7'
 
 
@@ -106,12 +106,13 @@ def main():
         res['domains'][d] = dict(gate=gate(eng, d, {sp: W[d, sp] for sp in ('train', 'dev')}, None)); print('DO gate', model, d, res['domains'][d]['gate']['rate'], flush=True)
     if model == 'gemma': layer = 10; res['layer_rule'] = 'v8 rule (DEVIATIONS 7 of v8): layer 10'
     else:
-        cands = list(range(2, eng.L - 1, 2)); Lt = latents(eng, 'month', W['month', 'train'], P['month', 'train'], cands); Ld = latents(eng, 'month', W['month', 'dev'], P['month', 'dev'], cands); sel = {}
+        dl = 'month' if 'month' in DOMS[model] else DOMS[model][0]                                   # layer-selection domain (smol: weekday; DEVIATIONS 6)
+        cands = list(range(2, eng.L - 1, 2)); Lt = latents(eng, dl, W[dl, 'train'], P[dl, 'train'], cands); Ld = latents(eng, dl, W[dl, 'dev'], P[dl, 'dev'], cands); sel = {}
         for l in cands:
-            f, _ = fit_srrr_X(Lt[l], {op: next_idx('month', op) for op in ('plus', 'minus')}, [16])
-            sel[l] = single(eng, 'month', W['month', 'dev'], P['month', 'dev'], Ld[l], l, lin(f['plus', 16]), ops=('plus',))['rate']; print('DO layer', l, sel[l], flush=True)
+            f, _ = fit_srrr_X(Lt[l], {op: next_idx(dl, op) for op in ('plus', 'minus')}, [16])
+            sel[l] = single(eng, dl, W[dl, 'dev'], P[dl, 'dev'], Ld[l], l, lin(f['plus', 16]), ops=('plus',))['rate']; print('DO layer', l, sel[l], flush=True)
         best = max(sel.values()); tied = sorted(l for l, r in sel.items() if r == best); layer = tied[(len(tied) - 1) // 2]
-        res['layer_rule'] = dict(profile=sel, tied=tied, rule='median of the tied best layers (lower median)')
+        res['layer_rule'] = dict(profile=sel, tied=tied, domain=dl, rule='median of the tied best layers (lower median)')
     res['layer'] = layer; dump(ROOT / f'results/do_prep_{model}.json', res)
     for d in DOMS[model]:
         r = res['domains'][d]

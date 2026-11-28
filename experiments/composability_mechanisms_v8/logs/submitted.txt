@@ -43,3 +43,8 @@
 73851 enc9 t5 weekday confirm7 (lane B, after 73843)
 73852 sim9 t5 (rerun after 73851: T5 weekday confirm7 encoded)
 73853 do_sim gemma cpu (rerun: DO1b falsy-zero bug)
+73847-73850 cancelled: do_gate2 chose no model (SmolLM2 dev month 0.9896 < 0.99); awaiting the lead
+74093 do_prep smol (weekday only; DEVIATIONS 6)
+74094 do_selftest smol (after 74093)
+74095 do_run smol --smoke (after 74094)
+74096 do_sim smol cpu (after 74093)
