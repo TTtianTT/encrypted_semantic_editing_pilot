@@ -8,7 +8,7 @@ import numpy as np
 from common import *
 
 V5C = 'experiments/composability_mechanisms_v4/results/chains.csv'; V5P = 'experiments/composability_mechanisms_v4/results/predictions.json'
-V6P = 'experiments/composability_mechanisms_v5/results/predictions.json'; V7P = 'experiments/composability_mechanisms_v6/results/predictions.json'; V8P = 'experiments/composability_mechanisms_v7/results/predictions.json'
+V6P = 'experiments/composability_mechanisms_v5/results/predictions.json'; V7P = 'experiments/composability_mechanisms_v6/results/predictions.json'; V8P = 'experiments/composability_mechanisms_v7/results/predictions.json'; V9P = 'experiments/composability_mechanisms_v8/results/predictions.json'
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
     def med(bb, stems, path, t):
         v = [d[t] for (b, m, p), d in R.items() if b == bb and p == path and any(m == s or m.startswith(s + '_s') for s in stems) and t in d]
         return float(np.median(v)) if v else None
-    p5 = read(V5P)['L']['per_backbone']; p6 = read(V6P); p7 = read(V7P); p8 = read(V8P)['N']['per_backbone']
+    p5 = read(V5P)['L']['per_backbone']; p6 = read(V6P); p7 = read(V7P); p8 = read(V8P)['N']['per_backbone']; p9 = read(V9P)
     rows = [
         ('Closed-form RRR-16, one-step $R_1$', lambda bb: med(bb, ['F_empty'], 'plus', 1)),
         ('Closed-form RRR-16, one-way $\\Rk{2N}$', lambda bb: med(bb, ['F_empty'], 'plus', 24)),
@@ -34,6 +34,10 @@ def main():
         ('Unseen templates, slot-only S-RRR-16, one-way $\\Rk{2N}$', lambda bb: p6['M']['M1'].get(f'{bb}/month-mt')),
         ('Natural text (WikiText), slot-only S-RRR-16, one-way $\\Rk{2N}$', lambda bb: p8[bb]['N1']['R2N']),
         ('Natural text, CE editor C1, $\\Rk{2}$ (seed median)', lambda bb: p8[bb]['N3']['R2']),
+        ('Constant steering vector (mean difference), $R_1$', lambda bb: p9['B'][bb]['month']['B1a']['R1']),
+        ('Readout-indexed steering, one-way $\\Rk{2N}$', lambda bb: p9['B'][bb]['month']['B1c']['R2N']),
+        ('LoReFT, one-step CE, $\\Rk{2}$ (seed median)', lambda bb: p9['B'][bb]['month']['B2']['LoReFTC1']['median']['R2']),
+        ('Decode and re-encode every step (reference), one-way $\\Rk{2N}$', lambda bb: p9['B6'][bb]['month']['reencode']['R2N']),
         ('Binding (bind3), two-layer editor, median $\\Rk{30}$ (8 seeds)', lambda bb: float(np.median(list(p7['K']['table']['bind3/Att2LU8/R30'].values()))) if bb == 'bart' else None),
         ('Binding (bind3), two-layer editor, min $\\Rk{30}$ (8 seeds)', lambda bb: min(p7['K']['table']['bind3/Att2LU8/R30'].values()) if bb == 'bart' else None),
         ('Binding (bind3), two-layer editor, max $\\Rk{100}$ (8 seeds)', lambda bb: max(p7['K']['table']['bind3/Att2LU8/R100'].values()) if bb == 'bart' else None),
@@ -44,7 +48,7 @@ def main():
     L += ['\\bottomrule', '\\end{tabular}']
     (PAPER / 'generated/tables/table1.tex').write_text('\n'.join(L) + '\n')
     m = PAPER / 'generated/tables/manifest.json'; man = json.loads(m.read_text()) if m.exists() else {}
-    man["table1"] = dict(script="paper/scripts/table1.py", inputs={f: sha(f) for f in (V5C, V5P, V6P, V7P, V8P)}); m.write_text(json.dumps(man, indent=1))
+    man["table1"] = dict(script="paper/scripts/table1.py", inputs={f: sha(f) for f in (V5C, V5P, V6P, V7P, V8P, V9P)}); m.write_text(json.dumps(man, indent=1))
     print('\n'.join(L), flush=True)
 
 

@@ -14,6 +14,10 @@ Naive step-1 prediction, agreement & 0.58 & 0.64 \\
 Unseen templates, slot-only S-RRR-16, one-way $\Rk{2N}$ & 1.00 & 1.00 \\
 Natural text (WikiText), slot-only S-RRR-16, one-way $\Rk{2N}$ & 1.00 & 1.00 \\
 Natural text, CE editor C1, $\Rk{2}$ (seed median) & 0.00 & 0.00 \\
+Constant steering vector (mean difference), $R_1$ & 0.00 & 0.00 \\
+Readout-indexed steering, one-way $\Rk{2N}$ & 1.00 & 1.00 \\
+LoReFT, one-step CE, $\Rk{2}$ (seed median) & 0.00 & 0.00 \\
+Decode and re-encode every step (reference), one-way $\Rk{2N}$ & 1.00 & 1.00 \\
 Binding (bind3), two-layer editor, median $\Rk{30}$ (8 seeds) & 0.98 & -- \\
 Binding (bind3), two-layer editor, min $\Rk{30}$ (8 seeds) & 0.08 & -- \\
 Binding (bind3), two-layer editor, max $\Rk{100}$ (8 seeds) & 0.06 & -- \\

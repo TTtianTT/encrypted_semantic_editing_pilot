@@ -308,6 +308,7 @@ claims:
       - {macro: CLmetaGpuVsix, file: experiments/composability_mechanisms_v5/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVseven, file: experiments/composability_mechanisms_v6/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuVeight, file: experiments/composability_mechanisms_v7/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
+      - {macro: CLmetaGpuVnine, file: experiments/composability_mechanisms_v8/run_ledger.json, path: total_gpu_hours, fmt: '{:.1f}'}
       - {macro: CLmetaGpuTotal, derived: gpu_total, fmt: '{:.1f}'}
       - {macro: CLmetaRounds, derived: rounds_locked, fmt: '{:d}', note: 'preregistered rounds with a lock commit; regenerate after v8'}
   - id: CL16
@@ -403,6 +404,131 @@ claims:
       - {macro: CLnineteenCOneRtwoMax, derived: v8_d_c1_r2_max, fmt: '{:.2f}'}
       - {macro: CLnineteenDMin, derived: v8_d_c1_d_min, fmt: '{:.2f}'}
       - {macro: CLnineteenAgreeMin, derived: v8_d_agree_min, fmt: '{:.2f}'}
+  - id: CL20
+    zh: steering 向量：常数均值差连一步都做不到；只在单对的起点有效；按读出的状态取均值差即可组合（v9 B1）
+    en: A constant mean-difference steering vector cannot take a single step on a cycle, a single-pair vector works only from its own start state, and a readout-indexed mean difference composes.
+    nature: decided (v9 B1a H-cancel, B1b holds, B1c H-state-aware in all 4 backbone-domain combinations)
+    predictions: [v9/B/bart/weekday/B1a, v9/B/bart/month/B1a, v9/B/t5/weekday/B1a, v9/B/t5/month/B1a, v9/B/bart/weekday/B1b, v9/B/bart/month/B1b, v9/B/t5/weekday/B1b, v9/B/t5/month/B1b, v9/B/bart/weekday/B1c, v9/B/bart/month/B1c, v9/B/t5/weekday/B1c, v9/B/t5/month/B1c]
+    figures: []
+    numbers:
+      - {macro: CLtwentyBoneaMax, derived: v9_b1a_r1_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyBonebXzero, derived: v9_b1b_x0_min, fmt: '{:.2f}'}
+      - {macro: CLtwentyBonebOther, derived: v9_b1b_other_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyBonecMin, derived: v9_b1c_min, fmt: '{:.2f}'}
+  - id: CL21
+    zh: 指令式写入来自一步目标函数：LoReFT、满秩线性与 MLP 在一步 CE 下同样写指令（v9 B2、B3）
+    en: Instruction writes come from the one-step objective - LoReFT, full-rank linear and MLP editors trained with one-step CE all write instructions.
+    nature: decided (v9 B2 and B3 H-objective in all 4 combinations); T5Gemma month LoReFT-C3U4 condition dropped before the lock and observed not to compose
+    predictions: [v9/B/bart/weekday/B2, v9/B/bart/month/B2, v9/B/t5/weekday/B2, v9/B/t5/month/B2, v9/B/bart/weekday/B3, v9/B/bart/month/B3, v9/B/t5/weekday/B3, v9/B/t5/month/B3]
+    exploratory_sources: [v9 T5Gemma month LoReFT-C3U4 (dropped by the pre-lock check)]
+    figures: []
+    numbers:
+      - {macro: CLtwentyoneLConeRone, derived: v9_lc1_r1_min, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneLConeRtwo, derived: v9_lc1_r2_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneLConeD, derived: v9_lc1_d_min, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneLConeRtwoN, derived: v9_lc1_r2n_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneLCthreeMin, derived: v9_lc3_min_kept, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneLCthreeTfive, derived: v9_lc3_t5_month, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneCapRtwo, derived: v9_b3_r2_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneCapD, derived: v9_b3_d_min, fmt: '{:.2f}'}
+      - {macro: CLtwentyoneCapRtwoN, derived: v9_b3_r2n_max, fmt: '{:.2f}'}
+  - id: CL22
+    zh: 只用 CE 的长视野展开大多学不会；学会的过了视野即失败（v9 B4）
+    en: CE-only unrolled training with longer or random horizons mostly fails to learn its own horizon, and the editors that learn it fail past it.
+    nature: decided (v9 B4 H-counter on BART weekday); other combinations descriptive (fewer than 2 admitted editors)
+    predictions: [v9/B/bart/weekday/B4]
+    exploratory_sources: [v9 B4 admission rates (DEVIATIONS 5)]
+    figures: []
+    numbers:
+      - {macro: CLtwentytwoAdmitted, derived: v9_b4_admitted, fmt: '{:d}'}
+      - {macro: CLtwentytwoTrained, derived: v9_b4_trained, fmt: '{:d}'}
+      - {macro: CLtwentytwoUeight, derived: v9_b4_u8_bart_wd, fmt: '{:.2f}'}
+      - {macro: CLtwentytwoRfourN, derived: v9_b4_r4n_max, fmt: '{:.2f}'}
+  - id: CL23
+    zh: 只在谐波平面内旋转就足以组合；平面接近圆（v9 B5 描述性；P9b 探索性）
+    en: Rotating the slot inside its harmonic planes alone composes, and the planes are close to circles (descriptive / exploratory).
+    nature: descriptive (v9 B5, readout exact by construction); P9b exploratory
+    predictions: []
+    exploratory_sources: [v9 B5 (descriptive by the pre-lock check), v9 P9b]
+    figures: []
+    numbers:
+      - {macro: CLtwentythreeRotTzero, derived: v9_b5_t0_min, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeRotNat, derived: v9_b5_nat_min, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeEllLo, derived: v9_p9b_ell_lo, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeAngHi, derived: v9_p9b_ang_hi, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeScrAngLo, derived: v9_p9b_scr_ang_lo, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeFundLo, derived: v9_p9b_f1share_lo, fmt: '{:.2f}'}
+      - {macro: CLtwentythreeFundHi, derived: v9_p9b_f1share_hi, fmt: '{:.2f}'}
+  - id: CL24
+    zh: 主要编辑器在 8 个 seed 上稳定（v9 S）
+    en: The main editor results hold on eight seeds.
+    nature: confirmed (v9 S, 5 of 5 new seeds in every cell)
+    predictions: [v9/S/bart/weekday/C1, v9/S/bart/month/C1, v9/S/t5/month/C1, v9/S/bart/weekday/C3U4, v9/S/bart/month/C3U4, v9/S/t5/month/C3U4]
+    figures: []
+    numbers:
+      - {macro: CLtwentyfourCells, derived: v9_s_cells, fmt: '{:d}'}
+      - {macro: CLtwentyfourCOneRtwoMax, derived: v9_s_c1_r2_max, fmt: '{:.2f}'}
+      - {macro: CLtwentyfourCThreeMin, derived: v9_s_c3_min, fmt: '{:.2f}'}
+  - id: CL25
+    zh: decoder-only：Gemma 2 2B 的 weekday 上全部复现；第二个家族没有模型过闸门（v9 DO，部分复现）
+    en: In the decoder-only Gemma 2 2B every decoder-only test replicates on weekday; no model of a second family passed the reconstruction gate.
+    nature: decided (v9 DO - Gemma weekday replicates; second family not evaluable, so partial)
+    predictions: [v9/DO/gemma/weekday/DO1a, v9/DO/gemma/weekday/DO2, v9/DO/gemma/weekday/DO3, v9/DO/gemma/weekday/DO4, v9/DO/gemma/weekday/DO5, v9/DO/gemma/weekday/DO6, v9/DO/gemma/weekday/replicates]
+    figures: []
+    numbers:
+      - {macro: CLtwentyfiveRstar, derived: v9_do_rstar, fmt: '{:d}'}
+      - {macro: CLtwentyfiveRtwoN, derived: v9_do_r2n, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveFonePlus, derived: v9_do_f1p, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveFoneAlt, derived: v9_do_f1a, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveCOneRtwo, derived: v9_do_c1_r2, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveCOneD, derived: v9_do_c1_d, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveCThree, derived: v9_do_c3, fmt: '{:.2f}'}
+      - {macro: CLtwentyfiveAgree, derived: v9_do_agree, fmt: '{:.3f}'}
+      - {macro: CLtwentyfiveNaive, derived: v9_do_naive, fmt: '{:.3f}'}
+  - id: CL26
+    zh: 写入几何（探索性）：C1 的写入近乎常数，与规范写入的夹角处在随机零基线，目标状态探针读不到目标（v9 P9a、P9d）
+    en: The C1 write is nearly constant across source states, its alignment with the canonical write is at the random-direction null, and a state probe reads the edited slot as the source, never the target (exploratory).
+    nature: exploratory (v9 P9a, P9d)
+    predictions: []
+    exploratory_sources: [v9 P9a, P9d]
+    figures: []
+    numbers:
+      - {macro: CLtwentysixConstMin, derived: v9_p9a_const_min, fmt: '{:.3f}'}
+      - {macro: CLtwentysixCosHi, derived: v9_p9a_cos_hi, fmt: '{:.3f}'}
+      - {macro: CLtwentysixNullLo, derived: v9_p9a_null_lo, fmt: '{:.3f}'}
+      - {macro: CLtwentysixNullHi, derived: v9_p9a_null_hi, fmt: '{:.3f}'}
+      - {macro: CLtwentysixSrcMin, derived: v9_p9a_src_min, fmt: '{:.2f}'}
+      - {macro: CLtwentysixTgtMax, derived: v9_p9a_tgt_max, fmt: '{:.2f}'}
+      - {macro: CLtwentysixStartVeight, derived: v9_p9d_v8_min, fmt: '{:.2f}'}
+      - {macro: CLtwentysixStartVfive, derived: v9_p9d_v5_min, fmt: '{:.2f}'}
+  - id: CL27
+    zh: 预测器相对多数参考的增益与学习基线（探索性）（v9 P9c）
+    en: The readout's gain over the per-cell majority reference and a learned baseline on latent features (exploratory).
+    nature: exploratory (v9 P9c)
+    predictions: []
+    exploratory_sources: [v9 P9c]
+    figures: []
+    numbers:
+      - {macro: CLtwentysevenVfiveBart, derived: v9_p9c_v5_bart, fmt: '{:.3f}'}
+      - {macro: CLtwentysevenVfiveTfive, derived: v9_p9c_v5_t5, fmt: '{:.3f}'}
+      - {macro: CLtwentysevenVfiveLo, derived: v9_p9c_v5_lo, fmt: '{:.3f}'}
+      - {macro: CLtwentysevenNatTfive, derived: v9_p9c_nat_t5, fmt: '{:.3f}'}
+      - {macro: CLtwentysevenNatTfiveLo, derived: v9_p9c_nat_t5_lo, fmt: '{:.3f}'}
+      - {macro: CLtwentysevenLbLo, derived: v9_p9c_lb_lo, fmt: '{:.2f}'}
+      - {macro: CLtwentysevenLbHi, derived: v9_p9c_lb_hi, fmt: '{:.2f}'}
+  - id: CL28
+    zh: 解码后重编码（参照）
+    en: Decode-and-re-encode reference (not a prediction).
+    nature: descriptive (v9 B6 reference)
+    predictions: []
+    exploratory_sources: [v9 B6]
+    figures: []
+    numbers:
+      - {macro: CLtwentyeightRtwoN, derived: v9_b6_r2n_min, fmt: '{:.2f}'}
+      - {macro: CLtwentyeightBartRe, derived: v9_b6_bart_re, fmt: '{:.2f}'}
+      - {macro: CLtwentyeightBartLat, derived: v9_b6_bart_lat, fmt: '{:.2f}'}
+      - {macro: CLtwentyeightTfiveRe, derived: v9_b6_t5_re, fmt: '{:.2f}'}
+      - {macro: CLtwentyeightTfiveLat, derived: v9_b6_t5_lat, fmt: '{:.2f}'}
   - id: THEORY
     zh: 命题 1–4 的数值核对（v7 T 单元；T1 为已知答案的核对，T2 为探索性）
     en: Numerical checks of propositions 1-4 (v7 unit T).

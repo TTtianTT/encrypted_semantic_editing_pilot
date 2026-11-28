@@ -44,3 +44,12 @@ fundamental vs every other plane gives mirror-image curves on both backbones.}\l
 \caption{(a, a') Per-plane one-step change $s_k$ and amplitude $a_k$ of the slot code, each relative to its largest plane. (b) Share of the fundamental in the locked readout's distance between the codes of $x$ and $x+m$: small for one step, dominant near half a turn (cyclic-symmetric approximation, locked weights).}\label{fig:fig3}\end{figure}
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figs/fig4.pdf}
 \caption{One-way $\Rk{2N}$ of RRR-$r$ and FF-$r$ against the rank (T5Gemma confirmatory, BART exploratory).}\label{fig:fig4}\end{figure}
+
+\paragraph{A rotation in the harmonic planes suffices.}\claim{CL23}
+The harmonic description is not only a decomposition. Each plane is close to a circle (ellipticity at least \CLtwentythreeEllLo{}; the
+angle between successive states departs from $2\pi k/N$ by at most \CLtwentythreeAngHi{} rad in the fundamental), whereas under the
+scrambled order the angular steps are irregular (at least \CLtwentythreeScrAngLo{} rad); the fundamental carries
+\CLtwentythreeFundLo{}--\CLtwentythreeFundHi{} of the centred energy (exploratory). An editor that only rotates the slot inside every
+plane, after whitening each plane with the world's clean codes, and leaves everything else unchanged, composes for $2N$ steps
+(\CLtwentythreeRotTzero{} on templates, \CLtwentythreeRotNat{} on natural text; descriptive, since the readout is exact by construction;
+the decoder's success is not).

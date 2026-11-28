@@ -9,7 +9,7 @@ from common import *
 
 LOCK = {r: f'experiments/{d}/protocol_lock.json' for r, d in (('v1', 'symmetry_composability_v1'), ('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'),
                                                              ('v4', 'composability_mechanisms_v3'), ('v5', 'composability_mechanisms_v4'), ('v6', 'composability_mechanisms_v5'), ('v7', 'composability_mechanisms_v6'),
-                                                             ('v8', 'composability_mechanisms_v7'))}
+                                                             ('v8', 'composability_mechanisms_v7'), ('v9', 'composability_mechanisms_v8'))}
 P = {r: f'experiments/{d}/results/predictions.json' for r, d in (('v2', 'composability_mechanisms_v1'), ('v3', 'composability_mechanisms_v2'), ('v4', 'composability_mechanisms_v3'),
                                                                 ('v5', 'composability_mechanisms_v4'))}
 P['v1'] = 'experiments/symmetry_composability_v1/results/e1_predictions.json'
@@ -26,9 +26,14 @@ P8 = 'experiments/composability_mechanisms_v7/results/predictions.json'; D8 = 'e
 E28 = 'experiments/composability_mechanisms_v7/results/e2_run.json'; E2B = 'experiments/composability_mechanisms_v7/results/e2b.json'; N8G = 'experiments/composability_mechanisms_v7/results/n_gate.json'
 _n8 = lambda bb: read(P8)['N']['per_backbone'][bb]
 _g8c = lambda k: read(P8)['G']['cells'][k]['obs_rate']
+P9R = 'experiments/composability_mechanisms_v8/results/predictions.json'; P9A, P9B, P9C, P9D = (f'experiments/composability_mechanisms_v8/results/p9{x}.json' for x in 'abcd')
+_b9all = lambda: [(bb, d) for bb in ('bart', 't5') for d in ('weekday', 'month')]
+_b9 = lambda r: read(P9R)['B'][r[0]][r[1]]
+_s9 = lambda: [v['S'] for bb in ('bart', 't5') for v in read(P9R)['B'][bb].values() if 'S' in v]
+_do9 = lambda: read(P9R)['DO']['gemma']['weekday']
 P5B = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_bart.json'; P5T = 'experiments/composability_mechanisms_v3/results/patch/p5_transplant_t5.json'
 V3AUD = 'experiments/composability_mechanisms_v2/data/audit.json'
-ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5', 'composability_mechanisms_v6', 'composability_mechanisms_v7']
+ROUND_DIRS = ['symmetry_composability_v1', 'composability_mechanisms_v1', 'composability_mechanisms_v2', 'composability_mechanisms_v3', 'composability_mechanisms_v4', 'composability_mechanisms_v5', 'composability_mechanisms_v6', 'composability_mechanisms_v7', 'composability_mechanisms_v8']
 
 
 def _v3_sk():
@@ -118,6 +123,44 @@ DERIVED = {
     'v8_e1_rrr_M_max': (lambda: _e1('rrr', 'M', max), [E1]),
     'v8_e1_rrr_Pinv_min': (lambda: _e1('rrr', 'Pinv', min), [E1]),
     'v8_e1_rrr_Pinv_max': (lambda: _e1('rrr', 'Pinv', max), [E1]),
+    'v9_b1a_r1_max': (lambda: max(_b9(r)['B1a']['R1'] for r in _b9all()), [P9R]), 'v9_b1b_x0_min': (lambda: min(_b9(r)['B1b']['R1_x0'] for r in _b9all()), [P9R]),
+    'v9_b1b_other_max': (lambda: max(_b9(r)['B1b']['R1_other'] for r in _b9all()), [P9R]), 'v9_b1c_min': (lambda: min(_b9(r)['B1c']['R2N'] for r in _b9all()), [P9R]),
+    'v9_lc1_r1_min': (lambda: min(_b9(r)['B2']['LoReFTC1']['median']['R1'] for r in _b9all()), [P9R]), 'v9_lc1_r2_max': (lambda: max(_b9(r)['B2']['LoReFTC1']['median']['R2'] for r in _b9all()), [P9R]),
+    'v9_lc1_d_min': (lambda: min(_b9(r)['B2']['LoReFTC1']['median']['D'] for r in _b9all()), [P9R]), 'v9_lc1_r2n_max': (lambda: max(_b9(r)['B2']['LoReFTC1']['median']['R2N'] for r in _b9all()), [P9R]),
+    'v9_lc3_min_kept': (lambda: min(_b9(r)['B2']['LoReFTC3U4']['median_R2N'] for r in _b9all() if r != ('t5', 'month')), [P9R]),
+    'v9_lc3_t5_month': (lambda: _b9(('t5', 'month'))['B2']['LoReFTC3U4']['median_R2N'], [P9R]),
+    'v9_b3_r2_max': (lambda: max(m['R2'] for r in _b9all() for m in _b9(r)['B3']['median'].values()), [P9R]), 'v9_b3_d_min': (lambda: min(m['D'] for r in _b9all() for m in _b9(r)['B3']['median'].values()), [P9R]),
+    'v9_b3_r2n_max': (lambda: max(m['R2N'] for r in _b9all() for m in _b9(r)['B3']['median'].values()), [P9R]),
+    'v9_b4_admitted': (lambda: sum(len(x['admitted']) for r in _b9all() for x in _b9(r)['B4']['editors'].values()), [P9R]),
+    'v9_b4_trained': (lambda: sum(len(x['seeds']) for r in _b9all() for x in _b9(r)['B4']['editors'].values()), [P9R]),
+    'v9_b4_u8_bart_wd': (lambda: _b9(('bart', 'weekday'))['B4']['editors']['U8']['median_admitted'], [P9R]),
+    'v9_b4_r4n_max': (lambda: max((x['R4N_max_admitted'] or 0) for r in _b9all() for x in _b9(r)['B4']['editors'].values()), [P9R]),
+    'v9_b5_t0_min': (lambda: min(read(P9R)['B'][bb][d]['B5']['R2N'] for bb in ('bart', 't5') for d in ('weekday', 'month')), [P9R]),
+    'v9_b5_nat_min': (lambda: min(read(P9R)['B'][bb]['month-nat']['B5']['R2N'] for bb in ('bart', 't5')), [P9R]),
+    'v9_s_c1_r2_max': (lambda: max([x['R2'] for r in _s9() for x in r['C1']['seeds'].values()] + [v for r in _s9() for v in r['v5_seeds']['C1_R2'].values()]), [P9R]),
+    'v9_s_c3_min': (lambda: min([x['R2N'] for r in _s9() for x in r['C3U4']['seeds'].values()] + [v for r in _s9() for v in r['v5_seeds']['C3U4_R2N'].values()]), [P9R]),
+    'v9_s_cells': (lambda: len(_s9()), [P9R]),
+    'v9_do_r2n': (lambda: _do9()['DO1a']['R2N'], [P9R]), 'v9_do_rstar': (lambda: _do9()['DO1a']['rstar_pred'], [P9R]),
+    'v9_do_f1p': (lambda: _do9()['DO2']['observed']['F1_plus'], [P9R]), 'v9_do_f1a': (lambda: _do9()['DO2']['observed']['F1_alt'], [P9R]),
+    'v9_do_c1_r2': (lambda: _do9()['DO4']['R2'], [P9R]), 'v9_do_c1_d': (lambda: _do9()['DO4']['D'], [P9R]), 'v9_do_c3': (lambda: _do9()['DO5']['R2N'], [P9R]),
+    'v9_do_agree': (lambda: _do9()['DO6']['agreement'], [P9R]), 'v9_do_naive': (lambda: _do9()['DO6']['naive'], [P9R]),
+    'v9_b6_bart_re': (lambda: read(P9R)['B6']['bart']['month']['reencode']['seconds_per_step'], [P9R]), 'v9_b6_bart_lat': (lambda: read(P9R)['B6']['bart']['month']['latent']['seconds_per_step'], [P9R]),
+    'v9_b6_t5_re': (lambda: read(P9R)['B6']['t5']['month']['reencode']['seconds_per_step'], [P9R]), 'v9_b6_t5_lat': (lambda: read(P9R)['B6']['t5']['month']['latent']['seconds_per_step'], [P9R]),
+    'v9_b6_r2n_min': (lambda: min(v['reencode']['R2N'] for bb in ('bart', 't5') for v in read(P9R)['B6'][bb].values()), [P9R]),
+    'v9_p9a_const_min': (lambda: min(v['constant_share_median'] for v in read(P9A).values()), [P9A]),
+    'v9_p9a_cos_hi': (lambda: max(v['cos_canonical_abs_median'] for v in read(P9A).values()), [P9A]),
+    'v9_p9a_null_hi': (lambda: max(v['null_cos_abs_median'] for v in read(P9A).values()), [P9A]), 'v9_p9a_null_lo': (lambda: min(v['null_cos_abs_median'] for v in read(P9A).values()), [P9A]),
+    'v9_p9a_src_min': (lambda: min(v['probe']['source'] for v in read(P9A).values()), [P9A]), 'v9_p9a_tgt_max': (lambda: max(v['probe']['target'] for v in read(P9A).values()), [P9A]),
+    'v9_p9b_ell_lo': (lambda: min(x['ellipticity_median'] for v in read(P9B).values() for x in v['natural'].values() if 'ellipticity_median' in x), [P9B]),
+    'v9_p9b_ang_hi': (lambda: max(x['angle_dev_median_rad'] for v in read(P9B).values() for k, x in v['natural'].items() if k == '1'), [P9B]),
+    'v9_p9b_scr_ang_lo': (lambda: min(v['scrmax']['1']['angle_dev_median_rad'] for v in read(P9B).values() if '1' in v.get('scrmax', {})), [P9B]),
+    'v9_p9b_f1share_lo': (lambda: min(v['natural']['1']['energy_share_median'] for v in read(P9B).values()), [P9B]), 'v9_p9b_f1share_hi': (lambda: max(v['natural']['1']['energy_share_median'] for v in read(P9B).values()), [P9B]),
+    'v9_p9c_v5_bart': (lambda: read(P9C)['v5_L/bart']['per_world']['latent_minus_majority']['diff'], [P9C]), 'v9_p9c_v5_t5': (lambda: read(P9C)['v5_L/t5']['per_world']['latent_minus_majority']['diff'], [P9C]),
+    'v9_p9c_v5_lo': (lambda: min(read(P9C)[k]['per_world']['latent_minus_majority']['ci95'][0] for k in ('v5_L/bart', 'v5_L/t5')), [P9C]),
+    'v9_p9c_nat_t5': (lambda: read(P9C)['v8_N/t5']['per_world']['latent_minus_majority']['diff'], [P9C]), 'v9_p9c_nat_t5_lo': (lambda: read(P9C)['v8_N/t5']['per_world']['latent_minus_majority']['ci95'][0], [P9C]),
+    'v9_p9c_lb_lo': (lambda: min(v['learned_baseline']['accuracy'] for v in read(P9C).values() if isinstance(v, dict) and 'learned_baseline' in v), [P9C]),
+    'v9_p9c_lb_hi': (lambda: max(v['learned_baseline']['accuracy'] for v in read(P9C).values() if isinstance(v, dict) and 'learned_baseline' in v), [P9C]),
+    'v9_p9d_v5_min': (lambda: min(read(P9D)[k]['min'] for k in ('v5_L_CE/bart', 'v5_L_CE/t5')), [P9D]), 'v9_p9d_v8_min': (lambda: min(v['min'] for k, v in read(P9D).items() if k.startswith('v8')), [P9D]),
     'v8_n1_bart': (lambda: _n8('bart')['N1']['R2N'], [P8]), 'v8_n1_t5': (lambda: _n8('t5')['N1']['R2N'], [P8]),
     'v8_n2_bart': (lambda: _n8('bart')['N2']['R2N'], [P8]), 'v8_n2_t5': (lambda: _n8('t5')['N2']['R2N'], [P8]),
     'v8_n3_r1_min': (lambda: min(_n8(b)['N3']['R1'] for b in ('bart', 't5')), [P8]), 'v8_n3_r2_max': (lambda: max(_n8(b)['N3']['R2'] for b in ('bart', 't5')), [P8]),

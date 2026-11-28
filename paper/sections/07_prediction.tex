@@ -15,6 +15,12 @@ A per-cell majority reference, which uses the observed outcomes and is therefore
 Replacing the fitted plane weights by equal weights barely changes the agreement (\CLeightbEqualBart{} and \CLeightbEqualTfive{}), so the
 predictor does not need decoder calibration.
 
+\paragraph{Exploratory: against the majority reference and a learned baseline.}\claim{CL27}
+With world-cluster bootstrap intervals, the readout beats the per-cell majority reference by \CLtwentysevenVfiveBart{} (BART-base) and
+\CLtwentysevenVfiveTfive{} (T5Gemma) of (world, cell) pairs in the fifth round (lower bounds at least \CLtwentysevenVfiveLo{}), but on
+natural text with T5Gemma by only \CLtwentysevenNatTfive{} (lower bound \CLtwentysevenNatTfiveLo{}). A logistic regression on the latent
+margin and off-manifold distance stored by the locked simulations reaches \CLtwentysevenLbLo{}--\CLtwentysevenLbHi{}, below the readout.
+
 \paragraph{Step-1 disagreement detects instruction writes.}\claim{CL9}
 For trained editors, the fraction $D$ of worlds whose step-1 latent readout differs from the decoded state separates the two families
 completely (Figure~\ref{fig:fig5}b): all \CLnineCE{} CE cells have $D\ge\Dhi$ and fail, all \CLnineState{} state-supervised cells have

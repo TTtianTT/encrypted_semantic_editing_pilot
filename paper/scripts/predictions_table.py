@@ -9,7 +9,8 @@ from common import *
 ROUNDS = [('v1', 'symmetry_composability_v1', 'results/e1_predictions.json'), ('v2', 'composability_mechanisms_v1', 'results/predictions.json'),
           ('v3', 'composability_mechanisms_v2', 'results/predictions.json'), ('v4', 'composability_mechanisms_v3', 'results/predictions.json'),
           ('v5', 'composability_mechanisms_v4', 'results/predictions.json'), ('v6', 'composability_mechanisms_v5', 'results/predictions.json'),
-          ('v7', 'composability_mechanisms_v6', 'results/predictions.json'), ('v8', 'composability_mechanisms_v7', 'results/predictions.json')]
+          ('v7', 'composability_mechanisms_v6', 'results/predictions.json'), ('v8', 'composability_mechanisms_v7', 'results/predictions.json'),
+          ('v9', 'composability_mechanisms_v8', 'results/predictions.json')]
 GATES = {'v4': [('G4_0', 'g40')], 'v5': [('G5_0', 'g50')], 'v6': [('G6_0', 'g60')]}
 NOTES = {('v6', 'K/K2'): '(not replicated in v7)', ('v6', 'K/Q17prime'): '(K2 not replicated in v7)'}
 SKIP = {'cells', 'table', 'observed', 'S2_table', 'S3_cells', 'verdicts', 'per_seed', 'exploratory', 'lock', 'admission', 'confirm_geometry', 'consistency', 'g60'}
@@ -70,6 +71,37 @@ def v8_rows(d):
     return out
 
 
+
+
+def v9_rows(d):
+    """v9: per backbone and domain B1a-B1c, B2, B3, B4, B5 (descriptive), S; DO1a-DO6 and 'replicates' per (model, domain); G9_0; the
+    conditions dropped by the pre-lock check are demoted."""
+    p = read(f"experiments/{d}/results/predictions.json"); pr = read(f"experiments/{d}/protocol.json"); out = []
+    tf = lambda v: 'confirmed' if v is True else 'failed' if v is False else 'not evaluable'
+    dec = lambda v, good: 'confirmed' if v == good else 'mixed' if v in ('mixed', None) else 'failed'
+    for bb, doms in p['B'].items():
+        for dm, r in doms.items():
+            if 'B1a' in r: out.append(dict(id=f'B/{bb}/{dm}/B1a', verdict=r['B1a']['verdict'], outcome=dec(r['B1a']['verdict'], 'H-cancel')))
+            if 'B1b' in r: out.append(dict(id=f'B/{bb}/{dm}/B1b', verdict=r['B1b']['holds'], outcome=tf(r['B1b']['holds'])))
+            if 'B1c' in r: out.append(dict(id=f'B/{bb}/{dm}/B1c', verdict=r['B1c']['verdict'], outcome=dec(r['B1c']['verdict'], 'H-state-aware')))
+            for k, good in (('B2', 'H-objective'), ('B3', 'H-objective')):
+                if k in r: out.append(dict(id=f'B/{bb}/{dm}/{k}', verdict=r[k]['verdict'], outcome=dec(r[k]['verdict'], good)))
+            if 'B4' in r: out.append(dict(id=f'B/{bb}/{dm}/B4', verdict=r['B4']['verdict'], outcome='demoted' if r['B4']['verdict'] == 'descriptive' else 'decided' if r['B4']['verdict'] in ('H-counter', 'H-state') else 'mixed'))
+            if 'B5' in r: out.append(dict(id=f'B/{bb}/{dm}/B5 (descriptive)', verdict=r['B5']['verdict'], outcome='demoted'))
+            if 'S' in r:
+                for v in ('C1', 'C3U4'): out.append(dict(id=f'S/{bb}/{dm}/{v}', verdict=f"{r['S'][v]['passing']}/5", outcome=tf(r['S'][v]['holds'])))
+    for m, doms in p['DO'].items():
+        for dm, r in doms.items():
+            if 'skipped' in r: out.append(dict(id=f'DO/{m}/{dm}', verdict=f"not evaluated ({r['skipped']})", outcome='not evaluable')); continue
+            for k in ('DO1a', 'DO2', 'DO3', 'DO4', 'DO5', 'DO6'): out.append(dict(id=f'DO/{m}/{dm}/{k}', verdict=r[k]['holds'], outcome=tf(r[k]['holds'])))
+            out.append(dict(id=f'DO/{m}/{dm}/DO1b (secondary)', verdict=r['DO1b']['holds'], outcome=tf(r['DO1b']['holds'])))
+            out.append(dict(id=f'DO/{m}/{dm}/replicates', verdict=r['replicates'], outcome=tf(r['replicates'])))
+    for dm in pr['demotions']:
+        if 'dropped' in dm: out.append(dict(id=dm.split(':')[0], verdict='dropped before the lock', outcome='demoted'))
+    out.append(dict(id='G9_0 (post-lock gate)', verdict=p['G9_0'], outcome=tf(p['G9_0'])))
+    return out
+
+
 def walk(node, path, out):
     if isinstance(node, dict):
         if path and (any(k in node for k in ("verdict", "pass_", "holds")) or isinstance(node.get("frozen"), bool) or "winner" in node): out.append((path, node))
@@ -88,8 +120,8 @@ def main():
         p = REPO / 'experiments' / d / f
         if not p.exists(): continue
         lock = read(f"experiments/{d}/protocol_lock.json")["lock_commit"][:7]
-        if r in ("v7", "v8"):                           # one entry per locked prediction, with its kind
-            for e in (v7_rows if r == "v7" else v8_rows)(d): rows_.append(dict(round=r, experiment=d, lock=lock, **e))
+        if r in ("v7", "v8", "v9"):                     # one entry per locked prediction, with its kind
+            for e in {"v7": v7_rows, "v8": v8_rows, "v9": v9_rows}[r](d): rows_.append(dict(round=r, experiment=d, lock=lock, **e))
             continue
         found = []; walk(read(p), "", found)
         for path, node in found:

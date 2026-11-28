@@ -43,3 +43,4 @@
 | chen2022thex | 元数据由负责人核实（Findings of ACL 2022，pp. 3510–3520，DOI 10.18653/v1/2022.findings-acl.277） |
 | fu2026c2c | 元数据由负责人核实（ICLR 2026） |
 | hao2024coconut | 负责人核实 arXiv:2412.06769；Claude 检索发现 arXiv 记录注明 "Accepted to COLM 2025"，按指令改为会议版本（键名不变） |
+- wu2024reft: added 2026-11-29 for the v9 LoReFT baseline (B2); metadata from memory (NeurIPS 2024), **pending verification by the lead**.

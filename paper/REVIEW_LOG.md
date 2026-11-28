@@ -492,3 +492,22 @@ The testbed is clean, the frozen-plane mechanism is genuinely predictive, and th
 - **第二轮审稿前仍需完成的事项**：
   - 贡献 2 写的是 "prove"，命题 1–3 的证明须在附录 C 完成；
   - 第一部分第 4 条仍需注意：引言说的 "one-step energy smallest" 按平面计（v4/v8 的 s_k），命题 2 按每维能量排序，两者要在 §6 与附录 C 中对上。
+
+## 2026-11-29，v9 并入论文（回应第一轮审稿）
+
+v9 对应第一轮审稿意见的处理如下：
+- **M2**（§5，新增四段）：steering 向量（CL20）、LoReFT 与容量（CL21）、更长或随机视野（CL22）、8 个 seed（CL24）。
+- **M3、M6**（§5 写入几何，CL26，探索性）：常数写入、零基线、目标状态探针、第 1 步读出等于起点。
+- **M4**（§6，CL23）：解析旋转（描述性）与圆度统计（探索性）。
+- **M5**（§7，CL27，探索性）：多数参考的 CI 与学习基线。
+- **M1**（§8，CL25）：decoder-only 为部分复现，只有 Gemma weekday。
+- **M7**（附录 A）：时间线表。
+- **表 1**：加了四行（常数 steering、按读出的 steering、LoReFT、解码后重编码）。
+- check.py 通过（294 个数字，224 条预测）；编译 29 页。
+
+**需要负责人处理**：
+1. **标题**：已按 PLAN v9 第 7 节（DO 部分复现）加上 "in Encoder--Decoder Models"；"Must" 的措辞（M4）仍待负责人定。
+2. **引言**：按计划第 7 节，B1 的结果（H-cancel，且 B1c 可组合）可在引言加一句；措辞由负责人定，Claude 未改引言。
+3. **引用**：`wu2024reft` 的元数据按记忆填写，需要核对（`refs_verification.md` 已标注）。
+4. **B2 的例外要如实写**：T5Gemma month 上的 LoReFT-C3U4 不能组合（0.00），§5 已写明。
+5. **第二轮审稿之前**：仍需完成命题 1–3 的证明、相关工作、讨论与结论。

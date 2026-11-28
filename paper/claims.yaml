@@ -8,6 +8,7 @@ lock_commits:
   v6: 85f6bd332a3ede6f1dee347c968cd163a62fd5f9
   v7: 94b1829f6cb9453f2b14e13c8bebfdb0fd19fedd
   v8: a15d2140626f09fe1d87d50e0b23c2f1a62d28a8
+  v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
 claims:
 - id: CL1
   zh: 单步解码正确 ≠ 可组合
@@ -1489,6 +1490,8 @@ claims:
     experiments/composability_mechanisms_v6/run_ledger.json: 2fce713af6d52652b52bb32fa18935f1328c269ccef89cd98318aa89b4a6f066
     experiments/composability_mechanisms_v7/protocol_lock.json: 87b020aa9c186780da4af7bf549e99547b0fa9339691c782191a49a4bc2f4766
     experiments/composability_mechanisms_v7/run_ledger.json: fd4931e45b22c4c4208ad1444a280cff2a0b323cb4a5b2d851891e607e3a8b03
+    experiments/composability_mechanisms_v8/protocol_lock.json: 0f303e977ed3821aeb4e73ec7747f4ba90bc845b581e1544437c0e5d09242318
+    experiments/composability_mechanisms_v8/run_ledger.json: 2b5926fdbc2866ff45bbf08ff5143b9f8d4a5f84cd6cb2780ab847de0682f12a
     experiments/symmetry_composability_v1/protocol_lock.json: 5750c199bcdd2e7009f69a2401a3a2086bedfd5a2a517cb9b0357191ce6dcead
     experiments/symmetry_composability_v1/run_ledger.json: 50bdb0b80c0f260c9f873e854483dfd8ce6eb1e9ef787d0836a2fddb7b76ca6f
   numbers:
@@ -1563,16 +1566,23 @@ claims:
     path: total_gpu_hours
     note: null
     pending: false
+  - macro: CLmetaGpuVnine
+    value: 24.0925
+    text: '24.1'
+    source: experiments/composability_mechanisms_v8/run_ledger.json
+    path: total_gpu_hours
+    note: null
+    pending: false
   - macro: CLmetaGpuTotal
-    value: 40.6225
-    text: '40.6'
+    value: 64.715
+    text: '64.7'
     source: derived:gpu_total
     path: null
     note: null
     pending: false
   - macro: CLmetaRounds
-    value: 8
-    text: '8'
+    value: 9
+    text: '9'
     source: derived:rounds_locked
     path: null
     note: preregistered rounds with a lock commit; regenerate after v8
@@ -2096,6 +2106,568 @@ claims:
     value: 0.89375
     text: '0.89'
     source: derived:v8_d_agree_min
+    path: null
+    note: null
+    pending: false
+- id: CL20
+  zh: steering 向量：常数均值差连一步都做不到；只在单对的起点有效；按读出的状态取均值差即可组合（v9 B1）
+  en: A constant mean-difference steering vector cannot take a single step on a cycle,
+    a single-pair vector works only from its own start state, and a readout-indexed
+    mean difference composes.
+  nature: decided (v9 B1a H-cancel, B1b holds, B1c H-state-aware in all 4 backbone-domain
+    combinations)
+  predictions:
+  - v9/B/bart/weekday/B1a
+  - v9/B/bart/month/B1a
+  - v9/B/t5/weekday/B1a
+  - v9/B/t5/month/B1a
+  - v9/B/bart/weekday/B1b
+  - v9/B/bart/month/B1b
+  - v9/B/t5/weekday/B1b
+  - v9/B/t5/month/B1b
+  - v9/B/bart/weekday/B1c
+  - v9/B/bart/month/B1c
+  - v9/B/t5/weekday/B1c
+  - v9/B/t5/month/B1c
+  counter_predictions: []
+  exploratory_sources: []
+  figures: []
+  lock_commits:
+    v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentyBoneaMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_b1a_r1_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyBonebXzero
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_b1b_x0_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyBonebOther
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_b1b_other_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyBonecMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_b1c_min
+    path: null
+    note: null
+    pending: false
+- id: CL21
+  zh: 指令式写入来自一步目标函数：LoReFT、满秩线性与 MLP 在一步 CE 下同样写指令（v9 B2、B3）
+  en: Instruction writes come from the one-step objective - LoReFT, full-rank linear
+    and MLP editors trained with one-step CE all write instructions.
+  nature: decided (v9 B2 and B3 H-objective in all 4 combinations); T5Gemma month
+    LoReFT-C3U4 condition dropped before the lock and observed not to compose
+  predictions:
+  - v9/B/bart/weekday/B2
+  - v9/B/bart/month/B2
+  - v9/B/t5/weekday/B2
+  - v9/B/t5/month/B2
+  - v9/B/bart/weekday/B3
+  - v9/B/bart/month/B3
+  - v9/B/t5/weekday/B3
+  - v9/B/t5/month/B3
+  counter_predictions: []
+  exploratory_sources:
+  - v9 T5Gemma month LoReFT-C3U4 (dropped by the pre-lock check)
+  figures: []
+  lock_commits:
+    v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentyoneLConeRone
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_lc1_r1_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneLConeRtwo
+    value: 0.00625
+    text: '0.01'
+    source: derived:v9_lc1_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneLConeD
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_lc1_d_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneLConeRtwoN
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_lc1_r2n_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneLCthreeMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_lc3_min_kept
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneLCthreeTfive
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_lc3_t5_month
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneCapRtwo
+    value: 0.00625
+    text: '0.01'
+    source: derived:v9_b3_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneCapD
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_b3_d_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyoneCapRtwoN
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_b3_r2n_max
+    path: null
+    note: null
+    pending: false
+- id: CL22
+  zh: 只用 CE 的长视野展开大多学不会；学会的过了视野即失败（v9 B4）
+  en: CE-only unrolled training with longer or random horizons mostly fails to learn
+    its own horizon, and the editors that learn it fail past it.
+  nature: decided (v9 B4 H-counter on BART weekday); other combinations descriptive
+    (fewer than 2 admitted editors)
+  predictions:
+  - v9/B/bart/weekday/B4
+  counter_predictions: []
+  exploratory_sources:
+  - v9 B4 admission rates (DEVIATIONS 5)
+  figures: []
+  lock_commits:
+    v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentytwoAdmitted
+    value: 3
+    text: '3'
+    source: derived:v9_b4_admitted
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentytwoTrained
+    value: 21
+    text: '21'
+    source: derived:v9_b4_trained
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentytwoUeight
+    value: 0.065625
+    text: '0.07'
+    source: derived:v9_b4_u8_bart_wd
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentytwoRfourN
+    value: 0
+    text: '0.00'
+    source: derived:v9_b4_r4n_max
+    path: null
+    note: null
+    pending: false
+- id: CL23
+  zh: 只在谐波平面内旋转就足以组合；平面接近圆（v9 B5 描述性；P9b 探索性）
+  en: Rotating the slot inside its harmonic planes alone composes, and the planes
+    are close to circles (descriptive / exploratory).
+  nature: descriptive (v9 B5, readout exact by construction); P9b exploratory
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v9 B5 (descriptive by the pre-lock check)
+  - v9 P9b
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v8/results/p9b.json: ee3865cfac7f0b318c4ec9773df485e94095f20adc2b55d018deb5a9a6639c6f
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentythreeRotTzero
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_b5_t0_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeRotNat
+    value: 0.9958333333333333
+    text: '1.00'
+    source: derived:v9_b5_nat_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeEllLo
+    value: 0.8487512688996072
+    text: '0.85'
+    source: derived:v9_p9b_ell_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeAngHi
+    value: 0.14337477218822006
+    text: '0.14'
+    source: derived:v9_p9b_ang_hi
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeScrAngLo
+    value: 0.2529875344640006
+    text: '0.25'
+    source: derived:v9_p9b_scr_ang_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeFundLo
+    value: 0.30472553083666865
+    text: '0.30'
+    source: derived:v9_p9b_f1share_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentythreeFundHi
+    value: 0.5652593256661904
+    text: '0.57'
+    source: derived:v9_p9b_f1share_hi
+    path: null
+    note: null
+    pending: false
+- id: CL24
+  zh: 主要编辑器在 8 个 seed 上稳定（v9 S）
+  en: The main editor results hold on eight seeds.
+  nature: confirmed (v9 S, 5 of 5 new seeds in every cell)
+  predictions:
+  - v9/S/bart/weekday/C1
+  - v9/S/bart/month/C1
+  - v9/S/t5/month/C1
+  - v9/S/bart/weekday/C3U4
+  - v9/S/bart/month/C3U4
+  - v9/S/t5/month/C3U4
+  counter_predictions: []
+  exploratory_sources: []
+  figures: []
+  lock_commits:
+    v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentyfourCells
+    value: 3
+    text: '3'
+    source: derived:v9_s_cells
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfourCOneRtwoMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_s_c1_r2_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfourCThreeMin
+    value: 0.98125
+    text: '0.98'
+    source: derived:v9_s_c3_min
+    path: null
+    note: null
+    pending: false
+- id: CL25
+  zh: decoder-only：Gemma 2 2B 的 weekday 上全部复现；第二个家族没有模型过闸门（v9 DO，部分复现）
+  en: In the decoder-only Gemma 2 2B every decoder-only test replicates on weekday;
+    no model of a second family passed the reconstruction gate.
+  nature: decided (v9 DO - Gemma weekday replicates; second family not evaluable,
+    so partial)
+  predictions:
+  - v9/DO/gemma/weekday/DO1a
+  - v9/DO/gemma/weekday/DO2
+  - v9/DO/gemma/weekday/DO3
+  - v9/DO/gemma/weekday/DO4
+  - v9/DO/gemma/weekday/DO5
+  - v9/DO/gemma/weekday/DO6
+  - v9/DO/gemma/weekday/replicates
+  counter_predictions: []
+  exploratory_sources: []
+  figures: []
+  lock_commits:
+    v9: 6ca34f01e5923fe5b2a05749bef6a80a85e08926
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentyfiveRstar
+    value: 6
+    text: '6'
+    source: derived:v9_do_rstar
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveRtwoN
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_do_r2n
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveFonePlus
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_do_f1p
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveFoneAlt
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_do_f1a
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveCOneRtwo
+    value: 0.075
+    text: '0.07'
+    source: derived:v9_do_c1_r2
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveCOneD
+    value: 0.8375
+    text: '0.84'
+    source: derived:v9_do_c1_d
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveCThree
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_do_c3
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveAgree
+    value: 0.9920138888888889
+    text: '0.992'
+    source: derived:v9_do_agree
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyfiveNaive
+    value: 0.6440972222222222
+    text: '0.644'
+    source: derived:v9_do_naive
+    path: null
+    note: null
+    pending: false
+- id: CL26
+  zh: 写入几何（探索性）：C1 的写入近乎常数，与规范写入的夹角处在随机零基线，目标状态探针读不到目标（v9 P9a、P9d）
+  en: The C1 write is nearly constant across source states, its alignment with the
+    canonical write is at the random-direction null, and a state probe reads the edited
+    slot as the source, never the target (exploratory).
+  nature: exploratory (v9 P9a, P9d)
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v9 P9a
+  - P9d
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v8/results/p9a.json: c6c211218d388d5e89513793c48e64a0fd061e64d4ad055301d4e68a210020ef
+    experiments/composability_mechanisms_v8/results/p9d.json: 071a4670425445b1dc91b273a7aed0c116d22606c863ca29b5398b5a06cf988b
+  numbers:
+  - macro: CLtwentysixConstMin
+    value: 0.9738386783888219
+    text: '0.974'
+    source: derived:v9_p9a_const_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixCosHi
+    value: 0.032084640311905034
+    text: '0.032'
+    source: derived:v9_p9a_cos_hi
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixNullLo
+    value: 0.013611280952627867
+    text: '0.014'
+    source: derived:v9_p9a_null_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixNullHi
+    value: 0.02499299299686994
+    text: '0.025'
+    source: derived:v9_p9a_null_hi
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixSrcMin
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_p9a_src_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixTgtMax
+    value: 0.0
+    text: '0.00'
+    source: derived:v9_p9a_tgt_max
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixStartVeight
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_p9d_v8_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysixStartVfive
+    value: 0.7125
+    text: '0.71'
+    source: derived:v9_p9d_v5_min
+    path: null
+    note: null
+    pending: false
+- id: CL27
+  zh: 预测器相对多数参考的增益与学习基线（探索性）（v9 P9c）
+  en: The readout's gain over the per-cell majority reference and a learned baseline
+    on latent features (exploratory).
+  nature: exploratory (v9 P9c)
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v9 P9c
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v8/results/p9c.json: a60d1ae3f95f84150660c6e00b1ff0fccd8c1e285a37c83563aca9b8fc807f85
+  numbers:
+  - macro: CLtwentysevenVfiveBart
+    value: 0.033307613168724215
+    text: '0.033'
+    source: derived:v9_p9c_v5_bart
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenVfiveTfive
+    value: 0.05031094527363189
+    text: '0.050'
+    source: derived:v9_p9c_v5_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenVfiveLo
+    value: 0.028583499527608806
+    text: '0.029'
+    source: derived:v9_p9c_v5_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenNatTfive
+    value: 0.004861111111111094
+    text: '0.005'
+    source: derived:v9_p9c_nat_t5
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenNatTfiveLo
+    value: -0.002777777777777768
+    text: '-0.003'
+    source: derived:v9_p9c_nat_t5_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenLbLo
+    value: 0.8724074074074074
+    text: '0.87'
+    source: derived:v9_p9c_lb_lo
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentysevenLbHi
+    value: 0.8994918699186992
+    text: '0.90'
+    source: derived:v9_p9c_lb_hi
+    path: null
+    note: null
+    pending: false
+- id: CL28
+  zh: 解码后重编码（参照）
+  en: Decode-and-re-encode reference (not a prediction).
+  nature: descriptive (v9 B6 reference)
+  predictions: []
+  counter_predictions: []
+  exploratory_sources:
+  - v9 B6
+  figures: []
+  lock_commits: {}
+  evidence:
+    experiments/composability_mechanisms_v8/results/predictions.json: 526525ccb7ddf3e5a2045a9d0084255592e8b4a3832a965a0a26baf7c3f98d09
+  numbers:
+  - macro: CLtwentyeightRtwoN
+    value: 1.0
+    text: '1.00'
+    source: derived:v9_b6_r2n_min
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyeightBartRe
+    value: 0.22369377811749777
+    text: '0.22'
+    source: derived:v9_b6_bart_re
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyeightBartLat
+    value: 0.13120066126187643
+    text: '0.13'
+    source: derived:v9_b6_bart_lat
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyeightTfiveRe
+    value: 1.32795254389445
+    text: '1.33'
+    source: derived:v9_b6_t5_re
+    path: null
+    note: null
+    pending: false
+  - macro: CLtwentyeightTfiveLat
+    value: 0.9096185564994812
+    text: '0.91'
+    source: derived:v9_b6_t5_lat
     path: null
     note: null
     pending: false

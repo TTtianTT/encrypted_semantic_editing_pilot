@@ -12,6 +12,16 @@ state in at least half of the worlds of every cell (Section~\ref{sec:prediction}
 after one step is still the start state in \CLtwoSlotStaysBart{} of 160 worlds (BART weekday C1) and \CLtwoSlotStaysTfive{} of 160
 (T5Gemma month C1-U4), while the decoder outputs the target.
 
+\paragraph{Exploratory: the write geometry, with nulls.}\claim{CL26}
+A ninth-round analysis of the same C1 editors (and of the natural-text editors) quantifies the picture. At least \CLtwentysixConstMin{}
+of each world's write energy is the component shared by all source states, so the write is close to a constant. Its alignment with the
+canonical write is no larger than that of random directions (median $|\cos|$ at most \CLtwentysixCosHi{}, against
+\CLtwentysixNullLo{}--\CLtwentysixNullHi{} for random Gaussian directions), so ``unaligned'' means exactly that and nothing more. A
+state probe trained on clean encodings reads the edited slot as the source state in at least \CLtwentysixSrcMin{} and as the target in at
+most \CLtwentysixTgtMax{} of the cases. Independently of the training family, the step-1 slot readout equals the start state in every
+world of every decoder-trained cell of the eighth round (minimum \CLtwentysixStartVeight{}; at least \CLtwentysixStartVfive{} per cell in
+the fifth round).
+
 \paragraph{Exploratory: relative or absolute instructions.}\claim{CL2b}
 Exploratory analyses suggest that where the decoder natively performs the operation (weekday and month on BART; all three tested
 domains on T5Gemma) the instruction is relative, and otherwise (scrambled maps, skip-two) it pushes towards a target token.
@@ -32,3 +42,31 @@ canonical write (exploratory). The default one-step C3 of 600 updates is therefo
 compose: one-step C3 on weekday composes after 600 updates but not after 450 (seed-median one-way
 $\Rk{2N}$ \CLfourWeekSixHundred{} against \CLfourWeekFourFifty{}), while on month it needs 1200 (\CLfourMonthTwelveHundred{} against
 \CLfourMonthNineHundred{} after 900).
+
+\paragraph{Steering vectors.}\claim{CL20}
+The editing methods that motivate this study often add a fixed vector to the representation~\citep{turner2023actadd,zou2023repe}. On a cyclic
+attribute a constant write cannot implement a step: the mean difference $E(x+1)-E(x)$ averaged over all states cancels around the cycle,
+and adding it decodes the target in at most \CLtwentyBoneaMax{} of worlds (ninth round, both backbones, weekday and month). The
+difference of a single contrast pair works only from that pair's source state (\CLtwentyBonebXzero{}, against at most
+\CLtwentyBonebOther{} from the other states). Once the added vector depends on the state read from the latent, the edit composes:
+adding the mean difference of the read state gives one-way $\Rk{2N}$ of at least \CLtwentyBonecMin{}. This readout-indexed steering is
+not an affine map; it is a state write by construction.
+
+\paragraph{Objective, not parameterisation or capacity.}\claim{CL21}
+Instruction writes are not specific to our editor's parameterisation. A LoReFT intervention~\citep{wu2024reft}, a low-rank affine
+intervention of the same family, trained with the one-step objective succeeds at step 1 (\CLtwentyoneLConeRone{}), fails at step 2
+($\Rk{2} \le \CLtwentyoneLConeRtwo{}$, one-way $\Rk{2N} \le \CLtwentyoneLConeRtwoN{}$) and shows the step-1 disagreement of an instruction
+write ($D \ge \CLtwentyoneLConeD{}$); trained with the state-supervised unrolled objective it composes in three of the four combinations
+(\CLtwentyoneLCthreeMin{}) but not on T5Gemma month (\CLtwentyoneLCthreeTfive{}; a condition removed before the lock). A full-rank linear
+editor and an MLP editor trained with the one-step objective behave like C1 ($\Rk{2} \le \CLtwentyoneCapRtwo{}$, $D \ge
+\CLtwentyoneCapD{}$, $\Rk{2N} \le \CLtwentyoneCapRtwoN{}$): more capacity does not turn an instruction into a state.
+
+\paragraph{Longer and random horizons.}\claim{CL22}
+Unrolled training with the decoder objective alone over longer horizons (up to 8, up to 16, or random up to $2N$ steps) mostly fails to
+learn its own horizon: \CLtwentytwoAdmitted{} of \CLtwentytwoTrained{} editors reached the admission criterion. The editors that did
+(BART weekday) fail past their horizon (median $\Rk{S_{\max}+2} = \CLtwentytwoUeight{}$) and none composes over $4N$ steps
+($\Rk{4N} \le \CLtwentytwoRfourN{}$); the other combinations are descriptive.
+
+\paragraph{Seeds.}\claim{CL24}
+On eight seeds (five new ones and the fifth round's three) the main editor results hold in all \CLtwentyfourCells{} cells: C1 has
+$\Rk{2} \le \CLtwentyfourCOneRtwoMax{}$ for every seed, and C3-U4 one-way $\Rk{2N} \ge \CLtwentyfourCThreeMin{}$ for every seed.
