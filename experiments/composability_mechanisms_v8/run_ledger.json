@@ -480,7 +480,52 @@
       "node": "node01",
       "start": "2026-11-28T21:32:57",
       "end": "2026-11-28T21:33:17"
+    },
+    {
+      "unit": "v9",
+      "lane": "A",
+      "job_id": "74102",
+      "name": "compmech8-A-chains9",
+      "state": "COMPLETED",
+      "elapsed_s": 1508,
+      "gpus": 1,
+      "gpu_hours": 0.41888888888888887,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-28T21:49:40",
+      "end": "2026-11-28T22:14:48"
+    },
+    {
+      "unit": "v9",
+      "lane": "A",
+      "job_id": "74103",
+      "name": "compmech8-A-dorun",
+      "state": "COMPLETED",
+      "elapsed_s": 441,
+      "gpus": 1,
+      "gpu_hours": 0.1225,
+      "alloc_tres": "billing=4,cpu=4,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-28T22:14:48",
+      "end": "2026-11-28T22:22:09"
+    },
+    {
+      "unit": "v9",
+      "lane": "B",
+      "job_id": "74104",
+      "name": "compmech8-B-chains9",
+      "state": "COMPLETED",
+      "elapsed_s": 7715,
+      "gpus": 1,
+      "gpu_hours": 2.1430555555555557,
+      "alloc_tres": "billing=8,cpu=8,gres/gpu=1,node=1",
+      "partition": "B300q",
+      "node": "node01",
+      "start": "2026-11-28T21:49:43",
+      "end": "2026-11-28T23:58:18"
     }
   ],
-  "total_gpu_hours": 21.408055555555556
+  "total_gpu_hours": 24.0925
 }

@@ -51,3 +51,8 @@
 74099 selftest9 cpu (pre-lock)
 74100 seed_registry9 cpu (pre-lock)
 74101 lock9 cpu
+74102 chains9 bart (post-lock, lane A)
+74103 do_run gemma (post-lock, lane A, after 74102)
+74104 chains9 t5 (post-lock, lane B)
+74110 analyze9 cpu (post-lock)
+74111 analyze9 cpu (rerun: AMENDMENT_02)

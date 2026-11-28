@@ -117,7 +117,9 @@ def v5_seeds(bb, d):
 
 
 def unit_do(p, model):
-    prep = read(ROOT / f'results/do_prep_{model}.json'); runs = json.load(gzip.open(ROOT / f'results/do_run_{model}.json.gz', 'rt'))
+    prep = read(ROOT / f'results/do_prep_{model}.json')
+    if all(r.get('skipped') for r in prep['domains'].values()): return {d: dict(skipped=r['skipped']) for d, r in prep['domains'].items()}   # AMENDMENT_02
+    runs = json.load(gzip.open(ROOT / f'results/do_run_{model}.json.gz', 'rt'))
     sims = json.load(gzip.open(ROOT / f'results/do_sim_{model}.json.gz', 'rt')); pc = read(ROOT / f'results/do_sim_{model}_summary.json')['precheck']; out = {}
     for d, r in prep['domains'].items():
         if r.get('skipped'): out[d] = dict(skipped=r['skipped']); continue

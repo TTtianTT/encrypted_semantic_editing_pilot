@@ -1,0 +1,1646 @@
+{
+  "B": {
+    "bart": {
+      "weekday": {
+        "G9_0": {
+          "R2N": 1.0,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 1.0,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        },
+        "B1a": {
+          "R1": 0.0,
+          "verdict": "H-cancel",
+          "exploratory": false
+        },
+        "B1b": {
+          "R1_x0": 1.0,
+          "R1_other": 0.0,
+          "R2": 0.0,
+          "conditions": {
+            "R1_x0": true,
+            "R1_other": true,
+            "R2": true
+          },
+          "holds": true,
+          "opposing": false
+        },
+        "B1c": {
+          "R2N": 1.0,
+          "verdict": "H-state-aware",
+          "exploratory": false
+        },
+        "B2": {
+          "LoReFTC1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.2125,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.00625,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "median": {
+              "R1": 1.0,
+              "R2": 0.00625,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "LoReFTC3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "median_R2N": 1.0
+          },
+          "verdict": "H-objective"
+        },
+        "B3": {
+          "seeds": {
+            "FullC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 0.8875,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "MLPC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            }
+          },
+          "median": {
+            "FullC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            },
+            "MLPC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "verdict": "H-objective"
+        },
+        "B4": {
+          "editors": {
+            "U8": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R28": 0.0
+                },
+                "s46": {
+                  "R1": 1.0,
+                  "R2": 1.0,
+                  "R2N": 0.0,
+                  "D": 1.0,
+                  "worlds": 160,
+                  "R10": 0.1,
+                  "R28": 0.0
+                },
+                "s47": {
+                  "R1": 1.0,
+                  "R2": 1.0,
+                  "R2N": 0.0,
+                  "D": 1.0,
+                  "worlds": 160,
+                  "R10": 0.03125,
+                  "R28": 0.0
+                }
+              },
+              "stat": "R10",
+              "admitted": [
+                "s46",
+                "s47"
+              ],
+              "median_admitted": 0.065625,
+              "median_all": 0.03125,
+              "R4N_max": 0,
+              "descriptive": false,
+              "cannot_learn_rate": 0.33333333333333337,
+              "R4N_max_admitted": 0
+            },
+            "U16": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R28": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R28": 0.0
+                },
+                "s47": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R28": 0.0
+                }
+              },
+              "stat": "R18",
+              "admitted": [],
+              "median_admitted": null,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 1.0,
+              "R4N_max_admitted": null
+            },
+            "Urand": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R28": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R28": 0.0
+                },
+                "s47": {
+                  "R1": 1.0,
+                  "R2": 1.0,
+                  "R2N": 0.875,
+                  "D": 1.0,
+                  "worlds": 160,
+                  "R28": 0.0
+                }
+              },
+              "stat": "R28",
+              "admitted": [
+                "s47"
+              ],
+              "median_admitted": 0.0,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 0.6666666666666667,
+              "R4N_max_admitted": 0
+            }
+          },
+          "verdict": "H-counter",
+          "rule": "admitted editors only; variants with fewer than 2 admitted editors descriptive (DEVIATIONS 5)"
+        },
+        "S": {
+          "C1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "C3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "v5_seeds": {
+            "C1_R1": {
+              "C1v1_s42": 1.0,
+              "C1v1_s43": 1.0,
+              "C1v1_s44": 1.0
+            },
+            "C1_R2": {
+              "C1v1_s42": 0.0,
+              "C1v1_s43": 0.0,
+              "C1v1_s44": 0.0
+            },
+            "C3U4_R2N": {}
+          }
+        }
+      },
+      "month": {
+        "G9_0": {
+          "R2N": 1.0,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 1.0,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        },
+        "B1a": {
+          "R1": 0.0,
+          "verdict": "H-cancel",
+          "exploratory": false
+        },
+        "B1b": {
+          "R1_x0": 1.0,
+          "R1_other": 0.0,
+          "R2": 0.0,
+          "conditions": {
+            "R1_x0": true,
+            "R1_other": true,
+            "R2": true
+          },
+          "holds": true,
+          "opposing": false
+        },
+        "B1c": {
+          "R2N": 1.0,
+          "verdict": "H-state-aware",
+          "exploratory": false
+        },
+        "B2": {
+          "LoReFTC1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.125,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "median": {
+              "R1": 1.0,
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "LoReFTC3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 0.8625,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "median_R2N": 1.0
+          },
+          "verdict": "H-objective"
+        },
+        "B3": {
+          "seeds": {
+            "FullC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 0.925,
+                "worlds": 160
+              }
+            },
+            "MLPC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            }
+          },
+          "median": {
+            "FullC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            },
+            "MLPC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "verdict": "H-objective"
+        },
+        "B4": {
+          "editors": {
+            "U8": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                },
+                "s47": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                }
+              },
+              "stat": "R10",
+              "admitted": [],
+              "median_admitted": null,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 1.0,
+              "R4N_max_admitted": null
+            },
+            "U16": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R48": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R48": 0.0
+                },
+                "s47": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R18": 0.0,
+                  "R48": 0.0
+                }
+              },
+              "stat": "R18",
+              "admitted": [],
+              "median_admitted": null,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 1.0,
+              "R4N_max_admitted": null
+            },
+            "Urand": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R48": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R48": 0.0
+                },
+                "s47": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R48": 0.0
+                }
+              },
+              "stat": "R48",
+              "admitted": [],
+              "median_admitted": null,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 1.0,
+              "R4N_max_admitted": null
+            }
+          },
+          "verdict": "descriptive",
+          "rule": "admitted editors only; variants with fewer than 2 admitted editors descriptive (DEVIATIONS 5)"
+        },
+        "S": {
+          "C1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "C3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "v5_seeds": {
+            "C1_R1": {
+              "C1v1_s42": 1.0,
+              "C1v1_s43": 1.0,
+              "C1v1_s44": 1.0
+            },
+            "C1_R2": {
+              "C1v1_s42": 0.0,
+              "C1v1_s43": 0.0,
+              "C1v1_s44": 0.0
+            },
+            "C3U4_R2N": {
+              "C3U4v4_s42": 1.0,
+              "C3U4v4_s43": 1.0,
+              "C3U4v4_s44": 1.0
+            }
+          }
+        }
+      },
+      "month-nat": {
+        "G9_0": {
+          "R2N": 0.9958333333333333,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 0.9958333333333333,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        }
+      }
+    },
+    "t5": {
+      "weekday": {
+        "G9_0": {
+          "R2N": 1.0,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 1.0,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        },
+        "B1a": {
+          "R1": 0.0,
+          "verdict": "H-cancel",
+          "exploratory": false
+        },
+        "B1b": {
+          "R1_x0": 1.0,
+          "R1_other": 0.0,
+          "R2": 0.0,
+          "conditions": {
+            "R1_x0": true,
+            "R1_other": true,
+            "R2": true
+          },
+          "holds": true,
+          "opposing": false
+        },
+        "B1c": {
+          "R2N": 1.0,
+          "verdict": "H-state-aware",
+          "exploratory": false
+        },
+        "B2": {
+          "LoReFTC1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "median": {
+              "R1": 1.0,
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "LoReFTC3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "median_R2N": 1.0
+          },
+          "verdict": "H-objective"
+        },
+        "B3": {
+          "seeds": {
+            "FullC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "MLPC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            }
+          },
+          "median": {
+            "FullC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            },
+            "MLPC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "verdict": "H-objective"
+        },
+        "B4": {
+          "editors": {},
+          "verdict": "descriptive",
+          "rule": "admitted editors only; variants with fewer than 2 admitted editors descriptive (DEVIATIONS 5)"
+        }
+      },
+      "month": {
+        "G9_0": {
+          "R2N": 1.0,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 1.0,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        },
+        "B1a": {
+          "R1": 0.0,
+          "verdict": "H-cancel",
+          "exploratory": false
+        },
+        "B1b": {
+          "R1_x0": 1.0,
+          "R1_other": 0.0,
+          "R2": 0.0,
+          "conditions": {
+            "R1_x0": true,
+            "R1_other": true,
+            "R2": true
+          },
+          "holds": true,
+          "opposing": false
+        },
+        "B1c": {
+          "R2N": 1.0,
+          "verdict": "H-state-aware",
+          "exploratory": false
+        },
+        "B2": {
+          "LoReFTC1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "median": {
+              "R1": 1.0,
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "LoReFTC3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 0.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 0.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 0.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "median_R2N": 0.0
+          },
+          "verdict": "H-objective"
+        },
+        "B3": {
+          "seeds": {
+            "FullC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.00625,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.00625,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "MLPC1": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            }
+          },
+          "median": {
+            "FullC1": {
+              "R2": 0.00625,
+              "R2N": 0.0,
+              "D": 1.0
+            },
+            "MLPC1": {
+              "R2": 0.0,
+              "R2N": 0.0,
+              "D": 1.0
+            }
+          },
+          "verdict": "H-objective"
+        },
+        "B4": {
+          "editors": {
+            "U8": {
+              "seeds": {
+                "s45": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                },
+                "s46": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                },
+                "s47": {
+                  "cannot_learn": true,
+                  "R1": 0.0,
+                  "R2": 0.0,
+                  "R2N": 0.0,
+                  "D": null,
+                  "R10": 0.0,
+                  "R48": 0.0
+                }
+              },
+              "stat": "R10",
+              "admitted": [],
+              "median_admitted": null,
+              "median_all": 0.0,
+              "R4N_max": 0,
+              "descriptive": true,
+              "cannot_learn_rate": 1.0,
+              "R4N_max_admitted": null
+            }
+          },
+          "verdict": "descriptive",
+          "rule": "admitted editors only; variants with fewer than 2 admitted editors descriptive (DEVIATIONS 5)"
+        },
+        "S": {
+          "C1": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 0.0,
+                "R2N": 0.0,
+                "D": 1.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "C3U4": {
+            "seeds": {
+              "s45": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s46": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s47": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s48": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 0.98125,
+                "D": 0.0,
+                "worlds": 160
+              },
+              "s49": {
+                "R1": 1.0,
+                "R2": 1.0,
+                "R2N": 1.0,
+                "D": 0.0,
+                "worlds": 160
+              }
+            },
+            "passing": 5,
+            "holds": true
+          },
+          "v5_seeds": {
+            "C1_R1": {
+              "C1v3_s42": 1.0,
+              "C1v3_s43": 1.0,
+              "C1v3_s44": 1.0
+            },
+            "C1_R2": {
+              "C1v3_s42": 0.0,
+              "C1v3_s43": 0.0,
+              "C1v3_s44": 0.0
+            },
+            "C3U4_R2N": {
+              "C3U4n_s42": 1.0,
+              "C3U4n_s43": 1.0
+            }
+          }
+        }
+      },
+      "month-nat": {
+        "G9_0": {
+          "R2N": 0.9958333333333333,
+          "holds": true
+        },
+        "B5": {
+          "R2N": 0.9958333333333333,
+          "verdict": "H-sufficient",
+          "descriptive": true
+        }
+      }
+    }
+  },
+  "DO": {
+    "gemma": {
+      "weekday": {
+        "DO1a": {
+          "rstar_pred": 6,
+          "R2N": 1.0,
+          "holds": true,
+          "exploratory": false
+        },
+        "DO1b": {
+          "R2N": 0.0,
+          "holds": true,
+          "secondary": true,
+          "exploratory": false
+        },
+        "DO2": {
+          "observed": {
+            "F1_plus": 0.0,
+            "F1_alt": 1.0,
+            "Fempty_alt": 1.0,
+            "Fnot1_plus": 0.0
+          },
+          "conditions": {
+            "F1_plus": true,
+            "F1_alt": true,
+            "Fnot1_plus": true
+          },
+          "holds": true
+        },
+        "DO3": {
+          "s": {
+            "1": 25.097389536412738,
+            "2": 32.277549634966185,
+            "3": 33.90550826076502
+          },
+          "holds": true
+        },
+        "DO4": {
+          "R1": 1.0,
+          "R2": 0.075,
+          "D": 0.8375,
+          "holds": true
+        },
+        "DO5": {
+          "R2N": 1.0,
+          "holds": true
+        },
+        "DO6": {
+          "agreement": 0.9920138888888889,
+          "naive": 0.6440972222222222,
+          "ci": [
+            0.34201388888888884,
+            0.35381944444444435
+          ],
+          "category_accuracy": 1.0,
+          "holds": true
+        },
+        "cells": {
+          "SRRR3/plus": {
+            "R1": 0.54375,
+            "R2": 0.0875,
+            "R2N": 0.0,
+            "D": 0.1375
+          },
+          "SRRR4/plus": {
+            "R1": 1.0,
+            "R2": 0.51875,
+            "R2N": 0.0,
+            "D": 0.0
+          },
+          "SRRR5/plus": {
+            "R1": 1.0,
+            "R2": 0.90625,
+            "R2N": 0.1375,
+            "D": 0.0
+          },
+          "SRRR6/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "SRRR7/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "SRRR16/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "F_empty/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "F_empty/alt": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "F_{1}/plus": {
+            "R1": 1.0,
+            "R2": 0.48125,
+            "R2N": 0.0,
+            "D": 0.00625
+          },
+          "F_{1}/alt": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.00625
+          },
+          "F_not1/plus": {
+            "R1": 0.0,
+            "R2": 0.0,
+            "R2N": 0.0,
+            "D": 0.00625
+          },
+          "F_not1/alt": {
+            "R1": 0.0,
+            "R2": 0.0,
+            "R2N": 0.0,
+            "D": 0.00625
+          },
+          "C1_s45/plus": {
+            "R1": 1.0,
+            "R2": 0.075,
+            "R2N": 0.0,
+            "D": 0.8375
+          },
+          "C1_s46/plus": {
+            "R1": 1.0,
+            "R2": 0.0625,
+            "R2N": 0.0,
+            "D": 0.8375
+          },
+          "C1_s47/plus": {
+            "R1": 1.0,
+            "R2": 0.0875,
+            "R2N": 0.0,
+            "D": 0.8375
+          },
+          "C3U4_s45/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "C3U4_s46/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          },
+          "C3U4_s47/plus": {
+            "R1": 1.0,
+            "R2": 1.0,
+            "R2N": 1.0,
+            "D": 0.0
+          }
+        },
+        "replicates": true
+      },
+      "month-nat": {
+        "skipped": "reconstruction gate"
+      }
+    },
+    "smol": {
+      "weekday": {
+        "skipped": "reconstruction gate"
+      }
+    }
+  },
+  "B6": {
+    "bart": {
+      "weekday": {
+        "reencode": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.22377991676330566
+        },
+        "latent": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.13118902274540492
+        }
+      },
+      "month": {
+        "reencode": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.22369377811749777
+        },
+        "latent": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.13120066126187643
+        }
+      }
+    },
+    "t5": {
+      "weekday": {
+        "reencode": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 1.3253372737339564
+        },
+        "latent": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.9139636925288609
+        }
+      },
+      "month": {
+        "reencode": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 1.32795254389445
+        },
+        "latent": {
+          "R": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "R2N": 1.0,
+          "seconds_per_step": 0.9096185564994812
+        }
+      }
+    }
+  },
+  "G9_0": true,
+  "DO_replicates": {
+    "gemma": true,
+    "smol": false
+  },
+  "DO_both_replicate": false
+}
