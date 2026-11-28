@@ -35,3 +35,8 @@
    - 负责人决定：闸门按组合判定（与 Gemma 相同）。SmolLM2 只评测 weekday 模板 0；month 与自然文本不评测。完整闸门（train + dev）仍由 `do_prep.py` 判定。
    - SmolLM2 的选层在 weekday dev 上做（规则不变：取并列最高的层的中位数），因为它没有 month。
    - 由此，DO 是两个家族各一个 weekday 组合：Gemma 2 2B 与 SmolLM2-1.7B。
+7. **2026-11-28，DO 只剩 Gemma（锁定前，负责人决定）**：
+   - SmolLM2 在 weekday 上的完整闸门（train + dev）为 0.950，低于 0.99（dev 筛查为 0.991），因此没有可评测的组合。它的选层结果（第 10 层，单步 0.987）记录在案，但不再使用。
+   - 第二个家族没有模型过闸门：Qwen2.5-1.5B 改写复述；OLMo-2-1B 与 Phi-3.5-mini 分词不过；SmolLM2-1.7B 重建不过；Mistral-7B 因磁盘配额未下载。
+   - 负责人决定不再尝试，DO 只评测 Gemma 2 2B 的 weekday 模板 0。
+   - 按计划第 7 节，DO 为部分复现时，标题加 "in Encoder–Decoder Models"，摘要不写 decoder-only。

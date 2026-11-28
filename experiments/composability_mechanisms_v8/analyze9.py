@@ -159,7 +159,8 @@ def main():
     do_models = ['gemma'] + [m for m in [p.get('do2_model')] if m]
     out = dict(B={bb: unit_b(p, bb) for bb in BBS}, DO={m: unit_do(p, m) for m in do_models}, B6={bb: read(ROOT / f'results/chains9_{bb}_complete.json')['B6'] for bb in BBS})
     out['G9_0'] = all(v['G9_0']['holds'] for bb in BBS for v in out['B'][bb].values())
-    out['DO_both_replicate'] = len(do_models) == 2 and all(all(v.get('replicates', False) for v in out['DO'][m].values() if 'skipped' not in v) for m in do_models)
+    rep = lambda m: (lambda ev: bool(ev) and all(v.get('replicates', False) for v in ev))([v for v in out['DO'][m].values() if 'skipped' not in v])   # no evaluable combination -> not replicated
+    out['DO_replicates'] = {m: rep(m) for m in do_models}; out['DO_both_replicate'] = len(do_models) == 2 and all(rep(m) for m in do_models)
     dump(ROOT / 'results/predictions.json', out); print(json.dumps(dict(G9_0=out['G9_0'], DO=out['DO_both_replicate'])), flush=True)
 
 
